@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T10:20+09:00",
+  "generatedAt": "2026-05-06T10:22+09:00",
   "summary": {
     "totalSessions": 4,
     "staleCount": 0,
@@ -8,13 +8,13 @@
   },
   "benchmark": {
     "label": "KOSPI",
-    "value": 7328.84,
-    "returnPct": 5.65,
-    "dailyReturnPct": 1.19,
+    "value": 7331.88,
+    "returnPct": 5.69,
+    "dailyReturnPct": 1.23,
     "date": "2026-05-06",
-    "time": "03:00:10",
+    "time": "03:02:20",
     "periodStart": "2026-05-06T08:39+09:00",
-    "periodEnd": "2026-05-06T10:20+09:00"
+    "periodEnd": "2026-05-06T10:22+09:00"
   },
   "sessions": [
     {
@@ -87,15 +87,17 @@
       "sellAlerts": [],
       "portfolio": {
         "capital": 29997940,
-        "evalAmount": 30042740,
-        "pnl": 44800,
-        "returnPct": 0.15,
+        "evalAmount": 29999540,
+        "pnl": 1600,
+        "returnPct": 0.01,
         "positionCount": 2
       },
       "comparison": {
-        "returnPct": 0.15,
-        "benchmarkReturnPct": 5.65,
-        "excessReturnPct": -5.5
+        "returnPct": 0.01,
+        "benchmarkReturnPct": 0.21,
+        "excessReturnPct": -0.2,
+        "periodStart": "2026-05-06T10:15+09:00",
+        "periodEnd": "2026-05-06T10:22+09:00"
       }
     },
     {
@@ -314,8 +316,10 @@
       },
       "comparison": {
         "returnPct": 1.15,
-        "benchmarkReturnPct": 5.65,
-        "excessReturnPct": -4.5
+        "benchmarkReturnPct": 0.21,
+        "excessReturnPct": 0.94,
+        "periodStart": "2026-05-06T10:15+09:00",
+        "periodEnd": "2026-05-06T10:22+09:00"
       }
     },
     {
@@ -425,8 +429,10 @@
       },
       "comparison": {
         "returnPct": 0.0,
-        "benchmarkReturnPct": 5.65,
-        "excessReturnPct": -5.65
+        "benchmarkReturnPct": 0.21,
+        "excessReturnPct": -0.21,
+        "periodStart": "2026-05-06T10:15+09:00",
+        "periodEnd": "2026-05-06T10:22+09:00"
       }
     }
   ],
@@ -771,6 +777,33 @@
       ],
       "evalAmounts": [
         30042740,
+        10000000,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T10:22+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 5.69,
+      "benchmarkValue": 7331.88,
+      "returns": [
+        0.01,
+        null,
+        1.15,
+        0.0
+      ],
+      "evalAmounts": [
+        29999540,
         10000000,
         10114500,
         10000000
