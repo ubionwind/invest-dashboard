@@ -295,5 +295,59 @@
       null,
       null
     ]
+  },
+  {
+    "ts": "2026-05-06T10:15+09:00",
+    "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+    "candidates": 34,
+    "protected": 12,
+    "stale": 0,
+    "benchmark": 5.47,
+    "benchmarkValue": 7316.48,
+    "returns": [
+      -0.13,
+      null,
+      0.0,
+      0.0
+    ],
+    "evalAmounts": [
+      29960040,
+      10000000,
+      10000000,
+      10000000
+    ],
+    "capital": [
+      29997940,
+      10000000,
+      10000000,
+      10000000
+    ]
+  },
+  {
+    "ts": "2026-05-06T10:20+09:00",
+    "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+    "candidates": 36,
+    "protected": 12,
+    "stale": 0,
+    "benchmark": 5.65,
+    "benchmarkValue": 7328.84,
+    "returns": [
+      0.15,
+      null,
+      1.15,
+      0.0
+    ],
+    "evalAmounts": [
+      30042740,
+      10000000,
+      10114500,
+      10000000
+    ],
+    "capital": [
+      29997940,
+      10000000,
+      10000000,
+      10000000
+    ]
   }
 ]
