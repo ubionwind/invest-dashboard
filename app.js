@@ -237,8 +237,9 @@ function renderSessionCard(s, full = false) {
         <strong>${fmt.format(s.candidateCount || 0)}</strong>
       </div>
       <div>
-        <span class="muted">시장 대비</span>
-        <strong class="${(cmp.excessReturnPct || 0) >= 0 ? 'up' : 'down'}">${pct(cmp.excessReturnPct)}</strong>
+        <span class="muted">수익률</span>
+        <strong class="${(pf.returnPct || 0) >= 0 ? 'up' : 'down'}">${pct(pf.returnPct)}</strong>
+        <small class="market-compare ${cmp.excessReturnPct == null ? '' : ((cmp.excessReturnPct || 0) >= 0 ? 'up' : 'down')}">시장 대비 ${pct(cmp.excessReturnPct)}</small>
       </div>
     </div>
     ${portfolioStrip(pf)}

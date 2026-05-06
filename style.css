@@ -73,6 +73,7 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .session-hero > div { padding: 13px; border-radius: 15px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.07); }
 .session-hero span, .session-hero strong { display: block; }
 .session-hero strong { margin-top: 4px; font-size: 28px; letter-spacing: -.04em; }
+.session-hero small.market-compare { display: block; margin-top: 3px; font-size: 12px; font-weight: 800; letter-spacing: -.02em; }
 .portfolio-strip { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7px; }
 .portfolio-strip > div { padding: 9px 8px; border-radius: 13px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.06); min-width: 0; }
 .portfolio-strip span, .portfolio-strip strong { display: block; }
