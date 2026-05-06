@@ -315,7 +315,7 @@ function renderItemCharts(data) {
         labels,
         datasets: [
           { label: '우리 수익률', data: history.map(x => x.returns?.[i]), borderColor: color, backgroundColor: `${color}22`, tension: .35, spanGaps: true },
-          { label: '시장 기간 수익률', data: history.map(x => x.benchmark), borderColor: '#ffffff', borderDash: [6, 5], pointRadius: 0, tension: .2, spanGaps: true }
+          { label: '시장 기간 수익률', data: history.map(x => x.marketReturns?.[i] ?? null), borderColor: '#ffffff', borderDash: [6, 5], pointRadius: 0, tension: .2, spanGaps: true }
         ]
       },
       options: chartOptions(v => `${v}%`)

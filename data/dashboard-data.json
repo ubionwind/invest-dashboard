@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T10:33+09:00",
+  "generatedAt": "2026-05-06T10:37+09:00",
   "summary": {
     "totalSessions": 4,
     "staleCount": 0,
@@ -8,13 +8,13 @@
   },
   "benchmark": {
     "label": "KOSPI",
-    "value": 7315.82,
-    "returnPct": 0.19,
-    "dailyReturnPct": 1.01,
+    "value": 7325.15,
+    "returnPct": 0.22,
+    "dailyReturnPct": 1.14,
     "date": "2026-05-06",
-    "time": "03:13:30",
+    "time": "03:17:30",
     "periodStart": "2026-05-06T10:09+09:00",
-    "periodEnd": "2026-05-06T10:33+09:00",
+    "periodEnd": "2026-05-06T10:37+09:00",
     "basis": "firstInvestment"
   },
   "sessions": [
@@ -88,17 +88,17 @@
       "sellAlerts": [],
       "portfolio": {
         "capital": 29997940,
-        "evalAmount": 30061140,
-        "pnl": 63200,
-        "returnPct": 0.21,
+        "evalAmount": 30070940,
+        "pnl": 73000,
+        "returnPct": 0.24,
         "positionCount": 2
       },
       "comparison": {
-        "returnPct": 0.21,
-        "benchmarkReturnPct": 0.19,
+        "returnPct": 0.24,
+        "benchmarkReturnPct": 0.22,
         "excessReturnPct": 0.02,
         "periodStart": "2026-05-06T10:09+09:00",
-        "periodEnd": "2026-05-06T10:33+09:00"
+        "periodEnd": "2026-05-06T10:37+09:00"
       }
     },
     {
@@ -316,10 +316,10 @@
       },
       "comparison": {
         "returnPct": 1.15,
-        "benchmarkReturnPct": 0.19,
-        "excessReturnPct": 0.96,
+        "benchmarkReturnPct": 0.22,
+        "excessReturnPct": 0.93,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T10:33+09:00"
+        "periodEnd": "2026-05-06T10:37+09:00"
       }
     },
     {
@@ -428,10 +428,10 @@
       },
       "comparison": {
         "returnPct": 0.0,
-        "benchmarkReturnPct": 0.19,
-        "excessReturnPct": -0.19,
+        "benchmarkReturnPct": 0.22,
+        "excessReturnPct": -0.22,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T10:33+09:00"
+        "periodEnd": "2026-05-06T10:37+09:00"
       }
     }
   ],
@@ -442,7 +442,7 @@
       "candidates": 0,
       "protected": 0,
       "stale": 0,
-      "benchmark": 0.0,
+      "benchmark": null,
       "benchmarkValue": 6936.99,
       "returns": [
         null,
@@ -457,6 +457,12 @@
         null
       ],
       "capital": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "marketReturns": [
         null,
         null,
         null,
@@ -469,7 +475,7 @@
       "candidates": 0,
       "protected": 0,
       "stale": 0,
-      "benchmark": 0.0,
+      "benchmark": null,
       "benchmarkValue": 6936.99,
       "returns": [
         0.0,
@@ -486,6 +492,12 @@
       "capital": [
         30000000,
         10000000,
+        null,
+        null
+      ],
+      "marketReturns": [
+        null,
+        null,
         null,
         null
       ]
@@ -496,7 +508,7 @@
       "candidates": 0,
       "protected": 0,
       "stale": 0,
-      "benchmark": 0.0,
+      "benchmark": null,
       "benchmarkValue": 6936.99,
       "returns": [
         0.0,
@@ -513,6 +525,12 @@
       "capital": [
         30000000,
         10000000,
+        null,
+        null
+      ],
+      "marketReturns": [
+        null,
+        null,
         null,
         null
       ]
@@ -523,7 +541,7 @@
       "candidates": 0,
       "protected": 0,
       "stale": 0,
-      "benchmark": 0.0,
+      "benchmark": null,
       "benchmarkValue": 6936.99,
       "returns": [
         0.0,
@@ -540,6 +558,12 @@
       "capital": [
         30000000,
         10000000,
+        null,
+        null
+      ],
+      "marketReturns": [
+        null,
+        null,
         null,
         null
       ]
@@ -550,7 +574,7 @@
       "candidates": 0,
       "protected": 0,
       "stale": 0,
-      "benchmark": 0.0,
+      "benchmark": null,
       "benchmarkValue": 6936.99,
       "returns": [
         0.0,
@@ -569,6 +593,12 @@
         10000000,
         null,
         null
+      ],
+      "marketReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -577,7 +607,7 @@
       "candidates": 0,
       "protected": 0,
       "stale": 0,
-      "benchmark": 4.54,
+      "benchmark": null,
       "benchmarkValue": 7252.09,
       "returns": [
         0.0,
@@ -596,6 +626,12 @@
         10000000,
         null,
         null
+      ],
+      "marketReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -604,7 +640,7 @@
       "candidates": 0,
       "protected": 0,
       "stale": 0,
-      "benchmark": 4.03,
+      "benchmark": null,
       "benchmarkValue": 7216.31,
       "returns": [
         0.0,
@@ -623,6 +659,12 @@
         10000000,
         null,
         null
+      ],
+      "marketReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -631,7 +673,7 @@
       "candidates": 0,
       "protected": 0,
       "stale": 0,
-      "benchmark": 4.94,
+      "benchmark": null,
       "benchmarkValue": 7279.73,
       "returns": [
         0.0,
@@ -650,6 +692,12 @@
         10000000,
         null,
         null
+      ],
+      "marketReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -658,7 +706,7 @@
       "candidates": 0,
       "protected": 0,
       "stale": 0,
-      "benchmark": 5.04,
+      "benchmark": null,
       "benchmarkValue": 7286.38,
       "returns": [
         null,
@@ -677,6 +725,12 @@
         10000000,
         null,
         null
+      ],
+      "marketReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -685,7 +739,7 @@
       "candidates": 0,
       "protected": 0,
       "stale": 0,
-      "benchmark": 5.44,
+      "benchmark": null,
       "benchmarkValue": 7314.64,
       "returns": [
         null,
@@ -704,6 +758,12 @@
         10000000,
         null,
         null
+      ],
+      "marketReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -712,7 +772,7 @@
       "candidates": 0,
       "protected": 0,
       "stale": 0,
-      "benchmark": 5.26,
+      "benchmark": null,
       "benchmarkValue": 7302.2,
       "returns": [
         null,
@@ -731,6 +791,12 @@
         10000000,
         null,
         null
+      ],
+      "marketReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -739,7 +805,7 @@
       "candidates": 34,
       "protected": 12,
       "stale": 0,
-      "benchmark": 5.47,
+      "benchmark": 0.0,
       "benchmarkValue": 7316.48,
       "returns": [
         -0.13,
@@ -758,6 +824,12 @@
         10000000,
         10000000,
         10000000
+      ],
+      "marketReturns": [
+        0.0,
+        null,
+        0.0,
+        0.0
       ]
     },
     {
@@ -766,7 +838,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 5.65,
+      "benchmark": 0.36,
       "benchmarkValue": 7328.84,
       "returns": [
         0.15,
@@ -785,6 +857,12 @@
         10000000,
         10000000,
         10000000
+      ],
+      "marketReturns": [
+        0.36,
+        null,
+        0.36,
+        0.36
       ]
     },
     {
@@ -793,7 +871,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 5.69,
+      "benchmark": 0.41,
       "benchmarkValue": 7331.88,
       "returns": [
         0.01,
@@ -812,6 +890,12 @@
         10000000,
         10000000,
         10000000
+      ],
+      "marketReturns": [
+        0.41,
+        null,
+        0.41,
+        0.41
       ]
     },
     {
@@ -820,7 +904,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 5.6,
+      "benchmark": 0.32,
       "benchmarkValue": 7325.32,
       "returns": [
         0.02,
@@ -839,6 +923,12 @@
         10000000,
         10000000,
         10000000
+      ],
+      "marketReturns": [
+        0.32,
+        null,
+        0.32,
+        0.32
       ]
     },
     {
@@ -866,6 +956,12 @@
         10000000,
         10000000,
         10000000
+      ],
+      "marketReturns": [
+        0.15,
+        null,
+        0.15,
+        0.15
       ]
     },
     {
@@ -893,6 +989,12 @@
         10000000,
         10000000,
         10000000
+      ],
+      "marketReturns": [
+        0.28,
+        null,
+        0.28,
+        0.28
       ]
     },
     {
@@ -920,6 +1022,12 @@
         10000000,
         10000000,
         10000000
+      ],
+      "marketReturns": [
+        0.29,
+        null,
+        0.29,
+        0.29
       ]
     },
     {
@@ -938,6 +1046,111 @@
       ],
       "evalAmounts": [
         30061140,
+        10000000,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ],
+      "marketReturns": [
+        0.19,
+        null,
+        0.19,
+        0.19
+      ]
+    },
+    {
+      "ts": "2026-05-06T10:36+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.2,
+      "benchmarkValue": 7316.98,
+      "returns": [
+        0.23,
+        null,
+        1.15,
+        0.0
+      ],
+      "marketReturns": [
+        0.2,
+        null,
+        0.2,
+        0.2
+      ],
+      "evalAmounts": [
+        30066040,
+        10000000,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T10:37+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.22,
+      "benchmarkValue": 7318.58,
+      "returns": [
+        null,
+        null,
+        1.15,
+        0.0
+      ],
+      "marketReturns": [
+        0.22,
+        null,
+        0.22,
+        0.22
+      ],
+      "evalAmounts": [
+        null,
+        null,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        null,
+        null,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T10:37+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.31,
+      "benchmarkValue": 7325.15,
+      "returns": [
+        0.24,
+        null,
+        1.15,
+        0.0
+      ],
+      "marketReturns": [
+        0.31,
+        null,
+        0.31,
+        0.31
+      ],
+      "evalAmounts": [
+        30070940,
         10000000,
         10114500,
         10000000
