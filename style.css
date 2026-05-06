@@ -94,8 +94,8 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .alert-item em { margin-top: 2px; color: var(--text); font-style: normal; font-size: 12px; }
 .return-big { justify-self: end; font-size: 25px; line-height: 1; letter-spacing: -.05em; font-weight: 900; white-space: nowrap; }
 .alert-item small { color: var(--muted); line-height: 1.35; }
-.pnl-group { white-space: nowrap; }
-.pnl-inline { font-weight: 900; }
+.alert-item .pnl-group { display: inline-block; white-space: nowrap; }
+.alert-item .pnl-inline { display: inline; font-weight: 900; }
 
 a { color: #a9c5ff; }
 footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }

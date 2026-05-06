@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T11:20+09:00",
+  "generatedAt": "2026-05-06T11:23+09:00",
   "summary": {
     "totalSessions": 4,
     "staleCount": 0,
@@ -8,13 +8,13 @@
   },
   "benchmark": {
     "label": "KOSPI",
-    "value": 7355.1,
-    "returnPct": 0.72,
-    "dailyReturnPct": 1.55,
+    "value": 7349.16,
+    "returnPct": 0.64,
+    "dailyReturnPct": 1.47,
     "date": "2026-05-06",
-    "time": "04:00:20",
+    "time": "04:03:20",
     "periodStart": "2026-05-06T10:14+09:00",
-    "periodEnd": "2026-05-06T11:20+09:00",
+    "periodEnd": "2026-05-06T11:23+09:00",
     "basis": "firstInvestment"
   },
   "sessions": [
@@ -64,8 +64,8 @@
           "code": "007660",
           "name": "이수페타시스",
           "status": "보유중",
-          "reason": "49주 · 매입 150398원 · 평가 7364700원 · 손익 -4800원",
-          "returnPct": -0.07
+          "reason": "49주 · 매입 150398원 · 평가 7359800원 · 손익 -9700원",
+          "returnPct": -0.13
         },
         {
           "code": "042700",
@@ -78,9 +78,9 @@
       "sellAlerts": [],
       "portfolio": {
         "capital": 29997940,
-        "evalAmount": 30040640,
-        "pnl": 42700,
-        "returnPct": 0.14,
+        "evalAmount": 30035740,
+        "pnl": 37800,
+        "returnPct": 0.13,
         "positionCount": 2,
         "positions": [
           {
@@ -88,9 +88,9 @@
             "name": "이수페타시스",
             "qty": 49,
             "entryPrice": 150398,
-            "evalAmount": 7364700,
-            "pnl": -4800,
-            "returnPct": -0.07
+            "evalAmount": 7359800,
+            "pnl": -9700,
+            "returnPct": -0.13
           },
           {
             "code": "042700",
@@ -104,7 +104,7 @@
         ]
       },
       "comparison": {
-        "returnPct": 0.14,
+        "returnPct": 0.13,
         "benchmarkReturnPct": null,
         "excessReturnPct": null
       }
@@ -351,10 +351,10 @@
       },
       "comparison": {
         "returnPct": 1.15,
-        "benchmarkReturnPct": 0.72,
-        "excessReturnPct": 0.43,
+        "benchmarkReturnPct": 0.64,
+        "excessReturnPct": 0.51,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T11:20+09:00"
+        "periodEnd": "2026-05-06T11:23+09:00"
       }
     },
     {
@@ -514,10 +514,10 @@
       },
       "comparison": {
         "returnPct": 0.0,
-        "benchmarkReturnPct": 0.72,
-        "excessReturnPct": -0.72,
+        "benchmarkReturnPct": 0.64,
+        "excessReturnPct": -0.64,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T11:20+09:00"
+        "periodEnd": "2026-05-06T11:23+09:00"
       }
     }
   ],
@@ -1534,6 +1534,39 @@
       ],
       "evalAmounts": [
         30040640,
+        10000000,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T11:23+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.64,
+      "benchmarkValue": 7349.16,
+      "returns": [
+        0.13,
+        null,
+        1.15,
+        0.0
+      ],
+      "marketReturns": [
+        null,
+        null,
+        0.64,
+        0.64
+      ],
+      "evalAmounts": [
+        30035740,
         10000000,
         10114500,
         10000000
