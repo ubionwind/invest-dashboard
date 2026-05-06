@@ -74,6 +74,15 @@ function pct(v) {
   return `${v > 0 ? '+' : ''}${Number(v).toFixed(2)}%`;
 }
 
+function colorizePnlText(text = '') {
+  const raw = String(text || '');
+  return raw.replace(/(손익\s*)([+-]?\d[\d,]*원)/g, (_, label, value) => {
+    const num = Number(String(value).replace(/원|,/g, ''));
+    const cls = Number.isNaN(num) ? '' : (num >= 0 ? 'up' : 'down');
+    return `${label}<span class="pnl-inline ${cls}">${value}</span>`;
+  });
+}
+
 function reasonParts(reason = '') {
   return String(reason || '')
     .split(';')
@@ -172,7 +181,7 @@ function tradeAlerts(s) {
         </div>
         ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<b class="return-big ${buyReturnClass}">${pct(buyReturn)}</b>`}
       </div>
-      ${x.reason ? `<small>${x.reason}</small>` : ''}
+      ${x.reason ? `<small>${colorizePnlText(x.reason)}</small>` : ''}
     </div>`}).join('')}</div>`;
   };
   return `<div class="trade-alerts">

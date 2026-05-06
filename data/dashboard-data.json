@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T11:16+09:00",
+  "generatedAt": "2026-05-06T11:18+09:00",
   "summary": {
     "totalSessions": 4,
     "staleCount": 0,
@@ -8,13 +8,13 @@
   },
   "benchmark": {
     "label": "KOSPI",
-    "value": 7343.69,
-    "returnPct": 0.57,
-    "dailyReturnPct": 1.39,
+    "value": 7351.9,
+    "returnPct": 0.68,
+    "dailyReturnPct": 1.5,
     "date": "2026-05-06",
-    "time": "03:56:00",
+    "time": "03:58:00",
     "periodStart": "2026-05-06T10:14+09:00",
-    "periodEnd": "2026-05-06T11:16+09:00",
+    "periodEnd": "2026-05-06T11:18+09:00",
     "basis": "firstInvestment"
   },
   "sessions": [
@@ -351,10 +351,10 @@
       },
       "comparison": {
         "returnPct": 1.15,
-        "benchmarkReturnPct": 0.57,
-        "excessReturnPct": 0.58,
+        "benchmarkReturnPct": 0.68,
+        "excessReturnPct": 0.47,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T11:16+09:00"
+        "periodEnd": "2026-05-06T11:18+09:00"
       }
     },
     {
@@ -514,10 +514,10 @@
       },
       "comparison": {
         "returnPct": 0.0,
-        "benchmarkReturnPct": 0.57,
-        "excessReturnPct": -0.57,
+        "benchmarkReturnPct": 0.68,
+        "excessReturnPct": -0.68,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T11:16+09:00"
+        "periodEnd": "2026-05-06T11:18+09:00"
       }
     }
   ],
@@ -1465,6 +1465,39 @@
         null,
         0.57,
         0.57
+      ],
+      "evalAmounts": [
+        30016740,
+        10000000,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T11:18+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.68,
+      "benchmarkValue": 7351.9,
+      "returns": [
+        0.06,
+        null,
+        1.15,
+        0.0
+      ],
+      "marketReturns": [
+        null,
+        null,
+        0.68,
+        0.68
       ],
       "evalAmounts": [
         30016740,
