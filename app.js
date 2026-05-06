@@ -4,6 +4,7 @@ let amountChart;
 let returnChart;
 let itemCharts = [];
 const isMobile = () => window.matchMedia('(max-width: 850px)').matches;
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
 function chartWindow(history) {
   const arr = history || [];
@@ -263,16 +264,20 @@ function overviewCandidateTiles(sessions) {
   </div>`;
 }
 
-function scrollToPanelStart() {
-  const main = document.querySelector('main');
-  const top = main ? Math.max(0, main.getBoundingClientRect().top + window.scrollY - 8) : 0;
-  window.scrollTo({ top, behavior: 'smooth' });
+function scrollToPanelStart(id) {
+  if (id === 'panel-overview') {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    return;
+  }
+  const panel = document.getElementById(id);
+  const top = panel ? Math.max(0, panel.getBoundingClientRect().top + window.scrollY - 12) : 0;
+  window.scrollTo({ top, behavior: 'auto' });
 }
 
 function setActive(id, shouldScroll = true) {
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.target === id));
   document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === id));
-  if (shouldScroll) requestAnimationFrame(scrollToPanelStart);
+  if (shouldScroll) requestAnimationFrame(() => scrollToPanelStart(id));
 }
 
 
@@ -302,6 +307,7 @@ function render(data) {
 
   renderMainCharts(data);
   renderItemCharts(data);
+  requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'auto' }));
 }
 
 function renderMainCharts(data) {
