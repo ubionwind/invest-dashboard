@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T10:31+09:00",
+  "generatedAt": "2026-05-06T10:33+09:00",
   "summary": {
     "totalSessions": 4,
     "staleCount": 0,
@@ -8,13 +8,13 @@
   },
   "benchmark": {
     "label": "KOSPI",
-    "value": 7323.39,
-    "returnPct": 0.29,
-    "dailyReturnPct": 1.11,
+    "value": 7315.82,
+    "returnPct": 0.19,
+    "dailyReturnPct": 1.01,
     "date": "2026-05-06",
-    "time": "03:11:40",
+    "time": "03:13:30",
     "periodStart": "2026-05-06T10:09+09:00",
-    "periodEnd": "2026-05-06T10:31+09:00",
+    "periodEnd": "2026-05-06T10:33+09:00",
     "basis": "firstInvestment"
   },
   "sessions": [
@@ -88,17 +88,17 @@
       "sellAlerts": [],
       "portfolio": {
         "capital": 29997940,
-        "evalAmount": 30037240,
-        "pnl": 39300,
-        "returnPct": 0.13,
+        "evalAmount": 30061140,
+        "pnl": 63200,
+        "returnPct": 0.21,
         "positionCount": 2
       },
       "comparison": {
-        "returnPct": 0.13,
-        "benchmarkReturnPct": 0.29,
-        "excessReturnPct": -0.16,
+        "returnPct": 0.21,
+        "benchmarkReturnPct": 0.19,
+        "excessReturnPct": 0.02,
         "periodStart": "2026-05-06T10:09+09:00",
-        "periodEnd": "2026-05-06T10:31+09:00"
+        "periodEnd": "2026-05-06T10:33+09:00"
       }
     },
     {
@@ -213,7 +213,7 @@
     {
       "name": "급등",
       "stage": "관찰",
-      "status": "INITIALIZED",
+      "status": "OK",
       "candidateCount": 10,
       "sellCandidateCount": 0,
       "validationCount": 0,
@@ -227,82 +227,82 @@
           "name": "삼성전자",
           "score": 189.1,
           "status": "",
-          "reason": "가상 진입만: 259,500원 기준, +11.61% 유지·거래대금 56056억, 5분 눌림 후 재돌파 여부 사후평가"
+          "reason": "진입만: 259,500원 기준, +11.61% 유지·거래대금 56056억, 5분 눌림 후 재돌파 여부 사후평가"
         },
         {
           "code": "000660",
           "name": "SK하이닉스",
           "score": 171.1,
           "status": "",
-          "reason": "가상 진입만: 1,589,000원 기준, +9.81% 유지·거래대금 41828억, 5분 눌림 후 재돌파 여부 사후평가"
+          "reason": "진입만: 1,589,000원 기준, +9.81% 유지·거래대금 41828억, 5분 눌림 후 재돌파 여부 사후평가"
         },
         {
           "code": "010120",
           "name": "LS ELECTRIC",
           "score": 158.5,
           "status": "",
-          "reason": "가상 진입만: 324,500원 기준, +10.37% 유지·거래대금 2546억, 5분 눌림 후 재돌파 여부 사후평가"
+          "reason": "진입만: 324,500원 기준, +10.37% 유지·거래대금 2546억, 5분 눌림 후 재돌파 여부 사후평가"
         },
         {
           "code": "336260",
           "name": "두산퓨얼셀",
           "score": 121.1,
           "status": "",
-          "reason": "가상 진입만: 65,900원 기준, +8.75% 유지·거래대금 645억, 5분 눌림 후 재돌파 여부 사후평가"
+          "reason": "진입만: 65,900원 기준, +8.75% 유지·거래대금 645억, 5분 눌림 후 재돌파 여부 사후평가"
         },
         {
           "code": "267260",
           "name": "HD현대일렉트릭",
           "score": 112.2,
           "status": "",
-          "reason": "가상 진입만: 1,402,000원 기준, +7.93% 유지·거래대금 1979억, 5분 눌림 후 재돌파 여부 사후평가"
+          "reason": "진입만: 1,402,000원 기준, +7.93% 유지·거래대금 1979억, 5분 눌림 후 재돌파 여부 사후평가"
         },
         {
           "code": "003670",
           "name": "포스코퓨처엠",
           "score": 85.0,
           "status": "",
-          "reason": "가상 진입만: 281,000원 기준, +5.24% 유지·거래대금 1660억, 5분 눌림 후 재돌파 여부 사후평가"
+          "reason": "진입만: 281,000원 기준, +5.24% 유지·거래대금 1660억, 5분 눌림 후 재돌파 여부 사후평가"
         },
         {
           "code": "005380",
           "name": "현대차",
           "score": 71.3,
           "status": "",
-          "reason": "가상 진입만: 554,000원 기준, +2.78% 유지·거래대금 4501억, 5분 눌림 후 재돌파 여부 사후평가"
+          "reason": "진입만: 554,000원 기준, +2.78% 유지·거래대금 4501억, 5분 눌림 후 재돌파 여부 사후평가"
         },
         {
           "code": "403870",
           "name": "HPSP",
           "score": 46.8,
           "status": "",
-          "reason": "watch only: 정규장 09:45 이후 +2.4% 이상 유지 및 거래대금/뉴스 확인 시 가상 진입 검토"
+          "reason": "watch only: 정규장 09:45 이후 +2.4% 이상 유지 및 거래대금/뉴스 확인 시 진입 검토"
         }
       ],
       "buyAlerts": [
         {
           "code": "010120",
           "name": "LS ELECTRIC",
-          "status": "VIRTUAL_FILLED",
-          "reason": "관찰 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
+          "status": "체결완료",
+          "reason": "진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
         },
         {
           "code": "267260",
           "name": "HD현대일렉트릭",
-          "status": "VIRTUAL_FILLED",
-          "reason": "관찰 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
+          "status": "체결완료",
+          "reason": "진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
         },
         {
           "code": "003670",
           "name": "포스코퓨처엠",
-          "status": "VIRTUAL_FILLED",
-          "reason": "관찰 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
+          "status": "체결완료",
+          "reason": "진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
         },
         {
           "code": "000660",
           "name": "SK하이닉스",
-          "status": "VIRTUAL_FILLED",
-          "reason": "관찰 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
+          "status": "체결완료",
+          "reason": "진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
         }
       ],
       "sellAlerts": [],
@@ -312,21 +312,20 @@
         "pnl": 114500,
         "returnPct": 1.15,
         "positionCount": 5,
-        "cash": 1674000,
-        "virtualOnly": true
+        "cash": 1674000
       },
       "comparison": {
         "returnPct": 1.15,
-        "benchmarkReturnPct": 0.29,
-        "excessReturnPct": 0.86,
+        "benchmarkReturnPct": 0.19,
+        "excessReturnPct": 0.96,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T10:31+09:00"
+        "periodEnd": "2026-05-06T10:33+09:00"
       }
     },
     {
       "name": "매일신규",
       "stage": "관찰",
-      "status": "INITIALIZED",
+      "status": "OK",
       "candidateCount": 12,
       "sellCandidateCount": 0,
       "validationCount": 0,
@@ -396,25 +395,25 @@
         {
           "code": "047810",
           "name": "한국항공우주",
-          "status": "VIRTUAL_FILLED",
+          "status": "체결완료",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
         },
         {
           "code": "079550",
           "name": "LIG넥스원",
-          "status": "VIRTUAL_FILLED",
+          "status": "체결완료",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
         },
         {
           "code": "012450",
           "name": "한화에어로스페이스",
-          "status": "VIRTUAL_FILLED",
+          "status": "체결완료",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
         },
         {
           "code": "010120",
           "name": "LS ELECTRIC",
-          "status": "VIRTUAL_FILLED",
+          "status": "체결완료",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
         }
       ],
@@ -425,15 +424,14 @@
         "pnl": 0,
         "returnPct": 0.0,
         "positionCount": 5,
-        "cash": 892200,
-        "virtualOnly": true
+        "cash": 892200
       },
       "comparison": {
         "returnPct": 0.0,
-        "benchmarkReturnPct": 0.29,
-        "excessReturnPct": -0.29,
+        "benchmarkReturnPct": 0.19,
+        "excessReturnPct": -0.19,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T10:31+09:00"
+        "periodEnd": "2026-05-06T10:33+09:00"
       }
     }
   ],
@@ -913,6 +911,33 @@
       ],
       "evalAmounts": [
         30037240,
+        10000000,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T10:33+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.19,
+      "benchmarkValue": 7315.82,
+      "returns": [
+        0.21,
+        null,
+        1.15,
+        0.0
+      ],
+      "evalAmounts": [
+        30061140,
         10000000,
         10114500,
         10000000
