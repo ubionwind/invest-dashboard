@@ -141,7 +141,7 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 
 a { color: #a9c5ff; }
 footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
-@media (max-width: 850px) {
+@media (max-width: 1024px) {
   body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
   .topbar { align-items: flex-start; flex-direction: column; }
   .grid.two, .kpis { grid-template-columns: 1fr; }

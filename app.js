@@ -3,7 +3,7 @@ const dtFmt = new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', year: '
 let amountChart;
 let returnChart;
 let itemCharts = [];
-const isMobile = () => window.matchMedia('(max-width: 850px)').matches;
+const isMobile = () => window.matchMedia('(max-width: 1024px)').matches;
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
 function chartWindow(history) {
