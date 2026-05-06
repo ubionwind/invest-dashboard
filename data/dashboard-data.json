@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T10:24+09:00",
+  "generatedAt": "2026-05-06T10:31+09:00",
   "summary": {
     "totalSessions": 4,
     "staleCount": 0,
@@ -8,13 +8,14 @@
   },
   "benchmark": {
     "label": "KOSPI",
-    "value": 7325.32,
-    "returnPct": 5.6,
-    "dailyReturnPct": 1.14,
+    "value": 7323.39,
+    "returnPct": 0.29,
+    "dailyReturnPct": 1.11,
     "date": "2026-05-06",
-    "time": "03:04:40",
-    "periodStart": "2026-05-06T08:39+09:00",
-    "periodEnd": "2026-05-06T10:24+09:00"
+    "time": "03:11:40",
+    "periodStart": "2026-05-06T10:09+09:00",
+    "periodEnd": "2026-05-06T10:31+09:00",
+    "basis": "firstInvestment"
   },
   "sessions": [
     {
@@ -27,7 +28,7 @@
       "gateCount": 0,
       "dryRunCount": 2,
       "protectedRows": 2,
-      "quoteCount": 4,
+      "quoteCount": 0,
       "topCandidates": [
         {
           "code": "007660",
@@ -87,17 +88,17 @@
       "sellAlerts": [],
       "portfolio": {
         "capital": 29997940,
-        "evalAmount": 30004140,
-        "pnl": 6200,
-        "returnPct": 0.02,
+        "evalAmount": 30037240,
+        "pnl": 39300,
+        "returnPct": 0.13,
         "positionCount": 2
       },
       "comparison": {
-        "returnPct": 0.02,
-        "benchmarkReturnPct": 0.32,
-        "excessReturnPct": -0.3,
+        "returnPct": 0.13,
+        "benchmarkReturnPct": 0.29,
+        "excessReturnPct": -0.16,
         "periodStart": "2026-05-06T10:09+09:00",
-        "periodEnd": "2026-05-06T10:24+09:00"
+        "periodEnd": "2026-05-06T10:31+09:00"
       }
     },
     {
@@ -283,25 +284,25 @@
           "code": "010120",
           "name": "LS ELECTRIC",
           "status": "VIRTUAL_FILLED",
-          "reason": "주문금지/가상만: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
+          "reason": "관찰 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
         },
         {
           "code": "267260",
           "name": "HD현대일렉트릭",
           "status": "VIRTUAL_FILLED",
-          "reason": "주문금지/가상만: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
+          "reason": "관찰 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
         },
         {
           "code": "003670",
           "name": "포스코퓨처엠",
           "status": "VIRTUAL_FILLED",
-          "reason": "주문금지/가상만: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
+          "reason": "관찰 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
         },
         {
           "code": "000660",
           "name": "SK하이닉스",
           "status": "VIRTUAL_FILLED",
-          "reason": "주문금지/가상만: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
+          "reason": "관찰 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
         }
       ],
       "sellAlerts": [],
@@ -316,10 +317,10 @@
       },
       "comparison": {
         "returnPct": 1.15,
-        "benchmarkReturnPct": 0.32,
-        "excessReturnPct": 0.83,
+        "benchmarkReturnPct": 0.29,
+        "excessReturnPct": 0.86,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T10:24+09:00"
+        "periodEnd": "2026-05-06T10:31+09:00"
       }
     },
     {
@@ -429,10 +430,10 @@
       },
       "comparison": {
         "returnPct": 0.0,
-        "benchmarkReturnPct": 0.32,
-        "excessReturnPct": -0.32,
+        "benchmarkReturnPct": 0.29,
+        "excessReturnPct": -0.29,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T10:24+09:00"
+        "periodEnd": "2026-05-06T10:31+09:00"
       }
     }
   ],
@@ -831,6 +832,87 @@
       ],
       "evalAmounts": [
         30004140,
+        10000000,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T10:27+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.15,
+      "benchmarkValue": 7312.85,
+      "returns": [
+        -0.09,
+        null,
+        1.15,
+        0.0
+      ],
+      "evalAmounts": [
+        29970140,
+        10000000,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T10:30+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.28,
+      "benchmarkValue": 7322.74,
+      "returns": [
+        -0.09,
+        null,
+        1.15,
+        0.0
+      ],
+      "evalAmounts": [
+        29969840,
+        10000000,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T10:31+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.29,
+      "benchmarkValue": 7323.39,
+      "returns": [
+        0.13,
+        null,
+        1.15,
+        0.0
+      ],
+      "evalAmounts": [
+        30037240,
         10000000,
         10114500,
         10000000
