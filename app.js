@@ -79,7 +79,7 @@ function colorizePnlText(text = '') {
   return raw.replace(/(손익\s*)([+-]?\d[\d,]*원)/g, (_, label, value) => {
     const num = Number(String(value).replace(/원|,/g, ''));
     const cls = Number.isNaN(num) ? '' : (num >= 0 ? 'up' : 'down');
-    return `${label}<span class="pnl-inline ${cls}">${value}</span>`;
+    return `<span class="pnl-group">${label}<span class="pnl-inline ${cls}">${value}</span></span>`;
   });
 }
 
