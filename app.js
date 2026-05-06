@@ -344,7 +344,7 @@ function renderMainCharts(data) {
   const history = chartWindow(data.history);
   const labels = history.map(x => formatKst(x.ts).replace(/^\d{4}-/, ''));
   const names = data.sessions.map(s => s.name);
-  const colors = ['#79a7ff', '#35d399', '#ffd166', '#ff8fab'];
+  const colors = ['#79a7ff', '#35d399', '#ffd166', '#ff8fab', '#c084fc', '#fb923c', '#67e8f9'];
 
   if (amountChart) amountChart.destroy();
   amountChart = new Chart(document.getElementById('amountChart'), {
@@ -352,8 +352,8 @@ function renderMainCharts(data) {
     data: {
       labels,
       datasets: [
-        ...names.map((name, i) => ({ label: `${name} 평가금액`, data: history.map(x => x.evalAmounts?.[i]), borderColor: colors[i], backgroundColor: `${colors[i]}22`, tension: .35, spanGaps: true })),
-        ...names.map((name, i) => ({ label: `${name} 자본금`, data: history.map(x => x.capital?.[i]), borderColor: colors[i], borderDash: [5, 5], pointRadius: 0, tension: 0, spanGaps: true }))
+        ...names.map((name, i) => ({ label: `${name} 평가금액`, data: history.map(x => x.evalAmounts?.[i]), borderColor: colors[i % colors.length], backgroundColor: `${colors[i % colors.length]}22`, tension: .35, spanGaps: true })),
+        ...names.map((name, i) => ({ label: `${name} 자본금`, data: history.map(x => x.capital?.[i]), borderColor: colors[i % colors.length], borderDash: [5, 5], pointRadius: 0, tension: 0, spanGaps: true }))
       ]
     },
     options: chartOptions(v => `${fmt.format(v/10000)}만`)
@@ -365,7 +365,7 @@ function renderMainCharts(data) {
     data: {
       labels,
       datasets: [
-        ...names.map((name, i) => ({ label: `${name} 수익률`, data: history.map(x => x.returns?.[i]), borderColor: colors[i], backgroundColor: `${colors[i]}22`, tension: .35, spanGaps: true })),
+        ...names.map((name, i) => ({ label: `${name} 수익률`, data: history.map(x => x.returns?.[i]), borderColor: colors[i % colors.length], backgroundColor: `${colors[i % colors.length]}22`, tension: .35, spanGaps: true })),
         { label: 'KOSPI 수익률', data: history.map(x => x.benchmark), borderColor: '#ffffff', borderDash: [6, 5], pointRadius: 0, tension: .2, spanGaps: true },
         { label: 'KODEX200 수익률', data: history.map(x => x.kodex200), borderColor: '#b7ff5a', borderDash: [2, 4], pointRadius: 0, tension: .2, spanGaps: true }
       ]
@@ -380,7 +380,7 @@ function renderItemCharts(data) {
   itemCharts = [];
   const history = chartWindow(data.history);
   const labels = history.map(x => formatKst(x.ts).replace(/^\d{4}-/, ''));
-  const colors = ['#79a7ff', '#35d399', '#ffd166', '#ff8fab'];
+  const colors = ['#79a7ff', '#35d399', '#ffd166', '#ff8fab', '#c084fc', '#fb923c', '#67e8f9'];
 
   document.querySelectorAll('.item-amount-chart').forEach((canvas, i) => {
     const color = colors[i % colors.length];
