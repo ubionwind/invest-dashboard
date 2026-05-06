@@ -171,20 +171,31 @@ function candidateTile(c, idx) {
 function performanceBlock(s) {
   const pf = s.portfolio || {};
   const cmp = s.comparison || {};
-  return `<div class="card">
-    <div class="card-head"><h3>자산 / 수익률</h3><span class="muted">요약</span></div>
-    <div class="kpis">
-      ${kpi('자본금', money(pf.capital))}
-      ${kpi('현재 평가금액', money(pf.evalAmount))}
-      ${kpi('평가손익', money(pf.pnl))}
-      ${kpi('누적 수익률', pct(pf.returnPct))}
+  return `<div class="card strategy-dashboard">
+    <div class="card-head">
+      <div>
+        <h3>${s.name} 전략 대시보드</h3>
+        <p class="muted">자산 · 수익률 · 시장 비교</p>
+      </div>
+      <span class="badge ${statusClass(s.status)}">${s.status}</span>
     </div>
+    <div class="session-hero">
+      <div>
+        <span class="muted">후보</span>
+        <strong>${fmt.format(s.candidateCount || 0)}</strong>
+      </div>
+      <div>
+        <span class="muted">수익률</span>
+        <strong class="${(pf.returnPct || 0) >= 0 ? 'up' : 'down'}">${pct(pf.returnPct)}</strong>
+        <small class="market-compare ${cmp.excessReturnPct == null ? '' : ((cmp.excessReturnPct || 0) >= 0 ? 'up' : 'down')}">시장 대비 ${pct(cmp.excessReturnPct)}</small>
+      </div>
+    </div>
+    ${portfolioStrip(pf)}
     <div class="kpis comparison-kpis">
       ${kpi('내 누적 수익률', pct(cmp.returnPct))}
       ${kpi('시장 누적 수익률', pct(cmp.benchmarkReturnPct))}
       ${kpi('시장 대비', pct(cmp.excessReturnPct))}
     </div>
-  </div>
     <div class="grid two item-chart-grid">
       <div class="mini-chart">
         <div class="chart-title">평가금액 변동</div>
@@ -259,17 +270,18 @@ function tradeAlerts(s) {
   </div>`;
 }
 
-function renderSessionCard(s, full = false) {
+function renderSessionCard(s, full = false, showSummary = true) {
   const cmp = s.comparison || {};
   const pf = s.portfolio || {};
-  return `<article class="card session-card">
+  return `${full ? performanceBlock(s) : ''}<article class="card session-card">
     <div class="card-head">
       <div>
-        <h3>${s.name}</h3>
-        <p class="muted">${s.stage}</p>
+        <h3>${full ? '전략 상세' : s.name}</h3>
+        <p class="muted">${full ? `${s.name} · ${s.stage}` : s.stage}</p>
       </div>
       <span class="badge ${statusClass(s.status)}">${s.status}</span>
     </div>
+    ${showSummary ? `
     <div class="session-hero">
       <div>
         <span class="muted">후보</span>
@@ -281,7 +293,7 @@ function renderSessionCard(s, full = false) {
         <small class="market-compare ${cmp.excessReturnPct == null ? '' : ((cmp.excessReturnPct || 0) >= 0 ? 'up' : 'down')}">시장 대비 ${pct(cmp.excessReturnPct)}</small>
       </div>
     </div>
-    ${portfolioStrip(pf)}
+    ${portfolioStrip(pf)}` : ''}
     ${holdingsBlock(pf)}
     <div class="mini-facts">
       <span>검증 ${fmt.format(s.validationCount || 0)}</span>
@@ -291,7 +303,7 @@ function renderSessionCard(s, full = false) {
     </div>
     ${tradeAlerts(s)}
     ${s.topCandidates?.length ? `<div class="strategy-candidates"><h3>후보 타일</h3><p class="candidate-help"><span class="desktop-help">판단점수는 전략별 원점수를 공통 0~100 구간으로 환산한 실행 강도입니다. 90+ 강매수권, 80+ 우선검토, 70+ 관찰강화, 60 미만은 아직 약함으로 봅니다.</span><span class="mobile-help">판단점수: 90+ 강함 · 80+ 우선 · 70+ 관찰 · 60↓ 약함</span></p>${candidateList(s.topCandidates)}</div>` : ''}
-  </article>${full ? performanceBlock(s) : ''}`;
+  </article>`;
 }
 
 function scrollToPanelStart(id) {
@@ -332,7 +344,7 @@ function render(data) {
   document.getElementById('sessionCards').innerHTML = '';
   document.getElementById('sessionPanels').innerHTML = data.sessions.map((s, i) => `
     <section class="panel" id="panel-${i}">
-      ${renderSessionCard(s, true)}
+      ${renderSessionCard(s, true, false)}
     </section>`).join('');
 
   renderMainCharts(data);
