@@ -59,21 +59,34 @@
           "reason": "meta=0.76; 등락률=1.39; theme=2차전지소재"
         }
       ],
-      "buyAlerts": [],
+      "buyAlerts": [
+        {
+          "code": "007660",
+          "name": "이수페타시스",
+          "status": "보유중",
+          "reason": "49주 · 평가 7374500원 · 손익 5000원"
+        },
+        {
+          "code": "042700",
+          "name": "한미반도체",
+          "status": "보유중",
+          "reason": "19주 · 평가 7305500원 · 손익 57000원"
+        }
+      ],
       "sellAlerts": [],
       "portfolio": {
         "capital": 29997940,
-        "evalAmount": 30064840,
-        "pnl": 66900,
-        "returnPct": 0.22,
+        "evalAmount": 30059940,
+        "pnl": 62000,
+        "returnPct": 0.21,
         "positionCount": 2,
         "positions": [
           {
             "code": "007660",
             "name": "이수페타시스",
             "qty": 49,
-            "evalAmount": 7379400,
-            "pnl": 9900
+            "evalAmount": 7374500,
+            "pnl": 5000
           },
           {
             "code": "042700",
@@ -85,7 +98,7 @@
         ]
       },
       "comparison": {
-        "returnPct": 0.22,
+        "returnPct": 0.21,
         "benchmarkReturnPct": null,
         "excessReturnPct": null
       }
@@ -1248,6 +1261,39 @@
       ],
       "evalAmounts": [
         30064840,
+        10000000,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T11:01+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.38,
+      "benchmarkValue": 7330.28,
+      "returns": [
+        0.21,
+        null,
+        1.15,
+        0.0
+      ],
+      "marketReturns": [
+        null,
+        null,
+        0.38,
+        0.38
+      ],
+      "evalAmounts": [
+        30059940,
         10000000,
         10114500,
         10000000
