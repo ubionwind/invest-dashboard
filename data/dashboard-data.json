@@ -1,24 +1,36 @@
 {
-  "generatedAt": "2026-05-06T15:25+09:00",
+  "generatedAt": "2026-05-06T15:34+09:00",
   "summary": {
     "totalSessions": 4,
     "staleCount": 0,
     "candidateCount": 38,
     "protectedRows": 4,
     "totalCapital": 59995700,
-    "totalEvalAmount": 60730300,
-    "totalPnl": 734600,
-    "totalReturnPct": 1.22
+    "totalEvalAmount": 60684800,
+    "totalPnl": 689100,
+    "totalReturnPct": 1.15
   },
   "benchmark": {
     "label": "KOSPI",
-    "value": 7424.07,
-    "returnPct": 1.67,
-    "dailyReturnPct": 2.5,
+    "value": 7407.18,
+    "returnPct": 1.44,
+    "dailyReturnPct": 2.27,
     "date": "2026-05-06",
-    "time": "08:04:50",
+    "time": "08:13:30",
     "periodStart": "2026-05-06T10:08+09:00",
-    "periodEnd": "2026-05-06T15:25+09:00",
+    "periodEnd": "2026-05-06T15:34+09:00",
+    "basis": "firstInvestment"
+  },
+  "kodexBenchmark": {
+    "label": "KODEX 200",
+    "code": "069500",
+    "value": 113270.0,
+    "returnPct": 0.0,
+    "dailyReturnPct": 7.57,
+    "date": "2026-05-06",
+    "time": "15:34:08",
+    "periodStart": "2026-05-06T10:08+09:00",
+    "periodEnd": "2026-05-06T15:34+09:00",
     "basis": "firstInvestment"
   },
   "sessions": [
@@ -43,7 +55,7 @@
           "rank": 1,
           "evaluatedAt": "2026-05-06T06:15:02.683Z",
           "status": "보유중",
-          "candidateNote": "보유 5시간 17분 · 매입 150398원 · 평가 7428400원 · 손익 58900원",
+          "candidateNote": "보유 5시간 26분 · 매입 150398원 · 평가 7428400원 · 손익 58900원",
           "reason": "meta=0.84; 등락률=1.41; theme=AI기판"
         },
         {
@@ -55,7 +67,7 @@
           "rank": 2,
           "evaluatedAt": "2026-05-06T06:15:02.683Z",
           "status": "보유중",
-          "candidateNote": "보유 5시간 17분 · 매입 381500원 · 평가 7476500원 · 손익 228000원",
+          "candidateNote": "보유 5시간 26분 · 매입 381500원 · 평가 7495500원 · 손익 247000원",
           "reason": "meta=0.82; 등락률=3.57; theme=HBM장비"
         },
         {
@@ -79,7 +91,7 @@
           "rank": 4,
           "evaluatedAt": "2026-05-06T06:15:02.683Z",
           "status": "보유중",
-          "candidateNote": "보유 45분 · 매입 224000원 · 평가 7557000원 · 손익 165000원",
+          "candidateNote": "보유 54분 · 매입 224000원 · 평가 7540500원 · 손익 148500원",
           "reason": "meta=0.76; 등락률=6.5; theme=2차전지소재"
         }
       ],
@@ -90,32 +102,32 @@
           "status": "보유중",
           "reason": "49주 · 매입 150398원 · 평가 7428400원 · 손익 58900원",
           "returnPct": 0.8,
-          "holdingPeriod": "보유 5시간 17분"
+          "holdingPeriod": "보유 5시간 26분"
         },
         {
           "code": "042700",
           "name": "한미반도체",
           "status": "보유중",
-          "reason": "19주 · 매입 381500원 · 평가 7476500원 · 손익 228000원",
-          "returnPct": 3.15,
-          "holdingPeriod": "보유 5시간 17분"
+          "reason": "19주 · 매입 381500원 · 평가 7495500원 · 손익 247000원",
+          "returnPct": 3.41,
+          "holdingPeriod": "보유 5시간 26분"
         },
         {
           "code": "247540",
           "name": "에코프로비엠",
           "status": "보유중",
-          "reason": "33주 · 매입 224000원 · 평가 7557000원 · 손익 165000원",
-          "returnPct": 2.23,
-          "holdingPeriod": "보유 45분"
+          "reason": "33주 · 매입 224000원 · 평가 7540500원 · 손익 148500원",
+          "returnPct": 2.01,
+          "holdingPeriod": "보유 54분"
         }
       ],
       "sellAlerts": [],
       "portfolio": {
         "capital": 29996900,
         "cash": 7986900,
-        "investmentAmount": 22461900,
-        "evalAmount": 30448800,
-        "pnl": 451900,
+        "investmentAmount": 22464400,
+        "evalAmount": 30451300,
+        "pnl": 454400,
         "returnPct": 1.51,
         "positionCount": 3,
         "positions": [
@@ -125,7 +137,7 @@
             "qty": 49,
             "entryPrice": 150398,
             "entryAt": "2026-05-06T10:08+09:00",
-            "holdingPeriod": "보유 5시간 17분",
+            "holdingPeriod": "보유 5시간 26분",
             "evalAmount": 7428400,
             "pnl": 58900,
             "returnPct": 0.8
@@ -136,10 +148,10 @@
             "qty": 19,
             "entryPrice": 381500,
             "entryAt": "2026-05-06T10:08+09:00",
-            "holdingPeriod": "보유 5시간 17분",
-            "evalAmount": 7476500,
-            "pnl": 228000,
-            "returnPct": 3.15
+            "holdingPeriod": "보유 5시간 26분",
+            "evalAmount": 7495500,
+            "pnl": 247000,
+            "returnPct": 3.41
           },
           {
             "code": "247540",
@@ -147,19 +159,19 @@
             "qty": 33,
             "entryPrice": 224000,
             "entryAt": "2026-05-06T14:40+09:00",
-            "holdingPeriod": "보유 45분",
-            "evalAmount": 7557000,
-            "pnl": 165000,
-            "returnPct": 2.23
+            "holdingPeriod": "보유 54분",
+            "evalAmount": 7540500,
+            "pnl": 148500,
+            "returnPct": 2.01
           }
         ]
       },
       "comparison": {
         "returnPct": 1.51,
-        "benchmarkReturnPct": 1.67,
-        "excessReturnPct": -0.16,
+        "benchmarkReturnPct": 1.44,
+        "excessReturnPct": 0.07,
         "periodStart": "2026-05-06T10:08+09:00",
-        "periodEnd": "2026-05-06T15:25+09:00"
+        "periodEnd": "2026-05-06T15:34+09:00"
       }
     },
     {
@@ -219,7 +231,7 @@
           "rank": 4,
           "evaluatedAt": "2026-05-06T06:15:02.683Z",
           "status": "보유중",
-          "candidateNote": "보유 3시간 13분 · 매입 264859원 · 평가 8560000원 · 손익 84500원",
+          "candidateNote": "보유 3시간 22분 · 매입 264859원 · 평가 8512000원 · 손익 36500원",
           "reason": "meta=0.45; 등락률=15.27; theme=반도체"
         },
         {
@@ -276,19 +288,19 @@
           "code": "005930",
           "name": "삼성전자",
           "status": "보유중",
-          "reason": "32주 · 매입 264859원 · 평가 8560000원 · 손익 84500원",
-          "returnPct": 1.0,
-          "holdingPeriod": "보유 3시간 13분"
+          "reason": "32주 · 매입 264859원 · 평가 8512000원 · 손익 36500원",
+          "returnPct": 0.43,
+          "holdingPeriod": "보유 3시간 22분"
         }
       ],
       "sellAlerts": [],
       "portfolio": {
         "capital": 9998800,
         "cash": 1523300,
-        "investmentAmount": 8560000,
-        "evalAmount": 10083300,
-        "pnl": 84500,
-        "returnPct": 0.85,
+        "investmentAmount": 8512000,
+        "evalAmount": 10035300,
+        "pnl": 36500,
+        "returnPct": 0.37,
         "positionCount": 1,
         "positions": [
           {
@@ -297,19 +309,19 @@
             "qty": 32,
             "entryPrice": 264859,
             "entryAt": "2026-05-06T12:12+09:00",
-            "holdingPeriod": "보유 3시간 13분",
-            "evalAmount": 8560000,
-            "pnl": 84500,
-            "returnPct": 1.0
+            "holdingPeriod": "보유 3시간 22분",
+            "evalAmount": 8512000,
+            "pnl": 36500,
+            "returnPct": 0.43
           }
         ]
       },
       "comparison": {
-        "returnPct": 0.85,
-        "benchmarkReturnPct": 0.97,
-        "excessReturnPct": -0.12,
+        "returnPct": 0.37,
+        "benchmarkReturnPct": 0.74,
+        "excessReturnPct": -0.37,
         "periodStart": "2026-05-06T12:12+09:00",
-        "periodEnd": "2026-05-06T15:25+09:00"
+        "periodEnd": "2026-05-06T15:34+09:00"
       }
     },
     {
@@ -331,7 +343,7 @@
           "rawScore": 297.5,
           "changePct": 23.43,
           "rank": 1,
-          "evaluatedAt": "2026-05-06T15:21:16+09:00",
+          "evaluatedAt": "2026-05-06T15:29:30+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "진입만: 74,800원 기준, +23.43% 유지·거래대금 2931억, 5분 눌림 후 재돌파 여부 사후평가"
@@ -343,7 +355,7 @@
           "rawScore": 225.7,
           "changePct": 15.27,
           "rank": 2,
-          "evaluatedAt": "2026-05-06T15:21:16+09:00",
+          "evaluatedAt": "2026-05-06T15:29:30+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T10:14 · 진입 당시 점수 169.8 · 진입 당시 등락률 10.32%",
           "reason": "진입만: 268,000원 기준, +15.27% 유지·거래대금 98709억, 5분 눌림 후 재돌파 여부 사후평가"
@@ -355,7 +367,7 @@
           "rawScore": 178.0,
           "changePct": 10.5,
           "rank": 3,
-          "evaluatedAt": "2026-05-06T15:21:16+09:00",
+          "evaluatedAt": "2026-05-06T15:29:30+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T10:14 · 진입 당시 점수 152.8 · 진입 당시 등락률 9.19%",
           "reason": "진입만: 1,599,000원 기준, +10.5% 유지·거래대금 68068억, 5분 눌림 후 재돌파 여부 사후평가"
@@ -367,7 +379,7 @@
           "rawScore": 140.4,
           "changePct": 7.65,
           "rank": 4,
-          "evaluatedAt": "2026-05-06T15:21:16+09:00",
+          "evaluatedAt": "2026-05-06T15:29:30+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T10:14 · 진입 당시 점수 70.7 · 진입 당시 등락률 3.83%",
           "reason": "진입만: 316,500원 기준, +7.65% 유지·거래대금 4316억, 5분 눌림 후 재돌파 여부 사후평가"
@@ -379,7 +391,7 @@
           "rawScore": 125.7,
           "changePct": 8.05,
           "rank": 5,
-          "evaluatedAt": "2026-05-06T15:21:16+09:00",
+          "evaluatedAt": "2026-05-06T15:29:30+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T10:14 · 진입 당시 점수 138.4 · 진입 당시 등락률 8.61%",
           "reason": "진입만: 288,500원 기준, +8.05% 유지·거래대금 2515억, 5분 눌림 후 재돌파 여부 사후평가"
@@ -391,7 +403,7 @@
           "rawScore": 103.9,
           "changePct": 6.08,
           "rank": 6,
-          "evaluatedAt": "2026-05-06T15:21:16+09:00",
+          "evaluatedAt": "2026-05-06T15:29:30+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T10:14 · 진입 당시 점수 102.2 · 진입 당시 등락률 6.16%",
           "reason": "진입만: 1,378,000원 기준, +6.08% 유지·거래대금 2790억, 5분 눌림 후 재돌파 여부 사후평가"
@@ -403,7 +415,7 @@
           "rawScore": 71.8,
           "changePct": 1.86,
           "rank": 7,
-          "evaluatedAt": "2026-05-06T15:21:16+09:00",
+          "evaluatedAt": "2026-05-06T15:29:30+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "watch only: 정규장 09:45 이후 +2.4% 이상 유지 및 거래대금/뉴스 확인 시 진입 검토"
@@ -415,7 +427,7 @@
           "rawScore": 69.0,
           "changePct": 1.59,
           "rank": 8,
-          "evaluatedAt": "2026-05-06T15:21:16+09:00",
+          "evaluatedAt": "2026-05-06T15:29:30+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "watch only: 정규장 09:45 이후 +2.4% 이상 유지 및 거래대금/뉴스 확인 시 진입 검토"
@@ -428,7 +440,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 305250.0원 · 평가 1911000원 · 손익 79500원",
           "returnPct": 4.34,
-          "holdingPeriod": "보유 5시간 11분"
+          "holdingPeriod": "보유 5시간 20분"
         },
         {
           "code": "267260",
@@ -436,7 +448,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 1379000.0원 · 평가 1397000원 · 손익 18000원",
           "returnPct": 1.31,
-          "holdingPeriod": "보유 5시간 11분"
+          "holdingPeriod": "보유 5시간 20분"
         },
         {
           "code": "003670",
@@ -444,7 +456,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 290000.0원 · 평가 1731000원 · 손익 -9000원",
           "returnPct": -0.52,
-          "holdingPeriod": "보유 5시간 11분"
+          "holdingPeriod": "보유 5시간 20분"
         },
         {
           "code": "000660",
@@ -452,7 +464,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 1580000.0원 · 평가 1594000원 · 손익 14000원",
           "returnPct": 0.89,
-          "holdingPeriod": "보유 5시간 11분"
+          "holdingPeriod": "보유 5시간 20분"
         }
       ],
       "sellAlerts": [],
@@ -471,7 +483,7 @@
             "qty": 7,
             "entryPrice": 256500,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 11분",
+            "holdingPeriod": "보유 5시간 20분",
             "evalAmount": 1872500,
             "pnl": 77000,
             "returnPct": 4.29
@@ -482,7 +494,7 @@
             "qty": 1,
             "entryPrice": 1580000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 11분",
+            "holdingPeriod": "보유 5시간 20분",
             "evalAmount": 1594000,
             "pnl": 14000,
             "returnPct": 0.89
@@ -493,7 +505,7 @@
             "qty": 6,
             "entryPrice": 290000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 11분",
+            "holdingPeriod": "보유 5시간 20분",
             "evalAmount": 1731000,
             "pnl": -9000,
             "returnPct": -0.52
@@ -504,7 +516,7 @@
             "qty": 1,
             "entryPrice": 1379000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 11분",
+            "holdingPeriod": "보유 5시간 20분",
             "evalAmount": 1397000,
             "pnl": 18000,
             "returnPct": 1.31
@@ -515,7 +527,7 @@
             "qty": 6,
             "entryPrice": 305250,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 11분",
+            "holdingPeriod": "보유 5시간 20분",
             "evalAmount": 1911000,
             "pnl": 79500,
             "returnPct": 4.34
@@ -524,10 +536,10 @@
       },
       "comparison": {
         "returnPct": 1.8,
-        "benchmarkReturnPct": 1.67,
-        "excessReturnPct": 0.13,
+        "benchmarkReturnPct": 1.44,
+        "excessReturnPct": 0.36,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T15:25+09:00"
+        "periodEnd": "2026-05-06T15:34+09:00"
       }
     },
     {
@@ -549,7 +561,7 @@
           "rawScore": 70.0,
           "changePct": 0.0,
           "rank": 1,
-          "evaluatedAt": "2026-05-06T15:21:22+09:00",
+          "evaluatedAt": "2026-05-06T15:29:33+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T10:14 · 진입 당시 점수 70.0 · 진입 당시 등락률 0.0%",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -561,7 +573,7 @@
           "rawScore": 70.0,
           "changePct": 0.0,
           "rank": 2,
-          "evaluatedAt": "2026-05-06T15:21:22+09:00",
+          "evaluatedAt": "2026-05-06T15:29:33+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T10:14 · 진입 당시 점수 70.0 · 진입 당시 등락률 0.0%",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -573,7 +585,7 @@
           "rawScore": 70.0,
           "changePct": 0.0,
           "rank": 3,
-          "evaluatedAt": "2026-05-06T15:21:22+09:00",
+          "evaluatedAt": "2026-05-06T15:29:33+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T10:14 · 진입 당시 점수 70.0 · 진입 당시 등락률 0.0%",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -585,7 +597,7 @@
           "rawScore": 70.0,
           "changePct": 0.0,
           "rank": 4,
-          "evaluatedAt": "2026-05-06T15:21:22+09:00",
+          "evaluatedAt": "2026-05-06T15:29:33+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T10:14 · 진입 당시 점수 70.0 · 진입 당시 등락률 0.0%",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -597,7 +609,7 @@
           "rawScore": 70.0,
           "changePct": 0.0,
           "rank": 5,
-          "evaluatedAt": "2026-05-06T15:21:22+09:00",
+          "evaluatedAt": "2026-05-06T15:29:33+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T10:14 · 진입 당시 점수 70.0 · 진입 당시 등락률 0.0%",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -609,7 +621,7 @@
           "rawScore": 70.0,
           "changePct": 0.0,
           "rank": 6,
-          "evaluatedAt": "2026-05-06T15:21:22+09:00",
+          "evaluatedAt": "2026-05-06T15:29:33+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -621,7 +633,7 @@
           "rawScore": 70.0,
           "changePct": 0.0,
           "rank": 7,
-          "evaluatedAt": "2026-05-06T15:21:22+09:00",
+          "evaluatedAt": "2026-05-06T15:29:33+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -633,7 +645,7 @@
           "rawScore": 66.0,
           "changePct": 0.0,
           "rank": 8,
-          "evaluatedAt": "2026-05-06T15:21:22+09:00",
+          "evaluatedAt": "2026-05-06T15:29:33+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -646,7 +658,7 @@
           "status": "보유중",
           "reason": "11주 · 매입 180000.0원 · 평가 1950300원 · 손익 -29700원",
           "returnPct": -1.5,
-          "holdingPeriod": "보유 5시간 11분"
+          "holdingPeriod": "보유 5시간 20분"
         },
         {
           "code": "079550",
@@ -654,7 +666,7 @@
           "status": "보유중",
           "reason": "2주 · 매입 983000.0원 · 평가 1972000원 · 손익 6000원",
           "returnPct": 0.31,
-          "holdingPeriod": "보유 5시간 11분"
+          "holdingPeriod": "보유 5시간 20분"
         },
         {
           "code": "012450",
@@ -662,7 +674,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 1465000.0원 · 평가 1442000원 · 손익 -23000원",
           "returnPct": -1.57,
-          "holdingPeriod": "보유 5시간 11분"
+          "holdingPeriod": "보유 5시간 20분"
         },
         {
           "code": "010120",
@@ -670,7 +682,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 294000.0원 · 평가 1911000원 · 손익 147000원",
           "returnPct": 8.33,
-          "holdingPeriod": "보유 5시간 11분"
+          "holdingPeriod": "보유 5시간 20분"
         }
       ],
       "sellAlerts": [],
@@ -689,7 +701,7 @@
             "qty": 16,
             "entryPrice": 120800,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 11분",
+            "holdingPeriod": "보유 5시간 20분",
             "evalAmount": 1851200,
             "pnl": -81600,
             "returnPct": -4.22
@@ -700,7 +712,7 @@
             "qty": 6,
             "entryPrice": 294000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 11분",
+            "holdingPeriod": "보유 5시간 20분",
             "evalAmount": 1911000,
             "pnl": 147000,
             "returnPct": 8.33
@@ -711,7 +723,7 @@
             "qty": 1,
             "entryPrice": 1465000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 11분",
+            "holdingPeriod": "보유 5시간 20분",
             "evalAmount": 1442000,
             "pnl": -23000,
             "returnPct": -1.57
@@ -722,7 +734,7 @@
             "qty": 2,
             "entryPrice": 983000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 11분",
+            "holdingPeriod": "보유 5시간 20분",
             "evalAmount": 1972000,
             "pnl": 6000,
             "returnPct": 0.31
@@ -733,7 +745,7 @@
             "qty": 11,
             "entryPrice": 180000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 11분",
+            "holdingPeriod": "보유 5시간 20분",
             "evalAmount": 1950300,
             "pnl": -29700,
             "returnPct": -1.5
@@ -742,10 +754,10 @@
       },
       "comparison": {
         "returnPct": 0.19,
-        "benchmarkReturnPct": 1.67,
-        "excessReturnPct": -1.48,
+        "benchmarkReturnPct": 1.44,
+        "excessReturnPct": -1.25,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T15:25+09:00"
+        "periodEnd": "2026-05-06T15:34+09:00"
       }
     }
   ],
@@ -777,6 +789,13 @@
         null
       ],
       "marketReturns": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "kodex200": null,
+      "kodexReturns": [
         null,
         null,
         null,
@@ -814,6 +833,13 @@
         null,
         null,
         null
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -843,6 +869,13 @@
         null
       ],
       "marketReturns": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "kodex200": null,
+      "kodexReturns": [
         null,
         null,
         null,
@@ -880,6 +913,13 @@
         null,
         null,
         null
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -909,6 +949,13 @@
         null
       ],
       "marketReturns": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "kodex200": null,
+      "kodexReturns": [
         null,
         null,
         null,
@@ -946,6 +993,13 @@
         null,
         null,
         null
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -975,6 +1029,13 @@
         null
       ],
       "marketReturns": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "kodex200": null,
+      "kodexReturns": [
         null,
         null,
         null,
@@ -1012,6 +1073,13 @@
         null,
         null,
         null
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1041,6 +1109,13 @@
         null
       ],
       "marketReturns": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "kodex200": null,
+      "kodexReturns": [
         null,
         null,
         null,
@@ -1078,6 +1153,13 @@
         null,
         null,
         null
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1107,6 +1189,13 @@
         null
       ],
       "marketReturns": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "kodex200": null,
+      "kodexReturns": [
         null,
         null,
         null,
@@ -1144,6 +1233,13 @@
         null,
         0.0,
         0.0
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1177,6 +1273,13 @@
         null,
         0.36,
         0.36
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1210,6 +1313,13 @@
         null,
         0.41,
         0.41
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1243,6 +1353,13 @@
         null,
         0.32,
         0.32
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1276,6 +1393,13 @@
         null,
         0.15,
         0.15
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1309,6 +1433,13 @@
         null,
         0.28,
         0.28
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1342,6 +1473,13 @@
         null,
         0.29,
         0.29
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1375,6 +1513,13 @@
         null,
         0.19,
         0.19
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1408,6 +1553,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1441,6 +1593,13 @@
         null,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1474,6 +1633,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1507,6 +1673,13 @@
         null,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1540,6 +1713,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1573,6 +1753,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1606,6 +1793,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1639,6 +1833,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1672,6 +1873,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1705,6 +1913,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1738,6 +1953,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1771,6 +1993,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1804,6 +2033,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1837,6 +2073,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1870,6 +2113,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1903,6 +2153,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1936,6 +2193,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -1969,6 +2233,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2002,6 +2273,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2035,6 +2313,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2068,6 +2353,13 @@
         10000000,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2101,6 +2393,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2134,6 +2433,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2167,6 +2473,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2200,6 +2513,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2233,6 +2553,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2266,6 +2593,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2299,6 +2633,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2332,6 +2673,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2365,6 +2713,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2398,6 +2753,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2431,6 +2793,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2464,6 +2833,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2497,6 +2873,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2530,6 +2913,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2563,6 +2953,13 @@
         null,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2596,6 +2993,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2629,6 +3033,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2662,6 +3073,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2695,6 +3113,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2728,6 +3153,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2761,6 +3193,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2794,6 +3233,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2827,6 +3273,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2860,6 +3313,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2893,6 +3353,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2926,6 +3393,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2959,6 +3433,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -2992,6 +3473,13 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
       ]
     },
     {
@@ -3025,6 +3513,95 @@
         9998800,
         10000000,
         10000000
+      ],
+      "kodex200": null,
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "ts": "2026-05-06T15:30+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 38,
+      "protected": 4,
+      "stale": 0,
+      "benchmark": 1.51,
+      "benchmarkValue": 7412.11,
+      "kodex200": 0.0,
+      "kodex200Value": 113270.0,
+      "returns": [
+        1.51,
+        0.85,
+        1.8,
+        0.19
+      ],
+      "marketReturns": [
+        1.51,
+        0.81,
+        1.51,
+        1.51
+      ],
+      "evalAmounts": [
+        30448800,
+        10083300,
+        10179500,
+        10018700
+      ],
+      "capital": [
+        29996900,
+        9998800,
+        10000000,
+        10000000
+      ],
+      "kodexReturns": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "ts": "2026-05-06T15:34+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 38,
+      "protected": 4,
+      "stale": 0,
+      "benchmark": 1.44,
+      "benchmarkValue": 7407.18,
+      "kodex200": 0.0,
+      "kodex200Value": 113270.0,
+      "returns": [
+        1.51,
+        0.37,
+        1.8,
+        0.19
+      ],
+      "marketReturns": [
+        1.44,
+        0.74,
+        1.44,
+        1.44
+      ],
+      "evalAmounts": [
+        30451300,
+        10035300,
+        10179500,
+        10018700
+      ],
+      "capital": [
+        29996900,
+        9998800,
+        10000000,
+        10000000
+      ],
+      "kodexReturns": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
       ]
     }
   ],

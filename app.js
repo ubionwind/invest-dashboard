@@ -318,7 +318,7 @@ function render(data) {
     summaryTile('전체 누적 수익률', pct(data.summary.totalReturnPct), `손익 ${money(data.summary.totalPnl)} / 평가 ${money(data.summary.totalEvalAmount)}`, '💰', (data.summary.totalReturnPct || 0) >= 0 ? 'good' : 'danger'),
     summaryTile('전체 후보', fmt.format(data.summary.candidateCount), '검토 대상 종목 수', '🧩'),
     summaryTile('주의 상태', fmt.format(data.summary.staleCount), '확인 필요 항목', data.summary.staleCount > 0 ? '⚠️' : '✅', data.summary.staleCount > 0 ? 'danger' : 'good'),
-    summaryTile('시장 누적 수익률', data.benchmark?.returnPct == null ? '-' : pct(data.benchmark.returnPct), `${benchmarkNote(data.benchmark)} · ${comparisonHelp()}`, '📈', (data.benchmark?.returnPct || 0) >= 0 ? 'good' : 'danger')
+    summaryTile('시장/KODEX 누적', data.benchmark?.returnPct == null ? '-' : pct(data.benchmark.returnPct), `KOSPI · KODEX200 ${pct(data.kodexBenchmark?.returnPct)} · ${comparisonHelp()}`, '📈', (data.benchmark?.returnPct || 0) >= 0 ? 'good' : 'danger')
   ].join('');
 
   const tabs = [{id:'panel-overview', name:'전체 요약'}, ...data.sessions.map((s, idx) => ({id:`panel-${idx}`, name:s.name}))];
@@ -362,7 +362,8 @@ function renderMainCharts(data) {
       labels,
       datasets: [
         ...names.map((name, i) => ({ label: `${name} 수익률`, data: history.map(x => x.returns?.[i]), borderColor: colors[i], backgroundColor: `${colors[i]}22`, tension: .35, spanGaps: true })),
-        { label: '시장 기간 수익률', data: history.map(x => x.benchmark), borderColor: '#ffffff', borderDash: [6, 5], pointRadius: 0, tension: .2, spanGaps: true }
+        { label: 'KOSPI 수익률', data: history.map(x => x.benchmark), borderColor: '#ffffff', borderDash: [6, 5], pointRadius: 0, tension: .2, spanGaps: true },
+        { label: 'KODEX200 수익률', data: history.map(x => x.kodex200), borderColor: '#b7ff5a', borderDash: [2, 4], pointRadius: 0, tension: .2, spanGaps: true }
       ]
     },
     options: chartOptions(v => `${v}%`)
@@ -400,7 +401,8 @@ function renderItemCharts(data) {
         labels,
         datasets: [
           { label: '우리 수익률', data: history.map(x => x.returns?.[i]), borderColor: color, backgroundColor: `${color}22`, tension: .35, spanGaps: true },
-          { label: '시장 기간 수익률', data: history.map(x => x.marketReturns?.[i] ?? null), borderColor: '#ffffff', borderDash: [6, 5], pointRadius: 0, tension: .2, spanGaps: true }
+          { label: 'KOSPI 수익률', data: history.map(x => x.marketReturns?.[i] ?? null), borderColor: '#ffffff', borderDash: [6, 5], pointRadius: 0, tension: .2, spanGaps: true },
+          { label: 'KODEX200 수익률', data: history.map(x => x.kodexReturns?.[i] ?? null), borderColor: '#b7ff5a', borderDash: [2, 4], pointRadius: 0, tension: .2, spanGaps: true }
         ]
       },
       options: chartOptions(v => `${v}%`)
