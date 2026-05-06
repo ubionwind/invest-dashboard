@@ -181,7 +181,7 @@ function tradeAlerts(s) {
       <div class="alert-item-top">
         <div>
           <strong>${x.name || '-'}</strong>${x.code ? `<span class="muted">${x.code}</span>` : ''}
-          <em>${x.status || '검토'}</em>
+          <em>${x.status || '검토'}${x.holdingPeriod ? ` · ${x.holdingPeriod}` : ''}</em>
         </div>
         ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<b class="return-big ${buyReturnClass}">${pct(buyReturn)}</b>`}
       </div>
