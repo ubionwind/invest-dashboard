@@ -263,9 +263,16 @@ function overviewCandidateTiles(sessions) {
   </div>`;
 }
 
-function setActive(id) {
+function scrollToPanelStart() {
+  const main = document.querySelector('main');
+  const top = main ? Math.max(0, main.getBoundingClientRect().top + window.scrollY - 8) : 0;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+
+function setActive(id, shouldScroll = true) {
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.target === id));
   document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === id));
+  if (shouldScroll) requestAnimationFrame(scrollToPanelStart);
 }
 
 
@@ -285,7 +292,7 @@ function render(data) {
 
   const tabs = [{id:'panel-overview', name:'전체 요약'}, ...data.sessions.map((s, idx) => ({id:`panel-${idx}`, name:s.name}))];
   document.getElementById('tabs').innerHTML = tabs.map((t,i) => `<button class="tab ${i===0?'active':''}" data-target="${t.id}">${t.name}</button>`).join('');
-  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => setActive(t.dataset.target)));
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => setActive(t.dataset.target, true)));
 
   document.getElementById('sessionCards').innerHTML = data.sessions.map(s => renderSessionCard(s)).join('') + overviewCandidateTiles(data.sessions);
   document.getElementById('sessionPanels').innerHTML = data.sessions.map((s, i) => `
