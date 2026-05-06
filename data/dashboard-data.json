@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T10:37+09:00",
+  "generatedAt": "2026-05-06T11:01+09:00",
   "summary": {
     "totalSessions": 4,
     "staleCount": 0,
@@ -8,13 +8,13 @@
   },
   "benchmark": {
     "label": "KOSPI",
-    "value": 7325.15,
-    "returnPct": 0.22,
-    "dailyReturnPct": 1.14,
+    "value": 7330.28,
+    "returnPct": 0.38,
+    "dailyReturnPct": 1.21,
     "date": "2026-05-06",
-    "time": "03:17:30",
-    "periodStart": "2026-05-06T10:09+09:00",
-    "periodEnd": "2026-05-06T10:37+09:00",
+    "time": "03:41:30",
+    "periodStart": "2026-05-06T10:14+09:00",
+    "periodEnd": "2026-05-06T11:01+09:00",
     "basis": "firstInvestment"
   },
   "sessions": [
@@ -28,77 +28,66 @@
       "gateCount": 0,
       "dryRunCount": 2,
       "protectedRows": 2,
-      "quoteCount": 0,
+      "quoteCount": 4,
       "topCandidates": [
         {
           "code": "007660",
           "name": "이수페타시스",
-          "score": 64.9,
+          "score": 65.2,
           "status": "",
-          "reason": "meta=0.84; 등락률=1.07; theme=AI기판"
+          "reason": "meta=0.84; 등락률=1.41; theme=AI기판"
         },
         {
           "code": "042700",
           "name": "한미반도체",
-          "score": 63.3,
+          "score": 63.5,
           "status": "",
-          "reason": "meta=0.82; 등락률=0.93; theme=HBM장비"
+          "reason": "meta=0.82; 등락률=1.06; theme=HBM장비"
         },
         {
           "code": "089030",
           "name": "테크윙",
-          "score": null,
+          "score": 60.1,
           "status": "",
-          "reason": ""
+          "reason": "meta=0.79; 등락률=-0.16; theme=반도체후공정"
         },
         {
           "code": "247540",
           "name": "에코프로비엠",
-          "score": null,
+          "score": 59.6,
           "status": "",
-          "reason": ""
+          "reason": "meta=0.76; 등락률=1.39; theme=2차전지소재"
         }
       ],
-      "buyAlerts": [
-        {
-          "code": "007660",
-          "name": "이수페타시스",
-          "status": "매수검토",
-          "reason": "meta=0.84; 등락률=1.07; theme=AI기판"
-        },
-        {
-          "code": "042700",
-          "name": "한미반도체",
-          "status": "매수검토",
-          "reason": "meta=0.82; 등락률=0.93; theme=HBM장비"
-        },
-        {
-          "code": "089030",
-          "name": "테크윙",
-          "status": "관찰",
-          "reason": ""
-        },
-        {
-          "code": "247540",
-          "name": "에코프로비엠",
-          "status": "관찰",
-          "reason": ""
-        }
-      ],
+      "buyAlerts": [],
       "sellAlerts": [],
       "portfolio": {
         "capital": 29997940,
-        "evalAmount": 30070940,
-        "pnl": 73000,
-        "returnPct": 0.24,
-        "positionCount": 2
+        "evalAmount": 30064840,
+        "pnl": 66900,
+        "returnPct": 0.22,
+        "positionCount": 2,
+        "positions": [
+          {
+            "code": "007660",
+            "name": "이수페타시스",
+            "qty": 49,
+            "evalAmount": 7379400,
+            "pnl": 9900
+          },
+          {
+            "code": "042700",
+            "name": "한미반도체",
+            "qty": 19,
+            "evalAmount": 7305500,
+            "pnl": 57000
+          }
+        ]
       },
       "comparison": {
-        "returnPct": 0.24,
-        "benchmarkReturnPct": 0.22,
-        "excessReturnPct": 0.02,
-        "periodStart": "2026-05-06T10:09+09:00",
-        "periodEnd": "2026-05-06T10:37+09:00"
+        "returnPct": 0.22,
+        "benchmarkReturnPct": null,
+        "excessReturnPct": null
       }
     },
     {
@@ -116,93 +105,69 @@
         {
           "code": "207940",
           "name": "삼성바이오로직스",
-          "score": 35.8,
+          "score": 36.2,
           "status": "",
-          "reason": "meta=0.45; 등락률=-0.74; theme=바이오"
+          "reason": "meta=0.45; 등락률=-0.27; theme=바이오"
         },
         {
           "code": "267260",
           "name": "HD현대일렉트릭",
-          "score": 45.2,
+          "score": 42.6,
           "status": "",
-          "reason": "meta=0.45; 등락률=8.7; theme=전력"
+          "reason": "meta=0.45; 등락률=6.08; theme=전력"
         },
         {
           "code": "373220",
           "name": "LG에너지솔루션",
-          "score": null,
+          "score": 37,
           "status": "",
-          "reason": ""
+          "reason": "meta=0.45; 등락률=0.53; theme=배터리"
         },
         {
           "code": "005930",
           "name": "삼성전자",
-          "score": null,
+          "score": 48.1,
           "status": "",
-          "reason": ""
+          "reason": "meta=0.45; 등락률=11.61; theme=반도체"
         },
         {
           "code": "000660",
           "name": "SK하이닉스",
-          "score": null,
+          "score": 46.4,
           "status": "",
-          "reason": ""
+          "reason": "meta=0.45; 등락률=9.88; theme=반도체"
         },
         {
           "code": "005380",
           "name": "현대차",
-          "score": null,
+          "score": 38.4,
           "status": "",
-          "reason": ""
+          "reason": "meta=0.45; 등락률=1.86; theme=자동차"
         },
         {
           "code": "000270",
           "name": "기아",
-          "score": null,
+          "score": 37.4,
           "status": "",
-          "reason": ""
+          "reason": "meta=0.45; 등락률=0.91; theme=자동차"
         },
         {
           "code": "035420",
           "name": "NAVER",
-          "score": null,
+          "score": 36.3,
           "status": "",
-          "reason": ""
+          "reason": "meta=0.45; 등락률=-0.24; theme=인터넷"
         }
       ],
-      "buyAlerts": [
-        {
-          "code": "207940",
-          "name": "삼성바이오로직스",
-          "status": "관찰",
-          "reason": "meta=0.45; 등락률=-0.74; theme=바이오"
-        },
-        {
-          "code": "267260",
-          "name": "HD현대일렉트릭",
-          "status": "관찰",
-          "reason": "meta=0.45; 등락률=8.7; theme=전력"
-        },
-        {
-          "code": "373220",
-          "name": "LG에너지솔루션",
-          "status": "관찰",
-          "reason": ""
-        },
-        {
-          "code": "005930",
-          "name": "삼성전자",
-          "status": "관찰",
-          "reason": ""
-        }
-      ],
+      "buyAlerts": [],
       "sellAlerts": [],
       "portfolio": {
         "capital": 10000000,
         "evalAmount": 10000000,
         "pnl": 0,
         "returnPct": 0.0,
-        "positionCount": 0
+        "positionCount": 0,
+        "positions": []
       },
       "comparison": {
         "returnPct": null,
@@ -284,25 +249,25 @@
           "code": "010120",
           "name": "LS ELECTRIC",
           "status": "체결완료",
-          "reason": "진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
+          "reason": "6주 · 305250.0원 · 진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
         },
         {
           "code": "267260",
           "name": "HD현대일렉트릭",
           "status": "체결완료",
-          "reason": "진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
+          "reason": "1주 · 1379000.0원 · 진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
         },
         {
           "code": "003670",
           "name": "포스코퓨처엠",
           "status": "체결완료",
-          "reason": "진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
+          "reason": "6주 · 290000.0원 · 진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
         },
         {
           "code": "000660",
           "name": "SK하이닉스",
           "status": "체결완료",
-          "reason": "진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
+          "reason": "1주 · 1580000.0원 · 진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록"
         }
       ],
       "sellAlerts": [],
@@ -316,10 +281,10 @@
       },
       "comparison": {
         "returnPct": 1.15,
-        "benchmarkReturnPct": 0.22,
-        "excessReturnPct": 0.93,
+        "benchmarkReturnPct": 0.38,
+        "excessReturnPct": 0.77,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T10:37+09:00"
+        "periodEnd": "2026-05-06T11:01+09:00"
       }
     },
     {
@@ -396,25 +361,25 @@
           "code": "047810",
           "name": "한국항공우주",
           "status": "체결완료",
-          "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
+          "reason": "11주 · 180000.0원 · 장초반 거래대금 증가와 섹터 동행 여부 확인"
         },
         {
           "code": "079550",
           "name": "LIG넥스원",
           "status": "체결완료",
-          "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
+          "reason": "2주 · 983000.0원 · 장초반 거래대금 증가와 섹터 동행 여부 확인"
         },
         {
           "code": "012450",
           "name": "한화에어로스페이스",
           "status": "체결완료",
-          "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
+          "reason": "1주 · 1465000.0원 · 장초반 거래대금 증가와 섹터 동행 여부 확인"
         },
         {
           "code": "010120",
           "name": "LS ELECTRIC",
           "status": "체결완료",
-          "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
+          "reason": "6주 · 294000.0원 · 장초반 거래대금 증가와 섹터 동행 여부 확인"
         }
       ],
       "sellAlerts": [],
@@ -428,10 +393,10 @@
       },
       "comparison": {
         "returnPct": 0.0,
-        "benchmarkReturnPct": 0.22,
-        "excessReturnPct": -0.22,
+        "benchmarkReturnPct": 0.38,
+        "excessReturnPct": -0.38,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T10:37+09:00"
+        "periodEnd": "2026-05-06T11:01+09:00"
       }
     }
   ],
@@ -826,7 +791,7 @@
         10000000
       ],
       "marketReturns": [
-        0.0,
+        null,
         null,
         0.0,
         0.0
@@ -859,7 +824,7 @@
         10000000
       ],
       "marketReturns": [
-        0.36,
+        null,
         null,
         0.36,
         0.36
@@ -892,7 +857,7 @@
         10000000
       ],
       "marketReturns": [
-        0.41,
+        null,
         null,
         0.41,
         0.41
@@ -925,7 +890,7 @@
         10000000
       ],
       "marketReturns": [
-        0.32,
+        null,
         null,
         0.32,
         0.32
@@ -958,7 +923,7 @@
         10000000
       ],
       "marketReturns": [
-        0.15,
+        null,
         null,
         0.15,
         0.15
@@ -991,7 +956,7 @@
         10000000
       ],
       "marketReturns": [
-        0.28,
+        null,
         null,
         0.28,
         0.28
@@ -1024,7 +989,7 @@
         10000000
       ],
       "marketReturns": [
-        0.29,
+        null,
         null,
         0.29,
         0.29
@@ -1057,7 +1022,7 @@
         10000000
       ],
       "marketReturns": [
-        0.19,
+        null,
         null,
         0.19,
         0.19
@@ -1078,7 +1043,7 @@
         0.0
       ],
       "marketReturns": [
-        0.2,
+        null,
         null,
         0.2,
         0.2
@@ -1111,7 +1076,7 @@
         0.0
       ],
       "marketReturns": [
-        0.22,
+        null,
         null,
         0.22,
         0.22
@@ -1144,13 +1109,145 @@
         0.0
       ],
       "marketReturns": [
-        0.31,
+        null,
         null,
         0.31,
         0.31
       ],
       "evalAmounts": [
         30070940,
+        10000000,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T10:40+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.21,
+      "benchmarkValue": 7317.24,
+      "returns": [
+        0.11,
+        null,
+        1.15,
+        0.0
+      ],
+      "marketReturns": [
+        null,
+        null,
+        0.21,
+        0.21
+      ],
+      "evalAmounts": [
+        30032340,
+        null,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        null,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T10:41+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.01,
+      "benchmarkValue": 7303.24,
+      "returns": [
+        0.1,
+        null,
+        1.15,
+        0.0
+      ],
+      "marketReturns": [
+        null,
+        null,
+        0.01,
+        0.01
+      ],
+      "evalAmounts": [
+        30027140,
+        10000000,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T10:45+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": -0.16,
+      "benchmarkValue": 7290.18,
+      "returns": [
+        0.06,
+        null,
+        1.15,
+        0.0
+      ],
+      "marketReturns": [
+        null,
+        null,
+        -0.16,
+        -0.16
+      ],
+      "evalAmounts": [
+        30017040,
+        10000000,
+        10114500,
+        10000000
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T11:01+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.38,
+      "benchmarkValue": 7330.28,
+      "returns": [
+        0.22,
+        null,
+        1.15,
+        0.0
+      ],
+      "marketReturns": [
+        null,
+        null,
+        0.38,
+        0.38
+      ],
+      "evalAmounts": [
+        30064840,
         10000000,
         10114500,
         10000000

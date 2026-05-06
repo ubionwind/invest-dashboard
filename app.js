@@ -166,8 +166,8 @@ function tradeAlerts(s) {
   };
   return `<div class="trade-alerts">
     <section class="trade-alert buy-alert">
-      <div class="alert-head"><span>매수 알림</span><strong>${s.buyAlerts?.length || 0}</strong></div>
-      ${renderItems(s.buyAlerts, '매수 알림 없음')}
+      <div class="alert-head"><span>매수 기록</span><strong>${s.buyAlerts?.length || 0}</strong></div>
+      ${renderItems(s.buyAlerts, '매수 기록 없음')}
     </section>
     <section class="trade-alert sell-alert">
       <div class="alert-head"><span>매도 알림</span><strong>${s.sellAlerts?.length || 0}</strong></div>
