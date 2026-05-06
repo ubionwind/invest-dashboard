@@ -70,7 +70,18 @@ main { padding: 24px clamp(18px, 4vw, 48px) 44px; }
 .grid { display: grid; gap: 14px; }
 .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .session-card { display: grid; gap: 12px; }
-.overview-strategy-card { align-content: start; }
+.overview-strategy-card { align-content: start; display: grid; gap: 10px; padding: 14px; }
+.overview-strategy-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.overview-strategy-head h3 { font-size: 18px; }
+.overview-strategy-head p { margin: 3px 0 0; font-size: 12px; }
+.overview-return-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.overview-return-row > strong { font-size: 30px; line-height: 1; letter-spacing: -.05em; }
+.overview-return-row .market-compare { font-size: 12px; font-weight: 800; white-space: nowrap; }
+.overview-compact-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.overview-compact-metrics span { min-width: 0; padding: 7px 6px; border-radius: 11px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.06); }
+.overview-compact-metrics b, .overview-compact-metrics em { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.overview-compact-metrics b { font-size: 13px; letter-spacing: -.03em; }
+.overview-compact-metrics em { margin-top: 2px; color: var(--muted); font-style: normal; font-size: 10px; }
 .strategy-dashboard { display: grid; gap: 12px; }
 .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .kpi { background: rgba(255,255,255,.045); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
@@ -183,6 +194,12 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .topbar { padding: 20px 14px; }
   .overview-guide { display: grid; gap: 4px; }
   .card { padding: 14px; border-radius: 18px; }
+  .overview-strategy-card { padding: 12px; gap: 8px; }
+  .overview-return-row > strong { font-size: 27px; }
+  .overview-compact-metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+  .overview-compact-metrics span { padding: 6px 5px; }
+  .overview-compact-metrics b { font-size: 12px; }
+  .overview-compact-metrics em { font-size: 9px; }
   .card-head { align-items: flex-start; }
   .candidate-grid, .overview-candidate-grid { grid-template-columns: 1fr; gap: 10px; }
   .desktop-help { display: none; }

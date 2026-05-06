@@ -309,31 +309,23 @@ function renderSessionCard(s, full = false, showSummary = true) {
 function renderOverviewStrategyCard(s) {
   const cmp = s.comparison || {};
   const pf = s.portfolio || {};
-  return `<article class="card session-card overview-strategy-card">
-    <div class="card-head">
+  return `<article class="card overview-strategy-card">
+    <div class="overview-strategy-head">
       <div>
         <h3>${s.name}</h3>
-        <p class="muted">${s.stage}</p>
+        <p class="muted">${s.stage} · 보유 ${fmt.format(pf.positionCount || 0)}</p>
       </div>
       <span class="badge ${statusClass(s.status)}">${s.status}</span>
     </div>
-    <div class="session-hero">
-      <div>
-        <span class="muted">보유</span>
-        <strong>${fmt.format(pf.positionCount || 0)}</strong>
-      </div>
-      <div>
-        <span class="muted">수익률</span>
-        <strong class="${(pf.returnPct || 0) >= 0 ? 'up' : 'down'}">${pct(pf.returnPct)}</strong>
-        <small class="market-compare ${cmp.excessReturnPct == null ? '' : ((cmp.excessReturnPct || 0) >= 0 ? 'up' : 'down')}">시장 대비 ${pct(cmp.excessReturnPct)}</small>
-      </div>
+    <div class="overview-return-row">
+      <strong class="${(pf.returnPct || 0) >= 0 ? 'up' : 'down'}">${pct(pf.returnPct)}</strong>
+      <span class="market-compare ${cmp.excessReturnPct == null ? '' : ((cmp.excessReturnPct || 0) >= 0 ? 'up' : 'down')}">시장 대비 ${pct(cmp.excessReturnPct)}</span>
     </div>
-    ${portfolioStrip(pf)}
-    <div class="mini-facts">
-      <span>후보 ${fmt.format(s.candidateCount || 0)}</span>
-      <span>매수기록 ${fmt.format(s.buyAlerts?.length || 0)}</span>
-      <span>시세 ${fmt.format(s.quoteCount || 0)}</span>
-      <span>보호 ${fmt.format(s.protectedRows || 0)}</span>
+    <div class="overview-compact-metrics">
+      <span><b>${compactMoney(pf.capital)}</b><em>원금</em></span>
+      <span><b>${compactMoney(pf.investmentAmount)}</b><em>투자</em></span>
+      <span><b class="${(pf.pnl || 0) >= 0 ? 'up' : 'down'}">${compactMoney(pf.pnl)}</b><em>수익</em></span>
+      <span><b>${fmt.format(s.candidateCount || 0)}</b><em>후보</em></span>
     </div>
   </article>`;
 }
