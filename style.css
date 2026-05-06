@@ -87,10 +87,12 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .sell-alert .alert-head span, .sell-alert .alert-head strong { color: var(--fall); }
 .alert-empty { margin: 0; font-size: 13px; }
 .alert-items { display: grid; gap: 7px; }
-.alert-item { display: grid; gap: 3px; padding: 9px; border-radius: 12px; background: rgba(255,255,255,.04); }
+.alert-item { display: grid; gap: 7px; padding: 10px; border-radius: 12px; background: rgba(255,255,255,.04); }
+.alert-item-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px; }
+.alert-item strong, .alert-item span, .alert-item em { display: block; }
 .alert-item strong { font-size: 15px; }
-.alert-item em { color: var(--text); font-style: normal; font-size: 12px; }
-.return-chip { width: fit-content; padding: 4px 7px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); font-size: 12px; font-weight: 800; }
+.alert-item em { margin-top: 2px; color: var(--text); font-style: normal; font-size: 12px; }
+.return-big { justify-self: end; font-size: 25px; line-height: 1; letter-spacing: -.05em; font-weight: 900; white-space: nowrap; }
 .alert-item small { color: var(--muted); line-height: 1.35; }
 
 a { color: #a9c5ff; }

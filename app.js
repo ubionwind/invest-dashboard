@@ -165,9 +165,13 @@ function tradeAlerts(s) {
       const buyReturn = x.returnPct === null || x.returnPct === undefined || x.returnPct === '' ? null : Number(x.returnPct);
       const buyReturnClass = buyReturn === null || Number.isNaN(buyReturn) ? '' : (buyReturn >= 0 ? 'up' : 'down');
       return `<div class="alert-item">
-      <strong>${x.name || '-'}</strong>${x.code ? `<span class="muted">${x.code}</span>` : ''}
-      <em>${x.status || '검토'}</em>
-      ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<b class="return-chip ${buyReturnClass}">매수대비 ${pct(buyReturn)}</b>`}
+      <div class="alert-item-top">
+        <div>
+          <strong>${x.name || '-'}</strong>${x.code ? `<span class="muted">${x.code}</span>` : ''}
+          <em>${x.status || '검토'}</em>
+        </div>
+        ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<b class="return-big ${buyReturnClass}">${pct(buyReturn)}</b>`}
+      </div>
       ${x.reason ? `<small>${x.reason}</small>` : ''}
     </div>`}).join('')}</div>`;
   };
