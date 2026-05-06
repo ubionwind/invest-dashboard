@@ -108,6 +108,15 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .mini-facts span { padding: 6px 9px; border-radius: 999px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.06); color: var(--muted); font-size: 12px; }
 .overview-candidates { grid-column: 1 / -1; }
 .overview-candidate-grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.holdings-card { padding: 12px; border-radius: 16px; border: 1px solid rgba(53,211,153,.30); background: rgba(53,211,153,.055); }
+.holding-items { display: grid; gap: 7px; }
+.holding-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 10px; border-radius: 12px; background: rgba(255,255,255,.04); }
+.holding-item strong, .holding-item span, .holding-item em { display: block; }
+.holding-item strong { font-size: 15px; }
+.holding-item em { margin-top: 2px; color: var(--text); font-style: normal; font-size: 12px; }
+.holding-numbers { text-align: right; }
+.holding-numbers b { display: block; font-size: 22px; line-height: 1; letter-spacing: -.04em; }
+.holding-numbers small { display: block; margin-top: 5px; color: var(--muted); white-space: nowrap; }
 .trade-alerts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .trade-alert { padding: 12px; border-radius: 16px; border: 1px solid var(--line); background: rgba(255,255,255,.035); }
 .buy-alert { border-color: rgba(255,77,79,.28); }
@@ -175,6 +184,8 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .portfolio-strip strong { font-size: 13px; }
   .mini-facts { display: grid; grid-template-columns: repeat(2, 1fr); }
   .trade-alerts { grid-template-columns: 1fr; }
+  .holding-item { grid-template-columns: 1fr; align-items: start; }
+  .holding-numbers { text-align: left; }
   .candidate-tile { padding: 13px; border-radius: 17px; }
   .candidate-title strong { font-size: 19px; }
   .candidate-main strong { font-size: 23px; }

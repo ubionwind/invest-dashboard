@@ -199,6 +199,33 @@ function candidateList(items) {
   return `<div class="candidate-grid">${items.map(candidateTile).join('')}</div>`;
 }
 
+function holdingsBlock(pf = {}) {
+  const positions = pf.positions || [];
+  if (!positions.length) {
+    return `<section class="holdings-card">
+      <div class="alert-head"><span>보유 항목</span><strong>0</strong></div>
+      <p class="muted alert-empty">현재 보유 종목 없음</p>
+    </section>`;
+  }
+  return `<section class="holdings-card">
+    <div class="alert-head"><span>보유 항목</span><strong>${positions.length}</strong></div>
+    <div class="holding-items">${positions.map(p => {
+      const ret = p.returnPct === null || p.returnPct === undefined || p.returnPct === '' ? null : Number(p.returnPct);
+      const retClass = ret === null || Number.isNaN(ret) ? '' : (ret >= 0 ? 'up' : 'down');
+      return `<div class="holding-item">
+        <div>
+          <strong>${p.name || '-'}</strong>${p.code ? `<span class="muted">${p.code}</span>` : ''}
+          <em>${fmt.format(p.qty || 0)}주${p.holdingPeriod ? ` · ${p.holdingPeriod}` : ''}</em>
+        </div>
+        <div class="holding-numbers">
+          <b class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : pct(ret)}</b>
+          <small>${money(p.pnl)} / ${money(p.evalAmount)}</small>
+        </div>
+      </div>`;
+    }).join('')}</div>
+  </section>`;
+}
+
 function tradeAlerts(s) {
   const renderItems = (items, emptyText) => {
     if (!items || !items.length) return `<p class="muted alert-empty">${emptyText}</p>`;
@@ -251,6 +278,7 @@ function renderSessionCard(s, full = false) {
       </div>
     </div>
     ${portfolioStrip(pf)}
+    ${holdingsBlock(pf)}
     <div class="mini-facts">
       <span>검증 ${fmt.format(s.validationCount || 0)}</span>
       <span>보호 ${fmt.format(s.protectedRows || 0)}</span>
