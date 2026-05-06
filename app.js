@@ -129,6 +129,8 @@ function candidateTile(c, idx) {
   const meta = parts.meta;
   const status = c.status || '검토';
   const score = c.score === null || c.score === undefined || c.score === '' ? '-' : Number(c.score).toFixed(1);
+  const scoreNum = score === '-' ? null : Number(score);
+  const scoreTone = scoreNum === null || Number.isNaN(scoreNum) ? 'score-none' : scoreNum >= 90 ? 'score-very-high' : scoreNum >= 80 ? 'score-high' : scoreNum >= 70 ? 'score-watch' : scoreNum >= 60 ? 'score-neutral' : 'score-low';
   const rawScore = c.rawScore === null || c.rawScore === undefined || c.rawScore === '' ? null : Number(c.rawScore).toFixed(1);
   const buyReturn = c.returnPct === null || c.returnPct === undefined || c.returnPct === '' ? null : Number(c.returnPct);
   const changeNum = change === undefined ? null : Number(change);
@@ -146,7 +148,7 @@ function candidateTile(c, idx) {
       ${c.code ? `<span class="muted">${c.code}</span>` : ''}
     </div>
     <div class="candidate-main">
-      <div><span class="muted">기준점수</span><strong>${score}</strong></div>
+      <div class="score-box ${scoreTone}"><span class="muted">기준점수</span><strong>${score}</strong></div>
       <div><span class="muted">등락률</span><strong class="${changeClass}">${change === undefined || change === null ? '-' : `${Number(change).toFixed(2)}%`}</strong></div>
       ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<div><span class="muted">매수대비</span><strong class="${buyReturnClass}">${pct(buyReturn)}</strong></div>`}
     </div>

@@ -64,6 +64,21 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .candidate-main > div { padding: 10px; border-radius: 13px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.06); }
 .candidate-main span, .candidate-main strong { display: block; }
 .candidate-main strong { margin-top: 4px; font-size: 21px; }
+.candidate-main .score-box { position: relative; overflow: hidden; }
+.candidate-main .score-box::before { content: ''; position: absolute; inset: 0; opacity: .18; pointer-events: none; }
+.score-very-high { border-color: rgba(255,77,79,.55) !important; }
+.score-very-high::before { background: linear-gradient(135deg, #ff4d4f, transparent 70%); }
+.score-very-high strong { color: var(--rise); }
+.score-high { border-color: rgba(255,209,102,.50) !important; }
+.score-high::before { background: linear-gradient(135deg, #ffd166, transparent 70%); }
+.score-high strong { color: var(--warn); }
+.score-watch { border-color: rgba(53,211,153,.45) !important; }
+.score-watch::before { background: linear-gradient(135deg, #35d399, transparent 70%); }
+.score-watch strong { color: var(--good); }
+.score-neutral strong { color: #caddff; }
+.score-low { border-color: rgba(59,130,246,.36) !important; }
+.score-low::before { background: linear-gradient(135deg, #3b82f6, transparent 70%); }
+.score-low strong { color: var(--fall); }
 .candidate-meta { flex-wrap: wrap; gap: 7px; margin-top: 10px; }
 .candidate-meta span { padding: 5px 8px; border-radius: 999px; background: rgba(121,167,255,.12); color: #caddff; font-size: 12px; }
 .candidate-reason { margin: 10px 0 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
