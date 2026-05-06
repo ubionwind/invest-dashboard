@@ -1,10 +1,14 @@
 {
-  "generatedAt": "2026-05-06T11:32+09:00",
+  "generatedAt": "2026-05-06T11:33+09:00",
   "summary": {
     "totalSessions": 4,
     "staleCount": 0,
     "candidateCount": 36,
-    "protectedRows": 12
+    "protectedRows": 12,
+    "totalCapital": 59997940,
+    "totalEvalAmount": 60178840,
+    "totalPnl": 180900,
+    "totalReturnPct": 0.3
   },
   "benchmark": {
     "label": "KOSPI",
@@ -13,8 +17,8 @@
     "dailyReturnPct": 1.28,
     "date": "2026-05-06",
     "time": "04:12:00",
-    "periodStart": "2026-05-06T10:14+09:00",
-    "periodEnd": "2026-05-06T11:32+09:00",
+    "periodStart": "2026-05-06T10:08+09:00",
+    "periodEnd": "2026-05-06T11:33+09:00",
     "basis": "firstInvestment"
   },
   "sessions": [
@@ -71,16 +75,16 @@
           "code": "042700",
           "name": "한미반도체",
           "status": "보유중",
-          "reason": "19주 · 매입 381500원 · 평가 7286500원 · 손익 38000원",
-          "returnPct": 0.52
+          "reason": "19주 · 매입 381500원 · 평가 7277000원 · 손익 28500원",
+          "returnPct": 0.39
         }
       ],
       "sellAlerts": [],
       "portfolio": {
         "capital": 29997940,
-        "evalAmount": 30031140,
-        "pnl": 33200,
-        "returnPct": 0.11,
+        "evalAmount": 30021640,
+        "pnl": 23700,
+        "returnPct": 0.08,
         "positionCount": 2,
         "positions": [
           {
@@ -97,16 +101,18 @@
             "name": "한미반도체",
             "qty": 19,
             "entryPrice": 381500,
-            "evalAmount": 7286500,
-            "pnl": 38000,
-            "returnPct": 0.52
+            "evalAmount": 7277000,
+            "pnl": 28500,
+            "returnPct": 0.39
           }
         ]
       },
       "comparison": {
-        "returnPct": 0.11,
-        "benchmarkReturnPct": null,
-        "excessReturnPct": null
+        "returnPct": 0.08,
+        "benchmarkReturnPct": 0.45,
+        "excessReturnPct": -0.37,
+        "periodStart": "2026-05-06T10:08+09:00",
+        "periodEnd": "2026-05-06T11:33+09:00"
       }
     },
     {
@@ -354,7 +360,7 @@
         "benchmarkReturnPct": 0.45,
         "excessReturnPct": 1.02,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T11:32+09:00"
+        "periodEnd": "2026-05-06T11:33+09:00"
       }
     },
     {
@@ -517,7 +523,7 @@
         "benchmarkReturnPct": 0.45,
         "excessReturnPct": -0.34,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T11:32+09:00"
+        "periodEnd": "2026-05-06T11:33+09:00"
       }
     }
   ],
@@ -912,7 +918,7 @@
         10000000
       ],
       "marketReturns": [
-        null,
+        0.0,
         null,
         0.0,
         0.0
@@ -945,7 +951,7 @@
         10000000
       ],
       "marketReturns": [
-        null,
+        0.36,
         null,
         0.36,
         0.36
@@ -978,7 +984,7 @@
         10000000
       ],
       "marketReturns": [
-        null,
+        0.41,
         null,
         0.41,
         0.41
@@ -1011,7 +1017,7 @@
         10000000
       ],
       "marketReturns": [
-        null,
+        0.32,
         null,
         0.32,
         0.32
@@ -1044,7 +1050,7 @@
         10000000
       ],
       "marketReturns": [
-        null,
+        0.15,
         null,
         0.15,
         0.15
@@ -1077,7 +1083,7 @@
         10000000
       ],
       "marketReturns": [
-        null,
+        0.28,
         null,
         0.28,
         0.28
@@ -1110,7 +1116,7 @@
         10000000
       ],
       "marketReturns": [
-        null,
+        0.29,
         null,
         0.29,
         0.29
@@ -1143,7 +1149,7 @@
         10000000
       ],
       "marketReturns": [
-        null,
+        0.19,
         null,
         0.19,
         0.19
@@ -1164,7 +1170,7 @@
         0.0
       ],
       "marketReturns": [
-        null,
+        0.2,
         null,
         0.2,
         0.2
@@ -1197,7 +1203,7 @@
         0.0
       ],
       "marketReturns": [
-        null,
+        0.22,
         null,
         0.22,
         0.22
@@ -1230,7 +1236,7 @@
         0.0
       ],
       "marketReturns": [
-        null,
+        0.31,
         null,
         0.31,
         0.31
@@ -1263,7 +1269,7 @@
         0.0
       ],
       "marketReturns": [
-        null,
+        0.21,
         null,
         0.21,
         0.21
@@ -1296,7 +1302,7 @@
         0.0
       ],
       "marketReturns": [
-        null,
+        0.01,
         null,
         0.01,
         0.01
@@ -1329,7 +1335,7 @@
         0.0
       ],
       "marketReturns": [
-        null,
+        -0.16,
         null,
         -0.16,
         -0.16
@@ -1362,7 +1368,7 @@
         0.0
       ],
       "marketReturns": [
-        null,
+        0.38,
         null,
         0.38,
         0.38
@@ -1395,7 +1401,7 @@
         0.0
       ],
       "marketReturns": [
-        null,
+        0.38,
         null,
         0.38,
         0.38
@@ -1428,7 +1434,7 @@
         0.0
       ],
       "marketReturns": [
-        null,
+        0.65,
         null,
         0.65,
         0.65
@@ -1461,7 +1467,7 @@
         0.0
       ],
       "marketReturns": [
-        null,
+        0.57,
         null,
         0.57,
         0.57
@@ -1494,7 +1500,7 @@
         0.0
       ],
       "marketReturns": [
-        null,
+        0.68,
         null,
         0.68,
         0.68
@@ -1527,7 +1533,7 @@
         0.0
       ],
       "marketReturns": [
-        null,
+        0.72,
         null,
         0.72,
         0.72
@@ -1560,7 +1566,7 @@
         0.0
       ],
       "marketReturns": [
-        null,
+        0.64,
         null,
         0.64,
         0.64
@@ -1593,7 +1599,7 @@
         0.11
       ],
       "marketReturns": [
-        null,
+        0.51,
         null,
         0.51,
         0.51
@@ -1626,13 +1632,46 @@
         0.11
       ],
       "marketReturns": [
-        null,
+        0.45,
         null,
         0.45,
         0.45
       ],
       "evalAmounts": [
         30031140,
+        10000000,
+        10146500,
+        10010700
+      ],
+      "capital": [
+        29997940,
+        10000000,
+        10000000,
+        10000000
+      ]
+    },
+    {
+      "ts": "2026-05-06T11:33+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 36,
+      "protected": 12,
+      "stale": 0,
+      "benchmark": 0.45,
+      "benchmarkValue": 7335.25,
+      "returns": [
+        0.08,
+        null,
+        1.47,
+        0.11
+      ],
+      "marketReturns": [
+        0.45,
+        null,
+        0.45,
+        0.45
+      ],
+      "evalAmounts": [
+        30021640,
         10000000,
         10146500,
         10010700
