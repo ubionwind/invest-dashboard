@@ -106,6 +106,7 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 a { color: #a9c5ff; }
 footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
 @media (max-width: 850px) {
+  body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
   .topbar { align-items: flex-start; flex-direction: column; }
   .grid.two, .kpis { grid-template-columns: 1fr; }
   .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
@@ -116,9 +117,25 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .summary-tile small { font-size: 12px; }
   main { padding: 16px 12px 32px; }
   .topbar { padding: 20px 14px; }
-  .tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+  .tabs {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    margin: 0;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(11,16,32,.94);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -18px 50px rgba(0,0,0,.34);
+    backdrop-filter: blur(14px);
+    scrollbar-width: none;
+  }
   .tabs::-webkit-scrollbar { display: none; }
-  .tab { flex: 0 0 auto; }
+  .tab { flex: 0 0 auto; padding: 10px 13px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
   .card { padding: 14px; border-radius: 18px; }
   .card-head { align-items: flex-start; }
   .candidate-grid, .overview-candidate-grid { grid-template-columns: 1fr; gap: 10px; }
