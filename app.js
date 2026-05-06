@@ -95,8 +95,10 @@ function candidateTile(c, idx) {
   const meta = parts.meta;
   const status = c.status || '검토';
   const score = c.score === null || c.score === undefined || c.score === '' ? '-' : Number(c.score).toFixed(1);
+  const buyReturn = c.returnPct === null || c.returnPct === undefined || c.returnPct === '' ? null : Number(c.returnPct);
   const changeNum = change === undefined ? null : Number(change);
   const changeClass = changeNum === null || Number.isNaN(changeNum) ? '' : (changeNum >= 0 ? 'up' : 'down');
+  const buyReturnClass = buyReturn === null || Number.isNaN(buyReturn) ? '' : (buyReturn >= 0 ? 'up' : 'down');
   const rank = String(idx + 1).padStart(2, '0');
 
   return `<article class="candidate-tile">
@@ -111,6 +113,7 @@ function candidateTile(c, idx) {
     <div class="candidate-main">
       <div><span class="muted">점수</span><strong>${score}</strong></div>
       <div><span class="muted">등락률</span><strong class="${changeClass}">${change === undefined ? '-' : `${change}%`}</strong></div>
+      ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<div><span class="muted">매수대비</span><strong class="${buyReturnClass}">${pct(buyReturn)}</strong></div>`}
     </div>
     <div class="candidate-meta">
       ${theme ? `<span>${theme}</span>` : ''}
@@ -158,11 +161,15 @@ function candidateList(items) {
 function tradeAlerts(s) {
   const renderItems = (items, emptyText) => {
     if (!items || !items.length) return `<p class="muted alert-empty">${emptyText}</p>`;
-    return `<div class="alert-items">${items.map(x => `<div class="alert-item">
+    return `<div class="alert-items">${items.map(x => {
+      const buyReturn = x.returnPct === null || x.returnPct === undefined || x.returnPct === '' ? null : Number(x.returnPct);
+      const buyReturnClass = buyReturn === null || Number.isNaN(buyReturn) ? '' : (buyReturn >= 0 ? 'up' : 'down');
+      return `<div class="alert-item">
       <strong>${x.name || '-'}</strong>${x.code ? `<span class="muted">${x.code}</span>` : ''}
       <em>${x.status || '검토'}</em>
+      ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<b class="return-chip ${buyReturnClass}">매수대비 ${pct(buyReturn)}</b>`}
       ${x.reason ? `<small>${x.reason}</small>` : ''}
-    </div>`).join('')}</div>`;
+    </div>`}).join('')}</div>`;
   };
   return `<div class="trade-alerts">
     <section class="trade-alert buy-alert">
