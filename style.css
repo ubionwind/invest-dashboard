@@ -145,9 +145,10 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .holdings-card { padding: 12px; border-radius: 16px; border: 1px solid rgba(53,211,153,.30); background: rgba(53,211,153,.055); }
 .holding-items { display: grid; gap: 7px; }
 .holding-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 10px; border-radius: 12px; background: rgba(255,255,255,.04); }
-.holding-item strong, .holding-item span, .holding-item em { display: block; }
+.holding-item strong, .holding-item span, .holding-item em, .holding-item small { display: block; }
 .holding-item strong { font-size: 15px; }
 .holding-item em { margin-top: 2px; color: var(--text); font-style: normal; font-size: 12px; }
+.holding-item > div > small { margin-top: 4px; line-height: 1.35; }
 .holding-numbers { text-align: right; }
 .holding-numbers b { display: block; font-size: 22px; line-height: 1; letter-spacing: -.04em; }
 .holding-numbers small { display: block; margin-top: 5px; color: var(--muted); white-space: nowrap; }

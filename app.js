@@ -236,10 +236,11 @@ function holdingsBlock(pf = {}) {
         <div>
           <strong>${p.name || '-'}</strong>${p.code ? `<span class="muted">${p.code}</span>` : ''}
           <em>${fmt.format(p.qty || 0)}주${p.holdingPeriod ? ` · ${p.holdingPeriod}` : ''}</em>
+          <small class="muted">매입 ${money(p.entryPrice)} · 현재 ${money(p.currentPrice)} · 평가 ${money(p.evalAmount)}</small>
         </div>
         <div class="holding-numbers">
           <b class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : pct(ret)}</b>
-          <small>${money(p.pnl)} / ${money(p.evalAmount)}</small>
+          <small>${money(p.pnl)}</small>
         </div>
       </div>`;
     }).join('')}</div>
