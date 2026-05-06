@@ -354,14 +354,15 @@ function render(data) {
   document.getElementById('overallStatus').className = `status-pill ${data.summary.staleCount > 0 ? 'status-STALE' : 'status-OK'}`;
 
   document.getElementById('summaryGrid').innerHTML = [
-    summaryTile('시장/KODEX 누적', marketPair(data), '동일 기간 누적 비교', '📈', (data.benchmark?.returnPct || 0) >= 0 ? 'good' : 'danger')
+    summaryTile('시장/KODEX 누적', marketPair(data), '동일 기간 누적 비교', '📈', (data.benchmark?.returnPct || 0) >= 0 ? 'good' : 'danger'),
+    ...data.sessions.map(renderOverviewStrategyCard)
   ].join('');
 
   const tabs = [{id:'panel-overview', name:'전체 요약'}, ...data.sessions.map((s, idx) => ({id:`panel-${idx}`, name:s.name}))];
   document.getElementById('tabs').innerHTML = tabs.map((t,i) => `<button class="tab ${i===0?'active':''}" data-target="${t.id}">${t.name}</button>`).join('');
   document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => setActive(t.dataset.target, true)));
 
-  document.getElementById('sessionCards').innerHTML = data.sessions.map(renderOverviewStrategyCard).join('');
+  document.getElementById('sessionCards').innerHTML = '';
   document.getElementById('sessionPanels').innerHTML = data.sessions.map((s, i) => `
     <section class="panel" id="panel-${i}">
       ${renderSessionCard(s, true, false)}
