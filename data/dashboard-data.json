@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T09:32+09:00",
+  "generatedAt": "2026-05-06T10:02+09:00",
   "summary": {
     "totalSessions": 4,
     "staleCount": 0,
@@ -8,13 +8,13 @@
   },
   "benchmark": {
     "label": "KOSPI",
-    "value": 7279.73,
-    "returnPct": 4.94,
-    "dailyReturnPct": 0.51,
+    "value": 7302.2,
+    "returnPct": 5.26,
+    "dailyReturnPct": 0.82,
     "date": "2026-05-06",
-    "time": "02:11:30",
+    "time": "02:42:30",
     "periodStart": "2026-05-06T08:39+09:00",
-    "periodEnd": "2026-05-06T09:32+09:00"
+    "periodEnd": "2026-05-06T10:02+09:00"
   },
   "sessions": [
     {
@@ -39,9 +39,9 @@
         "positionCount": 0
       },
       "comparison": {
-        "returnPct": 0.0,
-        "benchmarkReturnPct": 4.94,
-        "excessReturnPct": -4.94
+        "returnPct": null,
+        "benchmarkReturnPct": null,
+        "excessReturnPct": null
       }
     },
     {
@@ -66,9 +66,9 @@
         "positionCount": 0
       },
       "comparison": {
-        "returnPct": 0.0,
-        "benchmarkReturnPct": 4.94,
-        "excessReturnPct": -4.94
+        "returnPct": null,
+        "benchmarkReturnPct": null,
+        "excessReturnPct": null
       }
     },
     {
@@ -94,7 +94,7 @@
       },
       "comparison": {
         "returnPct": null,
-        "benchmarkReturnPct": 4.94,
+        "benchmarkReturnPct": null,
         "excessReturnPct": null
       }
     },
@@ -121,7 +121,7 @@
       },
       "comparison": {
         "returnPct": null,
-        "benchmarkReturnPct": 4.94,
+        "benchmarkReturnPct": null,
         "excessReturnPct": null
       }
     }
@@ -327,6 +327,87 @@
       "returns": [
         0.0,
         0.0,
+        null,
+        null
+      ],
+      "evalAmounts": [
+        30000000,
+        10000000,
+        null,
+        null
+      ],
+      "capital": [
+        30000000,
+        10000000,
+        null,
+        null
+      ]
+    },
+    {
+      "ts": "2026-05-06T09:37+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 0,
+      "protected": 0,
+      "stale": 0,
+      "benchmark": 5.04,
+      "benchmarkValue": 7286.38,
+      "returns": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "evalAmounts": [
+        30000000,
+        10000000,
+        null,
+        null
+      ],
+      "capital": [
+        30000000,
+        10000000,
+        null,
+        null
+      ]
+    },
+    {
+      "ts": "2026-05-06T09:45+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 0,
+      "protected": 0,
+      "stale": 0,
+      "benchmark": 5.44,
+      "benchmarkValue": 7314.64,
+      "returns": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "evalAmounts": [
+        30000000,
+        10000000,
+        null,
+        null
+      ],
+      "capital": [
+        30000000,
+        10000000,
+        null,
+        null
+      ]
+    },
+    {
+      "ts": "2026-05-06T10:02+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 0,
+      "protected": 0,
+      "stale": 0,
+      "benchmark": 5.26,
+      "benchmarkValue": 7302.2,
+      "returns": [
+        null,
+        null,
         null,
         null
       ],
