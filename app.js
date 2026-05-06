@@ -306,6 +306,38 @@ function renderSessionCard(s, full = false, showSummary = true) {
   </article>`;
 }
 
+function renderOverviewStrategyCard(s) {
+  const cmp = s.comparison || {};
+  const pf = s.portfolio || {};
+  return `<article class="card session-card overview-strategy-card">
+    <div class="card-head">
+      <div>
+        <h3>${s.name}</h3>
+        <p class="muted">${s.stage}</p>
+      </div>
+      <span class="badge ${statusClass(s.status)}">${s.status}</span>
+    </div>
+    <div class="session-hero">
+      <div>
+        <span class="muted">보유</span>
+        <strong>${fmt.format(pf.positionCount || 0)}</strong>
+      </div>
+      <div>
+        <span class="muted">수익률</span>
+        <strong class="${(pf.returnPct || 0) >= 0 ? 'up' : 'down'}">${pct(pf.returnPct)}</strong>
+        <small class="market-compare ${cmp.excessReturnPct == null ? '' : ((cmp.excessReturnPct || 0) >= 0 ? 'up' : 'down')}">시장 대비 ${pct(cmp.excessReturnPct)}</small>
+      </div>
+    </div>
+    ${portfolioStrip(pf)}
+    <div class="mini-facts">
+      <span>후보 ${fmt.format(s.candidateCount || 0)}</span>
+      <span>매수기록 ${fmt.format(s.buyAlerts?.length || 0)}</span>
+      <span>시세 ${fmt.format(s.quoteCount || 0)}</span>
+      <span>보호 ${fmt.format(s.protectedRows || 0)}</span>
+    </div>
+  </article>`;
+}
+
 function scrollToPanelStart(id) {
   if (id === 'panel-overview') {
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -330,10 +362,6 @@ function render(data) {
   document.getElementById('overallStatus').className = `status-pill ${data.summary.staleCount > 0 ? 'status-STALE' : 'status-OK'}`;
 
   document.getElementById('summaryGrid').innerHTML = [
-    summaryTile('관리 항목', fmt.format(data.summary.totalSessions), '전체 운용/관찰 대상', '📌'),
-    summaryTile('전체 누적 수익률', pct(data.summary.totalReturnPct), `손익 ${money(data.summary.totalPnl)} / 평가 ${money(data.summary.totalEvalAmount)}`, '💰', (data.summary.totalReturnPct || 0) >= 0 ? 'good' : 'danger'),
-    summaryTile('전체 후보', fmt.format(data.summary.candidateCount), '검토 대상 종목 수', '🧩'),
-    summaryTile('주의 상태', fmt.format(data.summary.staleCount), '확인 필요 항목', data.summary.staleCount > 0 ? '⚠️' : '✅', data.summary.staleCount > 0 ? 'danger' : 'good'),
     summaryTile('시장/KODEX 누적', marketPair(data), '동일 기간 누적 비교', '📈', (data.benchmark?.returnPct || 0) >= 0 ? 'good' : 'danger')
   ].join('');
 
@@ -341,7 +369,7 @@ function render(data) {
   document.getElementById('tabs').innerHTML = tabs.map((t,i) => `<button class="tab ${i===0?'active':''}" data-target="${t.id}">${t.name}</button>`).join('');
   document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => setActive(t.dataset.target, true)));
 
-  document.getElementById('sessionCards').innerHTML = '';
+  document.getElementById('sessionCards').innerHTML = data.sessions.map(renderOverviewStrategyCard).join('');
   document.getElementById('sessionPanels').innerHTML = data.sessions.map((s, i) => `
     <section class="panel" id="panel-${i}">
       ${renderSessionCard(s, true, false)}
