@@ -67,6 +67,26 @@ function kpi(label, value) {
   return `<div class="kpi"><span class="muted">${label}</span><strong>${shown}</strong></div>`;
 }
 
+function compactMoney(v) {
+  if (v === null || v === undefined) return '-';
+  const num = Number(v);
+  if (Number.isNaN(num)) return '-';
+  const abs = Math.abs(num);
+  if (abs >= 100000000) return `${(num / 100000000).toFixed(1)}억`;
+  if (abs >= 10000) return `${(num / 10000).toFixed(0)}만`;
+  return fmt.format(num);
+}
+
+function portfolioStrip(pf = {}) {
+  return `<div class="portfolio-strip">
+    <div><span>원금</span><strong>${compactMoney(pf.capital)}</strong></div>
+    <div><span>현금</span><strong>${compactMoney(pf.cash)}</strong></div>
+    <div><span>투자금</span><strong>${compactMoney(pf.investmentAmount)}</strong></div>
+    <div><span>수익금</span><strong class="${(pf.pnl || 0) >= 0 ? 'up' : 'down'}">${compactMoney(pf.pnl)}</strong></div>
+    <div><span>수익률</span><strong class="${(pf.returnPct || 0) >= 0 ? 'up' : 'down'}">${pct(pf.returnPct)}</strong></div>
+  </div>`;
+}
+
 
 function money(v) {
   if (v === null || v === undefined) return '-';
@@ -221,6 +241,7 @@ function renderSessionCard(s, full = false) {
         <strong class="${(cmp.excessReturnPct || 0) >= 0 ? 'up' : 'down'}">${pct(cmp.excessReturnPct)}</strong>
       </div>
     </div>
+    ${portfolioStrip(pf)}
     <div class="mini-facts">
       <span>검증 ${fmt.format(s.validationCount || 0)}</span>
       <span>보호 ${fmt.format(s.protectedRows || 0)}</span>

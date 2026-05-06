@@ -73,6 +73,11 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .session-hero > div { padding: 13px; border-radius: 15px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.07); }
 .session-hero span, .session-hero strong { display: block; }
 .session-hero strong { margin-top: 4px; font-size: 28px; letter-spacing: -.04em; }
+.portfolio-strip { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7px; }
+.portfolio-strip > div { padding: 9px 8px; border-radius: 13px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.06); min-width: 0; }
+.portfolio-strip span, .portfolio-strip strong { display: block; }
+.portfolio-strip span { color: var(--muted); font-size: 11px; }
+.portfolio-strip strong { margin-top: 3px; font-size: 15px; letter-spacing: -.03em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mini-facts { display: flex; flex-wrap: wrap; gap: 7px; }
 .mini-facts span { padding: 6px 9px; border-radius: 999px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.06); color: var(--muted); font-size: 12px; }
 .overview-candidates { grid-column: 1 / -1; }
@@ -118,6 +123,10 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .candidate-grid, .overview-candidate-grid { grid-template-columns: 1fr; gap: 10px; }
   .session-hero { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .session-hero strong { font-size: 30px; }
+  .portfolio-strip { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; }
+  .portfolio-strip > div { padding: 8px 5px; }
+  .portfolio-strip span { font-size: 10px; }
+  .portfolio-strip strong { font-size: 13px; }
   .mini-facts { display: grid; grid-template-columns: repeat(2, 1fr); }
   .trade-alerts { grid-template-columns: 1fr; }
   .candidate-tile { padding: 13px; border-radius: 17px; }
