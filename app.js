@@ -153,10 +153,13 @@ function candidateTile(c, idx) {
       ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<div><span class="muted">매수대비</span><strong class="${buyReturnClass}">${pct(buyReturn)}</strong></div>`}
     </div>
     <div class="candidate-meta">
+      ${c.rank ? `<span>현재 ${c.rank}위</span>` : ''}
+      ${c.evaluatedAt ? `<span>평가 ${formatKst(c.evaluatedAt).slice(11)}</span>` : ''}
       ${theme ? `<span>${theme}</span>` : ''}
       ${meta ? `<span>meta ${meta}</span>` : ''}
       ${rawScore && rawScore !== score ? `<span>원점수 ${rawScore}</span>` : ''}
     </div>
+    ${c.candidateNote ? `<details class="candidate-detail"><summary>매수/보유 기준 보기</summary><p>${c.candidateNote}</p></details>` : ''}
     ${c.reason && (!theme && !meta && change === undefined) ? `<p class="candidate-reason">${c.reason}</p>` : ''}
   </article>`;
 }
