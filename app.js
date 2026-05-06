@@ -148,7 +148,7 @@ function candidateTile(c, idx) {
       ${c.code ? `<span class="muted">${c.code}</span>` : ''}
     </div>
     <div class="candidate-main">
-      <div class="score-box ${scoreTone}"><span class="muted">기준점수</span><strong>${score}</strong></div>
+      <div class="score-box ${scoreTone}"><span class="muted">전략점수</span><strong>${score}</strong></div>
       <div><span class="muted">등락률</span><strong class="${changeClass}">${change === undefined || change === null ? '-' : `${Number(change).toFixed(2)}%`}</strong></div>
       ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<div><span class="muted">매수대비</span><strong class="${buyReturnClass}">${pct(buyReturn)}</strong></div>`}
     </div>
@@ -255,7 +255,7 @@ function renderSessionCard(s, full = false) {
       <span>보유 ${fmt.format(pf.positionCount || 0)}</span>
     </div>
     ${tradeAlerts(s)}
-    ${s.topCandidates?.length ? `<div class="strategy-candidates"><h3>후보 타일</h3>${candidateList(s.topCandidates)}</div>` : ''}
+    ${s.topCandidates?.length ? `<div class="strategy-candidates"><h3>후보 타일</h3><p class="candidate-help">전략점수는 같은 전략 안에서의 후보 강도입니다. 전략이 다르면 산식이 달라 직접 순위 비교보다 색상대와 전략 맥락을 함께 보세요.</p>${candidateList(s.topCandidates)}</div>` : ''}
   </article>${full ? performanceBlock(s) : ''}`;
 }
 
