@@ -56,6 +56,11 @@ function marketPair(data) {
   return `<span class="market-pair"><span>KOSPI ${pct(data.benchmark?.returnPct)}</span><span>KODEX ${pct(data.kodexBenchmark?.returnPct)}</span></span>`;
 }
 
+function basisText(start) {
+  if (!start) return '기준 없음';
+  return `시작 ${formatKst(start).slice(5)}`;
+}
+
 function summaryTile(label, value, note = '', icon = '•', tone = '') {
   return `<article class="summary-tile ${tone ? `summary-${tone}` : ''}">
     <div class="summary-icon">${icon}</div>
@@ -309,6 +314,7 @@ function renderSessionCard(s, full = false, showSummary = true) {
 function renderOverviewStrategyCard(s) {
   const cmp = s.comparison || {};
   const pf = s.portfolio || {};
+  const basis = basisText(cmp.periodStart);
   return `<article class="card overview-strategy-card">
     <div class="overview-strategy-head">
       <div>
@@ -321,6 +327,7 @@ function renderOverviewStrategyCard(s) {
       <strong class="${(pf.returnPct || 0) >= 0 ? 'up' : 'down'}">${pct(pf.returnPct)}</strong>
       <span class="market-compare ${cmp.excessReturnPct == null ? '' : ((cmp.excessReturnPct || 0) >= 0 ? 'up' : 'down')}">시장 대비 ${pct(cmp.excessReturnPct)}</span>
     </div>
+    <div class="basis-line">${basis}</div>
     <div class="overview-compact-metrics">
       <span><b>${compactMoney(pf.capital)}</b><em>원금</em></span>
       <span><b>${compactMoney(pf.investmentAmount)}</b><em>투자</em></span>
@@ -354,7 +361,7 @@ function render(data) {
   document.getElementById('overallStatus').className = `status-pill ${data.summary.staleCount > 0 ? 'status-STALE' : 'status-OK'}`;
 
   document.getElementById('summaryGrid').innerHTML = [
-    summaryTile('시장/KODEX 누적', marketPair(data), '동일 기간 누적 비교', '📈', (data.benchmark?.returnPct || 0) >= 0 ? 'good' : 'danger'),
+    summaryTile('시장/KODEX 누적', marketPair(data), basisText(data.benchmark?.periodStart), '📈', (data.benchmark?.returnPct || 0) >= 0 ? 'good' : 'danger'),
     ...data.sessions.map(renderOverviewStrategyCard)
   ].join('');
 
