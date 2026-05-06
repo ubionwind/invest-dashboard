@@ -148,7 +148,7 @@ function candidateTile(c, idx) {
       ${c.code ? `<span class="muted">${c.code}</span>` : ''}
     </div>
     <div class="candidate-main">
-      <div class="score-box ${scoreTone}"><span class="muted">전략점수</span><strong>${score}</strong></div>
+      <div class="score-box ${scoreTone}"><span class="muted">판단점수</span><strong>${score}</strong></div>
       <div><span class="muted">등락률</span><strong class="${changeClass}">${change === undefined || change === null ? '-' : `${Number(change).toFixed(2)}%`}</strong></div>
       ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<div><span class="muted">매수대비</span><strong class="${buyReturnClass}">${pct(buyReturn)}</strong></div>`}
     </div>
@@ -258,7 +258,7 @@ function renderSessionCard(s, full = false) {
       <span>보유 ${fmt.format(pf.positionCount || 0)}</span>
     </div>
     ${tradeAlerts(s)}
-    ${s.topCandidates?.length ? `<div class="strategy-candidates"><h3>후보 타일</h3><p class="candidate-help">전략점수는 같은 전략 안에서의 후보 강도입니다. 전략이 다르면 산식이 달라 직접 순위 비교보다 색상대와 전략 맥락을 함께 보세요.</p>${candidateList(s.topCandidates)}</div>` : ''}
+    ${s.topCandidates?.length ? `<div class="strategy-candidates"><h3>후보 타일</h3><p class="candidate-help">판단점수는 전략별 원점수를 공통 0~100 구간으로 환산한 실행 강도입니다. 90+ 강매수권, 80+ 우선검토, 70+ 관찰강화, 60 미만은 아직 약함으로 봅니다.</p>${candidateList(s.topCandidates)}</div>` : ''}
   </article>${full ? performanceBlock(s) : ''}`;
 }
 
@@ -297,7 +297,7 @@ function render(data) {
   document.getElementById('tabs').innerHTML = tabs.map((t,i) => `<button class="tab ${i===0?'active':''}" data-target="${t.id}">${t.name}</button>`).join('');
   document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => setActive(t.dataset.target, true)));
 
-  document.getElementById('sessionCards').innerHTML = data.sessions.map(s => renderSessionCard(s)).join('');
+  document.getElementById('sessionCards').innerHTML = '';
   document.getElementById('sessionPanels').innerHTML = data.sessions.map((s, i) => `
     <section class="panel" id="panel-${i}">
       ${renderSessionCard(s, true)}

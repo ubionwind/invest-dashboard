@@ -26,6 +26,8 @@ h2, h3 { margin: 0; letter-spacing: -0.03em; }
 .status-STALE { color: var(--bad); }
 .status-INITIALIZED, .status-NO_DATA { color: var(--warn); }
 main { padding: 24px clamp(18px, 4vw, 48px) 44px; }
+.dashboard-shell { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 18px; align-items: start; }
+.dashboard-panels { min-width: 0; }
 .summary-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px; }
 .metric, .card { background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025)); border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 20px 80px rgba(0,0,0,.22); }
 
@@ -38,9 +40,10 @@ main { padding: 24px clamp(18px, 4vw, 48px) 44px; }
 
 .metric { padding: 18px; }
 .metric .value { display: block; margin-top: 10px; font-size: 30px; font-weight: 800; }
-.tabs { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0; }
-.tab { cursor: pointer; border: 1px solid var(--line); color: var(--text); background: rgba(255,255,255,.04); border-radius: 999px; padding: 10px 15px; }
+.tabs { position: sticky; top: 18px; display: grid; gap: 10px; margin: 0; padding: 12px; border: 1px solid var(--line); border-radius: 20px; background: rgba(11,16,32,.42); backdrop-filter: blur(12px); }
+.tab { cursor: pointer; border: 1px solid var(--line); color: var(--text); background: rgba(255,255,255,.04); border-radius: 14px; padding: 12px 13px; text-align: left; }
 .tab.active { background: var(--accent); color: #081023; font-weight: 800; }
+.overview-guide { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .panel { display: none; }
 .panel.active { display: block; }
 .card { padding: 18px; margin-bottom: 14px; }
@@ -139,12 +142,15 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .summary-tile small { font-size: 12px; }
   main { padding: 16px 12px 32px; }
   .topbar { padding: 20px 14px; }
+  .dashboard-shell { display: block; }
+  .overview-guide { display: grid; gap: 4px; }
   .tabs {
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 50;
+    display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 8px;
@@ -157,7 +163,7 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
     scrollbar-width: none;
   }
   .tabs::-webkit-scrollbar { display: none; }
-  .tab { flex: 0 0 auto; padding: 10px 13px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+  .tab { flex: 0 0 auto; padding: 10px 13px; text-align: center; border-radius: 999px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
   .card { padding: 14px; border-radius: 18px; }
   .card-head { align-items: flex-start; }
   .candidate-grid, .overview-candidate-grid { grid-template-columns: 1fr; gap: 10px; }
