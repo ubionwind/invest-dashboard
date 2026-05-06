@@ -1,0 +1,348 @@
+{
+  "generatedAt": "2026-05-06T09:32+09:00",
+  "summary": {
+    "totalSessions": 4,
+    "staleCount": 0,
+    "candidateCount": 0,
+    "protectedRows": 0
+  },
+  "benchmark": {
+    "label": "KOSPI",
+    "value": 7279.73,
+    "returnPct": 4.94,
+    "dailyReturnPct": 0.51,
+    "date": "2026-05-06",
+    "time": "02:11:30",
+    "periodStart": "2026-05-06T08:39+09:00",
+    "periodEnd": "2026-05-06T09:32+09:00"
+  },
+  "sessions": [
+    {
+      "name": "단기",
+      "stage": "운영",
+      "status": "INITIALIZED",
+      "candidateCount": 0,
+      "sellCandidateCount": 0,
+      "validationCount": 0,
+      "gateCount": 0,
+      "dryRunCount": 0,
+      "protectedRows": 0,
+      "quoteCount": 0,
+      "topCandidates": [],
+      "buyAlerts": [],
+      "sellAlerts": [],
+      "portfolio": {
+        "capital": 30000000,
+        "evalAmount": 30000000,
+        "pnl": 0,
+        "returnPct": 0.0,
+        "positionCount": 0
+      },
+      "comparison": {
+        "returnPct": 0.0,
+        "benchmarkReturnPct": 4.94,
+        "excessReturnPct": -4.94
+      }
+    },
+    {
+      "name": "일반",
+      "stage": "운영",
+      "status": "INITIALIZED",
+      "candidateCount": 0,
+      "sellCandidateCount": 0,
+      "validationCount": 0,
+      "gateCount": 0,
+      "dryRunCount": 0,
+      "protectedRows": 0,
+      "quoteCount": 0,
+      "topCandidates": [],
+      "buyAlerts": [],
+      "sellAlerts": [],
+      "portfolio": {
+        "capital": 10000000,
+        "evalAmount": 10000000,
+        "pnl": 0,
+        "returnPct": 0.0,
+        "positionCount": 0
+      },
+      "comparison": {
+        "returnPct": 0.0,
+        "benchmarkReturnPct": 4.94,
+        "excessReturnPct": -4.94
+      }
+    },
+    {
+      "name": "급등",
+      "stage": "관찰",
+      "status": "INITIALIZED",
+      "candidateCount": 0,
+      "sellCandidateCount": 0,
+      "validationCount": 0,
+      "gateCount": 0,
+      "dryRunCount": 0,
+      "protectedRows": 0,
+      "quoteCount": 0,
+      "topCandidates": [],
+      "buyAlerts": [],
+      "sellAlerts": [],
+      "portfolio": {
+        "capital": null,
+        "evalAmount": null,
+        "pnl": null,
+        "returnPct": null,
+        "positionCount": null
+      },
+      "comparison": {
+        "returnPct": null,
+        "benchmarkReturnPct": 4.94,
+        "excessReturnPct": null
+      }
+    },
+    {
+      "name": "매일신규",
+      "stage": "관찰",
+      "status": "INITIALIZED",
+      "candidateCount": 0,
+      "sellCandidateCount": 0,
+      "validationCount": 0,
+      "gateCount": 0,
+      "dryRunCount": 0,
+      "protectedRows": 0,
+      "quoteCount": 0,
+      "topCandidates": [],
+      "buyAlerts": [],
+      "sellAlerts": [],
+      "portfolio": {
+        "capital": null,
+        "evalAmount": null,
+        "pnl": null,
+        "returnPct": null,
+        "positionCount": null
+      },
+      "comparison": {
+        "returnPct": null,
+        "benchmarkReturnPct": 4.94,
+        "excessReturnPct": null
+      }
+    }
+  ],
+  "history": [
+    {
+      "ts": "2026-05-06T08:39+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 0,
+      "protected": 0,
+      "stale": 0,
+      "benchmark": 0.0,
+      "benchmarkValue": 6936.99,
+      "returns": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "evalAmounts": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "capital": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "ts": "2026-05-06T08:53+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 0,
+      "protected": 0,
+      "stale": 0,
+      "benchmark": 0.0,
+      "benchmarkValue": 6936.99,
+      "returns": [
+        0.0,
+        0.0,
+        null,
+        null
+      ],
+      "evalAmounts": [
+        30000000,
+        10000000,
+        null,
+        null
+      ],
+      "capital": [
+        30000000,
+        10000000,
+        null,
+        null
+      ]
+    },
+    {
+      "ts": "2026-05-06T09:01+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 0,
+      "protected": 0,
+      "stale": 0,
+      "benchmark": 0.0,
+      "benchmarkValue": 6936.99,
+      "returns": [
+        0.0,
+        0.0,
+        null,
+        null
+      ],
+      "evalAmounts": [
+        30000000,
+        10000000,
+        null,
+        null
+      ],
+      "capital": [
+        30000000,
+        10000000,
+        null,
+        null
+      ]
+    },
+    {
+      "ts": "2026-05-06T09:03+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 0,
+      "protected": 0,
+      "stale": 0,
+      "benchmark": 0.0,
+      "benchmarkValue": 6936.99,
+      "returns": [
+        0.0,
+        0.0,
+        null,
+        null
+      ],
+      "evalAmounts": [
+        30000000,
+        10000000,
+        null,
+        null
+      ],
+      "capital": [
+        30000000,
+        10000000,
+        null,
+        null
+      ]
+    },
+    {
+      "ts": "2026-05-06T09:20+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 0,
+      "protected": 0,
+      "stale": 0,
+      "benchmark": 0.0,
+      "benchmarkValue": 6936.99,
+      "returns": [
+        0.0,
+        0.0,
+        null,
+        null
+      ],
+      "evalAmounts": [
+        30000000,
+        10000000,
+        null,
+        null
+      ],
+      "capital": [
+        30000000,
+        10000000,
+        null,
+        null
+      ]
+    },
+    {
+      "ts": "2026-05-06T09:21+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 0,
+      "protected": 0,
+      "stale": 0,
+      "benchmark": 4.54,
+      "benchmarkValue": 7252.09,
+      "returns": [
+        0.0,
+        0.0,
+        null,
+        null
+      ],
+      "evalAmounts": [
+        30000000,
+        10000000,
+        null,
+        null
+      ],
+      "capital": [
+        30000000,
+        10000000,
+        null,
+        null
+      ]
+    },
+    {
+      "ts": "2026-05-06T09:30+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 0,
+      "protected": 0,
+      "stale": 0,
+      "benchmark": 4.03,
+      "benchmarkValue": 7216.31,
+      "returns": [
+        0.0,
+        0.0,
+        null,
+        null
+      ],
+      "evalAmounts": [
+        30000000,
+        10000000,
+        null,
+        null
+      ],
+      "capital": [
+        30000000,
+        10000000,
+        null,
+        null
+      ]
+    },
+    {
+      "ts": "2026-05-06T09:32+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 0,
+      "protected": 0,
+      "stale": 0,
+      "benchmark": 4.94,
+      "benchmarkValue": 7279.73,
+      "returns": [
+        0.0,
+        0.0,
+        null,
+        null
+      ],
+      "evalAmounts": [
+        30000000,
+        10000000,
+        null,
+        null
+      ],
+      "capital": [
+        30000000,
+        10000000,
+        null,
+        null
+      ]
+    }
+  ],
+  "notice": "Dashboard reset; previous metrics are not inherited."
+}

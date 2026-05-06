@@ -1,0 +1,9 @@
+# Local files
+.DS_Store
+*.swp
+__pycache__/
+*.pyc
+scripts/
+
+# Local generation scripts are not published
+scripts/
