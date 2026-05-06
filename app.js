@@ -286,7 +286,7 @@ function renderSessionCard(s, full = false) {
       <span>보유 ${fmt.format(pf.positionCount || 0)}</span>
     </div>
     ${tradeAlerts(s)}
-    ${s.topCandidates?.length ? `<div class="strategy-candidates"><h3>후보 타일</h3><p class="candidate-help">판단점수는 전략별 원점수를 공통 0~100 구간으로 환산한 실행 강도입니다. 90+ 강매수권, 80+ 우선검토, 70+ 관찰강화, 60 미만은 아직 약함으로 봅니다.</p>${candidateList(s.topCandidates)}</div>` : ''}
+    ${s.topCandidates?.length ? `<div class="strategy-candidates"><h3>후보 타일</h3><p class="candidate-help"><span class="desktop-help">판단점수는 전략별 원점수를 공통 0~100 구간으로 환산한 실행 강도입니다. 90+ 강매수권, 80+ 우선검토, 70+ 관찰강화, 60 미만은 아직 약함으로 봅니다.</span><span class="mobile-help">판단점수: 90+ 강함 · 80+ 우선 · 70+ 관찰 · 60↓ 약함</span></p>${candidateList(s.topCandidates)}</div>` : ''}
   </article>${full ? performanceBlock(s) : ''}`;
 }
 
