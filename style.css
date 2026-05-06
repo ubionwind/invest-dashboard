@@ -67,6 +67,8 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .candidate-meta { flex-wrap: wrap; gap: 7px; margin-top: 10px; }
 .candidate-meta span { padding: 5px 8px; border-radius: 999px; background: rgba(121,167,255,.12); color: #caddff; font-size: 12px; }
 .candidate-reason { margin: 10px 0 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+.strategy-candidates { margin-top: 4px; }
+.strategy-candidates h3 { margin: 4px 0 8px; font-size: 16px; }
 .up { color: var(--rise); }
 .down { color: var(--fall); }
 

@@ -251,17 +251,8 @@ function renderSessionCard(s, full = false) {
       <span>보유 ${fmt.format(pf.positionCount || 0)}</span>
     </div>
     ${tradeAlerts(s)}
-    ${full ? `<h3>후보/검토 목록</h3>${candidateList(s.topCandidates)}` : ''}
+    ${s.topCandidates?.length ? `<div class="strategy-candidates"><h3>후보 타일</h3>${candidateList(s.topCandidates)}</div>` : ''}
   </article>${full ? performanceBlock(s) : ''}`;
-}
-
-function overviewCandidateTiles(sessions) {
-  const items = (sessions || []).flatMap(s => (s.topCandidates || []).slice(0, 4).map(c => ({...c, sessionName: s.name})));
-  if (!items.length) return '';
-  return `<div class="card overview-candidates">
-    <div class="card-head"><h2>후보 타일</h2><span class="muted">모바일 빠른 확인</span></div>
-    <div class="candidate-grid overview-candidate-grid">${items.map((c, i) => candidateTile({...c, status: c.sessionName}, i)).join('')}</div>
-  </div>`;
 }
 
 function scrollToPanelStart(id) {
@@ -299,7 +290,7 @@ function render(data) {
   document.getElementById('tabs').innerHTML = tabs.map((t,i) => `<button class="tab ${i===0?'active':''}" data-target="${t.id}">${t.name}</button>`).join('');
   document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => setActive(t.dataset.target, true)));
 
-  document.getElementById('sessionCards').innerHTML = data.sessions.map(s => renderSessionCard(s)).join('') + overviewCandidateTiles(data.sessions);
+  document.getElementById('sessionCards').innerHTML = data.sessions.map(s => renderSessionCard(s)).join('');
   document.getElementById('sessionPanels').innerHTML = data.sessions.map((s, i) => `
     <section class="panel" id="panel-${i}">
       ${renderSessionCard(s, true)}
