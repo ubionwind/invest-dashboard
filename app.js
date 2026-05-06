@@ -124,7 +124,7 @@ function reasonParts(reason = '') {
 
 function candidateTile(c, idx) {
   const parts = reasonParts(c.reason);
-  const change = parts['등락률'];
+  const change = c.changePct === null || c.changePct === undefined || c.changePct === '' ? parts['등락률'] : c.changePct;
   const theme = parts.theme;
   const meta = parts.meta;
   const status = c.status || '검토';
@@ -146,7 +146,7 @@ function candidateTile(c, idx) {
     </div>
     <div class="candidate-main">
       <div><span class="muted">점수</span><strong>${score}</strong></div>
-      <div><span class="muted">등락률</span><strong class="${changeClass}">${change === undefined ? '-' : `${change}%`}</strong></div>
+      <div><span class="muted">등락률</span><strong class="${changeClass}">${change === undefined || change === null ? '-' : `${Number(change).toFixed(2)}%`}</strong></div>
       ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<div><span class="muted">매수대비</span><strong class="${buyReturnClass}">${pct(buyReturn)}</strong></div>`}
     </div>
     <div class="candidate-meta">
