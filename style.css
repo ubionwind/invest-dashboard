@@ -35,6 +35,7 @@ main { padding: 24px clamp(18px, 4vw, 48px) 44px; }
 .summary-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 14px; background: rgba(121,167,255,.14); font-size: 20px; }
 .summary-tile strong, .summary-tile small { display: block; }
 .summary-tile strong { margin-top: 4px; font-size: 28px; letter-spacing: -.04em; }
+.market-pair { display: grid; gap: 2px; font-size: 21px; line-height: 1.08; }
 .summary-good .summary-icon { background: rgba(255,77,79,.16); }
 .summary-danger .summary-icon { background: rgba(59,130,246,.16); }
 
@@ -150,6 +151,7 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .summary-icon { width: 34px; height: 34px; border-radius: 12px; font-size: 18px; }
   .summary-tile strong { font-size: 28px; }
   .summary-tile small { font-size: 12px; }
+  .market-pair { font-size: 18px; }
   main { padding: 16px 12px 32px; }
   .topbar { padding: 20px 14px; }
   .dashboard-shell { display: block; }

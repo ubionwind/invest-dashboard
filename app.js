@@ -52,6 +52,10 @@ function comparisonHelp() {
   return '시장 대비 = 누적 수익률 - 같은 기간 KOSPI 수익률';
 }
 
+function marketPair(data) {
+  return `<span class="market-pair"><span>KOSPI ${pct(data.benchmark?.returnPct)}</span><span>KODEX ${pct(data.kodexBenchmark?.returnPct)}</span></span>`;
+}
+
 function summaryTile(label, value, note = '', icon = '•', tone = '') {
   return `<article class="summary-tile ${tone ? `summary-${tone}` : ''}">
     <div class="summary-icon">${icon}</div>
@@ -318,7 +322,7 @@ function render(data) {
     summaryTile('전체 누적 수익률', pct(data.summary.totalReturnPct), `손익 ${money(data.summary.totalPnl)} / 평가 ${money(data.summary.totalEvalAmount)}`, '💰', (data.summary.totalReturnPct || 0) >= 0 ? 'good' : 'danger'),
     summaryTile('전체 후보', fmt.format(data.summary.candidateCount), '검토 대상 종목 수', '🧩'),
     summaryTile('주의 상태', fmt.format(data.summary.staleCount), '확인 필요 항목', data.summary.staleCount > 0 ? '⚠️' : '✅', data.summary.staleCount > 0 ? 'danger' : 'good'),
-    summaryTile('시장/KODEX 누적', data.benchmark?.returnPct == null ? '-' : pct(data.benchmark.returnPct), `KOSPI · KODEX200 ${pct(data.kodexBenchmark?.returnPct)} · ${comparisonHelp()}`, '📈', (data.benchmark?.returnPct || 0) >= 0 ? 'good' : 'danger')
+    summaryTile('시장/KODEX 누적', marketPair(data), '동일 기간 누적 비교', '📈', (data.benchmark?.returnPct || 0) >= 0 ? 'good' : 'danger')
   ].join('');
 
   const tabs = [{id:'panel-overview', name:'전체 요약'}, ...data.sessions.map((s, idx) => ({id:`panel-${idx}`, name:s.name}))];

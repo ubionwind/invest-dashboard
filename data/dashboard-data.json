@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T15:34+09:00",
+  "generatedAt": "2026-05-06T15:35+09:00",
   "summary": {
     "totalSessions": 4,
     "staleCount": 0,
@@ -12,13 +12,13 @@
   },
   "benchmark": {
     "label": "KOSPI",
-    "value": 7407.18,
-    "returnPct": 1.44,
-    "dailyReturnPct": 2.27,
+    "value": 7409.09,
+    "returnPct": 1.46,
+    "dailyReturnPct": 2.29,
     "date": "2026-05-06",
-    "time": "08:13:30",
+    "time": "08:14:50",
     "periodStart": "2026-05-06T10:08+09:00",
-    "periodEnd": "2026-05-06T15:34+09:00",
+    "periodEnd": "2026-05-06T15:35+09:00",
     "basis": "firstInvestment"
   },
   "kodexBenchmark": {
@@ -28,9 +28,9 @@
     "returnPct": 0.0,
     "dailyReturnPct": 7.57,
     "date": "2026-05-06",
-    "time": "15:34:08",
+    "time": "15:35:32",
     "periodStart": "2026-05-06T10:08+09:00",
-    "periodEnd": "2026-05-06T15:34+09:00",
+    "periodEnd": "2026-05-06T15:35+09:00",
     "basis": "firstInvestment"
   },
   "sessions": [
@@ -55,7 +55,7 @@
           "rank": 1,
           "evaluatedAt": "2026-05-06T06:15:02.683Z",
           "status": "보유중",
-          "candidateNote": "보유 5시간 26분 · 매입 150398원 · 평가 7428400원 · 손익 58900원",
+          "candidateNote": "보유 5시간 27분 · 매입 150398원 · 평가 7428400원 · 손익 58900원",
           "reason": "meta=0.84; 등락률=1.41; theme=AI기판"
         },
         {
@@ -67,7 +67,7 @@
           "rank": 2,
           "evaluatedAt": "2026-05-06T06:15:02.683Z",
           "status": "보유중",
-          "candidateNote": "보유 5시간 26분 · 매입 381500원 · 평가 7495500원 · 손익 247000원",
+          "candidateNote": "보유 5시간 27분 · 매입 381500원 · 평가 7495500원 · 손익 247000원",
           "reason": "meta=0.82; 등락률=3.57; theme=HBM장비"
         },
         {
@@ -91,7 +91,7 @@
           "rank": 4,
           "evaluatedAt": "2026-05-06T06:15:02.683Z",
           "status": "보유중",
-          "candidateNote": "보유 54분 · 매입 224000원 · 평가 7540500원 · 손익 148500원",
+          "candidateNote": "보유 55분 · 매입 224000원 · 평가 7540500원 · 손익 148500원",
           "reason": "meta=0.76; 등락률=6.5; theme=2차전지소재"
         }
       ],
@@ -102,7 +102,7 @@
           "status": "보유중",
           "reason": "49주 · 매입 150398원 · 평가 7428400원 · 손익 58900원",
           "returnPct": 0.8,
-          "holdingPeriod": "보유 5시간 26분"
+          "holdingPeriod": "보유 5시간 27분"
         },
         {
           "code": "042700",
@@ -110,7 +110,7 @@
           "status": "보유중",
           "reason": "19주 · 매입 381500원 · 평가 7495500원 · 손익 247000원",
           "returnPct": 3.41,
-          "holdingPeriod": "보유 5시간 26분"
+          "holdingPeriod": "보유 5시간 27분"
         },
         {
           "code": "247540",
@@ -118,7 +118,7 @@
           "status": "보유중",
           "reason": "33주 · 매입 224000원 · 평가 7540500원 · 손익 148500원",
           "returnPct": 2.01,
-          "holdingPeriod": "보유 54분"
+          "holdingPeriod": "보유 55분"
         }
       ],
       "sellAlerts": [],
@@ -137,7 +137,7 @@
             "qty": 49,
             "entryPrice": 150398,
             "entryAt": "2026-05-06T10:08+09:00",
-            "holdingPeriod": "보유 5시간 26분",
+            "holdingPeriod": "보유 5시간 27분",
             "evalAmount": 7428400,
             "pnl": 58900,
             "returnPct": 0.8
@@ -148,7 +148,7 @@
             "qty": 19,
             "entryPrice": 381500,
             "entryAt": "2026-05-06T10:08+09:00",
-            "holdingPeriod": "보유 5시간 26분",
+            "holdingPeriod": "보유 5시간 27분",
             "evalAmount": 7495500,
             "pnl": 247000,
             "returnPct": 3.41
@@ -159,7 +159,7 @@
             "qty": 33,
             "entryPrice": 224000,
             "entryAt": "2026-05-06T14:40+09:00",
-            "holdingPeriod": "보유 54분",
+            "holdingPeriod": "보유 55분",
             "evalAmount": 7540500,
             "pnl": 148500,
             "returnPct": 2.01
@@ -168,10 +168,10 @@
       },
       "comparison": {
         "returnPct": 1.51,
-        "benchmarkReturnPct": 1.44,
-        "excessReturnPct": 0.07,
+        "benchmarkReturnPct": 1.46,
+        "excessReturnPct": 0.05,
         "periodStart": "2026-05-06T10:08+09:00",
-        "periodEnd": "2026-05-06T15:34+09:00"
+        "periodEnd": "2026-05-06T15:35+09:00"
       }
     },
     {
@@ -231,7 +231,7 @@
           "rank": 4,
           "evaluatedAt": "2026-05-06T06:15:02.683Z",
           "status": "보유중",
-          "candidateNote": "보유 3시간 22분 · 매입 264859원 · 평가 8512000원 · 손익 36500원",
+          "candidateNote": "보유 3시간 23분 · 매입 264859원 · 평가 8512000원 · 손익 36500원",
           "reason": "meta=0.45; 등락률=15.27; theme=반도체"
         },
         {
@@ -290,7 +290,7 @@
           "status": "보유중",
           "reason": "32주 · 매입 264859원 · 평가 8512000원 · 손익 36500원",
           "returnPct": 0.43,
-          "holdingPeriod": "보유 3시간 22분"
+          "holdingPeriod": "보유 3시간 23분"
         }
       ],
       "sellAlerts": [],
@@ -309,7 +309,7 @@
             "qty": 32,
             "entryPrice": 264859,
             "entryAt": "2026-05-06T12:12+09:00",
-            "holdingPeriod": "보유 3시간 22분",
+            "holdingPeriod": "보유 3시간 23분",
             "evalAmount": 8512000,
             "pnl": 36500,
             "returnPct": 0.43
@@ -318,10 +318,10 @@
       },
       "comparison": {
         "returnPct": 0.37,
-        "benchmarkReturnPct": 0.74,
-        "excessReturnPct": -0.37,
+        "benchmarkReturnPct": 0.77,
+        "excessReturnPct": -0.4,
         "periodStart": "2026-05-06T12:12+09:00",
-        "periodEnd": "2026-05-06T15:34+09:00"
+        "periodEnd": "2026-05-06T15:35+09:00"
       }
     },
     {
@@ -440,7 +440,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 305250.0원 · 평가 1911000원 · 손익 79500원",
           "returnPct": 4.34,
-          "holdingPeriod": "보유 5시간 20분"
+          "holdingPeriod": "보유 5시간 21분"
         },
         {
           "code": "267260",
@@ -448,7 +448,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 1379000.0원 · 평가 1397000원 · 손익 18000원",
           "returnPct": 1.31,
-          "holdingPeriod": "보유 5시간 20분"
+          "holdingPeriod": "보유 5시간 21분"
         },
         {
           "code": "003670",
@@ -456,7 +456,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 290000.0원 · 평가 1731000원 · 손익 -9000원",
           "returnPct": -0.52,
-          "holdingPeriod": "보유 5시간 20분"
+          "holdingPeriod": "보유 5시간 21분"
         },
         {
           "code": "000660",
@@ -464,7 +464,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 1580000.0원 · 평가 1594000원 · 손익 14000원",
           "returnPct": 0.89,
-          "holdingPeriod": "보유 5시간 20분"
+          "holdingPeriod": "보유 5시간 21분"
         }
       ],
       "sellAlerts": [],
@@ -483,7 +483,7 @@
             "qty": 7,
             "entryPrice": 256500,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 20분",
+            "holdingPeriod": "보유 5시간 21분",
             "evalAmount": 1872500,
             "pnl": 77000,
             "returnPct": 4.29
@@ -494,7 +494,7 @@
             "qty": 1,
             "entryPrice": 1580000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 20분",
+            "holdingPeriod": "보유 5시간 21분",
             "evalAmount": 1594000,
             "pnl": 14000,
             "returnPct": 0.89
@@ -505,7 +505,7 @@
             "qty": 6,
             "entryPrice": 290000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 20분",
+            "holdingPeriod": "보유 5시간 21분",
             "evalAmount": 1731000,
             "pnl": -9000,
             "returnPct": -0.52
@@ -516,7 +516,7 @@
             "qty": 1,
             "entryPrice": 1379000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 20분",
+            "holdingPeriod": "보유 5시간 21분",
             "evalAmount": 1397000,
             "pnl": 18000,
             "returnPct": 1.31
@@ -527,7 +527,7 @@
             "qty": 6,
             "entryPrice": 305250,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 20분",
+            "holdingPeriod": "보유 5시간 21분",
             "evalAmount": 1911000,
             "pnl": 79500,
             "returnPct": 4.34
@@ -536,10 +536,10 @@
       },
       "comparison": {
         "returnPct": 1.8,
-        "benchmarkReturnPct": 1.44,
-        "excessReturnPct": 0.36,
+        "benchmarkReturnPct": 1.46,
+        "excessReturnPct": 0.34,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T15:34+09:00"
+        "periodEnd": "2026-05-06T15:35+09:00"
       }
     },
     {
@@ -658,7 +658,7 @@
           "status": "보유중",
           "reason": "11주 · 매입 180000.0원 · 평가 1950300원 · 손익 -29700원",
           "returnPct": -1.5,
-          "holdingPeriod": "보유 5시간 20분"
+          "holdingPeriod": "보유 5시간 21분"
         },
         {
           "code": "079550",
@@ -666,7 +666,7 @@
           "status": "보유중",
           "reason": "2주 · 매입 983000.0원 · 평가 1972000원 · 손익 6000원",
           "returnPct": 0.31,
-          "holdingPeriod": "보유 5시간 20분"
+          "holdingPeriod": "보유 5시간 21분"
         },
         {
           "code": "012450",
@@ -674,7 +674,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 1465000.0원 · 평가 1442000원 · 손익 -23000원",
           "returnPct": -1.57,
-          "holdingPeriod": "보유 5시간 20분"
+          "holdingPeriod": "보유 5시간 21분"
         },
         {
           "code": "010120",
@@ -682,7 +682,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 294000.0원 · 평가 1911000원 · 손익 147000원",
           "returnPct": 8.33,
-          "holdingPeriod": "보유 5시간 20분"
+          "holdingPeriod": "보유 5시간 21분"
         }
       ],
       "sellAlerts": [],
@@ -701,7 +701,7 @@
             "qty": 16,
             "entryPrice": 120800,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 20분",
+            "holdingPeriod": "보유 5시간 21분",
             "evalAmount": 1851200,
             "pnl": -81600,
             "returnPct": -4.22
@@ -712,7 +712,7 @@
             "qty": 6,
             "entryPrice": 294000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 20분",
+            "holdingPeriod": "보유 5시간 21분",
             "evalAmount": 1911000,
             "pnl": 147000,
             "returnPct": 8.33
@@ -723,7 +723,7 @@
             "qty": 1,
             "entryPrice": 1465000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 20분",
+            "holdingPeriod": "보유 5시간 21분",
             "evalAmount": 1442000,
             "pnl": -23000,
             "returnPct": -1.57
@@ -734,7 +734,7 @@
             "qty": 2,
             "entryPrice": 983000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 20분",
+            "holdingPeriod": "보유 5시간 21분",
             "evalAmount": 1972000,
             "pnl": 6000,
             "returnPct": 0.31
@@ -745,7 +745,7 @@
             "qty": 11,
             "entryPrice": 180000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 5시간 20분",
+            "holdingPeriod": "보유 5시간 21분",
             "evalAmount": 1950300,
             "pnl": -29700,
             "returnPct": -1.5
@@ -754,10 +754,10 @@
       },
       "comparison": {
         "returnPct": 0.19,
-        "benchmarkReturnPct": 1.44,
-        "excessReturnPct": -1.25,
+        "benchmarkReturnPct": 1.46,
+        "excessReturnPct": -1.27,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-06T15:34+09:00"
+        "periodEnd": "2026-05-06T15:35+09:00"
       }
     }
   ],
@@ -3584,6 +3584,47 @@
         0.74,
         1.44,
         1.44
+      ],
+      "evalAmounts": [
+        30451300,
+        10035300,
+        10179500,
+        10018700
+      ],
+      "capital": [
+        29996900,
+        9998800,
+        10000000,
+        10000000
+      ],
+      "kodexReturns": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "ts": "2026-05-06T15:35+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 38,
+      "protected": 4,
+      "stale": 0,
+      "benchmark": 1.46,
+      "benchmarkValue": 7409.09,
+      "kodex200": 0.0,
+      "kodex200Value": 113270.0,
+      "returns": [
+        1.51,
+        0.37,
+        1.8,
+        0.19
+      ],
+      "marketReturns": [
+        1.46,
+        0.77,
+        1.46,
+        1.46
       ],
       "evalAmounts": [
         30451300,
