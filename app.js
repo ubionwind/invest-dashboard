@@ -126,6 +126,74 @@ function portfolioStrip(pf = {}) {
   </div>`;
 }
 
+function investmentReturnPct(pf = {}) {
+  const investment = Number(pf.investmentAmount || 0);
+  const pnl = Number(pf.pnl || 0);
+  if (!investment || Number.isNaN(investment) || Number.isNaN(pnl)) return null;
+  return (pnl / investment) * 100;
+}
+
+function returnMetricCard(label, value, note = '', toneValue = value) {
+  const num = Number(toneValue);
+  const cls = Number.isNaN(num) ? '' : (num >= 0 ? 'up' : 'down');
+  return `<article class="return-card">
+    <span>${label}</span>
+    <strong class="${cls}">${value}</strong>
+    ${note ? `<small>${note}</small>` : ''}
+  </article>`;
+}
+
+function strategyReturnCards(s) {
+  const pf = s.portfolio || {};
+  const daily = s.daily || {};
+  const investPct = investmentReturnPct(pf);
+  return `<div class="strategy-return-cards">
+    ${returnMetricCard('누적 수익률', pct(pf.returnPct), `수익 ${money(pf.pnl)}`, pf.returnPct)}
+    ${returnMetricCard('오늘 수익률', pct(daily.returnPct), `오늘 ${money(daily.pnl)}`, daily.returnPct)}
+    ${returnMetricCard('투자 대비 수익', money(pf.pnl), `투자금 대비 ${pct(investPct)}`, pf.pnl)}
+    ${returnMetricCard('평가 / 투자금', compactMoney(pf.evalAmount || pf.capital), `투자 ${compactMoney(pf.investmentAmount)} · 현금 ${compactMoney(pf.cash)}`, pf.pnl)}
+  </div>`;
+}
+
+function candidateSummary(s) {
+  const candidates = s.topCandidates || [];
+  const names = candidates.slice(0, 3).map(c => c.name).filter(Boolean).join(' · ');
+  return `<section class="candidate-summary">
+    <div>
+      <span class="muted">후보</span>
+      <strong>${fmt.format(s.candidateCount || 0)}</strong>
+    </div>
+    <p>${names || '표시 후보 없음'}</p>
+  </section>`;
+}
+
+function sameKstDate(a, b) {
+  if (!a || !b) return false;
+  const f = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' });
+  return f.format(new Date(a)) === f.format(new Date(b));
+}
+
+function dailyForSession(history = [], idx) {
+  const points = (history || []).filter(x => x?.ts && Array.isArray(x.returns) && x.returns[idx] !== undefined);
+  if (!points.length) return { returnPct: null, pnl: null };
+  const latest = points[points.length - 1];
+  const sameDay = points.filter(x => sameKstDate(x.ts, latest.ts));
+  const base = sameDay[0] || latest;
+  const latestReturn = Number(latest.returns[idx]);
+  const baseReturn = Number(base.returns[idx]);
+  const latestEval = Number(latest.evalAmounts?.[idx]);
+  const baseEval = Number(base.evalAmounts?.[idx]);
+  return {
+    returnPct: Number.isNaN(latestReturn) || Number.isNaN(baseReturn) ? null : latestReturn - baseReturn,
+    pnl: Number.isNaN(latestEval) || Number.isNaN(baseEval) ? null : latestEval - baseEval,
+  };
+}
+
+function enrichSessions(data) {
+  data.sessions = (data.sessions || []).map((s, idx) => ({ ...s, daily: dailyForSession(data.history, idx) }));
+  return data;
+}
+
 
 function money(v) {
   if (v === null || v === undefined) return '-';
@@ -213,18 +281,8 @@ function performanceBlock(s) {
       </div>
       <span class="badge ${statusClass(s.status)}">${s.status}</span>
     </div>
-    <div class="session-hero">
-      <div>
-        <span class="muted">후보</span>
-        <strong>${fmt.format(s.candidateCount || 0)}</strong>
-      </div>
-      <div>
-        <span class="muted">수익률</span>
-        <strong class="${(pf.returnPct || 0) >= 0 ? 'up' : 'down'}">${pct(pf.returnPct)}</strong>
-        <small class="market-compare ${cmp.excessReturnPct == null ? '' : ((cmp.excessReturnPct || 0) >= 0 ? 'up' : 'down')}">시장 대비 ${pct(cmp.excessReturnPct)}</small>
-      </div>
-    </div>
-    ${portfolioStrip(pf)}
+    ${strategyReturnCards(s)}
+    ${candidateSummary(s)}
     <div class="kpis comparison-kpis">
       ${kpi('내 누적 수익률', pct(cmp.returnPct))}
       ${kpi('시장 누적 수익률', pct(cmp.benchmarkReturnPct))}
@@ -317,18 +375,8 @@ function renderSessionCard(s, full = false, showSummary = true) {
       <span class="badge ${statusClass(s.status)}">${s.status}</span>
     </div>
     ${showSummary ? `
-    <div class="session-hero">
-      <div>
-        <span class="muted">후보</span>
-        <strong>${fmt.format(s.candidateCount || 0)}</strong>
-      </div>
-      <div>
-        <span class="muted">수익률</span>
-        <strong class="${(pf.returnPct || 0) >= 0 ? 'up' : 'down'}">${pct(pf.returnPct)}</strong>
-        <small class="market-compare ${cmp.excessReturnPct == null ? '' : ((cmp.excessReturnPct || 0) >= 0 ? 'up' : 'down')}">시장 대비 ${pct(cmp.excessReturnPct)}</small>
-      </div>
-    </div>
-    ${portfolioStrip(pf)}` : ''}
+    ${strategyReturnCards(s)}
+    ${candidateSummary(s)}` : ''}
     ${holdingsBlock(pf)}
     <div class="mini-facts">
       <span>검증 ${fmt.format(s.validationCount || 0)}</span>
@@ -337,7 +385,7 @@ function renderSessionCard(s, full = false, showSummary = true) {
       <span>보유 ${fmt.format(pf.positionCount || 0)}</span>
     </div>
     ${tradeAlerts(s)}
-    ${s.topCandidates?.length ? `<div class="strategy-candidates"><h3>후보 타일</h3><p class="candidate-help"><span class="desktop-help">판단점수는 전략별 원점수를 공통 0~100 구간으로 환산한 실행 강도입니다. 90+ 강매수권, 80+ 우선검토, 70+ 관찰강화, 60 미만은 아직 약함으로 봅니다.</span><span class="mobile-help">판단점수: 90+ 강함 · 80+ 우선 · 70+ 관찰 · 60↓ 약함</span></p>${candidateList(s.topCandidates)}</div>` : ''}
+    ${s.topCandidates?.length ? `<details class="strategy-candidates"><summary><span>후보 상세 보기</span><b>${fmt.format(s.topCandidates.length)}개</b></summary><p class="candidate-help"><span class="desktop-help">판단점수는 전략별 원점수를 공통 0~100 구간으로 환산한 실행 강도입니다. 90+ 강매수권, 80+ 우선검토, 70+ 관찰강화, 60 미만은 아직 약함으로 봅니다.</span><span class="mobile-help">판단점수: 90+ 강함 · 80+ 우선 · 70+ 관찰 · 60↓ 약함</span></p>${candidateList(s.topCandidates)}</details>` : ''}
   </article>`;
 }
 
@@ -355,7 +403,7 @@ function renderOverviewStrategyCard(s) {
     </div>
     <div class="overview-return-row">
       <strong class="${(pf.returnPct || 0) >= 0 ? 'up' : 'down'}">${pct(pf.returnPct)}</strong>
-      <span class="market-compare ${cmp.excessReturnPct == null ? '' : ((cmp.excessReturnPct || 0) >= 0 ? 'up' : 'down')}">시장 대비 ${pct(cmp.excessReturnPct)}</span>
+      <span class="today-return ${s.daily?.returnPct == null ? '' : ((s.daily.returnPct || 0) >= 0 ? 'up' : 'down')}">오늘 ${pct(s.daily?.returnPct)}</span>
     </div>
     <div class="basis-line">${basis}</div>
     <div class="overview-compact-metrics">
@@ -385,6 +433,7 @@ function setActive(id, shouldScroll = true) {
 
 
 function render(data) {
+  data = enrichSessions(data);
   document.getElementById('updated').textContent = `마지막 갱신: ${formatKst(data.generatedAt)}`;
   const overall = data.summary.staleCount > 0 ? '주의 필요' : '정상/대기';
   document.getElementById('overallStatus').textContent = overall;

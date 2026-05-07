@@ -80,6 +80,7 @@ main { padding: 24px clamp(18px, 4vw, 48px) 44px; }
 .overview-return-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
 .overview-return-row > strong { font-size: 30px; line-height: 1; letter-spacing: -.05em; }
 .overview-return-row .market-compare { font-size: 12px; font-weight: 800; white-space: nowrap; }
+.today-return { font-size: 12px; font-weight: 900; white-space: nowrap; }
 .basis-line { margin-top: -2px; color: var(--muted); font-size: 11px; font-weight: 700; }
 .overview-compact-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
 .overview-compact-metrics span { min-width: 0; padding: 7px 6px; border-radius: 11px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.06); }
@@ -87,6 +88,16 @@ main { padding: 24px clamp(18px, 4vw, 48px) 44px; }
 .overview-compact-metrics b { font-size: 13px; letter-spacing: -.03em; }
 .overview-compact-metrics em { margin-top: 2px; color: var(--muted); font-style: normal; font-size: 10px; }
 .strategy-dashboard { display: grid; gap: 12px; }
+.strategy-return-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.return-card { min-width: 0; padding: 14px; border-radius: 17px; border: 1px solid rgba(255,255,255,.075); background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025)); }
+.return-card span, .return-card strong, .return-card small { display: block; }
+.return-card span { color: var(--muted); font-size: 12px; font-weight: 800; }
+.return-card strong { margin-top: 5px; font-size: 28px; line-height: 1; letter-spacing: -.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.return-card small { margin-top: 7px; color: var(--muted); font-size: 12px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.candidate-summary { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 12px; padding: 11px 13px; border-radius: 15px; border: 1px dashed rgba(121,167,255,.28); background: rgba(121,167,255,.06); }
+.candidate-summary div { display: flex; align-items: baseline; gap: 7px; white-space: nowrap; }
+.candidate-summary strong { color: var(--accent); font-size: 24px; line-height: 1; }
+.candidate-summary p { margin: 0; color: #caddff; font-size: 12px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .kpi { background: rgba(255,255,255,.045); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
 .kpi strong { display: block; margin-top: 5px; font-size: 22px; }
@@ -124,7 +135,10 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .candidate-detail summary { cursor: pointer; color: #caddff; font-weight: 800; }
 .candidate-detail p { margin: 6px 0 0; line-height: 1.4; }
 .candidate-reason { margin: 10px 0 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
-.strategy-candidates { margin-top: 4px; }
+.strategy-candidates { margin-top: 4px; padding: 11px 12px; border: 1px solid rgba(121,167,255,.20); border-radius: 16px; background: rgba(121,167,255,.035); }
+.strategy-candidates summary { display: flex; justify-content: space-between; align-items: center; gap: 10px; cursor: pointer; color: #caddff; font-weight: 900; list-style: none; }
+.strategy-candidates summary::-webkit-details-marker { display: none; }
+.strategy-candidates summary b { padding: 4px 8px; border-radius: 999px; background: rgba(121,167,255,.12); color: var(--accent); font-size: 12px; }
 .strategy-candidates h3 { margin: 4px 0 8px; font-size: 16px; }
 .candidate-help { margin: -2px 0 10px; color: var(--muted); font-size: 12px; line-height: 1.4; }
 .mobile-help { display: none; }
@@ -202,8 +216,16 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .topbar { padding: 20px 14px; }
   .overview-guide { display: grid; gap: 4px; }
   .card { padding: 14px; border-radius: 18px; }
+  .strategy-return-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .return-card { padding: 12px 10px; border-radius: 15px; }
+  .return-card strong { font-size: 24px; }
+  .return-card small { font-size: 11px; }
+  .candidate-summary { grid-template-columns: 1fr; gap: 5px; padding: 10px 11px; }
+  .candidate-summary strong { font-size: 22px; }
+  .candidate-summary p { white-space: normal; line-height: 1.3; }
   .overview-strategy-card { padding: 12px; gap: 8px; }
   .overview-return-row > strong { font-size: 27px; }
+  .today-return { font-size: 11px; }
   .overview-compact-metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
   .overview-compact-metrics span { padding: 6px 5px; }
   .overview-compact-metrics b { font-size: 12px; }
