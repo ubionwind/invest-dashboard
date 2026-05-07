@@ -199,13 +199,14 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .holding-table tr:last-child td { border-bottom: 0; }
 .holding-table th:last-child, .holding-table td:last-child { border-right: 0; }
 .holding-table b, .holding-table small { display: block; font-variant-numeric: tabular-nums; }
-.holding-table small { margin-top: 3px; color: var(--muted); }
+.holding-table b { font-size: 12px; font-weight: 700; }
+.holding-table small { margin-top: 3px; color: var(--muted); font-size: 12px; font-weight: 700; }
 .holding-table .up { color: var(--rise) !important; }
 .holding-table .down { color: var(--fall) !important; }
 .holding-table .stock-name strong { display: block; max-width: 130px; margin: 0 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .holding-table .stock-code { color: var(--muted); font-variant-numeric: tabular-nums; }
 .holding-table td.num-pair { text-align: right; padding-right: 14px; }
-.holding-table td.num-pair b, .holding-table td.num-pair small { text-align: right; }
+.holding-table td.num-pair b, .holding-table td.num-pair small { text-align: right; font-size: 12px; font-weight: 700; color: inherit; }
 .trade-alerts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .trade-alert { padding: 12px; border-radius: 16px; border: 1px solid var(--line); background: rgba(255,255,255,.035); }
 .buy-alert { border-color: rgba(255,77,79,.28); }
