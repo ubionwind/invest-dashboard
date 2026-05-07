@@ -203,7 +203,7 @@ function normalizedScoreText(v) {
   return v === null || v === undefined || Number.isNaN(Number(v)) ? '-' : Number(v).toFixed(1);
 }
 
-function switchMiniGraph({ baseScore = null, currentScore = null, candidateScore = null, returnPct = null, currentLabel = '현재', triggerBaseScore = null } = {}) {
+function switchMiniGraph({ baseScore = null, currentScore = null, candidateScore = null, returnPct = null, currentLabel = '현재', triggerBaseScore = null, thresholdLabel = '교체기준' } = {}) {
   const cur = currentScore == null ? 50 : Math.max(0, Math.min(100, Number(currentScore)));
   const base = baseScore == null ? cur : Math.max(0, Math.min(100, Number(baseScore)));
   const cand = candidateScore == null ? cur + 12 : Math.max(0, Math.min(100, Number(candidateScore)));
@@ -220,8 +220,19 @@ function switchMiniGraph({ baseScore = null, currentScore = null, candidateScore
       <polyline points="${points}" class="switch-curve" />
       <circle cx="52" cy="${toY(cur)}" r="2.8" class="switch-dot" />
     </svg>
-    <span class="switch-score-labels"><b>관찰선 ${Math.round(trigger)}</b><b>${currentLabel} ${Math.round(cur)}</b></span>
+    <span class="switch-score-labels"><b>${thresholdLabel} ${Math.round(trigger)}</b><b>${currentLabel} ${Math.round(cur)}</b></span>
   </div>`;
+}
+
+function replacementThreshold(baseScore) {
+  if (baseScore === null || baseScore === undefined || Number.isNaN(Number(baseScore))) return null;
+  return Math.max(Number(baseScore) + 12, 70);
+}
+
+function thresholdFormula(baseScore) {
+  const threshold = replacementThreshold(baseScore);
+  if (threshold === null) return '-';
+  return `${Number(baseScore).toFixed(1)} + 12 = ${threshold.toFixed(1)}`;
 }
 
 function holdingReasonText({ decision, ret, scoreGap, bestReplacement } = {}) {
@@ -275,7 +286,7 @@ function holdingCandidateComparison(s) {
     <div class="comparison-head">
       <div>
         <h3>보유·후보 비교</h3>
-        <p class="muted">판단점수는 0~100 통일 · 교체관찰선은 보유점수+12 · 거래/수급은 금액/점수/신호/대기로 표시</p>
+        <p class="muted">교체기준 = 비교 대상 보유점수 + 12점, 최소 70점 · 후보가 이 기준을 넘을 때만 교체 검토</p>
       </div>
       <span class="badge compact">초안</span>
     </div>
@@ -297,13 +308,13 @@ function holdingCandidateComparison(s) {
           return `<article class="holding-compare-card">
             <div class="compare-hero">
               <div class="compare-identity"><strong>${pos.name || '-'}</strong><b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b></div>
-              ${switchMiniGraph({ baseScore: entryScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct, currentLabel: graphCurrentLabel, triggerBaseScore: currentScore })}
+              ${switchMiniGraph({ baseScore: entryScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct, currentLabel: graphCurrentLabel, triggerBaseScore: currentScore, thresholdLabel: '교체기준' })}
               <div class="compare-meta"><span>${pos.code || ''}</span><em>${decision}</em></div>
             </div>
             ${diagnosticRows([
               [currentScoreLabel, normalizedScoreText(currentScore)],
-              ['진입점수', normalizedScoreText(entryScore)],
-              ['점수변화', scoreGap == null ? '-' : `${scoreGap > 0 ? '+' : ''}${scoreGap.toFixed(1)}`, scoreGap == null ? '' : (scoreGap >= 0 ? 'up' : 'down')],
+              ['교체기준', thresholdFormula(currentScore)],
+              ['최고후보', bestCandidateScore == null ? '-' : normalizedScoreText(bestCandidateScore)],
               ['등락/수익', pct(pos.returnPct), ret >= 0 ? 'up' : 'down'],
               ['거래/수급', pos.liquidityText || tradingValueText(matched.reason ? matched : pos)],
               ['유지/교체 이유', holdReason],
@@ -319,12 +330,13 @@ function holdingCandidateComparison(s) {
           return `<article class="replacement-card">
             <div class="compare-hero">
               <div class="compare-identity"><strong>${c.name || '-'}</strong><b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b></div>
-              ${switchMiniGraph({ baseScore: c.comparisonBaseScore ?? lowestHeldScore, currentScore: c.candidateScoreNormalized ?? c.score, candidateScore: c.candidateScoreNormalized ?? c.score, currentLabel: '후보', triggerBaseScore: c.comparisonBaseScore ?? lowestHeldScore })}
+              ${switchMiniGraph({ baseScore: c.comparisonBaseScore ?? lowestHeldScore, currentScore: c.candidateScoreNormalized ?? c.score, candidateScore: c.candidateScoreNormalized ?? c.score, currentLabel: '후보', triggerBaseScore: c.comparisonBaseScore ?? lowestHeldScore, thresholdLabel: '교체기준' })}
               <div class="compare-meta"><span>${c.code || ''}</span><em class="${edge == null ? '' : (edge >= 0 ? 'up' : 'down')}">${edge == null ? '비교대기' : `보유최저 대비 ${edge > 0 ? '+' : ''}${edge.toFixed(1)}`}</em></div>
             </div>
             ${diagnosticRows([
               ['후보점수', normalizedScoreText(c.score)],
-              ['진입상태', '미진입'],
+              ['비교대상', c.comparisonBaseScore == null ? '-' : `보유최저 ${Number(c.comparisonBaseScore).toFixed(1)}`],
+              ['교체기준', thresholdFormula(c.comparisonBaseScore ?? lowestHeldScore)],
               ['기준대비', edge == null ? '-' : `${edge > 0 ? '+' : ''}${edge.toFixed(1)}`, edge == null ? '' : (edge >= 0 ? 'up' : 'down')],
               ['등락/수익', c.changePct == null ? '-' : pct(c.changePct), c.changePct == null ? '' : (Number(c.changePct) >= 0 ? 'up' : 'down')],
               ['거래/수급', c.liquidityText || tradingValueText(c)],
