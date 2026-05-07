@@ -6,9 +6,22 @@ let itemCharts = [];
 const isMobile = () => window.matchMedia('(max-width: 1024px)').matches;
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
+function isRegularMarketPoint(x) {
+  if (!x?.ts) return false;
+  const d = new Date(x.ts);
+  if (Number.isNaN(d.getTime())) return false;
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Seoul', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false,
+  }).formatToParts(d).map(p => [p.type, p.value]));
+  if (parts.weekday === 'Sat' || parts.weekday === 'Sun') return false;
+  const minutes = Number(parts.hour) * 60 + Number(parts.minute);
+  return minutes >= 9 * 60 && minutes <= 15 * 60 + 30;
+}
+
 function chartWindow(history) {
-  const arr = history || [];
-  return isMobile() ? arr.slice(-12) : arr;
+  const arr = (history || []).filter(isRegularMarketPoint);
+  const visible = arr.length ? arr : (history || []);
+  return isMobile() ? visible.slice(-12) : visible;
 }
 
 function chartOptions(yCallback) {
