@@ -1,36 +1,38 @@
 {
-  "generatedAt": "2026-05-07T10:43+09:00",
+  "generatedAt": "2026-05-07T10:51+09:00",
   "summary": {
     "totalSessions": 7,
     "staleCount": 0,
     "candidateCount": 94,
     "protectedRows": 2,
     "totalCapital": 89994860,
-    "totalEvalAmount": 89290760,
-    "totalPnl": -704100,
-    "totalReturnPct": -0.78
+    "totalEvalAmount": 89520260,
+    "totalPnl": -474600,
+    "totalReturnPct": -0.53
   },
   "benchmark": {
     "label": "KOSPI",
-    "value": 7409.09,
-    "returnPct": 1.46,
-    "dailyReturnPct": 2.29,
-    "date": "2026-05-06",
-    "time": "08:14:50",
+    "value": 7376.22,
+    "returnPct": 1.01,
+    "dailyReturnPct": -0.11,
+    "date": "2026-05-07",
+    "time": "10:51:00",
     "periodStart": "2026-05-06T10:08+09:00",
-    "periodEnd": "2026-05-07T10:43+09:00",
+    "periodEnd": "2026-05-07T10:51+09:00",
+    "source": "naver-index-basic",
+    "marketStatus": "OPEN",
     "basis": "firstInvestment"
   },
   "kodexBenchmark": {
     "label": "KODEX 200",
     "code": "069500",
-    "value": 113200.0,
-    "returnPct": -0.06,
-    "dailyReturnPct": -0.06,
+    "value": 113670.0,
+    "returnPct": 0.34,
+    "dailyReturnPct": 0.35,
     "date": "2026-05-07",
-    "time": "10:43:19",
+    "time": "10:51:58",
     "periodStart": "2026-05-06T10:08+09:00",
-    "periodEnd": "2026-05-07T10:43+09:00",
+    "periodEnd": "2026-05-07T10:51+09:00",
     "basis": "firstInvestment"
   },
   "sessions": [
@@ -91,7 +93,7 @@
           "rank": 4,
           "evaluatedAt": "2026-05-07T01:40:19.781Z",
           "status": "보유중",
-          "candidateNote": "보유 1일 · 매입 264859원 · 현재 265250원 · 평가 8488000원 · 손익 12500원",
+          "candidateNote": "보유 1일 · 매입 264859원 · 현재 266500원 · 평가 8528000원 · 손익 52500원",
           "reason": "meta=0.45; 등락률=-0.94; theme=반도체"
         },
         {
@@ -148,8 +150,8 @@
           "code": "005930",
           "name": "삼성전자",
           "status": "보유중",
-          "reason": "32주 · 매입 264859원 · 현재 265250원 · 평가 8488000원 · 손익 12500원",
-          "returnPct": 0.15,
+          "reason": "32주 · 매입 264859원 · 현재 266500원 · 평가 8528000원 · 손익 52500원",
+          "returnPct": 0.62,
           "holdingPeriod": "보유 1일"
         }
       ],
@@ -157,10 +159,10 @@
       "portfolio": {
         "capital": 9998800,
         "cash": 1523300,
-        "investmentAmount": 8488000,
-        "evalAmount": 10011300,
-        "pnl": 12500,
-        "returnPct": 0.13,
+        "investmentAmount": 8528000,
+        "evalAmount": 10051300,
+        "pnl": 52500,
+        "returnPct": 0.53,
         "positionCount": 1,
         "positions": [
           {
@@ -168,21 +170,21 @@
             "name": "삼성전자",
             "qty": 32,
             "entryPrice": 264859,
-            "currentPrice": 265250,
+            "currentPrice": 266500,
             "entryAt": "2026-05-06T12:12+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 8488000,
-            "pnl": 12500,
-            "returnPct": 0.15
+            "evalAmount": 8528000,
+            "pnl": 52500,
+            "returnPct": 0.62
           }
         ]
       },
       "comparison": {
-        "returnPct": 0.13,
-        "benchmarkReturnPct": 0.77,
-        "excessReturnPct": -0.64,
+        "returnPct": 0.53,
+        "benchmarkReturnPct": 0.32,
+        "excessReturnPct": 0.21,
         "periodStart": "2026-05-06T12:12+09:00",
-        "periodEnd": "2026-05-07T10:43+09:00"
+        "periodEnd": "2026-05-07T10:51+09:00"
       }
     },
     {
@@ -206,7 +208,7 @@
           "rank": 1,
           "evaluatedAt": "2026-05-07T01:40:19.781Z",
           "status": "보유중",
-          "candidateNote": "보유 1일 · 매입 149860원 · 현재 143400원 · 평가 12762600원 · 손익 -574900원",
+          "candidateNote": "보유 1일 · 매입 149860원 · 현재 143600원 · 평가 12780400원 · 손익 -557100원",
           "reason": "meta=0.84; 등락률=-5.54; theme=AI기판"
         },
         {
@@ -218,7 +220,7 @@
           "rank": 2,
           "evaluatedAt": "2026-05-07T01:40:19.781Z",
           "status": "보유중",
-          "candidateNote": "보유 1일 · 매입 381500원 · 현재 385000원 · 평가 7315000원 · 손익 66500원",
+          "candidateNote": "보유 1일 · 매입 381500원 · 현재 386500원 · 평가 7343500원 · 손익 95000원",
           "reason": "meta=0.82; 등락률=-2.41; theme=HBM장비"
         },
         {
@@ -251,16 +253,16 @@
           "code": "007660",
           "name": "이수페타시스",
           "status": "보유중",
-          "reason": "89주 · 매입 149860원 · 현재 143400원 · 평가 12762600원 · 손익 -574900원",
-          "returnPct": -4.31,
+          "reason": "89주 · 매입 149860원 · 현재 143600원 · 평가 12780400원 · 손익 -557100원",
+          "returnPct": -4.18,
           "holdingPeriod": "보유 1일"
         },
         {
           "code": "042700",
           "name": "한미반도체",
           "status": "보유중",
-          "reason": "19주 · 매입 381500원 · 현재 385000원 · 평가 7315000원 · 손익 66500원",
-          "returnPct": 0.92,
+          "reason": "19주 · 매입 381500원 · 현재 386500원 · 평가 7343500원 · 손익 95000원",
+          "returnPct": 1.31,
           "holdingPeriod": "보유 1일"
         },
         {
@@ -276,10 +278,10 @@
       "portfolio": {
         "capital": 29996060,
         "cash": 2018060,
-        "investmentAmount": 27766600,
-        "evalAmount": 29784660,
-        "pnl": -211400,
-        "returnPct": -0.7,
+        "investmentAmount": 27812900,
+        "evalAmount": 29830960,
+        "pnl": -165100,
+        "returnPct": -0.55,
         "positionCount": 3,
         "positions": [
           {
@@ -287,24 +289,24 @@
             "name": "이수페타시스",
             "qty": 89,
             "entryPrice": 149860,
-            "currentPrice": 143400,
+            "currentPrice": 143600,
             "entryAt": "2026-05-06T10:08+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 12762600,
-            "pnl": -574900,
-            "returnPct": -4.31
+            "evalAmount": 12780400,
+            "pnl": -557100,
+            "returnPct": -4.18
           },
           {
             "code": "042700",
             "name": "한미반도체",
             "qty": 19,
             "entryPrice": 381500,
-            "currentPrice": 385000,
+            "currentPrice": 386500,
             "entryAt": "2026-05-06T10:08+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 7315000,
-            "pnl": 66500,
-            "returnPct": 0.92
+            "evalAmount": 7343500,
+            "pnl": 95000,
+            "returnPct": 1.31
           },
           {
             "code": "247540",
@@ -321,11 +323,11 @@
         ]
       },
       "comparison": {
-        "returnPct": -0.7,
-        "benchmarkReturnPct": 1.46,
-        "excessReturnPct": -2.16,
+        "returnPct": -0.55,
+        "benchmarkReturnPct": 1.01,
+        "excessReturnPct": -1.56,
         "periodStart": "2026-05-06T10:08+09:00",
-        "periodEnd": "2026-05-07T10:43+09:00"
+        "periodEnd": "2026-05-07T10:51+09:00"
       }
     },
     {
@@ -347,7 +349,7 @@
           "rawScore": 135.2,
           "changePct": 6.22,
           "rank": 1,
-          "evaluatedAt": "2026-05-07T10:35:19+09:00",
+          "evaluatedAt": "2026-05-07T10:51:04+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "진입만: 134,900원 기준, +6.22% 유지·거래대금 6876억, 5분 눌림 후 재돌파 여부 사후평가"
@@ -359,7 +361,7 @@
           "rawScore": 99.0,
           "changePct": 4.18,
           "rank": 2,
-          "evaluatedAt": "2026-05-07T10:35:19+09:00",
+          "evaluatedAt": "2026-05-07T10:51:04+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "진입만: 573,000원 기준, +4.18% 유지·거래대금 7327억, 5분 눌림 후 재돌파 여부 사후평가"
@@ -371,7 +373,7 @@
           "rawScore": 80.9,
           "changePct": 4.78,
           "rank": 3,
-          "evaluatedAt": "2026-05-07T10:35:19+09:00",
+          "evaluatedAt": "2026-05-07T10:51:04+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "진입만: 204,000원 기준, +4.78% 유지·거래대금 1140억, 5분 눌림 후 재돌파 여부 사후평가"
@@ -383,7 +385,7 @@
           "rawScore": 72.2,
           "changePct": 4.48,
           "rank": 4,
-          "evaluatedAt": "2026-05-07T10:35:19+09:00",
+          "evaluatedAt": "2026-05-07T10:51:04+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "진입만: 677,000원 기준, +4.48% 유지·거래대금 1398억, 5분 눌림 후 재돌파 여부 사후평가"
@@ -395,7 +397,7 @@
           "rawScore": 50.2,
           "changePct": 2.72,
           "rank": 5,
-          "evaluatedAt": "2026-05-07T10:35:19+09:00",
+          "evaluatedAt": "2026-05-07T10:51:04+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "진입만: 158,800원 기준, +2.72% 유지·거래대금 1348억, 5분 눌림 후 재돌파 여부 사후평가"
@@ -407,7 +409,7 @@
           "rawScore": 38.7,
           "changePct": 1.53,
           "rank": 6,
-          "evaluatedAt": "2026-05-07T10:35:19+09:00",
+          "evaluatedAt": "2026-05-07T10:51:04+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "watch only: 정규장 09:45 이후 +2.4% 이상 유지 및 거래대금/뉴스 확인 시 진입 검토"
@@ -419,7 +421,7 @@
           "rawScore": 34.8,
           "changePct": 1.85,
           "rank": 7,
-          "evaluatedAt": "2026-05-07T10:35:19+09:00",
+          "evaluatedAt": "2026-05-07T10:51:04+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "watch only: 정규장 09:45 이후 +2.4% 이상 유지 및 거래대금/뉴스 확인 시 진입 검토"
@@ -431,7 +433,7 @@
           "rawScore": 32.8,
           "changePct": 2.43,
           "rank": 8,
-          "evaluatedAt": "2026-05-07T10:35:19+09:00",
+          "evaluatedAt": "2026-05-07T10:51:04+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "진입만: 443,000원 기준, +2.43% 유지·거래대금 758억, 5분 눌림 후 재돌파 여부 사후평가"
@@ -442,16 +444,16 @@
           "code": "010120",
           "name": "LS ELECTRIC",
           "status": "보유중",
-          "reason": "6주 · 매입 305250.0원 · 평가 1785000원 · 손익 -46500원",
-          "returnPct": -2.54,
+          "reason": "6주 · 매입 305250.0원 · 평가 1815000원 · 손익 -16500원",
+          "returnPct": -0.9,
           "holdingPeriod": "보유 1일"
         },
         {
           "code": "267260",
           "name": "HD현대일렉트릭",
           "status": "보유중",
-          "reason": "1주 · 매입 1379000.0원 · 평가 1354000원 · 손익 -25000원",
-          "returnPct": -1.81,
+          "reason": "1주 · 매입 1379000.0원 · 평가 1378000원 · 손익 -1000원",
+          "returnPct": -0.07,
           "holdingPeriod": "보유 1일"
         },
         {
@@ -466,44 +468,44 @@
           "code": "000660",
           "name": "SK하이닉스",
           "status": "보유중",
-          "reason": "1주 · 매입 1580000.0원 · 평가 1567000원 · 손익 -13000원",
-          "returnPct": -0.82,
+          "reason": "1주 · 매입 1580000.0원 · 평가 1595000원 · 손익 15000원",
+          "returnPct": 0.95,
           "holdingPeriod": "보유 1일"
         }
       ],
       "sellAlerts": [],
       "portfolio": {
         "capital": 10000000,
-        "evalAmount": 9901500,
-        "pnl": -98500,
-        "returnPct": -0.98,
+        "evalAmount": 10022000,
+        "pnl": 22000,
+        "returnPct": 0.22,
         "positionCount": 5,
         "cash": 1674000,
-        "investmentAmount": 8227500,
+        "investmentAmount": 8348000,
         "positions": [
           {
             "code": "005930",
             "name": "삼성전자",
             "qty": 7,
             "entryPrice": 256500,
-            "currentPrice": 260500,
+            "currentPrice": 266000,
             "entryAt": "2026-05-06T10:14:00+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 1823500,
-            "pnl": 28000,
-            "returnPct": 1.56
+            "evalAmount": 1862000,
+            "pnl": 66500,
+            "returnPct": 3.7
           },
           {
             "code": "000660",
             "name": "SK하이닉스",
             "qty": 1,
             "entryPrice": 1580000,
-            "currentPrice": 1567000,
+            "currentPrice": 1595000,
             "entryAt": "2026-05-06T10:14:00+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 1567000,
-            "pnl": -13000,
-            "returnPct": -0.82
+            "evalAmount": 1595000,
+            "pnl": 15000,
+            "returnPct": 0.95
           },
           {
             "code": "003670",
@@ -522,33 +524,33 @@
             "name": "HD현대일렉트릭",
             "qty": 1,
             "entryPrice": 1379000,
-            "currentPrice": 1354000,
+            "currentPrice": 1378000,
             "entryAt": "2026-05-06T10:14:00+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 1354000,
-            "pnl": -25000,
-            "returnPct": -1.81
+            "evalAmount": 1378000,
+            "pnl": -1000,
+            "returnPct": -0.07
           },
           {
             "code": "010120",
             "name": "LS ELECTRIC",
             "qty": 6,
             "entryPrice": 305250,
-            "currentPrice": 297500,
+            "currentPrice": 302500,
             "entryAt": "2026-05-06T10:14:00+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 1785000,
-            "pnl": -46500,
-            "returnPct": -2.54
+            "evalAmount": 1815000,
+            "pnl": -16500,
+            "returnPct": -0.9
           }
         ]
       },
       "comparison": {
-        "returnPct": -0.98,
-        "benchmarkReturnPct": 1.46,
-        "excessReturnPct": -2.44,
+        "returnPct": 0.22,
+        "benchmarkReturnPct": 1.01,
+        "excessReturnPct": -0.79,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T10:43+09:00"
+        "periodEnd": "2026-05-07T10:51+09:00"
       }
     },
     {
@@ -570,7 +572,7 @@
           "rawScore": 70.0,
           "changePct": 0.0,
           "rank": 1,
-          "evaluatedAt": "2026-05-07T10:35:24+09:00",
+          "evaluatedAt": "2026-05-07T10:51:09+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T10:14 · 진입 당시 점수 70.0 · 진입 당시 등락률 0.0%",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -582,7 +584,7 @@
           "rawScore": 70.0,
           "changePct": 0.0,
           "rank": 2,
-          "evaluatedAt": "2026-05-07T10:35:24+09:00",
+          "evaluatedAt": "2026-05-07T10:51:09+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T10:14 · 진입 당시 점수 70.0 · 진입 당시 등락률 0.0%",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -594,7 +596,7 @@
           "rawScore": 70.0,
           "changePct": 0.0,
           "rank": 3,
-          "evaluatedAt": "2026-05-07T10:35:24+09:00",
+          "evaluatedAt": "2026-05-07T10:51:09+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T10:14 · 진입 당시 점수 70.0 · 진입 당시 등락률 0.0%",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -606,7 +608,7 @@
           "rawScore": 70.0,
           "changePct": 0.0,
           "rank": 4,
-          "evaluatedAt": "2026-05-07T10:35:24+09:00",
+          "evaluatedAt": "2026-05-07T10:51:09+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -618,7 +620,7 @@
           "rawScore": 70.0,
           "changePct": 0.0,
           "rank": 5,
-          "evaluatedAt": "2026-05-07T10:35:24+09:00",
+          "evaluatedAt": "2026-05-07T10:51:09+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -630,7 +632,7 @@
           "rawScore": 66.0,
           "changePct": 0.0,
           "rank": 6,
-          "evaluatedAt": "2026-05-07T10:35:24+09:00",
+          "evaluatedAt": "2026-05-07T10:51:09+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -642,7 +644,7 @@
           "rawScore": 66.0,
           "changePct": 0.0,
           "rank": 7,
-          "evaluatedAt": "2026-05-07T10:35:24+09:00",
+          "evaluatedAt": "2026-05-07T10:51:09+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -654,7 +656,7 @@
           "rawScore": 66.0,
           "changePct": 0.0,
           "rank": 8,
-          "evaluatedAt": "2026-05-07T10:35:24+09:00",
+          "evaluatedAt": "2026-05-07T10:51:09+09:00",
           "status": "현재후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인"
@@ -665,113 +667,113 @@
           "code": "047810",
           "name": "한국항공우주",
           "status": "보유중",
-          "reason": "11주 · 매입 180000.0원 · 평가 1875500원 · 손익 -104500원",
-          "returnPct": -5.28,
+          "reason": "11주 · 매입 180000.0원 · 평가 1885400원 · 손익 -94600원",
+          "returnPct": -4.78,
           "holdingPeriod": "보유 1일"
         },
         {
           "code": "079550",
           "name": "LIG넥스원",
           "status": "보유중",
-          "reason": "2주 · 매입 983000.0원 · 평가 1958000원 · 손익 -8000원",
-          "returnPct": -0.41,
+          "reason": "2주 · 매입 983000.0원 · 평가 1932000원 · 손익 -34000원",
+          "returnPct": -1.73,
           "holdingPeriod": "보유 1일"
         },
         {
           "code": "012450",
           "name": "한화에어로스페이스",
           "status": "보유중",
-          "reason": "1주 · 매입 1465000.0원 · 평가 1362000원 · 손익 -103000원",
-          "returnPct": -7.03,
+          "reason": "1주 · 매입 1465000.0원 · 평가 1358000원 · 손익 -107000원",
+          "returnPct": -7.3,
           "holdingPeriod": "보유 1일"
         },
         {
           "code": "010120",
           "name": "LS ELECTRIC",
           "status": "보유중",
-          "reason": "6주 · 매입 294000.0원 · 평가 1785000원 · 손익 21000원",
-          "returnPct": 1.19,
+          "reason": "6주 · 매입 294000.0원 · 평가 1815000원 · 손익 51000원",
+          "returnPct": 2.89,
           "holdingPeriod": "보유 1일"
         }
       ],
       "sellAlerts": [],
       "portfolio": {
         "capital": 10000000,
-        "evalAmount": 9683900,
-        "pnl": -316100,
-        "returnPct": -3.16,
+        "evalAmount": 9706600,
+        "pnl": -293400,
+        "returnPct": -2.93,
         "positionCount": 5,
         "cash": 892200,
-        "investmentAmount": 8791700,
+        "investmentAmount": 8814400,
         "positions": [
           {
             "code": "058470",
             "name": "리노공업",
             "qty": 16,
             "entryPrice": 120800,
-            "currentPrice": 113200,
+            "currentPrice": 114000,
             "entryAt": "2026-05-06T10:14:00+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 1811200,
-            "pnl": -121600,
-            "returnPct": -6.29
+            "evalAmount": 1824000,
+            "pnl": -108800,
+            "returnPct": -5.63
           },
           {
             "code": "010120",
             "name": "LS ELECTRIC",
             "qty": 6,
             "entryPrice": 294000,
-            "currentPrice": 297500,
+            "currentPrice": 302500,
             "entryAt": "2026-05-06T10:14:00+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 1785000,
-            "pnl": 21000,
-            "returnPct": 1.19
+            "evalAmount": 1815000,
+            "pnl": 51000,
+            "returnPct": 2.89
           },
           {
             "code": "012450",
             "name": "한화에어로스페이스",
             "qty": 1,
             "entryPrice": 1465000,
-            "currentPrice": 1362000,
+            "currentPrice": 1358000,
             "entryAt": "2026-05-06T10:14:00+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 1362000,
-            "pnl": -103000,
-            "returnPct": -7.03
+            "evalAmount": 1358000,
+            "pnl": -107000,
+            "returnPct": -7.3
           },
           {
             "code": "079550",
             "name": "LIG넥스원",
             "qty": 2,
             "entryPrice": 983000,
-            "currentPrice": 979000,
+            "currentPrice": 966000,
             "entryAt": "2026-05-06T10:14:00+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 1958000,
-            "pnl": -8000,
-            "returnPct": -0.41
+            "evalAmount": 1932000,
+            "pnl": -34000,
+            "returnPct": -1.73
           },
           {
             "code": "047810",
             "name": "한국항공우주",
             "qty": 11,
             "entryPrice": 180000,
-            "currentPrice": 170500,
+            "currentPrice": 171400,
             "entryAt": "2026-05-06T10:14:00+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 1875500,
-            "pnl": -104500,
-            "returnPct": -5.28
+            "evalAmount": 1885400,
+            "pnl": -94600,
+            "returnPct": -4.78
           }
         ]
       },
       "comparison": {
-        "returnPct": -3.16,
-        "benchmarkReturnPct": 1.46,
-        "excessReturnPct": -4.62,
+        "returnPct": -2.93,
+        "benchmarkReturnPct": 1.01,
+        "excessReturnPct": -3.94,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T10:43+09:00"
+        "periodEnd": "2026-05-07T10:51+09:00"
       }
     },
     {
@@ -890,7 +892,7 @@
           "status": "보유중",
           "reason": "3주 · 매입 305500.0원 · 평가 903000원 · 손익 -13500원",
           "returnPct": -1.47,
-          "holdingPeriod": "보유 1시간 17분"
+          "holdingPeriod": "보유 1시간 25분"
         },
         {
           "code": "005930",
@@ -898,7 +900,7 @@
           "status": "보유중",
           "reason": "3주 · 매입 263000.0원 · 평가 783000원 · 손익 -6000원",
           "returnPct": -0.76,
-          "holdingPeriod": "보유 1시간 17분"
+          "holdingPeriod": "보유 1시간 25분"
         },
         {
           "code": "068270",
@@ -1027,10 +1029,10 @@
       },
       "comparison": {
         "returnPct": 0.12,
-        "benchmarkReturnPct": 0.0,
-        "excessReturnPct": 0.12,
+        "benchmarkReturnPct": -0.44,
+        "excessReturnPct": 0.56,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T10:43+09:00"
+        "periodEnd": "2026-05-07T10:51+09:00"
       }
     },
     {
@@ -1149,7 +1151,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 158700.0원 · 평가 948600원 · 손익 -3600원",
           "returnPct": -0.38,
-          "holdingPeriod": "보유 1시간 16분"
+          "holdingPeriod": "보유 1시간 25분"
         },
         {
           "code": "034020",
@@ -1157,7 +1159,7 @@
           "status": "보유중",
           "reason": "7주 · 매입 133900.0원 · 평가 943600원 · 손익 6300원",
           "returnPct": 0.67,
-          "holdingPeriod": "보유 1시간 16분"
+          "holdingPeriod": "보유 1시간 25분"
         },
         {
           "code": "373220",
@@ -1286,10 +1288,10 @@
       },
       "comparison": {
         "returnPct": -1.21,
-        "benchmarkReturnPct": 0.0,
-        "excessReturnPct": -1.21,
+        "benchmarkReturnPct": -0.44,
+        "excessReturnPct": -0.77,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T10:43+09:00"
+        "periodEnd": "2026-05-07T10:51+09:00"
       }
     },
     {
@@ -1408,7 +1410,7 @@
           "status": "보유중",
           "reason": "4주 · 매입 234500.0원 · 평가 938000원 · 손익 0원",
           "returnPct": 0.0,
-          "holdingPeriod": "보유 14분"
+          "holdingPeriod": "보유 23분"
         },
         {
           "code": "068270",
@@ -1416,7 +1418,7 @@
           "status": "보유중",
           "reason": "4주 · 매입 204500.0원 · 평가 818000원 · 손익 0원",
           "returnPct": 0.0,
-          "holdingPeriod": "보유 14분"
+          "holdingPeriod": "보유 23분"
         },
         {
           "code": "012330",
@@ -1424,7 +1426,7 @@
           "status": "보유중",
           "reason": "2주 · 매입 447000.0원 · 평가 881000원 · 손익 -13000원",
           "returnPct": -1.45,
-          "holdingPeriod": "보유 1시간 15분"
+          "holdingPeriod": "보유 1시간 24분"
         },
         {
           "code": "329180",
@@ -1432,7 +1434,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 662000.0원 · 평가 683000원 · 손익 21000원",
           "returnPct": 3.17,
-          "holdingPeriod": "보유 1시간 15분"
+          "holdingPeriod": "보유 1시간 24분"
         }
       ],
       "sellAlerts": [],
@@ -1524,7 +1526,7 @@
             "entryPrice": 662000,
             "currentPrice": 683000,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 1시간 15분",
+            "holdingPeriod": "보유 1시간 24분",
             "evalAmount": 683000,
             "pnl": 21000,
             "returnPct": 3.17
@@ -1536,7 +1538,7 @@
             "entryPrice": 447000,
             "currentPrice": 440500,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 1시간 15분",
+            "holdingPeriod": "보유 1시간 24분",
             "evalAmount": 881000,
             "pnl": -13000,
             "returnPct": -1.45
@@ -1545,10 +1547,10 @@
       },
       "comparison": {
         "returnPct": 0.18,
-        "benchmarkReturnPct": 0.0,
-        "excessReturnPct": 0.18,
+        "benchmarkReturnPct": -0.44,
+        "excessReturnPct": 0.62,
         "periodStart": "2026-05-06T16:16+09:00",
-        "periodEnd": "2026-05-07T10:43+09:00"
+        "periodEnd": "2026-05-07T10:51+09:00"
       }
     }
   ],
@@ -7117,6 +7119,174 @@
         -0.06,
         -0.06,
         -0.06
+      ]
+    },
+    {
+      "ts": "2026-05-07T10:46+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 94,
+      "protected": 2,
+      "stale": 0,
+      "benchmark": 1.46,
+      "benchmarkValue": 7409.09,
+      "kodex200": 0.19,
+      "kodex200Value": 113480.0,
+      "returns": [
+        0.53,
+        -0.64,
+        -0.98,
+        -3.16,
+        0.12,
+        -1.21,
+        0.18
+      ],
+      "marketReturns": [
+        0.77,
+        1.46,
+        1.46,
+        1.46,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "evalAmounts": [
+        10051300,
+        29803160,
+        9901500,
+        9683900,
+        10011800,
+        9879500,
+        10018100
+      ],
+      "capital": [
+        9998800,
+        29996060,
+        10000000,
+        10000000,
+        10000000,
+        10000000,
+        10000000
+      ],
+      "kodexReturns": [
+        0.19,
+        0.19,
+        0.19,
+        0.19,
+        0.19,
+        0.19,
+        0.19
+      ]
+    },
+    {
+      "ts": "2026-05-07T10:51+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 94,
+      "protected": 2,
+      "stale": 0,
+      "benchmark": 1.01,
+      "benchmarkValue": 7376.22,
+      "kodex200": 0.34,
+      "kodex200Value": 113660.0,
+      "returns": [
+        0.53,
+        -0.55,
+        0.22,
+        -2.93,
+        0.12,
+        -1.21,
+        0.18
+      ],
+      "marketReturns": [
+        0.32,
+        1.01,
+        1.01,
+        1.01,
+        -0.44,
+        -0.44,
+        -0.44
+      ],
+      "evalAmounts": [
+        10051300,
+        29830960,
+        10022000,
+        9706600,
+        10011800,
+        9879500,
+        10018100
+      ],
+      "capital": [
+        9998800,
+        29996060,
+        10000000,
+        10000000,
+        10000000,
+        10000000,
+        10000000
+      ],
+      "kodexReturns": [
+        0.34,
+        0.34,
+        0.34,
+        0.34,
+        0.34,
+        0.34,
+        0.34
+      ]
+    },
+    {
+      "ts": "2026-05-07T10:51+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 94,
+      "protected": 2,
+      "stale": 0,
+      "benchmark": 1.01,
+      "benchmarkValue": 7376.22,
+      "kodex200": 0.35,
+      "kodex200Value": 113670.0,
+      "returns": [
+        0.53,
+        -0.55,
+        0.22,
+        -2.93,
+        0.12,
+        -1.21,
+        0.18
+      ],
+      "marketReturns": [
+        0.32,
+        1.01,
+        1.01,
+        1.01,
+        -0.44,
+        -0.44,
+        -0.44
+      ],
+      "evalAmounts": [
+        10051300,
+        29830960,
+        10022000,
+        9706600,
+        10011800,
+        9879500,
+        10018100
+      ],
+      "capital": [
+        9998800,
+        29996060,
+        10000000,
+        10000000,
+        10000000,
+        10000000,
+        10000000
+      ],
+      "kodexReturns": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
       ]
     }
   ],
