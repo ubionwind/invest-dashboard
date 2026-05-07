@@ -193,7 +193,7 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .overview-candidate-grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
 .holdings-card { padding: 12px; border-radius: 16px; border: 1px solid rgba(53,211,153,.30); background: rgba(53,211,153,.055); }
 .holding-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.035); }
-.holding-table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 12px; }
+.holding-table { width: 100%; min-width: 900px; border-collapse: collapse; font-size: 12px; }
 .holding-table th, .holding-table td { padding: 8px 9px; border-right: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); text-align: right; vertical-align: middle; white-space: nowrap; }
 .holding-table th { background: rgba(255,255,255,.07); color: #dbe7ff; font-weight: 900; text-align: center; line-height: 1.35; }
 .holding-table th:first-child, .holding-table td:first-child { text-align: left; }
@@ -204,7 +204,7 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .holding-table .up { color: var(--rise) !important; }
 .holding-table .down { color: var(--fall) !important; }
 .holding-table .stock-name strong { display: block; max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.holding-table .stock-name small { font-size: 10px; }
+.holding-table .stock-code { color: var(--muted); font-variant-numeric: tabular-nums; }
 .trade-alerts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .trade-alert { padding: 12px; border-radius: 16px; border: 1px solid var(--line); background: rgba(255,255,255,.035); }
 .buy-alert { border-color: rgba(255,77,79,.28); }
@@ -290,7 +290,7 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .mini-facts { display: grid; grid-template-columns: repeat(2, 1fr); }
   .trade-alerts { grid-template-columns: 1fr; }
   .holding-table-wrap { margin: 0 -2px; }
-  .holding-table { min-width: 720px; font-size: 11px; }
+  .holding-table { min-width: 860px; font-size: 11px; }
   .holding-table th, .holding-table td { padding: 7px 6px; }
   .candidate-tile { padding: 13px; border-radius: 17px; }
   .candidate-top { margin-bottom: 8px; }

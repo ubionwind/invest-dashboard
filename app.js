@@ -526,7 +526,7 @@ function holdingsBlock(pf = {}) {
     <div class="alert-head"><span>보유 항목</span><strong>${positions.length}</strong></div>
     <div class="holding-table-wrap"><table class="holding-table">
       <thead><tr>
-        <th>종목명</th><th>보유수량</th><th>평가손익<br>수익률(%)</th><th>평가금액<br>매입금액</th><th>현재가<br>평균단가</th><th>전일대비<br>등락률(%)</th><th>보유비중</th>
+        <th>종목명</th><th>종목코드</th><th>보유일</th><th>보유수량</th><th>평가손익<br>수익률(%)</th><th>평가금액<br>매입금액</th><th>현재가<br>평균단가</th><th>전일대비<br>등락률(%)</th><th>보유비중</th>
       </tr></thead>
       <tbody>${positions.map(p => {
         const ret = p.returnPct === null || p.returnPct === undefined || p.returnPct === '' ? null : Number(p.returnPct);
@@ -541,7 +541,9 @@ function holdingsBlock(pf = {}) {
         const delta = prevPrice ? currentPrice - prevPrice : null;
         const weight = totalEval && p.evalAmount ? Number(p.evalAmount) / totalEval * 100 : null;
         return `<tr>
-          <td class="stock-name"><strong>${p.name || '-'}</strong>${p.code ? `<small>${p.code}</small>` : ''}</td>
+          <td class="stock-name"><strong>${p.name || '-'}</strong></td>
+          <td class="stock-code">${p.code || '-'}</td>
+          <td>${p.holdingPeriod || '-'}</td>
           <td>${fmt.format(qty)}</td>
           <td><b class="${retClass}">${money(p.pnl)}</b><small class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : ret.toFixed(2)}</small></td>
           <td><b>${money(p.evalAmount)}</b><small>${entryAmount === null ? '-' : money(entryAmount)}</small></td>
