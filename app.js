@@ -184,6 +184,61 @@ function supplySnapshot(c = {}) {
   ].filter(Boolean).join(' · ') || '수급/테마 데이터 보강 대기';
 }
 
+function tradingValueText(item = {}) {
+  const reason = String(item.reason || item.entryReason || '');
+  const m = reason.match(/거래대금\s*([\d,.]+\s*[조억만]?)/);
+  if (m) return m[1];
+  const score = reason.match(/거래대금점수\s*=\s*([\d.]+)/);
+  if (score) return `점수 ${score[1]}`;
+  if (reason.includes('거래대금 증가')) return '증가 신호';
+  return '데이터 대기';
+}
+
+function standardReason(item = {}) {
+  const reason = String(item.reason || item.entryReason || '').replace(/^가상\s*/, '').replace(/^진입만:\s*/, '');
+  if (!reason) return '판단 근거 보강 대기';
+  return reason.length > 64 ? `${reason.slice(0, 64)}…` : reason;
+}
+
+function normalizedScoreText(v) {
+  return v === null || v === undefined || Number.isNaN(Number(v)) ? '-' : Number(v).toFixed(1);
+}
+
+function switchMiniGraph({ baseScore = null, currentScore = null, candidateScore = null, returnPct = null } = {}) {
+  const cur = currentScore == null ? 50 : Math.max(0, Math.min(100, Number(currentScore)));
+  const base = baseScore == null ? cur : Math.max(0, Math.min(100, Number(baseScore)));
+  const cand = candidateScore == null ? cur + 12 : Math.max(0, Math.min(100, Number(candidateScore)));
+  const danger = returnPct !== null && returnPct !== undefined && Number(returnPct) <= -4;
+  const trigger = Math.max(cur + 12, 70);
+  const toY = v => Math.round(42 - (Math.max(0, Math.min(100, v)) / 100) * 32);
+  const points = `4,${toY(base)} 52,${toY(cur)} 100,${toY(cand)}`;
+  const triggerY = toY(trigger);
+  const label = danger ? '손절선 근접' : `교체선 ${Math.round(trigger)}점`;
+  return `<div class="switch-mini">
+    <svg viewBox="0 0 104 46" preserveAspectRatio="none" aria-hidden="true">
+      <line x1="0" y1="${triggerY}" x2="104" y2="${triggerY}" class="switch-line" />
+      <polyline points="${points}" class="switch-curve" />
+      <circle cx="52" cy="${toY(cur)}" r="2.8" class="switch-dot" />
+    </svg>
+    <span>${label}</span>
+  </div>`;
+}
+
+function holdingReasonText({ decision, ret, scoreGap, bestReplacement } = {}) {
+  const bestName = bestReplacement?.name ? ` / 후보 ${bestReplacement.name}` : '';
+  if (decision === '교체검토') return `손실 또는 점수 열위${bestName}`;
+  if (decision === '익절/트레일링') return '수익권: 익절선/트레일링 관찰';
+  if (decision === '비교관찰') return `후보 우위 ${scoreGap?.toFixed ? scoreGap.toFixed(1) : ''}점${bestName}`;
+  if (decision === '손절관찰') return `손실 ${pct(ret)}: 회복/손절선 관찰`;
+  return `유지: 교체 우위 부족${bestName}`;
+}
+
+function diagnosticRows(rows) {
+  return `<div class="diagnostic-rows">${rows.map(([label, value, cls = '']) => `
+    <div><span>${label}</span><b class="${cls}">${value}</b></div>
+  `).join('')}</div>`;
+}
+
 function holdingSupplySnapshot(pos = {}, matched = {}) {
   if (matched?.reason) return supplySnapshot(matched);
   return [
@@ -229,18 +284,23 @@ function holdingCandidateComparison(s) {
           const scoreGap = currentScore == null || entryScore == null ? null : Number(currentScore) - entryScore;
           const decision = decisionForHolding(pos, matched, bestReplacement);
           const ret = Number(pos.returnPct || 0);
+          const bestCandidateScore = bestReplacement?.score == null ? null : Number(bestReplacement.score);
+          const holdReason = holdingReasonText({ decision, ret, scoreGap: bestCandidateScore == null || currentScore == null ? null : bestCandidateScore - Number(currentScore), bestReplacement });
           return `<article class="holding-compare-card">
             <div class="compare-title"><strong>${pos.name || '-'}</strong><span>${pos.code || ''}</span></div>
             <div class="compare-score-row">
               <b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b>
               <em>${decision}</em>
             </div>
-            <div class="compare-mini-grid">
-              <span><b>${currentScore == null ? '-' : Number(currentScore).toFixed(1)}</b><small>${matched.score == null ? '진입점수 기준' : '현재점수'}</small></span>
-              <span><b>${entryScore == null ? '-' : entryScore.toFixed(1)}</b><small>진입점수</small></span>
-              <span><b class="${scoreGap == null ? '' : (scoreGap >= 0 ? 'up' : 'down')}">${scoreGap == null ? '-' : `${scoreGap > 0 ? '+' : ''}${scoreGap.toFixed(1)}`}</b><small>점수변화</small></span>
-            </div>
-            <p>${holdingSupplySnapshot(pos, matched)}</p>
+            ${diagnosticRows([
+              ['현재점수', normalizedScoreText(currentScore)],
+              ['진입점수', normalizedScoreText(entryScore)],
+              ['점수변화', scoreGap == null ? '-' : `${scoreGap > 0 ? '+' : ''}${scoreGap.toFixed(1)}`, scoreGap == null ? '' : (scoreGap >= 0 ? 'up' : 'down')],
+              ['등락/수익', pct(pos.returnPct), ret >= 0 ? 'up' : 'down'],
+              ['거래대금', tradingValueText(matched.reason ? matched : pos)],
+              ['유지/교체 이유', holdReason],
+            ])}
+            ${switchMiniGraph({ baseScore: entryScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct })}
             <small class="muted">매입 ${money(pos.entryPrice)} · 현재 ${money(pos.currentPrice)} · 손익 ${money(pos.pnl)}</small>
           </article>`;
         }).join('') : '<p class="muted">현재 보유 종목 없음</p>'}
@@ -256,7 +316,15 @@ function holdingCandidateComparison(s) {
               <b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b>
               <em class="${edge == null ? '' : (edge >= 0 ? 'up' : 'down')}">${edge == null ? '비교대기' : `보유상위 대비 ${edge > 0 ? '+' : ''}${edge.toFixed(1)}`}</em>
             </div>
-            <p>${supplySnapshot(c)}</p>
+            ${diagnosticRows([
+              ['현재점수', normalizedScoreText(c.score)],
+              ['진입점수', '후보'],
+              ['점수변화', edge == null ? '-' : `${edge > 0 ? '+' : ''}${edge.toFixed(1)}`, edge == null ? '' : (edge >= 0 ? 'up' : 'down')],
+              ['등락/수익', c.changePct == null ? '-' : pct(c.changePct), c.changePct == null ? '' : (Number(c.changePct) >= 0 ? 'up' : 'down')],
+              ['거래대금', tradingValueText(c)],
+              ['유지/교체 이유', standardReason(c)],
+            ])}
+            ${switchMiniGraph({ baseScore: bestHeldScore < 0 ? null : bestHeldScore, currentScore: bestHeldScore < 0 ? null : bestHeldScore, candidateScore: c.score })}
             <small class="muted">${c.candidateNote || c.status || '현재 후보'}</small>
           </article>`;
         }).join('') : '<p class="muted">보유 종목보다 앞선 별도 후보 없음</p>'}

@@ -1,197 +1,13 @@
 {
-  "generatedAt": "2026-05-07T13:45+09:00",
+  "generatedAt": "2026-05-07T13:55+09:00",
   "history": [
-    {
-      "ts": "2026-05-06T10:30+09:00",
-      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
-      "candidates": 36,
-      "protected": 12,
-      "stale": 0,
-      "benchmark": 0.0,
-      "benchmarkValue": 7322.74,
-      "returns": [
-        -0.09,
-        null,
-        1.15,
-        0.0
-      ],
-      "evalAmounts": [
-        29969840,
-        10000000,
-        10114500,
-        10000000
-      ],
-      "capital": [
-        29997940,
-        10000000,
-        10000000,
-        10000000
-      ],
-      "marketReturns": [
-        null,
-        0.0,
-        0.0,
-        0.0,
-        null,
-        null,
-        null
-      ],
-      "kodex200": null,
-      "kodexReturns": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "ts": "2026-05-06T10:31+09:00",
-      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
-      "candidates": 36,
-      "protected": 12,
-      "stale": 0,
-      "benchmark": 0.01,
-      "benchmarkValue": 7323.39,
-      "returns": [
-        0.13,
-        null,
-        1.15,
-        0.0
-      ],
-      "evalAmounts": [
-        30037240,
-        10000000,
-        10114500,
-        10000000
-      ],
-      "capital": [
-        29997940,
-        10000000,
-        10000000,
-        10000000
-      ],
-      "marketReturns": [
-        null,
-        0.01,
-        0.01,
-        0.01,
-        null,
-        null,
-        null
-      ],
-      "kodex200": null,
-      "kodexReturns": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "ts": "2026-05-06T10:33+09:00",
-      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
-      "candidates": 36,
-      "protected": 12,
-      "stale": 0,
-      "benchmark": -0.09,
-      "benchmarkValue": 7315.82,
-      "returns": [
-        0.21,
-        null,
-        1.15,
-        0.0
-      ],
-      "evalAmounts": [
-        30061140,
-        10000000,
-        10114500,
-        10000000
-      ],
-      "capital": [
-        29997940,
-        10000000,
-        10000000,
-        10000000
-      ],
-      "marketReturns": [
-        null,
-        -0.09,
-        -0.09,
-        -0.09,
-        null,
-        null,
-        null
-      ],
-      "kodex200": null,
-      "kodexReturns": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "ts": "2026-05-06T10:36+09:00",
-      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
-      "candidates": 36,
-      "protected": 12,
-      "stale": 0,
-      "benchmark": -0.08,
-      "benchmarkValue": 7316.98,
-      "returns": [
-        0.23,
-        null,
-        1.15,
-        0.0
-      ],
-      "marketReturns": [
-        null,
-        -0.08,
-        -0.08,
-        -0.08,
-        null,
-        null,
-        null
-      ],
-      "evalAmounts": [
-        30066040,
-        10000000,
-        10114500,
-        10000000
-      ],
-      "capital": [
-        29997940,
-        10000000,
-        10000000,
-        10000000
-      ],
-      "kodex200": null,
-      "kodexReturns": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ]
-    },
     {
       "ts": "2026-05-06T10:37+09:00",
       "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": -0.06,
+      "benchmark": 0.0,
       "benchmarkValue": 7318.58,
       "returns": [
         null,
@@ -201,9 +17,9 @@
       ],
       "marketReturns": [
         null,
-        -0.06,
-        -0.06,
-        -0.06,
+        0.0,
+        0.0,
+        0.0,
         null,
         null,
         null
@@ -237,7 +53,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.03,
+      "benchmark": 0.09,
       "benchmarkValue": 7325.15,
       "returns": [
         0.24,
@@ -247,9 +63,9 @@
       ],
       "marketReturns": [
         null,
-        0.03,
-        0.03,
-        0.03,
+        0.09,
+        0.09,
+        0.09,
         null,
         null,
         null
@@ -283,7 +99,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": -0.08,
+      "benchmark": -0.02,
       "benchmarkValue": 7317.24,
       "returns": [
         0.11,
@@ -293,9 +109,9 @@
       ],
       "marketReturns": [
         null,
-        -0.08,
-        -0.08,
-        -0.08,
+        -0.02,
+        -0.02,
+        -0.02,
         null,
         null,
         null
@@ -329,7 +145,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": -0.27,
+      "benchmark": -0.21,
       "benchmarkValue": 7303.24,
       "returns": [
         0.1,
@@ -339,9 +155,9 @@
       ],
       "marketReturns": [
         null,
-        -0.27,
-        -0.27,
-        -0.27,
+        -0.21,
+        -0.21,
+        -0.21,
         null,
         null,
         null
@@ -375,7 +191,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": -0.44,
+      "benchmark": -0.39,
       "benchmarkValue": 7290.18,
       "returns": [
         0.06,
@@ -385,9 +201,9 @@
       ],
       "marketReturns": [
         null,
-        -0.44,
-        -0.44,
-        -0.44,
+        -0.39,
+        -0.39,
+        -0.39,
         null,
         null,
         null
@@ -421,7 +237,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.1,
+      "benchmark": 0.16,
       "benchmarkValue": 7330.28,
       "returns": [
         0.22,
@@ -431,9 +247,9 @@
       ],
       "marketReturns": [
         null,
-        0.1,
-        0.1,
-        0.1,
+        0.16,
+        0.16,
+        0.16,
         null,
         null,
         null
@@ -467,7 +283,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.1,
+      "benchmark": 0.16,
       "benchmarkValue": 7330.28,
       "returns": [
         0.21,
@@ -477,9 +293,9 @@
       ],
       "marketReturns": [
         null,
-        0.1,
-        0.1,
-        0.1,
+        0.16,
+        0.16,
+        0.16,
         null,
         null,
         null
@@ -513,7 +329,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.36,
+      "benchmark": 0.42,
       "benchmarkValue": 7349.37,
       "returns": [
         0.14,
@@ -523,9 +339,9 @@
       ],
       "marketReturns": [
         null,
-        0.36,
-        0.36,
-        0.36,
+        0.42,
+        0.42,
+        0.42,
         null,
         null,
         null
@@ -559,7 +375,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.29,
+      "benchmark": 0.34,
       "benchmarkValue": 7343.69,
       "returns": [
         0.06,
@@ -569,9 +385,9 @@
       ],
       "marketReturns": [
         null,
-        0.29,
-        0.29,
-        0.29,
+        0.34,
+        0.34,
+        0.34,
         null,
         null,
         null
@@ -605,7 +421,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.4,
+      "benchmark": 0.46,
       "benchmarkValue": 7351.9,
       "returns": [
         0.06,
@@ -615,9 +431,9 @@
       ],
       "marketReturns": [
         null,
-        0.4,
-        0.4,
-        0.4,
+        0.46,
+        0.46,
+        0.46,
         null,
         null,
         null
@@ -651,7 +467,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.44,
+      "benchmark": 0.5,
       "benchmarkValue": 7355.1,
       "returns": [
         0.14,
@@ -661,9 +477,9 @@
       ],
       "marketReturns": [
         null,
-        0.44,
-        0.44,
-        0.44,
+        0.5,
+        0.5,
+        0.5,
         null,
         null,
         null
@@ -697,7 +513,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.36,
+      "benchmark": 0.42,
       "benchmarkValue": 7349.16,
       "returns": [
         0.13,
@@ -707,9 +523,9 @@
       ],
       "marketReturns": [
         null,
-        0.36,
-        0.36,
-        0.36,
+        0.42,
+        0.42,
+        0.42,
         null,
         null,
         null
@@ -743,7 +559,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.23,
+      "benchmark": 0.29,
       "benchmarkValue": 7339.57,
       "returns": [
         0.06,
@@ -753,9 +569,9 @@
       ],
       "marketReturns": [
         null,
-        0.23,
-        0.23,
-        0.23,
+        0.29,
+        0.29,
+        0.29,
         null,
         null,
         null
@@ -789,7 +605,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.17,
+      "benchmark": 0.23,
       "benchmarkValue": 7335.25,
       "returns": [
         0.11,
@@ -799,9 +615,9 @@
       ],
       "marketReturns": [
         null,
-        0.17,
-        0.17,
-        0.17,
+        0.23,
+        0.23,
+        0.23,
         null,
         null,
         null
@@ -835,7 +651,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.17,
+      "benchmark": 0.23,
       "benchmarkValue": 7335.25,
       "returns": [
         0.08,
@@ -845,9 +661,9 @@
       ],
       "marketReturns": [
         null,
-        0.17,
-        0.17,
-        0.17,
+        0.23,
+        0.23,
+        0.23,
         null,
         null,
         null
@@ -881,7 +697,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.29,
+      "benchmark": 0.35,
       "benchmarkValue": 7344.0,
       "returns": [
         0.06,
@@ -891,9 +707,9 @@
       ],
       "marketReturns": [
         null,
-        0.29,
-        0.29,
-        0.29,
+        0.35,
+        0.35,
+        0.35,
         null,
         null,
         null
@@ -927,7 +743,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.27,
+      "benchmark": 0.33,
       "benchmarkValue": 7342.46,
       "returns": [
         0.08,
@@ -937,9 +753,9 @@
       ],
       "marketReturns": [
         null,
-        0.27,
-        0.27,
-        0.27,
+        0.33,
+        0.33,
+        0.33,
         null,
         null,
         null
@@ -973,7 +789,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.47,
+      "benchmark": 0.53,
       "benchmarkValue": 7357.33,
       "returns": [
         0.04,
@@ -983,9 +799,9 @@
       ],
       "marketReturns": [
         null,
-        0.47,
-        0.47,
-        0.47,
+        0.53,
+        0.53,
+        0.53,
         null,
         null,
         null
@@ -1019,7 +835,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.68,
+      "benchmark": 0.73,
       "benchmarkValue": 7372.29,
       "returns": [
         0.19,
@@ -1029,9 +845,9 @@
       ],
       "marketReturns": [
         null,
-        0.68,
-        0.68,
-        0.68,
+        0.73,
+        0.73,
+        0.73,
         null,
         null,
         null
@@ -1065,7 +881,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.41,
+      "benchmark": 0.46,
       "benchmarkValue": 7352.42,
       "returns": [
         0.16,
@@ -1075,9 +891,9 @@
       ],
       "marketReturns": [
         null,
-        0.41,
-        0.41,
-        0.41,
+        0.46,
+        0.46,
+        0.46,
         null,
         null,
         null
@@ -1111,7 +927,7 @@
       "candidates": 36,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.6,
+      "benchmark": 0.65,
       "benchmarkValue": 7366.37,
       "returns": [
         0.14,
@@ -1121,9 +937,9 @@
       ],
       "marketReturns": [
         0.0,
-        0.6,
-        0.6,
-        0.6,
+        0.65,
+        0.65,
+        0.65,
         null,
         null,
         null
@@ -1157,7 +973,7 @@
       "candidates": 36,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.97,
+      "benchmark": 1.03,
       "benchmarkValue": 7393.74,
       "returns": [
         -0.05,
@@ -1167,9 +983,9 @@
       ],
       "marketReturns": [
         0.56,
-        0.97,
-        0.97,
-        0.97,
+        1.03,
+        1.03,
+        1.03,
         null,
         null,
         null
@@ -1203,7 +1019,7 @@
       "candidates": 36,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.11,
+      "benchmark": 1.17,
       "benchmarkValue": 7403.85,
       "returns": [
         null,
@@ -1213,9 +1029,9 @@
       ],
       "marketReturns": [
         0.7,
-        1.11,
-        1.11,
-        1.11,
+        1.17,
+        1.17,
+        1.17,
         null,
         null,
         null
@@ -1249,7 +1065,7 @@
       "candidates": 36,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.07,
+      "benchmark": 1.12,
       "benchmarkValue": 7400.81,
       "returns": [
         -0.0,
@@ -1259,9 +1075,9 @@
       ],
       "marketReturns": [
         0.66,
-        1.07,
-        1.07,
-        1.07,
+        1.12,
+        1.12,
+        1.12,
         null,
         null,
         null
@@ -1295,7 +1111,7 @@
       "candidates": 36,
       "protected": 3,
       "stale": 0,
-      "benchmark": 0.97,
+      "benchmark": 1.03,
       "benchmarkValue": 7393.94,
       "returns": [
         0.04,
@@ -1305,9 +1121,9 @@
       ],
       "marketReturns": [
         0.56,
-        0.97,
-        0.97,
-        0.97,
+        1.03,
+        1.03,
+        1.03,
         null,
         null,
         null
@@ -1341,7 +1157,7 @@
       "candidates": 36,
       "protected": 3,
       "stale": 0,
-      "benchmark": 0.75,
+      "benchmark": 0.81,
       "benchmarkValue": 7377.96,
       "returns": [
         0.01,
@@ -1351,9 +1167,9 @@
       ],
       "marketReturns": [
         0.35,
-        0.75,
-        0.75,
-        0.75,
+        0.81,
+        0.81,
+        0.81,
         null,
         null,
         null
@@ -1387,7 +1203,7 @@
       "candidates": 36,
       "protected": 3,
       "stale": 0,
-      "benchmark": 0.66,
+      "benchmark": 0.72,
       "benchmarkValue": 7371.41,
       "returns": [
         0.01,
@@ -1397,9 +1213,9 @@
       ],
       "marketReturns": [
         0.26,
-        0.66,
-        0.66,
-        0.66,
+        0.72,
+        0.72,
+        0.72,
         null,
         null,
         null
@@ -1433,7 +1249,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 0.81,
+      "benchmark": 0.87,
       "benchmarkValue": 7381.99,
       "returns": [
         0.19,
@@ -1443,9 +1259,9 @@
       ],
       "marketReturns": [
         0.4,
-        0.81,
-        0.81,
-        0.81,
+        0.87,
+        0.87,
+        0.87,
         null,
         null,
         null
@@ -1479,7 +1295,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 0.85,
+      "benchmark": 0.9,
       "benchmarkValue": 7384.71,
       "returns": [
         0.19,
@@ -1489,9 +1305,9 @@
       ],
       "marketReturns": [
         0.44,
-        0.85,
-        0.85,
-        0.85,
+        0.9,
+        0.9,
+        0.9,
         null,
         null,
         null
@@ -1525,7 +1341,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.04,
+      "benchmark": 1.1,
       "benchmarkValue": 7399.08,
       "returns": [
         null,
@@ -1535,9 +1351,9 @@
       ],
       "marketReturns": [
         0.63,
-        1.04,
-        1.04,
-        1.04,
+        1.1,
+        1.1,
+        1.1,
         null,
         null,
         null
@@ -1571,7 +1387,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.0,
+      "benchmark": 1.05,
       "benchmarkValue": 7395.74,
       "returns": [
         0.24,
@@ -1581,9 +1397,9 @@
       ],
       "marketReturns": [
         0.59,
-        1.0,
-        1.0,
-        1.0,
+        1.05,
+        1.05,
+        1.05,
         null,
         null,
         null
@@ -1617,7 +1433,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.03,
+      "benchmark": 1.09,
       "benchmarkValue": 7398.29,
       "returns": [
         0.38,
@@ -1627,9 +1443,9 @@
       ],
       "marketReturns": [
         0.62,
-        1.03,
-        1.03,
-        1.03,
+        1.09,
+        1.09,
+        1.09,
         null,
         null,
         null
@@ -1663,7 +1479,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.01,
+      "benchmark": 1.07,
       "benchmarkValue": 7396.55,
       "returns": [
         0.47,
@@ -1673,9 +1489,9 @@
       ],
       "marketReturns": [
         0.6,
-        1.01,
-        1.01,
-        1.01,
+        1.07,
+        1.07,
+        1.07,
         null,
         null,
         null
@@ -1709,7 +1525,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.11,
+      "benchmark": 1.16,
       "benchmarkValue": 7403.71,
       "returns": [
         0.59,
@@ -1719,9 +1535,9 @@
       ],
       "marketReturns": [
         0.7,
-        1.11,
-        1.11,
-        1.11,
+        1.16,
+        1.16,
+        1.16,
         null,
         null,
         null
@@ -1755,7 +1571,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.11,
+      "benchmark": 1.17,
       "benchmarkValue": 7404.02,
       "returns": [
         0.5,
@@ -1765,9 +1581,9 @@
       ],
       "marketReturns": [
         0.7,
-        1.11,
-        1.11,
-        1.11,
+        1.17,
+        1.17,
+        1.17,
         null,
         null,
         null
@@ -1801,7 +1617,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.11,
+      "benchmark": 1.17,
       "benchmarkValue": 7404.35,
       "returns": [
         0.56,
@@ -1811,9 +1627,9 @@
       ],
       "marketReturns": [
         0.71,
-        1.11,
-        1.11,
-        1.11,
+        1.17,
+        1.17,
+        1.17,
         null,
         null,
         null
@@ -1847,7 +1663,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.1,
+      "benchmark": 1.16,
       "benchmarkValue": 7403.53,
       "returns": [
         0.61,
@@ -1857,9 +1673,9 @@
       ],
       "marketReturns": [
         0.7,
-        1.1,
-        1.1,
-        1.1,
+        1.16,
+        1.16,
+        1.16,
         null,
         null,
         null
@@ -1893,7 +1709,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.1,
+      "benchmark": 1.16,
       "benchmarkValue": 7403.53,
       "returns": [
         0.59,
@@ -1903,9 +1719,9 @@
       ],
       "marketReturns": [
         0.7,
-        1.1,
-        1.1,
-        1.1,
+        1.16,
+        1.16,
+        1.16,
         null,
         null,
         null
@@ -1939,7 +1755,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.24,
+      "benchmark": 1.3,
       "benchmarkValue": 7413.46,
       "returns": [
         0.59,
@@ -1949,9 +1765,9 @@
       ],
       "marketReturns": [
         0.83,
-        1.24,
-        1.24,
-        1.24,
+        1.3,
+        1.3,
+        1.3,
         null,
         null,
         null
@@ -1985,7 +1801,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.07,
+      "benchmark": 1.13,
       "benchmarkValue": 7401.08,
       "returns": [
         0.3,
@@ -1995,9 +1811,9 @@
       ],
       "marketReturns": [
         0.66,
-        1.07,
-        1.07,
-        1.07,
+        1.13,
+        1.13,
+        1.13,
         null,
         null,
         null
@@ -2031,7 +1847,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 0.96,
+      "benchmark": 1.02,
       "benchmarkValue": 7393.36,
       "returns": [
         0.34,
@@ -2041,9 +1857,9 @@
       ],
       "marketReturns": [
         0.56,
-        0.96,
-        0.96,
-        0.96,
+        1.02,
+        1.02,
+        1.02,
         null,
         null,
         null
@@ -2077,7 +1893,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 0.84,
+      "benchmark": 0.89,
       "benchmarkValue": 7384.0,
       "returns": [
         0.3,
@@ -2087,9 +1903,9 @@
       ],
       "marketReturns": [
         0.43,
-        0.84,
-        0.84,
-        0.84,
+        0.89,
+        0.89,
+        0.89,
         null,
         null,
         null
@@ -2123,7 +1939,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 0.9,
+      "benchmark": 0.96,
       "benchmarkValue": 7388.52,
       "returns": [
         0.51,
@@ -2133,9 +1949,9 @@
       ],
       "marketReturns": [
         0.49,
-        0.9,
-        0.9,
-        0.9,
+        0.96,
+        0.96,
+        0.96,
         null,
         null,
         null
@@ -2169,7 +1985,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.02,
+      "benchmark": 1.08,
       "benchmarkValue": 7397.6,
       "returns": [
         0.99,
@@ -2179,9 +1995,9 @@
       ],
       "marketReturns": [
         0.61,
-        1.02,
-        1.02,
-        1.02,
+        1.08,
+        1.08,
+        1.08,
         null,
         null,
         null
@@ -2215,7 +2031,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.31,
+      "benchmark": 1.37,
       "benchmarkValue": 7418.93,
       "returns": [
         1.51,
@@ -2225,9 +2041,9 @@
       ],
       "marketReturns": [
         0.9,
-        1.31,
-        1.31,
-        1.31,
+        1.37,
+        1.37,
+        1.37,
         null,
         null,
         null
@@ -2261,7 +2077,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.34,
+      "benchmark": 1.4,
       "benchmarkValue": 7420.99,
       "returns": [
         1.51,
@@ -2271,9 +2087,9 @@
       ],
       "marketReturns": [
         0.93,
-        1.34,
-        1.34,
-        1.34,
+        1.4,
+        1.4,
+        1.4,
         null,
         null,
         null
@@ -2307,7 +2123,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.36,
+      "benchmark": 1.42,
       "benchmarkValue": 7422.17,
       "returns": [
         1.51,
@@ -2317,9 +2133,9 @@
       ],
       "marketReturns": [
         0.95,
-        1.36,
-        1.36,
-        1.36,
+        1.42,
+        1.42,
+        1.42,
         null,
         null,
         null
@@ -2353,7 +2169,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.34,
+      "benchmark": 1.39,
       "benchmarkValue": 7420.63,
       "returns": [
         1.51,
@@ -2363,9 +2179,9 @@
       ],
       "marketReturns": [
         0.93,
-        1.34,
-        1.34,
-        1.34,
+        1.39,
+        1.39,
+        1.39,
         null,
         null,
         null
@@ -2399,7 +2215,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.38,
+      "benchmark": 1.44,
       "benchmarkValue": 7424.07,
       "returns": [
         1.51,
@@ -2409,9 +2225,9 @@
       ],
       "marketReturns": [
         0.97,
-        1.38,
-        1.38,
-        1.38,
+        1.44,
+        1.44,
+        1.44,
         null,
         null,
         null
@@ -2445,7 +2261,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.22,
+      "benchmark": 1.28,
       "benchmarkValue": 7412.11,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -2457,9 +2273,9 @@
       ],
       "marketReturns": [
         0.81,
-        1.22,
-        1.22,
-        1.22,
+        1.28,
+        1.28,
+        1.28,
         null,
         null,
         null
@@ -2492,7 +2308,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.15,
+      "benchmark": 1.21,
       "benchmarkValue": 7407.18,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -2504,9 +2320,9 @@
       ],
       "marketReturns": [
         0.74,
-        1.15,
-        1.15,
-        1.15,
+        1.21,
+        1.21,
+        1.21,
         null,
         null,
         null
@@ -2539,7 +2355,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -2551,9 +2367,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         null,
         null,
         null
@@ -2586,7 +2402,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -2598,9 +2414,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         null,
         null,
         null
@@ -2633,7 +2449,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -2645,9 +2461,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         null,
         null,
         null
@@ -2680,7 +2496,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -2692,9 +2508,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         null,
         null,
         null
@@ -2727,7 +2543,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -2739,9 +2555,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         null,
         null,
         null
@@ -2774,7 +2590,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -2786,9 +2602,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         null,
         null,
         null
@@ -2821,7 +2637,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -2836,9 +2652,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -2877,7 +2693,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -2892,9 +2708,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -2933,7 +2749,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -2948,9 +2764,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -2989,7 +2805,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -3004,9 +2820,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3045,7 +2861,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -3060,9 +2876,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3101,7 +2917,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -3116,9 +2932,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3157,7 +2973,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -3172,9 +2988,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3213,7 +3029,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -3228,9 +3044,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3269,7 +3085,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -3284,9 +3100,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3325,7 +3141,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -3340,9 +3156,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3381,7 +3197,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -3396,9 +3212,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3437,7 +3253,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -3452,9 +3268,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3493,7 +3309,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 2.2,
       "kodex200Value": 115765.0,
@@ -3508,9 +3324,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3549,7 +3365,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 2.11,
       "kodex200Value": 115660.0,
@@ -3564,9 +3380,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3605,7 +3421,7 @@
       "candidates": 96,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.57,
       "kodex200Value": 113915.0,
@@ -3620,9 +3436,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3661,7 +3477,7 @@
       "candidates": 96,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.34,
       "kodex200Value": 113660.0,
@@ -3676,9 +3492,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3717,7 +3533,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -1.12,
       "kodex200Value": 112000.0,
@@ -3732,9 +3548,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3773,7 +3589,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -0.23,
       "kodex200Value": 113015.0,
@@ -3788,9 +3604,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3829,7 +3645,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.18,
       "kodex200Value": 113475.0,
@@ -3844,9 +3660,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3885,7 +3701,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.39,
       "kodex200Value": 113715.0,
@@ -3900,9 +3716,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3941,7 +3757,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.2,
       "kodex200Value": 113495.0,
@@ -3956,9 +3772,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -3997,7 +3813,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -0.1,
       "kodex200Value": 113160.0,
@@ -4012,9 +3828,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4053,7 +3869,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -0.46,
       "kodex200Value": 112750.0,
@@ -4068,9 +3884,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4109,7 +3925,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -0.42,
       "kodex200Value": 112790.0,
@@ -4124,9 +3940,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4165,7 +3981,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -1.09,
       "kodex200Value": 112035.0,
@@ -4180,9 +3996,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4221,7 +4037,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -0.84,
       "kodex200Value": 112320.0,
@@ -4236,9 +4052,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4277,7 +4093,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -0.74,
       "kodex200Value": 112430.0,
@@ -4292,9 +4108,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4333,7 +4149,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -0.97,
       "kodex200Value": 112175.0,
@@ -4348,9 +4164,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4389,7 +4205,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -1.1,
       "kodex200Value": 112025.0,
@@ -4404,9 +4220,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4445,7 +4261,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -0.59,
       "kodex200Value": 112600.0,
@@ -4460,9 +4276,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4501,7 +4317,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -0.59,
       "kodex200Value": 112600.0,
@@ -4516,9 +4332,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4557,7 +4373,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -0.58,
       "kodex200Value": 112615.0,
@@ -4572,9 +4388,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4613,7 +4429,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -1.25,
       "kodex200Value": 111855.0,
@@ -4628,9 +4444,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4669,7 +4485,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -1.01,
       "kodex200Value": 112130.0,
@@ -4684,9 +4500,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4725,7 +4541,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -0.47,
       "kodex200Value": 112735.0,
@@ -4740,9 +4556,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4781,7 +4597,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": -0.06,
       "kodex200Value": 113200.0,
@@ -4796,9 +4612,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4837,7 +4653,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 1.24,
       "benchmarkValue": 7409.09,
       "kodex200": 0.19,
       "kodex200Value": 113480.0,
@@ -4852,9 +4668,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.18,
-        1.18,
-        1.18,
+        1.24,
+        1.24,
+        1.24,
         0.0,
         0.0,
         0.0
@@ -4893,7 +4709,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.73,
+      "benchmark": 0.79,
       "benchmarkValue": 7376.22,
       "kodex200": 0.34,
       "kodex200Value": 113660.0,
@@ -4908,9 +4724,9 @@
       ],
       "marketReturns": [
         0.32,
-        0.73,
-        0.73,
-        0.73,
+        0.79,
+        0.79,
+        0.79,
         -0.44,
         -0.44,
         -0.44
@@ -4949,7 +4765,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.73,
+      "benchmark": 0.79,
       "benchmarkValue": 7376.22,
       "kodex200": 0.35,
       "kodex200Value": 113670.0,
@@ -4964,9 +4780,9 @@
       ],
       "marketReturns": [
         0.32,
-        0.73,
-        0.73,
-        0.73,
+        0.79,
+        0.79,
+        0.79,
         -0.44,
         -0.44,
         -0.44
@@ -5005,7 +4821,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.88,
+      "benchmark": 0.94,
       "benchmarkValue": 7387.3,
       "kodex200": 0.34,
       "kodex200Value": 113650.0,
@@ -5020,9 +4836,9 @@
       ],
       "marketReturns": [
         0.47,
-        0.88,
-        0.88,
-        0.88,
+        0.94,
+        0.94,
+        0.94,
         -0.29,
         -0.29,
         -0.29
@@ -5061,7 +4877,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.19,
+      "benchmark": 1.25,
       "benchmarkValue": 7410.05,
       "kodex200": 0.86,
       "kodex200Value": 114245.0,
@@ -5076,9 +4892,9 @@
       ],
       "marketReturns": [
         0.78,
-        1.19,
-        1.19,
-        1.19,
+        1.25,
+        1.25,
+        1.25,
         0.01,
         0.01,
         0.01
@@ -5117,7 +4933,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.16,
+      "benchmark": 1.21,
       "benchmarkValue": 7407.38,
       "kodex200": 0.61,
       "kodex200Value": 113960.0,
@@ -5132,9 +4948,9 @@
       ],
       "marketReturns": [
         0.75,
-        1.16,
-        1.16,
-        1.16,
+        1.21,
+        1.21,
+        1.21,
         -0.02,
         -0.02,
         -0.02
@@ -5173,7 +4989,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.99,
       "benchmarkValue": 7390.81,
       "kodex200": 0.32,
       "kodex200Value": 113635.0,
@@ -5188,9 +5004,9 @@
       ],
       "marketReturns": [
         0.52,
-        0.93,
-        0.93,
-        0.93,
+        0.99,
+        0.99,
+        0.99,
         -0.25,
         -0.25,
         -0.25
@@ -5229,7 +5045,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.75,
+      "benchmark": 0.81,
       "benchmarkValue": 7377.89,
       "kodex200": 0.22,
       "kodex200Value": 113515.0,
@@ -5244,9 +5060,9 @@
       ],
       "marketReturns": [
         0.35,
-        0.75,
-        0.75,
-        0.75,
+        0.81,
+        0.81,
+        0.81,
         -0.42,
         -0.42,
         -0.42
@@ -5285,7 +5101,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.25,
+      "benchmark": 0.31,
       "benchmarkValue": 7341.32,
       "kodex200": -0.28,
       "kodex200Value": 112955.0,
@@ -5300,9 +5116,9 @@
       ],
       "marketReturns": [
         -0.15,
-        0.25,
-        0.25,
-        0.25,
+        0.31,
+        0.31,
+        0.31,
         -0.91,
         -0.91,
         -0.91
@@ -5341,7 +5157,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.63,
+      "benchmark": 0.69,
       "benchmarkValue": 7368.75,
       "kodex200": 0.24,
       "kodex200Value": 113540.0,
@@ -5356,9 +5172,9 @@
       ],
       "marketReturns": [
         0.22,
-        0.63,
-        0.63,
-        0.63,
+        0.69,
+        0.69,
+        0.69,
         -0.54,
         -0.54,
         -0.54
@@ -5397,7 +5213,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.86,
+      "benchmark": 0.92,
       "benchmarkValue": 7385.68,
       "kodex200": 0.4,
       "kodex200Value": 113725.0,
@@ -5412,9 +5228,9 @@
       ],
       "marketReturns": [
         0.45,
-        0.86,
-        0.86,
-        0.86,
+        0.92,
+        0.92,
+        0.92,
         -0.32,
         -0.32,
         -0.32
@@ -5453,7 +5269,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.13,
+      "benchmark": 1.19,
       "benchmarkValue": 7405.53,
       "kodex200": 0.71,
       "kodex200Value": 114072.0,
@@ -5468,9 +5284,9 @@
       ],
       "marketReturns": [
         0.72,
-        1.13,
-        1.13,
-        1.13,
+        1.19,
+        1.19,
+        1.19,
         -0.05,
         -0.05,
         -0.05
@@ -5509,7 +5325,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.11,
+      "benchmark": 1.16,
       "benchmarkValue": 7403.74,
       "kodex200": 0.66,
       "kodex200Value": 114020.0,
@@ -5524,9 +5340,9 @@
       ],
       "marketReturns": [
         0.7,
-        1.11,
-        1.11,
-        1.11,
+        1.16,
+        1.16,
+        1.16,
         -0.07,
         -0.07,
         -0.07
@@ -5565,7 +5381,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.97,
+      "benchmark": 1.03,
       "benchmarkValue": 7393.93,
       "kodex200": 0.45,
       "kodex200Value": 113775.0,
@@ -5580,9 +5396,9 @@
       ],
       "marketReturns": [
         0.56,
-        0.97,
-        0.97,
-        0.97,
+        1.03,
+        1.03,
+        1.03,
         -0.2,
         -0.2,
         -0.2
@@ -5621,7 +5437,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.78,
+      "benchmark": 0.84,
       "benchmarkValue": 7379.9,
       "kodex200": 0.43,
       "kodex200Value": 113760.0,
@@ -5636,9 +5452,9 @@
       ],
       "marketReturns": [
         0.37,
-        0.78,
-        0.78,
-        0.78,
+        0.84,
+        0.84,
+        0.84,
         -0.39,
         -0.39,
         -0.39
@@ -5677,7 +5493,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.8,
+      "benchmark": 0.85,
       "benchmarkValue": 7381.14,
       "kodex200": 0.45,
       "kodex200Value": 113785.0,
@@ -5692,9 +5508,9 @@
       ],
       "marketReturns": [
         0.39,
-        0.8,
-        0.8,
-        0.8,
+        0.85,
+        0.85,
+        0.85,
         -0.38,
         -0.38,
         -0.38
@@ -5733,7 +5549,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.99,
       "benchmarkValue": 7390.84,
       "kodex200": 0.57,
       "kodex200Value": 113920.0,
@@ -5748,9 +5564,9 @@
       ],
       "marketReturns": [
         0.52,
-        0.93,
-        0.93,
-        0.93,
+        0.99,
+        0.99,
+        0.99,
         -0.25,
         -0.25,
         -0.25
@@ -5789,7 +5605,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.07,
+      "benchmark": 1.13,
       "benchmarkValue": 7400.98,
       "kodex200": 0.68,
       "kodex200Value": 114040.0,
@@ -5804,9 +5620,9 @@
       ],
       "marketReturns": [
         0.66,
-        1.07,
-        1.07,
-        1.07,
+        1.13,
+        1.13,
+        1.13,
         -0.11,
         -0.11,
         -0.11
@@ -5845,7 +5661,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.98,
+      "benchmark": 1.04,
       "benchmarkValue": 7394.75,
       "kodex200": 0.4,
       "kodex200Value": 113720.0,
@@ -5860,9 +5676,9 @@
       ],
       "marketReturns": [
         0.58,
-        0.98,
-        0.98,
-        0.98,
+        1.04,
+        1.04,
+        1.04,
         -0.19,
         -0.19,
         -0.19
@@ -5901,7 +5717,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.88,
+      "benchmark": 0.93,
       "benchmarkValue": 7386.82,
       "kodex200": 0.37,
       "kodex200Value": 113690.0,
@@ -5916,9 +5732,9 @@
       ],
       "marketReturns": [
         0.47,
-        0.88,
-        0.88,
-        0.88,
+        0.93,
+        0.93,
+        0.93,
         -0.3,
         -0.3,
         -0.3
@@ -5957,7 +5773,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.8,
+      "benchmark": 0.86,
       "benchmarkValue": 7381.49,
       "kodex200": 0.41,
       "kodex200Value": 113735.0,
@@ -5972,9 +5788,9 @@
       ],
       "marketReturns": [
         0.4,
-        0.8,
-        0.8,
-        0.8,
+        0.86,
+        0.86,
+        0.86,
         -0.37,
         -0.37,
         -0.37
@@ -6013,7 +5829,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.89,
+      "benchmark": 0.95,
       "benchmarkValue": 7388.24,
       "kodex200": 0.56,
       "kodex200Value": 113900.0,
@@ -6028,9 +5844,9 @@
       ],
       "marketReturns": [
         0.49,
-        0.89,
-        0.89,
-        0.89,
+        0.95,
+        0.95,
+        0.95,
         -0.28,
         -0.28,
         -0.28
@@ -6069,7 +5885,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.95,
+      "benchmark": 1.01,
       "benchmarkValue": 7392.56,
       "kodex200": 0.6,
       "kodex200Value": 113955.0,
@@ -6084,9 +5900,9 @@
       ],
       "marketReturns": [
         0.55,
-        0.95,
-        0.95,
-        0.95,
+        1.01,
+        1.01,
+        1.01,
         -0.22,
         -0.22,
         -0.22
@@ -6117,6 +5933,230 @@
         0.6,
         0.6,
         0.6
+      ]
+    },
+    {
+      "ts": "2026-05-07T13:49+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 97,
+      "protected": 2,
+      "stale": 0,
+      "benchmark": 1.1,
+      "benchmarkValue": 7399.44,
+      "kodex200": 0.64,
+      "kodex200Value": 114000.0,
+      "returns": [
+        0.21,
+        0.41,
+        1.63,
+        -3.26,
+        0.71,
+        -0.26,
+        0.66
+      ],
+      "marketReturns": [
+        0.64,
+        1.1,
+        1.1,
+        1.1,
+        -0.13,
+        -0.13,
+        -0.13
+      ],
+      "evalAmounts": [
+        10019300,
+        30119060,
+        10163000,
+        9673600,
+        10070550,
+        9973900,
+        10065700
+      ],
+      "capital": [
+        9998800,
+        29996060,
+        10000000,
+        10000000,
+        10000000,
+        10000000,
+        10000000
+      ],
+      "kodexReturns": [
+        0.64,
+        0.64,
+        0.64,
+        0.64,
+        0.64,
+        0.64,
+        0.64
+      ]
+    },
+    {
+      "ts": "2026-05-07T13:50+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 97,
+      "protected": 2,
+      "stale": 0,
+      "benchmark": 1.1,
+      "benchmarkValue": 7399.44,
+      "kodex200": 0.56,
+      "kodex200Value": 113900.0,
+      "returns": [
+        0.29,
+        0.41,
+        1.63,
+        -3.26,
+        0.71,
+        -0.26,
+        0.66
+      ],
+      "marketReturns": [
+        0.64,
+        1.1,
+        1.1,
+        1.1,
+        -0.13,
+        -0.13,
+        -0.13
+      ],
+      "evalAmounts": [
+        10027300,
+        30118460,
+        10163000,
+        9673600,
+        10070550,
+        9973900,
+        10065700
+      ],
+      "capital": [
+        9998800,
+        29996060,
+        10000000,
+        10000000,
+        10000000,
+        10000000,
+        10000000
+      ],
+      "kodexReturns": [
+        0.56,
+        0.56,
+        0.56,
+        0.56,
+        0.56,
+        0.56,
+        0.56
+      ]
+    },
+    {
+      "ts": "2026-05-07T13:51+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 97,
+      "protected": 2,
+      "stale": 0,
+      "benchmark": 1.05,
+      "benchmarkValue": 7395.5,
+      "kodex200": 0.62,
+      "kodex200Value": 113975.0,
+      "returns": [
+        0.37,
+        0.3,
+        1.63,
+        -3.26,
+        0.71,
+        -0.26,
+        0.66
+      ],
+      "marketReturns": [
+        0.59,
+        1.05,
+        1.05,
+        1.05,
+        -0.18,
+        -0.18,
+        -0.18
+      ],
+      "evalAmounts": [
+        10035300,
+        30084760,
+        10163000,
+        9673600,
+        10070550,
+        9973900,
+        10065700
+      ],
+      "capital": [
+        9998800,
+        29996060,
+        10000000,
+        10000000,
+        10000000,
+        10000000,
+        10000000
+      ],
+      "kodexReturns": [
+        0.62,
+        0.62,
+        0.62,
+        0.62,
+        0.62,
+        0.62,
+        0.62
+      ]
+    },
+    {
+      "ts": "2026-05-07T13:55+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 97,
+      "protected": 2,
+      "stale": 0,
+      "benchmark": 1.05,
+      "benchmarkValue": 7395.11,
+      "kodex200": 0.51,
+      "kodex200Value": 113850.0,
+      "returns": [
+        0.29,
+        0.29,
+        1.73,
+        -2.99,
+        0.71,
+        -0.26,
+        0.66
+      ],
+      "marketReturns": [
+        0.58,
+        1.05,
+        1.05,
+        1.05,
+        -0.19,
+        -0.19,
+        -0.19
+      ],
+      "evalAmounts": [
+        10027300,
+        30083460,
+        10173250,
+        9701000,
+        10070550,
+        9973900,
+        10065700
+      ],
+      "capital": [
+        9998800,
+        29996060,
+        10000000,
+        10000000,
+        10000000,
+        10000000,
+        10000000
+      ],
+      "kodexReturns": [
+        0.51,
+        0.51,
+        0.51,
+        0.51,
+        0.51,
+        0.51,
+        0.51
       ]
     }
   ]
