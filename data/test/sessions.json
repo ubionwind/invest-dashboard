@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-07T19:57+09:00",
+  "generatedAt": "2026-05-07T19:59+09:00",
   "sessions": [
     {
       "name": "일반",
@@ -232,7 +232,16 @@
           "holdingPeriod": "보유 1일"
         }
       ],
-      "sellAlerts": [],
+      "sellAlerts": [
+        {
+          "code": "005930",
+          "name": "삼성전자",
+          "status": "보유근거약화",
+          "reason": "현재 판단점수 45.0; 신규 후보 강도 약함",
+          "returnPct": 2.51,
+          "pnl": 212500
+        }
+      ],
       "portfolio": {
         "capital": 9998800,
         "cash": 1523300,
@@ -259,7 +268,9 @@
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
             "replacementWatchLine": 70,
-            "liquidityText": "수급 데이터 대기"
+            "liquidityText": "수급 데이터 대기",
+            "holdAction": "보유근거약화",
+            "holdReason": "현재 판단점수 45.0; 신규 후보 강도 약함"
           }
         ]
       },
@@ -268,7 +279,7 @@
         "benchmarkReturnPct": 1.17,
         "excessReturnPct": 0.96,
         "periodStart": "2026-05-06T12:12+09:00",
-        "periodEnd": "2026-05-07T19:57+09:00"
+        "periodEnd": "2026-05-07T19:59+09:00"
       }
     },
     {
@@ -414,7 +425,24 @@
           "holdingPeriod": "보유 1일"
         }
       ],
-      "sellAlerts": [],
+      "sellAlerts": [
+        {
+          "code": "042700",
+          "name": "한미반도체",
+          "status": "단기점수약화",
+          "reason": "현재 판단점수 50.0; 단기 후보 강도 약화",
+          "returnPct": 2.52,
+          "pnl": 212500
+        },
+        {
+          "code": "247540",
+          "name": "에코프로비엠",
+          "status": "부분익절검토",
+          "reason": "단기 1차 익절권 5.13% >= 5%",
+          "returnPct": 5.13,
+          "pnl": 379500
+        }
+      ],
       "portfolio": {
         "capital": 29995900,
         "cash": 832900,
@@ -441,7 +469,9 @@
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
             "replacementWatchLine": 87.0,
-            "liquidityText": "수급 데이터 대기"
+            "liquidityText": "수급 데이터 대기",
+            "holdAction": "보유유지",
+            "holdReason": "보유 기준상 즉시 매도 신호 없음"
           },
           {
             "code": "042700",
@@ -460,7 +490,9 @@
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
             "replacementWatchLine": 70,
-            "liquidityText": "수급 데이터 대기"
+            "liquidityText": "수급 데이터 대기",
+            "holdAction": "단기점수약화",
+            "holdReason": "현재 판단점수 50.0; 단기 후보 강도 약화"
           },
           {
             "code": "247540",
@@ -479,7 +511,9 @@
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
             "replacementWatchLine": 87.0,
-            "liquidityText": "수급 데이터 대기"
+            "liquidityText": "수급 데이터 대기",
+            "holdAction": "부분익절검토",
+            "holdReason": "단기 1차 익절권 5.13% >= 5%"
           }
         ]
       },
@@ -488,7 +522,7 @@
         "benchmarkReturnPct": 1.17,
         "excessReturnPct": 0.07,
         "periodStart": "2026-05-06T10:08+09:00",
-        "periodEnd": "2026-05-07T19:57+09:00"
+        "periodEnd": "2026-05-07T19:59+09:00"
       }
     },
     {
@@ -753,7 +787,6 @@
           "status": "모멘텀소멸관찰",
           "reason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
           "returnPct": 5.85,
-          "sellScore": 55,
           "pnl": 105000
         },
         {
@@ -762,7 +795,6 @@
           "status": "모멘텀소멸관찰",
           "reason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
           "returnPct": 2.07,
-          "sellScore": 55,
           "pnl": 36000
         },
         {
@@ -771,7 +803,6 @@
           "status": "모멘텀소멸관찰",
           "reason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
           "returnPct": 2.97,
-          "sellScore": 55,
           "pnl": 41000
         },
         {
@@ -780,7 +811,6 @@
           "status": "모멘텀소멸관찰",
           "reason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
           "returnPct": 4.34,
-          "sellScore": 55,
           "pnl": 79500
         }
       ],
@@ -930,7 +960,7 @@
         "benchmarkReturnPct": 1.17,
         "excessReturnPct": 2.19,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T19:57+09:00"
+        "periodEnd": "2026-05-07T19:59+09:00"
       }
     },
     {
@@ -1195,7 +1225,6 @@
           "status": "손절관찰",
           "reason": "매일신규 손절 관찰 -6.04% <= -5%; 장중 회복 실패 시 정리 검토",
           "returnPct": -6.04,
-          "sellScore": 75,
           "pnl": -116800
         },
         {
@@ -1204,7 +1233,6 @@
           "status": "부분익절검토",
           "reason": "매일신규 1차 익절권 8.33% >= 6%; 일부익절 또는 트레일링 검토",
           "returnPct": 8.33,
-          "sellScore": 65,
           "pnl": 147000
         },
         {
@@ -1213,7 +1241,6 @@
           "status": "손절검토",
           "reason": "매일신규 손실 위험 -10.10% <= -8%; 신규 모멘텀 실패로 정리 우선 검토",
           "returnPct": -10.1,
-          "sellScore": 95,
           "pnl": -148000
         },
         {
@@ -1222,7 +1249,6 @@
           "status": "손절검토",
           "reason": "매일신규 손실 위험 -11.90% <= -8%; 신규 모멘텀 실패로 정리 우선 검토",
           "returnPct": -11.9,
-          "sellScore": 95,
           "pnl": -234000
         }
       ],
@@ -1372,7 +1398,7 @@
         "benchmarkReturnPct": 1.17,
         "excessReturnPct": -5.59,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T19:57+09:00"
+        "periodEnd": "2026-05-07T19:59+09:00"
       }
     },
     {
@@ -1603,7 +1629,7 @@
           "status": "보유중",
           "reason": "3주 · 매입 305500.0원 · 평가 955500원 · 손익 39000원",
           "returnPct": 4.26,
-          "holdingPeriod": "보유 10시간 31분"
+          "holdingPeriod": "보유 10시간 32분"
         },
         {
           "code": "005930",
@@ -1611,7 +1637,7 @@
           "status": "보유중",
           "reason": "3주 · 매입 263000.0원 · 평가 814500원 · 손익 25500원",
           "returnPct": 3.23,
-          "holdingPeriod": "보유 10시간 31분"
+          "holdingPeriod": "보유 10시간 32분"
         },
         {
           "code": "068270",
@@ -1855,7 +1881,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.14,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T19:57+09:00"
+        "periodEnd": "2026-05-07T19:59+09:00"
       }
     },
     {
@@ -2086,7 +2112,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 158700.0원 · 평가 945600원 · 손익 -6600원",
           "returnPct": -0.69,
-          "holdingPeriod": "보유 10시간 31분"
+          "holdingPeriod": "보유 10시간 32분"
         },
         {
           "code": "034020",
@@ -2094,7 +2120,7 @@
           "status": "보유중",
           "reason": "7주 · 매입 133900.0원 · 평가 954800원 · 손익 17500원",
           "returnPct": 1.87,
-          "holdingPeriod": "보유 10시간 31분"
+          "holdingPeriod": "보유 10시간 32분"
         },
         {
           "code": "373220",
@@ -2120,7 +2146,6 @@
           "status": "모멘텀이탈검토",
           "reason": "현재 모멘텀점수 52; 후보권 이탈",
           "returnPct": -3.36,
-          "sellScore": 70,
           "pnl": -32300
         },
         {
@@ -2129,17 +2154,7 @@
           "status": "모멘텀이탈검토",
           "reason": "현재 모멘텀점수 후보권 밖; 후보권 이탈",
           "returnPct": -1.9,
-          "sellScore": 70,
           "pnl": -18600
-        },
-        {
-          "code": "034020",
-          "name": "두산에너빌리티",
-          "status": "모멘텀이탈검토",
-          "reason": "현재 모멘텀점수 후보권 밖; 후보권 이탈",
-          "returnPct": 1.87,
-          "sellScore": 70,
-          "pnl": 17500
         }
       ],
       "portfolio": {
@@ -2366,7 +2381,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": -0.75,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T19:57+09:00"
+        "periodEnd": "2026-05-07T19:59+09:00"
       }
     },
     {
@@ -2597,7 +2612,7 @@
           "status": "보유중",
           "reason": "4주 · 매입 234500.0원 · 평가 942000원 · 손익 4000원",
           "returnPct": 0.43,
-          "holdingPeriod": "보유 9시간 29분"
+          "holdingPeriod": "보유 9시간 30분"
         },
         {
           "code": "068270",
@@ -2605,7 +2620,7 @@
           "status": "보유중",
           "reason": "4주 · 매입 204500.0원 · 평가 810000원 · 손익 -8000원",
           "returnPct": -0.98,
-          "holdingPeriod": "보유 9시간 29분"
+          "holdingPeriod": "보유 9시간 30분"
         },
         {
           "code": "012330",
@@ -2613,7 +2628,7 @@
           "status": "보유중",
           "reason": "2주 · 매입 447000.0원 · 평가 883000원 · 손익 -11000원",
           "returnPct": -1.23,
-          "holdingPeriod": "보유 10시간 30분"
+          "holdingPeriod": "보유 10시간 31분"
         },
         {
           "code": "329180",
@@ -2621,7 +2636,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 662000.0원 · 평가 693000원 · 손익 31000원",
           "returnPct": 4.68,
-          "holdingPeriod": "보유 10시간 30분"
+          "holdingPeriod": "보유 10시간 31분"
         }
       ],
       "sellAlerts": [],
@@ -2797,7 +2812,7 @@
             "entryPrice": 662000,
             "currentPrice": 693000,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 10시간 30분",
+            "holdingPeriod": "보유 10시간 31분",
             "evalAmount": 693000,
             "pnl": 31000,
             "returnPct": 4.68,
@@ -2823,7 +2838,7 @@
             "entryPrice": 447000,
             "currentPrice": 441500,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 10시간 30분",
+            "holdingPeriod": "보유 10시간 31분",
             "evalAmount": 883000,
             "pnl": -11000,
             "returnPct": -1.23,
@@ -2849,7 +2864,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.0,
         "periodStart": "2026-05-06T16:16+09:00",
-        "periodEnd": "2026-05-07T19:57+09:00"
+        "periodEnd": "2026-05-07T19:59+09:00"
       }
     }
   ]
