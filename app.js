@@ -297,7 +297,7 @@ function holdingCandidateComparison(s) {
     <div class="comparison-head">
       <div>
         <h3>보유·후보 비교</h3>
-        <p class="muted">공통 기준 하나만 사용: 교체대상 ${targetLabel} → 교체기준 ${commonThreshold === null ? '-' : commonThreshold.toFixed(1)}점. 후보가 이 기준 이상이면 그 교체대상과 비교 검토.</p>
+        <p class="muted">공통 기준 하나만 사용: 기준종목 ${targetLabel} → 후보 통과선 ${commonThreshold === null ? '-' : commonThreshold.toFixed(1)}점. 후보가 통과선을 넘으면 기준종목과 교체 검토.</p>
       </div>
       <span class="badge compact">공통기준</span>
     </div>
@@ -312,11 +312,11 @@ function holdingCandidateComparison(s) {
           const currentScoreLabel = hasCurrentCandidateScore ? '현재점수' : '보유점수';
           const graphCurrentLabel = hasCurrentCandidateScore ? '현재' : '보유';
           const isTarget = replacementTarget && String(pos.code || '') === String(replacementTarget.code || '');
-          const decision = isTarget && bestPasses ? '교체검토' : (isTarget ? '교체대상' : '유지');
+          const decision = isTarget && bestPasses ? '교체검토' : (isTarget ? '기준종목' : '유지');
           const ret = Number(pos.returnPct || 0);
           const holdReason = isTarget
-            ? (bestPasses ? `공통기준 통과 후보 ${bestReplacement.name || ''}` : '후보가 공통 교체기준 미달')
-            : `현재 공통 교체대상은 ${replacementTarget?.name || '-'}`;
+            ? (bestPasses ? `통과 후보 ${bestReplacement.name || ''}와 교체 검토` : '최고 후보가 아직 통과선 미달')
+            : `교체 판단 대상 아님 · 기준종목은 ${replacementTarget?.name || '-'}`;
           return `<article class="holding-compare-card">
             <div class="compare-hero">
               <div class="compare-identity"><strong>${pos.name || '-'}</strong><b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b></div>
@@ -325,8 +325,8 @@ function holdingCandidateComparison(s) {
             </div>
             ${diagnosticRows([
               [currentScoreLabel, normalizedScoreText(currentScore)],
-              ['공통기준', commonThreshold === null ? '-' : commonThreshold.toFixed(1)],
-              ['교체대상', isTarget ? '이 종목' : (replacementTarget?.name || '-')],
+              ['후보 통과선', commonThreshold === null ? '-' : commonThreshold.toFixed(1)],
+              ['역할', isTarget ? '기준종목' : '보유유지'],
               ['최고후보', bestCandidateScore == null ? '-' : normalizedScoreText(bestCandidateScore)],
               ['등락/수익', pct(pos.returnPct), ret >= 0 ? 'up' : 'down'],
               ['거래/수급', pos.liquidityText || tradingValueText(matched.reason ? matched : pos)],
@@ -350,8 +350,8 @@ function holdingCandidateComparison(s) {
             </div>
             ${diagnosticRows([
               ['후보점수', normalizedScoreText(c.score)],
-              ['교체대상', replacementTarget?.name || '-'],
-              ['공통기준', commonThreshold === null ? '-' : commonThreshold.toFixed(1)],
+              ['비교 기준종목', replacementTarget?.name || '-'],
+              ['후보 통과선', commonThreshold === null ? '-' : commonThreshold.toFixed(1)],
               ['기준대비', edge == null ? '-' : `${edge > 0 ? '+' : ''}${edge.toFixed(1)}`, edge == null ? '' : (edge >= 0 ? 'up' : 'down')],
               ['등락/수익', c.changePct == null ? '-' : pct(c.changePct), c.changePct == null ? '' : (Number(c.changePct) >= 0 ? 'up' : 'down')],
               ['거래/수급', c.liquidityText || tradingValueText(c)],
