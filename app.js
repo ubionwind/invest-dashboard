@@ -293,6 +293,12 @@ function holdingCandidateComparison(s) {
   const bestCandidateScore = bestReplacement?.score == null ? null : Number(bestReplacement.score);
   const bestPasses = commonThreshold !== null && bestCandidateScore !== null && bestCandidateScore >= commonThreshold;
   const targetLabel = replacementTarget ? `${replacementTarget.name || replacementTarget.code || '보유종목'} ${Number(lowestHeldScore).toFixed(1)}점` : '보유점수 대기';
+  const orderedPositions = [...positions].sort((a, b) => {
+    const aTarget = replacementTarget && String(a.code || '') === String(replacementTarget.code || '');
+    const bTarget = replacementTarget && String(b.code || '') === String(replacementTarget.code || '');
+    if (aTarget !== bTarget) return aTarget ? -1 : 1;
+    return 0;
+  });
   return `<section class="comparison-lab">
     <div class="comparison-head">
       <div>
@@ -304,7 +310,7 @@ function holdingCandidateComparison(s) {
     <div class="comparison-columns">
       <div class="comparison-block">
         <h4>보유 종목 진단</h4>
-        ${positions.length ? positions.map(pos => {
+        ${orderedPositions.length ? orderedPositions.map(pos => {
           const matched = byCode[String(pos.code || '')] || {};
           const entryScore = pos.entryScoreNormalized ?? null;
           const currentScore = pos.currentScoreNormalized ?? pos.sourceScoreNormalized ?? null;
