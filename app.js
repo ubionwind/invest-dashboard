@@ -184,6 +184,14 @@ function supplySnapshot(c = {}) {
   ].filter(Boolean).join(' · ') || '수급/테마 데이터 보강 대기';
 }
 
+function holdingSupplySnapshot(pos = {}, matched = {}) {
+  if (matched?.reason) return supplySnapshot(matched);
+  return [
+    pos.sourceChangePct !== null && pos.sourceChangePct !== undefined ? `진입시 등락 ${pct(pos.sourceChangePct)}` : '',
+    pos.entryReason || '',
+  ].filter(Boolean).join(' · ') || '현재 후보권 밖 · 수급 데이터 보강 대기';
+}
+
 function decisionForHolding(pos = {}, matched = {}, bestReplacement = {}) {
   const ret = Number(pos.returnPct || 0);
   const score = matched?.score == null ? null : Number(matched.score);
@@ -216,8 +224,9 @@ function holdingCandidateComparison(s) {
         <h4>보유 종목 진단</h4>
         ${positions.length ? positions.map(pos => {
           const matched = byCode[String(pos.code || '')] || {};
-          const entryScore = parseEntryScore(matched.candidateNote);
-          const scoreGap = matched.score == null || entryScore == null ? null : Number(matched.score) - entryScore;
+          const entryScore = parseEntryScore(matched.candidateNote) ?? (pos.sourceScoreNormalized ?? pos.sourceScore ?? null);
+          const currentScore = matched.score ?? pos.sourceScoreNormalized ?? null;
+          const scoreGap = currentScore == null || entryScore == null ? null : Number(currentScore) - entryScore;
           const decision = decisionForHolding(pos, matched, bestReplacement);
           const ret = Number(pos.returnPct || 0);
           return `<article class="holding-compare-card">
@@ -227,11 +236,11 @@ function holdingCandidateComparison(s) {
               <em>${decision}</em>
             </div>
             <div class="compare-mini-grid">
-              <span><b>${matched.score == null ? '-' : Number(matched.score).toFixed(1)}</b><small>현재점수</small></span>
+              <span><b>${currentScore == null ? '-' : Number(currentScore).toFixed(1)}</b><small>${matched.score == null ? '진입점수 기준' : '현재점수'}</small></span>
               <span><b>${entryScore == null ? '-' : entryScore.toFixed(1)}</b><small>진입점수</small></span>
               <span><b class="${scoreGap == null ? '' : (scoreGap >= 0 ? 'up' : 'down')}">${scoreGap == null ? '-' : `${scoreGap > 0 ? '+' : ''}${scoreGap.toFixed(1)}`}</b><small>점수변화</small></span>
             </div>
-            <p>${supplySnapshot(matched)}</p>
+            <p>${holdingSupplySnapshot(pos, matched)}</p>
             <small class="muted">매입 ${money(pos.entryPrice)} · 현재 ${money(pos.currentPrice)} · 손익 ${money(pos.pnl)}</small>
           </article>`;
         }).join('') : '<p class="muted">현재 보유 종목 없음</p>'}
