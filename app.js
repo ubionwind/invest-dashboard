@@ -65,11 +65,24 @@ function comparisonHelp() {
   return '시장 대비 = 누적 수익률 - 같은 기간 KOSPI 수익률';
 }
 
-function marketPair(data) {
-  return `<span class="market-split">
-    <span class="market-pair market-today"><em>오늘</em><span>KOSPI ${pct(data.benchmark?.dailyReturnPct)}</span><span>KODEX ${pct(data.kodexBenchmark?.dailyReturnPct)}</span></span>
-    <span class="market-pair market-cumulative"><em>누적</em><span>KOSPI ${pct(data.benchmark?.returnPct)}</span><span>KODEX ${pct(data.kodexBenchmark?.returnPct)}</span></span>
+function pctClass(v) {
+  if (v === null || v === undefined) return '';
+  return Number(v) >= 0 ? 'up' : 'down';
+}
+
+function marketRows(kospi, kodex) {
+  return `<span class="market-rows">
+    <span class="market-row"><span>KOSPI</span><b class="${pctClass(kospi)}">${pct(kospi)}</b></span>
+    <span class="market-row"><span>KODEX</span><b class="${pctClass(kodex)}">${pct(kodex)}</b></span>
   </span>`;
+}
+
+function marketDailyPair(data) {
+  return marketRows(data.benchmark?.dailyReturnPct, data.kodexBenchmark?.dailyReturnPct);
+}
+
+function marketCumulativePair(data) {
+  return marketRows(data.benchmark?.returnPct, data.kodexBenchmark?.returnPct);
 }
 
 function basisText(start) {
@@ -378,7 +391,8 @@ function render(data) {
   document.getElementById('overallStatus').className = `status-pill ${data.summary.staleCount > 0 ? 'status-STALE' : 'status-OK'}`;
 
   document.getElementById('summaryGrid').innerHTML = [
-    summaryTile('시장/KODEX', marketPair(data), basisText(data.benchmark?.periodStart), '📈', (data.benchmark?.returnPct || 0) >= 0 ? 'good' : 'danger'),
+    summaryTile('오늘 시장', marketDailyPair(data), '당일 등락률', '📈', (data.benchmark?.dailyReturnPct || 0) >= 0 ? 'good' : 'danger'),
+    summaryTile('시장/KODEX 누적', marketCumulativePair(data), basisText(data.benchmark?.periodStart), '📊', (data.benchmark?.returnPct || 0) >= 0 ? 'good' : 'danger'),
     ...data.sessions.map(renderOverviewStrategyCard)
   ].join('');
 

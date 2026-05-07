@@ -35,11 +35,10 @@ main { padding: 24px clamp(18px, 4vw, 48px) 44px; }
 .summary-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 14px; background: rgba(121,167,255,.14); font-size: 20px; }
 .summary-tile strong, .summary-tile small { display: block; }
 .summary-tile strong { margin-top: 4px; font-size: 28px; letter-spacing: -.04em; }
-.market-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; align-items: end; }
-.market-pair { display: grid; gap: 2px; font-size: 20px; line-height: 1.08; }
-.market-pair em { font-style: normal; font-size: 12px; color: var(--muted); letter-spacing: -.02em; }
-.market-today { padding-right: 10px; border-right: 1px solid var(--line); }
-.market-cumulative { opacity: .78; }
+.market-rows { display: grid; gap: 5px; min-width: 150px; }
+.market-row { display: grid; grid-template-columns: 64px minmax(78px, auto); gap: 10px; align-items: baseline; font-size: 20px; line-height: 1.08; }
+.market-row span { color: var(--muted); font-size: 15px; font-weight: 700; letter-spacing: -.02em; }
+.market-row b { justify-self: end; font-size: 22px; font-weight: 900; font-variant-numeric: tabular-nums; letter-spacing: -.04em; }
 .summary-good .summary-icon { background: rgba(255,77,79,.16); }
 .summary-danger .summary-icon { background: rgba(59,130,246,.16); }
 
@@ -195,9 +194,10 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .summary-icon { width: 34px; height: 34px; border-radius: 12px; font-size: 18px; }
   .summary-tile strong { font-size: 28px; }
   .summary-tile small { font-size: 12px; }
-  .market-split { grid-template-columns: 1fr; gap: 7px; }
-  .market-pair { font-size: 18px; }
-  .market-today { padding-right: 0; padding-bottom: 7px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .market-rows { min-width: 0; }
+  .market-row { grid-template-columns: 58px minmax(72px, auto); font-size: 18px; }
+  .market-row span { font-size: 13px; }
+  .market-row b { font-size: 20px; }
   main { padding: 16px 12px 32px; }
   .topbar { padding: 20px 14px; }
   .overview-guide { display: grid; gap: 4px; }
