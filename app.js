@@ -424,6 +424,11 @@ function money(v) {
   return `${fmt.format(v)}원`;
 }
 
+function moneyBare(v) {
+  if (v === null || v === undefined) return '-';
+  return fmt.format(v);
+}
+
 function pct(v) {
   if (v === null || v === undefined) return '-';
   return `${v > 0 ? '+' : ''}${Number(v).toFixed(2)}%`;
@@ -563,10 +568,10 @@ function holdingsBlock(pf = {}) {
           <td class="stock-code">${p.code || '-'}</td>
           <td>${holdingDays}</td>
           <td>${fmt.format(qty)}</td>
-          <td class="num-pair"><b class="${retClass}">${money(p.pnl)}</b><small class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : ret.toFixed(2)}</small></td>
-          <td class="num-pair"><b>${money(p.evalAmount)}</b><small>${entryAmount === null ? '-' : money(entryAmount)}</small></td>
-          <td class="num-pair"><b>${money(p.currentPrice)}</b><small>${money(p.entryPrice)}</small></td>
-          <td class="num-pair"><b class="${changeClass}">${delta === null ? '-' : `${delta >= 0 ? '▲ ' : '▼ '}${fmt.format(Math.abs(delta))}원`}</b><small class="${changeClass}">${changeNum === null || Number.isNaN(changeNum) ? '-' : changeNum.toFixed(2)}</small></td>
+          <td class="num-pair"><b class="${retClass}">${moneyBare(p.pnl)}</b><small class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : ret.toFixed(2)}</small></td>
+          <td class="num-pair"><b>${moneyBare(p.evalAmount)}</b><small>${entryAmount === null ? '-' : moneyBare(entryAmount)}</small></td>
+          <td class="num-pair"><b>${moneyBare(p.currentPrice)}</b><small>${moneyBare(p.entryPrice)}</small></td>
+          <td class="num-pair"><b class="${changeClass}">${delta === null ? '-' : `${delta >= 0 ? '▲ ' : '▼ '}${fmt.format(Math.abs(delta))}`}</b><small class="${changeClass}">${changeNum === null || Number.isNaN(changeNum) ? '-' : changeNum.toFixed(2)}</small></td>
           <td>${weight === null ? '-' : weight.toFixed(2)}</td>
         </tr>`;
       }).join('')}</tbody>
