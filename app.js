@@ -568,10 +568,10 @@ function holdingsBlock(pf = {}) {
           <td class="stock-code" data-label="종목코드">${p.code || '-'}</td>
           <td data-label="보유일">${holdingDays}</td>
           <td data-label="보유수량">${fmt.format(qty)}</td>
-          <td class="num-pair" data-label="평가손익 / 수익률"><b class="${retClass}">${moneyBare(p.pnl)}</b><small class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : ret.toFixed(2)}</small></td>
-          <td class="num-pair" data-label="평가금액 / 매입금액"><b>${moneyBare(p.evalAmount)}</b><small>${entryAmount === null ? '-' : moneyBare(entryAmount)}</small></td>
-          <td class="num-pair" data-label="현재가 / 평균단가"><b>${moneyBare(p.currentPrice)}</b><small>${moneyBare(p.entryPrice)}</small></td>
-          <td class="num-pair" data-label="전일대비 / 등락률"><b class="${changeClass}">${delta === null ? '-' : `${delta >= 0 ? '▲ ' : '▼ '}${fmt.format(Math.abs(delta))}`}</b><small class="${changeClass}">${changeNum === null || Number.isNaN(changeNum) ? '-' : changeNum.toFixed(2)}</small></td>
+          <td class="num-pair" data-label="평가손익 / 수익률"><span class="pair-line"><b class="${retClass}">${moneyBare(p.pnl)}</b><small class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : ret.toFixed(2)}</small></span></td>
+          <td class="num-pair" data-label="평가금액 / 매입금액"><span class="pair-line"><b>${moneyBare(p.evalAmount)}</b><small>${entryAmount === null ? '-' : moneyBare(entryAmount)}</small></span></td>
+          <td class="num-pair" data-label="현재가 / 평균단가"><span class="pair-line"><b>${moneyBare(p.currentPrice)}</b><small>${moneyBare(p.entryPrice)}</small></span></td>
+          <td class="num-pair" data-label="전일대비 / 등락률"><span class="pair-line"><b class="${changeClass}">${delta === null ? '-' : `${delta >= 0 ? '▲ ' : '▼ '}${fmt.format(Math.abs(delta))}`}</b><small class="${changeClass}">${changeNum === null || Number.isNaN(changeNum) ? '-' : changeNum.toFixed(2)}</small></span></td>
           <td data-label="보유비중">${weight === null ? '-' : weight.toFixed(2)}</td>
         </tr>`;
       }).join('')}</tbody>
