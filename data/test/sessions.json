@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-07T19:15+09:00",
+  "generatedAt": "2026-05-07T19:52+09:00",
   "sessions": [
     {
       "name": "일반",
@@ -268,7 +268,7 @@
         "benchmarkReturnPct": 1.16,
         "excessReturnPct": 0.97,
         "periodStart": "2026-05-06T12:12+09:00",
-        "periodEnd": "2026-05-07T19:15+09:00"
+        "periodEnd": "2026-05-07T19:52+09:00"
       }
     },
     {
@@ -488,7 +488,7 @@
         "benchmarkReturnPct": 1.16,
         "excessReturnPct": 0.08,
         "periodStart": "2026-05-06T10:08+09:00",
-        "periodEnd": "2026-05-07T19:15+09:00"
+        "periodEnd": "2026-05-07T19:52+09:00"
       }
     },
     {
@@ -496,7 +496,7 @@
       "stage": "관찰",
       "status": "OK",
       "candidateCount": 12,
-      "sellCandidateCount": 0,
+      "sellCandidateCount": 4,
       "validationCount": 0,
       "gateCount": 0,
       "dryRunCount": 5,
@@ -514,7 +514,7 @@
           "entryScoreRaw": null,
           "changePct": 7.48,
           "rank": 1,
-          "evaluatedAt": "2026-05-07T15:52:31+09:00",
+          "evaluatedAt": "2026-05-07T19:52:05+09:00",
           "status": "현재후보",
           "action": "",
           "validationStatus": "",
@@ -540,7 +540,7 @@
           "entryScoreRaw": null,
           "changePct": 7.1,
           "rank": 2,
-          "evaluatedAt": "2026-05-07T15:52:31+09:00",
+          "evaluatedAt": "2026-05-07T19:52:05+09:00",
           "status": "현재후보",
           "action": "",
           "validationStatus": "",
@@ -566,7 +566,7 @@
           "entryScoreRaw": null,
           "changePct": 5.81,
           "rank": 3,
-          "evaluatedAt": "2026-05-07T15:52:31+09:00",
+          "evaluatedAt": "2026-05-07T19:52:05+09:00",
           "status": "현재후보",
           "action": "",
           "validationStatus": "",
@@ -592,7 +592,7 @@
           "entryScoreRaw": 152.8,
           "changePct": 3.06,
           "rank": 4,
-          "evaluatedAt": "2026-05-07T15:52:31+09:00",
+          "evaluatedAt": "2026-05-07T19:52:05+09:00",
           "status": "보유중",
           "action": "",
           "validationStatus": "",
@@ -618,7 +618,7 @@
           "entryScoreRaw": null,
           "changePct": 3.09,
           "rank": 5,
-          "evaluatedAt": "2026-05-07T15:52:31+09:00",
+          "evaluatedAt": "2026-05-07T19:52:05+09:00",
           "status": "현재후보",
           "action": "",
           "validationStatus": "",
@@ -644,7 +644,7 @@
           "entryScoreRaw": 169.8,
           "changePct": 1.79,
           "rank": 6,
-          "evaluatedAt": "2026-05-07T15:52:31+09:00",
+          "evaluatedAt": "2026-05-07T19:52:05+09:00",
           "status": "보유중",
           "action": "",
           "validationStatus": "",
@@ -670,7 +670,7 @@
           "entryScoreRaw": null,
           "changePct": 3.24,
           "rank": 7,
-          "evaluatedAt": "2026-05-07T15:52:31+09:00",
+          "evaluatedAt": "2026-05-07T19:52:05+09:00",
           "status": "현재후보",
           "action": "",
           "validationStatus": "",
@@ -696,7 +696,7 @@
           "entryScoreRaw": null,
           "changePct": 2.63,
           "rank": 8,
-          "evaluatedAt": "2026-05-07T15:52:31+09:00",
+          "evaluatedAt": "2026-05-07T19:52:05+09:00",
           "status": "현재후보",
           "action": "",
           "validationStatus": "",
@@ -746,7 +746,44 @@
           "holdingPeriod": "보유 1일"
         }
       ],
-      "sellAlerts": [],
+      "sellAlerts": [
+        {
+          "code": "005930",
+          "name": "삼성전자",
+          "status": "모멘텀소멸관찰",
+          "reason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
+          "returnPct": 5.85,
+          "sellScore": 55,
+          "pnl": 105000
+        },
+        {
+          "code": "003670",
+          "name": "포스코퓨처엠",
+          "status": "모멘텀소멸관찰",
+          "reason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
+          "returnPct": 2.07,
+          "sellScore": 55,
+          "pnl": 36000
+        },
+        {
+          "code": "267260",
+          "name": "HD현대일렉트릭",
+          "status": "모멘텀소멸관찰",
+          "reason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
+          "returnPct": 2.97,
+          "sellScore": 55,
+          "pnl": 41000
+        },
+        {
+          "code": "010120",
+          "name": "LS ELECTRIC",
+          "status": "모멘텀소멸관찰",
+          "reason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
+          "returnPct": 4.34,
+          "sellScore": 55,
+          "pnl": 79500
+        }
+      ],
       "portfolio": {
         "capital": 10000000,
         "evalAmount": 10335500,
@@ -773,6 +810,9 @@
             "entryScoreNormalized": 80,
             "sourceChangePct": 10.32,
             "entryReason": "진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록",
+            "holdAction": "모멘텀소멸관찰",
+            "holdScore": 55,
+            "holdReason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
             "currentScoreNormalized": 70.0,
             "currentScoreRaw": 82.9,
             "currentScoreType": "current",
@@ -796,6 +836,9 @@
             "entryScoreNormalized": 80,
             "sourceChangePct": 9.19,
             "entryReason": "진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록",
+            "holdAction": "보유유지",
+            "holdScore": 0,
+            "holdReason": "급등 조건 유지; 점수 113.6",
             "currentScoreNormalized": 70.0,
             "currentScoreRaw": 113.6,
             "currentScoreType": "current",
@@ -819,6 +862,9 @@
             "entryScoreNormalized": 80,
             "sourceChangePct": 8.61,
             "entryReason": "진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록",
+            "holdAction": "모멘텀소멸관찰",
+            "holdScore": 55,
+            "holdReason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
             "currentScoreNormalized": 80.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -842,6 +888,9 @@
             "entryScoreNormalized": 70,
             "sourceChangePct": 6.16,
             "entryReason": "진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록",
+            "holdAction": "모멘텀소멸관찰",
+            "holdScore": 55,
+            "holdReason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
             "currentScoreNormalized": 70.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -865,6 +914,9 @@
             "entryScoreNormalized": 55,
             "sourceChangePct": 3.83,
             "entryReason": "진입 기준: 09:45 이후 +3.0% 이상 유지, 거래대금 증가, 5분 눌림 후 고점 재돌파 시 기준가 기록",
+            "holdAction": "모멘텀소멸관찰",
+            "holdScore": 55,
+            "holdReason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
             "currentScoreNormalized": 55.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -878,7 +930,7 @@
         "benchmarkReturnPct": 1.16,
         "excessReturnPct": 2.2,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T19:15+09:00"
+        "periodEnd": "2026-05-07T19:52+09:00"
       }
     },
     {
@@ -886,7 +938,7 @@
       "stage": "관찰",
       "status": "OK",
       "candidateCount": 12,
-      "sellCandidateCount": 0,
+      "sellCandidateCount": 4,
       "validationCount": 0,
       "gateCount": 0,
       "dryRunCount": 5,
@@ -904,7 +956,7 @@
           "entryScoreRaw": 70.0,
           "changePct": 0.0,
           "rank": 1,
-          "evaluatedAt": "2026-05-07T15:52:35+09:00",
+          "evaluatedAt": "2026-05-07T19:52:09+09:00",
           "status": "보유중",
           "action": "",
           "validationStatus": "",
@@ -930,7 +982,7 @@
           "entryScoreRaw": 70.0,
           "changePct": 0.0,
           "rank": 2,
-          "evaluatedAt": "2026-05-07T15:52:35+09:00",
+          "evaluatedAt": "2026-05-07T19:52:09+09:00",
           "status": "보유중",
           "action": "",
           "validationStatus": "",
@@ -956,7 +1008,7 @@
           "entryScoreRaw": 70.0,
           "changePct": 0.0,
           "rank": 3,
-          "evaluatedAt": "2026-05-07T15:52:35+09:00",
+          "evaluatedAt": "2026-05-07T19:52:09+09:00",
           "status": "보유중",
           "action": "",
           "validationStatus": "",
@@ -982,7 +1034,7 @@
           "entryScoreRaw": null,
           "changePct": 0.0,
           "rank": 4,
-          "evaluatedAt": "2026-05-07T15:52:35+09:00",
+          "evaluatedAt": "2026-05-07T19:52:09+09:00",
           "status": "현재후보",
           "action": "",
           "validationStatus": "",
@@ -1008,7 +1060,7 @@
           "entryScoreRaw": null,
           "changePct": 0.0,
           "rank": 5,
-          "evaluatedAt": "2026-05-07T15:52:35+09:00",
+          "evaluatedAt": "2026-05-07T19:52:09+09:00",
           "status": "현재후보",
           "action": "",
           "validationStatus": "",
@@ -1034,7 +1086,7 @@
           "entryScoreRaw": null,
           "changePct": 0.0,
           "rank": 6,
-          "evaluatedAt": "2026-05-07T15:52:35+09:00",
+          "evaluatedAt": "2026-05-07T19:52:09+09:00",
           "status": "현재후보",
           "action": "",
           "validationStatus": "",
@@ -1060,7 +1112,7 @@
           "entryScoreRaw": null,
           "changePct": 0.0,
           "rank": 7,
-          "evaluatedAt": "2026-05-07T15:52:35+09:00",
+          "evaluatedAt": "2026-05-07T19:52:09+09:00",
           "status": "현재후보",
           "action": "",
           "validationStatus": "",
@@ -1086,7 +1138,7 @@
           "entryScoreRaw": null,
           "changePct": 0.0,
           "rank": 8,
-          "evaluatedAt": "2026-05-07T15:52:35+09:00",
+          "evaluatedAt": "2026-05-07T19:52:09+09:00",
           "status": "현재후보",
           "action": "",
           "validationStatus": "",
@@ -1136,7 +1188,44 @@
           "holdingPeriod": "보유 1일"
         }
       ],
-      "sellAlerts": [],
+      "sellAlerts": [
+        {
+          "code": "058470",
+          "name": "리노공업",
+          "status": "손절관찰",
+          "reason": "매일신규 손절 관찰 -6.04% <= -5%; 장중 회복 실패 시 정리 검토",
+          "returnPct": -6.04,
+          "sellScore": 75,
+          "pnl": -116800
+        },
+        {
+          "code": "010120",
+          "name": "LS ELECTRIC",
+          "status": "부분익절검토",
+          "reason": "매일신규 1차 익절권 8.33% >= 6%; 일부익절 또는 트레일링 검토",
+          "returnPct": 8.33,
+          "sellScore": 65,
+          "pnl": 147000
+        },
+        {
+          "code": "012450",
+          "name": "한화에어로스페이스",
+          "status": "손절검토",
+          "reason": "매일신규 손실 위험 -10.10% <= -8%; 신규 모멘텀 실패로 정리 우선 검토",
+          "returnPct": -10.1,
+          "sellScore": 95,
+          "pnl": -148000
+        },
+        {
+          "code": "079550",
+          "name": "LIG넥스원",
+          "status": "손절검토",
+          "reason": "매일신규 손실 위험 -11.90% <= -8%; 신규 모멘텀 실패로 정리 우선 검토",
+          "returnPct": -11.9,
+          "sellScore": 95,
+          "pnl": -234000
+        }
+      ],
       "portfolio": {
         "capital": 10000000,
         "evalAmount": 9558000,
@@ -1163,6 +1252,9 @@
             "entryScoreNormalized": 75,
             "sourceChangePct": 0.0,
             "entryReason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
+            "holdAction": "손절관찰",
+            "holdScore": 75,
+            "holdReason": "매일신규 손절 관찰 -6.04% <= -5%; 장중 회복 실패 시 정리 검토",
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -1186,6 +1278,9 @@
             "entryScoreNormalized": 75,
             "sourceChangePct": 0.0,
             "entryReason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
+            "holdAction": "부분익절검토",
+            "holdScore": 65,
+            "holdReason": "매일신규 1차 익절권 8.33% >= 6%; 일부익절 또는 트레일링 검토",
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -1209,6 +1304,9 @@
             "entryScoreNormalized": 75,
             "sourceChangePct": 0.0,
             "entryReason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
+            "holdAction": "손절검토",
+            "holdScore": 95,
+            "holdReason": "매일신규 손실 위험 -10.10% <= -8%; 신규 모멘텀 실패로 정리 우선 검토",
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": 70.0,
             "currentScoreType": "current",
@@ -1232,6 +1330,9 @@
             "entryScoreNormalized": 75,
             "sourceChangePct": 0.0,
             "entryReason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
+            "holdAction": "손절검토",
+            "holdScore": 95,
+            "holdReason": "매일신규 손실 위험 -11.90% <= -8%; 신규 모멘텀 실패로 정리 우선 검토",
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": 70.0,
             "currentScoreType": "current",
@@ -1255,6 +1356,9 @@
             "entryScoreNormalized": 75,
             "sourceChangePct": 0.0,
             "entryReason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
+            "holdAction": "보유유지",
+            "holdScore": 0,
+            "holdReason": "오늘도 B-관찰강화 유지; 점수 70",
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": 70.0,
             "currentScoreType": "current",
@@ -1268,7 +1372,7 @@
         "benchmarkReturnPct": 1.16,
         "excessReturnPct": -5.58,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T19:15+09:00"
+        "periodEnd": "2026-05-07T19:52+09:00"
       }
     },
     {
@@ -1499,7 +1603,7 @@
           "status": "보유중",
           "reason": "3주 · 매입 305500.0원 · 평가 955500원 · 손익 39000원",
           "returnPct": 4.26,
-          "holdingPeriod": "보유 9시간 49분"
+          "holdingPeriod": "보유 10시간 26분"
         },
         {
           "code": "005930",
@@ -1507,7 +1611,7 @@
           "status": "보유중",
           "reason": "3주 · 매입 263000.0원 · 평가 814500원 · 손익 25500원",
           "returnPct": 3.23,
-          "holdingPeriod": "보유 9시간 49분"
+          "holdingPeriod": "보유 10시간 26분"
         },
         {
           "code": "068270",
@@ -1553,6 +1657,9 @@
             "entryScoreNormalized": 95,
             "sourceChangePct": -0.71,
             "entryReason": "가치/안정성=28; 과열완화=15.9; 거래대금점수=20; 등락률=-0.71",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 93.1,
             "currentScoreType": "current",
@@ -1576,6 +1683,9 @@
             "entryScoreNormalized": 95,
             "sourceChangePct": 0.7,
             "entryReason": "가치/안정성=28; 과열완화=15.9; 거래대금점수=20; 등락률=0.7",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -1599,6 +1709,9 @@
             "entryScoreNormalized": 95,
             "sourceChangePct": -0.87,
             "entryReason": "가치/안정성=28; 과열완화=15.4; 거래대금점수=20; 등락률=-0.87",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 90.1,
             "currentScoreType": "current",
@@ -1622,6 +1735,9 @@
             "entryScoreNormalized": 95,
             "sourceChangePct": 0.23,
             "entryReason": "가치/안정성=21; 과열완화=17.3; 거래대금점수=20; 등락률=0.23",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 84.8,
             "currentScoreType": "current",
@@ -1645,6 +1761,9 @@
             "entryScoreNormalized": 88,
             "sourceChangePct": -1.89,
             "entryReason": "가치/안정성=23; 과열완화=12.3; 거래대금점수=20; 등락률=-1.89",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 84.8,
             "currentScoreType": "current",
@@ -1668,6 +1787,9 @@
             "entryScoreNormalized": 88,
             "sourceChangePct": -0.48,
             "entryReason": "가치/안정성=16; 과열완화=16.6; 거래대금점수=20; 등락률=-0.48",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 85.3,
             "currentScoreType": "current",
@@ -1691,6 +1813,9 @@
             "entryScoreNormalized": 88,
             "sourceChangePct": -3.39,
             "entryReason": "가치/안정성=24; 과열완화=7.8; 거래대금점수=20; 등락률=-3.39",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 82.8,
             "currentScoreType": "current",
@@ -1714,6 +1839,9 @@
             "entryScoreNormalized": 88,
             "sourceChangePct": -1.57,
             "entryReason": "가치/안정성=18; 과열완화=13.3; 거래대금점수=20; 등락률=-1.57",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -1727,7 +1855,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.14,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T19:15+09:00"
+        "periodEnd": "2026-05-07T19:52+09:00"
       }
     },
     {
@@ -1958,7 +2086,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 158700.0원 · 평가 945600원 · 손익 -6600원",
           "returnPct": -0.69,
-          "holdingPeriod": "보유 9시간 48분"
+          "holdingPeriod": "보유 10시간 25분"
         },
         {
           "code": "034020",
@@ -1966,7 +2094,7 @@
           "status": "보유중",
           "reason": "7주 · 매입 133900.0원 · 평가 954800원 · 손익 17500원",
           "returnPct": 1.87,
-          "holdingPeriod": "보유 9시간 48분"
+          "holdingPeriod": "보유 10시간 25분"
         },
         {
           "code": "373220",
@@ -2012,6 +2140,9 @@
             "entryScoreNormalized": 95,
             "sourceChangePct": 14.41,
             "entryReason": "모멘텀구간=8; 거래대금점수=20; 등락률=14.41",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 98.0,
             "currentScoreType": "current",
@@ -2035,6 +2166,9 @@
             "entryScoreNormalized": 95,
             "sourceChangePct": 4.04,
             "entryReason": "모멘텀구간=30; 거래대금점수=20; 등락률=4.04",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -2058,6 +2192,9 @@
             "entryScoreNormalized": 88,
             "sourceChangePct": 4.49,
             "entryReason": "모멘텀구간=30; 거래대금점수=20; 등락률=4.49",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -2081,6 +2218,9 @@
             "entryScoreNormalized": 88,
             "sourceChangePct": 7.31,
             "entryReason": "모멘텀구간=30; 거래대금점수=20; 등락률=7.31",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -2104,6 +2244,9 @@
             "entryScoreNormalized": 88,
             "sourceChangePct": 2.04,
             "entryReason": "모멘텀구간=30; 거래대금점수=20; 등락률=2.04",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 90.1,
             "currentScoreType": "current",
@@ -2127,6 +2270,9 @@
             "entryScoreNormalized": 88,
             "sourceChangePct": 4.37,
             "entryReason": "모멘텀구간=30; 거래대금점수=20; 등락률=4.37",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -2150,6 +2296,9 @@
             "entryScoreNormalized": 88,
             "sourceChangePct": 6.03,
             "entryReason": "모멘텀구간=30; 거래대금점수=20; 등락률=6.03",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 89.1,
             "currentScoreType": "current",
@@ -2173,6 +2322,9 @@
             "entryScoreNormalized": 88,
             "sourceChangePct": 2.12,
             "entryReason": "모멘텀구간=30; 거래대금점수=20; 등락률=2.12",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -2186,7 +2338,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": -0.75,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T19:15+09:00"
+        "periodEnd": "2026-05-07T19:52+09:00"
       }
     },
     {
@@ -2417,7 +2569,7 @@
           "status": "보유중",
           "reason": "4주 · 매입 234500.0원 · 평가 942000원 · 손익 4000원",
           "returnPct": 0.43,
-          "holdingPeriod": "보유 8시간 46분"
+          "holdingPeriod": "보유 9시간 23분"
         },
         {
           "code": "068270",
@@ -2425,7 +2577,7 @@
           "status": "보유중",
           "reason": "4주 · 매입 204500.0원 · 평가 810000원 · 손익 -8000원",
           "returnPct": -0.98,
-          "holdingPeriod": "보유 8시간 46분"
+          "holdingPeriod": "보유 9시간 23분"
         },
         {
           "code": "012330",
@@ -2433,7 +2585,7 @@
           "status": "보유중",
           "reason": "2주 · 매입 447000.0원 · 평가 883000원 · 손익 -11000원",
           "returnPct": -1.23,
-          "holdingPeriod": "보유 9시간 48분"
+          "holdingPeriod": "보유 10시간 24분"
         },
         {
           "code": "329180",
@@ -2441,7 +2593,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 662000.0원 · 평가 693000원 · 손익 31000원",
           "returnPct": 4.68,
-          "holdingPeriod": "보유 9시간 48분"
+          "holdingPeriod": "보유 10시간 24분"
         }
       ],
       "sellAlerts": [],
@@ -2471,6 +2623,9 @@
             "entryScoreNormalized": 78,
             "sourceChangePct": 0.7,
             "entryReason": "가치=95.9; 모멘텀=77.6; 등락률=0.7",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": 75.2,
             "currentScoreType": "current",
@@ -2494,6 +2649,9 @@
             "entryScoreNormalized": 78,
             "sourceChangePct": 14.41,
             "entryReason": "가치=72.0; 모멘텀=98; 등락률=14.41",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 80.6,
             "currentScoreType": "current",
@@ -2517,6 +2675,9 @@
             "entryScoreNormalized": 78,
             "sourceChangePct": 2.12,
             "entryReason": "가치=75.6; 모멘텀=88.6; 등락률=2.12",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -2540,6 +2701,9 @@
             "entryScoreNormalized": 78,
             "sourceChangePct": 2.04,
             "entryReason": "가치=68.9; 모멘텀=89.7; 등락률=2.04",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -2563,6 +2727,9 @@
             "entryScoreNormalized": 78,
             "sourceChangePct": -0.71,
             "entryReason": "가치=95.9; 모멘텀=65.6; 등락률=-0.71",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": 75.1,
             "currentScoreType": "current",
@@ -2586,6 +2753,9 @@
             "entryScoreNormalized": 78,
             "sourceChangePct": -0.87,
             "entryReason": "가치=95.4; 모멘텀=65.1; 등락률=-0.87",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": 79.1,
             "currentScoreType": "current",
@@ -2599,7 +2769,7 @@
             "entryPrice": 662000,
             "currentPrice": 693000,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 9시간 48분",
+            "holdingPeriod": "보유 10시간 24분",
             "evalAmount": 693000,
             "pnl": 31000,
             "returnPct": 4.68,
@@ -2609,6 +2779,9 @@
             "entryScoreNormalized": 78,
             "sourceChangePct": 2.16,
             "entryReason": "가치=82.5; 모멘텀=82.1; 등락률=2.16",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -2622,7 +2795,7 @@
             "entryPrice": 447000,
             "currentPrice": 441500,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 9시간 48분",
+            "holdingPeriod": "보유 10시간 24분",
             "evalAmount": 883000,
             "pnl": -11000,
             "returnPct": -1.23,
@@ -2632,6 +2805,9 @@
             "entryScoreNormalized": 78,
             "sourceChangePct": 3.35,
             "entryReason": "가치=78.0; 모멘텀=82.1; 등락률=3.35",
+            "holdAction": "",
+            "holdScore": null,
+            "holdReason": "",
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
@@ -2645,7 +2821,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.0,
         "periodStart": "2026-05-06T16:16+09:00",
-        "periodEnd": "2026-05-07T19:15+09:00"
+        "periodEnd": "2026-05-07T19:52+09:00"
       }
     }
   ]

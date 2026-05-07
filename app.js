@@ -314,15 +314,17 @@ function holdingCandidateComparison(s) {
           const isTarget = replacementTarget && String(pos.code || '') === String(replacementTarget.code || '');
           const decision = isTarget && bestPasses ? '교체검토' : (isTarget ? '기준종목' : '유지');
           const ret = Number(pos.returnPct || 0);
-          const holdReason = isTarget
-            ? (bestPasses ? `통과 후보 ${bestReplacement.name || ''}와 교체 검토` : '최고 후보가 아직 통과선 미달')
-            : `교체 판단 대상 아님 · 기준종목은 ${replacementTarget?.name || '-'}`;
+          const holdReason = pos.holdAction && pos.holdAction !== '보유유지'
+            ? `${pos.holdAction}: ${pos.holdReason || ''}`
+            : (isTarget
+              ? (bestPasses ? `통과 후보 ${bestReplacement.name || ''}와 교체 검토` : '최고 후보가 아직 통과선 미달')
+              : `교체 판단 대상 아님 · 기준종목은 ${replacementTarget?.name || '-'}`);
           return `<article class="holding-compare-card ${isTarget ? 'basis-stock-card' : ''}">
             ${isTarget ? '<div class="basis-ribbon">기준종목 · 후보 통과선 산정 기준</div>' : ''}
             <div class="compare-hero">
               <div class="compare-identity"><strong>${pos.name || '-'}</strong><b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b></div>
               ${switchMiniGraph({ baseScore: lowestHeldScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct, currentLabel: graphCurrentLabel, triggerBaseScore: lowestHeldScore, thresholdLabel: '공통기준' })}
-              <div class="compare-meta"><span>${pos.code || ''}</span><em>${decision}</em></div>
+              <div class="compare-meta"><span>${pos.code || ''}</span><em>${pos.holdAction && pos.holdAction !== '보유유지' ? pos.holdAction : decision}</em></div>
             </div>
             ${diagnosticRows([
               [currentScoreLabel, normalizedScoreText(currentScore)],
