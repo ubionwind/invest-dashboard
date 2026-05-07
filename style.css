@@ -186,6 +186,14 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .stock-report { margin-top: 14px; padding: 13px; border-radius: 15px; background: rgba(0,0,0,.16); }
 .stock-report h4 { margin: 0 0 8px; color: #ffe5a3; }
 .stock-report ul { margin: 0; padding-left: 18px; display: grid; gap: 7px; color: #dbe7ff; font-size: 13px; line-height: 1.45; }
+.technical-box { margin-top: 14px; padding: 13px; border-radius: 15px; background: rgba(121,167,255,.06); border: 1px solid rgba(121,167,255,.12); }
+.technical-box h4 { margin: 0 0 9px; color: #cfe0ff; }
+.technical-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 11px; }
+.technical-grid div { padding: 8px; border-radius: 11px; background: rgba(0,0,0,.14); }
+.technical-grid span, .technical-grid strong { display: block; }
+.technical-grid span { color: var(--muted); font-size: 11px; }
+.technical-grid strong { margin-top: 3px; font-size: 12px; line-height: 1.35; }
+.technical-box ul { margin: 0; padding-left: 18px; display: grid; gap: 7px; color: #dbe7ff; font-size: 13px; line-height: 1.45; }
 .stock-modal-note { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.4; }
 .candidate-reason { margin: 10px 0 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
 .strategy-candidates { margin-top: 4px; padding: 11px 12px; border: 1px solid rgba(121,167,255,.20); border-radius: 16px; background: rgba(121,167,255,.035); }
@@ -343,6 +351,8 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .candidate-meta { gap: 5px; margin-top: 8px; }
   .candidate-meta span { padding: 4px 6px; font-size: 11px; }
   .candidate-detail { font-size: 11px; }
+  .stock-metrics { grid-template-columns: 1fr; }
+  .technical-grid { grid-template-columns: 1fr; }
 
   .card.wide canvas { height: 280px !important; }
   .mini-chart canvas { height: 250px !important; }

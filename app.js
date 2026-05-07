@@ -189,7 +189,7 @@ function candidateSummary(s) {
   const candidates = s.topCandidates || [];
   const entryCount = Number(s.gateCount || 0);
   const reviewCount = candidates.filter(c => ['매수검토', '검증통과-신규검토', '검증통과-보유중추가검토'].includes(String(c.status || c.action || c.validationStatus || ''))).length;
-  const names = candidates.slice(0, 3).map(c => c.name).filter(Boolean).join(' · ');
+  const names = candidates.slice(0, 3).filter(c => c.name).map(c => stockNameLink(c, c.name, 'b')).join(' · ');
   const stateText = entryCount > 0
     ? `신규진입 대기 ${fmt.format(entryCount)}건`
     : (reviewCount > 0 ? `매수검토 ${fmt.format(reviewCount)}건 · 주문대기 없음` : '신규진입 없음 · 관찰후보만 있음');
@@ -271,7 +271,7 @@ function thresholdFormula(baseScore) {
 }
 
 function holdingReasonText({ decision, ret, scoreGap, bestReplacement } = {}) {
-  const bestName = bestReplacement?.name ? ` / 후보 ${bestReplacement.name}` : '';
+  const bestName = bestReplacement?.name ? ` / 후보 ${stockNameLink(bestReplacement, bestReplacement.name, 'span')}` : '';
   if (decision === '교체검토') return `손실 또는 점수 열위${bestName}`;
   if (decision === '익절/트레일링') return '수익권: 익절선/트레일링 관찰';
   if (decision === '비교관찰') return `후보 우위 ${scoreGap?.toFixed ? scoreGap.toFixed(1) : ''}점${bestName}`;
@@ -322,7 +322,7 @@ function holdingCandidateComparison(s) {
   const bestReplacement = replacementPool[0] || {};
   const bestCandidateScore = bestReplacement?.score == null ? null : Number(bestReplacement.score);
   const bestPasses = commonThreshold !== null && bestCandidateScore !== null && bestCandidateScore >= commonThreshold;
-  const targetLabel = replacementTarget ? `${replacementTarget.name || replacementTarget.code || '보유종목'} ${Number(lowestHeldScore).toFixed(1)}점` : '보유점수 대기';
+  const targetLabel = replacementTarget ? `${stockNameLink(replacementTarget, replacementTarget.name || replacementTarget.code || '보유종목', 'span')} ${Number(lowestHeldScore).toFixed(1)}점` : '보유점수 대기';
   const orderedPositions = [...positions].sort((a, b) => {
     const aTarget = replacementTarget && String(a.code || '') === String(replacementTarget.code || '');
     const bTarget = replacementTarget && String(b.code || '') === String(replacementTarget.code || '');
@@ -353,12 +353,12 @@ function holdingCandidateComparison(s) {
           const holdReason = pos.holdAction && pos.holdAction !== '보유유지'
             ? `${pos.holdAction}: ${pos.holdReason || ''}`
             : (isTarget
-              ? (bestPasses ? `통과 후보 ${bestReplacement.name || ''}와 교체 검토` : '최고 후보가 아직 통과선 미달')
-              : `교체 판단 대상 아님 · 기준종목은 ${replacementTarget?.name || '-'}`);
+              ? (bestPasses ? `통과 후보 ${stockNameLink(bestReplacement, bestReplacement.name || '', 'span')}와 교체 검토` : '최고 후보가 아직 통과선 미달')
+              : `교체 판단 대상 아님 · 기준종목은 ${replacementTarget ? stockNameLink(replacementTarget, replacementTarget.name || '-', 'span') : '-'}`);
           return `<article class="holding-compare-card ${isTarget ? 'basis-stock-card' : ''}">
             ${isTarget ? '<div class="basis-ribbon">기준종목 · 후보 통과선 산정 기준</div>' : ''}
             <div class="compare-hero">
-              <div class="compare-identity"><strong>${pos.name || '-'}</strong><b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b></div>
+              <div class="compare-identity">${stockNameLink(pos)}<b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b></div>
               ${switchMiniGraph({ baseScore: lowestHeldScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct, currentLabel: graphCurrentLabel, triggerBaseScore: lowestHeldScore, thresholdLabel: '공통기준' })}
               <div class="compare-meta"><span>${pos.code || ''}</span><em>${pos.holdAction && pos.holdAction !== '보유유지' ? pos.holdAction : decision}</em></div>
             </div>
@@ -383,13 +383,13 @@ function holdingCandidateComparison(s) {
           const passed = edge !== null && edge >= 0;
           return `<article class="replacement-card">
             <div class="compare-hero">
-              <div class="compare-identity"><strong>${c.name || '-'}</strong><b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b></div>
+              <div class="compare-identity">${stockNameLink(c)}<b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b></div>
               ${switchMiniGraph({ baseScore: lowestHeldScore, currentScore: candidateScore, candidateScore, currentLabel: '후보', triggerBaseScore: lowestHeldScore, thresholdLabel: '공통기준' })}
               <div class="compare-meta"><span>${c.code || ''}</span><em class="${edge == null ? '' : (passed ? 'up' : 'down')}">${edge == null ? '비교대기' : (passed ? `통과 +${edge.toFixed(1)}` : `미달 ${edge.toFixed(1)}`)}</em></div>
             </div>
             ${diagnosticRows([
               ['후보점수', normalizedScoreText(c.score)],
-              ['비교 기준종목', replacementTarget?.name || '-'],
+              ['비교 기준종목', replacementTarget ? stockNameLink(replacementTarget, replacementTarget.name || '-', 'span') : '-'],
               ['후보 통과선', commonThreshold === null ? '-' : commonThreshold.toFixed(1)],
               ['기준대비', edge == null ? '-' : `${edge > 0 ? '+' : ''}${edge.toFixed(1)}`, edge == null ? '' : (edge >= 0 ? 'up' : 'down')],
               ['등락/수익', c.changePct == null ? '-' : pct(c.changePct), c.changePct == null ? '' : (Number(c.changePct) >= 0 ? 'up' : 'down')],
@@ -480,6 +480,13 @@ function stockInfoPayload(item = {}) {
   return escapeAttr(JSON.stringify({ code: item.code, name: item.name, fundamentals: item.fundamentals }));
 }
 
+function stockNameLink(item = {}, fallback = '-', tag = 'strong') {
+  const name = escapeHtml(item.name || fallback || '-');
+  const code = item.code ? ` <span class="muted">${escapeHtml(item.code)}</span>` : '';
+  if (!item.fundamentals) return `<${tag}>${name}</${tag}>`;
+  return `<button class="stock-title-btn" type="button" data-stock-info='${stockInfoPayload(item)}'><${tag}>${name}</${tag}></button>${code}`;
+}
+
 function fundamentalsButton(item = {}) {
   if (!item.fundamentals) return '';
   return `<button class="stock-info-btn" type="button" data-stock-info='${stockInfoPayload(item)}'>종목 정보</button>`;
@@ -507,8 +514,7 @@ function candidateTile(c, idx) {
       <span class="badge compact ${statusClass(status)}">${status}</span>
     </div>
     <div class="candidate-title">
-      ${c.fundamentals ? `<button class="stock-title-btn" type="button" data-stock-info='${stockInfoPayload(c)}'><strong>${c.name || '-'}</strong></button>` : `<strong>${c.name || '-'}</strong>`}
-      ${c.code ? `<span class="muted">${c.code}</span>` : ''}
+      ${stockNameLink(c)}
     </div>
     <div class="candidate-main">
       <div class="score-box ${scoreTone}"><span class="muted">판단점수</span><strong>${score}</strong></div>
@@ -595,7 +601,7 @@ function holdingsBlock(pf = {}) {
         const holdingDays = String(p.holdingPeriod || '-').replace(/^보유\s*/, '');
         const f = p.fundamentals || null;
         return `<tr>
-          <td class="stock-name" data-label="종목명">${p.fundamentals ? `<button class="stock-title-btn" type="button" data-stock-info='${stockInfoPayload(p)}'><strong>${p.name || '-'}</strong></button>` : `<strong>${p.name || '-'}</strong>`}</td>
+          <td class="stock-name" data-label="종목명">${stockNameLink(p)}</td>
           <td class="stock-code" data-label="종목코드">${p.code || '-'}</td>
           <td class="fundamental-cell" data-label="PER/PBR/ROE"><span>${f ? `${f.per ?? '-'} / ${f.pbr ?? '-'} / ${f.roe ?? '-'}` : '-'}</span>${f?.badge ? `<small>${f.badge}</small>` : ''}</td>
           <td data-label="보유일">${holdingDays}</td>
@@ -620,7 +626,7 @@ function tradeAlerts(s) {
       return `<div class="alert-item">
       <div class="alert-item-top">
         <div>
-          <strong>${x.name || '-'}</strong>${x.code ? `<span class="muted">${x.code}</span>` : ''}
+          ${stockNameLink(x)}
           <em>${x.status || '검토'}${x.holdingPeriod ? ` · ${x.holdingPeriod}` : ''}</em>
         </div>
         ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<b class="return-big ${buyReturnClass}">${pct(buyReturn)}</b>`}
@@ -728,6 +734,24 @@ function metricBlock(label, value, avg, suffix = '') {
   return `<div class="stock-metric"><span>${label}</span><strong>${shown}</strong><small>${avgText}</small></div>`;
 }
 
+function priceRangeText(zone) {
+  if (!zone) return '-';
+  return `${fmt.format(zone.from)}~${fmt.format(zone.to)}`;
+}
+
+function technicalReportBlock(t = {}) {
+  if (!t || t.error) return '<div class="stock-report"><h4>가격 구조</h4><ul><li>가격 구조 분석 데이터 대기</li></ul></div>';
+  const rows = [
+    ['전고점 상태', t.breakoutState || '-'],
+    ['20일 전고점', t.previousHigh20d ? `${fmt.format(t.previousHigh20d)}원 (${t.distanceToHigh20dPct ?? '-'}%)` : '-'],
+    ['60일 전고점', t.previousHigh60d ? `${fmt.format(t.previousHigh60d)}원 (${t.distanceToHigh60dPct ?? '-'}%)` : '-'],
+    ['상단 매물대', `${priceRangeText(t.resistanceWall)} · 위험 ${t.volumeWallRisk || '-'}`],
+    ['하단 지지 후보', priceRangeText(t.supportZone)],
+  ].map(([k, v]) => `<div><span>${k}</span><strong>${escapeHtml(v)}</strong></div>`).join('');
+  const report = (t.report || []).map(x => `<li>${escapeHtml(x)}</li>`).join('') || '<li>기술적 분석 리포트 데이터 대기</li>';
+  return `<div class="technical-box"><h4>가격 구조</h4><div class="technical-grid">${rows}</div><ul>${report}</ul></div>`;
+}
+
 function openStockInfoModal(payload) {
   renderStockInfoModal();
   const f = payload.fundamentals || {};
@@ -744,10 +768,11 @@ function openStockInfoModal(payload) {
     ${metricBlock('PER', f.per, avg.per, '배')}
   </div>
   <div class="stock-report">
-    <h4>간단 분석</h4>
+    <h4>재무 지표 분석</h4>
     <ul>${report}</ul>
   </div>
-  <p class="stock-modal-note">공개 재무지표 기반 보조 정보입니다. 전략 점수에는 아직 직접 반영하지 않았습니다.</p>`;
+  ${technicalReportBlock(f.technicalStructure)}
+  <p class="stock-modal-note">공개 재무/가격 데이터 기반 보조 정보입니다. 매물대는 최근 일봉 거래량 분포를 이용한 근사치입니다.</p>`;
   document.getElementById('stockInfoModal').classList.add('open');
 }
 
@@ -755,12 +780,17 @@ function closeStockInfoModal() {
   document.getElementById('stockInfoModal')?.classList.remove('open');
 }
 
+let stockInfoDelegated = false;
 function bindStockInfoButtons() {
-  document.querySelectorAll('.stock-info-btn').forEach(btn => btn.addEventListener('click', ev => {
+  if (stockInfoDelegated) return;
+  stockInfoDelegated = true;
+  document.addEventListener('click', ev => {
+    const btn = ev.target.closest('[data-stock-info]');
+    if (!btn) return;
     ev.preventDefault();
     ev.stopPropagation();
     try { openStockInfoModal(JSON.parse(btn.dataset.stockInfo || '{}')); } catch (err) { console.warn(err); }
-  }));
+  });
 }
 
 function render(data) {
