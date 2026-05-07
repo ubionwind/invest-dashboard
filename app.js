@@ -474,19 +474,27 @@ async function loadDashboardData() {
   const urls = dashboardUrls();
   if (!urls.manifest) return fetchJson(urls.data);
 
-  const manifest = await fetchJson(urls.manifest);
-  const parts = manifest.parts || {};
-  const [summaryPart, sessionsPart, historyPart] = await Promise.all([
-    fetchJson(parts.summary?.url),
-    fetchJson(parts.sessions?.url),
-    fetchJson(parts.history?.url),
-  ]);
-  return {
-    ...summaryPart,
-    generatedAt: manifest.generatedAt || summaryPart.generatedAt || sessionsPart.generatedAt || historyPart.generatedAt,
-    sessions: sessionsPart.sessions || [],
-    history: historyPart.history || [],
-  };
+  try {
+    const manifest = await fetchJson(urls.manifest);
+    const parts = manifest.parts || {};
+    if (!parts.summary?.url || !parts.sessions?.url || !parts.history?.url) {
+      throw new Error('manifest parts missing');
+    }
+    const [summaryPart, sessionsPart, historyPart] = await Promise.all([
+      fetchJson(parts.summary.url),
+      fetchJson(parts.sessions.url),
+      fetchJson(parts.history.url),
+    ]);
+    return {
+      ...summaryPart,
+      generatedAt: manifest.generatedAt || summaryPart.generatedAt || sessionsPart.generatedAt || historyPart.generatedAt,
+      sessions: sessionsPart.sessions || [],
+      history: historyPart.history || [],
+    };
+  } catch (err) {
+    console.warn('split JSON load failed; falling back to single dashboard JSON', err);
+    return fetchJson(urls.data);
+  }
 }
 
 loadDashboardData()
