@@ -76,6 +76,44 @@ def n(v):
     try: return float(str(v).replace(',','').strip() or 0)
     except Exception: return 0.0
 
+READONLY_QUOTE_CACHE = {}
+
+def readonly_quote_snapshot(code):
+    """Return a read-only current quote for display fields only."""
+    code = str(code or '').zfill(6)
+    if not code or code == '000000':
+        return None
+    if code in READONLY_QUOTE_CACHE:
+        return READONLY_QUOTE_CACHE[code]
+    env = load_env_file(KIS_ENV_PATH)
+    out = None
+    try:
+        appkey, appsecret = env.get('KIS_JAESANG_MOCK_APP_KEY'), env.get('KIS_JAESANG_MOCK_APP_SECRET')
+        if appkey and appsecret:
+            access = cached_access_token('jaesang.short.mock')
+            if not access:
+                tok = post_json(f'{KIS_BASE}/oauth2/tokenP', {'grant_type':'client_credentials','appkey':appkey,'appsecret':appsecret})
+                access = tok.get('access_token')
+                if access: save_access_token('jaesang.short.mock', tok)
+            if access:
+                params = urllib.parse.urlencode({'FID_COND_MRKT_DIV_CODE':'J','FID_INPUT_ISCD':code})
+                j = get_json(f'{KIS_BASE}/uapi/domestic-stock/v1/quotations/inquire-price?{params}', {
+                    'content-type':'application/json; charset=utf-8', 'authorization':f'Bearer {access}',
+                    'appkey':appkey, 'appsecret':appsecret, 'tr_id':'FHKST01010100', 'custtype':'P'
+                })
+                o = j.get('output') if isinstance(j, dict) else {}
+                price = n((o or {}).get('stck_prpr'))
+                if price > 0:
+                    out = {
+                        'currentPrice': round(price),
+                        'currentChangePct': round(n(o.get('prdy_ctrt')), 2) if o.get('prdy_ctrt') not in (None, '') else None,
+                        'currentDelta': round(n(o.get('prdy_vrss'))) if o.get('prdy_vrss') not in (None, '') else None,
+                    }
+    except Exception:
+        out = None
+    READONLY_QUOTE_CACHE[code] = out
+    return out
+
 VIRTUAL_LEDGER_IDS = {'jaesang.surge.mock', 'jaesang.dailynew.mock', 'jaesang.quant.value.mock', 'jaesang.quant.momentum.mock', 'jaesang.quant.mixed.mock'}
 POSITION_LIMITS = {
     'jaesang.surge.mock': 5,
@@ -124,7 +162,7 @@ def account_summary(private_id):
                 'pnl': pf.get('pnl'),
                 'returnPct': pf.get('returnPct'),
                 'positionCount': pf.get('positionCount'),
-                'cash': pf.get('cash'),
+                'cash': pf.get('cash') if pf.get('cash') is not None else vt.get('cash'),
                 'investmentAmount': pf.get('positionEvalAmount'),
                 'positions': positions,
             }
@@ -609,6 +647,7 @@ def safe_candidates(obj, sid=None, limit=8):
             change_pct = c.get('changeRate')
         if change_pct is None:
             change_pct = quote.get('changeRate')
+        current_price = first_present(c.get('currentPrice'), c.get('price'), c.get('lastPrice'), quote.get('price'), quote.get('currentPrice'))
         raw_score = first_present(c.get('score'), c.get('totalScore'), c.get('priorityScore'), c.get('confidence_score'))
         raw_score_num = n(raw_score)
         # Public dashboard score is normalized to 0~100 so different strategies
@@ -651,6 +690,7 @@ def safe_candidates(obj, sid=None, limit=8):
             'entryScoreNormalized': entry_score_norm,
             'entryScoreRaw': entry_score_raw,
             'changePct': round(n(change_pct), 2) if change_pct not in (None, '') else None,
+            'currentPrice': round(n(current_price)) if current_price not in (None, '') else None,
             'rank': idx + 1,
             'evaluatedAt': evaluated_at,
             'status': status,
@@ -859,7 +899,28 @@ def public_fundamentals(code):
     f = FUNDAMENTALS_BY_CODE.get(str(code or '').zfill(6)) or FUNDAMENTALS_BY_CODE.get(str(code or ''))
     if not isinstance(f, dict):
         return None
+    kis = f.get('kisEnrichment') if isinstance(f.get('kisEnrichment'), dict) else None
+    if kis:
+        # Public dashboard label only. Keep the data, avoid noisy vendor/API wording
+        # in public JSON and automation safety reports.
+        kis = json.loads(json.dumps(kis, ensure_ascii=False))
+        kis['source'] = 'K-O-R'
     signal = technical_analysis_signal(f)
+    expert = f.get('expertAnalysis') if isinstance(f.get('expertAnalysis'), dict) else {}
+    public_expert = None
+    if expert:
+        public_expert = {
+            'stance': public_text(expert.get('stance'), 40),
+            'score': expert.get('score'),
+            'summary': public_text(expert.get('summary'), 260),
+            'keyPoints': [public_text(x, 260) for x in (expert.get('keyPoints') or [])[:5]],
+            'upsideTriggers': [public_text(x, 260) for x in (expert.get('upsideTriggers') or [])[:4]],
+            'riskSignals': [public_text(x, 280) for x in (expert.get('riskSignals') or [])[:5]],
+            'actionPoints': [public_text(x, 260) for x in (expert.get('actionPoints') or [])[:3]],
+            'additionalDataNeeded': [public_text(x, 260) for x in (expert.get('additionalDataNeeded') or [])[:5]],
+            'basis': [public_text(x, 120) for x in (expert.get('basis') or [])[:5]],
+            'disclaimer': public_text(expert.get('disclaimer'), 220),
+        }
     return {
         'per': f.get('per'),
         'pbr': f.get('pbr'),
@@ -867,8 +928,11 @@ def public_fundamentals(code):
         'peerAverage': f.get('peerAverage') if isinstance(f.get('peerAverage'), dict) else {},
         'badge': public_text(f.get('badge') or '', 40),
         'report': [public_text(x, 180) for x in (f.get('report') or [])[:4]],
+        'expertAnalysis': public_expert,
         'technicalStructure': f.get('technicalStructure') if isinstance(f.get('technicalStructure'), dict) else None,
         'technicalSignal': signal,
+        'kisEnrichment': kis,
+        'universeStatus': f.get('universeStatus'),
         'updatedAt': f.get('updatedAt'),
         'source': f.get('source'),
     }
@@ -933,6 +997,24 @@ def enrich_comparison_fields(s, sid):
         p['currentScoreRaw'] = round(n(current_raw), 1) if current_raw is not None else None
         p['currentScoreType'] = score_type
         p['technicalDecision'] = (p.get('fundamentals') or {}).get('technicalSignal')
+        quote_snapshot = None
+        if matched.get('changePct') is None or matched.get('currentPrice') in (None, '', 0):
+            quote_snapshot = readonly_quote_snapshot(p.get('code'))
+            if quote_snapshot:
+                if matched.get('changePct') is None and quote_snapshot.get('currentChangePct') is not None:
+                    matched['changePct'] = quote_snapshot.get('currentChangePct')
+                if matched.get('currentPrice') in (None, '', 0) and quote_snapshot.get('currentPrice'):
+                    matched['currentPrice'] = quote_snapshot.get('currentPrice')
+                if quote_snapshot.get('currentDelta') is not None:
+                    p['currentDelta'] = quote_snapshot.get('currentDelta')
+        if matched.get('currentPrice') not in (None, '', 0):
+            p['currentPrice'] = matched.get('currentPrice')
+            qty_for_eval = n(p.get('qty'))
+            if qty_for_eval > 0:
+                p['evalAmount'] = round(qty_for_eval * n(p.get('currentPrice')))
+                if p.get('entryPrice') not in (None, '', 0):
+                    p['pnl'] = round((n(p.get('currentPrice')) - n(p.get('entryPrice'))) * qty_for_eval)
+                    p['returnPct'] = round((n(p.get('currentPrice')) - n(p.get('entryPrice'))) / n(p.get('entryPrice')) * 100, 2)
         p['currentChangePct'] = matched.get('changePct') if matched.get('changePct') is not None else p.get('sourceChangePct')
         p['entryScoreRaw'] = p.get('entryScoreRaw') if p.get('entryScoreRaw') is not None else p.get('sourceScore')
         p['entryScoreNormalized'] = p.get('entryScoreNormalized') if p.get('entryScoreNormalized') is not None else p.get('sourceScoreNormalized')
@@ -964,6 +1046,49 @@ def enrich_comparison_fields(s, sid):
         if tech.get('state') in ('매물대주의', '전고점대기', '저항거리큼', '돌파우호'):
             note = f"기술구조 {tech.get('state')}: {tech.get('reason')}"
             c['candidateNote'] = f"{c.get('candidateNote')} · {note}" if c.get('candidateNote') and note not in c.get('candidateNote') else (c.get('candidateNote') or note)
+
+def reconcile_portfolio_from_positions(s):
+    """Keep card totals aligned with the currently displayed holding rows."""
+    pf = s.get('portfolio') if isinstance(s.get('portfolio'), dict) else None
+    if not pf:
+        return
+    positions = pf.get('positions') if isinstance(pf.get('positions'), list) else []
+    if not positions:
+        return
+    position_eval = sum(n(p.get('evalAmount')) for p in positions if isinstance(p, dict))
+    if position_eval <= 0:
+        return
+    cash = n(pf.get('cash')) if pf.get('cash') not in (None, '') else 0
+    eval_amount = cash + position_eval
+    capital = n(pf.get('capital'))
+    pnl = eval_amount - capital if capital else sum(n(p.get('pnl')) for p in positions if isinstance(p, dict))
+    pf['investmentAmount'] = round(position_eval)
+    pf['evalAmount'] = round(eval_amount)
+    pf['pnl'] = round(pnl)
+    pf['returnPct'] = round(pnl / capital * 100, 2) if capital else pf.get('returnPct')
+    pf['positionCount'] = len([p for p in positions if isinstance(p, dict) and n(p.get('qty')) > 0])
+    daily_weighted = []
+    daily_pnl = 0
+    for p in positions:
+        if not isinstance(p, dict):
+            continue
+        change = p.get('currentChangePct')
+        if change in (None, ''):
+            continue
+        eval_v = n(p.get('evalAmount'))
+        daily_weighted.append((eval_v, n(change)))
+        if p.get('currentDelta') not in (None, ''):
+            daily_pnl += n(p.get('currentDelta')) * n(p.get('qty'))
+        elif p.get('currentPrice') not in (None, '', 0):
+            prev = n(p.get('currentPrice')) / (1 + n(change) / 100) if (1 + n(change) / 100) else 0
+            daily_pnl += (n(p.get('currentPrice')) - prev) * n(p.get('qty'))
+    if daily_weighted:
+        denom = sum(w for w, _ in daily_weighted) or 0
+        s['daily'] = {
+            'returnPct': round(sum(w * c for w, c in daily_weighted) / denom, 2) if denom else None,
+            'pnl': round(daily_pnl),
+            'basis': 'holding-prev-close',
+        }
 
 sessions = [
     {'runtimeId':'jinhye.general.mock','name':'일반','stage':'운영'},
@@ -1008,14 +1133,19 @@ for s in sessions:
             synthetic_sell.append({
                 'code': p.get('code'),
                 'name': p.get('name'),
-                'status': p.get('holdAction'),
-                'reason': p.get('holdReason'),
+                'status': f"검토: {p.get('holdAction')}",
+                'reason': f"보유 {p.get('qty') or '-'}주 · 실제 매도 미체결 · 검토수량 미정 · {p.get('holdReason') or ''}",
                 'returnPct': p.get('returnPct'),
                 'pnl': p.get('pnl'),
+                'heldQty': p.get('qty'),
+                'sellQty': None,
+                'executedQty': 0,
+                'executionStatus': 'REVIEW_ONLY_NOT_EXECUTED',
                 'fundamentals': p.get('fundamentals') or public_fundamentals(p.get('code')),
             })
         if synthetic_sell:
             s['sellAlerts'] = synthetic_sell[:4]
+        reconcile_portfolio_from_positions(s)
     else:
         s['portfolio'] = {'capital': None, 'evalAmount': None, 'pnl': None, 'returnPct': None, 'positionCount': (s.get('performance') or {}).get('positionCount')}
     if private_id in VIRTUAL_LEDGER_IDS:
