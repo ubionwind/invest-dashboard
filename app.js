@@ -157,13 +157,18 @@ function strategyReturnCards(s) {
 
 function candidateSummary(s) {
   const candidates = s.topCandidates || [];
+  const entryCount = Number(s.gateCount || 0);
+  const reviewCount = candidates.filter(c => ['매수검토', '검증통과-신규검토', '검증통과-보유중추가검토'].includes(String(c.status || c.action || c.validationStatus || ''))).length;
   const names = candidates.slice(0, 3).map(c => c.name).filter(Boolean).join(' · ');
+  const stateText = entryCount > 0
+    ? `신규진입 대기 ${fmt.format(entryCount)}건`
+    : (reviewCount > 0 ? `매수검토 ${fmt.format(reviewCount)}건 · 주문대기 없음` : '신규진입 없음 · 관찰후보만 있음');
   return `<section class="candidate-summary">
     <div>
       <span class="muted">후보</span>
       <strong>${fmt.format(s.candidateCount || 0)}</strong>
     </div>
-    <p>${names || '표시 후보 없음'}</p>
+    <p><b>${stateText}</b>${names ? ` · ${names}` : ''}</p>
   </section>`;
 }
 
