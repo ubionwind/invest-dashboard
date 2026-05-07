@@ -557,10 +557,11 @@ function holdingsBlock(pf = {}) {
         const prevPrice = changeNum !== null && !Number.isNaN(changeNum) && currentPrice ? currentPrice / (1 + changeNum / 100) : null;
         const delta = prevPrice ? Math.trunc(currentPrice - prevPrice) : null;
         const weight = totalEval && p.evalAmount ? Number(p.evalAmount) / totalEval * 100 : null;
+        const holdingDays = String(p.holdingPeriod || '-').replace(/^보유\s*/, '');
         return `<tr>
           <td class="stock-name"><strong>${p.name || '-'}</strong></td>
           <td class="stock-code">${p.code || '-'}</td>
-          <td>${p.holdingPeriod || '-'}</td>
+          <td>${holdingDays}</td>
           <td>${fmt.format(qty)}</td>
           <td class="num-pair"><b class="${retClass}">${money(p.pnl)}</b><small class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : ret.toFixed(2)}</small></td>
           <td class="num-pair"><b>${money(p.evalAmount)}</b><small>${entryAmount === null ? '-' : money(entryAmount)}</small></td>
