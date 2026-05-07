@@ -275,20 +275,26 @@ function holdingCandidateComparison(s) {
   const candidates = s.topCandidates || [];
   if (!positions.length && !candidates.length) return '';
   const byCode = Object.fromEntries(candidates.map(c => [String(c.code || ''), c]));
-  const heldComparableScores = positions
-    .map(p => p.currentScoreNormalized ?? p.sourceScoreNormalized ?? null)
-    .filter(v => v !== null && v !== undefined && !Number.isNaN(Number(v)))
-    .map(Number);
-  const lowestHeldScore = heldComparableScores.length ? Math.min(...heldComparableScores) : null;
+  const scoredPositions = positions
+    .map(p => ({ ...p, compareScore: p.currentScoreNormalized ?? p.sourceScoreNormalized ?? null }))
+    .filter(p => p.compareScore !== null && p.compareScore !== undefined && !Number.isNaN(Number(p.compareScore)));
+  const replacementTarget = scoredPositions.length
+    ? scoredPositions.reduce((a, b) => Number(a.compareScore) <= Number(b.compareScore) ? a : b)
+    : null;
+  const lowestHeldScore = replacementTarget ? Number(replacementTarget.compareScore) : null;
+  const commonThreshold = replacementThreshold(lowestHeldScore);
   const replacementPool = candidates.filter(c => !positions.some(p => String(p.code || '') === String(c.code || ''))).slice(0, 5);
   const bestReplacement = replacementPool[0] || {};
+  const bestCandidateScore = bestReplacement?.score == null ? null : Number(bestReplacement.score);
+  const bestPasses = commonThreshold !== null && bestCandidateScore !== null && bestCandidateScore >= commonThreshold;
+  const targetLabel = replacementTarget ? `${replacementTarget.name || replacementTarget.code || '보유종목'} ${Number(lowestHeldScore).toFixed(1)}점` : '보유점수 대기';
   return `<section class="comparison-lab">
     <div class="comparison-head">
       <div>
         <h3>보유·후보 비교</h3>
-        <p class="muted">교체기준 = 비교 대상 보유점수 + 12점, 최소 70점 · 후보가 이 기준을 넘을 때만 교체 검토</p>
+        <p class="muted">공통 기준 하나만 사용: 교체대상 ${targetLabel} → 교체기준 ${commonThreshold === null ? '-' : commonThreshold.toFixed(1)}점. 후보가 이 기준 이상이면 그 교체대상과 비교 검토.</p>
       </div>
-      <span class="badge compact">초안</span>
+      <span class="badge compact">공통기준</span>
     </div>
     <div class="comparison-columns">
       <div class="comparison-block">
@@ -300,20 +306,22 @@ function holdingCandidateComparison(s) {
           const hasCurrentCandidateScore = pos.currentScoreType === 'current' || (matched.score !== null && matched.score !== undefined);
           const currentScoreLabel = hasCurrentCandidateScore ? '현재점수' : '보유점수';
           const graphCurrentLabel = hasCurrentCandidateScore ? '현재' : '보유';
-          const scoreGap = currentScore == null || entryScore == null ? null : Number(currentScore) - entryScore;
-          const decision = decisionForHolding(pos, matched, bestReplacement);
+          const isTarget = replacementTarget && String(pos.code || '') === String(replacementTarget.code || '');
+          const decision = isTarget && bestPasses ? '교체검토' : (isTarget ? '교체대상' : '유지');
           const ret = Number(pos.returnPct || 0);
-          const bestCandidateScore = bestReplacement?.score == null ? null : Number(bestReplacement.score);
-          const holdReason = holdingReasonText({ decision, ret, scoreGap: bestCandidateScore == null || currentScore == null ? null : bestCandidateScore - Number(currentScore), bestReplacement });
+          const holdReason = isTarget
+            ? (bestPasses ? `공통기준 통과 후보 ${bestReplacement.name || ''}` : '후보가 공통 교체기준 미달')
+            : `현재 공통 교체대상은 ${replacementTarget?.name || '-'}`;
           return `<article class="holding-compare-card">
             <div class="compare-hero">
               <div class="compare-identity"><strong>${pos.name || '-'}</strong><b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b></div>
-              ${switchMiniGraph({ baseScore: entryScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct, currentLabel: graphCurrentLabel, triggerBaseScore: currentScore, thresholdLabel: '교체기준' })}
+              ${switchMiniGraph({ baseScore: lowestHeldScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct, currentLabel: graphCurrentLabel, triggerBaseScore: lowestHeldScore, thresholdLabel: '공통기준' })}
               <div class="compare-meta"><span>${pos.code || ''}</span><em>${decision}</em></div>
             </div>
             ${diagnosticRows([
               [currentScoreLabel, normalizedScoreText(currentScore)],
-              ['교체기준', thresholdFormula(currentScore)],
+              ['공통기준', commonThreshold === null ? '-' : commonThreshold.toFixed(1)],
+              ['교체대상', isTarget ? '이 종목' : (replacementTarget?.name || '-')],
               ['최고후보', bestCandidateScore == null ? '-' : normalizedScoreText(bestCandidateScore)],
               ['등락/수익', pct(pos.returnPct), ret >= 0 ? 'up' : 'down'],
               ['거래/수급', pos.liquidityText || tradingValueText(matched.reason ? matched : pos)],
@@ -326,17 +334,19 @@ function holdingCandidateComparison(s) {
       <div class="comparison-block">
         <h4>교체 후보군</h4>
         ${replacementPool.length ? replacementPool.map(c => {
-          const edge = c.scoreVsHeldLowest ?? (c.score == null || lowestHeldScore == null ? null : Number(c.score) - lowestHeldScore);
+          const candidateScore = c.candidateScoreNormalized ?? c.score;
+          const edge = candidateScore == null || commonThreshold == null ? null : Number(candidateScore) - commonThreshold;
+          const passed = edge !== null && edge >= 0;
           return `<article class="replacement-card">
             <div class="compare-hero">
               <div class="compare-identity"><strong>${c.name || '-'}</strong><b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b></div>
-              ${switchMiniGraph({ baseScore: c.comparisonBaseScore ?? lowestHeldScore, currentScore: c.candidateScoreNormalized ?? c.score, candidateScore: c.candidateScoreNormalized ?? c.score, currentLabel: '후보', triggerBaseScore: c.comparisonBaseScore ?? lowestHeldScore, thresholdLabel: '교체기준' })}
-              <div class="compare-meta"><span>${c.code || ''}</span><em class="${edge == null ? '' : (edge >= 0 ? 'up' : 'down')}">${edge == null ? '비교대기' : `보유최저 대비 ${edge > 0 ? '+' : ''}${edge.toFixed(1)}`}</em></div>
+              ${switchMiniGraph({ baseScore: lowestHeldScore, currentScore: candidateScore, candidateScore, currentLabel: '후보', triggerBaseScore: lowestHeldScore, thresholdLabel: '공통기준' })}
+              <div class="compare-meta"><span>${c.code || ''}</span><em class="${edge == null ? '' : (passed ? 'up' : 'down')}">${edge == null ? '비교대기' : (passed ? `통과 +${edge.toFixed(1)}` : `미달 ${edge.toFixed(1)}`)}</em></div>
             </div>
             ${diagnosticRows([
               ['후보점수', normalizedScoreText(c.score)],
-              ['비교대상', c.comparisonBaseScore == null ? '-' : `보유최저 ${Number(c.comparisonBaseScore).toFixed(1)}`],
-              ['교체기준', thresholdFormula(c.comparisonBaseScore ?? lowestHeldScore)],
+              ['교체대상', replacementTarget?.name || '-'],
+              ['공통기준', commonThreshold === null ? '-' : commonThreshold.toFixed(1)],
               ['기준대비', edge == null ? '-' : `${edge > 0 ? '+' : ''}${edge.toFixed(1)}`, edge == null ? '' : (edge >= 0 ? 'up' : 'down')],
               ['등락/수익', c.changePct == null ? '-' : pct(c.changePct), c.changePct == null ? '' : (Number(c.changePct) >= 0 ? 'up' : 'down')],
               ['거래/수급', c.liquidityText || tradingValueText(c)],
