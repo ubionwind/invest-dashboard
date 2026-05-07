@@ -298,16 +298,16 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .holding-table thead { display: none; }
   .holding-table tbody { display: grid; gap: 10px; }
   .holding-table tr { display: grid; gap: 0; padding: 10px; border: 1px solid rgba(255,255,255,.09); border-radius: 14px; background: rgba(255,255,255,.045); }
-  .holding-table td { display: grid; grid-template-columns: 92px minmax(0, 1fr); align-items: center; gap: 10px; padding: 7px 0; border: 0; border-bottom: 1px solid rgba(255,255,255,.06); text-align: right; white-space: normal; }
+  .holding-table td { display: grid; grid-template-columns: 92px minmax(0, 1fr); align-items: center; gap: 10px; padding: 7px 0; border: 0; border-bottom: 1px solid rgba(255,255,255,.06); text-align: left; white-space: normal; }
   .holding-table td:last-child { border-bottom: 0; }
   .holding-table td::before { content: attr(data-label); color: var(--muted); font-size: 11px; font-weight: 800; text-align: left; }
-  .holding-table td.num-pair { padding-right: 0; }
-  .holding-table td.num-pair .pair-line { display: flex; justify-content: flex-end; align-items: baseline; gap: 4px; min-width: 0; white-space: nowrap; padding-right: 0; margin-right: 0; }
-  .holding-table td.num-pair b, .holding-table td.num-pair small { display: inline; text-align: right; }
+  .holding-table td.num-pair { padding-right: 0; text-align: left; }
+  .holding-table td.num-pair .pair-line { display: flex; justify-content: flex-start; align-items: baseline; gap: 4px; min-width: 0; white-space: nowrap; padding-right: 0; margin-right: 0; }
+  .holding-table td.num-pair b, .holding-table td.num-pair small { display: inline; text-align: left; }
   .holding-table td.num-pair small { margin-top: 0; }
   .holding-table td.num-pair small::before { content: '/'; color: var(--muted); margin-right: 4px; }
-  .holding-table .stock-name strong { max-width: none; margin: 0; text-align: right; }
-  .holding-table .stock-code { text-align: right; }
+  .holding-table .stock-name strong { max-width: none; margin: 0; text-align: left; }
+  .holding-table .stock-code { text-align: left; }
   .holding-table td.num-pair { padding-right: 10px; }
   .candidate-tile { padding: 13px; border-radius: 17px; }
   .candidate-top { margin-bottom: 8px; }
