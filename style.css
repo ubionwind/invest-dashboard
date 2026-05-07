@@ -194,16 +194,15 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .holdings-card { padding: 12px; border-radius: 16px; border: 1px solid rgba(53,211,153,.30); background: rgba(53,211,153,.055); }
 .holding-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.035); }
 .holding-table { width: 100%; min-width: 900px; border-collapse: collapse; font-size: 12px; }
-.holding-table th, .holding-table td { padding: 8px 9px; border-right: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); text-align: right; vertical-align: middle; white-space: nowrap; }
+.holding-table th, .holding-table td { padding: 8px 9px; border-right: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); text-align: center; vertical-align: middle; white-space: nowrap; }
 .holding-table th { background: rgba(255,255,255,.07); color: #dbe7ff; font-weight: 900; text-align: center; line-height: 1.35; }
-.holding-table th:first-child, .holding-table td:first-child { text-align: left; }
 .holding-table tr:last-child td { border-bottom: 0; }
 .holding-table th:last-child, .holding-table td:last-child { border-right: 0; }
 .holding-table b, .holding-table small { display: block; font-variant-numeric: tabular-nums; }
 .holding-table small { margin-top: 3px; color: var(--muted); }
 .holding-table .up { color: var(--rise) !important; }
 .holding-table .down { color: var(--fall) !important; }
-.holding-table .stock-name strong { display: block; max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.holding-table .stock-name strong { display: block; max-width: 130px; margin: 0 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .holding-table .stock-code { color: var(--muted); font-variant-numeric: tabular-nums; }
 .trade-alerts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .trade-alert { padding: 12px; border-radius: 16px; border: 1px solid var(--line); background: rgba(255,255,255,.035); }

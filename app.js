@@ -555,7 +555,7 @@ function holdingsBlock(pf = {}) {
         const changeClass = changeNum === null || Number.isNaN(changeNum) ? '' : (changeNum >= 0 ? 'up' : 'down');
         const currentPrice = Number(p.currentPrice || 0);
         const prevPrice = changeNum !== null && !Number.isNaN(changeNum) && currentPrice ? currentPrice / (1 + changeNum / 100) : null;
-        const delta = prevPrice ? currentPrice - prevPrice : null;
+        const delta = prevPrice ? Math.trunc(currentPrice - prevPrice) : null;
         const weight = totalEval && p.evalAmount ? Number(p.evalAmount) / totalEval * 100 : null;
         return `<tr>
           <td class="stock-name"><strong>${p.name || '-'}</strong></td>
@@ -565,7 +565,7 @@ function holdingsBlock(pf = {}) {
           <td><b class="${retClass}">${money(p.pnl)}</b><small class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : ret.toFixed(2)}</small></td>
           <td><b>${money(p.evalAmount)}</b><small>${entryAmount === null ? '-' : money(entryAmount)}</small></td>
           <td><b>${money(p.currentPrice)}</b><small>${money(p.entryPrice)}</small></td>
-          <td><b class="${changeClass}">${delta === null ? '-' : `${delta >= 0 ? '▲ ' : '▼ '}${money(Math.abs(delta))}`}</b><small class="${changeClass}">${changeNum === null || Number.isNaN(changeNum) ? '-' : changeNum.toFixed(2)}</small></td>
+          <td><b class="${changeClass}">${delta === null ? '-' : `${delta >= 0 ? '▲ ' : '▼ '}${fmt.format(Math.abs(delta))}원`}</b><small class="${changeClass}">${changeNum === null || Number.isNaN(changeNum) ? '-' : changeNum.toFixed(2)}</small></td>
           <td>${weight === null ? '-' : weight.toFixed(2)}</td>
         </tr>`;
       }).join('')}</tbody>
