@@ -201,6 +201,8 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .holding-table th:last-child, .holding-table td:last-child { border-right: 0; }
 .holding-table b, .holding-table small { display: block; font-variant-numeric: tabular-nums; }
 .holding-table small { margin-top: 3px; color: var(--muted); }
+.holding-table .up { color: var(--rise) !important; }
+.holding-table .down { color: var(--fall) !important; }
 .holding-table .stock-name strong { display: block; max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .holding-table .stock-name small { font-size: 10px; }
 .trade-alerts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
