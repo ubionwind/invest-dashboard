@@ -252,10 +252,11 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .topbar { padding: 20px 14px; }
   .overview-guide { display: grid; gap: 4px; }
   .card { padding: 14px; border-radius: 18px; }
-  .strategy-return-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .return-card { padding: 12px 10px; border-radius: 15px; }
-  .return-card strong { font-size: 24px; }
-  .return-card small { font-size: 11px; }
+  .strategy-return-cards { grid-template-columns: 1fr; gap: 8px; }
+  .return-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 10px; padding: 11px 12px; border-radius: 15px; }
+  .return-card span { font-size: 12px; white-space: normal; }
+  .return-card strong { margin-top: 0; font-size: 22px; text-align: right; white-space: normal; overflow: visible; text-overflow: clip; }
+  .return-card small { grid-column: 1 / -1; margin-top: 5px; font-size: 11px; white-space: normal; overflow: visible; text-overflow: clip; text-align: right; }
   .candidate-summary { grid-template-columns: 1fr; gap: 5px; padding: 10px 11px; }
   .candidate-summary strong { font-size: 22px; }
   .candidate-summary p { white-space: normal; line-height: 1.3; }
