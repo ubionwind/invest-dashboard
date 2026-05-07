@@ -42,8 +42,8 @@
             </div>
           </div>
           <div class="overview-guide card">
-            <strong>TEST: Google Drive JSON 기반</strong>
-            <span class="muted">화면 UI는 GitHub Pages, 데이터는 Drive JSON에서 직접 읽습니다.</span>
+            <strong>TEST: GitHub data JSON 기반</strong>
+            <span class="muted">화면 UI와 테스트 데이터 JSON을 모두 GitHub Pages에서 읽습니다.</span>
           </div>
           <div class="grid two" id="sessionCards"></div>
         </section>
@@ -54,9 +54,9 @@
   </main>
 
   <script>
-    window.DASHBOARD_MANIFEST_URL = 'https://drive.google.com/uc?export=download&id=1kTjkmh9ENkpqPhIZrYub6YBgd_QZZMFU';
-    window.DASHBOARD_DATA_URL = 'https://drive.google.com/uc?export=download&id=1CrZkQQ1Bilvp1YfHCigq7aeVT5dZ9t8G';
+    window.DASHBOARD_MANIFEST_URL = 'data/test/manifest.json';
+    window.DASHBOARD_DATA_URL = 'data/test/dashboard-data.json';
   </script>
-  <script src="app.js?v=20260507-drive-json-split-fallback"></script>
+  <script src="app.js?v=20260507-github-data-test"></script>
 </body>
 </html>
