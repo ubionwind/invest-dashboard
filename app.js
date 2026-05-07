@@ -562,10 +562,10 @@ function holdingsBlock(pf = {}) {
           <td class="stock-code">${p.code || '-'}</td>
           <td>${p.holdingPeriod || '-'}</td>
           <td>${fmt.format(qty)}</td>
-          <td><b class="${retClass}">${money(p.pnl)}</b><small class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : ret.toFixed(2)}</small></td>
-          <td><b>${money(p.evalAmount)}</b><small>${entryAmount === null ? '-' : money(entryAmount)}</small></td>
-          <td><b>${money(p.currentPrice)}</b><small>${money(p.entryPrice)}</small></td>
-          <td><b class="${changeClass}">${delta === null ? '-' : `${delta >= 0 ? '▲ ' : '▼ '}${fmt.format(Math.abs(delta))}원`}</b><small class="${changeClass}">${changeNum === null || Number.isNaN(changeNum) ? '-' : changeNum.toFixed(2)}</small></td>
+          <td class="num-pair"><b class="${retClass}">${money(p.pnl)}</b><small class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : ret.toFixed(2)}</small></td>
+          <td class="num-pair"><b>${money(p.evalAmount)}</b><small>${entryAmount === null ? '-' : money(entryAmount)}</small></td>
+          <td class="num-pair"><b>${money(p.currentPrice)}</b><small>${money(p.entryPrice)}</small></td>
+          <td class="num-pair"><b class="${changeClass}">${delta === null ? '-' : `${delta >= 0 ? '▲ ' : '▼ '}${fmt.format(Math.abs(delta))}원`}</b><small class="${changeClass}">${changeNum === null || Number.isNaN(changeNum) ? '-' : changeNum.toFixed(2)}</small></td>
           <td>${weight === null ? '-' : weight.toFixed(2)}</td>
         </tr>`;
       }).join('')}</tbody>
