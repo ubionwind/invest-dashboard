@@ -286,21 +286,24 @@ function holdingCandidateComparison(s) {
           const ret = Number(pos.returnPct || 0);
           const bestCandidateScore = bestReplacement?.score == null ? null : Number(bestReplacement.score);
           const holdReason = holdingReasonText({ decision, ret, scoreGap: bestCandidateScore == null || currentScore == null ? null : bestCandidateScore - Number(currentScore), bestReplacement });
-          return `<article class="holding-compare-card">
-            <div class="compare-title"><div class="compare-name"><strong>${pos.name || '-'}</strong><span>${pos.code || ''}</span></div>${switchMiniGraph({ baseScore: entryScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct })}</div>
-            <div class="compare-score-row">
-              <b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b>
-              <em>${decision}</em>
+          return `<article class="holding-compare-card compare-card-layout">
+            ${switchMiniGraph({ baseScore: entryScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct })}
+            <div class="compare-card-main">
+              <div class="compare-title"><strong>${pos.name || '-'}</strong><span>${pos.code || ''}</span></div>
+              <div class="compare-score-row">
+                <b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b>
+                <em>${decision}</em>
+              </div>
+              ${diagnosticRows([
+                ['현재점수', normalizedScoreText(currentScore)],
+                ['진입점수', normalizedScoreText(entryScore)],
+                ['점수변화', scoreGap == null ? '-' : `${scoreGap > 0 ? '+' : ''}${scoreGap.toFixed(1)}`, scoreGap == null ? '' : (scoreGap >= 0 ? 'up' : 'down')],
+                ['등락/수익', pct(pos.returnPct), ret >= 0 ? 'up' : 'down'],
+                ['거래대금', tradingValueText(matched.reason ? matched : pos)],
+                ['유지/교체 이유', holdReason],
+              ])}
+              <small class="muted">매입 ${money(pos.entryPrice)} · 현재 ${money(pos.currentPrice)} · 손익 ${money(pos.pnl)}</small>
             </div>
-            ${diagnosticRows([
-              ['현재점수', normalizedScoreText(currentScore)],
-              ['진입점수', normalizedScoreText(entryScore)],
-              ['점수변화', scoreGap == null ? '-' : `${scoreGap > 0 ? '+' : ''}${scoreGap.toFixed(1)}`, scoreGap == null ? '' : (scoreGap >= 0 ? 'up' : 'down')],
-              ['등락/수익', pct(pos.returnPct), ret >= 0 ? 'up' : 'down'],
-              ['거래대금', tradingValueText(matched.reason ? matched : pos)],
-              ['유지/교체 이유', holdReason],
-            ])}
-            <small class="muted">매입 ${money(pos.entryPrice)} · 현재 ${money(pos.currentPrice)} · 손익 ${money(pos.pnl)}</small>
           </article>`;
         }).join('') : '<p class="muted">현재 보유 종목 없음</p>'}
       </div>
@@ -309,21 +312,24 @@ function holdingCandidateComparison(s) {
         ${replacementPool.length ? replacementPool.map(c => {
           const bestHeldScore = Math.max(...positions.map(p => Number((byCode[String(p.code || '')] || {}).score ?? -1)), -1);
           const edge = c.score == null || bestHeldScore < 0 ? null : Number(c.score) - bestHeldScore;
-          return `<article class="replacement-card">
-            <div class="compare-title"><div class="compare-name"><strong>${c.name || '-'}</strong><span>${c.code || ''}</span></div>${switchMiniGraph({ baseScore: bestHeldScore < 0 ? null : bestHeldScore, currentScore: bestHeldScore < 0 ? null : bestHeldScore, candidateScore: c.score })}</div>
-            <div class="compare-score-row">
-              <b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b>
-              <em class="${edge == null ? '' : (edge >= 0 ? 'up' : 'down')}">${edge == null ? '비교대기' : `보유상위 대비 ${edge > 0 ? '+' : ''}${edge.toFixed(1)}`}</em>
+          return `<article class="replacement-card compare-card-layout">
+            ${switchMiniGraph({ baseScore: bestHeldScore < 0 ? null : bestHeldScore, currentScore: bestHeldScore < 0 ? null : bestHeldScore, candidateScore: c.score })}
+            <div class="compare-card-main">
+              <div class="compare-title"><strong>${c.name || '-'}</strong><span>${c.code || ''}</span></div>
+              <div class="compare-score-row">
+                <b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b>
+                <em class="${edge == null ? '' : (edge >= 0 ? 'up' : 'down')}">${edge == null ? '비교대기' : `보유상위 대비 ${edge > 0 ? '+' : ''}${edge.toFixed(1)}`}</em>
+              </div>
+              ${diagnosticRows([
+                ['현재점수', normalizedScoreText(c.score)],
+                ['진입점수', '후보'],
+                ['점수변화', edge == null ? '-' : `${edge > 0 ? '+' : ''}${edge.toFixed(1)}`, edge == null ? '' : (edge >= 0 ? 'up' : 'down')],
+                ['등락/수익', c.changePct == null ? '-' : pct(c.changePct), c.changePct == null ? '' : (Number(c.changePct) >= 0 ? 'up' : 'down')],
+                ['거래대금', tradingValueText(c)],
+                ['유지/교체 이유', standardReason(c)],
+              ])}
+              <small class="muted">${c.candidateNote || c.status || '현재 후보'}</small>
             </div>
-            ${diagnosticRows([
-              ['현재점수', normalizedScoreText(c.score)],
-              ['진입점수', '후보'],
-              ['점수변화', edge == null ? '-' : `${edge > 0 ? '+' : ''}${edge.toFixed(1)}`, edge == null ? '' : (edge >= 0 ? 'up' : 'down')],
-              ['등락/수익', c.changePct == null ? '-' : pct(c.changePct), c.changePct == null ? '' : (Number(c.changePct) >= 0 ? 'up' : 'down')],
-              ['거래대금', tradingValueText(c)],
-              ['유지/교체 이유', standardReason(c)],
-            ])}
-            <small class="muted">${c.candidateNote || c.status || '현재 후보'}</small>
           </article>`;
         }).join('') : '<p class="muted">보유 종목보다 앞선 별도 후보 없음</p>'}
       </div>

@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-05-07T15:55+09:00",
+  "generatedAt": "2026-05-07T16:06+09:00",
   "summary": {
     "totalSessions": 7,
     "staleCount": 0,
     "candidateCount": 98,
     "protectedRows": 2,
     "totalCapital": 89994700,
-    "totalEvalAmount": 90717700,
-    "totalPnl": 723000,
-    "totalReturnPct": 0.8
+    "totalEvalAmount": 90740500,
+    "totalPnl": 745800,
+    "totalReturnPct": 0.83
   },
   "benchmark": {
     "label": "KOSPI",
     "value": 7490.05,
-    "returnPct": 1.68,
+    "returnPct": 1.16,
     "dailyReturnPct": 1.43,
     "date": "2026-05-07",
-    "time": "15:54:00",
+    "time": "16:05:00",
     "periodStart": "2026-05-06T10:08+09:00",
-    "periodEnd": "2026-05-07T15:55+09:00",
+    "periodEnd": "2026-05-07T16:06+09:00",
     "source": "naver-index-basic",
     "marketStatus": "CLOSE",
     "basis": "firstInvestment"
@@ -26,10 +26,13 @@
   "kodexBenchmark": {
     "label": "KODEX 200",
     "code": "069500",
-    "value": null,
+    "value": 115620.0,
     "returnPct": 2.07,
+    "dailyReturnPct": 2.07,
+    "date": "2026-05-07",
+    "time": "16:06:09",
     "periodStart": "2026-05-06T10:08+09:00",
-    "periodEnd": "2026-05-07T15:51+09:00",
+    "periodEnd": "2026-05-07T16:06+09:00",
     "basis": "firstInvestment"
   },
   "notice": "Dashboard reset; previous metrics are not inherited."
