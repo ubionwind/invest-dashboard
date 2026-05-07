@@ -167,6 +167,95 @@ function candidateSummary(s) {
   </section>`;
 }
 
+function parseEntryScore(note = '') {
+  const m = String(note || '').match(/진입 당시 점수\s*([\d.]+)/);
+  return m ? Number(m[1]) : null;
+}
+
+function supplySnapshot(c = {}) {
+  const reason = String(c.reason || '');
+  const parts = reasonParts(reason);
+  const money = reason.match(/거래대금\s*([\d,.]+\s*[조억만]?)/);
+  return [
+    parts.theme ? `테마 ${parts.theme}` : '',
+    parts.meta ? `메타 ${parts.meta}` : '',
+    money ? `거래대금 ${money[1]}` : '',
+    c.changePct !== null && c.changePct !== undefined ? `등락 ${pct(c.changePct)}` : '',
+  ].filter(Boolean).join(' · ') || '수급/테마 데이터 보강 대기';
+}
+
+function decisionForHolding(pos = {}, matched = {}, bestReplacement = {}) {
+  const ret = Number(pos.returnPct || 0);
+  const score = matched?.score == null ? null : Number(matched.score);
+  const bestScore = bestReplacement?.score == null ? null : Number(bestReplacement.score);
+  const gap = score == null || bestScore == null ? null : bestScore - score;
+  if (ret <= -4 || (gap !== null && gap >= 20 && ret < 0)) return '교체검토';
+  if (ret >= 5) return '익절/트레일링';
+  if (gap !== null && gap >= 12) return '비교관찰';
+  if (ret <= -2) return '손절관찰';
+  return '유지';
+}
+
+function holdingCandidateComparison(s) {
+  const positions = s.portfolio?.positions || [];
+  const candidates = s.topCandidates || [];
+  if (!positions.length && !candidates.length) return '';
+  const byCode = Object.fromEntries(candidates.map(c => [String(c.code || ''), c]));
+  const replacementPool = candidates.filter(c => !positions.some(p => String(p.code || '') === String(c.code || ''))).slice(0, 5);
+  const bestReplacement = replacementPool[0] || {};
+  return `<section class="comparison-lab">
+    <div class="comparison-head">
+      <div>
+        <h3>보유·후보 비교</h3>
+        <p class="muted">1차: 보유/후보 비교 · 2차: 점수 변화 · 3차: 수급 변화</p>
+      </div>
+      <span class="badge compact">초안</span>
+    </div>
+    <div class="comparison-columns">
+      <div class="comparison-block">
+        <h4>보유 종목 진단</h4>
+        ${positions.length ? positions.map(pos => {
+          const matched = byCode[String(pos.code || '')] || {};
+          const entryScore = parseEntryScore(matched.candidateNote);
+          const scoreGap = matched.score == null || entryScore == null ? null : Number(matched.score) - entryScore;
+          const decision = decisionForHolding(pos, matched, bestReplacement);
+          const ret = Number(pos.returnPct || 0);
+          return `<article class="holding-compare-card">
+            <div class="compare-title"><strong>${pos.name || '-'}</strong><span>${pos.code || ''}</span></div>
+            <div class="compare-score-row">
+              <b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b>
+              <em>${decision}</em>
+            </div>
+            <div class="compare-mini-grid">
+              <span><b>${matched.score == null ? '-' : Number(matched.score).toFixed(1)}</b><small>현재점수</small></span>
+              <span><b>${entryScore == null ? '-' : entryScore.toFixed(1)}</b><small>진입점수</small></span>
+              <span><b class="${scoreGap == null ? '' : (scoreGap >= 0 ? 'up' : 'down')}">${scoreGap == null ? '-' : `${scoreGap > 0 ? '+' : ''}${scoreGap.toFixed(1)}`}</b><small>점수변화</small></span>
+            </div>
+            <p>${supplySnapshot(matched)}</p>
+            <small class="muted">매입 ${money(pos.entryPrice)} · 현재 ${money(pos.currentPrice)} · 손익 ${money(pos.pnl)}</small>
+          </article>`;
+        }).join('') : '<p class="muted">현재 보유 종목 없음</p>'}
+      </div>
+      <div class="comparison-block">
+        <h4>교체 후보군</h4>
+        ${replacementPool.length ? replacementPool.map(c => {
+          const bestHeldScore = Math.max(...positions.map(p => Number((byCode[String(p.code || '')] || {}).score ?? -1)), -1);
+          const edge = c.score == null || bestHeldScore < 0 ? null : Number(c.score) - bestHeldScore;
+          return `<article class="replacement-card">
+            <div class="compare-title"><strong>${c.name || '-'}</strong><span>${c.code || ''}</span></div>
+            <div class="compare-score-row">
+              <b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b>
+              <em class="${edge == null ? '' : (edge >= 0 ? 'up' : 'down')}">${edge == null ? '비교대기' : `보유상위 대비 ${edge > 0 ? '+' : ''}${edge.toFixed(1)}`}</em>
+            </div>
+            <p>${supplySnapshot(c)}</p>
+            <small class="muted">${c.candidateNote || c.status || '현재 후보'}</small>
+          </article>`;
+        }).join('') : '<p class="muted">보유 종목보다 앞선 별도 후보 없음</p>'}
+      </div>
+    </div>
+  </section>`;
+}
+
 function sameKstDate(a, b) {
   if (!a || !b) return false;
   const f = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' });
@@ -378,6 +467,7 @@ function renderSessionCard(s, full = false, showSummary = true) {
     ${strategyReturnCards(s)}
     ${candidateSummary(s)}` : ''}
     ${holdingsBlock(pf)}
+    ${holdingCandidateComparison(s)}
     <div class="mini-facts">
       <span>검증 ${fmt.format(s.validationCount || 0)}</span>
       <span>보호 ${fmt.format(s.protectedRows || 0)}</span>

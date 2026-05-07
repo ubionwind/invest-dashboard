@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-05-07T13:26+09:00",
+  "generatedAt": "2026-05-07T13:35+09:00",
   "summary": {
     "totalSessions": 7,
     "staleCount": 0,
     "candidateCount": 97,
     "protectedRows": 2,
     "totalCapital": 89994860,
-    "totalEvalAmount": 90054110,
-    "totalPnl": 59250,
-    "totalReturnPct": 0.07
+    "totalEvalAmount": 90051810,
+    "totalPnl": 56950,
+    "totalReturnPct": 0.06
   },
   "benchmark": {
     "label": "KOSPI",
-    "value": 7390.84,
-    "returnPct": 1.21,
-    "dailyReturnPct": 0.09,
+    "value": 7394.75,
+    "returnPct": 1.07,
+    "dailyReturnPct": 0.14,
     "date": "2026-05-07",
-    "time": "13:25:00",
+    "time": "13:34:00",
     "periodStart": "2026-05-06T10:08+09:00",
-    "periodEnd": "2026-05-07T13:26+09:00",
+    "periodEnd": "2026-05-07T13:35+09:00",
     "source": "naver-index-basic",
     "marketStatus": "OPEN",
     "basis": "firstInvestment"
@@ -26,13 +26,13 @@
   "kodexBenchmark": {
     "label": "KODEX 200",
     "code": "069500",
-    "value": 113920.0,
-    "returnPct": 0.57,
-    "dailyReturnPct": 0.57,
+    "value": 113720.0,
+    "returnPct": 0.4,
+    "dailyReturnPct": 0.4,
     "date": "2026-05-07",
-    "time": "13:26:13",
+    "time": "13:35:03",
     "periodStart": "2026-05-06T10:08+09:00",
-    "periodEnd": "2026-05-07T13:26+09:00",
+    "periodEnd": "2026-05-07T13:35+09:00",
     "basis": "firstInvestment"
   },
   "sessions": [
@@ -93,7 +93,7 @@
           "rank": 4,
           "evaluatedAt": "2026-05-07T04:14:58.963Z",
           "status": "보유중",
-          "candidateNote": "보유 1일 · 매입 264859원 · 현재 265750원 · 평가 8504000원 · 손익 28500원",
+          "candidateNote": "보유 1일 · 매입 264859원 · 현재 265000원 · 평가 8480000원 · 손익 4500원",
           "reason": "meta=0.45; 등락률=-0.38; theme=반도체"
         },
         {
@@ -150,8 +150,8 @@
           "code": "005930",
           "name": "삼성전자",
           "status": "보유중",
-          "reason": "32주 · 매입 264859원 · 현재 265750원 · 평가 8504000원 · 손익 28500원",
-          "returnPct": 0.34,
+          "reason": "32주 · 매입 264859원 · 현재 265000원 · 평가 8480000원 · 손익 4500원",
+          "returnPct": 0.05,
           "holdingPeriod": "보유 1일"
         }
       ],
@@ -159,10 +159,10 @@
       "portfolio": {
         "capital": 9998800,
         "cash": 1523300,
-        "investmentAmount": 8504000,
-        "evalAmount": 10027300,
-        "pnl": 28500,
-        "returnPct": 0.29,
+        "investmentAmount": 8480000,
+        "evalAmount": 10003300,
+        "pnl": 4500,
+        "returnPct": 0.05,
         "positionCount": 1,
         "positions": [
           {
@@ -170,21 +170,21 @@
             "name": "삼성전자",
             "qty": 32,
             "entryPrice": 264859,
-            "currentPrice": 265750,
+            "currentPrice": 265000,
             "entryAt": "2026-05-06T12:12+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 8504000,
-            "pnl": 28500,
-            "returnPct": 0.34
+            "evalAmount": 8480000,
+            "pnl": 4500,
+            "returnPct": 0.05
           }
         ]
       },
       "comparison": {
-        "returnPct": 0.29,
-        "benchmarkReturnPct": 0.52,
-        "excessReturnPct": -0.23,
+        "returnPct": 0.05,
+        "benchmarkReturnPct": 0.58,
+        "excessReturnPct": -0.53,
         "periodStart": "2026-05-06T12:12+09:00",
-        "periodEnd": "2026-05-07T13:26+09:00"
+        "periodEnd": "2026-05-07T13:35+09:00"
       }
     },
     {
@@ -208,7 +208,7 @@
           "rank": 1,
           "evaluatedAt": "2026-05-07T04:14:58.963Z",
           "status": "보유중",
-          "candidateNote": "보유 1일 · 매입 149860원 · 현재 145400원 · 평가 12940600원 · 손익 -396900원",
+          "candidateNote": "보유 1일 · 매입 149860원 · 현재 145500원 · 평가 12949500원 · 손익 -388000원",
           "reason": "meta=0.84; 등락률=-4.16; theme=AI기판"
         },
         {
@@ -220,7 +220,7 @@
           "rank": 2,
           "evaluatedAt": "2026-05-07T04:14:58.963Z",
           "status": "보유중",
-          "candidateNote": "보유 1일 · 매입 381500원 · 현재 390500원 · 평가 7419500원 · 손익 171000원",
+          "candidateNote": "보유 1일 · 매입 381500원 · 현재 391000원 · 평가 7429000원 · 손익 180500원",
           "reason": "meta=0.82; 등락률=-1.39; theme=HBM장비"
         },
         {
@@ -244,7 +244,7 @@
           "rank": 4,
           "evaluatedAt": "2026-05-07T04:14:58.963Z",
           "status": "보유중",
-          "candidateNote": "보유 1일 · 매입 224000원 · 현재 236500원 · 평가 7804500원 · 손익 412500원",
+          "candidateNote": "보유 1일 · 매입 224000원 · 현재 235250원 · 평가 7763250원 · 손익 371250원",
           "reason": "meta=0.76; 등락률=3.72; theme=2차전지소재"
         }
       ],
@@ -253,24 +253,24 @@
           "code": "007660",
           "name": "이수페타시스",
           "status": "보유중",
-          "reason": "89주 · 매입 149860원 · 현재 145400원 · 평가 12940600원 · 손익 -396900원",
-          "returnPct": -2.98,
+          "reason": "89주 · 매입 149860원 · 현재 145500원 · 평가 12949500원 · 손익 -388000원",
+          "returnPct": -2.91,
           "holdingPeriod": "보유 1일"
         },
         {
           "code": "042700",
           "name": "한미반도체",
           "status": "보유중",
-          "reason": "19주 · 매입 381500원 · 현재 390500원 · 평가 7419500원 · 손익 171000원",
-          "returnPct": 2.36,
+          "reason": "19주 · 매입 381500원 · 현재 391000원 · 평가 7429000원 · 손익 180500원",
+          "returnPct": 2.49,
           "holdingPeriod": "보유 1일"
         },
         {
           "code": "247540",
           "name": "에코프로비엠",
           "status": "보유중",
-          "reason": "33주 · 매입 224000원 · 현재 236500원 · 평가 7804500원 · 손익 412500원",
-          "returnPct": 5.58,
+          "reason": "33주 · 매입 224000원 · 현재 235250원 · 평가 7763250원 · 손익 371250원",
+          "returnPct": 5.02,
           "holdingPeriod": "보유 1일"
         }
       ],
@@ -278,10 +278,10 @@
       "portfolio": {
         "capital": 29996060,
         "cash": 2018060,
-        "investmentAmount": 28164600,
-        "evalAmount": 30182660,
-        "pnl": 186600,
-        "returnPct": 0.62,
+        "investmentAmount": 28141750,
+        "evalAmount": 30159810,
+        "pnl": 163750,
+        "returnPct": 0.55,
         "positionCount": 3,
         "positions": [
           {
@@ -289,45 +289,45 @@
             "name": "이수페타시스",
             "qty": 89,
             "entryPrice": 149860,
-            "currentPrice": 145400,
+            "currentPrice": 145500,
             "entryAt": "2026-05-06T10:08+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 12940600,
-            "pnl": -396900,
-            "returnPct": -2.98
+            "evalAmount": 12949500,
+            "pnl": -388000,
+            "returnPct": -2.91
           },
           {
             "code": "042700",
             "name": "한미반도체",
             "qty": 19,
             "entryPrice": 381500,
-            "currentPrice": 390500,
+            "currentPrice": 391000,
             "entryAt": "2026-05-06T10:08+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 7419500,
-            "pnl": 171000,
-            "returnPct": 2.36
+            "evalAmount": 7429000,
+            "pnl": 180500,
+            "returnPct": 2.49
           },
           {
             "code": "247540",
             "name": "에코프로비엠",
             "qty": 33,
             "entryPrice": 224000,
-            "currentPrice": 236500,
+            "currentPrice": 235250,
             "entryAt": "2026-05-06T14:40+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 7804500,
-            "pnl": 412500,
-            "returnPct": 5.58
+            "evalAmount": 7763250,
+            "pnl": 371250,
+            "returnPct": 5.02
           }
         ]
       },
       "comparison": {
-        "returnPct": 0.62,
-        "benchmarkReturnPct": 1.21,
-        "excessReturnPct": -0.59,
+        "returnPct": 0.55,
+        "benchmarkReturnPct": 1.07,
+        "excessReturnPct": -0.52,
         "periodStart": "2026-05-06T10:08+09:00",
-        "periodEnd": "2026-05-07T13:26+09:00"
+        "periodEnd": "2026-05-07T13:35+09:00"
       }
     },
     {
@@ -547,10 +547,10 @@
       },
       "comparison": {
         "returnPct": 1.49,
-        "benchmarkReturnPct": 1.21,
-        "excessReturnPct": 0.28,
+        "benchmarkReturnPct": 1.07,
+        "excessReturnPct": 0.42,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T13:26+09:00"
+        "periodEnd": "2026-05-07T13:35+09:00"
       }
     },
     {
@@ -770,10 +770,10 @@
       },
       "comparison": {
         "returnPct": -3.71,
-        "benchmarkReturnPct": 1.21,
-        "excessReturnPct": -4.92,
+        "benchmarkReturnPct": 1.07,
+        "excessReturnPct": -4.78,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T13:26+09:00"
+        "periodEnd": "2026-05-07T13:35+09:00"
       }
     },
     {
@@ -792,61 +792,61 @@
           "code": "105560",
           "name": "KB금융",
           "score": 95,
-          "rawScore": 93.7,
-          "changePct": 1.45,
+          "rawScore": 93.5,
+          "changePct": 1.51,
           "rank": 1,
-          "evaluatedAt": "2026-05-07T13:09:23+09:00",
+          "evaluatedAt": "2026-05-07T13:26:57+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T16:15 · 진입 당시 점수 95.9 · 진입 당시 등락률 0.7%",
-          "reason": "가치/안정성=28; 과열완화=13.7; 거래대금점수=20; 등락률=1.45"
+          "reason": "가치/안정성=28; 과열완화=13.5; 거래대금점수=20; 등락률=1.51"
         },
         {
           "code": "267260",
           "name": "HD현대일렉트릭",
-          "score": 95,
-          "rawScore": 93.0,
-          "changePct": 0.0,
+          "score": 88,
+          "rawScore": 89.8,
+          "changePct": 1.08,
           "rank": 2,
-          "evaluatedAt": "2026-05-07T13:09:23+09:00",
+          "evaluatedAt": "2026-05-07T13:26:57+09:00",
           "status": "후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
-          "reason": "가치/안정성=23; 과열완화=18.0; 거래대금점수=20; 등락률=0.0"
-        },
-        {
-          "code": "055550",
-          "name": "신한지주",
-          "score": 88,
-          "rawScore": 89.5,
-          "changePct": 1.85,
-          "rank": 3,
-          "evaluatedAt": "2026-05-07T13:09:23+09:00",
-          "status": "보유중",
-          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 당시 점수 95.9 · 진입 당시 등락률 -0.71%",
-          "reason": "가치/안정성=28; 과열완화=12.4; 거래대금점수=14; 등락률=1.85"
+          "reason": "가치/안정성=23; 과열완화=14.8; 거래대금점수=20; 등락률=1.08"
         },
         {
           "code": "005930",
           "name": "삼성전자",
           "score": 88,
-          "rawScore": 89.4,
-          "changePct": -0.19,
-          "rank": 4,
-          "evaluatedAt": "2026-05-07T13:09:23+09:00",
+          "rawScore": 89.7,
+          "changePct": -0.09,
+          "rank": 3,
+          "evaluatedAt": "2026-05-07T13:26:57+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-07T09:26 · 진입 당시 점수 86.6 · 진입 당시 등락률 -1.13%",
-          "reason": "가치/안정성=20; 과열완화=17.4; 거래대금점수=20; 등락률=-0.19"
+          "reason": "가치/안정성=20; 과열완화=17.7; 거래대금점수=20; 등락률=-0.09"
+        },
+        {
+          "code": "055550",
+          "name": "신한지주",
+          "score": 88,
+          "rawScore": 88.8,
+          "changePct": 2.06,
+          "rank": 4,
+          "evaluatedAt": "2026-05-07T13:26:57+09:00",
+          "status": "보유중",
+          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 당시 점수 95.9 · 진입 당시 등락률 -0.71%",
+          "reason": "가치/안정성=28; 과열완화=11.8; 거래대금점수=14; 등락률=2.06"
         },
         {
           "code": "000660",
           "name": "SK하이닉스",
           "score": 88,
-          "rawScore": 89.1,
-          "changePct": 0.31,
+          "rawScore": 87.9,
+          "changePct": 0.69,
           "rank": 5,
-          "evaluatedAt": "2026-05-07T13:09:23+09:00",
+          "evaluatedAt": "2026-05-07T13:26:57+09:00",
           "status": "후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
-          "reason": "가치/안정성=20; 과열완화=17.1; 거래대금점수=20; 등락률=0.31"
+          "reason": "가치/안정성=20; 과열완화=15.9; 거래대금점수=20; 등락률=0.69"
         },
         {
           "code": "086790",
@@ -855,7 +855,7 @@
           "rawScore": 87.1,
           "changePct": 2.63,
           "rank": 6,
-          "evaluatedAt": "2026-05-07T13:09:23+09:00",
+          "evaluatedAt": "2026-05-07T13:26:57+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T16:15 · 진입 당시 점수 95.4 · 진입 당시 등락률 -0.87%",
           "reason": "가치/안정성=28; 과열완화=10.1; 거래대금점수=14; 등락률=2.63"
@@ -864,25 +864,25 @@
           "code": "012330",
           "name": "현대모비스",
           "score": 88,
-          "rawScore": 87.0,
-          "changePct": 1.33,
+          "rawScore": 86.5,
+          "changePct": 1.5,
           "rank": 7,
-          "evaluatedAt": "2026-05-07T13:09:23+09:00",
+          "evaluatedAt": "2026-05-07T13:26:57+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T16:15 · 진입 당시 점수 90.3 · 진입 당시 등락률 0.23%",
-          "reason": "가치/안정성=21; 과열완화=14.0; 거래대금점수=20; 등락률=1.33"
+          "reason": "가치/안정성=21; 과열완화=13.5; 거래대금점수=20; 등락률=1.5"
         },
         {
-          "code": "009540",
-          "name": "HD한국조선해양",
+          "code": "010120",
+          "name": "LS ELECTRIC",
           "score": 88,
-          "rawScore": 86.7,
-          "changePct": 0.77,
+          "rawScore": 86.3,
+          "changePct": -2.22,
           "rank": 8,
-          "evaluatedAt": "2026-05-07T13:09:23+09:00",
-          "status": "후보",
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
-          "reason": "가치/안정성=22; 과열완화=15.7; 거래대금점수=14; 등락률=0.77"
+          "evaluatedAt": "2026-05-07T13:26:57+09:00",
+          "status": "보유중",
+          "candidateNote": "진입시각 2026-05-07T09:26 · 진입 당시 점수 83.5 · 진입 당시 등락률 -3.17%",
+          "reason": "가치/안정성=23; 과열완화=11.3; 거래대금점수=20; 등락률=-2.22"
         }
       ],
       "buyAlerts": [
@@ -890,17 +890,17 @@
           "code": "010120",
           "name": "LS ELECTRIC",
           "status": "보유중",
-          "reason": "3주 · 매입 305500.0원 · 평가 921000원 · 손익 4500원",
-          "returnPct": 0.49,
-          "holdingPeriod": "보유 3시간 59분"
+          "reason": "3주 · 매입 305500.0원 · 평가 925500원 · 손익 9000원",
+          "returnPct": 0.98,
+          "holdingPeriod": "보유 4시간 8분"
         },
         {
           "code": "005930",
           "name": "삼성전자",
           "status": "보유중",
-          "reason": "3주 · 매입 263000.0원 · 평가 796500원 · 손익 7500원",
-          "returnPct": 0.95,
-          "holdingPeriod": "보유 3시간 59분"
+          "reason": "3주 · 매입 263000.0원 · 평가 797250원 · 손익 8250원",
+          "returnPct": 1.05,
+          "holdingPeriod": "보유 4시간 8분"
         },
         {
           "code": "068270",
@@ -914,44 +914,44 @@
           "code": "058470",
           "name": "리노공업",
           "status": "보유중",
-          "reason": "8주 · 매입 116700.0원 · 평가 907200원 · 손익 -26400원",
-          "returnPct": -2.83,
+          "reason": "8주 · 매입 116700.0원 · 평가 906400원 · 손익 -27200원",
+          "returnPct": -2.91,
           "holdingPeriod": "보유 1일"
         }
       ],
       "sellAlerts": [],
       "portfolio": {
         "capital": 10000000,
-        "evalAmount": 10060500,
-        "pnl": 60500,
-        "returnPct": 0.6,
+        "evalAmount": 10070550,
+        "pnl": 70550,
+        "returnPct": 0.71,
         "positionCount": 10,
         "cash": 1002500,
-        "investmentAmount": 9058000,
+        "investmentAmount": 9068050,
         "positions": [
           {
             "code": "055550",
             "name": "신한지주",
             "qty": 10,
             "entryPrice": 97300,
-            "currentPrice": 99100,
+            "currentPrice": 99300,
             "entryAt": "2026-05-06T16:15:29+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 991000,
-            "pnl": 18000,
-            "returnPct": 1.85
+            "evalAmount": 993000,
+            "pnl": 20000,
+            "returnPct": 2.06
           },
           {
             "code": "105560",
             "name": "KB금융",
             "qty": 6,
             "entryPrice": 158900,
-            "currentPrice": 161200,
+            "currentPrice": 161300,
             "entryAt": "2026-05-06T16:15:29+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 967200,
-            "pnl": 13800,
-            "returnPct": 1.45
+            "evalAmount": 967800,
+            "pnl": 14400,
+            "returnPct": 1.51
           },
           {
             "code": "086790",
@@ -970,24 +970,24 @@
             "name": "현대모비스",
             "qty": 2,
             "entryPrice": 432500,
-            "currentPrice": 438250,
+            "currentPrice": 439000,
             "entryAt": "2026-05-06T16:15:29+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 876500,
-            "pnl": 11500,
-            "returnPct": 1.33
+            "evalAmount": 878000,
+            "pnl": 13000,
+            "returnPct": 1.5
           },
           {
             "code": "047810",
             "name": "한국항공우주",
             "qty": 5,
             "entryPrice": 176600,
-            "currentPrice": 170900,
+            "currentPrice": 171200,
             "entryAt": "2026-05-06T16:15:29+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 854500,
-            "pnl": -28500,
-            "returnPct": -3.23
+            "evalAmount": 856000,
+            "pnl": -27000,
+            "returnPct": -3.06
           },
           {
             "code": "035420",
@@ -1006,12 +1006,12 @@
             "name": "리노공업",
             "qty": 8,
             "entryPrice": 116700,
-            "currentPrice": 113400,
+            "currentPrice": 113300,
             "entryAt": "2026-05-06T16:15:29+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 907200,
-            "pnl": -26400,
-            "returnPct": -2.83
+            "evalAmount": 906400,
+            "pnl": -27200,
+            "returnPct": -2.91
           },
           {
             "code": "068270",
@@ -1028,11 +1028,11 @@
         ]
       },
       "comparison": {
-        "returnPct": 0.6,
-        "benchmarkReturnPct": -0.25,
-        "excessReturnPct": 0.85,
+        "returnPct": 0.71,
+        "benchmarkReturnPct": -0.19,
+        "excessReturnPct": 0.9,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T13:26+09:00"
+        "periodEnd": "2026-05-07T13:35+09:00"
       }
     },
     {
@@ -1051,97 +1051,97 @@
           "code": "034020",
           "name": "두산에너빌리티",
           "score": 95,
-          "rawScore": 94.5,
-          "changePct": 6.46,
+          "rawScore": 94.6,
+          "changePct": 6.3,
           "rank": 1,
-          "evaluatedAt": "2026-05-07T13:09:56+09:00",
+          "evaluatedAt": "2026-05-07T13:27:37+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-07T09:26 · 진입 당시 점수 91.2 · 진입 당시 등락률 5.43%",
-          "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=6.46"
+          "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=6.3"
         },
         {
-          "code": "010140",
-          "name": "삼성중공업",
+          "code": "005930",
+          "name": "삼성전자",
           "score": 95,
-          "rawScore": 93.8,
-          "changePct": 2.2,
+          "rawScore": 93.4,
+          "changePct": -0.19,
           "rank": 2,
-          "evaluatedAt": "2026-05-07T13:09:56+09:00",
-          "status": "후보",
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
-          "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=2.2"
+          "evaluatedAt": "2026-05-07T13:27:37+09:00",
+          "status": "보유중",
+          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 당시 점수 98 · 진입 당시 등락률 14.41%",
+          "reason": "모멘텀구간=6; 거래대금점수=20; 등락률=-0.19"
+        },
+        {
+          "code": "005380",
+          "name": "현대차",
+          "score": 88,
+          "rawScore": 89.7,
+          "changePct": 3.45,
+          "rank": 3,
+          "evaluatedAt": "2026-05-07T13:27:37+09:00",
+          "status": "보유중",
+          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 당시 점수 89.7 · 진입 당시 등락률 2.04%",
+          "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=3.45"
+        },
+        {
+          "code": "000270",
+          "name": "기아",
+          "score": 88,
+          "rawScore": 89.2,
+          "changePct": 2.13,
+          "rank": 4,
+          "evaluatedAt": "2026-05-07T13:27:37+09:00",
+          "status": "보유중",
+          "candidateNote": "진입시각 2026-05-07T09:26 · 진입 당시 점수 82.5 · 진입 당시 등락률 2.65%",
+          "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=2.13"
         },
         {
           "code": "247540",
           "name": "에코프로비엠",
           "score": 88,
           "rawScore": 88.9,
-          "changePct": 2.63,
-          "rank": 3,
-          "evaluatedAt": "2026-05-07T13:09:56+09:00",
+          "changePct": 3.28,
+          "rank": 5,
+          "evaluatedAt": "2026-05-07T13:27:37+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T16:15 · 진입 당시 점수 89.0 · 진입 당시 등락률 6.03%",
-          "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=2.63"
+          "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=3.28"
         },
         {
           "code": "068270",
           "name": "셀트리온",
           "score": 88,
           "rawScore": 88.8,
-          "changePct": 4.26,
-          "rank": 4,
-          "evaluatedAt": "2026-05-07T13:09:56+09:00",
+          "changePct": 3.75,
+          "rank": 6,
+          "evaluatedAt": "2026-05-07T13:27:37+09:00",
           "status": "후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
-          "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=4.26"
+          "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=3.75"
+        },
+        {
+          "code": "003670",
+          "name": "포스코퓨처엠",
+          "score": 88,
+          "rawScore": 88.5,
+          "changePct": 3.12,
+          "rank": 7,
+          "evaluatedAt": "2026-05-07T13:27:37+09:00",
+          "status": "후보",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
+          "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=3.12"
         },
         {
           "code": "329180",
           "name": "HD현대중공업",
           "score": 88,
           "rawScore": 88.4,
-          "changePct": 4.48,
-          "rank": 5,
-          "evaluatedAt": "2026-05-07T13:09:56+09:00",
-          "status": "후보",
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
-          "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=4.48"
-        },
-        {
-          "code": "086790",
-          "name": "하나금융지주",
-          "score": 88,
-          "rawScore": 82.6,
-          "changePct": 2.63,
-          "rank": 6,
-          "evaluatedAt": "2026-05-07T13:09:56+09:00",
-          "status": "후보",
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
-          "reason": "모멘텀구간=30; 거래대금점수=14; 등락률=2.63"
-        },
-        {
-          "code": "000270",
-          "name": "기아",
-          "score": 78,
-          "rawScore": 77.2,
-          "changePct": 1.81,
-          "rank": 7,
-          "evaluatedAt": "2026-05-07T13:09:56+09:00",
-          "status": "보유중",
-          "candidateNote": "진입시각 2026-05-07T09:26 · 진입 당시 점수 82.5 · 진입 당시 등락률 2.65%",
-          "reason": "모멘텀구간=18; 거래대금점수=20; 등락률=1.81"
-        },
-        {
-          "code": "105560",
-          "name": "KB금융",
-          "score": 78,
-          "rawScore": 76.8,
-          "changePct": 1.38,
+          "changePct": 5.4,
           "rank": 8,
-          "evaluatedAt": "2026-05-07T13:09:56+09:00",
+          "evaluatedAt": "2026-05-07T13:27:37+09:00",
           "status": "후보",
           "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
-          "reason": "모멘텀구간=18; 거래대금점수=20; 등락률=1.38"
+          "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=5.4"
         }
       ],
       "buyAlerts": [
@@ -1149,92 +1149,92 @@
           "code": "000270",
           "name": "기아",
           "status": "보유중",
-          "reason": "6주 · 매입 158700.0원 · 평가 944400원 · 손익 -7800원",
-          "returnPct": -0.82,
-          "holdingPeriod": "보유 3시간 59분"
+          "reason": "6주 · 매입 158700.0원 · 평가 947400원 · 손익 -4800원",
+          "returnPct": -0.5,
+          "holdingPeriod": "보유 4시간 8분"
         },
         {
           "code": "034020",
           "name": "두산에너빌리티",
           "status": "보유중",
-          "reason": "7주 · 매입 133900.0원 · 평가 946400원 · 손익 9100원",
-          "returnPct": 0.97,
-          "holdingPeriod": "보유 3시간 59분"
+          "reason": "7주 · 매입 133900.0원 · 평가 945000원 · 손익 7700원",
+          "returnPct": 0.82,
+          "holdingPeriod": "보유 4시간 8분"
         },
         {
           "code": "373220",
           "name": "LG에너지솔루션",
           "status": "보유중",
-          "reason": "2주 · 매입 482000.0원 · 평가 953000원 · 손익 -11000원",
-          "returnPct": -1.14,
+          "reason": "2주 · 매입 482000.0원 · 평가 956000원 · 손익 -8000원",
+          "returnPct": -0.83,
           "holdingPeriod": "보유 1일"
         },
         {
           "code": "247540",
           "name": "에코프로비엠",
           "status": "보유중",
-          "reason": "4주 · 매입 228500.0원 · 평가 938000원 · 손익 24000원",
-          "returnPct": 2.63,
+          "reason": "4주 · 매입 228500.0원 · 평가 944000원 · 손익 30000원",
+          "returnPct": 3.28,
           "holdingPeriod": "보유 1일"
         }
       ],
       "sellAlerts": [],
       "portfolio": {
         "capital": 10000000,
-        "evalAmount": 9954300,
-        "pnl": -45700,
-        "returnPct": -0.46,
+        "evalAmount": 9973900,
+        "pnl": -26100,
+        "returnPct": -0.26,
         "positionCount": 10,
         "cash": 1210000,
-        "investmentAmount": 8744300,
+        "investmentAmount": 8763900,
         "positions": [
           {
             "code": "005930",
             "name": "삼성전자",
             "qty": 3,
             "entryPrice": 266000,
-            "currentPrice": 266750,
+            "currentPrice": 265500,
             "entryAt": "2026-05-06T16:15:59+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 800250,
-            "pnl": 2250,
-            "returnPct": 0.28
+            "evalAmount": 796500,
+            "pnl": -1500,
+            "returnPct": -0.19
           },
           {
             "code": "403870",
             "name": "HPSP",
             "qty": 17,
             "entryPrice": 56600,
-            "currentPrice": 54750,
+            "currentPrice": 54700,
             "entryAt": "2026-05-06T16:15:59+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 930750,
-            "pnl": -31450,
-            "returnPct": -3.27
+            "evalAmount": 929900,
+            "pnl": -32300,
+            "returnPct": -3.36
           },
           {
             "code": "086520",
             "name": "에코프로",
             "qty": 6,
             "entryPrice": 162800,
-            "currentPrice": 160500,
+            "currentPrice": 161600,
             "entryAt": "2026-05-06T16:15:59+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 963000,
-            "pnl": -13800,
-            "returnPct": -1.41
+            "evalAmount": 969600,
+            "pnl": -7200,
+            "returnPct": -0.74
           },
           {
             "code": "010120",
             "name": "LS ELECTRIC",
             "qty": 3,
             "entryPrice": 315500,
-            "currentPrice": 307000,
+            "currentPrice": 308500,
             "entryAt": "2026-05-06T16:15:59+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 921000,
-            "pnl": -25500,
-            "returnPct": -2.69
+            "evalAmount": 925500,
+            "pnl": -21000,
+            "returnPct": -2.22
           },
           {
             "code": "005380",
@@ -1253,45 +1253,45 @@
             "name": "한미반도체",
             "qty": 2,
             "entryPrice": 394500,
-            "currentPrice": 389250,
+            "currentPrice": 390500,
             "entryAt": "2026-05-06T16:15:59+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 778500,
-            "pnl": -10500,
-            "returnPct": -1.33
+            "evalAmount": 781000,
+            "pnl": -8000,
+            "returnPct": -1.01
           },
           {
             "code": "247540",
             "name": "에코프로비엠",
             "qty": 4,
             "entryPrice": 228500,
-            "currentPrice": 234500,
+            "currentPrice": 236000,
             "entryAt": "2026-05-06T16:15:59+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 938000,
-            "pnl": 24000,
-            "returnPct": 2.63
+            "evalAmount": 944000,
+            "pnl": 30000,
+            "returnPct": 3.28
           },
           {
             "code": "373220",
             "name": "LG에너지솔루션",
             "qty": 2,
             "entryPrice": 482000,
-            "currentPrice": 476500,
+            "currentPrice": 478000,
             "entryAt": "2026-05-06T16:15:59+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 953000,
-            "pnl": -11000,
-            "returnPct": -1.14
+            "evalAmount": 956000,
+            "pnl": -8000,
+            "returnPct": -0.83
           }
         ]
       },
       "comparison": {
-        "returnPct": -0.46,
-        "benchmarkReturnPct": -0.25,
-        "excessReturnPct": -0.21,
+        "returnPct": -0.26,
+        "benchmarkReturnPct": -0.19,
+        "excessReturnPct": -0.07,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T13:26+09:00"
+        "periodEnd": "2026-05-07T13:35+09:00"
       }
     },
     {
@@ -1310,49 +1310,85 @@
           "code": "005930",
           "name": "삼성전자",
           "score": 88,
-          "rawScore": 80.5,
+          "rawScore": 80.8,
           "changePct": -0.19,
           "rank": 1,
-          "evaluatedAt": "2026-05-07T13:10:58+09:00",
+          "evaluatedAt": "2026-05-07T13:28:35+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T16:16 · 진입 당시 점수 75.9 · 진입 당시 등락률 14.41%",
-          "reason": "가치=89.4; 모멘텀=92.7; 등락률=-0.19"
+          "reason": "가치=89.4; 모멘텀=93.4; 등락률=-0.19"
         },
         {
           "code": "105560",
           "name": "KB금융",
           "score": 78,
-          "rawScore": 75.1,
-          "changePct": 1.38,
+          "rawScore": 75.0,
+          "changePct": 1.51,
           "rank": 2,
-          "evaluatedAt": "2026-05-07T13:10:58+09:00",
+          "evaluatedAt": "2026-05-07T13:28:35+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T16:16 · 진입 당시 점수 76.3 · 진입 당시 등락률 0.7%",
-          "reason": "가치=93.9; 모멘텀=76.8; 등락률=1.38"
+          "reason": "가치=93.5; 모멘텀=76.9; 등락률=1.51"
+        },
+        {
+          "code": "055550",
+          "name": "신한지주",
+          "score": 78,
+          "rawScore": 74.9,
+          "changePct": 2.06,
+          "rank": 3,
+          "evaluatedAt": "2026-05-07T13:28:35+09:00",
+          "status": "보유중",
+          "candidateNote": "진입시각 2026-05-06T16:16 · 진입 당시 점수 70.9 · 진입 당시 등락률 -0.71%",
+          "reason": "가치=88.8; 모멘텀=82.9; 등락률=2.06"
         },
         {
           "code": "086790",
           "name": "하나금융지주",
           "score": 78,
-          "rawScore": 74.1,
-          "changePct": 2.63,
-          "rank": 3,
-          "evaluatedAt": "2026-05-07T13:10:58+09:00",
+          "rawScore": 74.0,
+          "changePct": 2.71,
+          "rank": 4,
+          "evaluatedAt": "2026-05-07T13:28:35+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-06T16:16 · 진입 당시 점수 70.4 · 진입 당시 등락률 -0.87%",
-          "reason": "가치=87.1; 모멘텀=82.6; 등락률=2.63"
+          "reason": "가치=86.9; 모멘텀=82.6; 등락률=2.71"
+        },
+        {
+          "code": "000660",
+          "name": "SK하이닉스",
+          "score": 78,
+          "rawScore": 73.9,
+          "changePct": 0.87,
+          "rank": 5,
+          "evaluatedAt": "2026-05-07T13:28:35+09:00",
+          "status": "후보",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
+          "reason": "가치=87.4; 모멘텀=79.8; 등락률=0.87"
+        },
+        {
+          "code": "267260",
+          "name": "HD현대일렉트릭",
+          "score": 78,
+          "rawScore": 73.3,
+          "changePct": 0.94,
+          "rank": 6,
+          "evaluatedAt": "2026-05-07T13:28:35+09:00",
+          "status": "후보",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
+          "reason": "가치=90.2; 모멘텀=76.2; 등락률=0.94"
         },
         {
           "code": "329180",
           "name": "HD현대중공업",
           "score": 78,
-          "rawScore": 74.0,
-          "changePct": 4.63,
-          "rank": 4,
-          "evaluatedAt": "2026-05-07T13:10:58+09:00",
+          "rawScore": 73.3,
+          "changePct": 5.25,
+          "rank": 7,
+          "evaluatedAt": "2026-05-07T13:28:35+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-07T09:27 · 진입 당시 점수 72.1 · 진입 당시 등락률 2.16%",
-          "reason": "가치=78.1; 모멘텀=88.4; 등락률=4.63"
+          "reason": "가치=76.2; 모멘텀=88.4; 등락률=5.25"
         },
         {
           "code": "068270",
@@ -1360,47 +1396,11 @@
           "score": 78,
           "rawScore": 73.3,
           "changePct": 4.01,
-          "rank": 5,
-          "evaluatedAt": "2026-05-07T13:10:58+09:00",
+          "rank": 8,
+          "evaluatedAt": "2026-05-07T13:28:35+09:00",
           "status": "보유중",
           "candidateNote": "진입시각 2026-05-07T10:28 · 진입 당시 점수 72.0 · 진입 당시 등락률 5.03%",
           "reason": "가치=76.0; 모멘텀=88.8; 등락률=4.01"
-        },
-        {
-          "code": "012330",
-          "name": "현대모비스",
-          "score": 78,
-          "rawScore": 72.2,
-          "changePct": 1.27,
-          "rank": 6,
-          "evaluatedAt": "2026-05-07T13:10:58+09:00",
-          "status": "보유중",
-          "candidateNote": "진입시각 2026-05-07T09:27 · 진입 당시 점수 70.2 · 진입 당시 등락률 3.35%",
-          "reason": "가치=87.2; 모멘텀=76.2; 등락률=1.27"
-        },
-        {
-          "code": "010140",
-          "name": "삼성중공업",
-          "score": 78,
-          "rawScore": 72.0,
-          "changePct": 2.35,
-          "rank": 7,
-          "evaluatedAt": "2026-05-07T13:10:58+09:00",
-          "status": "후보",
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
-          "reason": "가치=67.0; 모멘텀=93.8; 등락률=2.35"
-        },
-        {
-          "code": "247540",
-          "name": "에코프로비엠",
-          "score": 78,
-          "rawScore": 70.2,
-          "changePct": 2.63,
-          "rank": 8,
-          "evaluatedAt": "2026-05-07T13:10:58+09:00",
-          "status": "보유중",
-          "candidateNote": "진입시각 2026-05-07T10:28 · 진입 당시 점수 70.2 · 진입 당시 등락률 2.63%",
-          "reason": "가치=68.1; 모멘텀=88.9; 등락률=2.63"
         }
       ],
       "buyAlerts": [
@@ -1408,9 +1408,9 @@
           "code": "247540",
           "name": "에코프로비엠",
           "status": "보유중",
-          "reason": "4주 · 매입 234500.0원 · 평가 938000원 · 손익 0원",
-          "returnPct": 0.0,
-          "holdingPeriod": "보유 2시간 57분"
+          "reason": "4주 · 매입 234500.0원 · 평가 944000원 · 손익 6000원",
+          "returnPct": 0.64,
+          "holdingPeriod": "보유 3시간 6분"
         },
         {
           "code": "068270",
@@ -1418,46 +1418,46 @@
           "status": "보유중",
           "reason": "4주 · 매입 204500.0원 · 평가 810000원 · 손익 -8000원",
           "returnPct": -0.98,
-          "holdingPeriod": "보유 2시간 57분"
+          "holdingPeriod": "보유 3시간 6분"
         },
         {
           "code": "012330",
           "name": "현대모비스",
           "status": "보유중",
-          "reason": "2주 · 매입 447000.0원 · 평가 876000원 · 손익 -18000원",
-          "returnPct": -2.01,
-          "holdingPeriod": "보유 3시간 58분"
+          "reason": "2주 · 매입 447000.0원 · 평가 878000원 · 손익 -16000원",
+          "returnPct": -1.79,
+          "holdingPeriod": "보유 4시간 7분"
         },
         {
           "code": "329180",
           "name": "HD현대중공업",
           "status": "보유중",
-          "reason": "1주 · 매입 662000.0원 · 평가 678000원 · 손익 16000원",
-          "returnPct": 2.42,
-          "holdingPeriod": "보유 3시간 58분"
+          "reason": "1주 · 매입 662000.0원 · 평가 682000원 · 손익 20000원",
+          "returnPct": 3.02,
+          "holdingPeriod": "보유 4시간 7분"
         }
       ],
       "sellAlerts": [],
       "portfolio": {
         "capital": 10000000,
-        "evalAmount": 10050800,
-        "pnl": 50800,
-        "returnPct": 0.51,
+        "evalAmount": 10065700,
+        "pnl": 65700,
+        "returnPct": 0.66,
         "positionCount": 10,
         "cash": 1571100,
-        "investmentAmount": 8479700,
+        "investmentAmount": 8494600,
         "positions": [
           {
             "code": "105560",
             "name": "KB금융",
             "qty": 6,
             "entryPrice": 158900,
-            "currentPrice": 161100,
+            "currentPrice": 161300,
             "entryAt": "2026-05-06T16:16:34+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 966600,
-            "pnl": 13200,
-            "returnPct": 1.38
+            "evalAmount": 967800,
+            "pnl": 14400,
+            "returnPct": 1.51
           },
           {
             "code": "005930",
@@ -1500,160 +1500,68 @@
             "name": "신한지주",
             "qty": 10,
             "entryPrice": 97300,
-            "currentPrice": 99200,
+            "currentPrice": 99300,
             "entryAt": "2026-05-06T16:16:34+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 992000,
-            "pnl": 19000,
-            "returnPct": 1.95
+            "evalAmount": 993000,
+            "pnl": 20000,
+            "returnPct": 2.06
           },
           {
             "code": "086790",
             "name": "하나금융지주",
             "qty": 7,
             "entryPrice": 125500,
-            "currentPrice": 128800,
+            "currentPrice": 128900,
             "entryAt": "2026-05-06T16:16:34+09:00",
             "holdingPeriod": "보유 1일",
-            "evalAmount": 901600,
-            "pnl": 23100,
-            "returnPct": 2.63
+            "evalAmount": 902300,
+            "pnl": 23800,
+            "returnPct": 2.71
           },
           {
             "code": "329180",
             "name": "HD현대중공업",
             "qty": 1,
             "entryPrice": 662000,
-            "currentPrice": 678000,
+            "currentPrice": 682000,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 3시간 58분",
-            "evalAmount": 678000,
-            "pnl": 16000,
-            "returnPct": 2.42
+            "holdingPeriod": "보유 4시간 7분",
+            "evalAmount": 682000,
+            "pnl": 20000,
+            "returnPct": 3.02
           },
           {
             "code": "012330",
             "name": "현대모비스",
             "qty": 2,
             "entryPrice": 447000,
-            "currentPrice": 438000,
+            "currentPrice": 439000,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 3시간 58분",
-            "evalAmount": 876000,
-            "pnl": -18000,
-            "returnPct": -2.01
+            "holdingPeriod": "보유 4시간 7분",
+            "evalAmount": 878000,
+            "pnl": -16000,
+            "returnPct": -1.79
           }
         ]
       },
       "comparison": {
-        "returnPct": 0.51,
-        "benchmarkReturnPct": -0.25,
-        "excessReturnPct": 0.76,
+        "returnPct": 0.66,
+        "benchmarkReturnPct": -0.19,
+        "excessReturnPct": 0.85,
         "periodStart": "2026-05-06T16:16+09:00",
-        "periodEnd": "2026-05-07T13:26+09:00"
+        "periodEnd": "2026-05-07T13:35+09:00"
       }
     }
   ],
   "history": [
-    {
-      "ts": "2026-05-06T10:02+09:00",
-      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
-      "candidates": 0,
-      "protected": 0,
-      "stale": 0,
-      "benchmark": null,
-      "benchmarkValue": 7302.2,
-      "returns": [
-        null,
-        null,
-        null,
-        null
-      ],
-      "evalAmounts": [
-        30000000,
-        10000000,
-        null,
-        null
-      ],
-      "capital": [
-        30000000,
-        10000000,
-        null,
-        null
-      ],
-      "marketReturns": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "kodex200": null,
-      "kodexReturns": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "ts": "2026-05-06T10:15+09:00",
-      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
-      "candidates": 34,
-      "protected": 12,
-      "stale": 0,
-      "benchmark": 0.0,
-      "benchmarkValue": 7316.48,
-      "returns": [
-        -0.13,
-        null,
-        0.0,
-        0.0
-      ],
-      "evalAmounts": [
-        29960040,
-        10000000,
-        10000000,
-        10000000
-      ],
-      "capital": [
-        29997940,
-        10000000,
-        10000000,
-        10000000
-      ],
-      "marketReturns": [
-        null,
-        0.0,
-        0.0,
-        0.0,
-        null,
-        null,
-        null
-      ],
-      "kodex200": null,
-      "kodexReturns": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ]
-    },
     {
       "ts": "2026-05-06T10:20+09:00",
       "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.36,
+      "benchmark": 0.0,
       "benchmarkValue": 7328.84,
       "returns": [
         0.15,
@@ -1675,9 +1583,9 @@
       ],
       "marketReturns": [
         null,
-        0.36,
-        0.36,
-        0.36,
+        0.0,
+        0.0,
+        0.0,
         null,
         null,
         null
@@ -1699,7 +1607,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.41,
+      "benchmark": 0.04,
       "benchmarkValue": 7331.88,
       "returns": [
         0.01,
@@ -1721,9 +1629,9 @@
       ],
       "marketReturns": [
         null,
-        0.41,
-        0.41,
-        0.41,
+        0.04,
+        0.04,
+        0.04,
         null,
         null,
         null
@@ -1745,7 +1653,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.32,
+      "benchmark": -0.05,
       "benchmarkValue": 7325.32,
       "returns": [
         0.02,
@@ -1767,9 +1675,9 @@
       ],
       "marketReturns": [
         null,
-        0.32,
-        0.32,
-        0.32,
+        -0.05,
+        -0.05,
+        -0.05,
         null,
         null,
         null
@@ -1791,7 +1699,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.15,
+      "benchmark": -0.22,
       "benchmarkValue": 7312.85,
       "returns": [
         -0.09,
@@ -1813,9 +1721,9 @@
       ],
       "marketReturns": [
         null,
-        0.15,
-        0.15,
-        0.15,
+        -0.22,
+        -0.22,
+        -0.22,
         null,
         null,
         null
@@ -1837,7 +1745,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.28,
+      "benchmark": -0.08,
       "benchmarkValue": 7322.74,
       "returns": [
         -0.09,
@@ -1859,9 +1767,9 @@
       ],
       "marketReturns": [
         null,
-        0.28,
-        0.28,
-        0.28,
+        -0.08,
+        -0.08,
+        -0.08,
         null,
         null,
         null
@@ -1883,7 +1791,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.29,
+      "benchmark": -0.07,
       "benchmarkValue": 7323.39,
       "returns": [
         0.13,
@@ -1905,9 +1813,9 @@
       ],
       "marketReturns": [
         null,
-        0.29,
-        0.29,
-        0.29,
+        -0.07,
+        -0.07,
+        -0.07,
         null,
         null,
         null
@@ -1929,7 +1837,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.19,
+      "benchmark": -0.18,
       "benchmarkValue": 7315.82,
       "returns": [
         0.21,
@@ -1951,9 +1859,9 @@
       ],
       "marketReturns": [
         null,
-        0.19,
-        0.19,
-        0.19,
+        -0.18,
+        -0.18,
+        -0.18,
         null,
         null,
         null
@@ -1975,7 +1883,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.2,
+      "benchmark": -0.16,
       "benchmarkValue": 7316.98,
       "returns": [
         0.23,
@@ -1985,9 +1893,9 @@
       ],
       "marketReturns": [
         null,
-        0.2,
-        0.2,
-        0.2,
+        -0.16,
+        -0.16,
+        -0.16,
         null,
         null,
         null
@@ -2021,7 +1929,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.22,
+      "benchmark": -0.14,
       "benchmarkValue": 7318.58,
       "returns": [
         null,
@@ -2031,9 +1939,9 @@
       ],
       "marketReturns": [
         null,
-        0.22,
-        0.22,
-        0.22,
+        -0.14,
+        -0.14,
+        -0.14,
         null,
         null,
         null
@@ -2067,7 +1975,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.31,
+      "benchmark": -0.05,
       "benchmarkValue": 7325.15,
       "returns": [
         0.24,
@@ -2077,9 +1985,9 @@
       ],
       "marketReturns": [
         null,
-        0.31,
-        0.31,
-        0.31,
+        -0.05,
+        -0.05,
+        -0.05,
         null,
         null,
         null
@@ -2113,7 +2021,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.21,
+      "benchmark": -0.16,
       "benchmarkValue": 7317.24,
       "returns": [
         0.11,
@@ -2123,9 +2031,9 @@
       ],
       "marketReturns": [
         null,
-        0.21,
-        0.21,
-        0.21,
+        -0.16,
+        -0.16,
+        -0.16,
         null,
         null,
         null
@@ -2159,7 +2067,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.01,
+      "benchmark": -0.35,
       "benchmarkValue": 7303.24,
       "returns": [
         0.1,
@@ -2169,9 +2077,9 @@
       ],
       "marketReturns": [
         null,
-        0.01,
-        0.01,
-        0.01,
+        -0.35,
+        -0.35,
+        -0.35,
         null,
         null,
         null
@@ -2205,7 +2113,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.53,
       "benchmarkValue": 7290.18,
       "returns": [
         0.06,
@@ -2215,9 +2123,9 @@
       ],
       "marketReturns": [
         null,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.53,
+        -0.53,
+        -0.53,
         null,
         null,
         null
@@ -2251,7 +2159,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.38,
+      "benchmark": 0.02,
       "benchmarkValue": 7330.28,
       "returns": [
         0.22,
@@ -2261,9 +2169,9 @@
       ],
       "marketReturns": [
         null,
-        0.38,
-        0.38,
-        0.38,
+        0.02,
+        0.02,
+        0.02,
         null,
         null,
         null
@@ -2297,7 +2205,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.38,
+      "benchmark": 0.02,
       "benchmarkValue": 7330.28,
       "returns": [
         0.21,
@@ -2307,9 +2215,9 @@
       ],
       "marketReturns": [
         null,
-        0.38,
-        0.38,
-        0.38,
+        0.02,
+        0.02,
+        0.02,
         null,
         null,
         null
@@ -2343,7 +2251,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.65,
+      "benchmark": 0.28,
       "benchmarkValue": 7349.37,
       "returns": [
         0.14,
@@ -2353,9 +2261,9 @@
       ],
       "marketReturns": [
         null,
-        0.65,
-        0.65,
-        0.65,
+        0.28,
+        0.28,
+        0.28,
         null,
         null,
         null
@@ -2389,7 +2297,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.57,
+      "benchmark": 0.2,
       "benchmarkValue": 7343.69,
       "returns": [
         0.06,
@@ -2399,9 +2307,9 @@
       ],
       "marketReturns": [
         null,
-        0.57,
-        0.57,
-        0.57,
+        0.2,
+        0.2,
+        0.2,
         null,
         null,
         null
@@ -2435,7 +2343,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.68,
+      "benchmark": 0.31,
       "benchmarkValue": 7351.9,
       "returns": [
         0.06,
@@ -2445,9 +2353,9 @@
       ],
       "marketReturns": [
         null,
-        0.68,
-        0.68,
-        0.68,
+        0.31,
+        0.31,
+        0.31,
         null,
         null,
         null
@@ -2481,7 +2389,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.72,
+      "benchmark": 0.36,
       "benchmarkValue": 7355.1,
       "returns": [
         0.14,
@@ -2491,9 +2399,9 @@
       ],
       "marketReturns": [
         null,
-        0.72,
-        0.72,
-        0.72,
+        0.36,
+        0.36,
+        0.36,
         null,
         null,
         null
@@ -2527,7 +2435,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.64,
+      "benchmark": 0.28,
       "benchmarkValue": 7349.16,
       "returns": [
         0.13,
@@ -2537,9 +2445,9 @@
       ],
       "marketReturns": [
         null,
-        0.64,
-        0.64,
-        0.64,
+        0.28,
+        0.28,
+        0.28,
         null,
         null,
         null
@@ -2573,7 +2481,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.51,
+      "benchmark": 0.15,
       "benchmarkValue": 7339.57,
       "returns": [
         0.06,
@@ -2583,9 +2491,9 @@
       ],
       "marketReturns": [
         null,
-        0.51,
-        0.51,
-        0.51,
+        0.15,
+        0.15,
+        0.15,
         null,
         null,
         null
@@ -2619,7 +2527,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.45,
+      "benchmark": 0.09,
       "benchmarkValue": 7335.25,
       "returns": [
         0.11,
@@ -2629,9 +2537,9 @@
       ],
       "marketReturns": [
         null,
-        0.45,
-        0.45,
-        0.45,
+        0.09,
+        0.09,
+        0.09,
         null,
         null,
         null
@@ -2665,7 +2573,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.45,
+      "benchmark": 0.09,
       "benchmarkValue": 7335.25,
       "returns": [
         0.08,
@@ -2675,9 +2583,9 @@
       ],
       "marketReturns": [
         null,
-        0.45,
-        0.45,
-        0.45,
+        0.09,
+        0.09,
+        0.09,
         null,
         null,
         null
@@ -2711,7 +2619,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.57,
+      "benchmark": 0.21,
       "benchmarkValue": 7344.0,
       "returns": [
         0.06,
@@ -2721,9 +2629,9 @@
       ],
       "marketReturns": [
         null,
-        0.57,
-        0.57,
-        0.57,
+        0.21,
+        0.21,
+        0.21,
         null,
         null,
         null
@@ -2757,7 +2665,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.55,
+      "benchmark": 0.19,
       "benchmarkValue": 7342.46,
       "returns": [
         0.08,
@@ -2767,9 +2675,9 @@
       ],
       "marketReturns": [
         null,
-        0.55,
-        0.55,
-        0.55,
+        0.19,
+        0.19,
+        0.19,
         null,
         null,
         null
@@ -2803,7 +2711,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.75,
+      "benchmark": 0.39,
       "benchmarkValue": 7357.33,
       "returns": [
         0.04,
@@ -2813,9 +2721,9 @@
       ],
       "marketReturns": [
         null,
-        0.75,
-        0.75,
-        0.75,
+        0.39,
+        0.39,
+        0.39,
         null,
         null,
         null
@@ -2849,7 +2757,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.96,
+      "benchmark": 0.59,
       "benchmarkValue": 7372.29,
       "returns": [
         0.19,
@@ -2859,9 +2767,9 @@
       ],
       "marketReturns": [
         null,
-        0.96,
-        0.96,
-        0.96,
+        0.59,
+        0.59,
+        0.59,
         null,
         null,
         null
@@ -2895,7 +2803,7 @@
       "candidates": 36,
       "protected": 12,
       "stale": 0,
-      "benchmark": 0.69,
+      "benchmark": 0.32,
       "benchmarkValue": 7352.42,
       "returns": [
         0.16,
@@ -2905,9 +2813,9 @@
       ],
       "marketReturns": [
         null,
-        0.69,
-        0.69,
-        0.69,
+        0.32,
+        0.32,
+        0.32,
         null,
         null,
         null
@@ -2941,7 +2849,7 @@
       "candidates": 36,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.88,
+      "benchmark": 0.51,
       "benchmarkValue": 7366.37,
       "returns": [
         0.14,
@@ -2951,9 +2859,9 @@
       ],
       "marketReturns": [
         0.0,
-        0.88,
-        0.88,
-        0.88,
+        0.51,
+        0.51,
+        0.51,
         null,
         null,
         null
@@ -2987,7 +2895,7 @@
       "candidates": 36,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.25,
+      "benchmark": 0.89,
       "benchmarkValue": 7393.74,
       "returns": [
         -0.05,
@@ -2997,9 +2905,9 @@
       ],
       "marketReturns": [
         0.56,
-        1.25,
-        1.25,
-        1.25,
+        0.89,
+        0.89,
+        0.89,
         null,
         null,
         null
@@ -3033,7 +2941,7 @@
       "candidates": 36,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.39,
+      "benchmark": 1.02,
       "benchmarkValue": 7403.85,
       "returns": [
         null,
@@ -3043,9 +2951,9 @@
       ],
       "marketReturns": [
         0.7,
-        1.39,
-        1.39,
-        1.39,
+        1.02,
+        1.02,
+        1.02,
         null,
         null,
         null
@@ -3079,7 +2987,7 @@
       "candidates": 36,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.35,
+      "benchmark": 0.98,
       "benchmarkValue": 7400.81,
       "returns": [
         -0.0,
@@ -3089,9 +2997,9 @@
       ],
       "marketReturns": [
         0.66,
-        1.35,
-        1.35,
-        1.35,
+        0.98,
+        0.98,
+        0.98,
         null,
         null,
         null
@@ -3125,7 +3033,7 @@
       "candidates": 36,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.26,
+      "benchmark": 0.89,
       "benchmarkValue": 7393.94,
       "returns": [
         0.04,
@@ -3135,9 +3043,9 @@
       ],
       "marketReturns": [
         0.56,
-        1.26,
-        1.26,
-        1.26,
+        0.89,
+        0.89,
+        0.89,
         null,
         null,
         null
@@ -3171,7 +3079,7 @@
       "candidates": 36,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.04,
+      "benchmark": 0.67,
       "benchmarkValue": 7377.96,
       "returns": [
         0.01,
@@ -3181,9 +3089,9 @@
       ],
       "marketReturns": [
         0.35,
-        1.04,
-        1.04,
-        1.04,
+        0.67,
+        0.67,
+        0.67,
         null,
         null,
         null
@@ -3217,7 +3125,7 @@
       "candidates": 36,
       "protected": 3,
       "stale": 0,
-      "benchmark": 0.95,
+      "benchmark": 0.58,
       "benchmarkValue": 7371.41,
       "returns": [
         0.01,
@@ -3227,9 +3135,9 @@
       ],
       "marketReturns": [
         0.26,
-        0.95,
-        0.95,
-        0.95,
+        0.58,
+        0.58,
+        0.58,
         null,
         null,
         null
@@ -3263,7 +3171,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.09,
+      "benchmark": 0.73,
       "benchmarkValue": 7381.99,
       "returns": [
         0.19,
@@ -3273,9 +3181,9 @@
       ],
       "marketReturns": [
         0.4,
-        1.09,
-        1.09,
-        1.09,
+        0.73,
+        0.73,
+        0.73,
         null,
         null,
         null
@@ -3309,7 +3217,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.13,
+      "benchmark": 0.76,
       "benchmarkValue": 7384.71,
       "returns": [
         0.19,
@@ -3319,9 +3227,9 @@
       ],
       "marketReturns": [
         0.44,
-        1.13,
-        1.13,
-        1.13,
+        0.76,
+        0.76,
+        0.76,
         null,
         null,
         null
@@ -3355,7 +3263,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.33,
+      "benchmark": 0.96,
       "benchmarkValue": 7399.08,
       "returns": [
         null,
@@ -3365,9 +3273,9 @@
       ],
       "marketReturns": [
         0.63,
-        1.33,
-        1.33,
-        1.33,
+        0.96,
+        0.96,
+        0.96,
         null,
         null,
         null
@@ -3401,7 +3309,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.28,
+      "benchmark": 0.91,
       "benchmarkValue": 7395.74,
       "returns": [
         0.24,
@@ -3411,9 +3319,9 @@
       ],
       "marketReturns": [
         0.59,
-        1.28,
-        1.28,
-        1.28,
+        0.91,
+        0.91,
+        0.91,
         null,
         null,
         null
@@ -3447,7 +3355,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.32,
+      "benchmark": 0.95,
       "benchmarkValue": 7398.29,
       "returns": [
         0.38,
@@ -3457,9 +3365,9 @@
       ],
       "marketReturns": [
         0.62,
-        1.32,
-        1.32,
-        1.32,
+        0.95,
+        0.95,
+        0.95,
         null,
         null,
         null
@@ -3493,7 +3401,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.29,
+      "benchmark": 0.92,
       "benchmarkValue": 7396.55,
       "returns": [
         0.47,
@@ -3503,9 +3411,9 @@
       ],
       "marketReturns": [
         0.6,
-        1.29,
-        1.29,
-        1.29,
+        0.92,
+        0.92,
+        0.92,
         null,
         null,
         null
@@ -3539,7 +3447,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.39,
+      "benchmark": 1.02,
       "benchmarkValue": 7403.71,
       "returns": [
         0.59,
@@ -3549,9 +3457,9 @@
       ],
       "marketReturns": [
         0.7,
-        1.39,
-        1.39,
-        1.39,
+        1.02,
+        1.02,
+        1.02,
         null,
         null,
         null
@@ -3585,7 +3493,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.39,
+      "benchmark": 1.03,
       "benchmarkValue": 7404.02,
       "returns": [
         0.5,
@@ -3595,9 +3503,9 @@
       ],
       "marketReturns": [
         0.7,
-        1.39,
-        1.39,
-        1.39,
+        1.03,
+        1.03,
+        1.03,
         null,
         null,
         null
@@ -3631,7 +3539,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.4,
+      "benchmark": 1.03,
       "benchmarkValue": 7404.35,
       "returns": [
         0.56,
@@ -3641,9 +3549,9 @@
       ],
       "marketReturns": [
         0.71,
-        1.4,
-        1.4,
-        1.4,
+        1.03,
+        1.03,
+        1.03,
         null,
         null,
         null
@@ -3677,7 +3585,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.39,
+      "benchmark": 1.02,
       "benchmarkValue": 7403.53,
       "returns": [
         0.61,
@@ -3687,9 +3595,9 @@
       ],
       "marketReturns": [
         0.7,
-        1.39,
-        1.39,
-        1.39,
+        1.02,
+        1.02,
+        1.02,
         null,
         null,
         null
@@ -3723,7 +3631,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.39,
+      "benchmark": 1.02,
       "benchmarkValue": 7403.53,
       "returns": [
         0.59,
@@ -3733,9 +3641,9 @@
       ],
       "marketReturns": [
         0.7,
-        1.39,
-        1.39,
-        1.39,
+        1.02,
+        1.02,
+        1.02,
         null,
         null,
         null
@@ -3769,7 +3677,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.52,
+      "benchmark": 1.15,
       "benchmarkValue": 7413.46,
       "returns": [
         0.59,
@@ -3779,9 +3687,9 @@
       ],
       "marketReturns": [
         0.83,
-        1.52,
-        1.52,
-        1.52,
+        1.15,
+        1.15,
+        1.15,
         null,
         null,
         null
@@ -3815,7 +3723,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.35,
+      "benchmark": 0.99,
       "benchmarkValue": 7401.08,
       "returns": [
         0.3,
@@ -3825,9 +3733,9 @@
       ],
       "marketReturns": [
         0.66,
-        1.35,
-        1.35,
-        1.35,
+        0.99,
+        0.99,
+        0.99,
         null,
         null,
         null
@@ -3861,7 +3769,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.25,
+      "benchmark": 0.88,
       "benchmarkValue": 7393.36,
       "returns": [
         0.34,
@@ -3871,9 +3779,9 @@
       ],
       "marketReturns": [
         0.56,
-        1.25,
-        1.25,
-        1.25,
+        0.88,
+        0.88,
+        0.88,
         null,
         null,
         null
@@ -3907,7 +3815,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.12,
+      "benchmark": 0.75,
       "benchmarkValue": 7384.0,
       "returns": [
         0.3,
@@ -3917,9 +3825,9 @@
       ],
       "marketReturns": [
         0.43,
-        1.12,
-        1.12,
-        1.12,
+        0.75,
+        0.75,
+        0.75,
         null,
         null,
         null
@@ -3953,7 +3861,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.18,
+      "benchmark": 0.81,
       "benchmarkValue": 7388.52,
       "returns": [
         0.51,
@@ -3963,9 +3871,9 @@
       ],
       "marketReturns": [
         0.49,
-        1.18,
-        1.18,
-        1.18,
+        0.81,
+        0.81,
+        0.81,
         null,
         null,
         null
@@ -3999,7 +3907,7 @@
       "candidates": 38,
       "protected": 3,
       "stale": 0,
-      "benchmark": 1.31,
+      "benchmark": 0.94,
       "benchmarkValue": 7397.6,
       "returns": [
         0.99,
@@ -4009,9 +3917,9 @@
       ],
       "marketReturns": [
         0.61,
-        1.31,
-        1.31,
-        1.31,
+        0.94,
+        0.94,
+        0.94,
         null,
         null,
         null
@@ -4045,7 +3953,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.6,
+      "benchmark": 1.23,
       "benchmarkValue": 7418.93,
       "returns": [
         1.51,
@@ -4055,9 +3963,9 @@
       ],
       "marketReturns": [
         0.9,
-        1.6,
-        1.6,
-        1.6,
+        1.23,
+        1.23,
+        1.23,
         null,
         null,
         null
@@ -4091,7 +3999,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.63,
+      "benchmark": 1.26,
       "benchmarkValue": 7420.99,
       "returns": [
         1.51,
@@ -4101,9 +4009,9 @@
       ],
       "marketReturns": [
         0.93,
-        1.63,
-        1.63,
-        1.63,
+        1.26,
+        1.26,
+        1.26,
         null,
         null,
         null
@@ -4137,7 +4045,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.64,
+      "benchmark": 1.27,
       "benchmarkValue": 7422.17,
       "returns": [
         1.51,
@@ -4147,9 +4055,9 @@
       ],
       "marketReturns": [
         0.95,
-        1.64,
-        1.64,
-        1.64,
+        1.27,
+        1.27,
+        1.27,
         null,
         null,
         null
@@ -4183,7 +4091,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.62,
+      "benchmark": 1.25,
       "benchmarkValue": 7420.63,
       "returns": [
         1.51,
@@ -4193,9 +4101,9 @@
       ],
       "marketReturns": [
         0.93,
-        1.62,
-        1.62,
-        1.62,
+        1.25,
+        1.25,
+        1.25,
         null,
         null,
         null
@@ -4229,7 +4137,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.67,
+      "benchmark": 1.3,
       "benchmarkValue": 7424.07,
       "returns": [
         1.51,
@@ -4239,9 +4147,9 @@
       ],
       "marketReturns": [
         0.97,
-        1.67,
-        1.67,
-        1.67,
+        1.3,
+        1.3,
+        1.3,
         null,
         null,
         null
@@ -4275,7 +4183,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.51,
+      "benchmark": 1.14,
       "benchmarkValue": 7412.11,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4287,9 +4195,9 @@
       ],
       "marketReturns": [
         0.81,
-        1.51,
-        1.51,
-        1.51,
+        1.14,
+        1.14,
+        1.14,
         null,
         null,
         null
@@ -4322,7 +4230,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.44,
+      "benchmark": 1.07,
       "benchmarkValue": 7407.18,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4334,9 +4242,9 @@
       ],
       "marketReturns": [
         0.74,
-        1.44,
-        1.44,
-        1.44,
+        1.07,
+        1.07,
+        1.07,
         null,
         null,
         null
@@ -4369,7 +4277,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4381,9 +4289,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         null,
         null,
         null
@@ -4416,7 +4324,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4428,9 +4336,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         null,
         null,
         null
@@ -4463,7 +4371,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4475,9 +4383,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         null,
         null,
         null
@@ -4510,7 +4418,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4522,9 +4430,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         null,
         null,
         null
@@ -4557,7 +4465,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4569,9 +4477,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         null,
         null,
         null
@@ -4604,7 +4512,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4616,9 +4524,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         null,
         null,
         null
@@ -4651,7 +4559,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4666,9 +4574,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -4707,7 +4615,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4722,9 +4630,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -4763,7 +4671,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4778,9 +4686,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -4819,7 +4727,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4834,9 +4742,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -4875,7 +4783,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4890,9 +4798,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -4931,7 +4839,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -4946,9 +4854,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -4987,7 +4895,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -5002,9 +4910,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5043,7 +4951,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -5058,9 +4966,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5099,7 +5007,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -5114,9 +5022,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5155,7 +5063,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -5170,9 +5078,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5211,7 +5119,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -5226,9 +5134,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5267,7 +5175,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -5282,9 +5190,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5323,7 +5231,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 2.2,
       "kodex200Value": 115765.0,
@@ -5338,9 +5246,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5379,7 +5287,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 2.11,
       "kodex200Value": 115660.0,
@@ -5394,9 +5302,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5435,7 +5343,7 @@
       "candidates": 96,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.57,
       "kodex200Value": 113915.0,
@@ -5450,9 +5358,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5491,7 +5399,7 @@
       "candidates": 96,
       "protected": 4,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.34,
       "kodex200Value": 113660.0,
@@ -5506,9 +5414,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5547,7 +5455,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -1.12,
       "kodex200Value": 112000.0,
@@ -5562,9 +5470,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5603,7 +5511,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -0.23,
       "kodex200Value": 113015.0,
@@ -5618,9 +5526,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5659,7 +5567,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.18,
       "kodex200Value": 113475.0,
@@ -5674,9 +5582,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5715,7 +5623,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.39,
       "kodex200Value": 113715.0,
@@ -5730,9 +5638,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5771,7 +5679,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.2,
       "kodex200Value": 113495.0,
@@ -5786,9 +5694,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5827,7 +5735,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -0.1,
       "kodex200Value": 113160.0,
@@ -5842,9 +5750,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5883,7 +5791,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -0.46,
       "kodex200Value": 112750.0,
@@ -5898,9 +5806,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5939,7 +5847,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -0.42,
       "kodex200Value": 112790.0,
@@ -5954,9 +5862,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -5995,7 +5903,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -1.09,
       "kodex200Value": 112035.0,
@@ -6010,9 +5918,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -6051,7 +5959,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -0.84,
       "kodex200Value": 112320.0,
@@ -6066,9 +5974,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -6107,7 +6015,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -0.74,
       "kodex200Value": 112430.0,
@@ -6122,9 +6030,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -6163,7 +6071,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -0.97,
       "kodex200Value": 112175.0,
@@ -6178,9 +6086,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -6219,7 +6127,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -1.1,
       "kodex200Value": 112025.0,
@@ -6234,9 +6142,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -6275,7 +6183,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -0.59,
       "kodex200Value": 112600.0,
@@ -6290,9 +6198,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -6331,7 +6239,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -0.59,
       "kodex200Value": 112600.0,
@@ -6346,9 +6254,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -6387,7 +6295,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -0.58,
       "kodex200Value": 112615.0,
@@ -6402,9 +6310,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -6443,7 +6351,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -1.25,
       "kodex200Value": 111855.0,
@@ -6458,9 +6366,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -6499,7 +6407,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -1.01,
       "kodex200Value": 112130.0,
@@ -6514,9 +6422,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -6555,7 +6463,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -0.47,
       "kodex200Value": 112735.0,
@@ -6570,9 +6478,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -6611,7 +6519,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": -0.06,
       "kodex200Value": 113200.0,
@@ -6626,9 +6534,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -6667,7 +6575,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.46,
+      "benchmark": 1.09,
       "benchmarkValue": 7409.09,
       "kodex200": 0.19,
       "kodex200Value": 113480.0,
@@ -6682,9 +6590,9 @@
       ],
       "marketReturns": [
         0.77,
-        1.46,
-        1.46,
-        1.46,
+        1.09,
+        1.09,
+        1.09,
         0.0,
         0.0,
         0.0
@@ -6723,7 +6631,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.01,
+      "benchmark": 0.65,
       "benchmarkValue": 7376.22,
       "kodex200": 0.34,
       "kodex200Value": 113660.0,
@@ -6738,9 +6646,9 @@
       ],
       "marketReturns": [
         0.32,
-        1.01,
-        1.01,
-        1.01,
+        0.65,
+        0.65,
+        0.65,
         -0.44,
         -0.44,
         -0.44
@@ -6779,7 +6687,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.01,
+      "benchmark": 0.65,
       "benchmarkValue": 7376.22,
       "kodex200": 0.35,
       "kodex200Value": 113670.0,
@@ -6794,9 +6702,9 @@
       ],
       "marketReturns": [
         0.32,
-        1.01,
-        1.01,
-        1.01,
+        0.65,
+        0.65,
+        0.65,
         -0.44,
         -0.44,
         -0.44
@@ -6835,7 +6743,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.17,
+      "benchmark": 0.8,
       "benchmarkValue": 7387.3,
       "kodex200": 0.34,
       "kodex200Value": 113650.0,
@@ -6850,9 +6758,9 @@
       ],
       "marketReturns": [
         0.47,
-        1.17,
-        1.17,
-        1.17,
+        0.8,
+        0.8,
+        0.8,
         -0.29,
         -0.29,
         -0.29
@@ -6891,7 +6799,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.48,
+      "benchmark": 1.11,
       "benchmarkValue": 7410.05,
       "kodex200": 0.86,
       "kodex200Value": 114245.0,
@@ -6906,9 +6814,9 @@
       ],
       "marketReturns": [
         0.78,
-        1.48,
-        1.48,
-        1.48,
+        1.11,
+        1.11,
+        1.11,
         0.01,
         0.01,
         0.01
@@ -6947,7 +6855,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.44,
+      "benchmark": 1.07,
       "benchmarkValue": 7407.38,
       "kodex200": 0.61,
       "kodex200Value": 113960.0,
@@ -6962,9 +6870,9 @@
       ],
       "marketReturns": [
         0.75,
-        1.44,
-        1.44,
-        1.44,
+        1.07,
+        1.07,
+        1.07,
         -0.02,
         -0.02,
         -0.02
@@ -7003,7 +6911,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.21,
+      "benchmark": 0.85,
       "benchmarkValue": 7390.81,
       "kodex200": 0.32,
       "kodex200Value": 113635.0,
@@ -7018,9 +6926,9 @@
       ],
       "marketReturns": [
         0.52,
-        1.21,
-        1.21,
-        1.21,
+        0.85,
+        0.85,
+        0.85,
         -0.25,
         -0.25,
         -0.25
@@ -7059,7 +6967,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.04,
+      "benchmark": 0.67,
       "benchmarkValue": 7377.89,
       "kodex200": 0.22,
       "kodex200Value": 113515.0,
@@ -7074,9 +6982,9 @@
       ],
       "marketReturns": [
         0.35,
-        1.04,
-        1.04,
-        1.04,
+        0.67,
+        0.67,
+        0.67,
         -0.42,
         -0.42,
         -0.42
@@ -7115,7 +7023,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.54,
+      "benchmark": 0.17,
       "benchmarkValue": 7341.32,
       "kodex200": -0.28,
       "kodex200Value": 112955.0,
@@ -7130,9 +7038,9 @@
       ],
       "marketReturns": [
         -0.15,
-        0.54,
-        0.54,
-        0.54,
+        0.17,
+        0.17,
+        0.17,
         -0.91,
         -0.91,
         -0.91
@@ -7171,7 +7079,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.91,
+      "benchmark": 0.54,
       "benchmarkValue": 7368.75,
       "kodex200": 0.24,
       "kodex200Value": 113540.0,
@@ -7186,9 +7094,9 @@
       ],
       "marketReturns": [
         0.22,
-        0.91,
-        0.91,
-        0.91,
+        0.54,
+        0.54,
+        0.54,
         -0.54,
         -0.54,
         -0.54
@@ -7227,7 +7135,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.14,
+      "benchmark": 0.78,
       "benchmarkValue": 7385.68,
       "kodex200": 0.4,
       "kodex200Value": 113725.0,
@@ -7242,9 +7150,9 @@
       ],
       "marketReturns": [
         0.45,
-        1.14,
-        1.14,
-        1.14,
+        0.78,
+        0.78,
+        0.78,
         -0.32,
         -0.32,
         -0.32
@@ -7283,7 +7191,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.42,
+      "benchmark": 1.05,
       "benchmarkValue": 7405.53,
       "kodex200": 0.71,
       "kodex200Value": 114072.0,
@@ -7298,9 +7206,9 @@
       ],
       "marketReturns": [
         0.72,
-        1.42,
-        1.42,
-        1.42,
+        1.05,
+        1.05,
+        1.05,
         -0.05,
         -0.05,
         -0.05
@@ -7339,7 +7247,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.39,
+      "benchmark": 1.02,
       "benchmarkValue": 7403.74,
       "kodex200": 0.66,
       "kodex200Value": 114020.0,
@@ -7354,9 +7262,9 @@
       ],
       "marketReturns": [
         0.7,
-        1.39,
-        1.39,
-        1.39,
+        1.02,
+        1.02,
+        1.02,
         -0.07,
         -0.07,
         -0.07
@@ -7395,7 +7303,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.26,
+      "benchmark": 0.89,
       "benchmarkValue": 7393.93,
       "kodex200": 0.45,
       "kodex200Value": 113775.0,
@@ -7410,9 +7318,9 @@
       ],
       "marketReturns": [
         0.56,
-        1.26,
-        1.26,
-        1.26,
+        0.89,
+        0.89,
+        0.89,
         -0.2,
         -0.2,
         -0.2
@@ -7451,7 +7359,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.06,
+      "benchmark": 0.7,
       "benchmarkValue": 7379.9,
       "kodex200": 0.43,
       "kodex200Value": 113760.0,
@@ -7466,9 +7374,9 @@
       ],
       "marketReturns": [
         0.37,
-        1.06,
-        1.06,
-        1.06,
+        0.7,
+        0.7,
+        0.7,
         -0.39,
         -0.39,
         -0.39
@@ -7507,7 +7415,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.08,
+      "benchmark": 0.71,
       "benchmarkValue": 7381.14,
       "kodex200": 0.45,
       "kodex200Value": 113785.0,
@@ -7522,9 +7430,9 @@
       ],
       "marketReturns": [
         0.39,
-        1.08,
-        1.08,
-        1.08,
+        0.71,
+        0.71,
+        0.71,
         -0.38,
         -0.38,
         -0.38
@@ -7563,7 +7471,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.21,
+      "benchmark": 0.85,
       "benchmarkValue": 7390.84,
       "kodex200": 0.57,
       "kodex200Value": 113920.0,
@@ -7578,9 +7486,9 @@
       ],
       "marketReturns": [
         0.52,
-        1.21,
-        1.21,
-        1.21,
+        0.85,
+        0.85,
+        0.85,
         -0.25,
         -0.25,
         -0.25
@@ -7611,6 +7519,118 @@
         0.57,
         0.57,
         0.57
+      ]
+    },
+    {
+      "ts": "2026-05-07T13:30+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 97,
+      "protected": 2,
+      "stale": 0,
+      "benchmark": 0.98,
+      "benchmarkValue": 7400.98,
+      "kodex200": 0.68,
+      "kodex200Value": 114040.0,
+      "returns": [
+        0.37,
+        0.69,
+        1.49,
+        -3.71,
+        0.71,
+        -0.26,
+        0.66
+      ],
+      "marketReturns": [
+        0.66,
+        0.98,
+        0.98,
+        0.98,
+        -0.11,
+        -0.11,
+        -0.11
+      ],
+      "evalAmounts": [
+        10035300,
+        30201660,
+        10149500,
+        9629050,
+        10070550,
+        9973900,
+        10065700
+      ],
+      "capital": [
+        9998800,
+        29996060,
+        10000000,
+        10000000,
+        10000000,
+        10000000,
+        10000000
+      ],
+      "kodexReturns": [
+        0.68,
+        0.68,
+        0.68,
+        0.68,
+        0.68,
+        0.68,
+        0.68
+      ]
+    },
+    {
+      "ts": "2026-05-07T13:35+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 97,
+      "protected": 2,
+      "stale": 0,
+      "benchmark": 0.9,
+      "benchmarkValue": 7394.75,
+      "kodex200": 0.4,
+      "kodex200Value": 113720.0,
+      "returns": [
+        0.05,
+        0.55,
+        1.49,
+        -3.71,
+        0.71,
+        -0.26,
+        0.66
+      ],
+      "marketReturns": [
+        0.58,
+        0.9,
+        0.9,
+        0.9,
+        -0.19,
+        -0.19,
+        -0.19
+      ],
+      "evalAmounts": [
+        10003300,
+        30159810,
+        10149500,
+        9629050,
+        10070550,
+        9973900,
+        10065700
+      ],
+      "capital": [
+        9998800,
+        29996060,
+        10000000,
+        10000000,
+        10000000,
+        10000000,
+        10000000
+      ],
+      "kodexReturns": [
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4
       ]
     }
   ],
