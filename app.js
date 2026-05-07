@@ -143,15 +143,31 @@ function returnMetricCard(label, value, note = '', toneValue = value) {
   </article>`;
 }
 
+function currentHoldingMetrics(pf = {}) {
+  const positions = Array.isArray(pf.positions) ? pf.positions : [];
+  const buyAmount = positions.reduce((sum, p) => {
+    const qty = Number(p.qty || 0);
+    const entry = Number(p.entryPrice || 0);
+    return sum + Number(p.entryAmount ?? (qty && entry ? qty * entry : 0));
+  }, 0);
+  const evalAmount = positions.reduce((sum, p) => sum + Number(p.evalAmount || 0), 0);
+  const pnl = positions.reduce((sum, p) => sum + Number(p.pnl || 0), 0);
+  const returnPct = buyAmount ? (pnl / buyAmount) * 100 : null;
+  return { buyAmount, evalAmount, pnl, returnPct };
+}
+
 function strategyReturnCards(s) {
   const pf = s.portfolio || {};
   const daily = s.daily || {};
   const investPct = investmentReturnPct(pf);
+  const held = currentHoldingMetrics(pf);
   return `<div class="strategy-return-cards">
-    ${returnMetricCard('누적 수익률', pct(pf.returnPct), `수익 ${money(pf.pnl)}`, pf.returnPct)}
-    ${returnMetricCard('오늘 수익률', pct(daily.returnPct), `오늘 ${money(daily.pnl)}`, daily.returnPct)}
-    ${returnMetricCard('투자 대비 수익', money(pf.pnl), `투자금 대비 ${pct(investPct)}`, pf.pnl)}
-    ${returnMetricCard('평가 / 투자금', compactMoney(pf.evalAmount || pf.capital), `투자 ${compactMoney(pf.investmentAmount)} · 현금 ${compactMoney(pf.cash)}`, pf.pnl)}
+    ${returnMetricCard('누적 수익률', pct(pf.returnPct), `전략 실행 이후 · 수익 ${money(pf.pnl)}`, pf.returnPct)}
+    ${returnMetricCard('오늘 수익률', pct(daily.returnPct), `전체 매수 종목 오늘 ${money(daily.pnl)}`, daily.returnPct)}
+    ${returnMetricCard('보유 매입금액', compactMoney(held.buyAmount), `현재 보유 ${fmt.format((pf.positions || []).length)}종목`, held.pnl)}
+    ${returnMetricCard('보유 평가손익', money(held.pnl), `보유 수익률 ${pct(held.returnPct)}`, held.pnl)}
+    ${returnMetricCard('보유 평가금액', compactMoney(held.evalAmount), `매입 ${compactMoney(held.buyAmount)}`, held.pnl)}
+    ${returnMetricCard('보유 수익률', pct(held.returnPct), `평가손익 ${money(held.pnl)}`, held.returnPct)}
   </div>`;
 }
 
