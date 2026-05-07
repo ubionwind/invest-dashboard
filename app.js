@@ -457,6 +457,12 @@ function reasonParts(reason = '') {
     }, {});
 }
 
+function fundamentalsText(f = {}) {
+  if (!f) return '-';
+  const part = (label, value, suffix = '') => value === null || value === undefined || value === '' ? `${label} -` : `${label} ${Number(value).toFixed(2)}${suffix}`;
+  return `${part('PER', f.per)} · ${part('PBR', f.pbr)} · ${part('ROE', f.roe, '%')}`;
+}
+
 function candidateTile(c, idx) {
   const parts = reasonParts(c.reason);
   const change = c.changePct === null || c.changePct === undefined || c.changePct === '' ? parts['등락률'] : c.changePct;
@@ -493,7 +499,9 @@ function candidateTile(c, idx) {
       ${theme ? `<span>${theme}</span>` : ''}
       ${meta ? `<span>meta ${meta}</span>` : ''}
       ${rawScore && rawScore !== score ? `<span>원점수 ${rawScore}</span>` : ''}
+      ${c.fundamentals?.badge ? `<span>${c.fundamentals.badge}</span>` : ''}
     </div>
+    ${c.fundamentals ? `<details class="candidate-detail"><summary>PER/PBR/ROE 보기</summary><p>${fundamentalsText(c.fundamentals)}</p></details>` : ''}
     ${c.candidateNote ? `<details class="candidate-detail"><summary>매수/보유 기준 보기</summary><p>${c.candidateNote}</p></details>` : ''}
     ${c.reason && (!theme && !meta && change === undefined) ? `<p class="candidate-reason">${c.reason}</p>` : ''}
   </article>`;
@@ -548,7 +556,7 @@ function holdingsBlock(pf = {}) {
     <div class="alert-head"><span>보유 항목</span><strong>${positions.length}</strong></div>
     <div class="holding-table-wrap"><table class="holding-table">
       <thead><tr>
-        <th>종목명</th><th>종목코드</th><th>보유일</th><th>보유수량</th><th>평가손익<br>수익률(%)</th><th>평가금액<br>매입금액</th><th>현재가<br>평균단가</th><th>전일대비<br>등락률(%)</th><th>보유비중</th>
+        <th>종목명</th><th>종목코드</th><th>PER/PBR/ROE</th><th>보유일</th><th>보유수량</th><th>평가손익<br>수익률(%)</th><th>평가금액<br>매입금액</th><th>현재가<br>평균단가</th><th>전일대비<br>등락률(%)</th><th>보유비중</th>
       </tr></thead>
       <tbody>${positions.map(p => {
         const ret = p.returnPct === null || p.returnPct === undefined || p.returnPct === '' ? null : Number(p.returnPct);
@@ -563,9 +571,11 @@ function holdingsBlock(pf = {}) {
         const delta = prevPrice ? Math.trunc(currentPrice - prevPrice) : null;
         const weight = totalEval && p.evalAmount ? Number(p.evalAmount) / totalEval * 100 : null;
         const holdingDays = String(p.holdingPeriod || '-').replace(/^보유\s*/, '');
+        const f = p.fundamentals || null;
         return `<tr>
           <td class="stock-name" data-label="종목명"><strong>${p.name || '-'}</strong></td>
           <td class="stock-code" data-label="종목코드">${p.code || '-'}</td>
+          <td class="fundamental-cell" data-label="PER/PBR/ROE"><span>${f ? `${f.per ?? '-'} / ${f.pbr ?? '-'} / ${f.roe ?? '-'}` : '-'}</span>${f?.badge ? `<small>${f.badge}</small>` : ''}</td>
           <td data-label="보유일">${holdingDays}</td>
           <td data-label="보유수량">${fmt.format(qty)}</td>
           <td class="num-pair" data-label="평가손익 / 수익률"><span class="pair-line"><b class="${retClass}">${moneyBare(p.pnl)}</b><small class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : ret.toFixed(2)}</small></span></td>

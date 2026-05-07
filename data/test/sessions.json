@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-07T21:02+09:00",
+  "generatedAt": "2026-05-07T23:27+09:00",
   "sessions": [
     {
       "name": "일반",
@@ -33,6 +33,14 @@
           "reason": "meta=0.45; 등락률=-0.81; theme=바이오",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 92.82,
+            "pbr": 8.1,
+            "roe": 9.12,
+            "badge": "고PBR · 고PER주의",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 45,
           "candidateScoreRaw": 35.7,
           "comparisonBaseScore": 45.0,
@@ -59,6 +67,14 @@
           "reason": "meta=0.45; 등락률=2.23; theme=전력",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 11.43,
+            "pbr": 2.82,
+            "roe": 27.71,
+            "badge": "고ROE",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 45,
           "candidateScoreRaw": 38.7,
           "comparisonBaseScore": 45.0,
@@ -85,6 +101,14 @@
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 80.86,
+            "pbr": 4.95,
+            "roe": 6.35,
+            "badge": "고PER주의",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 45,
           "candidateScoreRaw": 0.0,
           "comparisonBaseScore": 45.0,
@@ -111,6 +135,14 @@
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 36.84,
+            "pbr": 1.51,
+            "roe": 4.15,
+            "badge": "저ROE",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 45,
           "candidateScoreRaw": 0.0,
           "comparisonBaseScore": 45.0,
@@ -137,6 +169,14 @@
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": -11.3,
+            "pbr": 1.82,
+            "roe": -15.61,
+            "badge": "저ROE · PER불가",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 45,
           "candidateScoreRaw": 0.0,
           "comparisonBaseScore": 45.0,
@@ -163,6 +203,14 @@
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 4.67,
+            "pbr": 0.58,
+            "roe": 13.68,
+            "badge": "저PBR · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 45,
           "candidateScoreRaw": 0.0,
           "comparisonBaseScore": 45.0,
@@ -189,6 +237,14 @@
           "reason": "meta=0.45; 등락률=1.94; theme=자동차",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 4.59,
+            "pbr": 0.85,
+            "roe": 20.44,
+            "badge": "고ROE · 저PBR · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 45,
           "candidateScoreRaw": 38.4,
           "comparisonBaseScore": 45.0,
@@ -215,6 +271,14 @@
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 36.25,
+            "pbr": 1.45,
+            "roe": 4.41,
+            "badge": "저ROE",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 45,
           "candidateScoreRaw": 0.0,
           "comparisonBaseScore": 45.0,
@@ -265,6 +329,14 @@
             "currentScoreNormalized": 45.0,
             "currentScoreRaw": 0.0,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 36.84,
+              "pbr": 1.51,
+              "roe": 4.15,
+              "badge": "저ROE",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": null,
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
@@ -277,10 +349,10 @@
       },
       "comparison": {
         "returnPct": 2.13,
-        "benchmarkReturnPct": 1.03,
-        "excessReturnPct": 1.1,
+        "benchmarkReturnPct": 1.2,
+        "excessReturnPct": 0.93,
         "periodStart": "2026-05-06T12:12+09:00",
-        "periodEnd": "2026-05-07T21:02+09:00"
+        "periodEnd": "2026-05-07T23:27+09:00"
       }
     },
     {
@@ -315,6 +387,14 @@
           "reason": "meta=0.84; 등락률=-2.77; theme=AI기판",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 39.81,
+            "pbr": 7.12,
+            "roe": 19.51,
+            "badge": "고ROE · 고PBR",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 75,
           "candidateScoreRaw": 61.0,
           "comparisonBaseScore": 50.0,
@@ -341,6 +421,14 @@
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 22.48,
+            "pbr": 10.45,
+            "roe": 55.54,
+            "badge": "고ROE · 고PBR",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 50,
           "candidateScoreRaw": 0.0,
           "comparisonBaseScore": 50.0,
@@ -367,6 +455,14 @@
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": -45.94,
+            "pbr": 1.89,
+            "roe": -4.15,
+            "badge": "저ROE · PER불가",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 50,
           "candidateScoreRaw": 0.0,
           "comparisonBaseScore": 50.0,
@@ -393,6 +489,14 @@
           "reason": "meta=0.76; 등락률=3.06; theme=2차전지소재",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": -3224.66,
+            "pbr": 20.51,
+            "roe": -0.64,
+            "badge": "저ROE · 고PBR · PER불가",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 75,
           "candidateScoreRaw": 61.3,
           "comparisonBaseScore": 50.0,
@@ -467,6 +571,14 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": 61.0,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 39.81,
+              "pbr": 7.12,
+              "roe": 19.51,
+              "badge": "고ROE · 고PBR",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": -2.77,
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
@@ -489,6 +601,14 @@
             "currentScoreNormalized": 50.0,
             "currentScoreRaw": 0.0,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 22.48,
+              "pbr": 10.45,
+              "roe": 55.54,
+              "badge": "고ROE · 고PBR",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": null,
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
@@ -511,6 +631,14 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": 61.3,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": -3224.66,
+              "pbr": 20.51,
+              "roe": -0.64,
+              "badge": "저ROE · 고PBR · PER불가",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 3.06,
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
@@ -523,10 +651,10 @@
       },
       "comparison": {
         "returnPct": 1.24,
-        "benchmarkReturnPct": 1.03,
-        "excessReturnPct": 0.21,
+        "benchmarkReturnPct": 1.2,
+        "excessReturnPct": 0.04,
         "periodStart": "2026-05-06T10:08+09:00",
-        "periodEnd": "2026-05-07T21:02+09:00"
+        "periodEnd": "2026-05-07T23:27+09:00"
       }
     },
     {
@@ -561,6 +689,14 @@
           "reason": "진입만: 136,500원 기준, +7.48% 유지·거래대금 10304억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 10304억",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 183.04,
+            "pbr": 1.43,
+            "roe": 0.78,
+            "badge": "저ROE · 고PER주의",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 80,
           "candidateScoreRaw": 147.8,
           "comparisonBaseScore": 55.0,
@@ -587,6 +723,14 @@
           "reason": "진입만: 694,000원 기준, +7.1% 유지·거래대금 5286억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 5286억",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 463.89,
+            "pbr": 2.2,
+            "roe": 0.47,
+            "badge": "저ROE · 고PER주의",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 80,
           "candidateScoreRaw": 130.1,
           "comparisonBaseScore": 55.0,
@@ -613,6 +757,14 @@
           "reason": "진입만: 33,700원 기준, +5.81% 유지·거래대금 3163억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 3163억",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": -46.0,
+            "pbr": 1.92,
+            "roe": -4.22,
+            "badge": "저ROE · PER불가",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 80,
           "candidateScoreRaw": 125.1,
           "comparisonBaseScore": 55.0,
@@ -639,6 +791,14 @@
           "reason": "진입만: 1,650,000원 기준, +3.06% 유지·거래대금 84044억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 84044억",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": -11.3,
+            "pbr": 1.82,
+            "roe": -15.61,
+            "badge": "저ROE · PER불가",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 70,
           "candidateScoreRaw": 113.6,
           "comparisonBaseScore": 55.0,
@@ -665,6 +825,14 @@
           "reason": "진입만: 567,000원 기준, +3.09% 유지·거래대금 11210억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 11210억",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 4.67,
+            "pbr": 0.58,
+            "roe": 13.68,
+            "badge": "저PBR · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 70,
           "candidateScoreRaw": 95.7,
           "comparisonBaseScore": 55.0,
@@ -691,6 +859,14 @@
           "reason": "watch only: 정규장 09:45 이후 +2.4% 이상 유지 및 거래대금/뉴스 확인 시 진입 검토",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 36.84,
+            "pbr": 1.51,
+            "roe": 4.15,
+            "badge": "저ROE",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 70,
           "candidateScoreRaw": 82.9,
           "comparisonBaseScore": 55.0,
@@ -717,6 +893,14 @@
           "reason": "진입만: 201,000원 기준, +3.24% 유지·거래대금 1980억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 1980억",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 55.43,
+            "pbr": 2.52,
+            "roe": 5.07,
+            "badge": "고PER주의",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 55,
           "candidateScoreRaw": 78.0,
           "comparisonBaseScore": 55.0,
@@ -743,6 +927,14 @@
           "reason": "진입만: 234,500원 기준, +2.63% 유지·거래대금 2576억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 2576억",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": -3224.66,
+            "pbr": 20.51,
+            "roe": -0.64,
+            "badge": "저ROE · 고PBR · PER불가",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 55,
           "candidateScoreRaw": 66.0,
           "comparisonBaseScore": 55.0,
@@ -850,6 +1042,14 @@
             "currentScoreNormalized": 70.0,
             "currentScoreRaw": 82.9,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 36.84,
+              "pbr": 1.51,
+              "roe": 4.15,
+              "badge": "저ROE",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 1.79,
             "replacementWatchLine": 82.0,
             "liquidityText": "수급 데이터 대기"
@@ -877,6 +1077,14 @@
             "currentScoreNormalized": 70.0,
             "currentScoreRaw": 113.6,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": -11.3,
+              "pbr": 1.82,
+              "roe": -15.61,
+              "badge": "저ROE · PER불가",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 3.06,
             "replacementWatchLine": 82.0,
             "liquidityText": "거래대금 84044억"
@@ -904,6 +1112,14 @@
             "currentScoreNormalized": 80.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 968.71,
+              "pbr": 11.83,
+              "roe": 1.19,
+              "badge": "저ROE · 고PBR · 고PER주의",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 8.61,
             "replacementWatchLine": 92.0,
             "liquidityText": "거래대금 증가"
@@ -931,6 +1147,14 @@
             "currentScoreNormalized": 70.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 11.43,
+              "pbr": 2.82,
+              "roe": 27.71,
+              "badge": "고ROE",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 6.16,
             "replacementWatchLine": 82.0,
             "liquidityText": "거래대금 증가"
@@ -958,6 +1182,14 @@
             "currentScoreNormalized": 55.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 10.66,
+              "pbr": 1.25,
+              "roe": 12.61,
+              "badge": "지표확인",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 3.83,
             "replacementWatchLine": 70,
             "liquidityText": "거래대금 증가"
@@ -966,10 +1198,10 @@
       },
       "comparison": {
         "returnPct": 3.36,
-        "benchmarkReturnPct": 1.03,
-        "excessReturnPct": 2.33,
+        "benchmarkReturnPct": 1.2,
+        "excessReturnPct": 2.16,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T21:02+09:00"
+        "periodEnd": "2026-05-07T23:27+09:00"
       }
     },
     {
@@ -1004,6 +1236,14 @@
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 7.98,
+            "pbr": 1.85,
+            "roe": 25.6,
+            "badge": "고ROE · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 75,
           "candidateScoreRaw": 70.0,
           "comparisonBaseScore": 75.0,
@@ -1030,6 +1270,14 @@
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 16.41,
+            "pbr": 2.7,
+            "roe": 17.61,
+            "badge": "고ROE",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 75,
           "candidateScoreRaw": 70.0,
           "comparisonBaseScore": 75.0,
@@ -1056,6 +1304,14 @@
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 21.76,
+            "pbr": 3.05,
+            "roe": 14.81,
+            "badge": "지표확인",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 75,
           "candidateScoreRaw": 70.0,
           "comparisonBaseScore": 75.0,
@@ -1082,6 +1338,14 @@
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 463.89,
+            "pbr": 2.2,
+            "roe": 0.47,
+            "badge": "저ROE · 고PER주의",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 75,
           "candidateScoreRaw": 70.0,
           "comparisonBaseScore": 75.0,
@@ -1108,6 +1372,14 @@
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 38.59,
+            "pbr": 0.86,
+            "roe": 2.26,
+            "badge": "저ROE · 저PBR",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 75,
           "candidateScoreRaw": 70.0,
           "comparisonBaseScore": 75.0,
@@ -1134,6 +1406,14 @@
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": -45.94,
+            "pbr": 1.89,
+            "roe": -4.15,
+            "badge": "저ROE · PER불가",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 65,
           "candidateScoreRaw": 66.0,
           "comparisonBaseScore": 75.0,
@@ -1160,6 +1440,14 @@
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 44.33,
+            "pbr": 13.09,
+            "roe": 34.05,
+            "badge": "고ROE · 고PBR · 고PER주의",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 65,
           "candidateScoreRaw": 66.0,
           "comparisonBaseScore": 75.0,
@@ -1186,6 +1474,14 @@
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "fundamentals": {
+            "per": 111.45,
+            "pbr": 3.47,
+            "roe": 3.56,
+            "badge": "저ROE · 고PER주의",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 65,
           "candidateScoreRaw": 66.0,
           "comparisonBaseScore": 75.0,
@@ -1293,6 +1589,14 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 27.83,
+              "pbr": 5.52,
+              "roe": 21.12,
+              "badge": "고ROE · 고PBR",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
             "liquidityText": "거래대금 증가"
@@ -1320,6 +1624,14 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 10.66,
+              "pbr": 1.25,
+              "roe": 12.61,
+              "badge": "지표확인",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
             "liquidityText": "거래대금 증가"
@@ -1347,6 +1659,14 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": 70.0,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 7.98,
+              "pbr": 1.85,
+              "roe": 25.6,
+              "badge": "고ROE · 저PER",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
             "liquidityText": "거래대금 증가"
@@ -1374,6 +1694,14 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": 70.0,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 16.41,
+              "pbr": 2.7,
+              "roe": 17.61,
+              "badge": "고ROE",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
             "liquidityText": "거래대금 증가"
@@ -1401,6 +1729,14 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": 70.0,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 21.76,
+              "pbr": 3.05,
+              "roe": 14.81,
+              "badge": "지표확인",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
             "liquidityText": "거래대금 증가"
@@ -1409,10 +1745,10 @@
       },
       "comparison": {
         "returnPct": -4.42,
-        "benchmarkReturnPct": 1.03,
-        "excessReturnPct": -5.45,
+        "benchmarkReturnPct": 1.2,
+        "excessReturnPct": -5.62,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T21:02+09:00"
+        "periodEnd": "2026-05-07T23:27+09:00"
       }
     },
     {
@@ -1447,6 +1783,14 @@
           "reason": "가치/안정성=28; 과열완화=13.7; 거래대금점수=20; 등락률=1.45",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 4.77,
+            "pbr": 0.36,
+            "roe": 8.39,
+            "badge": "저PBR · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 95,
           "candidateScoreRaw": 93.7,
           "comparisonBaseScore": 88.0,
@@ -1473,6 +1817,14 @@
           "reason": "가치/안정성=28; 과열완화=13.1; 거래대금점수=20; 등락률=1.64",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 4.78,
+            "pbr": 0.38,
+            "roe": 8.36,
+            "badge": "저PBR · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 95,
           "candidateScoreRaw": 93.1,
           "comparisonBaseScore": 88.0,
@@ -1499,6 +1851,14 @@
           "reason": "가치/안정성=23; 과열완화=15.2; 거래대금점수=20; 등락률=0.95",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 10.66,
+            "pbr": 1.25,
+            "roe": 12.61,
+            "badge": "지표확인",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 95,
           "candidateScoreRaw": 90.2,
           "comparisonBaseScore": 88.0,
@@ -1525,6 +1885,14 @@
           "reason": "가치/안정성=28; 과열완화=10.1; 거래대금점수=20; 등락률=2.63",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 3.74,
+            "pbr": 0.32,
+            "roe": 9.01,
+            "badge": "저PBR · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 95,
           "candidateScoreRaw": 90.1,
           "comparisonBaseScore": 88.0,
@@ -1551,6 +1919,14 @@
           "reason": "가치/안정성=23; 과열완화=11.3; 거래대금점수=20; 등락률=2.23",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 11.43,
+            "pbr": 2.82,
+            "roe": 27.71,
+            "badge": "고ROE",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 88,
           "candidateScoreRaw": 86.3,
           "comparisonBaseScore": 88.0,
@@ -1577,6 +1953,14 @@
           "reason": "가치/안정성=16; 과열완화=17.3; 거래대금점수=20; 등락률=-0.24",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 36.25,
+            "pbr": 1.45,
+            "roe": 4.41,
+            "badge": "저ROE",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 88,
           "candidateScoreRaw": 85.3,
           "comparisonBaseScore": 88.0,
@@ -1603,6 +1987,14 @@
           "reason": "가치/안정성=23; 과열완화=9.8; 거래대금점수=20; 등락률=-2.72",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 21.76,
+            "pbr": 3.05,
+            "roe": 14.81,
+            "badge": "지표확인",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 88,
           "candidateScoreRaw": 84.8,
           "comparisonBaseScore": 88.0,
@@ -1629,6 +2021,14 @@
           "reason": "가치/안정성=21; 과열완화=11.8; 거래대금점수=20; 등락률=2.08",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 6.52,
+            "pbr": 0.53,
+            "roe": 8.73,
+            "badge": "저PBR · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 88,
           "candidateScoreRaw": 84.8,
           "comparisonBaseScore": 88.0,
@@ -1643,7 +2043,7 @@
           "status": "보유중",
           "reason": "3주 · 매입 305500.0원 · 평가 955500원 · 손익 39000원",
           "returnPct": 4.26,
-          "holdingPeriod": "보유 11시간 36분"
+          "holdingPeriod": "보유 14시간 0분"
         },
         {
           "code": "005930",
@@ -1651,7 +2051,7 @@
           "status": "보유중",
           "reason": "3주 · 매입 263000.0원 · 평가 814500원 · 손익 25500원",
           "returnPct": 3.23,
-          "holdingPeriod": "보유 11시간 36분"
+          "holdingPeriod": "보유 14시간 0분"
         },
         {
           "code": "068270",
@@ -1703,6 +2103,14 @@
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 93.1,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 4.78,
+              "pbr": 0.38,
+              "roe": 8.36,
+              "badge": "저PBR · 저PER",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 1.64,
             "replacementWatchLine": 107.0,
             "liquidityText": "거래대금 점수 20"
@@ -1730,6 +2138,14 @@
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 93.7,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 4.77,
+              "pbr": 0.36,
+              "roe": 8.39,
+              "badge": "저PBR · 저PER",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 1.45,
             "replacementWatchLine": 107.0,
             "liquidityText": "거래대금 점수 20"
@@ -1757,6 +2173,14 @@
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 90.1,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 3.74,
+              "pbr": 0.32,
+              "roe": 9.01,
+              "badge": "저PBR · 저PER",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 2.63,
             "replacementWatchLine": 107.0,
             "liquidityText": "거래대금 점수 20"
@@ -1784,6 +2208,14 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 84.8,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 6.52,
+              "pbr": 0.53,
+              "roe": 8.73,
+              "badge": "저PBR · 저PER",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 2.08,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
@@ -1811,6 +2243,14 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 84.8,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 21.76,
+              "pbr": 3.05,
+              "roe": 14.81,
+              "badge": "지표확인",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": -2.72,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
@@ -1838,6 +2278,14 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 85.3,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 36.25,
+              "pbr": 1.45,
+              "roe": 4.41,
+              "badge": "저ROE",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": -0.24,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
@@ -1865,6 +2313,14 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 27.83,
+              "pbr": 5.52,
+              "roe": 21.12,
+              "badge": "고ROE · 고PBR",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": -3.39,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
@@ -1892,6 +2348,14 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 55.43,
+              "pbr": 2.52,
+              "roe": 5.07,
+              "badge": "고PER주의",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": -1.57,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
@@ -1903,7 +2367,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.14,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T21:02+09:00"
+        "periodEnd": "2026-05-07T23:27+09:00"
       }
     },
     {
@@ -1938,6 +2402,14 @@
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=2.07",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 36.84,
+            "pbr": 1.51,
+            "roe": 4.15,
+            "badge": "저ROE",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 95,
           "candidateScoreRaw": 98.0,
           "comparisonBaseScore": 88.0,
@@ -1964,6 +2436,14 @@
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=5.81",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": -46.0,
+            "pbr": 1.92,
+            "roe": -4.22,
+            "badge": "저ROE · PER불가",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 95,
           "candidateScoreRaw": 98.0,
           "comparisonBaseScore": 88.0,
@@ -1990,6 +2470,14 @@
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=3.31",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": -11.3,
+            "pbr": 1.82,
+            "roe": -15.61,
+            "badge": "저ROE · PER불가",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 95,
           "candidateScoreRaw": 93.9,
           "comparisonBaseScore": 88.0,
@@ -2016,6 +2504,14 @@
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=4.0",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 4.67,
+            "pbr": 0.58,
+            "roe": 13.68,
+            "badge": "저PBR · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 95,
           "candidateScoreRaw": 90.1,
           "comparisonBaseScore": 88.0,
@@ -2042,6 +2538,14 @@
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=3.06",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": -3224.66,
+            "pbr": 20.51,
+            "roe": -0.64,
+            "badge": "저ROE · 고PBR · PER불가",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 88,
           "candidateScoreRaw": 89.1,
           "comparisonBaseScore": 88.0,
@@ -2068,6 +2572,14 @@
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=4.01",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 55.43,
+            "pbr": 2.52,
+            "roe": 5.07,
+            "badge": "고PER주의",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 88,
           "candidateScoreRaw": 89.1,
           "comparisonBaseScore": 88.0,
@@ -2094,6 +2606,14 @@
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=2.63",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 3.74,
+            "pbr": 0.32,
+            "roe": 9.01,
+            "badge": "저PBR · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 88,
           "candidateScoreRaw": 88.9,
           "comparisonBaseScore": 88.0,
@@ -2120,6 +2640,14 @@
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=6.94",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 463.89,
+            "pbr": 2.2,
+            "roe": 0.47,
+            "badge": "저ROE · 고PER주의",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 88,
           "candidateScoreRaw": 88.8,
           "comparisonBaseScore": 88.0,
@@ -2134,7 +2662,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 158700.0원 · 평가 945600원 · 손익 -6600원",
           "returnPct": -0.69,
-          "holdingPeriod": "보유 11시간 35분"
+          "holdingPeriod": "보유 14시간 0분"
         },
         {
           "code": "034020",
@@ -2142,7 +2670,7 @@
           "status": "보유중",
           "reason": "7주 · 매입 133900.0원 · 평가 954800원 · 손익 17500원",
           "returnPct": 1.87,
-          "holdingPeriod": "보유 11시간 35분"
+          "holdingPeriod": "보유 14시간 0분"
         },
         {
           "code": "373220",
@@ -2211,6 +2739,14 @@
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 98.0,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 36.84,
+              "pbr": 1.51,
+              "roe": 4.15,
+              "badge": "저ROE",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 2.07,
             "replacementWatchLine": 107.0,
             "liquidityText": "거래대금 점수 20"
@@ -2238,6 +2774,14 @@
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 44.33,
+              "pbr": 13.09,
+              "roe": 34.05,
+              "badge": "고ROE · 고PBR · 고PER주의",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 4.04,
             "replacementWatchLine": 107.0,
             "liquidityText": "거래대금 점수 20"
@@ -2265,6 +2809,14 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 336.78,
+              "pbr": 10.21,
+              "roe": 3.43,
+              "badge": "저ROE · 고PBR · 고PER주의",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 4.49,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
@@ -2292,6 +2844,14 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 10.66,
+              "pbr": 1.25,
+              "roe": 12.61,
+              "badge": "지표확인",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 7.31,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
@@ -2319,6 +2879,14 @@
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 90.1,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 4.67,
+              "pbr": 0.58,
+              "roe": 13.68,
+              "badge": "저PBR · 저PER",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 4.0,
             "replacementWatchLine": 107.0,
             "liquidityText": "거래대금 점수 20"
@@ -2346,6 +2914,14 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 22.48,
+              "pbr": 10.45,
+              "roe": 55.54,
+              "badge": "고ROE · 고PBR",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 4.37,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
@@ -2373,6 +2949,14 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 89.1,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": -3224.66,
+              "pbr": 20.51,
+              "roe": -0.64,
+              "badge": "저ROE · 고PBR · PER불가",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 3.06,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
@@ -2400,6 +2984,14 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 80.86,
+              "pbr": 4.95,
+              "roe": 6.35,
+              "badge": "고PER주의",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 2.12,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
@@ -2411,7 +3003,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": -0.75,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T21:02+09:00"
+        "periodEnd": "2026-05-07T23:27+09:00"
       }
     },
     {
@@ -2446,6 +3038,14 @@
           "reason": "가치=83.8; 모멘텀=98; 등락률=2.07",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 36.84,
+            "pbr": 1.51,
+            "roe": 4.15,
+            "badge": "저ROE",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 88,
           "candidateScoreRaw": 80.6,
           "comparisonBaseScore": 78.0,
@@ -2472,6 +3072,14 @@
           "reason": "가치=90.1; 모멘텀=88.9; 등락률=2.63",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 3.74,
+            "pbr": 0.32,
+            "roe": 9.01,
+            "badge": "저PBR · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 78,
           "candidateScoreRaw": 79.1,
           "comparisonBaseScore": 78.0,
@@ -2498,6 +3106,14 @@
           "reason": "가치=80.1; 모멘텀=93.9; 등락률=3.31",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": -11.3,
+            "pbr": 1.82,
+            "roe": -15.61,
+            "badge": "저ROE · PER불가",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 78,
           "candidateScoreRaw": 77.3,
           "comparisonBaseScore": 78.0,
@@ -2524,6 +3140,14 @@
           "reason": "가치=86.3; 모멘텀=88.2; 등락률=2.23",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 11.43,
+            "pbr": 2.82,
+            "roe": 27.71,
+            "badge": "고ROE",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 78,
           "candidateScoreRaw": 77.2,
           "comparisonBaseScore": 78.0,
@@ -2550,6 +3174,14 @@
           "reason": "가치=84.8; 모멘텀=88.4; 등락률=2.08",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 6.52,
+            "pbr": 0.53,
+            "roe": 8.73,
+            "badge": "저PBR · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 78,
           "candidateScoreRaw": 76.7,
           "comparisonBaseScore": 78.0,
@@ -2576,6 +3208,14 @@
           "reason": "가치=82.1; 모멘텀=88.3; 등락률=3.31",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 38.59,
+            "pbr": 0.86,
+            "roe": 2.26,
+            "badge": "저ROE · 저PBR",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 78,
           "candidateScoreRaw": 75.5,
           "comparisonBaseScore": 78.0,
@@ -2602,6 +3242,14 @@
           "reason": "가치=93.7; 모멘텀=77.3; 등락률=1.45",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 4.77,
+            "pbr": 0.36,
+            "roe": 8.39,
+            "badge": "저PBR · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 78,
           "candidateScoreRaw": 75.3,
           "comparisonBaseScore": 78.0,
@@ -2628,6 +3276,14 @@
           "reason": "가치=93.1; 모멘텀=77.6; 등락률=1.64",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "fundamentals": {
+            "per": 4.78,
+            "pbr": 0.38,
+            "roe": 8.36,
+            "badge": "저PBR · 저PER",
+            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "source": "naver_finance"
+          },
           "candidateScoreNormalized": 78,
           "candidateScoreRaw": 75.1,
           "comparisonBaseScore": 78.0,
@@ -2642,7 +3298,7 @@
           "status": "보유중",
           "reason": "4주 · 매입 234500.0원 · 평가 942000원 · 손익 4000원",
           "returnPct": 0.43,
-          "holdingPeriod": "보유 10시간 33분"
+          "holdingPeriod": "보유 12시간 58분"
         },
         {
           "code": "068270",
@@ -2650,7 +3306,7 @@
           "status": "보유중",
           "reason": "4주 · 매입 204500.0원 · 평가 810000원 · 손익 -8000원",
           "returnPct": -0.98,
-          "holdingPeriod": "보유 10시간 33분"
+          "holdingPeriod": "보유 12시간 58분"
         },
         {
           "code": "012330",
@@ -2658,7 +3314,7 @@
           "status": "보유중",
           "reason": "2주 · 매입 447000.0원 · 평가 883000원 · 손익 -11000원",
           "returnPct": -1.23,
-          "holdingPeriod": "보유 11시간 34분"
+          "holdingPeriod": "보유 13시간 59분"
         },
         {
           "code": "329180",
@@ -2666,7 +3322,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 662000.0원 · 평가 693000원 · 손익 31000원",
           "returnPct": 4.68,
-          "holdingPeriod": "보유 11시간 34분"
+          "holdingPeriod": "보유 13시간 59분"
         }
       ],
       "sellAlerts": [],
@@ -2702,6 +3358,14 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": 75.3,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 4.77,
+              "pbr": 0.36,
+              "roe": 8.39,
+              "badge": "저PBR · 저PER",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 1.45,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
@@ -2729,6 +3393,14 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 80.6,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 36.84,
+              "pbr": 1.51,
+              "roe": 4.15,
+              "badge": "저ROE",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 2.07,
             "replacementWatchLine": 100.0,
             "liquidityText": "수급 데이터 대기"
@@ -2756,6 +3428,14 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 80.86,
+              "pbr": 4.95,
+              "roe": 6.35,
+              "badge": "고PER주의",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 2.12,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
@@ -2783,6 +3463,14 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 4.67,
+              "pbr": 0.58,
+              "roe": 13.68,
+              "badge": "저PBR · 저PER",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 2.04,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
@@ -2810,6 +3498,14 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": 75.1,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 4.78,
+              "pbr": 0.38,
+              "roe": 8.36,
+              "badge": "저PBR · 저PER",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 1.64,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
@@ -2837,6 +3533,14 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": 79.1,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 3.74,
+              "pbr": 0.32,
+              "roe": 9.01,
+              "badge": "저PBR · 저PER",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 2.63,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
@@ -2848,7 +3552,7 @@
             "entryPrice": 662000,
             "currentPrice": 693000,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 11시간 34분",
+            "holdingPeriod": "보유 13시간 59분",
             "evalAmount": 693000,
             "pnl": 31000,
             "returnPct": 4.68,
@@ -2864,6 +3568,14 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "fundamentals": {
+              "per": 463.89,
+              "pbr": 2.2,
+              "roe": 0.47,
+              "badge": "저ROE · 고PER주의",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 2.16,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
@@ -2875,7 +3587,7 @@
             "entryPrice": 447000,
             "currentPrice": 441500,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 11시간 34분",
+            "holdingPeriod": "보유 13시간 59분",
             "evalAmount": 883000,
             "pnl": -11000,
             "returnPct": -1.23,
@@ -2891,6 +3603,14 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": 76.7,
             "currentScoreType": "current",
+            "fundamentals": {
+              "per": 6.52,
+              "pbr": 0.53,
+              "roe": 8.73,
+              "badge": "저PBR · 저PER",
+              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "source": "naver_finance"
+            },
             "currentChangePct": 2.08,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
@@ -2902,7 +3622,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.0,
         "periodStart": "2026-05-06T16:16+09:00",
-        "periodEnd": "2026-05-07T21:02+09:00"
+        "periodEnd": "2026-05-07T23:27+09:00"
       }
     }
   ]
