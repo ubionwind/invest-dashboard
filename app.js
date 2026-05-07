@@ -213,8 +213,9 @@ function switchMiniGraph({ baseScore = null, currentScore = null, candidateScore
   const toY = v => Math.round(42 - (Math.max(0, Math.min(100, v)) / 100) * 32);
   const points = `4,${toY(base)} 52,${toY(cur)} 100,${toY(cand)}`;
   const triggerY = toY(trigger);
-  const label = danger ? '손절선 근접' : `교체선 ${Math.round(trigger)}점`;
-  return `<div class="switch-mini">
+  const label = danger ? '손절선 근접' : `교체기준 후보 ${Math.round(trigger)}점↑`;
+  const help = danger ? '수익률이 손절 관찰 구간에 가까움' : `새 후보가 현재 보유점수보다 12점 이상 높거나 최소 70점을 넘으면 교체 검토`;
+  return `<div class="switch-mini" title="${help}">
     <svg viewBox="0 0 104 46" preserveAspectRatio="none" aria-hidden="true">
       <line x1="0" y1="${triggerY}" x2="104" y2="${triggerY}" class="switch-line" />
       <polyline points="${points}" class="switch-curve" />
