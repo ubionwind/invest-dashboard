@@ -167,9 +167,22 @@ function candidateSummary(s) {
   </section>`;
 }
 
-function parseEntryScore(note = '') {
+function parseEntryScore(note = '', sid = '') {
   const m = String(note || '').match(/진입 당시 점수\s*([\d.]+)/);
-  return m ? Number(m[1]) : null;
+  return m ? normalizedCandidateScore(Number(m[1]), sid) : null;
+}
+
+function normalizedCandidateScore(rawScoreNum, sid = '') {
+  const v = Number(rawScoreNum);
+  if (Number.isNaN(v)) return null;
+  if (String(sid).includes('surge')) {
+    if (v >= 250) return 95;
+    if (v >= 180) return 88;
+    if (v >= 120) return 80;
+    if (v >= 80) return 70;
+    return Math.max(0, Math.min(100, v / 80 * 70));
+  }
+  return Math.max(0, Math.min(100, v));
 }
 
 function supplySnapshot(c = {}) {
@@ -279,7 +292,7 @@ function holdingCandidateComparison(s) {
         <h4>보유 종목 진단</h4>
         ${positions.length ? positions.map(pos => {
           const matched = byCode[String(pos.code || '')] || {};
-          const entryScore = parseEntryScore(matched.candidateNote) ?? (pos.sourceScoreNormalized ?? pos.sourceScore ?? null);
+          const entryScore = parseEntryScore(matched.candidateNote, s.runtimeId) ?? (pos.sourceScoreNormalized ?? null);
           const currentScore = matched.score ?? pos.sourceScoreNormalized ?? null;
           const scoreGap = currentScore == null || entryScore == null ? null : Number(currentScore) - entryScore;
           const decision = decisionForHolding(pos, matched, bestReplacement);
