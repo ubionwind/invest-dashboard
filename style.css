@@ -106,9 +106,11 @@ main { padding: 24px clamp(18px, 4vw, 48px) 44px; }
 .comparison-block { min-width: 0; display: grid; grid-auto-rows: max-content; align-content: start; align-items: start; gap: 9px; }
 .comparison-block h4 { margin: 0; color: #ffe5a3; font-size: 13px; }
 .holding-compare-card, .replacement-card { min-width: 0; min-height: 0; height: fit-content; display: grid; grid-auto-rows: max-content; align-content: start; gap: 8px; padding: 11px; border-radius: 14px; border: 1px solid rgba(255,255,255,.07); background: rgba(255,255,255,.04); }
-.compare-title, .compare-score-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-.compare-title strong { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; }
-.compare-title span { color: var(--muted); font-size: 12px; }
+.compare-title { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; }
+.compare-score-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.compare-name { min-width: 0; display: grid; gap: 2px; }
+.compare-name strong { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; }
+.compare-name span { color: var(--muted); font-size: 12px; }
 .compare-score-row b { font-size: 23px; line-height: 1; letter-spacing: -.04em; }
 .compare-score-row em { padding: 4px 8px; border-radius: 999px; background: rgba(255,255,255,.06); color: #fff0bf; font-style: normal; font-size: 11px; font-weight: 900; white-space: nowrap; }
 .diagnostic-rows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
@@ -117,12 +119,13 @@ main { padding: 24px clamp(18px, 4vw, 48px) 44px; }
 .diagnostic-rows span { color: var(--muted); font-size: 10px; }
 .diagnostic-rows b { margin-top: 2px; font-size: 13px; }
 .diagnostic-rows div:nth-child(6) { grid-column: 1 / -1; }
-.switch-mini { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 8px; align-items: center; padding: 7px 8px; border-radius: 12px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.06); }
-.switch-mini svg { width: 88px; height: 46px; overflow: visible; }
+.switch-mini { display: grid; grid-template-columns: 62px auto; gap: 6px; align-items: center; justify-self: end; padding: 5px 6px; border-radius: 12px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.06); }
+.switch-mini svg { width: 62px; height: 36px; overflow: visible; }
 .switch-line { stroke: rgba(255,209,102,.42); stroke-width: 1.5; stroke-dasharray: 4 3; }
 .switch-curve { fill: none; stroke: var(--accent); stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
 .switch-dot { fill: #fff; stroke: var(--accent); stroke-width: 1.5; }
-.switch-mini span { min-width: 0; color: #ffe5a3; font-size: 11px; font-weight: 900; line-height: 1.25; white-space: normal; }
+.switch-score-labels { min-width: 0; display: grid; gap: 2px; color: #ffe5a3; font-size: 10px; font-weight: 900; line-height: 1.15; white-space: nowrap; }
+.switch-score-labels b { font-size: inherit; font-weight: inherit; font-variant-numeric: tabular-nums; }
 .holding-compare-card p, .replacement-card p { margin: 0; color: #caddff; font-size: 12px; line-height: 1.35; }
 .holding-compare-card > small, .replacement-card > small { line-height: 1.35; }
 .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
@@ -255,8 +258,9 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .comparison-columns { grid-template-columns: 1fr; gap: 10px; }
   .compare-score-row b { font-size: 22px; }
   .diagnostic-rows { gap: 5px; }
-  .switch-mini { grid-template-columns: 78px minmax(0, 1fr); gap: 7px; }
-  .switch-mini svg { width: 78px; height: 44px; }
+  .switch-mini { grid-template-columns: 56px auto; gap: 5px; padding: 4px 5px; }
+  .switch-mini svg { width: 56px; height: 34px; }
+  .switch-score-labels { font-size: 9px; }
   .overview-strategy-card { padding: 12px; gap: 8px; }
   .overview-return-row > strong { font-size: 27px; }
   .today-return { font-size: 11px; }

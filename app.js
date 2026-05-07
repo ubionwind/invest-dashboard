@@ -213,7 +213,6 @@ function switchMiniGraph({ baseScore = null, currentScore = null, candidateScore
   const toY = v => Math.round(42 - (Math.max(0, Math.min(100, v)) / 100) * 32);
   const points = `4,${toY(base)} 52,${toY(cur)} 100,${toY(cand)}`;
   const triggerY = toY(trigger);
-  const label = danger ? '손절선 근접' : `교체기준 후보 ${Math.round(trigger)}점↑`;
   const help = danger ? '수익률이 손절 관찰 구간에 가까움' : `새 후보가 현재 보유점수보다 12점 이상 높거나 최소 70점을 넘으면 교체 검토`;
   return `<div class="switch-mini" title="${help}">
     <svg viewBox="0 0 104 46" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
@@ -221,7 +220,7 @@ function switchMiniGraph({ baseScore = null, currentScore = null, candidateScore
       <polyline points="${points}" class="switch-curve" />
       <circle cx="52" cy="${toY(cur)}" r="2.8" class="switch-dot" />
     </svg>
-    <span>${label}</span>
+    <span class="switch-score-labels"><b>기준 ${Math.round(trigger)}</b><b>현재 ${Math.round(cur)}</b></span>
   </div>`;
 }
 
@@ -288,7 +287,7 @@ function holdingCandidateComparison(s) {
           const bestCandidateScore = bestReplacement?.score == null ? null : Number(bestReplacement.score);
           const holdReason = holdingReasonText({ decision, ret, scoreGap: bestCandidateScore == null || currentScore == null ? null : bestCandidateScore - Number(currentScore), bestReplacement });
           return `<article class="holding-compare-card">
-            <div class="compare-title"><strong>${pos.name || '-'}</strong><span>${pos.code || ''}</span></div>
+            <div class="compare-title"><div class="compare-name"><strong>${pos.name || '-'}</strong><span>${pos.code || ''}</span></div>${switchMiniGraph({ baseScore: entryScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct })}</div>
             <div class="compare-score-row">
               <b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b>
               <em>${decision}</em>
@@ -301,7 +300,6 @@ function holdingCandidateComparison(s) {
               ['거래대금', tradingValueText(matched.reason ? matched : pos)],
               ['유지/교체 이유', holdReason],
             ])}
-            ${switchMiniGraph({ baseScore: entryScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct })}
             <small class="muted">매입 ${money(pos.entryPrice)} · 현재 ${money(pos.currentPrice)} · 손익 ${money(pos.pnl)}</small>
           </article>`;
         }).join('') : '<p class="muted">현재 보유 종목 없음</p>'}
@@ -312,7 +310,7 @@ function holdingCandidateComparison(s) {
           const bestHeldScore = Math.max(...positions.map(p => Number((byCode[String(p.code || '')] || {}).score ?? -1)), -1);
           const edge = c.score == null || bestHeldScore < 0 ? null : Number(c.score) - bestHeldScore;
           return `<article class="replacement-card">
-            <div class="compare-title"><strong>${c.name || '-'}</strong><span>${c.code || ''}</span></div>
+            <div class="compare-title"><div class="compare-name"><strong>${c.name || '-'}</strong><span>${c.code || ''}</span></div>${switchMiniGraph({ baseScore: bestHeldScore < 0 ? null : bestHeldScore, currentScore: bestHeldScore < 0 ? null : bestHeldScore, candidateScore: c.score })}</div>
             <div class="compare-score-row">
               <b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b>
               <em class="${edge == null ? '' : (edge >= 0 ? 'up' : 'down')}">${edge == null ? '비교대기' : `보유상위 대비 ${edge > 0 ? '+' : ''}${edge.toFixed(1)}`}</em>
@@ -325,7 +323,6 @@ function holdingCandidateComparison(s) {
               ['거래대금', tradingValueText(c)],
               ['유지/교체 이유', standardReason(c)],
             ])}
-            ${switchMiniGraph({ baseScore: bestHeldScore < 0 ? null : bestHeldScore, currentScore: bestHeldScore < 0 ? null : bestHeldScore, candidateScore: c.score })}
             <small class="muted">${c.candidateNote || c.status || '현재 후보'}</small>
           </article>`;
         }).join('') : '<p class="muted">보유 종목보다 앞선 별도 후보 없음</p>'}
