@@ -367,7 +367,7 @@ function holdingCandidateComparison(s) {
               <div class="compare-meta"><span>${pos.code || ''}</span><em>${pos.holdAction && pos.holdAction !== '보유유지' ? pos.holdAction : decision}</em></div>
             </div>
             ${diagnosticRows([
-              [currentScoreLabel, normalizedScoreText(currentScore)],
+              [currentScoreLabel, `${normalizedScoreText(currentScore)}${pos.scoreAdjustment?.value ? ` (${pos.scoreAdjustment.value > 0 ? '+' : ''}${pos.scoreAdjustment.value})` : ''}`],
               ['후보 통과선', commonThreshold === null ? '-' : commonThreshold.toFixed(1)],
               ['역할', isTarget ? '기준종목' : '보유유지'],
               ['최고후보', bestCandidateScore == null ? '-' : normalizedScoreText(bestCandidateScore)],
@@ -392,7 +392,7 @@ function holdingCandidateComparison(s) {
               <div class="compare-meta"><span>${c.code || ''}</span><em class="${edge == null ? '' : (passed ? 'up' : 'down')}">${edge == null ? '비교대기' : (passed ? `통과 +${edge.toFixed(1)}` : `미달 ${edge.toFixed(1)}`)}</em></div>
             </div>
             ${diagnosticRows([
-              ['후보점수', normalizedScoreText(c.score)],
+              ['후보점수', `${normalizedScoreText(c.score)}${c.scoreAdjustment?.value ? ` (${c.scoreAdjustment.value > 0 ? '+' : ''}${c.scoreAdjustment.value})` : ''}`],
               ['비교 기준종목', replacementTarget ? stockNameLink(replacementTarget, replacementTarget.name || '-', 'span') : '-'],
               ['후보 통과선', commonThreshold === null ? '-' : commonThreshold.toFixed(1)],
               ['기준대비', edge == null ? '-' : `${edge > 0 ? '+' : ''}${edge.toFixed(1)}`, edge == null ? '' : (edge >= 0 ? 'up' : 'down')],
@@ -531,6 +531,7 @@ function candidateTile(c, idx) {
       ${theme ? `<span>${theme}</span>` : ''}
       ${meta ? `<span>meta ${meta}</span>` : ''}
       ${rawScore && rawScore !== score ? `<span>원점수 ${rawScore}</span>` : ''}
+      ${c.scoreAdjustment?.value ? `<span>전략보정 ${c.scoreAdjustment.value > 0 ? '+' : ''}${c.scoreAdjustment.value}</span>` : ''}
       ${c.fundamentals?.badge ? `<span>${c.fundamentals.badge}</span>` : ''}
       ${c.technicalDecision?.state && !['구조중립', '기술분석대기'].includes(c.technicalDecision.state) ? `<span>기술 ${c.technicalDecision.state}</span>` : ''}
     </div>

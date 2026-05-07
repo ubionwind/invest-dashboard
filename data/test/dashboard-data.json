@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-08T00:35+09:00",
+  "generatedAt": "2026-05-08T00:39+09:00",
   "summary": {
     "totalSessions": 7,
     "staleCount": 0,
@@ -13,12 +13,12 @@
   "benchmark": {
     "label": "KOSPI",
     "value": 7490.05,
-    "returnPct": 0.96,
+    "returnPct": 0.93,
     "dailyReturnPct": 1.43,
     "date": "2026-05-07",
     "time": "18:59:00",
     "periodStart": "2026-05-06T10:08+09:00",
-    "periodEnd": "2026-05-08T00:35+09:00",
+    "periodEnd": "2026-05-08T00:39+09:00",
     "source": "naver-index-basic",
     "marketStatus": "CLOSE",
     "basis": "firstInvestment"
@@ -26,11 +26,8 @@
   "kodexBenchmark": {
     "label": "KODEX 200",
     "code": "069500",
-    "value": 115620.0,
+    "value": null,
     "returnPct": 2.07,
-    "dailyReturnPct": 2.07,
-    "date": "2026-05-08",
-    "time": "00:35:52",
     "periodStart": "2026-05-06T10:08+09:00",
     "periodEnd": "2026-05-08T00:35+09:00",
     "basis": "firstInvestment"
@@ -51,9 +48,20 @@
         {
           "code": "207940",
           "name": "삼성바이오로직스",
-          "score": 45,
+          "score": 37.2,
+          "baseScoreNormalized": 45,
+          "scoreAdjustment": {
+            "value": -7.8,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.9,
+            "reasons": [
+              "기술 저항거리큼 -3",
+              "고PBR 부담",
+              "고PER 부담"
+            ]
+          },
           "rawScore": 35.7,
-          "currentScoreNormalized": 45,
+          "currentScoreNormalized": 37.2,
           "currentScoreRaw": 35.7,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -119,18 +127,28 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 45,
+          "candidateScoreNormalized": 37.2,
           "candidateScoreRaw": 35.7,
-          "comparisonBaseScore": 45.0,
+          "comparisonBaseScore": 43.7,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 0.0
+          "scoreVsHeldLowest": -6.5
         },
         {
           "code": "267260",
           "name": "HD현대일렉트릭",
-          "score": 45,
+          "score": 51.8,
+          "baseScoreNormalized": 45,
+          "scoreAdjustment": {
+            "value": 6.8,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.9,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "고ROE 가점"
+            ]
+          },
           "rawScore": 38.7,
-          "currentScoreNormalized": 45,
+          "currentScoreNormalized": 51.8,
           "currentScoreRaw": 38.7,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -195,18 +213,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 45,
+          "candidateScoreNormalized": 51.8,
           "candidateScoreRaw": 38.7,
-          "comparisonBaseScore": 45.0,
+          "comparisonBaseScore": 43.7,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 0.0
+          "scoreVsHeldLowest": 8.1
         },
         {
           "code": "373220",
           "name": "LG에너지솔루션",
-          "score": 45,
+          "score": 39.8,
+          "baseScoreNormalized": 45,
+          "scoreAdjustment": {
+            "value": -5.2,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.9,
+            "reasons": [
+              "기술 전고점대기 -2",
+              "PBR 부담",
+              "고PER 부담"
+            ]
+          },
           "rawScore": 0.0,
-          "currentScoreNormalized": 45,
+          "currentScoreNormalized": 39.8,
           "currentScoreRaw": 0.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -271,18 +300,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 45,
+          "candidateScoreNormalized": 39.8,
           "candidateScoreRaw": 0.0,
-          "comparisonBaseScore": 45.0,
+          "comparisonBaseScore": 43.7,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 0.0
+          "scoreVsHeldLowest": -3.9
         },
         {
           "code": "005930",
           "name": "삼성전자",
-          "score": 45,
+          "score": 43.7,
+          "baseScoreNormalized": 45,
+          "scoreAdjustment": {
+            "value": -1.3,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.9,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "저ROE 감점",
+              "PER 부담"
+            ]
+          },
           "rawScore": 0.0,
-          "currentScoreNormalized": 45,
+          "currentScoreNormalized": 43.7,
           "currentScoreRaw": 0.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -347,18 +387,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 45,
+          "candidateScoreNormalized": 43.7,
           "candidateScoreRaw": 0.0,
-          "comparisonBaseScore": 45.0,
+          "comparisonBaseScore": 43.7,
           "replacementWatchLine": 70,
           "scoreVsHeldLowest": 0.0
         },
         {
           "code": "000660",
           "name": "SK하이닉스",
-          "score": 45,
+          "score": 41.9,
+          "baseScoreNormalized": 45,
+          "scoreAdjustment": {
+            "value": -3.1,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.9,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "저ROE 감점",
+              "PER 해석주의"
+            ]
+          },
           "rawScore": 0.0,
-          "currentScoreNormalized": 45,
+          "currentScoreNormalized": 41.9,
           "currentScoreRaw": 0.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -423,18 +474,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 45,
+          "candidateScoreNormalized": 41.9,
           "candidateScoreRaw": 0.0,
-          "comparisonBaseScore": 45.0,
+          "comparisonBaseScore": 43.7,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 0.0
+          "scoreVsHeldLowest": -1.8
         },
         {
           "code": "005380",
           "name": "현대차",
-          "score": 45,
+          "score": 48.8,
+          "baseScoreNormalized": 45,
+          "scoreAdjustment": {
+            "value": 3.8,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.9,
+            "reasons": [
+              "기술 전고점대기 -2",
+              "저PBR 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 0.0,
-          "currentScoreNormalized": 45,
+          "currentScoreNormalized": 48.8,
           "currentScoreRaw": 0.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -506,18 +568,30 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 45,
+          "candidateScoreNormalized": 48.8,
           "candidateScoreRaw": 0.0,
-          "comparisonBaseScore": 45.0,
+          "comparisonBaseScore": 43.7,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 0.0
+          "scoreVsHeldLowest": 5.1
         },
         {
           "code": "000270",
           "name": "기아",
-          "score": 45,
+          "score": 49.2,
+          "baseScoreNormalized": 45,
+          "scoreAdjustment": {
+            "value": 4.2,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.9,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "고ROE 가점",
+              "저PBR 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 38.4,
-          "currentScoreNormalized": 45,
+          "currentScoreNormalized": 49.2,
           "currentScoreRaw": 38.4,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -589,18 +663,28 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 45,
+          "candidateScoreNormalized": 49.2,
           "candidateScoreRaw": 38.4,
-          "comparisonBaseScore": 45.0,
+          "comparisonBaseScore": 43.7,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 0.0
+          "scoreVsHeldLowest": 5.5
         },
         {
           "code": "035420",
           "name": "NAVER",
-          "score": 45,
+          "score": 40.5,
+          "baseScoreNormalized": 45,
+          "scoreAdjustment": {
+            "value": -4.5,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.9,
+            "reasons": [
+              "저ROE 감점",
+              "PER 부담"
+            ]
+          },
           "rawScore": 0.0,
-          "currentScoreNormalized": 45,
+          "currentScoreNormalized": 40.5,
           "currentScoreRaw": 0.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -672,11 +756,11 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 45,
+          "candidateScoreNormalized": 40.5,
           "candidateScoreRaw": 0.0,
-          "comparisonBaseScore": 45.0,
+          "comparisonBaseScore": 43.7,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 0.0
+          "scoreVsHeldLowest": -3.2
         }
       ],
       "buyAlerts": [
@@ -739,7 +823,7 @@
           "code": "005930",
           "name": "삼성전자",
           "status": "보유근거약화",
-          "reason": "현재 판단점수 45.0; 신규 후보 강도 약함; 기술구조 돌파우호",
+          "reason": "현재 판단점수 43.7; 신규 후보 강도 약함; 기술구조 돌파우호",
           "returnPct": 2.51,
           "pnl": 212500,
           "fundamentals": {
@@ -809,9 +893,6 @@
             "evalAmount": 8688000,
             "pnl": 212500,
             "returnPct": 2.51,
-            "currentScoreNormalized": 45.0,
-            "currentScoreRaw": 0.0,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 36.84,
               "pbr": 1.51,
@@ -857,6 +938,20 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 45,
+            "scoreAdjustment": {
+              "value": -1.3,
+              "technicalWeight": 0.8,
+              "fundamentalWeight": 0.9,
+              "reasons": [
+                "기술 돌파우호 +4",
+                "저ROE 감점",
+                "PER 부담"
+              ]
+            },
+            "currentScoreNormalized": 43.7,
+            "currentScoreRaw": 0.0,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "돌파우호",
               "bias": 4,
@@ -868,16 +963,16 @@
             "replacementWatchLine": 70,
             "liquidityText": "수급 데이터 대기",
             "holdAction": "보유근거약화",
-            "holdReason": "현재 판단점수 45.0; 신규 후보 강도 약함; 기술구조 돌파우호"
+            "holdReason": "현재 판단점수 43.7; 신규 후보 강도 약함; 기술구조 돌파우호"
           }
         ]
       },
       "comparison": {
         "returnPct": 2.13,
-        "benchmarkReturnPct": 0.96,
-        "excessReturnPct": 1.17,
+        "benchmarkReturnPct": 0.93,
+        "excessReturnPct": 1.2,
         "periodStart": "2026-05-06T12:12+09:00",
-        "periodEnd": "2026-05-08T00:35+09:00"
+        "periodEnd": "2026-05-08T00:39+09:00"
       }
     },
     {
@@ -895,9 +990,21 @@
         {
           "code": "007660",
           "name": "이수페타시스",
-          "score": 75,
+          "score": 71.2,
+          "baseScoreNormalized": 75,
+          "scoreAdjustment": {
+            "value": -3.8,
+            "technicalWeight": 1.1,
+            "fundamentalWeight": 0.25,
+            "reasons": [
+              "기술 저항거리큼 -3",
+              "ROE 양호",
+              "고PBR 부담",
+              "PER 부담"
+            ]
+          },
           "rawScore": 61.0,
-          "currentScoreNormalized": 75,
+          "currentScoreNormalized": 71.2,
           "currentScoreRaw": 61.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -968,18 +1075,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 75,
+          "candidateScoreNormalized": 71.2,
           "candidateScoreRaw": 61.0,
-          "comparisonBaseScore": 50.0,
+          "comparisonBaseScore": 48.0,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 25.0
+          "scoreVsHeldLowest": 23.2
         },
         {
           "code": "042700",
           "name": "한미반도체",
-          "score": 50,
+          "score": 48.0,
+          "baseScoreNormalized": 50,
+          "scoreAdjustment": {
+            "value": -2.0,
+            "technicalWeight": 1.1,
+            "fundamentalWeight": 0.25,
+            "reasons": [
+              "기술 전고점대기 -2",
+              "고ROE 가점",
+              "고PBR 부담"
+            ]
+          },
           "rawScore": 0.0,
-          "currentScoreNormalized": 50,
+          "currentScoreNormalized": 48.0,
           "currentScoreRaw": 0.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -1044,18 +1162,28 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 50,
+          "candidateScoreNormalized": 48.0,
           "candidateScoreRaw": 0.0,
-          "comparisonBaseScore": 50.0,
+          "comparisonBaseScore": 48.0,
           "replacementWatchLine": 70,
           "scoreVsHeldLowest": 0.0
         },
         {
           "code": "089030",
           "name": "테크윙",
-          "score": 50,
+          "score": 48.2,
+          "baseScoreNormalized": 50,
+          "scoreAdjustment": {
+            "value": -1.8,
+            "technicalWeight": 1.1,
+            "fundamentalWeight": 0.25,
+            "reasons": [
+              "저ROE 감점",
+              "PER 해석주의"
+            ]
+          },
           "rawScore": 0.0,
-          "currentScoreNormalized": 50,
+          "currentScoreNormalized": 48.2,
           "currentScoreRaw": 0.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -1127,18 +1255,30 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 50,
+          "candidateScoreNormalized": 48.2,
           "candidateScoreRaw": 0.0,
-          "comparisonBaseScore": 50.0,
+          "comparisonBaseScore": 48.0,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 0.0
+          "scoreVsHeldLowest": 0.2
         },
         {
           "code": "247540",
           "name": "에코프로비엠",
-          "score": 75,
+          "score": 76.9,
+          "baseScoreNormalized": 75,
+          "scoreAdjustment": {
+            "value": 1.9,
+            "technicalWeight": 1.1,
+            "fundamentalWeight": 0.25,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "저ROE 감점",
+              "고PBR 부담",
+              "PER 해석주의"
+            ]
+          },
           "rawScore": 61.3,
-          "currentScoreNormalized": 75,
+          "currentScoreNormalized": 76.9,
           "currentScoreRaw": 61.3,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -1204,11 +1344,11 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 75,
+          "candidateScoreNormalized": 76.9,
           "candidateScoreRaw": 61.3,
-          "comparisonBaseScore": 50.0,
+          "comparisonBaseScore": 48.0,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 25.0
+          "scoreVsHeldLowest": 28.9
         }
       ],
       "buyAlerts": [
@@ -1384,7 +1524,7 @@
           "code": "042700",
           "name": "한미반도체",
           "status": "단기점수약화",
-          "reason": "현재 판단점수 50.0; 단기 후보 강도 약화; 기술구조 전고점대기 - 20일 전고점까지 1.13% 남아 돌파 확인 필요",
+          "reason": "현재 판단점수 48.0; 단기 후보 강도 약화; 기술구조 전고점대기 - 20일 전고점까지 1.13% 남아 돌파 확인 필요",
           "returnPct": 2.52,
           "pnl": 212500,
           "fundamentals": {
@@ -1508,9 +1648,6 @@
             "evalAmount": 13118600,
             "pnl": -218900,
             "returnPct": -1.64,
-            "currentScoreNormalized": 75.0,
-            "currentScoreRaw": 61.0,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 39.81,
               "pbr": 7.12,
@@ -1562,6 +1699,21 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 75,
+            "scoreAdjustment": {
+              "value": -3.8,
+              "technicalWeight": 1.1,
+              "fundamentalWeight": 0.25,
+              "reasons": [
+                "기술 저항거리큼 -3",
+                "ROE 양호",
+                "고PBR 부담",
+                "PER 부담"
+              ]
+            },
+            "currentScoreNormalized": 71.2,
+            "currentScoreRaw": 61.0,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "저항거리큼",
               "bias": -3,
@@ -1570,7 +1722,7 @@
             "currentChangePct": -2.77,
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
-            "replacementWatchLine": 87.0,
+            "replacementWatchLine": 83.2,
             "liquidityText": "수급 데이터 대기",
             "holdAction": "보유유지",
             "holdReason": "보유 기준상 즉시 매도 신호 없음; 기술구조 저항거리큼 - 20일 전고점까지 10.34% 거리; 회복 확인 필요"
@@ -1586,9 +1738,6 @@
             "evalAmount": 8646000,
             "pnl": 212500,
             "returnPct": 2.52,
-            "currentScoreNormalized": 50.0,
-            "currentScoreRaw": 0.0,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 22.48,
               "pbr": 10.45,
@@ -1634,6 +1783,20 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 50,
+            "scoreAdjustment": {
+              "value": -2.0,
+              "technicalWeight": 1.1,
+              "fundamentalWeight": 0.25,
+              "reasons": [
+                "기술 전고점대기 -2",
+                "고ROE 가점",
+                "고PBR 부담"
+              ]
+            },
+            "currentScoreNormalized": 48.0,
+            "currentScoreRaw": 0.0,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "전고점대기",
               "bias": -2,
@@ -1645,7 +1808,7 @@
             "replacementWatchLine": 70,
             "liquidityText": "수급 데이터 대기",
             "holdAction": "단기점수약화",
-            "holdReason": "현재 판단점수 50.0; 단기 후보 강도 약화; 기술구조 전고점대기 - 20일 전고점까지 1.13% 남아 돌파 확인 필요"
+            "holdReason": "현재 판단점수 48.0; 단기 후보 강도 약화; 기술구조 전고점대기 - 20일 전고점까지 1.13% 남아 돌파 확인 필요"
           },
           {
             "code": "247540",
@@ -1658,9 +1821,6 @@
             "evalAmount": 7771500,
             "pnl": 379500,
             "returnPct": 5.13,
-            "currentScoreNormalized": 75.0,
-            "currentScoreRaw": 61.3,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": -3224.66,
               "pbr": 20.51,
@@ -1707,6 +1867,21 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 75,
+            "scoreAdjustment": {
+              "value": 1.9,
+              "technicalWeight": 1.1,
+              "fundamentalWeight": 0.25,
+              "reasons": [
+                "기술 돌파우호 +4",
+                "저ROE 감점",
+                "고PBR 부담",
+                "PER 해석주의"
+              ]
+            },
+            "currentScoreNormalized": 76.9,
+            "currentScoreRaw": 61.3,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "돌파우호",
               "bias": 4,
@@ -1715,7 +1890,7 @@
             "currentChangePct": 3.06,
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
-            "replacementWatchLine": 87.0,
+            "replacementWatchLine": 88.9,
             "liquidityText": "수급 데이터 대기",
             "holdAction": "부분익절검토",
             "holdReason": "단기 1차 익절권 5.13% >= 5%; 기술구조 돌파우호"
@@ -1724,10 +1899,10 @@
       },
       "comparison": {
         "returnPct": 1.24,
-        "benchmarkReturnPct": 0.96,
-        "excessReturnPct": 0.28,
+        "benchmarkReturnPct": 0.93,
+        "excessReturnPct": 0.31,
         "periodStart": "2026-05-06T10:08+09:00",
-        "periodEnd": "2026-05-08T00:35+09:00"
+        "periodEnd": "2026-05-08T00:39+09:00"
       }
     },
     {
@@ -1745,9 +1920,20 @@
         {
           "code": "034020",
           "name": "두산에너빌리티",
-          "score": 80,
+          "score": 84.7,
+          "baseScoreNormalized": 80,
+          "scoreAdjustment": {
+            "value": 4.7,
+            "technicalWeight": 1.35,
+            "fundamentalWeight": 0.1,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "저ROE 감점",
+              "고PER 부담"
+            ]
+          },
           "rawScore": 147.8,
-          "currentScoreNormalized": 80,
+          "currentScoreNormalized": 84.7,
           "currentScoreRaw": 147.8,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -1812,18 +1998,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 80,
+          "candidateScoreNormalized": 84.7,
           "candidateScoreRaw": 147.8,
           "comparisonBaseScore": 55.0,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 25.0
+          "scoreVsHeldLowest": 29.7
         },
         {
           "code": "329180",
           "name": "HD현대중공업",
-          "score": 80,
+          "score": 76.6,
+          "baseScoreNormalized": 80,
+          "scoreAdjustment": {
+            "value": -3.4,
+            "technicalWeight": 1.35,
+            "fundamentalWeight": 0.1,
+            "reasons": [
+              "기술 전고점대기 -2",
+              "저ROE 감점",
+              "고PER 부담"
+            ]
+          },
           "rawScore": 130.1,
-          "currentScoreNormalized": 80,
+          "currentScoreNormalized": 76.6,
           "currentScoreRaw": 130.1,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -1888,18 +2085,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 80,
+          "candidateScoreNormalized": 76.6,
           "candidateScoreRaw": 130.1,
           "comparisonBaseScore": 55.0,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 25.0
+          "scoreVsHeldLowest": 21.6
         },
         {
           "code": "010140",
           "name": "삼성중공업",
-          "score": 80,
+          "score": 71.2,
+          "baseScoreNormalized": 80,
+          "scoreAdjustment": {
+            "value": -8.8,
+            "technicalWeight": 1.35,
+            "fundamentalWeight": 0.1,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "저ROE 감점",
+              "PER 해석주의"
+            ]
+          },
           "rawScore": 125.1,
-          "currentScoreNormalized": 80,
+          "currentScoreNormalized": 71.2,
           "currentScoreRaw": 125.1,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -1970,18 +2178,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 80,
+          "candidateScoreNormalized": 71.2,
           "candidateScoreRaw": 125.1,
           "comparisonBaseScore": 55.0,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 25.0
+          "scoreVsHeldLowest": 16.2
         },
         {
           "code": "000660",
           "name": "SK하이닉스",
-          "score": 70,
+          "score": 74.7,
+          "baseScoreNormalized": 70,
+          "scoreAdjustment": {
+            "value": 4.7,
+            "technicalWeight": 1.35,
+            "fundamentalWeight": 0.1,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "저ROE 감점",
+              "PER 해석주의"
+            ]
+          },
           "rawScore": 113.6,
-          "currentScoreNormalized": 70,
+          "currentScoreNormalized": 74.7,
           "currentScoreRaw": 113.6,
           "entryScoreNormalized": 80,
           "entryScoreRaw": 152.8,
@@ -2046,18 +2265,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 70,
+          "candidateScoreNormalized": 74.7,
           "candidateScoreRaw": 113.6,
           "comparisonBaseScore": 55.0,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 15.0
+          "scoreVsHeldLowest": 19.7
         },
         {
           "code": "005380",
           "name": "현대차",
-          "score": 70,
+          "score": 67.9,
+          "baseScoreNormalized": 70,
+          "scoreAdjustment": {
+            "value": -2.1,
+            "technicalWeight": 1.35,
+            "fundamentalWeight": 0.1,
+            "reasons": [
+              "기술 전고점대기 -2",
+              "저PBR 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 95.7,
-          "currentScoreNormalized": 70,
+          "currentScoreNormalized": 67.9,
           "currentScoreRaw": 95.7,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -2129,18 +2359,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 70,
+          "candidateScoreNormalized": 67.9,
           "candidateScoreRaw": 95.7,
           "comparisonBaseScore": 55.0,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 15.0
+          "scoreVsHeldLowest": 12.9
         },
         {
           "code": "005930",
           "name": "삼성전자",
-          "score": 70,
+          "score": 74.9,
+          "baseScoreNormalized": 70,
+          "scoreAdjustment": {
+            "value": 4.9,
+            "technicalWeight": 1.35,
+            "fundamentalWeight": 0.1,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "저ROE 감점",
+              "PER 부담"
+            ]
+          },
           "rawScore": 82.9,
-          "currentScoreNormalized": 70,
+          "currentScoreNormalized": 74.9,
           "currentScoreRaw": 82.9,
           "entryScoreNormalized": 80,
           "entryScoreRaw": 169.8,
@@ -2205,18 +2446,28 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 70,
+          "candidateScoreNormalized": 74.9,
           "candidateScoreRaw": 82.9,
           "comparisonBaseScore": 55.0,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 15.0
+          "scoreVsHeldLowest": 19.9
         },
         {
           "code": "068270",
           "name": "셀트리온",
-          "score": 55,
+          "score": 46.6,
+          "baseScoreNormalized": 55,
+          "scoreAdjustment": {
+            "value": -8.4,
+            "technicalWeight": 1.35,
+            "fundamentalWeight": 0.1,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "고PER 부담"
+            ]
+          },
           "rawScore": 78.0,
-          "currentScoreNormalized": 55,
+          "currentScoreNormalized": 46.6,
           "currentScoreRaw": 78.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -2288,18 +2539,30 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 55,
+          "candidateScoreNormalized": 46.6,
           "candidateScoreRaw": 78.0,
           "comparisonBaseScore": 55.0,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 0.0
+          "scoreVsHeldLowest": -8.4
         },
         {
           "code": "247540",
           "name": "에코프로비엠",
-          "score": 55,
+          "score": 59.4,
+          "baseScoreNormalized": 55,
+          "scoreAdjustment": {
+            "value": 4.4,
+            "technicalWeight": 1.35,
+            "fundamentalWeight": 0.1,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "저ROE 감점",
+              "고PBR 부담",
+              "PER 해석주의"
+            ]
+          },
           "rawScore": 66.0,
-          "currentScoreNormalized": 55,
+          "currentScoreNormalized": 59.4,
           "currentScoreRaw": 66.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -2365,11 +2628,11 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 55,
+          "candidateScoreNormalized": 59.4,
           "candidateScoreRaw": 66.0,
           "comparisonBaseScore": 55.0,
           "replacementWatchLine": 70,
-          "scoreVsHeldLowest": 0.0
+          "scoreVsHeldLowest": 4.4
         }
       ],
       "buyAlerts": [
@@ -2829,9 +3092,6 @@
             "holdAction": "모멘텀소멸관찰",
             "holdScore": 55,
             "holdReason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
-            "currentScoreNormalized": 70.0,
-            "currentScoreRaw": 82.9,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 36.84,
               "pbr": 1.51,
@@ -2877,13 +3137,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 70,
+            "scoreAdjustment": {
+              "value": 4.9,
+              "technicalWeight": 1.35,
+              "fundamentalWeight": 0.1,
+              "reasons": [
+                "기술 돌파우호 +4",
+                "저ROE 감점",
+                "PER 부담"
+              ]
+            },
+            "currentScoreNormalized": 74.9,
+            "currentScoreRaw": 82.9,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "돌파우호",
               "bias": 4,
               "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
             },
             "currentChangePct": 1.79,
-            "replacementWatchLine": 82.0,
+            "replacementWatchLine": 86.9,
             "liquidityText": "수급 데이터 대기"
           },
           {
@@ -2906,9 +3180,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "급등 조건 유지; 점수 113.6",
-            "currentScoreNormalized": 70.0,
-            "currentScoreRaw": 113.6,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": -11.3,
               "pbr": 1.82,
@@ -2954,13 +3225,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 70,
+            "scoreAdjustment": {
+              "value": 4.7,
+              "technicalWeight": 1.35,
+              "fundamentalWeight": 0.1,
+              "reasons": [
+                "기술 돌파우호 +4",
+                "저ROE 감점",
+                "PER 해석주의"
+              ]
+            },
+            "currentScoreNormalized": 74.7,
+            "currentScoreRaw": 113.6,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "돌파우호",
               "bias": 4,
               "reason": "20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음"
             },
             "currentChangePct": 3.06,
-            "replacementWatchLine": 82.0,
+            "replacementWatchLine": 86.7,
             "liquidityText": "거래대금 84044억"
           },
           {
@@ -2983,9 +3268,6 @@
             "holdAction": "모멘텀소멸관찰",
             "holdScore": 55,
             "holdReason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
-            "currentScoreNormalized": 80.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 968.71,
               "pbr": 11.83,
@@ -3031,13 +3313,28 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 80.0,
+            "scoreAdjustment": {
+              "value": 4.4,
+              "technicalWeight": 1.35,
+              "fundamentalWeight": 0.1,
+              "reasons": [
+                "기술 돌파우호 +4",
+                "저ROE 감점",
+                "고PBR 부담",
+                "고PER 부담"
+              ]
+            },
+            "currentScoreNormalized": 84.4,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "돌파우호",
               "bias": 4,
               "reason": "20일 전고점 돌파; 20일 전고점 대비 0.51%, 매물벽 위험 낮음"
             },
             "currentChangePct": 8.61,
-            "replacementWatchLine": 92.0,
+            "replacementWatchLine": 96.4,
             "liquidityText": "거래대금 증가"
           },
           {
@@ -3060,9 +3357,6 @@
             "holdAction": "모멘텀소멸관찰",
             "holdScore": 55,
             "holdReason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
-            "currentScoreNormalized": 70.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 11.43,
               "pbr": 2.82,
@@ -3108,13 +3402,26 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 70.0,
+            "scoreAdjustment": {
+              "value": 5.8,
+              "technicalWeight": 1.35,
+              "fundamentalWeight": 0.1,
+              "reasons": [
+                "기술 돌파우호 +4",
+                "고ROE 가점"
+              ]
+            },
+            "currentScoreNormalized": 75.8,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "돌파우호",
               "bias": 4,
               "reason": "20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음"
             },
             "currentChangePct": 6.16,
-            "replacementWatchLine": 82.0,
+            "replacementWatchLine": 87.8,
             "liquidityText": "거래대금 증가"
           },
           {
@@ -3137,9 +3444,6 @@
             "holdAction": "모멘텀소멸관찰",
             "holdScore": 55,
             "holdReason": "현재 급등 진입 조건 약화; 후보권 이탈 여부 확인",
-            "currentScoreNormalized": 55.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 10.66,
               "pbr": 1.25,
@@ -3185,6 +3489,16 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 55.0,
+            "scoreAdjustment": {
+              "value": 0.0,
+              "technicalWeight": 1.35,
+              "fundamentalWeight": 0.1,
+              "reasons": []
+            },
+            "currentScoreNormalized": 55.0,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "구조중립",
               "bias": 0,
@@ -3198,10 +3512,10 @@
       },
       "comparison": {
         "returnPct": 3.36,
-        "benchmarkReturnPct": 0.96,
-        "excessReturnPct": 2.4,
+        "benchmarkReturnPct": 0.93,
+        "excessReturnPct": 2.43,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-08T00:35+09:00"
+        "periodEnd": "2026-05-08T00:39+09:00"
       }
     },
     {
@@ -3219,9 +3533,20 @@
         {
           "code": "012450",
           "name": "한화에어로스페이스",
-          "score": 75,
+          "score": 74.4,
+          "baseScoreNormalized": 75,
+          "scoreAdjustment": {
+            "value": -0.6,
+            "technicalWeight": 1.0,
+            "fundamentalWeight": 0.35,
+            "reasons": [
+              "기술 저항거리큼 -3",
+              "고ROE 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 70.0,
-          "currentScoreNormalized": 75,
+          "currentScoreNormalized": 74.4,
           "currentScoreRaw": 70.0,
           "entryScoreNormalized": 75,
           "entryScoreRaw": 70.0,
@@ -3293,18 +3618,28 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 75,
+          "candidateScoreNormalized": 74.4,
           "candidateScoreRaw": 70.0,
-          "comparisonBaseScore": 75.0,
-          "replacementWatchLine": 87.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 72.0,
+          "replacementWatchLine": 84.0,
+          "scoreVsHeldLowest": 2.4
         },
         {
           "code": "079550",
           "name": "LIG넥스원",
-          "score": 75,
+          "score": 72.7,
+          "baseScoreNormalized": 75,
+          "scoreAdjustment": {
+            "value": -2.3,
+            "technicalWeight": 1.0,
+            "fundamentalWeight": 0.35,
+            "reasons": [
+              "기술 저항거리큼 -3",
+              "ROE 양호"
+            ]
+          },
           "rawScore": 70.0,
-          "currentScoreNormalized": 75,
+          "currentScoreNormalized": 72.7,
           "currentScoreRaw": 70.0,
           "entryScoreNormalized": 75,
           "entryScoreRaw": 70.0,
@@ -3375,18 +3710,27 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 75,
+          "candidateScoreNormalized": 72.7,
           "candidateScoreRaw": 70.0,
-          "comparisonBaseScore": 75.0,
-          "replacementWatchLine": 87.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 72.0,
+          "replacementWatchLine": 84.0,
+          "scoreVsHeldLowest": 0.7
         },
         {
           "code": "047810",
           "name": "한국항공우주",
-          "score": 75,
+          "score": 72.0,
+          "baseScoreNormalized": 75,
+          "scoreAdjustment": {
+            "value": -3.0,
+            "technicalWeight": 1.0,
+            "fundamentalWeight": 0.35,
+            "reasons": [
+              "기술 저항거리큼 -3"
+            ]
+          },
           "rawScore": 70.0,
-          "currentScoreNormalized": 75,
+          "currentScoreNormalized": 72.0,
           "currentScoreRaw": 70.0,
           "entryScoreNormalized": 75,
           "entryScoreRaw": 70.0,
@@ -3458,18 +3802,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 75,
+          "candidateScoreNormalized": 72.0,
           "candidateScoreRaw": 70.0,
-          "comparisonBaseScore": 75.0,
-          "replacementWatchLine": 87.0,
+          "comparisonBaseScore": 72.0,
+          "replacementWatchLine": 84.0,
           "scoreVsHeldLowest": 0.0
         },
         {
           "code": "329180",
           "name": "HD현대중공업",
-          "score": 75,
+          "score": 70.6,
+          "baseScoreNormalized": 75,
+          "scoreAdjustment": {
+            "value": -4.4,
+            "technicalWeight": 1.0,
+            "fundamentalWeight": 0.35,
+            "reasons": [
+              "기술 전고점대기 -2",
+              "저ROE 감점",
+              "고PER 부담"
+            ]
+          },
           "rawScore": 70.0,
-          "currentScoreNormalized": 75,
+          "currentScoreNormalized": 70.6,
           "currentScoreRaw": 70.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -3534,18 +3889,30 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 75,
+          "candidateScoreNormalized": 70.6,
           "candidateScoreRaw": 70.0,
-          "comparisonBaseScore": 75.0,
-          "replacementWatchLine": 87.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 72.0,
+          "replacementWatchLine": 84.0,
+          "scoreVsHeldLowest": -1.4
         },
         {
           "code": "009540",
           "name": "HD한국조선해양",
-          "score": 75,
+          "score": 68.3,
+          "baseScoreNormalized": 75,
+          "scoreAdjustment": {
+            "value": -6.7,
+            "technicalWeight": 1.0,
+            "fundamentalWeight": 0.35,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "저ROE 감점",
+              "저PBR 가점",
+              "PER 부담"
+            ]
+          },
           "rawScore": 70.0,
-          "currentScoreNormalized": 75,
+          "currentScoreNormalized": 68.3,
           "currentScoreRaw": 70.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -3616,18 +3983,28 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 75,
+          "candidateScoreNormalized": 68.3,
           "candidateScoreRaw": 70.0,
-          "comparisonBaseScore": 75.0,
-          "replacementWatchLine": 87.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 72.0,
+          "replacementWatchLine": 84.0,
+          "scoreVsHeldLowest": -3.7
         },
         {
           "code": "089030",
           "name": "테크윙",
-          "score": 65,
+          "score": 62.6,
+          "baseScoreNormalized": 65,
+          "scoreAdjustment": {
+            "value": -2.4,
+            "technicalWeight": 1.0,
+            "fundamentalWeight": 0.35,
+            "reasons": [
+              "저ROE 감점",
+              "PER 해석주의"
+            ]
+          },
           "rawScore": 66.0,
-          "currentScoreNormalized": 65,
+          "currentScoreNormalized": 62.6,
           "currentScoreRaw": 66.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -3699,18 +4076,30 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 65,
+          "candidateScoreNormalized": 62.6,
           "candidateScoreRaw": 66.0,
-          "comparisonBaseScore": 75.0,
-          "replacementWatchLine": 87.0,
-          "scoreVsHeldLowest": -10.0
+          "comparisonBaseScore": 72.0,
+          "replacementWatchLine": 84.0,
+          "scoreVsHeldLowest": -9.4
         },
         {
           "code": "403870",
           "name": "HPSP",
-          "score": 65,
+          "score": 59.0,
+          "baseScoreNormalized": 65,
+          "scoreAdjustment": {
+            "value": -6.0,
+            "technicalWeight": 1.0,
+            "fundamentalWeight": 0.35,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "고ROE 가점",
+              "고PBR 부담",
+              "PER 부담"
+            ]
+          },
           "rawScore": 66.0,
-          "currentScoreNormalized": 65,
+          "currentScoreNormalized": 59.0,
           "currentScoreRaw": 66.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -3781,18 +4170,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 65,
+          "candidateScoreNormalized": 59.0,
           "candidateScoreRaw": 66.0,
-          "comparisonBaseScore": 75.0,
-          "replacementWatchLine": 87.0,
-          "scoreVsHeldLowest": -10.0
+          "comparisonBaseScore": 72.0,
+          "replacementWatchLine": 84.0,
+          "scoreVsHeldLowest": -13.0
         },
         {
           "code": "095340",
           "name": "ISC",
-          "score": 65,
+          "score": 56.6,
+          "baseScoreNormalized": 65,
+          "scoreAdjustment": {
+            "value": -8.4,
+            "technicalWeight": 1.0,
+            "fundamentalWeight": 0.35,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "저ROE 감점",
+              "고PER 부담"
+            ]
+          },
           "rawScore": 66.0,
-          "currentScoreNormalized": 65,
+          "currentScoreNormalized": 56.6,
           "currentScoreRaw": 66.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -3863,11 +4263,11 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 65,
+          "candidateScoreNormalized": 56.6,
           "candidateScoreRaw": 66.0,
-          "comparisonBaseScore": 75.0,
-          "replacementWatchLine": 87.0,
-          "scoreVsHeldLowest": -10.0
+          "comparisonBaseScore": 72.0,
+          "replacementWatchLine": 84.0,
+          "scoreVsHeldLowest": -15.4
         }
       ],
       "buyAlerts": [
@@ -4366,9 +4766,6 @@
             "holdAction": "손절관찰",
             "holdScore": 75,
             "holdReason": "매일신규 손절 관찰 -6.04% <= -5%; 장중 회복 실패 시 정리 검토",
-            "currentScoreNormalized": 75.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 27.83,
               "pbr": 5.52,
@@ -4420,13 +4817,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 75.0,
+            "scoreAdjustment": {
+              "value": -2.0,
+              "technicalWeight": 1.0,
+              "fundamentalWeight": 0.35,
+              "reasons": [
+                "기술 저항거리큼 -3",
+                "고ROE 가점",
+                "PBR 부담"
+              ]
+            },
+            "currentScoreNormalized": 73.0,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "저항거리큼",
               "bias": -3,
               "reason": "20일 전고점까지 12.02% 거리; 회복 확인 필요"
             },
             "currentChangePct": 0.0,
-            "replacementWatchLine": 87.0,
+            "replacementWatchLine": 85.0,
             "liquidityText": "거래대금 증가"
           },
           {
@@ -4449,9 +4860,6 @@
             "holdAction": "부분익절검토",
             "holdScore": 65,
             "holdReason": "매일신규 1차 익절권 8.33% >= 6%; 일부익절 또는 트레일링 검토",
-            "currentScoreNormalized": 75.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 10.66,
               "pbr": 1.25,
@@ -4497,6 +4905,16 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 75.0,
+            "scoreAdjustment": {
+              "value": 0.0,
+              "technicalWeight": 1.0,
+              "fundamentalWeight": 0.35,
+              "reasons": []
+            },
+            "currentScoreNormalized": 75.0,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "구조중립",
               "bias": 0,
@@ -4526,9 +4944,6 @@
             "holdAction": "손절검토",
             "holdScore": 95,
             "holdReason": "매일신규 손실 위험 -10.10% <= -8%; 신규 모멘텀 실패로 정리 우선 검토",
-            "currentScoreNormalized": 75.0,
-            "currentScoreRaw": 70.0,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 7.98,
               "pbr": 1.85,
@@ -4581,13 +4996,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 75,
+            "scoreAdjustment": {
+              "value": -0.6,
+              "technicalWeight": 1.0,
+              "fundamentalWeight": 0.35,
+              "reasons": [
+                "기술 저항거리큼 -3",
+                "고ROE 가점",
+                "저PER 가점"
+              ]
+            },
+            "currentScoreNormalized": 74.4,
+            "currentScoreRaw": 70.0,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "저항거리큼",
               "bias": -3,
               "reason": "20일 전고점까지 16.11% 거리; 회복 확인 필요"
             },
             "currentChangePct": 0.0,
-            "replacementWatchLine": 87.0,
+            "replacementWatchLine": 86.4,
             "liquidityText": "거래대금 증가"
           },
           {
@@ -4610,9 +5039,6 @@
             "holdAction": "손절검토",
             "holdScore": 95,
             "holdReason": "매일신규 손실 위험 -11.90% <= -8%; 신규 모멘텀 실패로 정리 우선 검토",
-            "currentScoreNormalized": 75.0,
-            "currentScoreRaw": 70.0,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 16.41,
               "pbr": 2.7,
@@ -4664,13 +5090,26 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 75,
+            "scoreAdjustment": {
+              "value": -2.3,
+              "technicalWeight": 1.0,
+              "fundamentalWeight": 0.35,
+              "reasons": [
+                "기술 저항거리큼 -3",
+                "ROE 양호"
+              ]
+            },
+            "currentScoreNormalized": 72.7,
+            "currentScoreRaw": 70.0,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "저항거리큼",
               "bias": -3,
               "reason": "20일 전고점까지 22.54% 거리; 회복 확인 필요"
             },
             "currentChangePct": 0.0,
-            "replacementWatchLine": 87.0,
+            "replacementWatchLine": 84.7,
             "liquidityText": "거래대금 증가"
           },
           {
@@ -4693,9 +5132,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "오늘도 B-관찰강화 유지; 점수 70",
-            "currentScoreNormalized": 75.0,
-            "currentScoreRaw": 70.0,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 21.76,
               "pbr": 3.05,
@@ -4748,23 +5184,35 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 75,
+            "scoreAdjustment": {
+              "value": -3.0,
+              "technicalWeight": 1.0,
+              "fundamentalWeight": 0.35,
+              "reasons": [
+                "기술 저항거리큼 -3"
+              ]
+            },
+            "currentScoreNormalized": 72.0,
+            "currentScoreRaw": 70.0,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "저항거리큼",
               "bias": -3,
               "reason": "20일 전고점까지 16.40% 거리; 회복 확인 필요"
             },
             "currentChangePct": 0.0,
-            "replacementWatchLine": 87.0,
+            "replacementWatchLine": 84.0,
             "liquidityText": "거래대금 증가"
           }
         ]
       },
       "comparison": {
         "returnPct": -4.42,
-        "benchmarkReturnPct": 0.96,
-        "excessReturnPct": -5.38,
+        "benchmarkReturnPct": 0.93,
+        "excessReturnPct": -5.35,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-08T00:35+09:00"
+        "periodEnd": "2026-05-08T00:39+09:00"
       }
     },
     {
@@ -4782,9 +5230,19 @@
         {
           "code": "105560",
           "name": "KB금융",
-          "score": 95,
+          "score": 100,
+          "baseScoreNormalized": 95,
+          "scoreAdjustment": {
+            "value": 7.5,
+            "technicalWeight": 0.35,
+            "fundamentalWeight": 1.25,
+            "reasons": [
+              "저PBR 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 93.7,
-          "currentScoreNormalized": 95,
+          "currentScoreNormalized": 100,
           "currentScoreRaw": 93.7,
           "entryScoreNormalized": 95,
           "entryScoreRaw": 95.9,
@@ -4856,18 +5314,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 95,
+          "candidateScoreNormalized": 100,
           "candidateScoreRaw": 93.7,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 7.0
+          "comparisonBaseScore": 81.8,
+          "replacementWatchLine": 93.8,
+          "scoreVsHeldLowest": 18.2
         },
         {
           "code": "055550",
           "name": "신한지주",
-          "score": 95,
+          "score": 100,
+          "baseScoreNormalized": 95,
+          "scoreAdjustment": {
+            "value": 5.4,
+            "technicalWeight": 0.35,
+            "fundamentalWeight": 1.25,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "저PBR 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 93.1,
-          "currentScoreNormalized": 95,
+          "currentScoreNormalized": 100,
           "currentScoreRaw": 93.1,
           "entryScoreNormalized": 95,
           "entryScoreRaw": 95.9,
@@ -4939,18 +5408,25 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 95,
+          "candidateScoreNormalized": 100,
           "candidateScoreRaw": 93.1,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 7.0
+          "comparisonBaseScore": 81.8,
+          "replacementWatchLine": 93.8,
+          "scoreVsHeldLowest": 18.2
         },
         {
           "code": "010120",
           "name": "LS ELECTRIC",
-          "score": 95,
+          "score": 95.0,
+          "baseScoreNormalized": 95,
+          "scoreAdjustment": {
+            "value": 0.0,
+            "technicalWeight": 0.35,
+            "fundamentalWeight": 1.25,
+            "reasons": []
+          },
           "rawScore": 90.2,
-          "currentScoreNormalized": 95,
+          "currentScoreNormalized": 95.0,
           "currentScoreRaw": 90.2,
           "entryScoreNormalized": 88,
           "entryScoreRaw": 83.5,
@@ -5015,18 +5491,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 95,
+          "candidateScoreNormalized": 95.0,
           "candidateScoreRaw": 90.2,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 7.0
+          "comparisonBaseScore": 81.8,
+          "replacementWatchLine": 93.8,
+          "scoreVsHeldLowest": 13.2
         },
         {
           "code": "086790",
           "name": "하나금융지주",
-          "score": 95,
+          "score": 100,
+          "baseScoreNormalized": 95,
+          "scoreAdjustment": {
+            "value": 5.4,
+            "technicalWeight": 0.35,
+            "fundamentalWeight": 1.25,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "저PBR 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 90.1,
-          "currentScoreNormalized": 95,
+          "currentScoreNormalized": 100,
           "currentScoreRaw": 90.1,
           "entryScoreNormalized": 95,
           "entryScoreRaw": 95.4,
@@ -5098,18 +5585,28 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 95,
+          "candidateScoreNormalized": 100,
           "candidateScoreRaw": 90.1,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 7.0
+          "comparisonBaseScore": 81.8,
+          "replacementWatchLine": 93.8,
+          "scoreVsHeldLowest": 18.2
         },
         {
           "code": "267260",
           "name": "HD현대일렉트릭",
-          "score": 88,
+          "score": 94.4,
+          "baseScoreNormalized": 88,
+          "scoreAdjustment": {
+            "value": 6.4,
+            "technicalWeight": 0.35,
+            "fundamentalWeight": 1.25,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "고ROE 가점"
+            ]
+          },
           "rawScore": 86.3,
-          "currentScoreNormalized": 88,
+          "currentScoreNormalized": 94.4,
           "currentScoreRaw": 86.3,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -5174,18 +5671,28 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 88,
+          "candidateScoreNormalized": 94.4,
           "candidateScoreRaw": 86.3,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 81.8,
+          "replacementWatchLine": 93.8,
+          "scoreVsHeldLowest": 12.6
         },
         {
           "code": "035420",
           "name": "NAVER",
-          "score": 88,
+          "score": 81.8,
+          "baseScoreNormalized": 88,
+          "scoreAdjustment": {
+            "value": -6.2,
+            "technicalWeight": 0.35,
+            "fundamentalWeight": 1.25,
+            "reasons": [
+              "저ROE 감점",
+              "PER 부담"
+            ]
+          },
           "rawScore": 85.3,
-          "currentScoreNormalized": 88,
+          "currentScoreNormalized": 81.8,
           "currentScoreRaw": 85.3,
           "entryScoreNormalized": 88,
           "entryScoreRaw": 84.6,
@@ -5257,18 +5764,27 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 88,
+          "candidateScoreNormalized": 81.8,
           "candidateScoreRaw": 85.3,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
+          "comparisonBaseScore": 81.8,
+          "replacementWatchLine": 93.8,
           "scoreVsHeldLowest": 0.0
         },
         {
           "code": "047810",
           "name": "한국항공우주",
-          "score": 88,
+          "score": 87.0,
+          "baseScoreNormalized": 88,
+          "scoreAdjustment": {
+            "value": -1.0,
+            "technicalWeight": 0.35,
+            "fundamentalWeight": 1.25,
+            "reasons": [
+              "기술 저항거리큼 -3"
+            ]
+          },
           "rawScore": 84.8,
-          "currentScoreNormalized": 88,
+          "currentScoreNormalized": 87.0,
           "currentScoreRaw": 84.8,
           "entryScoreNormalized": 88,
           "entryScoreRaw": 87.3,
@@ -5340,18 +5856,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 88,
+          "candidateScoreNormalized": 87.0,
           "candidateScoreRaw": 84.8,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 81.8,
+          "replacementWatchLine": 93.8,
+          "scoreVsHeldLowest": 5.2
         },
         {
           "code": "012330",
           "name": "현대모비스",
-          "score": 88,
+          "score": 93.4,
+          "baseScoreNormalized": 88,
+          "scoreAdjustment": {
+            "value": 5.4,
+            "technicalWeight": 0.35,
+            "fundamentalWeight": 1.25,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "저PBR 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 84.8,
-          "currentScoreNormalized": 88,
+          "currentScoreNormalized": 93.4,
           "currentScoreRaw": 84.8,
           "entryScoreNormalized": 95,
           "entryScoreRaw": 90.3,
@@ -5423,11 +5950,11 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 88,
+          "candidateScoreNormalized": 93.4,
           "candidateScoreRaw": 84.8,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 81.8,
+          "replacementWatchLine": 93.8,
+          "scoreVsHeldLowest": 11.6
         }
       ],
       "buyAlerts": [
@@ -5687,9 +6214,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "가치점수 93.1; 보유 유지",
-            "currentScoreNormalized": 95.0,
-            "currentScoreRaw": 93.1,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 4.78,
               "pbr": 0.38,
@@ -5742,13 +6266,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 95,
+            "scoreAdjustment": {
+              "value": 5.4,
+              "technicalWeight": 0.35,
+              "fundamentalWeight": 1.25,
+              "reasons": [
+                "기술 매물대주의 -6",
+                "저PBR 가점",
+                "저PER 가점"
+              ]
+            },
+            "currentScoreNormalized": 100.0,
+            "currentScoreRaw": 93.1,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "매물대주의",
               "bias": -6,
               "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": 1.64,
-            "replacementWatchLine": 107.0,
+            "replacementWatchLine": 112.0,
             "liquidityText": "거래대금 점수 20"
           },
           {
@@ -5771,9 +6309,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "가치점수 93.7; 보유 유지",
-            "currentScoreNormalized": 95.0,
-            "currentScoreRaw": 93.7,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 4.77,
               "pbr": 0.36,
@@ -5826,13 +6361,26 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 95,
+            "scoreAdjustment": {
+              "value": 7.5,
+              "technicalWeight": 0.35,
+              "fundamentalWeight": 1.25,
+              "reasons": [
+                "저PBR 가점",
+                "저PER 가점"
+              ]
+            },
+            "currentScoreNormalized": 100.0,
+            "currentScoreRaw": 93.7,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "구조중립",
               "bias": 0,
               "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
             },
             "currentChangePct": 1.45,
-            "replacementWatchLine": 107.0,
+            "replacementWatchLine": 112.0,
             "liquidityText": "거래대금 점수 20"
           },
           {
@@ -5855,9 +6403,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "가치점수 90.1; 보유 유지",
-            "currentScoreNormalized": 95.0,
-            "currentScoreRaw": 90.1,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 3.74,
               "pbr": 0.32,
@@ -5910,13 +6455,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 95,
+            "scoreAdjustment": {
+              "value": 5.4,
+              "technicalWeight": 0.35,
+              "fundamentalWeight": 1.25,
+              "reasons": [
+                "기술 매물대주의 -6",
+                "저PBR 가점",
+                "저PER 가점"
+              ]
+            },
+            "currentScoreNormalized": 100.0,
+            "currentScoreRaw": 90.1,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "매물대주의",
               "bias": -6,
               "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": 2.63,
-            "replacementWatchLine": 107.0,
+            "replacementWatchLine": 112.0,
             "liquidityText": "거래대금 점수 20"
           },
           {
@@ -5939,9 +6498,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "가치점수 84.8; 보유 유지",
-            "currentScoreNormalized": 88.0,
-            "currentScoreRaw": 84.8,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 6.52,
               "pbr": 0.53,
@@ -5994,13 +6550,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 88,
+            "scoreAdjustment": {
+              "value": 5.4,
+              "technicalWeight": 0.35,
+              "fundamentalWeight": 1.25,
+              "reasons": [
+                "기술 매물대주의 -6",
+                "저PBR 가점",
+                "저PER 가점"
+              ]
+            },
+            "currentScoreNormalized": 93.4,
+            "currentScoreRaw": 84.8,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "매물대주의",
               "bias": -6,
               "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": 2.08,
-            "replacementWatchLine": 100.0,
+            "replacementWatchLine": 105.4,
             "liquidityText": "거래대금 점수 20"
           },
           {
@@ -6023,9 +6593,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "가치점수 84.8; 보유 유지",
-            "currentScoreNormalized": 88.0,
-            "currentScoreRaw": 84.8,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 21.76,
               "pbr": 3.05,
@@ -6078,13 +6645,25 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 88,
+            "scoreAdjustment": {
+              "value": -1.0,
+              "technicalWeight": 0.35,
+              "fundamentalWeight": 1.25,
+              "reasons": [
+                "기술 저항거리큼 -3"
+              ]
+            },
+            "currentScoreNormalized": 87.0,
+            "currentScoreRaw": 84.8,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "저항거리큼",
               "bias": -3,
               "reason": "20일 전고점까지 16.40% 거리; 회복 확인 필요"
             },
             "currentChangePct": -2.72,
-            "replacementWatchLine": 100.0,
+            "replacementWatchLine": 99.0,
             "liquidityText": "거래대금 점수 20"
           },
           {
@@ -6107,9 +6686,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "가치점수 85.3; 보유 유지",
-            "currentScoreNormalized": 88.0,
-            "currentScoreRaw": 85.3,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 36.25,
               "pbr": 1.45,
@@ -6162,13 +6738,26 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 88,
+            "scoreAdjustment": {
+              "value": -6.2,
+              "technicalWeight": 0.35,
+              "fundamentalWeight": 1.25,
+              "reasons": [
+                "저ROE 감점",
+                "PER 부담"
+              ]
+            },
+            "currentScoreNormalized": 81.8,
+            "currentScoreRaw": 85.3,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "구조중립",
               "bias": 0,
               "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
             },
             "currentChangePct": -0.24,
-            "replacementWatchLine": 100.0,
+            "replacementWatchLine": 93.8,
             "liquidityText": "거래대금 점수 20"
           },
           {
@@ -6191,9 +6780,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "가치점수 82.8; 보유 유지",
-            "currentScoreNormalized": 88.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 27.83,
               "pbr": 5.52,
@@ -6245,13 +6831,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 88.0,
+            "scoreAdjustment": {
+              "value": 2.7,
+              "technicalWeight": 0.35,
+              "fundamentalWeight": 1.25,
+              "reasons": [
+                "기술 저항거리큼 -3",
+                "고ROE 가점",
+                "PBR 부담"
+              ]
+            },
+            "currentScoreNormalized": 90.7,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "저항거리큼",
               "bias": -3,
               "reason": "20일 전고점까지 12.02% 거리; 회복 확인 필요"
             },
             "currentChangePct": -3.39,
-            "replacementWatchLine": 100.0,
+            "replacementWatchLine": 102.7,
             "liquidityText": "거래대금 점수 20"
           },
           {
@@ -6274,9 +6874,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "가치점수 76; 보유 유지",
-            "currentScoreNormalized": 88.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 55.43,
               "pbr": 2.52,
@@ -6329,13 +6926,26 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 88.0,
+            "scoreAdjustment": {
+              "value": -5.8,
+              "technicalWeight": 0.35,
+              "fundamentalWeight": 1.25,
+              "reasons": [
+                "기술 매물대주의 -6",
+                "고PER 부담"
+              ]
+            },
+            "currentScoreNormalized": 82.2,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "매물대주의",
               "bias": -6,
               "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": -1.57,
-            "replacementWatchLine": 100.0,
+            "replacementWatchLine": 94.2,
             "liquidityText": "거래대금 점수 20"
           }
         ]
@@ -6345,7 +6955,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.14,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-08T00:35+09:00"
+        "periodEnd": "2026-05-08T00:39+09:00"
       }
     },
     {
@@ -6363,9 +6973,20 @@
         {
           "code": "005930",
           "name": "삼성전자",
-          "score": 95,
+          "score": 98.8,
+          "baseScoreNormalized": 95,
+          "scoreAdjustment": {
+            "value": 3.8,
+            "technicalWeight": 1.25,
+            "fundamentalWeight": 0.25,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "저ROE 감점",
+              "PER 부담"
+            ]
+          },
           "rawScore": 98.0,
-          "currentScoreNormalized": 95,
+          "currentScoreNormalized": 98.8,
           "currentScoreRaw": 98.0,
           "entryScoreNormalized": 95,
           "entryScoreRaw": 98.0,
@@ -6430,18 +7051,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 95,
+          "candidateScoreNormalized": 98.8,
           "candidateScoreRaw": 98.0,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 7.0
+          "comparisonBaseScore": 78.0,
+          "replacementWatchLine": 90.0,
+          "scoreVsHeldLowest": 20.8
         },
         {
           "code": "010140",
           "name": "삼성중공업",
-          "score": 95,
+          "score": 85.8,
+          "baseScoreNormalized": 95,
+          "scoreAdjustment": {
+            "value": -9.2,
+            "technicalWeight": 1.25,
+            "fundamentalWeight": 0.25,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "저ROE 감점",
+              "PER 해석주의"
+            ]
+          },
           "rawScore": 98.0,
-          "currentScoreNormalized": 95,
+          "currentScoreNormalized": 85.8,
           "currentScoreRaw": 98.0,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -6512,18 +7144,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 95,
+          "candidateScoreNormalized": 85.8,
           "candidateScoreRaw": 98.0,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 7.0
+          "comparisonBaseScore": 78.0,
+          "replacementWatchLine": 90.0,
+          "scoreVsHeldLowest": 7.8
         },
         {
           "code": "000660",
           "name": "SK하이닉스",
-          "score": 95,
+          "score": 98.2,
+          "baseScoreNormalized": 95,
+          "scoreAdjustment": {
+            "value": 3.2,
+            "technicalWeight": 1.25,
+            "fundamentalWeight": 0.25,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "저ROE 감점",
+              "PER 해석주의"
+            ]
+          },
           "rawScore": 93.9,
-          "currentScoreNormalized": 95,
+          "currentScoreNormalized": 98.2,
           "currentScoreRaw": 93.9,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -6588,18 +7231,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 95,
+          "candidateScoreNormalized": 98.2,
           "candidateScoreRaw": 93.9,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 7.0
+          "comparisonBaseScore": 78.0,
+          "replacementWatchLine": 90.0,
+          "scoreVsHeldLowest": 20.2
         },
         {
           "code": "005380",
           "name": "현대차",
-          "score": 95,
+          "score": 94.0,
+          "baseScoreNormalized": 95,
+          "scoreAdjustment": {
+            "value": -1.0,
+            "technicalWeight": 1.25,
+            "fundamentalWeight": 0.25,
+            "reasons": [
+              "기술 전고점대기 -2",
+              "저PBR 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 90.1,
-          "currentScoreNormalized": 95,
+          "currentScoreNormalized": 94.0,
           "currentScoreRaw": 90.1,
           "entryScoreNormalized": 88,
           "entryScoreRaw": 89.7,
@@ -6671,18 +7325,30 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 95,
+          "candidateScoreNormalized": 94.0,
           "candidateScoreRaw": 90.1,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 7.0
+          "comparisonBaseScore": 78.0,
+          "replacementWatchLine": 90.0,
+          "scoreVsHeldLowest": 16.0
         },
         {
           "code": "247540",
           "name": "에코프로비엠",
-          "score": 88,
+          "score": 90.5,
+          "baseScoreNormalized": 88,
+          "scoreAdjustment": {
+            "value": 2.5,
+            "technicalWeight": 1.25,
+            "fundamentalWeight": 0.25,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "저ROE 감점",
+              "고PBR 부담",
+              "PER 해석주의"
+            ]
+          },
           "rawScore": 89.1,
-          "currentScoreNormalized": 88,
+          "currentScoreNormalized": 90.5,
           "currentScoreRaw": 89.1,
           "entryScoreNormalized": 88,
           "entryScoreRaw": 89.0,
@@ -6748,18 +7414,28 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 88,
+          "candidateScoreNormalized": 90.5,
           "candidateScoreRaw": 89.1,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 78.0,
+          "replacementWatchLine": 90.0,
+          "scoreVsHeldLowest": 12.5
         },
         {
           "code": "068270",
           "name": "셀트리온",
-          "score": 88,
+          "score": 79.8,
+          "baseScoreNormalized": 88,
+          "scoreAdjustment": {
+            "value": -8.2,
+            "technicalWeight": 1.25,
+            "fundamentalWeight": 0.25,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "고PER 부담"
+            ]
+          },
           "rawScore": 89.1,
-          "currentScoreNormalized": 88,
+          "currentScoreNormalized": 79.8,
           "currentScoreRaw": 89.1,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -6831,18 +7507,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 88,
+          "candidateScoreNormalized": 79.8,
           "candidateScoreRaw": 89.1,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 78.0,
+          "replacementWatchLine": 90.0,
+          "scoreVsHeldLowest": 1.8
         },
         {
           "code": "086790",
           "name": "하나금융지주",
-          "score": 88,
+          "score": 82.0,
+          "baseScoreNormalized": 88,
+          "scoreAdjustment": {
+            "value": -6.0,
+            "technicalWeight": 1.25,
+            "fundamentalWeight": 0.25,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "저PBR 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 88.9,
-          "currentScoreNormalized": 88,
+          "currentScoreNormalized": 82.0,
           "currentScoreRaw": 88.9,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -6914,18 +7601,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 88,
+          "candidateScoreNormalized": 82.0,
           "candidateScoreRaw": 88.9,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 78.0,
+          "replacementWatchLine": 90.0,
+          "scoreVsHeldLowest": 4.0
         },
         {
           "code": "329180",
           "name": "HD현대중공업",
-          "score": 88,
+          "score": 83.8,
+          "baseScoreNormalized": 88,
+          "scoreAdjustment": {
+            "value": -4.2,
+            "technicalWeight": 1.25,
+            "fundamentalWeight": 0.25,
+            "reasons": [
+              "기술 전고점대기 -2",
+              "저ROE 감점",
+              "고PER 부담"
+            ]
+          },
           "rawScore": 88.8,
-          "currentScoreNormalized": 88,
+          "currentScoreNormalized": 83.8,
           "currentScoreRaw": 88.8,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -6990,11 +7688,11 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 88,
+          "candidateScoreNormalized": 83.8,
           "candidateScoreRaw": 88.8,
-          "comparisonBaseScore": 88.0,
-          "replacementWatchLine": 100.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 78.0,
+          "replacementWatchLine": 90.0,
+          "scoreVsHeldLowest": 5.8
         }
       ],
       "buyAlerts": [
@@ -7369,9 +8067,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "모멘텀점수 98; 보유 유지",
-            "currentScoreNormalized": 95.0,
-            "currentScoreRaw": 98.0,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 36.84,
               "pbr": 1.51,
@@ -7417,13 +8112,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 95,
+            "scoreAdjustment": {
+              "value": 3.8,
+              "technicalWeight": 1.25,
+              "fundamentalWeight": 0.25,
+              "reasons": [
+                "기술 돌파우호 +4",
+                "저ROE 감점",
+                "PER 부담"
+              ]
+            },
+            "currentScoreNormalized": 98.8,
+            "currentScoreRaw": 98.0,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "돌파우호",
               "bias": 4,
               "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
             },
             "currentChangePct": 2.07,
-            "replacementWatchLine": 107.0,
+            "replacementWatchLine": 110.8,
             "liquidityText": "거래대금 점수 20"
           },
           {
@@ -7446,9 +8155,6 @@
             "holdAction": "모멘텀이탈검토",
             "holdScore": 70,
             "holdReason": "현재 모멘텀점수 52; 후보권 이탈",
-            "currentScoreNormalized": 95.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 44.33,
               "pbr": 13.09,
@@ -7500,13 +8206,28 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 95.0,
+            "scoreAdjustment": {
+              "value": -7.5,
+              "technicalWeight": 1.25,
+              "fundamentalWeight": 0.25,
+              "reasons": [
+                "기술 매물대주의 -6",
+                "고ROE 가점",
+                "고PBR 부담",
+                "PER 부담"
+              ]
+            },
+            "currentScoreNormalized": 87.5,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "매물대주의",
               "bias": -6,
               "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": 4.04,
-            "replacementWatchLine": 107.0,
+            "replacementWatchLine": 99.5,
             "liquidityText": "거래대금 점수 20"
           },
           {
@@ -7529,9 +8250,6 @@
             "holdAction": "모멘텀이탈검토",
             "holdScore": 70,
             "holdReason": "현재 모멘텀점수 후보권 밖; 후보권 이탈",
-            "currentScoreNormalized": 88.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 336.78,
               "pbr": 10.21,
@@ -7584,13 +8302,28 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 88.0,
+            "scoreAdjustment": {
+              "value": -10.0,
+              "technicalWeight": 1.25,
+              "fundamentalWeight": 0.25,
+              "reasons": [
+                "기술 매물대주의 -6",
+                "저ROE 감점",
+                "고PBR 부담",
+                "고PER 부담"
+              ]
+            },
+            "currentScoreNormalized": 78.0,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "매물대주의",
               "bias": -6,
               "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": 4.49,
-            "replacementWatchLine": 100.0,
+            "replacementWatchLine": 90.0,
             "liquidityText": "거래대금 점수 20"
           },
           {
@@ -7613,9 +8346,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "모멘텀점수 78.2; 보유 유지",
-            "currentScoreNormalized": 88.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 10.66,
               "pbr": 1.25,
@@ -7661,6 +8391,16 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 88.0,
+            "scoreAdjustment": {
+              "value": 0.0,
+              "technicalWeight": 1.25,
+              "fundamentalWeight": 0.25,
+              "reasons": []
+            },
+            "currentScoreNormalized": 88.0,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "구조중립",
               "bias": 0,
@@ -7690,9 +8430,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "모멘텀점수 90.1; 보유 유지",
-            "currentScoreNormalized": 95.0,
-            "currentScoreRaw": 90.1,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 4.67,
               "pbr": 0.58,
@@ -7745,13 +8482,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 95,
+            "scoreAdjustment": {
+              "value": -1.0,
+              "technicalWeight": 1.25,
+              "fundamentalWeight": 0.25,
+              "reasons": [
+                "기술 전고점대기 -2",
+                "저PBR 가점",
+                "저PER 가점"
+              ]
+            },
+            "currentScoreNormalized": 94.0,
+            "currentScoreRaw": 90.1,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "전고점대기",
               "bias": -2,
               "reason": "20일 전고점까지 0.35% 남아 돌파 확인 필요"
             },
             "currentChangePct": 4.0,
-            "replacementWatchLine": 107.0,
+            "replacementWatchLine": 106.0,
             "liquidityText": "거래대금 점수 20"
           },
           {
@@ -7774,9 +8525,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "모멘텀점수 65.2; 보유 유지",
-            "currentScoreNormalized": 88.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 22.48,
               "pbr": 10.45,
@@ -7822,13 +8570,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 88.0,
+            "scoreAdjustment": {
+              "value": -2.2,
+              "technicalWeight": 1.25,
+              "fundamentalWeight": 0.25,
+              "reasons": [
+                "기술 전고점대기 -2",
+                "고ROE 가점",
+                "고PBR 부담"
+              ]
+            },
+            "currentScoreNormalized": 85.8,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "전고점대기",
               "bias": -2,
               "reason": "20일 전고점까지 1.13% 남아 돌파 확인 필요"
             },
             "currentChangePct": 4.37,
-            "replacementWatchLine": 100.0,
+            "replacementWatchLine": 97.8,
             "liquidityText": "거래대금 점수 20"
           },
           {
@@ -7851,9 +8613,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "모멘텀점수 89.1; 보유 유지",
-            "currentScoreNormalized": 88.0,
-            "currentScoreRaw": 89.1,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": -3224.66,
               "pbr": 20.51,
@@ -7900,13 +8659,28 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 88,
+            "scoreAdjustment": {
+              "value": 2.5,
+              "technicalWeight": 1.25,
+              "fundamentalWeight": 0.25,
+              "reasons": [
+                "기술 돌파우호 +4",
+                "저ROE 감점",
+                "고PBR 부담",
+                "PER 해석주의"
+              ]
+            },
+            "currentScoreNormalized": 90.5,
+            "currentScoreRaw": 89.1,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "돌파우호",
               "bias": 4,
               "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
             },
             "currentChangePct": 3.06,
-            "replacementWatchLine": 100.0,
+            "replacementWatchLine": 102.5,
             "liquidityText": "거래대금 점수 20"
           },
           {
@@ -7929,9 +8703,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "모멘텀점수 64.5; 보유 유지",
-            "currentScoreNormalized": 88.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 80.86,
               "pbr": 4.95,
@@ -7977,13 +8748,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 88.0,
+            "scoreAdjustment": {
+              "value": -3.5,
+              "technicalWeight": 1.25,
+              "fundamentalWeight": 0.25,
+              "reasons": [
+                "기술 전고점대기 -2",
+                "PBR 부담",
+                "고PER 부담"
+              ]
+            },
+            "currentScoreNormalized": 84.5,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "전고점대기",
               "bias": -2,
               "reason": "20일 전고점까지 2.03% 남아 돌파 확인 필요"
             },
             "currentChangePct": 2.12,
-            "replacementWatchLine": 100.0,
+            "replacementWatchLine": 96.5,
             "liquidityText": "거래대금 점수 20"
           }
         ]
@@ -7993,7 +8778,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": -0.75,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-08T00:35+09:00"
+        "periodEnd": "2026-05-08T00:39+09:00"
       }
     },
     {
@@ -8011,9 +8796,20 @@
         {
           "code": "005930",
           "name": "삼성전자",
-          "score": 88,
+          "score": 87.2,
+          "baseScoreNormalized": 88,
+          "scoreAdjustment": {
+            "value": -0.8,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.8,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "저ROE 감점",
+              "PER 부담"
+            ]
+          },
           "rawScore": 80.6,
-          "currentScoreNormalized": 88,
+          "currentScoreNormalized": 87.2,
           "currentScoreRaw": 80.6,
           "entryScoreNormalized": 78,
           "entryScoreRaw": 75.9,
@@ -8078,18 +8874,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 88,
+          "candidateScoreNormalized": 87.2,
           "candidateScoreRaw": 80.6,
-          "comparisonBaseScore": 78.0,
-          "replacementWatchLine": 90.0,
-          "scoreVsHeldLowest": 10.0
+          "comparisonBaseScore": 70.8,
+          "replacementWatchLine": 82.8,
+          "scoreVsHeldLowest": 16.4
         },
         {
           "code": "086790",
           "name": "하나금융지주",
-          "score": 78,
+          "score": 78.0,
+          "baseScoreNormalized": 78,
+          "scoreAdjustment": {
+            "value": 0.0,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.8,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "저PBR 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 79.1,
-          "currentScoreNormalized": 78,
+          "currentScoreNormalized": 78.0,
           "currentScoreRaw": 79.1,
           "entryScoreNormalized": 78,
           "entryScoreRaw": 70.4,
@@ -8161,18 +8968,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 78,
+          "candidateScoreNormalized": 78.0,
           "candidateScoreRaw": 79.1,
-          "comparisonBaseScore": 78.0,
-          "replacementWatchLine": 90.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 70.8,
+          "replacementWatchLine": 82.8,
+          "scoreVsHeldLowest": 7.2
         },
         {
           "code": "000660",
           "name": "SK하이닉스",
-          "score": 78,
+          "score": 75.6,
+          "baseScoreNormalized": 78,
+          "scoreAdjustment": {
+            "value": -2.4,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.8,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "저ROE 감점",
+              "PER 해석주의"
+            ]
+          },
           "rawScore": 77.3,
-          "currentScoreNormalized": 78,
+          "currentScoreNormalized": 75.6,
           "currentScoreRaw": 77.3,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -8237,18 +9055,28 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 78,
+          "candidateScoreNormalized": 75.6,
           "candidateScoreRaw": 77.3,
-          "comparisonBaseScore": 78.0,
-          "replacementWatchLine": 90.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 70.8,
+          "replacementWatchLine": 82.8,
+          "scoreVsHeldLowest": 4.8
         },
         {
           "code": "267260",
           "name": "HD현대일렉트릭",
-          "score": 78,
+          "score": 84.4,
+          "baseScoreNormalized": 78,
+          "scoreAdjustment": {
+            "value": 6.4,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.8,
+            "reasons": [
+              "기술 돌파우호 +4",
+              "고ROE 가점"
+            ]
+          },
           "rawScore": 77.2,
-          "currentScoreNormalized": 78,
+          "currentScoreNormalized": 84.4,
           "currentScoreRaw": 77.2,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -8313,18 +9141,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 78,
+          "candidateScoreNormalized": 84.4,
           "candidateScoreRaw": 77.2,
-          "comparisonBaseScore": 78.0,
-          "replacementWatchLine": 90.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 70.8,
+          "replacementWatchLine": 82.8,
+          "scoreVsHeldLowest": 13.6
         },
         {
           "code": "012330",
           "name": "현대모비스",
-          "score": 78,
+          "score": 78.0,
+          "baseScoreNormalized": 78,
+          "scoreAdjustment": {
+            "value": 0.0,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.8,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "저PBR 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 76.7,
-          "currentScoreNormalized": 78,
+          "currentScoreNormalized": 78.0,
           "currentScoreRaw": 76.7,
           "entryScoreNormalized": 78,
           "entryScoreRaw": 70.2,
@@ -8396,18 +9235,30 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 78,
+          "candidateScoreNormalized": 78.0,
           "candidateScoreRaw": 76.7,
-          "comparisonBaseScore": 78.0,
-          "replacementWatchLine": 90.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 70.8,
+          "replacementWatchLine": 82.8,
+          "scoreVsHeldLowest": 7.2
         },
         {
           "code": "009540",
           "name": "HD한국조선해양",
-          "score": 78,
+          "score": 71.6,
+          "baseScoreNormalized": 78,
+          "scoreAdjustment": {
+            "value": -6.4,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.8,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "저ROE 감점",
+              "저PBR 가점",
+              "PER 부담"
+            ]
+          },
           "rawScore": 75.5,
-          "currentScoreNormalized": 78,
+          "currentScoreNormalized": 71.6,
           "currentScoreRaw": 75.5,
           "entryScoreNormalized": null,
           "entryScoreRaw": null,
@@ -8478,18 +9329,28 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 78,
+          "candidateScoreNormalized": 71.6,
           "candidateScoreRaw": 75.5,
-          "comparisonBaseScore": 78.0,
-          "replacementWatchLine": 90.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 70.8,
+          "replacementWatchLine": 82.8,
+          "scoreVsHeldLowest": 0.8
         },
         {
           "code": "105560",
           "name": "KB금융",
-          "score": 78,
+          "score": 82.8,
+          "baseScoreNormalized": 78,
+          "scoreAdjustment": {
+            "value": 4.8,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.8,
+            "reasons": [
+              "저PBR 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 75.3,
-          "currentScoreNormalized": 78,
+          "currentScoreNormalized": 82.8,
           "currentScoreRaw": 75.3,
           "entryScoreNormalized": 78,
           "entryScoreRaw": 76.3,
@@ -8561,18 +9422,29 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 78,
+          "candidateScoreNormalized": 82.8,
           "candidateScoreRaw": 75.3,
-          "comparisonBaseScore": 78.0,
-          "replacementWatchLine": 90.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 70.8,
+          "replacementWatchLine": 82.8,
+          "scoreVsHeldLowest": 12.0
         },
         {
           "code": "055550",
           "name": "신한지주",
-          "score": 78,
+          "score": 78.0,
+          "baseScoreNormalized": 78,
+          "scoreAdjustment": {
+            "value": 0.0,
+            "technicalWeight": 0.8,
+            "fundamentalWeight": 0.8,
+            "reasons": [
+              "기술 매물대주의 -6",
+              "저PBR 가점",
+              "저PER 가점"
+            ]
+          },
           "rawScore": 75.1,
-          "currentScoreNormalized": 78,
+          "currentScoreNormalized": 78.0,
           "currentScoreRaw": 75.1,
           "entryScoreNormalized": 78,
           "entryScoreRaw": 70.9,
@@ -8644,11 +9516,11 @@
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
-          "candidateScoreNormalized": 78,
+          "candidateScoreNormalized": 78.0,
           "candidateScoreRaw": 75.1,
-          "comparisonBaseScore": 78.0,
-          "replacementWatchLine": 90.0,
-          "scoreVsHeldLowest": 0.0
+          "comparisonBaseScore": 70.8,
+          "replacementWatchLine": 82.8,
+          "scoreVsHeldLowest": 7.2
         }
       ],
       "buyAlerts": [
@@ -8910,9 +9782,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "혼합점수 75.3; 보유 유지",
-            "currentScoreNormalized": 78.0,
-            "currentScoreRaw": 75.3,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 4.77,
               "pbr": 0.36,
@@ -8965,13 +9834,26 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 78,
+            "scoreAdjustment": {
+              "value": 4.8,
+              "technicalWeight": 0.8,
+              "fundamentalWeight": 0.8,
+              "reasons": [
+                "저PBR 가점",
+                "저PER 가점"
+              ]
+            },
+            "currentScoreNormalized": 82.8,
+            "currentScoreRaw": 75.3,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "구조중립",
               "bias": 0,
               "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
             },
             "currentChangePct": 1.45,
-            "replacementWatchLine": 90.0,
+            "replacementWatchLine": 94.8,
             "liquidityText": "수급 데이터 대기"
           },
           {
@@ -8994,9 +9876,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "혼합점수 80.6; 보유 유지",
-            "currentScoreNormalized": 88.0,
-            "currentScoreRaw": 80.6,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 36.84,
               "pbr": 1.51,
@@ -9042,13 +9921,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 88,
+            "scoreAdjustment": {
+              "value": -0.8,
+              "technicalWeight": 0.8,
+              "fundamentalWeight": 0.8,
+              "reasons": [
+                "기술 돌파우호 +4",
+                "저ROE 감점",
+                "PER 부담"
+              ]
+            },
+            "currentScoreNormalized": 87.2,
+            "currentScoreRaw": 80.6,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "돌파우호",
               "bias": 4,
               "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
             },
             "currentChangePct": 2.07,
-            "replacementWatchLine": 100.0,
+            "replacementWatchLine": 99.2,
             "liquidityText": "수급 데이터 대기"
           },
           {
@@ -9071,9 +9964,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "혼합점수 64.6; 보유 유지",
-            "currentScoreNormalized": 78.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 80.86,
               "pbr": 4.95,
@@ -9119,13 +10009,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 78.0,
+            "scoreAdjustment": {
+              "value": -4.8,
+              "technicalWeight": 0.8,
+              "fundamentalWeight": 0.8,
+              "reasons": [
+                "기술 전고점대기 -2",
+                "PBR 부담",
+                "고PER 부담"
+              ]
+            },
+            "currentScoreNormalized": 73.2,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "전고점대기",
               "bias": -2,
               "reason": "20일 전고점까지 2.03% 남아 돌파 확인 필요"
             },
             "currentChangePct": 2.12,
-            "replacementWatchLine": 90.0,
+            "replacementWatchLine": 85.2,
             "liquidityText": "수급 데이터 대기"
           },
           {
@@ -9148,9 +10052,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "혼합점수 68.7; 보유 유지",
-            "currentScoreNormalized": 78.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 4.67,
               "pbr": 0.58,
@@ -9203,13 +10104,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 78.0,
+            "scoreAdjustment": {
+              "value": 3.2,
+              "technicalWeight": 0.8,
+              "fundamentalWeight": 0.8,
+              "reasons": [
+                "기술 전고점대기 -2",
+                "저PBR 가점",
+                "저PER 가점"
+              ]
+            },
+            "currentScoreNormalized": 81.2,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "전고점대기",
               "bias": -2,
               "reason": "20일 전고점까지 0.35% 남아 돌파 확인 필요"
             },
             "currentChangePct": 2.04,
-            "replacementWatchLine": 90.0,
+            "replacementWatchLine": 93.2,
             "liquidityText": "수급 데이터 대기"
           },
           {
@@ -9232,9 +10147,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "혼합점수 75.1; 보유 유지",
-            "currentScoreNormalized": 78.0,
-            "currentScoreRaw": 75.1,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 4.78,
               "pbr": 0.38,
@@ -9287,6 +10199,20 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 78,
+            "scoreAdjustment": {
+              "value": 0.0,
+              "technicalWeight": 0.8,
+              "fundamentalWeight": 0.8,
+              "reasons": [
+                "기술 매물대주의 -6",
+                "저PBR 가점",
+                "저PER 가점"
+              ]
+            },
+            "currentScoreNormalized": 78.0,
+            "currentScoreRaw": 75.1,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "매물대주의",
               "bias": -6,
@@ -9316,9 +10242,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "혼합점수 79.1; 보유 유지",
-            "currentScoreNormalized": 78.0,
-            "currentScoreRaw": 79.1,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 3.74,
               "pbr": 0.32,
@@ -9371,6 +10294,20 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 78,
+            "scoreAdjustment": {
+              "value": 0.0,
+              "technicalWeight": 0.8,
+              "fundamentalWeight": 0.8,
+              "reasons": [
+                "기술 매물대주의 -6",
+                "저PBR 가점",
+                "저PER 가점"
+              ]
+            },
+            "currentScoreNormalized": 78.0,
+            "currentScoreRaw": 79.1,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "매물대주의",
               "bias": -6,
@@ -9400,9 +10337,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "혼합점수 72.6; 보유 유지",
-            "currentScoreNormalized": 78.0,
-            "currentScoreRaw": null,
-            "currentScoreType": "holding",
             "fundamentals": {
               "per": 463.89,
               "pbr": 2.2,
@@ -9448,13 +10382,27 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 78.0,
+            "scoreAdjustment": {
+              "value": -7.2,
+              "technicalWeight": 0.8,
+              "fundamentalWeight": 0.8,
+              "reasons": [
+                "기술 전고점대기 -2",
+                "저ROE 감점",
+                "고PER 부담"
+              ]
+            },
+            "currentScoreNormalized": 70.8,
+            "currentScoreRaw": null,
+            "currentScoreType": "holding",
             "technicalDecision": {
               "state": "전고점대기",
               "bias": -2,
               "reason": "20일 전고점까지 2.39% 남아 돌파 확인 필요"
             },
             "currentChangePct": 2.16,
-            "replacementWatchLine": 90.0,
+            "replacementWatchLine": 82.8,
             "liquidityText": "수급 데이터 대기"
           },
           {
@@ -9477,9 +10425,6 @@
             "holdAction": "보유유지",
             "holdScore": 0,
             "holdReason": "혼합점수 76.7; 보유 유지",
-            "currentScoreNormalized": 78.0,
-            "currentScoreRaw": 76.7,
-            "currentScoreType": "current",
             "fundamentals": {
               "per": 6.52,
               "pbr": 0.53,
@@ -9532,6 +10477,20 @@
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
             },
+            "baseScoreNormalized": 78,
+            "scoreAdjustment": {
+              "value": 0.0,
+              "technicalWeight": 0.8,
+              "fundamentalWeight": 0.8,
+              "reasons": [
+                "기술 매물대주의 -6",
+                "저PBR 가점",
+                "저PER 가점"
+              ]
+            },
+            "currentScoreNormalized": 78.0,
+            "currentScoreRaw": 76.7,
+            "currentScoreType": "current",
             "technicalDecision": {
               "state": "매물대주의",
               "bias": -6,
@@ -9548,64 +10507,18 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.0,
         "periodStart": "2026-05-06T16:16+09:00",
-        "periodEnd": "2026-05-08T00:35+09:00"
+        "periodEnd": "2026-05-08T00:39+09:00"
       }
     }
   ],
   "history": [
-    {
-      "ts": "2026-05-06T15:22+09:00",
-      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
-      "candidates": 38,
-      "protected": 4,
-      "stale": 0,
-      "benchmark": 0.0,
-      "benchmarkValue": 7420.99,
-      "returns": [
-        1.51,
-        0.85,
-        1.8,
-        0.19
-      ],
-      "marketReturns": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        null,
-        null,
-        null
-      ],
-      "evalAmounts": [
-        30448800,
-        10083300,
-        10179500,
-        10018700
-      ],
-      "capital": [
-        29996900,
-        9998800,
-        10000000,
-        10000000
-      ],
-      "kodex200": null,
-      "kodexReturns": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ]
-    },
     {
       "ts": "2026-05-06T15:23+09:00",
       "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 0.02,
+      "benchmark": 0.0,
       "benchmarkValue": 7422.17,
       "returns": [
         1.51,
@@ -9614,10 +10527,10 @@
         0.19
       ],
       "marketReturns": [
-        0.02,
-        0.02,
-        0.02,
-        0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
         null,
         null,
         null
@@ -9651,7 +10564,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.0,
+      "benchmark": -0.02,
       "benchmarkValue": 7420.63,
       "returns": [
         1.51,
@@ -9660,10 +10573,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
+        -0.02,
+        -0.02,
+        -0.02,
+        -0.02,
         null,
         null,
         null
@@ -9697,7 +10610,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": 0.04,
+      "benchmark": 0.03,
       "benchmarkValue": 7424.07,
       "returns": [
         1.51,
@@ -9706,10 +10619,10 @@
         0.19
       ],
       "marketReturns": [
-        0.04,
-        0.04,
-        0.04,
-        0.04,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
         null,
         null,
         null
@@ -9743,7 +10656,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.12,
+      "benchmark": -0.14,
       "benchmarkValue": 7412.11,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -9754,10 +10667,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.12,
-        -0.12,
-        -0.12,
-        -0.12,
+        -0.14,
+        -0.14,
+        -0.14,
+        -0.14,
         null,
         null,
         null
@@ -9790,7 +10703,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.19,
+      "benchmark": -0.2,
       "benchmarkValue": 7407.18,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -9801,10 +10714,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.19,
-        -0.19,
-        -0.19,
-        -0.19,
+        -0.2,
+        -0.2,
+        -0.2,
+        -0.2,
         null,
         null,
         null
@@ -9837,7 +10750,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -9848,10 +10761,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         null,
         null,
         null
@@ -9884,7 +10797,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -9895,10 +10808,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         null,
         null,
         null
@@ -9931,7 +10844,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -9942,10 +10855,10 @@
         -0.14
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         null,
         null,
         null
@@ -9978,7 +10891,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -9989,10 +10902,10 @@
         -0.14
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         null,
         null,
         null
@@ -10025,7 +10938,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10036,10 +10949,10 @@
         -0.14
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         null,
         null,
         null
@@ -10072,7 +10985,7 @@
       "candidates": 38,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10083,10 +10996,10 @@
         -0.14
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         null,
         null,
         null
@@ -10119,7 +11032,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10133,10 +11046,10 @@
         -0.14
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10175,7 +11088,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10189,10 +11102,10 @@
         -0.14
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10231,7 +11144,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10245,10 +11158,10 @@
         -0.14
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10287,7 +11200,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10301,10 +11214,10 @@
         0.0
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10343,7 +11256,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10357,10 +11270,10 @@
         0.0
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10399,7 +11312,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10413,10 +11326,10 @@
         0.0
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10455,7 +11368,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10469,10 +11382,10 @@
         0.0
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10511,7 +11424,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10525,10 +11438,10 @@
         0.0
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10567,7 +11480,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10581,10 +11494,10 @@
         0.0
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10623,7 +11536,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10637,10 +11550,10 @@
         0.0
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10679,7 +11592,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10693,10 +11606,10 @@
         0.0
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10735,7 +11648,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.0,
       "kodex200Value": 113270.0,
@@ -10749,10 +11662,10 @@
         0.0
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10791,7 +11704,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 2.2,
       "kodex200Value": 115765.0,
@@ -10805,10 +11718,10 @@
         0.0
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10847,7 +11760,7 @@
       "candidates": 98,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 2.11,
       "kodex200Value": 115660.0,
@@ -10861,10 +11774,10 @@
         0.0
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10903,7 +11816,7 @@
       "candidates": 96,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.57,
       "kodex200Value": 113915.0,
@@ -10917,10 +11830,10 @@
         0.0
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -10959,7 +11872,7 @@
       "candidates": 96,
       "protected": 4,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.34,
       "kodex200Value": 113660.0,
@@ -10973,10 +11886,10 @@
         0.0
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11015,7 +11928,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -1.12,
       "kodex200Value": 112000.0,
@@ -11029,10 +11942,10 @@
         -0.1
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11071,7 +11984,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -0.23,
       "kodex200Value": 113015.0,
@@ -11085,10 +11998,10 @@
         -0.1
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11127,7 +12040,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.18,
       "kodex200Value": 113475.0,
@@ -11141,10 +12054,10 @@
         -0.1
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11183,7 +12096,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.39,
       "kodex200Value": 113715.0,
@@ -11197,10 +12110,10 @@
         -0.1
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11239,7 +12152,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.2,
       "kodex200Value": 113495.0,
@@ -11253,10 +12166,10 @@
         -0.1
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11295,7 +12208,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -0.1,
       "kodex200Value": 113160.0,
@@ -11309,10 +12222,10 @@
         -0.1
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11351,7 +12264,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -0.46,
       "kodex200Value": 112750.0,
@@ -11365,10 +12278,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11407,7 +12320,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -0.42,
       "kodex200Value": 112790.0,
@@ -11421,10 +12334,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11463,7 +12376,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -1.09,
       "kodex200Value": 112035.0,
@@ -11477,10 +12390,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11519,7 +12432,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -0.84,
       "kodex200Value": 112320.0,
@@ -11533,10 +12446,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11575,7 +12488,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -0.74,
       "kodex200Value": 112430.0,
@@ -11589,10 +12502,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11631,7 +12544,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -0.97,
       "kodex200Value": 112175.0,
@@ -11645,10 +12558,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11687,7 +12600,7 @@
       "candidates": 96,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -1.1,
       "kodex200Value": 112025.0,
@@ -11701,10 +12614,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11743,7 +12656,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -0.59,
       "kodex200Value": 112600.0,
@@ -11757,10 +12670,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11799,7 +12712,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -0.59,
       "kodex200Value": 112600.0,
@@ -11813,10 +12726,10 @@
         0.19
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11855,7 +12768,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -0.58,
       "kodex200Value": 112615.0,
@@ -11869,10 +12782,10 @@
         0.18
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11911,7 +12824,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -1.25,
       "kodex200Value": 111855.0,
@@ -11925,10 +12838,10 @@
         0.18
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -11967,7 +12880,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -1.01,
       "kodex200Value": 112130.0,
@@ -11981,10 +12894,10 @@
         0.18
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -12023,7 +12936,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -0.47,
       "kodex200Value": 112735.0,
@@ -12037,10 +12950,10 @@
         0.18
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -12079,7 +12992,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": -0.06,
       "kodex200Value": 113200.0,
@@ -12093,10 +13006,10 @@
         0.18
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -12135,7 +13048,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.16,
+      "benchmark": -0.18,
       "benchmarkValue": 7409.09,
       "kodex200": 0.19,
       "kodex200Value": 113480.0,
@@ -12149,10 +13062,10 @@
         0.18
       ],
       "marketReturns": [
-        -0.16,
-        -0.16,
-        -0.16,
-        -0.16,
+        -0.18,
+        -0.18,
+        -0.18,
+        -0.18,
         0.0,
         0.0,
         0.0
@@ -12191,7 +13104,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.6,
+      "benchmark": -0.62,
       "benchmarkValue": 7376.22,
       "kodex200": 0.34,
       "kodex200Value": 113660.0,
@@ -12205,10 +13118,10 @@
         0.18
       ],
       "marketReturns": [
-        -0.6,
-        -0.6,
-        -0.6,
-        -0.6,
+        -0.62,
+        -0.62,
+        -0.62,
+        -0.62,
         -0.44,
         -0.44,
         -0.44
@@ -12247,7 +13160,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.6,
+      "benchmark": -0.62,
       "benchmarkValue": 7376.22,
       "kodex200": 0.35,
       "kodex200Value": 113670.0,
@@ -12261,10 +13174,10 @@
         0.18
       ],
       "marketReturns": [
-        -0.6,
-        -0.6,
-        -0.6,
-        -0.6,
+        -0.62,
+        -0.62,
+        -0.62,
+        -0.62,
         -0.44,
         -0.44,
         -0.44
@@ -12303,7 +13216,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.45,
+      "benchmark": -0.47,
       "benchmarkValue": 7387.3,
       "kodex200": 0.34,
       "kodex200Value": 113650.0,
@@ -12317,10 +13230,10 @@
         0.18
       ],
       "marketReturns": [
-        -0.45,
-        -0.45,
-        -0.45,
-        -0.45,
+        -0.47,
+        -0.47,
+        -0.47,
+        -0.47,
         -0.29,
         -0.29,
         -0.29
@@ -12359,7 +13272,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.15,
+      "benchmark": -0.16,
       "benchmarkValue": 7410.05,
       "kodex200": 0.86,
       "kodex200Value": 114245.0,
@@ -12373,10 +13286,10 @@
         0.6
       ],
       "marketReturns": [
-        -0.15,
-        -0.15,
-        -0.15,
-        -0.15,
+        -0.16,
+        -0.16,
+        -0.16,
+        -0.16,
         0.01,
         0.01,
         0.01
@@ -12415,7 +13328,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.18,
+      "benchmark": -0.2,
       "benchmarkValue": 7407.38,
       "kodex200": 0.61,
       "kodex200Value": 113960.0,
@@ -12429,10 +13342,10 @@
         0.6
       ],
       "marketReturns": [
-        -0.18,
-        -0.18,
-        -0.18,
-        -0.18,
+        -0.2,
+        -0.2,
+        -0.2,
+        -0.2,
         -0.02,
         -0.02,
         -0.02
@@ -12471,7 +13384,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.41,
+      "benchmark": -0.42,
       "benchmarkValue": 7390.81,
       "kodex200": 0.32,
       "kodex200Value": 113635.0,
@@ -12485,10 +13398,10 @@
         0.54
       ],
       "marketReturns": [
-        -0.41,
-        -0.41,
-        -0.41,
-        -0.41,
+        -0.42,
+        -0.42,
+        -0.42,
+        -0.42,
         -0.25,
         -0.25,
         -0.25
@@ -12527,7 +13440,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.58,
+      "benchmark": -0.6,
       "benchmarkValue": 7377.89,
       "kodex200": 0.22,
       "kodex200Value": 113515.0,
@@ -12541,10 +13454,10 @@
         0.54
       ],
       "marketReturns": [
-        -0.58,
-        -0.58,
-        -0.58,
-        -0.58,
+        -0.6,
+        -0.6,
+        -0.6,
+        -0.6,
         -0.42,
         -0.42,
         -0.42
@@ -12583,7 +13496,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -1.07,
+      "benchmark": -1.09,
       "benchmarkValue": 7341.32,
       "kodex200": -0.28,
       "kodex200Value": 112955.0,
@@ -12597,10 +13510,10 @@
         0.26
       ],
       "marketReturns": [
-        -1.07,
-        -1.07,
-        -1.07,
-        -1.07,
+        -1.09,
+        -1.09,
+        -1.09,
+        -1.09,
         -0.91,
         -0.91,
         -0.91
@@ -12639,7 +13552,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.7,
+      "benchmark": -0.72,
       "benchmarkValue": 7368.75,
       "kodex200": 0.24,
       "kodex200Value": 113540.0,
@@ -12653,10 +13566,10 @@
         0.26
       ],
       "marketReturns": [
-        -0.7,
-        -0.7,
-        -0.7,
-        -0.7,
+        -0.72,
+        -0.72,
+        -0.72,
+        -0.72,
         -0.54,
         -0.54,
         -0.54
@@ -12695,7 +13608,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.48,
+      "benchmark": -0.49,
       "benchmarkValue": 7385.68,
       "kodex200": 0.4,
       "kodex200Value": 113725.0,
@@ -12709,10 +13622,10 @@
         0.26
       ],
       "marketReturns": [
-        -0.48,
-        -0.48,
-        -0.48,
-        -0.48,
+        -0.49,
+        -0.49,
+        -0.49,
+        -0.49,
         -0.32,
         -0.32,
         -0.32
@@ -12751,7 +13664,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.21,
+      "benchmark": -0.22,
       "benchmarkValue": 7405.53,
       "kodex200": 0.71,
       "kodex200Value": 114072.0,
@@ -12765,10 +13678,10 @@
         0.26
       ],
       "marketReturns": [
-        -0.21,
-        -0.21,
-        -0.21,
-        -0.21,
+        -0.22,
+        -0.22,
+        -0.22,
+        -0.22,
         -0.05,
         -0.05,
         -0.05
@@ -12807,7 +13720,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.23,
+      "benchmark": -0.25,
       "benchmarkValue": 7403.74,
       "kodex200": 0.66,
       "kodex200Value": 114020.0,
@@ -12821,10 +13734,10 @@
         0.73
       ],
       "marketReturns": [
-        -0.23,
-        -0.23,
-        -0.23,
-        -0.23,
+        -0.25,
+        -0.25,
+        -0.25,
+        -0.25,
         -0.07,
         -0.07,
         -0.07
@@ -12863,7 +13776,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.36,
+      "benchmark": -0.38,
       "benchmarkValue": 7393.93,
       "kodex200": 0.45,
       "kodex200Value": 113775.0,
@@ -12877,10 +13790,10 @@
         0.73
       ],
       "marketReturns": [
-        -0.36,
-        -0.36,
-        -0.36,
-        -0.36,
+        -0.38,
+        -0.38,
+        -0.38,
+        -0.38,
         -0.2,
         -0.2,
         -0.2
@@ -12919,7 +13832,7 @@
       "candidates": 94,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.55,
+      "benchmark": -0.57,
       "benchmarkValue": 7379.9,
       "kodex200": 0.43,
       "kodex200Value": 113760.0,
@@ -12933,10 +13846,10 @@
         0.51
       ],
       "marketReturns": [
-        -0.55,
-        -0.55,
-        -0.55,
-        -0.55,
+        -0.57,
+        -0.57,
+        -0.57,
+        -0.57,
         -0.39,
         -0.39,
         -0.39
@@ -12975,7 +13888,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.54,
+      "benchmark": -0.55,
       "benchmarkValue": 7381.14,
       "kodex200": 0.45,
       "kodex200Value": 113785.0,
@@ -12989,10 +13902,10 @@
         0.51
       ],
       "marketReturns": [
-        -0.54,
-        -0.54,
-        -0.54,
-        -0.54,
+        -0.55,
+        -0.55,
+        -0.55,
+        -0.55,
         -0.38,
         -0.38,
         -0.38
@@ -13031,7 +13944,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.41,
+      "benchmark": -0.42,
       "benchmarkValue": 7390.84,
       "kodex200": 0.57,
       "kodex200Value": 113920.0,
@@ -13045,10 +13958,10 @@
         0.51
       ],
       "marketReturns": [
-        -0.41,
-        -0.41,
-        -0.41,
-        -0.41,
+        -0.42,
+        -0.42,
+        -0.42,
+        -0.42,
         -0.25,
         -0.25,
         -0.25
@@ -13087,7 +14000,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.27,
+      "benchmark": -0.29,
       "benchmarkValue": 7400.98,
       "kodex200": 0.68,
       "kodex200Value": 114040.0,
@@ -13101,10 +14014,10 @@
         0.66
       ],
       "marketReturns": [
-        -0.27,
-        -0.27,
-        -0.27,
-        -0.27,
+        -0.29,
+        -0.29,
+        -0.29,
+        -0.29,
         -0.11,
         -0.11,
         -0.11
@@ -13143,7 +14056,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.35,
+      "benchmark": -0.37,
       "benchmarkValue": 7394.75,
       "kodex200": 0.4,
       "kodex200Value": 113720.0,
@@ -13157,10 +14070,10 @@
         0.66
       ],
       "marketReturns": [
-        -0.35,
-        -0.35,
-        -0.35,
-        -0.35,
+        -0.37,
+        -0.37,
+        -0.37,
+        -0.37,
         -0.19,
         -0.19,
         -0.19
@@ -13199,7 +14112,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.46,
+      "benchmark": -0.48,
       "benchmarkValue": 7386.82,
       "kodex200": 0.37,
       "kodex200Value": 113690.0,
@@ -13213,10 +14126,10 @@
         0.66
       ],
       "marketReturns": [
-        -0.46,
-        -0.46,
-        -0.46,
-        -0.46,
+        -0.48,
+        -0.48,
+        -0.48,
+        -0.48,
         -0.3,
         -0.3,
         -0.3
@@ -13255,7 +14168,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.53,
+      "benchmark": -0.55,
       "benchmarkValue": 7381.49,
       "kodex200": 0.41,
       "kodex200Value": 113735.0,
@@ -13269,10 +14182,10 @@
         0.66
       ],
       "marketReturns": [
-        -0.53,
-        -0.53,
-        -0.53,
-        -0.53,
+        -0.55,
+        -0.55,
+        -0.55,
+        -0.55,
         -0.37,
         -0.37,
         -0.37
@@ -13311,7 +14224,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.44,
+      "benchmark": -0.46,
       "benchmarkValue": 7388.24,
       "kodex200": 0.56,
       "kodex200Value": 113900.0,
@@ -13325,10 +14238,10 @@
         0.66
       ],
       "marketReturns": [
-        -0.44,
-        -0.44,
-        -0.44,
-        -0.44,
+        -0.46,
+        -0.46,
+        -0.46,
+        -0.46,
         -0.28,
         -0.28,
         -0.28
@@ -13367,7 +14280,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.38,
+      "benchmark": -0.4,
       "benchmarkValue": 7392.56,
       "kodex200": 0.6,
       "kodex200Value": 113955.0,
@@ -13381,10 +14294,10 @@
         0.66
       ],
       "marketReturns": [
-        -0.38,
-        -0.38,
-        -0.38,
-        -0.38,
+        -0.4,
+        -0.4,
+        -0.4,
+        -0.4,
         -0.22,
         -0.22,
         -0.22
@@ -13423,7 +14336,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.29,
+      "benchmark": -0.31,
       "benchmarkValue": 7399.44,
       "kodex200": 0.64,
       "kodex200Value": 114000.0,
@@ -13437,10 +14350,10 @@
         0.66
       ],
       "marketReturns": [
-        -0.29,
-        -0.29,
-        -0.29,
-        -0.29,
+        -0.31,
+        -0.31,
+        -0.31,
+        -0.31,
         -0.13,
         -0.13,
         -0.13
@@ -13479,7 +14392,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.29,
+      "benchmark": -0.31,
       "benchmarkValue": 7399.44,
       "kodex200": 0.56,
       "kodex200Value": 113900.0,
@@ -13493,10 +14406,10 @@
         0.66
       ],
       "marketReturns": [
-        -0.29,
-        -0.29,
-        -0.29,
-        -0.29,
+        -0.31,
+        -0.31,
+        -0.31,
+        -0.31,
         -0.13,
         -0.13,
         -0.13
@@ -13535,7 +14448,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.34,
+      "benchmark": -0.36,
       "benchmarkValue": 7395.5,
       "kodex200": 0.62,
       "kodex200Value": 113975.0,
@@ -13549,10 +14462,10 @@
         0.66
       ],
       "marketReturns": [
-        -0.34,
-        -0.34,
-        -0.34,
-        -0.34,
+        -0.36,
+        -0.36,
+        -0.36,
+        -0.36,
         -0.18,
         -0.18,
         -0.18
@@ -13591,7 +14504,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.35,
+      "benchmark": -0.36,
       "benchmarkValue": 7395.11,
       "kodex200": 0.51,
       "kodex200Value": 113850.0,
@@ -13605,10 +14518,10 @@
         0.66
       ],
       "marketReturns": [
-        -0.35,
-        -0.35,
-        -0.35,
-        -0.35,
+        -0.36,
+        -0.36,
+        -0.36,
+        -0.36,
         -0.19,
         -0.19,
         -0.19
@@ -13647,7 +14560,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.34,
+      "benchmark": -0.36,
       "benchmarkValue": 7395.67,
       "kodex200": 0.55,
       "kodex200Value": 113890.0,
@@ -13661,10 +14574,10 @@
         0.66
       ],
       "marketReturns": [
-        -0.34,
-        -0.34,
-        -0.34,
-        -0.34,
+        -0.36,
+        -0.36,
+        -0.36,
+        -0.36,
         -0.18,
         -0.18,
         -0.18
@@ -13703,7 +14616,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.25,
+      "benchmark": -0.27,
       "benchmarkValue": 7402.15,
       "kodex200": 0.99,
       "kodex200Value": 114395.0,
@@ -13717,10 +14630,10 @@
         0.88
       ],
       "marketReturns": [
-        -0.25,
-        -0.25,
-        -0.25,
-        -0.25,
+        -0.27,
+        -0.27,
+        -0.27,
+        -0.27,
         -0.09,
         -0.09,
         -0.09
@@ -13759,7 +14672,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": -0.06,
+      "benchmark": -0.07,
       "benchmarkValue": 7416.83,
       "kodex200": 0.98,
       "kodex200Value": 114385.0,
@@ -13773,10 +14686,10 @@
         0.88
       ],
       "marketReturns": [
-        -0.06,
-        -0.06,
-        -0.06,
-        -0.06,
+        -0.07,
+        -0.07,
+        -0.07,
+        -0.07,
         0.1,
         0.1,
         0.1
@@ -13815,7 +14728,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.17,
+      "benchmark": 0.15,
       "benchmarkValue": 7433.55,
       "kodex200": 1.24,
       "kodex200Value": 114680.0,
@@ -13829,10 +14742,10 @@
         0.88
       ],
       "marketReturns": [
-        0.17,
-        0.17,
-        0.17,
-        0.17,
+        0.15,
+        0.15,
+        0.15,
+        0.15,
         0.33,
         0.33,
         0.33
@@ -13871,7 +14784,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.43,
+      "benchmark": 0.42,
       "benchmarkValue": 7453.19,
       "kodex200": 1.44,
       "kodex200Value": 114905.0,
@@ -13885,10 +14798,10 @@
         0.88
       ],
       "marketReturns": [
-        0.43,
-        0.43,
-        0.43,
-        0.43,
+        0.42,
+        0.42,
+        0.42,
+        0.42,
         0.6,
         0.6,
         0.6
@@ -13927,7 +14840,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.58,
+      "benchmark": 0.56,
       "benchmarkValue": 7463.86,
       "kodex200": 1.59,
       "kodex200Value": 115070.0,
@@ -13941,10 +14854,10 @@
         0.88
       ],
       "marketReturns": [
-        0.58,
-        0.58,
-        0.58,
-        0.58,
+        0.56,
+        0.56,
+        0.56,
+        0.56,
         0.74,
         0.74,
         0.74
@@ -13983,7 +14896,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.91,
+      "benchmark": 0.9,
       "benchmarkValue": 7488.65,
       "kodex200": 1.82,
       "kodex200Value": 115335.0,
@@ -13997,10 +14910,10 @@
         0.82
       ],
       "marketReturns": [
-        0.91,
-        0.91,
-        0.91,
-        0.91,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
         1.07,
         1.07,
         1.07
@@ -14039,7 +14952,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.91,
+      "benchmark": 0.9,
       "benchmarkValue": 7488.61,
       "kodex200": 2.0,
       "kodex200Value": 115540.0,
@@ -14053,10 +14966,10 @@
         0.82
       ],
       "marketReturns": [
-        0.91,
-        0.91,
-        0.91,
-        0.91,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
         1.07,
         1.07,
         1.07
@@ -14095,7 +15008,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.83,
+      "benchmark": 0.81,
       "benchmarkValue": 7482.24,
       "kodex200": 2.02,
       "kodex200Value": 115560.0,
@@ -14109,10 +15022,10 @@
         0.82
       ],
       "marketReturns": [
-        0.83,
-        0.83,
-        0.83,
-        0.83,
+        0.81,
+        0.81,
+        0.81,
+        0.81,
         0.99,
         0.99,
         0.99
@@ -14151,7 +15064,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.03,
+      "benchmark": 1.01,
       "benchmarkValue": 7497.21,
       "kodex200": 2.26,
       "kodex200Value": 115830.0,
@@ -14165,10 +15078,10 @@
         0.82
       ],
       "marketReturns": [
-        1.03,
-        1.03,
-        1.03,
-        1.03,
+        1.01,
+        1.01,
+        1.01,
+        1.01,
         1.19,
         1.19,
         1.19
@@ -14207,7 +15120,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 1.15,
+      "benchmark": 1.13,
       "benchmarkValue": 7506.16,
       "kodex200": 2.34,
       "kodex200Value": 115920.0,
@@ -14221,10 +15134,10 @@
         0.82
       ],
       "marketReturns": [
-        1.15,
-        1.15,
-        1.15,
-        1.15,
+        1.13,
+        1.13,
+        1.13,
+        1.13,
         1.31,
         1.31,
         1.31
@@ -14263,7 +15176,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.94,
+      "benchmark": 0.92,
       "benchmarkValue": 7490.48,
       "kodex200": 2.13,
       "kodex200Value": 115685.0,
@@ -14277,10 +15190,10 @@
         0.82
       ],
       "marketReturns": [
-        0.94,
-        0.94,
-        0.94,
-        0.94,
+        0.92,
+        0.92,
+        0.92,
+        0.92,
         1.1,
         1.1,
         1.1
@@ -14319,7 +15232,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.81,
+      "benchmark": 0.79,
       "benchmarkValue": 7481.09,
       "kodex200": 1.81,
       "kodex200Value": 115325.0,
@@ -14333,10 +15246,10 @@
         1.09
       ],
       "marketReturns": [
-        0.81,
-        0.81,
-        0.81,
-        0.81,
+        0.79,
+        0.79,
+        0.79,
+        0.79,
         0.97,
         0.97,
         0.97
@@ -14375,7 +15288,7 @@
       "candidates": 97,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.56,
+      "benchmark": 0.55,
       "benchmarkValue": 7462.88,
       "kodex200": 1.66,
       "kodex200Value": 115145.0,
@@ -14389,10 +15302,10 @@
         1.09
       ],
       "marketReturns": [
-        0.56,
-        0.56,
-        0.56,
-        0.56,
+        0.55,
+        0.55,
+        0.55,
+        0.55,
         0.73,
         0.73,
         0.73
@@ -14431,7 +15344,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.87,
+      "benchmark": 0.85,
       "benchmarkValue": 7485.2,
       "kodex200": 1.97,
       "kodex200Value": 115500.0,
@@ -14445,10 +15358,10 @@
         1.09
       ],
       "marketReturns": [
-        0.87,
-        0.87,
-        0.87,
-        0.87,
+        0.85,
+        0.85,
+        0.85,
+        0.85,
         1.03,
         1.03,
         1.03
@@ -14487,7 +15400,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.87,
+      "benchmark": 0.85,
       "benchmarkValue": 7485.2,
       "kodex200": 1.97,
       "kodex200Value": 115500.0,
@@ -14501,10 +15414,10 @@
         1.09
       ],
       "marketReturns": [
-        0.87,
-        0.87,
-        0.87,
-        0.87,
+        0.85,
+        0.85,
+        0.85,
+        0.85,
         1.03,
         1.03,
         1.03
@@ -14543,7 +15456,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.87,
+      "benchmark": 0.85,
       "benchmarkValue": 7485.2,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -14557,10 +15470,10 @@
         0.98
       ],
       "marketReturns": [
-        0.87,
-        0.87,
-        0.87,
-        0.87,
+        0.85,
+        0.85,
+        0.85,
+        0.85,
         1.03,
         1.03,
         1.03
@@ -14599,7 +15512,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -14613,10 +15526,10 @@
         0.98
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -14655,7 +15568,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -14669,10 +15582,10 @@
         0.98
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -14711,7 +15624,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -14725,10 +15638,10 @@
         0.98
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -14767,7 +15680,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": null,
       "kodex200Value": null,
@@ -14781,10 +15694,10 @@
         0.98
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -14823,7 +15736,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": null,
       "kodex200Value": null,
@@ -14837,10 +15750,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -14879,7 +15792,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -14893,10 +15806,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -14935,7 +15848,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -14949,10 +15862,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -14991,7 +15904,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -15005,10 +15918,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15047,7 +15960,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": null,
       "kodex200Value": null,
@@ -15061,10 +15974,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15103,7 +16016,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -15117,10 +16030,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15159,7 +16072,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": null,
       "kodex200Value": null,
@@ -15173,10 +16086,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15215,7 +16128,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -15229,10 +16142,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15271,7 +16184,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": null,
       "kodex200Value": null,
@@ -15285,10 +16198,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15327,7 +16240,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -15341,10 +16254,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15383,7 +16296,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": null,
       "kodex200Value": null,
@@ -15397,10 +16310,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15439,7 +16352,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -15453,10 +16366,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15495,7 +16408,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -15509,10 +16422,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15551,7 +16464,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -15565,10 +16478,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15607,7 +16520,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -15621,10 +16534,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15663,7 +16576,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": null,
       "kodex200Value": null,
@@ -15677,10 +16590,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15719,7 +16632,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": null,
       "kodex200Value": null,
@@ -15733,10 +16646,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15775,7 +16688,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": null,
       "kodex200Value": null,
@@ -15789,10 +16702,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15831,7 +16744,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -15845,10 +16758,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15887,7 +16800,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": null,
       "kodex200Value": null,
@@ -15901,10 +16814,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15943,7 +16856,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": null,
       "kodex200Value": null,
@@ -15957,10 +16870,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -15999,7 +16912,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -16013,10 +16926,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -16055,7 +16968,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -16069,10 +16982,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -16111,7 +17024,7 @@
       "candidates": 98,
       "protected": 2,
       "stale": 0,
-      "benchmark": 0.93,
+      "benchmark": 0.91,
       "benchmarkValue": 7490.05,
       "kodex200": 2.07,
       "kodex200Value": 115620.0,
@@ -16125,10 +17038,10 @@
         1.09
       ],
       "marketReturns": [
-        0.93,
-        0.93,
-        0.93,
-        0.93,
+        0.91,
+        0.91,
+        0.91,
+        0.91,
         1.09,
         1.09,
         1.09
@@ -16159,6 +17072,62 @@
         2.07,
         2.07,
         2.07
+      ]
+    },
+    {
+      "ts": "2026-05-08T00:39+09:00",
+      "dataEpoch": "2026-05-06T00:00+09:00:clean-start-v3",
+      "candidates": 98,
+      "protected": 2,
+      "stale": 0,
+      "benchmark": 0.91,
+      "benchmarkValue": 7490.05,
+      "kodex200": null,
+      "kodex200Value": null,
+      "returns": [
+        2.13,
+        1.24,
+        3.36,
+        -4.42,
+        1.23,
+        0.34,
+        1.09
+      ],
+      "marketReturns": [
+        0.91,
+        0.91,
+        0.91,
+        0.91,
+        1.09,
+        1.09,
+        1.09
+      ],
+      "evalAmounts": [
+        10211300,
+        30369000,
+        10335500,
+        9558000,
+        10122800,
+        10034500,
+        10109400
+      ],
+      "capital": [
+        9998800,
+        29995900,
+        10000000,
+        10000000,
+        10000000,
+        10000000,
+        10000000
+      ],
+      "kodexReturns": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     }
   ],
