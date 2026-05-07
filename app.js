@@ -217,23 +217,24 @@ function normalizedScoreText(v) {
   return v === null || v === undefined || Number.isNaN(Number(v)) ? '-' : Number(v).toFixed(1);
 }
 
-function switchMiniGraph({ baseScore = null, currentScore = null, candidateScore = null, returnPct = null } = {}) {
+function switchMiniGraph({ baseScore = null, currentScore = null, candidateScore = null, returnPct = null, currentLabel = '현재', triggerBaseScore = null } = {}) {
   const cur = currentScore == null ? 50 : Math.max(0, Math.min(100, Number(currentScore)));
   const base = baseScore == null ? cur : Math.max(0, Math.min(100, Number(baseScore)));
   const cand = candidateScore == null ? cur + 12 : Math.max(0, Math.min(100, Number(candidateScore)));
+  const triggerBase = triggerBaseScore == null ? cur : Math.max(0, Math.min(100, Number(triggerBaseScore)));
   const danger = returnPct !== null && returnPct !== undefined && Number(returnPct) <= -4;
-  const trigger = Math.max(cur + 12, 70);
+  const trigger = Math.max(triggerBase + 12, 70);
   const toY = v => Math.round(42 - (Math.max(0, Math.min(100, v)) / 100) * 32);
   const points = `4,${toY(base)} 52,${toY(cur)} 100,${toY(cand)}`;
   const triggerY = toY(trigger);
-  const help = danger ? '수익률이 손절 관찰 구간에 가까움' : `새 후보가 현재 보유점수보다 12점 이상 높거나 최소 70점을 넘으면 교체 검토`;
+  const help = danger ? '수익률이 손절 관찰 구간에 가까움' : `후보가 교체기준을 넘으면 교체 검토`;
   return `<div class="switch-mini" title="${help}">
     <svg viewBox="0 0 104 46" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
       <line x1="0" y1="${triggerY}" x2="104" y2="${triggerY}" class="switch-line" />
       <polyline points="${points}" class="switch-curve" />
       <circle cx="52" cy="${toY(cur)}" r="2.8" class="switch-dot" />
     </svg>
-    <span class="switch-score-labels"><b>기준 ${Math.round(trigger)}</b><b>현재 ${Math.round(cur)}</b></span>
+    <span class="switch-score-labels"><b>기준 ${Math.round(trigger)}</b><b>${currentLabel} ${Math.round(cur)}</b></span>
   </div>`;
 }
 
@@ -325,7 +326,7 @@ function holdingCandidateComparison(s) {
           return `<article class="replacement-card">
             <div class="compare-hero">
               <div class="compare-identity"><strong>${c.name || '-'}</strong><b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b></div>
-              ${switchMiniGraph({ baseScore: bestHeldScore < 0 ? null : bestHeldScore, currentScore: bestHeldScore < 0 ? null : bestHeldScore, candidateScore: c.score })}
+              ${switchMiniGraph({ baseScore: bestHeldScore < 0 ? null : bestHeldScore, currentScore: c.score, candidateScore: c.score, currentLabel: '후보', triggerBaseScore: bestHeldScore < 0 ? null : bestHeldScore })}
               <div class="compare-meta"><span>${c.code || ''}</span><em class="${edge == null ? '' : (edge >= 0 ? 'up' : 'down')}">${edge == null ? '비교대기' : `보유상위 대비 ${edge > 0 ? '+' : ''}${edge.toFixed(1)}`}</em></div>
             </div>
             ${diagnosticRows([
