@@ -192,15 +192,17 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .overview-candidates { grid-column: 1 / -1; }
 .overview-candidate-grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
 .holdings-card { padding: 12px; border-radius: 16px; border: 1px solid rgba(53,211,153,.30); background: rgba(53,211,153,.055); }
-.holding-items { display: grid; gap: 7px; }
-.holding-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 10px; border-radius: 12px; background: rgba(255,255,255,.04); }
-.holding-item strong, .holding-item span, .holding-item em, .holding-item small { display: block; }
-.holding-item strong { font-size: 15px; }
-.holding-item em { margin-top: 2px; color: var(--text); font-style: normal; font-size: 12px; }
-.holding-item > div > small { margin-top: 4px; line-height: 1.35; }
-.holding-numbers { text-align: right; }
-.holding-numbers b { display: block; font-size: 22px; line-height: 1; letter-spacing: -.04em; }
-.holding-numbers small { display: block; margin-top: 5px; color: var(--muted); white-space: nowrap; }
+.holding-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.035); }
+.holding-table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 12px; }
+.holding-table th, .holding-table td { padding: 8px 9px; border-right: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); text-align: right; vertical-align: middle; white-space: nowrap; }
+.holding-table th { background: rgba(255,255,255,.07); color: #dbe7ff; font-weight: 900; text-align: center; line-height: 1.35; }
+.holding-table th:first-child, .holding-table td:first-child { text-align: left; }
+.holding-table tr:last-child td { border-bottom: 0; }
+.holding-table th:last-child, .holding-table td:last-child { border-right: 0; }
+.holding-table b, .holding-table small { display: block; font-variant-numeric: tabular-nums; }
+.holding-table small { margin-top: 3px; color: var(--muted); }
+.holding-table .stock-name strong { display: block; max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.holding-table .stock-name small { font-size: 10px; }
 .trade-alerts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .trade-alert { padding: 12px; border-radius: 16px; border: 1px solid var(--line); background: rgba(255,255,255,.035); }
 .buy-alert { border-color: rgba(255,77,79,.28); }
@@ -285,8 +287,9 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .portfolio-strip strong { font-size: 13px; }
   .mini-facts { display: grid; grid-template-columns: repeat(2, 1fr); }
   .trade-alerts { grid-template-columns: 1fr; }
-  .holding-item { grid-template-columns: 1fr; align-items: start; }
-  .holding-numbers { text-align: left; }
+  .holding-table-wrap { margin: 0 -2px; }
+  .holding-table { min-width: 720px; font-size: 11px; }
+  .holding-table th, .holding-table td { padding: 7px 6px; }
   .candidate-tile { padding: 13px; border-radius: 17px; }
   .candidate-top { margin-bottom: 8px; }
   .candidate-title { margin-bottom: 10px; }

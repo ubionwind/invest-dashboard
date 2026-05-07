@@ -521,23 +521,36 @@ function holdingsBlock(pf = {}) {
       <p class="muted alert-empty">현재 보유 종목 없음</p>
     </section>`;
   }
+  const totalEval = Number(pf.investmentAmount || positions.reduce((sum, p) => sum + Number(p.evalAmount || 0), 0));
   return `<section class="holdings-card">
     <div class="alert-head"><span>보유 항목</span><strong>${positions.length}</strong></div>
-    <div class="holding-items">${positions.map(p => {
-      const ret = p.returnPct === null || p.returnPct === undefined || p.returnPct === '' ? null : Number(p.returnPct);
-      const retClass = ret === null || Number.isNaN(ret) ? '' : (ret >= 0 ? 'up' : 'down');
-      return `<div class="holding-item">
-        <div>
-          <strong>${p.name || '-'}</strong>${p.code ? `<span class="muted">${p.code}</span>` : ''}
-          <em>${fmt.format(p.qty || 0)}주${p.holdingPeriod ? ` · ${p.holdingPeriod}` : ''}</em>
-          <small class="muted">매입 ${money(p.entryPrice)} · 현재 ${money(p.currentPrice)} · 평가 ${money(p.evalAmount)}</small>
-        </div>
-        <div class="holding-numbers">
-          <b class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : pct(ret)}</b>
-          <small>${money(p.pnl)}</small>
-        </div>
-      </div>`;
-    }).join('')}</div>
+    <div class="holding-table-wrap"><table class="holding-table">
+      <thead><tr>
+        <th>종목명</th><th>보유수량</th><th>평가손익<br>수익률(%)</th><th>평가금액<br>매입금액</th><th>현재가<br>평균단가</th><th>전일대비<br>등락률(%)</th><th>보유비중</th>
+      </tr></thead>
+      <tbody>${positions.map(p => {
+        const ret = p.returnPct === null || p.returnPct === undefined || p.returnPct === '' ? null : Number(p.returnPct);
+        const retClass = ret === null || Number.isNaN(ret) ? '' : (ret >= 0 ? 'up' : 'down');
+        const qty = Number(p.qty || 0);
+        const entryAmount = p.entryAmount ?? (qty && p.entryPrice ? qty * Number(p.entryPrice) : null);
+        const change = p.currentChangePct ?? p.sourceChangePct;
+        const changeNum = change === null || change === undefined || change === '' ? null : Number(change);
+        const changeClass = changeNum === null || Number.isNaN(changeNum) ? '' : (changeNum >= 0 ? 'up' : 'down');
+        const currentPrice = Number(p.currentPrice || 0);
+        const prevPrice = changeNum !== null && !Number.isNaN(changeNum) && currentPrice ? currentPrice / (1 + changeNum / 100) : null;
+        const delta = prevPrice ? currentPrice - prevPrice : null;
+        const weight = totalEval && p.evalAmount ? Number(p.evalAmount) / totalEval * 100 : null;
+        return `<tr>
+          <td class="stock-name"><strong>${p.name || '-'}</strong>${p.code ? `<small>${p.code}</small>` : ''}</td>
+          <td>${fmt.format(qty)}</td>
+          <td><b class="${retClass}">${money(p.pnl)}</b><small class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : ret.toFixed(2)}</small></td>
+          <td><b>${money(p.evalAmount)}</b><small>${entryAmount === null ? '-' : money(entryAmount)}</small></td>
+          <td><b>${money(p.currentPrice)}</b><small>${money(p.entryPrice)}</small></td>
+          <td><b class="${changeClass}">${delta === null ? '-' : `${delta >= 0 ? '▲ ' : '▼ '}${money(Math.abs(delta))}`}</b><small class="${changeClass}">${changeNum === null || Number.isNaN(changeNum) ? '-' : changeNum.toFixed(2)}</small></td>
+          <td>${weight === null ? '-' : weight.toFixed(2)}</td>
+        </tr>`;
+      }).join('')}</tbody>
+    </table></div>
   </section>`;
 }
 

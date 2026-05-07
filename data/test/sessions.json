@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-07T19:59+09:00",
+  "generatedAt": "2026-05-07T21:02+09:00",
   "sessions": [
     {
       "name": "일반",
@@ -265,6 +265,7 @@
             "currentScoreNormalized": 45.0,
             "currentScoreRaw": 0.0,
             "currentScoreType": "current",
+            "currentChangePct": null,
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
             "replacementWatchLine": 70,
@@ -276,10 +277,10 @@
       },
       "comparison": {
         "returnPct": 2.13,
-        "benchmarkReturnPct": 1.17,
-        "excessReturnPct": 0.96,
+        "benchmarkReturnPct": 1.03,
+        "excessReturnPct": 1.1,
         "periodStart": "2026-05-06T12:12+09:00",
-        "periodEnd": "2026-05-07T19:59+09:00"
+        "periodEnd": "2026-05-07T21:02+09:00"
       }
     },
     {
@@ -466,6 +467,7 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": 61.0,
             "currentScoreType": "current",
+            "currentChangePct": -2.77,
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
             "replacementWatchLine": 87.0,
@@ -487,6 +489,7 @@
             "currentScoreNormalized": 50.0,
             "currentScoreRaw": 0.0,
             "currentScoreType": "current",
+            "currentChangePct": null,
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
             "replacementWatchLine": 70,
@@ -508,6 +511,7 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": 61.3,
             "currentScoreType": "current",
+            "currentChangePct": 3.06,
             "entryScoreRaw": null,
             "entryScoreNormalized": null,
             "replacementWatchLine": 87.0,
@@ -519,10 +523,10 @@
       },
       "comparison": {
         "returnPct": 1.24,
-        "benchmarkReturnPct": 1.17,
-        "excessReturnPct": 0.07,
+        "benchmarkReturnPct": 1.03,
+        "excessReturnPct": 0.21,
         "periodStart": "2026-05-06T10:08+09:00",
-        "periodEnd": "2026-05-07T19:59+09:00"
+        "periodEnd": "2026-05-07T21:02+09:00"
       }
     },
     {
@@ -846,6 +850,7 @@
             "currentScoreNormalized": 70.0,
             "currentScoreRaw": 82.9,
             "currentScoreType": "current",
+            "currentChangePct": 1.79,
             "replacementWatchLine": 82.0,
             "liquidityText": "수급 데이터 대기"
           },
@@ -872,6 +877,7 @@
             "currentScoreNormalized": 70.0,
             "currentScoreRaw": 113.6,
             "currentScoreType": "current",
+            "currentChangePct": 3.06,
             "replacementWatchLine": 82.0,
             "liquidityText": "거래대금 84044억"
           },
@@ -898,6 +904,7 @@
             "currentScoreNormalized": 80.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": 8.61,
             "replacementWatchLine": 92.0,
             "liquidityText": "거래대금 증가"
           },
@@ -924,6 +931,7 @@
             "currentScoreNormalized": 70.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": 6.16,
             "replacementWatchLine": 82.0,
             "liquidityText": "거래대금 증가"
           },
@@ -950,6 +958,7 @@
             "currentScoreNormalized": 55.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": 3.83,
             "replacementWatchLine": 70,
             "liquidityText": "거래대금 증가"
           }
@@ -957,10 +966,10 @@
       },
       "comparison": {
         "returnPct": 3.36,
-        "benchmarkReturnPct": 1.17,
-        "excessReturnPct": 2.19,
+        "benchmarkReturnPct": 1.03,
+        "excessReturnPct": 2.33,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T19:59+09:00"
+        "periodEnd": "2026-05-07T21:02+09:00"
       }
     },
     {
@@ -1284,6 +1293,7 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
             "liquidityText": "거래대금 증가"
           },
@@ -1310,6 +1320,7 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
             "liquidityText": "거래대금 증가"
           },
@@ -1336,6 +1347,7 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": 70.0,
             "currentScoreType": "current",
+            "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
             "liquidityText": "거래대금 증가"
           },
@@ -1362,6 +1374,7 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": 70.0,
             "currentScoreType": "current",
+            "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
             "liquidityText": "거래대금 증가"
           },
@@ -1388,6 +1401,7 @@
             "currentScoreNormalized": 75.0,
             "currentScoreRaw": 70.0,
             "currentScoreType": "current",
+            "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
             "liquidityText": "거래대금 증가"
           }
@@ -1395,10 +1409,10 @@
       },
       "comparison": {
         "returnPct": -4.42,
-        "benchmarkReturnPct": 1.17,
-        "excessReturnPct": -5.59,
+        "benchmarkReturnPct": 1.03,
+        "excessReturnPct": -5.45,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T19:59+09:00"
+        "periodEnd": "2026-05-07T21:02+09:00"
       }
     },
     {
@@ -1629,7 +1643,7 @@
           "status": "보유중",
           "reason": "3주 · 매입 305500.0원 · 평가 955500원 · 손익 39000원",
           "returnPct": 4.26,
-          "holdingPeriod": "보유 10시간 32분"
+          "holdingPeriod": "보유 11시간 36분"
         },
         {
           "code": "005930",
@@ -1637,7 +1651,7 @@
           "status": "보유중",
           "reason": "3주 · 매입 263000.0원 · 평가 814500원 · 손익 25500원",
           "returnPct": 3.23,
-          "holdingPeriod": "보유 10시간 32분"
+          "holdingPeriod": "보유 11시간 36분"
         },
         {
           "code": "068270",
@@ -1689,6 +1703,7 @@
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 93.1,
             "currentScoreType": "current",
+            "currentChangePct": 1.64,
             "replacementWatchLine": 107.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -1715,6 +1730,7 @@
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 93.7,
             "currentScoreType": "current",
+            "currentChangePct": 1.45,
             "replacementWatchLine": 107.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -1741,6 +1757,7 @@
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 90.1,
             "currentScoreType": "current",
+            "currentChangePct": 2.63,
             "replacementWatchLine": 107.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -1767,6 +1784,7 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 84.8,
             "currentScoreType": "current",
+            "currentChangePct": 2.08,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -1793,6 +1811,7 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 84.8,
             "currentScoreType": "current",
+            "currentChangePct": -2.72,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -1819,6 +1838,7 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 85.3,
             "currentScoreType": "current",
+            "currentChangePct": -0.24,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -1845,6 +1865,7 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": -3.39,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -1871,6 +1892,7 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": -1.57,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
           }
@@ -1881,7 +1903,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.14,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T19:59+09:00"
+        "periodEnd": "2026-05-07T21:02+09:00"
       }
     },
     {
@@ -2112,7 +2134,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 158700.0원 · 평가 945600원 · 손익 -6600원",
           "returnPct": -0.69,
-          "holdingPeriod": "보유 10시간 32분"
+          "holdingPeriod": "보유 11시간 35분"
         },
         {
           "code": "034020",
@@ -2120,7 +2142,7 @@
           "status": "보유중",
           "reason": "7주 · 매입 133900.0원 · 평가 954800원 · 손익 17500원",
           "returnPct": 1.87,
-          "holdingPeriod": "보유 10시간 32분"
+          "holdingPeriod": "보유 11시간 35분"
         },
         {
           "code": "373220",
@@ -2189,6 +2211,7 @@
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 98.0,
             "currentScoreType": "current",
+            "currentChangePct": 2.07,
             "replacementWatchLine": 107.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -2215,6 +2238,7 @@
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": 4.04,
             "replacementWatchLine": 107.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -2241,6 +2265,7 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": 4.49,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -2267,6 +2292,7 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": 7.31,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -2293,6 +2319,7 @@
             "currentScoreNormalized": 95.0,
             "currentScoreRaw": 90.1,
             "currentScoreType": "current",
+            "currentChangePct": 4.0,
             "replacementWatchLine": 107.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -2319,6 +2346,7 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": 4.37,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -2345,6 +2373,7 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 89.1,
             "currentScoreType": "current",
+            "currentChangePct": 3.06,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
           },
@@ -2371,6 +2400,7 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": 2.12,
             "replacementWatchLine": 100.0,
             "liquidityText": "거래대금 점수 20"
           }
@@ -2381,7 +2411,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": -0.75,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T19:59+09:00"
+        "periodEnd": "2026-05-07T21:02+09:00"
       }
     },
     {
@@ -2612,7 +2642,7 @@
           "status": "보유중",
           "reason": "4주 · 매입 234500.0원 · 평가 942000원 · 손익 4000원",
           "returnPct": 0.43,
-          "holdingPeriod": "보유 9시간 30분"
+          "holdingPeriod": "보유 10시간 33분"
         },
         {
           "code": "068270",
@@ -2620,7 +2650,7 @@
           "status": "보유중",
           "reason": "4주 · 매입 204500.0원 · 평가 810000원 · 손익 -8000원",
           "returnPct": -0.98,
-          "holdingPeriod": "보유 9시간 30분"
+          "holdingPeriod": "보유 10시간 33분"
         },
         {
           "code": "012330",
@@ -2628,7 +2658,7 @@
           "status": "보유중",
           "reason": "2주 · 매입 447000.0원 · 평가 883000원 · 손익 -11000원",
           "returnPct": -1.23,
-          "holdingPeriod": "보유 10시간 31분"
+          "holdingPeriod": "보유 11시간 34분"
         },
         {
           "code": "329180",
@@ -2636,7 +2666,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 662000.0원 · 평가 693000원 · 손익 31000원",
           "returnPct": 4.68,
-          "holdingPeriod": "보유 10시간 31분"
+          "holdingPeriod": "보유 11시간 34분"
         }
       ],
       "sellAlerts": [],
@@ -2672,6 +2702,7 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": 75.3,
             "currentScoreType": "current",
+            "currentChangePct": 1.45,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
           },
@@ -2698,6 +2729,7 @@
             "currentScoreNormalized": 88.0,
             "currentScoreRaw": 80.6,
             "currentScoreType": "current",
+            "currentChangePct": 2.07,
             "replacementWatchLine": 100.0,
             "liquidityText": "수급 데이터 대기"
           },
@@ -2724,6 +2756,7 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": 2.12,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
           },
@@ -2750,6 +2783,7 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": 2.04,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
           },
@@ -2776,6 +2810,7 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": 75.1,
             "currentScoreType": "current",
+            "currentChangePct": 1.64,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
           },
@@ -2802,6 +2837,7 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": 79.1,
             "currentScoreType": "current",
+            "currentChangePct": 2.63,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
           },
@@ -2812,7 +2848,7 @@
             "entryPrice": 662000,
             "currentPrice": 693000,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 10시간 31분",
+            "holdingPeriod": "보유 11시간 34분",
             "evalAmount": 693000,
             "pnl": 31000,
             "returnPct": 4.68,
@@ -2828,6 +2864,7 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": null,
             "currentScoreType": "holding",
+            "currentChangePct": 2.16,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
           },
@@ -2838,7 +2875,7 @@
             "entryPrice": 447000,
             "currentPrice": 441500,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 10시간 31분",
+            "holdingPeriod": "보유 11시간 34분",
             "evalAmount": 883000,
             "pnl": -11000,
             "returnPct": -1.23,
@@ -2854,6 +2891,7 @@
             "currentScoreNormalized": 78.0,
             "currentScoreRaw": 76.7,
             "currentScoreType": "current",
+            "currentChangePct": 2.08,
             "replacementWatchLine": 90.0,
             "liquidityText": "수급 데이터 대기"
           }
@@ -2864,7 +2902,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.0,
         "periodStart": "2026-05-06T16:16+09:00",
-        "periodEnd": "2026-05-07T19:59+09:00"
+        "periodEnd": "2026-05-07T21:02+09:00"
       }
     }
   ]
