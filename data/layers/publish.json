@@ -1,0 +1,15 @@
+{
+  "schema": "invest-dashboard.layer.publish.v1",
+  "generatedAt": "2026-05-09T00:12+09:00",
+  "layerMode": "full",
+  "sessionCount": 7,
+  "historyCount": 120,
+  "parts": {
+    "dashboard": "data/dashboard-data.json",
+    "history": "data/dashboard-history.json",
+    "testManifest": "data/test/manifest.json",
+    "fast": "data/layers/fast-market.json",
+    "strategy": "data/layers/strategy.json",
+    "analysis": "data/layers/analysis.json"
+  }
+}

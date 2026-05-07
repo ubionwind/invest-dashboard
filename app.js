@@ -94,6 +94,30 @@ function marketDailyPair(data) {
   return marketRows(data.benchmark?.dailyReturnPct, data.kodexBenchmark?.dailyReturnPct);
 }
 
+function marketRegimeValue(regime = {}) {
+  const score = regime.riskScore == null ? '-' : `${regime.riskScore}점`;
+  return `<span class="regime-value"><b>${escapeHtml(regime.label || '시장 판단 대기')}</b><em>${escapeHtml(score)}</em></span>`;
+}
+
+function marketRegimeNote(regime = {}) {
+  const reason = (regime.reasons || [])[0] || regime.stance || '시장 상태를 먼저 보고 종목 비중을 조절합니다';
+  const policy = regime.strategyPolicy?.maxPositionPct ? ` · 최대 ${regime.strategyPolicy.maxPositionPct}` : '';
+  return `${reason}${policy}`;
+}
+
+function survivalReviewValue(review = {}) {
+  const score = review.survivalScore == null ? '-' : `${review.survivalScore}점`;
+  const wait = review.noTradeRatioPct == null ? '' : `관망 ${review.noTradeRatioPct}%`;
+  return `<span class="regime-value"><b>${escapeHtml(score)}</b><em>${escapeHtml(wait || '생존 점검')}</em></span>`;
+}
+
+function survivalReviewNote(review = {}) {
+  const risk = review.highRiskCount ?? '-';
+  const ready = review.reviewReadyCount ?? '-';
+  const neg = review.negativeSinceFirstCount ?? '-';
+  return `고위험 ${risk} · 음수추적 ${neg} · 검토대기 ${ready}`;
+}
+
 function marketCumulativePair(data) {
   return marketRows(data.benchmark?.returnPct, data.kodexBenchmark?.returnPct);
 }
@@ -362,7 +386,7 @@ function holdingCandidateComparison(s) {
           return `<article class="holding-compare-card ${isTarget ? 'basis-stock-card' : ''}">
             ${isTarget ? '<div class="basis-ribbon">기준종목 · 후보 통과선 산정 기준</div>' : ''}
             <div class="compare-hero">
-              <div class="compare-identity">${stockNameLink(pos)}<b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b></div>
+              <div class="compare-identity">${stockNameLink(pos, '-', 'strong', false)}<b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b></div>
               ${switchMiniGraph({ baseScore: lowestHeldScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct, currentLabel: graphCurrentLabel, triggerBaseScore: lowestHeldScore, thresholdLabel: '공통기준' })}
               <div class="compare-meta"><span>${pos.code || ''}</span><em>${pos.holdAction && pos.holdAction !== '보유유지' ? pos.holdAction : decision}</em></div>
             </div>
@@ -387,7 +411,7 @@ function holdingCandidateComparison(s) {
           const passed = edge !== null && edge >= 0;
           return `<article class="replacement-card">
             <div class="compare-hero">
-              <div class="compare-identity">${stockNameLink(c)}<b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b></div>
+              <div class="compare-identity">${stockNameLink(c, '-', 'strong', false)}<b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b></div>
               ${switchMiniGraph({ baseScore: lowestHeldScore, currentScore: candidateScore, candidateScore, currentLabel: '후보', triggerBaseScore: lowestHeldScore, thresholdLabel: '공통기준' })}
               <div class="compare-meta"><span>${c.code || ''}</span><em class="${edge == null ? '' : (passed ? 'up' : 'down')}">${edge == null ? '비교대기' : (passed ? `통과 +${edge.toFixed(1)}` : `미달 ${edge.toFixed(1)}`)}</em></div>
             </div>
@@ -416,10 +440,13 @@ function sameKstDate(a, b) {
 
 function dailyForSession(history = [], idx) {
   const points = (history || []).filter(x => x?.ts && Array.isArray(x.returns) && x.returns[idx] !== undefined);
-  if (!points.length) return { returnPct: null, pnl: null };
+  if (!points.length) return { returnPct: null, pnl: null, basis: 'none' };
   const latest = points[points.length - 1];
   const sameDay = points.filter(x => sameKstDate(x.ts, latest.ts));
-  const base = sameDay[0] || latest;
+  // For “today” cards, prefer the first regular-market snapshot of the day.
+  // Overnight/pre-open stale snapshots can make today changes look frozen or distorted.
+  const regularSameDay = sameDay.filter(isRegularMarketPoint);
+  const base = regularSameDay[0] || sameDay[0] || latest;
   const latestReturn = Number(latest.returns[idx]);
   const baseReturn = Number(base.returns[idx]);
   const latestEval = Number(latest.evalAmounts?.[idx]);
@@ -427,11 +454,13 @@ function dailyForSession(history = [], idx) {
   return {
     returnPct: Number.isNaN(latestReturn) || Number.isNaN(baseReturn) ? null : latestReturn - baseReturn,
     pnl: Number.isNaN(latestEval) || Number.isNaN(baseEval) ? null : latestEval - baseEval,
+    basis: regularSameDay.length ? 'market-open' : 'first-snapshot',
+    baseTs: base.ts,
   };
 }
 
 function enrichSessions(data) {
-  data.sessions = (data.sessions || []).map((s, idx) => ({ ...s, daily: dailyForSession(data.history, idx) }));
+  data.sessions = (data.sessions || []).map((s, idx) => ({ ...s, daily: s.daily || dailyForSession(data.history, idx) }));
   return data;
 }
 
@@ -449,6 +478,27 @@ function moneyBare(v) {
 function pct(v) {
   if (v === null || v === undefined) return '-';
   return `${v > 0 ? '+' : ''}${Number(v).toFixed(2)}%`;
+}
+
+function nxtReferenceLine(f = {}, krxPrice = null) {
+  const q = f?.nxtQuote;
+  if (!q || q.price === null || q.price === undefined) return '';
+  const price = Number(q.price);
+  const base = krxPrice === null || krxPrice === undefined || krxPrice === '' ? null : Number(krxPrice);
+  const diff = base && price ? price - base : null;
+  const cls = q.changePct === null || q.changePct === undefined ? '' : (Number(q.changePct) >= 0 ? 'up' : 'down');
+  const session = q.session === 'AFTER_MARKET' ? '장후' : (q.session === 'PRE_MARKET' ? '장전' : '장외');
+  const diffText = diff === null || Number.isNaN(diff) ? '' : ` · KRX대비 ${diff >= 0 ? '+' : '-'}${fmt.format(Math.abs(diff))}`;
+  return `<small class="nxt-reference ${cls}">NXT ${session} ${fmt.format(price)} (${pct(q.changePct)})${diffText}</small>`;
+}
+
+function stockFutureReferenceLine(f = {}) {
+  const q = f?.stockFutureQuote;
+  if (!q || q.price === null || q.price === undefined) return '';
+  const cls = q.changePct === null || q.changePct === undefined ? '' : (Number(q.changePct) >= 0 ? 'up' : 'down');
+  const spread = q.spotSpreadPct === null || q.spotSpreadPct === undefined ? '' : ` · 현물대비 ${q.spotSpreadPct >= 0 ? '+' : ''}${Number(q.spotSpreadPct).toFixed(2)}%`;
+  const rel = q.relativeStrengthPct === null || q.relativeStrengthPct === undefined ? '' : ` · 상대 ${q.relativeStrengthPct >= 0 ? '+' : ''}${Number(q.relativeStrengthPct).toFixed(2)}%p`;
+  return `<small class="future-reference ${cls}">선물 ${q.signal || '추적'} ${fmt.format(Number(q.price))} (${pct(q.changePct)})${spread}${rel}</small>`;
 }
 
 function colorizePnlText(text = '') {
@@ -480,20 +530,20 @@ function fundamentalsText(f = {}) {
   return `${part('PER', f.per)} · ${part('PBR', f.pbr)} · ${part('ROE', f.roe, '%')}`;
 }
 
-function stockInfoPayload(item = {}) {
-  return escapeAttr(JSON.stringify({ code: item.code, name: item.name, fundamentals: item.fundamentals }));
+function stockDetailUrl(item = {}) {
+  return `stock.html?code=${encodeURIComponent(String(item.code || '').padStart(6, '0'))}`;
 }
 
-function stockNameLink(item = {}, fallback = '-', tag = 'strong') {
+function stockNameLink(item = {}, fallback = '-', tag = 'strong', showCode = true) {
   const name = escapeHtml(item.name || fallback || '-');
-  const code = item.code ? ` <span class="muted">${escapeHtml(item.code)}</span>` : '';
+  const code = showCode && item.code ? ` <span class="muted">${escapeHtml(item.code)}</span>` : '';
   if (!item.fundamentals) return `<${tag}>${name}</${tag}>`;
-  return `<button class="stock-title-btn" type="button" data-stock-info='${stockInfoPayload(item)}'><${tag}>${name}</${tag}></button>${code}`;
+  return `<a class="stock-title-btn" href="${stockDetailUrl(item)}"><${tag}>${name}</${tag}></a>${code}`;
 }
 
 function fundamentalsButton(item = {}) {
   if (!item.fundamentals) return '';
-  return `<button class="stock-info-btn" type="button" data-stock-info='${stockInfoPayload(item)}'>종목 정보</button>`;
+  return `<a class="stock-info-btn" href="${stockDetailUrl(item)}">상세 분석</a>`;
 }
 
 function candidateTile(c, idx) {
@@ -534,6 +584,7 @@ function candidateTile(c, idx) {
       ${c.scoreAdjustment?.value ? `<span>전략보정 ${c.scoreAdjustment.value > 0 ? '+' : ''}${c.scoreAdjustment.value}</span>` : ''}
       ${c.fundamentals?.badge ? `<span>${c.fundamentals.badge}</span>` : ''}
       ${c.technicalDecision?.state && !['구조중립', '기술분석대기'].includes(c.technicalDecision.state) ? `<span>기술 ${c.technicalDecision.state}</span>` : ''}
+      ${c.fundamentals?.stockFutureQuote?.signal ? `<span>${c.fundamentals.stockFutureQuote.signal}</span>` : ''}
     </div>
     ${fundamentalsButton(c)}
     ${c.candidateNote ? `<details class="candidate-detail"><summary>매수/보유 기준 보기</summary><p>${c.candidateNote}</p></details>` : ''}
@@ -601,8 +652,9 @@ function holdingsBlock(pf = {}) {
         const changeNum = change === null || change === undefined || change === '' ? null : Number(change);
         const changeClass = changeNum === null || Number.isNaN(changeNum) ? '' : (changeNum >= 0 ? 'up' : 'down');
         const currentPrice = Number(p.currentPrice || 0);
+        const explicitDelta = p.currentDelta === null || p.currentDelta === undefined || p.currentDelta === '' ? null : Number(p.currentDelta);
         const prevPrice = changeNum !== null && !Number.isNaN(changeNum) && currentPrice ? currentPrice / (1 + changeNum / 100) : null;
-        const delta = prevPrice ? Math.trunc(currentPrice - prevPrice) : null;
+        const delta = explicitDelta !== null && !Number.isNaN(explicitDelta) ? explicitDelta : (prevPrice ? Math.trunc(currentPrice - prevPrice) : null);
         const weight = totalEval && p.evalAmount ? Number(p.evalAmount) / totalEval * 100 : null;
         const holdingDays = String(p.holdingPeriod || '-').replace(/^보유\s*/, '');
         const f = p.fundamentals || null;
@@ -614,7 +666,7 @@ function holdingsBlock(pf = {}) {
           <td data-label="보유수량">${fmt.format(qty)}</td>
           <td class="num-pair" data-label="평가손익 / 수익률"><span class="pair-line"><b class="${retClass}">${moneyBare(p.pnl)}</b><small class="${retClass}">${ret === null || Number.isNaN(ret) ? '-' : ret.toFixed(2)}</small></span></td>
           <td class="num-pair" data-label="평가금액 / 매입금액"><span class="pair-line"><b>${moneyBare(p.evalAmount)}</b><small>${entryAmount === null ? '-' : moneyBare(entryAmount)}</small></span></td>
-          <td class="num-pair" data-label="현재가 / 평균단가"><span class="pair-line"><b>${moneyBare(p.currentPrice)}</b><small>${moneyBare(p.entryPrice)}</small></span></td>
+          <td class="num-pair" data-label="현재가 / 평균단가"><span class="pair-line"><b>${moneyBare(p.currentPrice)}</b><small>${moneyBare(p.entryPrice)}</small>${nxtReferenceLine(f, p.currentPrice)}${stockFutureReferenceLine(f)}</span></td>
           <td class="num-pair" data-label="전일대비 / 등락률"><span class="pair-line"><b class="${changeClass}">${delta === null ? '-' : `${delta >= 0 ? '▲ ' : '▼ '}${fmt.format(Math.abs(delta))}`}</b><small class="${changeClass}">${changeNum === null || Number.isNaN(changeNum) ? '-' : changeNum.toFixed(2)}</small></span></td>
           <td data-label="보유비중">${weight === null ? '-' : weight.toFixed(2)}</td>
         </tr>`;
@@ -624,12 +676,41 @@ function holdingsBlock(pf = {}) {
 }
 
 function tradeAlerts(s) {
-  const renderItems = (items, emptyText) => {
+  const sellResultLabel = (x) => {
+    const pnl = x.realizedPnl ?? x.pnl;
+    if (x.tradeResult) return x.tradeResult;
+    if (pnl === null || pnl === undefined || pnl === '') return '손익정보 없음';
+    const v = Number(pnl);
+    return v > 0 ? '익절' : v < 0 ? '손절' : '본전';
+  };
+  const sellResultLine = (x) => {
+    const pnl = x.realizedPnl ?? x.pnl;
+    const rate = x.realizedReturnPct ?? x.returnPct;
+    const pnlNum = pnl === null || pnl === undefined || pnl === '' ? null : Number(pnl);
+    const rateNum = rate === null || rate === undefined || rate === '' ? null : Number(rate);
+    const cls = pnlNum === null || Number.isNaN(pnlNum) ? '' : (pnlNum >= 0 ? 'up' : 'down');
+    const label = sellResultLabel(x);
+    const price = x.sellPrice ? ` · 매도가 ${moneyBare(x.sellPrice)}` : '';
+    const amount = x.sellAmount ? ` · 매도금액 ${moneyBare(x.sellAmount)}` : '';
+    if (pnlNum === null || Number.isNaN(pnlNum)) return `<div class="sell-result-row"><b>${label}</b><span>실현손익/수익률 데이터 대기${price}${amount}</span></div>`;
+    const rateText = rateNum === null || Number.isNaN(rateNum) ? '-' : `${rateNum >= 0 ? '+' : ''}${rateNum.toFixed(2)}%`;
+    return `<div class="sell-result-row ${cls}"><b>${label}</b><span>실현손익 ${moneyBare(pnlNum)} · ${rateText}${price}${amount}</span></div>`;
+  };
+  const renderItems = (items, emptyText, kind = 'generic') => {
     if (!items || !items.length) return `<p class="muted alert-empty">${emptyText}</p>`;
     return `<div class="alert-items">${items.map(x => {
       const buyReturn = x.returnPct === null || x.returnPct === undefined || x.returnPct === '' ? null : Number(x.returnPct);
       const buyReturnClass = buyReturn === null || Number.isNaN(buyReturn) ? '' : (buyReturn >= 0 ? 'up' : 'down');
-      return `<div class="alert-item">
+      const isSell = kind === 'sell';
+      const executed = String(x.executionStatus || '').includes('FILLED');
+      const sourceLabel = x.accountType || (String(x.executionStatus || '').startsWith('VIRTUAL') ? '가상계좌' : (isSell ? 'KIS 모의계좌' : ''));
+      const execLabel = executed
+        ? (x.executionSource === 'KIS_MOCK_API' ? 'API 처리됨' : x.executionSource === 'VIRTUAL_LEDGER' ? 'ledger 처리됨' : '체결됨')
+        : (isSell ? '실행 안 됨' : '');
+      const qtyLine = isSell
+        ? `보유 ${x.heldQty ?? '-'}주 · 매도 ${x.sellQty ?? '미정'}주 · 체결 ${x.executedQty ?? 0}주`
+        : '';
+      return `<div class="alert-item ${isSell ? (executed ? 'executed' : 'review-only') : ''}">
       <div class="alert-item-top">
         <div>
           ${stockNameLink(x)}
@@ -637,6 +718,9 @@ function tradeAlerts(s) {
         </div>
         ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<b class="return-big ${buyReturnClass}">${pct(buyReturn)}</b>`}
       </div>
+      ${isSell ? `<div class="alert-meta"><span>${sourceLabel}</span><span>${execLabel}</span>${x.reviewAction ? `<span>${x.reviewAction}</span>` : ''}</div>` : ''}
+      ${isSell && executed ? sellResultLine(x) : ''}
+      ${qtyLine ? `<small>${qtyLine}</small>` : ''}
       ${x.reason ? `<small>${colorizePnlText(x.reason)}</small>` : ''}
     </div>`}).join('')}</div>`;
   };
@@ -645,9 +729,13 @@ function tradeAlerts(s) {
       <div class="alert-head"><span>매수 기록</span><strong>${s.buyAlerts?.length || 0}</strong></div>
       ${renderItems(s.buyAlerts, '매수 기록 없음')}
     </section>
+    <section class="trade-alert sell-record-alert">
+      <div class="alert-head"><span>매도 기록</span><strong>${s.sellRecords?.length || 0}</strong></div>
+      ${renderItems(s.sellRecords, '매도 기록 없음', 'sell')}
+    </section>
     <section class="trade-alert sell-alert">
-      <div class="alert-head"><span>매도 알림</span><strong>${s.sellAlerts?.length || 0}</strong></div>
-      ${renderItems(s.sellAlerts, '매도 알림 없음')}
+      <div class="alert-head"><span>매도 검토 · 미체결</span><strong>${s.sellAlerts?.length || 0}</strong></div>
+      ${renderItems(s.sellAlerts, '매도/청산 기록 없음', 'sell')}
     </section>
   </div>`;
 }
@@ -722,83 +810,6 @@ function setActive(id, shouldScroll = true) {
 }
 
 
-function renderStockInfoModal() {
-  if (document.getElementById('stockInfoModal')) return;
-  document.body.insertAdjacentHTML('beforeend', `<div class="stock-modal" id="stockInfoModal" aria-hidden="true">
-    <div class="stock-modal-backdrop" data-close-stock-modal></div>
-    <section class="stock-modal-panel" role="dialog" aria-modal="true" aria-label="종목 정보">
-      <button class="stock-modal-close" type="button" data-close-stock-modal>×</button>
-      <div id="stockModalContent"></div>
-    </section>
-  </div>`);
-  document.querySelectorAll('[data-close-stock-modal]').forEach(el => el.addEventListener('click', closeStockInfoModal));
-}
-
-function metricBlock(label, value, avg, suffix = '') {
-  const shown = value === null || value === undefined || value === '' ? '-' : `${Number(value).toFixed(2)}${suffix}`;
-  const avgText = avg === null || avg === undefined || avg === '' ? '비교평균 -' : `비교평균 ${Number(avg).toFixed(2)}${suffix}`;
-  return `<div class="stock-metric"><span>${label}</span><strong>${shown}</strong><small>${avgText}</small></div>`;
-}
-
-function priceRangeText(zone) {
-  if (!zone) return '-';
-  return `${fmt.format(zone.from)}~${fmt.format(zone.to)}`;
-}
-
-function technicalReportBlock(t = {}) {
-  if (!t || t.error) return '<div class="stock-report"><h4>가격 구조</h4><ul><li>가격 구조 분석 데이터 대기</li></ul></div>';
-  const rows = [
-    ['전고점 상태', t.breakoutState || '-'],
-    ['20일 전고점', t.previousHigh20d ? `${fmt.format(t.previousHigh20d)}원 (${t.distanceToHigh20dPct ?? '-'}%)` : '-'],
-    ['60일 전고점', t.previousHigh60d ? `${fmt.format(t.previousHigh60d)}원 (${t.distanceToHigh60dPct ?? '-'}%)` : '-'],
-    ['상단 매물대', `${priceRangeText(t.resistanceWall)} · 위험 ${t.volumeWallRisk || '-'}`],
-    ['하단 지지 후보', priceRangeText(t.supportZone)],
-  ].map(([k, v]) => `<div><span>${k}</span><strong>${escapeHtml(v)}</strong></div>`).join('');
-  const report = (t.report || []).map(x => `<li>${escapeHtml(x)}</li>`).join('') || '<li>기술적 분석 리포트 데이터 대기</li>';
-  return `<div class="technical-box"><h4>가격 구조</h4><div class="technical-grid">${rows}</div><ul>${report}</ul></div>`;
-}
-
-function openStockInfoModal(payload) {
-  renderStockInfoModal();
-  const f = payload.fundamentals || {};
-  const avg = f.peerAverage || {};
-  const report = (f.report || []).map(x => `<li>${escapeHtml(x)}</li>`).join('') || '<li>분석 리포트 데이터 대기</li>';
-  document.getElementById('stockModalContent').innerHTML = `<div class="stock-modal-head">
-    <span>${escapeHtml(payload.code || '')}</span>
-    <h3>${escapeHtml(payload.name || '종목 정보')}</h3>
-    ${f.badge ? `<em>${escapeHtml(f.badge)}</em>` : ''}
-  </div>
-  <div class="stock-metrics">
-    ${metricBlock('ROE', f.roe, avg.roe, '%')}
-    ${metricBlock('PBR', f.pbr, avg.pbr, '배')}
-    ${metricBlock('PER', f.per, avg.per, '배')}
-  </div>
-  <div class="stock-report">
-    <h4>재무 지표 분석</h4>
-    <ul>${report}</ul>
-  </div>
-  ${technicalReportBlock(f.technicalStructure)}
-  <p class="stock-modal-note">공개 재무/가격 데이터 기반 보조 정보입니다. 매물대는 최근 일봉 거래량 분포를 이용한 근사치입니다.</p>`;
-  document.getElementById('stockInfoModal').classList.add('open');
-}
-
-function closeStockInfoModal() {
-  document.getElementById('stockInfoModal')?.classList.remove('open');
-}
-
-let stockInfoDelegated = false;
-function bindStockInfoButtons() {
-  if (stockInfoDelegated) return;
-  stockInfoDelegated = true;
-  document.addEventListener('click', ev => {
-    const btn = ev.target.closest('[data-stock-info]');
-    if (!btn) return;
-    ev.preventDefault();
-    ev.stopPropagation();
-    try { openStockInfoModal(JSON.parse(btn.dataset.stockInfo || '{}')); } catch (err) { console.warn(err); }
-  });
-}
-
 function render(data) {
   data = enrichSessions(data);
   document.getElementById('updated').textContent = `마지막 갱신: ${formatKst(data.generatedAt)}`;
@@ -807,6 +818,8 @@ function render(data) {
   document.getElementById('overallStatus').className = `status-pill ${data.summary.staleCount > 0 ? 'status-STALE' : 'status-OK'}`;
 
   document.getElementById('summaryGrid').innerHTML = [
+    summaryTile('시장 Regime', marketRegimeValue(data.marketRegime), marketRegimeNote(data.marketRegime), '🧭', ['RISK_OFF','CAUTION','UNKNOWN'].includes(data.marketRegime?.state) ? 'danger' : 'good'),
+    summaryTile('생존 점검', survivalReviewValue(data.survivalReview), survivalReviewNote(data.survivalReview), '🛡️', (data.survivalReview?.highRiskCount || 0) > 0 ? 'danger' : 'good'),
     summaryTile('오늘 시장', marketDailyPair(data), '당일 등락률', '📈', (data.benchmark?.dailyReturnPct || 0) >= 0 ? 'good' : 'danger'),
     summaryTile('시장/KODEX 누적', marketCumulativePair(data), basisText(data.benchmark?.periodStart), '📊', (data.benchmark?.returnPct || 0) >= 0 ? 'good' : 'danger'),
     ...data.sessions.map(renderOverviewStrategyCard)
@@ -822,7 +835,6 @@ function render(data) {
       ${renderSessionCard(s, true, false)}
     </section>`).join('');
 
-  bindStockInfoButtons();
   renderMainCharts(data);
   renderItemCharts(data);
   requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'auto' }));

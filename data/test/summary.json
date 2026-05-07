@@ -1,24 +1,176 @@
 {
-  "generatedAt": "2026-05-08T00:51+09:00",
+  "generatedAt": "2026-05-09T00:12+09:00",
   "summary": {
     "totalSessions": 7,
     "staleCount": 0,
-    "candidateCount": 98,
+    "candidateCount": 96,
     "protectedRows": 2,
-    "totalCapital": 89994700,
-    "totalEvalAmount": 90740500,
-    "totalPnl": 745800,
-    "totalReturnPct": 0.83
+    "totalCapital": 89138282,
+    "totalEvalAmount": 89660082,
+    "totalPnl": 521800,
+    "totalReturnPct": 0.59,
+    "survivalScore": 72,
+    "survivalReviewReadyCount": 0,
+    "survivalHighRiskCount": 20
+  },
+  "marketRegime": {
+    "state": "NEUTRAL",
+    "label": "중립장",
+    "riskScore": 50,
+    "stance": "시장만으로 강한 방향을 말하기 어려워 종목 조건을 확인합니다.",
+    "strategyPolicy": {
+      "maxPositionPct": "0~5%",
+      "entryRule": "종목별 조건 충족 시에만 소액·분할 접근.",
+      "confidenceCap": 78,
+      "plain": "시장 방향성이 강하지 않아 종목의 조건 충족 여부를 봅니다."
+    },
+    "dailyReturnPct": 0.14,
+    "kospiDailyReturnPct": 0.11,
+    "kodexDailyReturnPct": 0.16,
+    "reasons": [
+      "시장 평균 당일 등락률 +0.14%",
+      "시장 상태 CLOSE"
+    ],
+    "positionBias": "neutral",
+    "source": "KOSPI/KODEX read-only dashboard benchmark"
+  },
+  "survivalReview": {
+    "generatedAt": "2026-05-09T00:12+09:00",
+    "survivalScore": 72,
+    "totalRows": 32,
+    "noTradeRows": 29,
+    "noTradeRatioPct": 90.6,
+    "actionCounts": {
+      "매수 보류": 16,
+      "관망 우선": 13,
+      "적극 검토": 1,
+      "소액/분할 접근": 2
+    },
+    "confidenceCounts": {
+      "Uncertain": 19,
+      "Low": 8,
+      "High": 2,
+      "Medium": 3
+    },
+    "topFailurePatterns": [
+      {
+        "code": "SHORT_PRESSURE_RISK",
+        "count": 14
+      },
+      {
+        "code": "LOAN_BALANCE_RISK",
+        "count": 11
+      },
+      {
+        "code": "FLOW_DISTRIBUTION_RISK",
+        "count": 8
+      },
+      {
+        "code": "LOW_CONFIDENCE_NO_TRADE",
+        "count": 7
+      }
+    ],
+    "reviewReadyCount": 0,
+    "baselineTrackedCount": 32,
+    "negativeSinceFirstCount": 0,
+    "highRiskCount": 20,
+    "highRiskSamples": [
+      {
+        "session": "일반",
+        "code": "207940",
+        "name": "삼성바이오로직스",
+        "actionState": "매수 보류",
+        "confidenceScore": 42,
+        "patterns": [
+          "LOAN_BALANCE_RISK",
+          "FLOW_DISTRIBUTION_RISK"
+        ]
+      },
+      {
+        "session": "일반",
+        "code": "267260",
+        "name": "HD현대일렉트릭",
+        "actionState": "관망 우선",
+        "confidenceScore": 40,
+        "patterns": [
+          "SHORT_PRESSURE_RISK",
+          "LOAN_BALANCE_RISK"
+        ]
+      },
+      {
+        "session": "일반",
+        "code": "373220",
+        "name": "LG에너지솔루션",
+        "actionState": "관망 우선",
+        "confidenceScore": 47,
+        "patterns": [
+          "SHORT_PRESSURE_RISK"
+        ]
+      },
+      {
+        "session": "일반",
+        "code": "000270",
+        "name": "기아",
+        "actionState": "매수 보류",
+        "confidenceScore": 38,
+        "patterns": [
+          "FLOW_DISTRIBUTION_RISK"
+        ]
+      },
+      {
+        "session": "일반",
+        "code": "035420",
+        "name": "NAVER",
+        "actionState": "매수 보류",
+        "confidenceScore": 32,
+        "patterns": [
+          "LOAN_BALANCE_RISK",
+          "FLOW_DISTRIBUTION_RISK"
+        ]
+      },
+      {
+        "session": "단기",
+        "code": "042700",
+        "name": "한미반도체",
+        "actionState": "매수 보류",
+        "confidenceScore": 41,
+        "patterns": [
+          "SHORT_PRESSURE_RISK"
+        ]
+      },
+      {
+        "session": "단기",
+        "code": "089030",
+        "name": "테크윙",
+        "actionState": "매수 보류",
+        "confidenceScore": 41,
+        "patterns": [
+          "LOAN_BALANCE_RISK"
+        ]
+      },
+      {
+        "session": "급등",
+        "code": "000990",
+        "name": "DB하이텍",
+        "actionState": "관망 우선",
+        "confidenceScore": 40,
+        "patterns": [
+          "SHORT_PRESSURE_RISK",
+          "LOAN_BALANCE_RISK"
+        ]
+      }
+    ],
+    "plain": "생존점수는 수익 예측 점수가 아니라, 낮은 확신·위험패턴·검토대기 상태를 기준으로 계좌 생존 관점의 보수성을 점검합니다."
   },
   "benchmark": {
     "label": "KOSPI",
-    "value": 7490.05,
-    "returnPct": 0.94,
-    "dailyReturnPct": 1.43,
-    "date": "2026-05-07",
+    "value": 7498.0,
+    "returnPct": 0.11,
+    "dailyReturnPct": 0.11,
+    "date": "2026-05-08",
     "time": "18:59:00",
     "periodStart": "2026-05-06T10:08+09:00",
-    "periodEnd": "2026-05-08T00:51+09:00",
+    "periodEnd": "2026-05-09T00:12+09:00",
     "source": "naver-index-basic",
     "marketStatus": "CLOSE",
     "basis": "firstInvestment"
@@ -26,13 +178,13 @@
   "kodexBenchmark": {
     "label": "KODEX 200",
     "code": "069500",
-    "value": 115620.0,
-    "returnPct": 2.07,
-    "dailyReturnPct": 2.07,
-    "date": "2026-05-08",
-    "time": "00:51:31",
+    "value": 115810.0,
+    "returnPct": 0.16,
+    "dailyReturnPct": 0.16,
+    "date": "2026-05-09",
+    "time": "00:12:42",
     "periodStart": "2026-05-06T10:08+09:00",
-    "periodEnd": "2026-05-08T00:51+09:00",
+    "periodEnd": "2026-05-09T00:12+09:00",
     "basis": "firstInvestment"
   },
   "notice": "Dashboard reset; previous metrics are not inherited."

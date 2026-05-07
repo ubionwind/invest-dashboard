@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>종목 상세 분석</title>
+  <link rel="stylesheet" href="style.css?v=20260508-kis-analysis" />
+</head>
+<body>
+  <header class="topbar stock-detail-topbar">
+    <div>
+      <p class="eyebrow">Stock Analysis</p>
+      <h1 id="stockTitle">종목 상세 분석</h1>
+      <p id="stockUpdated" class="muted">loading...</p>
+    </div>
+    <a class="status-pill stock-back-link" href="./">대시보드로</a>
+  </header>
+
+  <main class="stock-detail-page" id="stockDetailRoot">
+    <section class="card stock-loading">분석 데이터를 불러오는 중입니다…</section>
+  </main>
+
+  <script src="stock.js?v=20260508-kis-analysis"></script>
+</body>
+</html>

@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Invest Dashboard</title>
-  <link rel="stylesheet" href="style.css?v=20260508-strategy-weighted-analysis" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="stylesheet" href="style.css?v=20260508-overview-stack-1303" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -25,20 +28,20 @@
 
       <div class="dashboard-panels">
         <section class="panel active" id="panel-overview">
-          <div class="grid two">
-            <div class="card wide">
-              <div class="card-head">
-                <h2>평가금액 흐름</h2>
-                <span class="muted">정규장 09:00~15:30 기준 · 자본금 대비 현재 평가금액</span>
-              </div>
-              <canvas id="amountChart" height="130"></canvas>
-            </div>
-            <div class="card wide">
+          <div class="overview-chart-stack">
+            <div class="card wide overview-chart-card">
               <div class="card-head">
                 <h2>수익률 비교</h2>
                 <span class="muted">정규장 09:00~15:30 기준 · 실선=전략 · 흰점선=KOSPI · 연두점선=KODEX200</span>
               </div>
-              <canvas id="returnChart" height="130"></canvas>
+              <canvas id="returnChart" height="260"></canvas>
+            </div>
+            <div class="card wide overview-chart-card">
+              <div class="card-head">
+                <h2>평가금액 흐름</h2>
+                <span class="muted">정규장 09:00~15:30 기준 · 자본금 대비 현재 평가금액</span>
+              </div>
+              <canvas id="amountChart" height="260"></canvas>
             </div>
           </div>
           <div class="overview-guide card">
@@ -58,6 +61,6 @@
     window.DASHBOARD_MANIFEST_URL = 'data/test/manifest.json';
     window.DASHBOARD_DATA_URL = 'data/test/dashboard-data.json';
   </script>
-  <script src="app.js?v=20260508-strategy-weighted-analysis"></script>
+  <script src="app.js?v=20260508-overview-stack-1303"></script>
 </body>
 </html>

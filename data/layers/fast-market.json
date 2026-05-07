@@ -1,0 +1,705 @@
+{
+  "schema": "invest-dashboard.layer.fast-market.v1",
+  "generatedAt": "2026-05-09T00:12+09:00",
+  "layerMode": "full",
+  "summary": {
+    "totalCapital": 89138282,
+    "totalEvalAmount": 89660082,
+    "totalPnl": 521800,
+    "totalReturnPct": 0.59
+  },
+  "sessions": [
+    {
+      "name": "일반",
+      "daily": {
+        "returnPct": -1.1,
+        "pnl": -96000,
+        "basis": "holding-prev-close"
+      },
+      "portfolio": {
+        "capital": 9998800,
+        "cash": 1523300,
+        "investmentAmount": 8592000,
+        "evalAmount": 10115300,
+        "pnl": 116500,
+        "returnPct": 1.17,
+        "positionCount": 1
+      },
+      "positions": [
+        {
+          "code": "005930",
+          "name": "삼성전자",
+          "qty": 32,
+          "entryPrice": 264859,
+          "currentPrice": 268500,
+          "currentDelta": -3000,
+          "currentChangePct": -1.1,
+          "evalAmount": 8592000,
+          "pnl": 116512,
+          "returnPct": 1.37,
+          "holdingPeriod": "보유 3일"
+        }
+      ]
+    },
+    {
+      "name": "단기",
+      "daily": {
+        "returnPct": 0.01,
+        "pnl": 0,
+        "basis": "holding-prev-close"
+      },
+      "portfolio": {
+        "capital": 29139482,
+        "cash": 13313982,
+        "investmentAmount": 16417500,
+        "evalAmount": 29731482,
+        "pnl": 592000,
+        "returnPct": 2.03,
+        "positionCount": 2
+      },
+      "positions": [
+        {
+          "code": "042700",
+          "name": "한미반도체",
+          "qty": 22,
+          "entryPrice": 383341,
+          "currentPrice": 390000,
+          "currentDelta": -3000,
+          "currentChangePct": -0.76,
+          "evalAmount": 8580000,
+          "pnl": 146498,
+          "returnPct": 1.74,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "247540",
+          "name": "에코프로비엠",
+          "qty": 33,
+          "entryPrice": 224000,
+          "currentPrice": 237500,
+          "currentDelta": 2000,
+          "currentChangePct": 0.85,
+          "evalAmount": 7837500,
+          "pnl": 445500,
+          "returnPct": 6.03,
+          "holdingPeriod": "보유 3일"
+        }
+      ]
+    },
+    {
+      "name": "급등",
+      "daily": {
+        "returnPct": -0.85,
+        "pnl": -75000,
+        "basis": "holding-prev-close"
+      },
+      "portfolio": {
+        "capital": 10000000,
+        "cash": 1674000,
+        "investmentAmount": 8586500,
+        "evalAmount": 10260500,
+        "pnl": 260500,
+        "returnPct": 2.6,
+        "positionCount": 5
+      },
+      "positions": [
+        {
+          "code": "005930",
+          "name": "삼성전자",
+          "qty": 7,
+          "entryPrice": 256500,
+          "currentPrice": 268500,
+          "currentDelta": -3000,
+          "currentChangePct": -1.1,
+          "evalAmount": 1879500,
+          "pnl": 84000,
+          "returnPct": 4.68,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "000660",
+          "name": "SK하이닉스",
+          "qty": 1,
+          "entryPrice": 1580000,
+          "currentPrice": 1686000,
+          "currentDelta": 32000,
+          "currentChangePct": 1.93,
+          "evalAmount": 1686000,
+          "pnl": 106000,
+          "returnPct": 6.71,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "003670",
+          "name": "포스코퓨처엠",
+          "qty": 6,
+          "entryPrice": 290000,
+          "currentPrice": 290000,
+          "currentDelta": -6000,
+          "currentChangePct": -2.03,
+          "evalAmount": 1740000,
+          "pnl": 0,
+          "returnPct": 0.0,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "267260",
+          "name": "HD현대일렉트릭",
+          "qty": 1,
+          "entryPrice": 1379000,
+          "currentPrice": 1403000,
+          "currentDelta": -17000,
+          "currentChangePct": -1.2,
+          "evalAmount": 1403000,
+          "pnl": 24000,
+          "returnPct": 1.74,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "010120",
+          "name": "LS ELECTRIC",
+          "qty": 6,
+          "entryPrice": 305250,
+          "currentPrice": 313000,
+          "currentDelta": -5500,
+          "currentChangePct": -1.73,
+          "evalAmount": 1878000,
+          "pnl": 46500,
+          "returnPct": 2.54,
+          "holdingPeriod": "보유 3일"
+        }
+      ]
+    },
+    {
+      "name": "매일신규",
+      "daily": {
+        "returnPct": -1.27,
+        "pnl": -109000,
+        "basis": "holding-prev-close"
+      },
+      "portfolio": {
+        "capital": 10000000,
+        "cash": 1013900,
+        "investmentAmount": 8162500,
+        "evalAmount": 9176400,
+        "pnl": -823600,
+        "returnPct": -8.24,
+        "positionCount": 5
+      },
+      "positions": [
+        {
+          "code": "010120",
+          "name": "LS ELECTRIC",
+          "qty": 6,
+          "entryPrice": 294000,
+          "currentPrice": 313000,
+          "currentDelta": -5500,
+          "currentChangePct": -1.73,
+          "evalAmount": 1878000,
+          "pnl": 114000,
+          "returnPct": 6.46,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "005930",
+          "name": "삼성전자",
+          "qty": 7,
+          "entryPrice": 271500,
+          "currentPrice": 268500,
+          "currentDelta": -3000,
+          "currentChangePct": -1.1,
+          "evalAmount": 1879500,
+          "pnl": -21000,
+          "returnPct": -1.1,
+          "holdingPeriod": "보유 1일"
+        },
+        {
+          "code": "000660",
+          "name": "SK하이닉스",
+          "qty": 1,
+          "entryPrice": 1654000,
+          "currentPrice": 1686000,
+          "currentDelta": 32000,
+          "currentChangePct": 1.93,
+          "evalAmount": 1686000,
+          "pnl": 32000,
+          "returnPct": 1.93,
+          "holdingPeriod": "보유 1일"
+        },
+        {
+          "code": "267260",
+          "name": "HD현대일렉트릭",
+          "qty": 1,
+          "entryPrice": 1420000,
+          "currentPrice": 1403000,
+          "currentDelta": -17000,
+          "currentChangePct": -1.2,
+          "evalAmount": 1403000,
+          "pnl": -17000,
+          "returnPct": -1.2,
+          "holdingPeriod": "보유 1일"
+        },
+        {
+          "code": "329180",
+          "name": "HD현대중공업",
+          "qty": 2,
+          "entryPrice": 693000,
+          "currentPrice": 658000,
+          "currentDelta": -35000,
+          "currentChangePct": -5.05,
+          "evalAmount": 1316000,
+          "pnl": -70000,
+          "returnPct": -5.05,
+          "holdingPeriod": "보유 1일"
+        }
+      ]
+    },
+    {
+      "name": "퀀트가치",
+      "daily": {
+        "returnPct": 0.96,
+        "pnl": 64700,
+        "basis": "holding-prev-close"
+      },
+      "portfolio": {
+        "capital": 10000000,
+        "cash": 1002500,
+        "investmentAmount": 9185000,
+        "evalAmount": 10187500,
+        "pnl": 187500,
+        "returnPct": 1.88,
+        "positionCount": 10
+      },
+      "positions": [
+        {
+          "code": "055550",
+          "name": "신한지주",
+          "qty": 10,
+          "entryPrice": 97300,
+          "currentPrice": 98000,
+          "currentDelta": -900,
+          "currentChangePct": -0.91,
+          "evalAmount": 980000,
+          "pnl": 7000,
+          "returnPct": 0.72,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "105560",
+          "name": "KB금융",
+          "qty": 6,
+          "entryPrice": 158900,
+          "currentPrice": 161700,
+          "currentDelta": 500,
+          "currentChangePct": 0.31,
+          "evalAmount": 970200,
+          "pnl": 16800,
+          "returnPct": 1.76,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "086790",
+          "name": "하나금융지주",
+          "qty": 7,
+          "entryPrice": 125500,
+          "currentPrice": 126500,
+          "currentDelta": -2300,
+          "currentChangePct": -1.79,
+          "evalAmount": 885500,
+          "pnl": 7000,
+          "returnPct": 0.8,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "012330",
+          "name": "현대모비스",
+          "qty": 2,
+          "entryPrice": 432500,
+          "currentPrice": 509000,
+          "currentDelta": 67500,
+          "currentChangePct": 15.29,
+          "evalAmount": 1018000,
+          "pnl": 153000,
+          "returnPct": 17.69,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "047810",
+          "name": "한국항공우주",
+          "qty": 5,
+          "entryPrice": 176600,
+          "currentPrice": 166800,
+          "currentDelta": -5000,
+          "currentChangePct": -2.91,
+          "evalAmount": 834000,
+          "pnl": -49000,
+          "returnPct": -5.55,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "035420",
+          "name": "NAVER",
+          "qty": 4,
+          "entryPrice": 208000,
+          "currentPrice": 215000,
+          "currentDelta": 7500,
+          "currentChangePct": 3.61,
+          "evalAmount": 860000,
+          "pnl": 28000,
+          "returnPct": 3.37,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "058470",
+          "name": "리노공업",
+          "qty": 8,
+          "entryPrice": 116700,
+          "currentPrice": 112600,
+          "currentDelta": -900,
+          "currentChangePct": -0.79,
+          "evalAmount": 900800,
+          "pnl": -32800,
+          "returnPct": -3.51,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "068270",
+          "name": "셀트리온",
+          "qty": 5,
+          "entryPrice": 194700,
+          "currentPrice": 198400,
+          "currentDelta": -4100,
+          "currentChangePct": -2.02,
+          "evalAmount": 992000,
+          "pnl": 18500,
+          "returnPct": 1.9,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "005930",
+          "name": "삼성전자",
+          "qty": 3,
+          "entryPrice": 263000,
+          "currentPrice": 268500,
+          "currentDelta": -3000,
+          "currentChangePct": -1.1,
+          "evalAmount": 805500,
+          "pnl": 16500,
+          "returnPct": 2.09,
+          "holdingPeriod": "보유 2일"
+        },
+        {
+          "code": "010120",
+          "name": "LS ELECTRIC",
+          "qty": 3,
+          "entryPrice": 305500,
+          "currentPrice": 313000,
+          "currentDelta": -5500,
+          "currentChangePct": -1.73,
+          "evalAmount": 939000,
+          "pnl": 22500,
+          "returnPct": 2.45,
+          "holdingPeriod": "보유 2일"
+        }
+      ]
+    },
+    {
+      "name": "퀀트모멘텀",
+      "daily": {
+        "returnPct": -0.39,
+        "pnl": -43500,
+        "basis": "holding-prev-close"
+      },
+      "portfolio": {
+        "capital": 10000000,
+        "cash": 1210000,
+        "investmentAmount": 8781000,
+        "evalAmount": 9991000,
+        "pnl": -9000,
+        "returnPct": -0.09,
+        "positionCount": 10
+      },
+      "positions": [
+        {
+          "code": "005930",
+          "name": "삼성전자",
+          "qty": 3,
+          "entryPrice": 266000,
+          "currentPrice": 268500,
+          "currentDelta": -3000,
+          "currentChangePct": -1.1,
+          "evalAmount": 805500,
+          "pnl": 7500,
+          "returnPct": 0.94,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "403870",
+          "name": "HPSP",
+          "qty": 17,
+          "entryPrice": 56600,
+          "currentPrice": 53900,
+          "currentDelta": -800,
+          "currentChangePct": -1.46,
+          "evalAmount": 916300,
+          "pnl": -45900,
+          "returnPct": -4.77,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "086520",
+          "name": "에코프로",
+          "qty": 6,
+          "entryPrice": 162800,
+          "currentPrice": 155000,
+          "currentDelta": -4700,
+          "currentChangePct": -2.94,
+          "evalAmount": 930000,
+          "pnl": -46800,
+          "returnPct": -4.79,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "010120",
+          "name": "LS ELECTRIC",
+          "qty": 3,
+          "entryPrice": 315500,
+          "currentPrice": 313000,
+          "currentDelta": -5500,
+          "currentChangePct": -1.73,
+          "evalAmount": 939000,
+          "pnl": -7500,
+          "returnPct": -0.79,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "005380",
+          "name": "현대차",
+          "qty": 1,
+          "entryPrice": 550000,
+          "currentPrice": 613000,
+          "currentDelta": 41000,
+          "currentChangePct": 7.17,
+          "evalAmount": 613000,
+          "pnl": 63000,
+          "returnPct": 11.45,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "042700",
+          "name": "한미반도체",
+          "qty": 2,
+          "entryPrice": 394500,
+          "currentPrice": 390000,
+          "currentDelta": -3000,
+          "currentChangePct": -0.76,
+          "evalAmount": 780000,
+          "pnl": -9000,
+          "returnPct": -1.14,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "247540",
+          "name": "에코프로비엠",
+          "qty": 4,
+          "entryPrice": 228500,
+          "currentPrice": 237500,
+          "currentDelta": 2000,
+          "currentChangePct": 0.85,
+          "evalAmount": 950000,
+          "pnl": 36000,
+          "returnPct": 3.94,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "373220",
+          "name": "LG에너지솔루션",
+          "qty": 2,
+          "entryPrice": 482000,
+          "currentPrice": 476500,
+          "currentDelta": -6500,
+          "currentChangePct": -1.35,
+          "evalAmount": 953000,
+          "pnl": -11000,
+          "returnPct": -1.14,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "034020",
+          "name": "두산에너빌리티",
+          "qty": 7,
+          "entryPrice": 133900,
+          "currentPrice": 129600,
+          "currentDelta": -6800,
+          "currentChangePct": -4.99,
+          "evalAmount": 907200,
+          "pnl": -30100,
+          "returnPct": -3.21,
+          "holdingPeriod": "보유 2일"
+        },
+        {
+          "code": "000270",
+          "name": "기아",
+          "qty": 6,
+          "entryPrice": 158700,
+          "currentPrice": 164500,
+          "currentDelta": 6900,
+          "currentChangePct": 4.38,
+          "evalAmount": 987000,
+          "pnl": 34800,
+          "returnPct": 3.65,
+          "holdingPeriod": "보유 2일"
+        }
+      ]
+    },
+    {
+      "name": "퀀트혼합",
+      "daily": {
+        "returnPct": 1.33,
+        "pnl": 88500,
+        "basis": "holding-prev-close"
+      },
+      "portfolio": {
+        "capital": 10000000,
+        "cash": 1571100,
+        "investmentAmount": 8626800,
+        "evalAmount": 10197900,
+        "pnl": 197900,
+        "returnPct": 1.98,
+        "positionCount": 10
+      },
+      "positions": [
+        {
+          "code": "105560",
+          "name": "KB금융",
+          "qty": 6,
+          "entryPrice": 158900,
+          "currentPrice": 161700,
+          "currentDelta": 500,
+          "currentChangePct": 0.31,
+          "evalAmount": 970200,
+          "pnl": 16800,
+          "returnPct": 1.76,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "005930",
+          "name": "삼성전자",
+          "qty": 3,
+          "entryPrice": 266000,
+          "currentPrice": 268500,
+          "currentDelta": -3000,
+          "currentChangePct": -1.1,
+          "evalAmount": 805500,
+          "pnl": 7500,
+          "returnPct": 0.94,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "373220",
+          "name": "LG에너지솔루션",
+          "qty": 2,
+          "entryPrice": 482000,
+          "currentPrice": 476500,
+          "currentDelta": -6500,
+          "currentChangePct": -1.35,
+          "evalAmount": 953000,
+          "pnl": -11000,
+          "returnPct": -1.14,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "005380",
+          "name": "현대차",
+          "qty": 1,
+          "entryPrice": 550000,
+          "currentPrice": 613000,
+          "currentDelta": 41000,
+          "currentChangePct": 7.17,
+          "evalAmount": 613000,
+          "pnl": 63000,
+          "returnPct": 11.45,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "055550",
+          "name": "신한지주",
+          "qty": 10,
+          "entryPrice": 97300,
+          "currentPrice": 98000,
+          "currentDelta": -900,
+          "currentChangePct": -0.91,
+          "evalAmount": 980000,
+          "pnl": 7000,
+          "returnPct": 0.72,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "086790",
+          "name": "하나금융지주",
+          "qty": 7,
+          "entryPrice": 125500,
+          "currentPrice": 126500,
+          "currentDelta": -2300,
+          "currentChangePct": -1.79,
+          "evalAmount": 885500,
+          "pnl": 7000,
+          "returnPct": 0.8,
+          "holdingPeriod": "보유 3일"
+        },
+        {
+          "code": "329180",
+          "name": "HD현대중공업",
+          "qty": 1,
+          "entryPrice": 662000,
+          "currentPrice": 658000,
+          "currentDelta": -35000,
+          "currentChangePct": -5.05,
+          "evalAmount": 658000,
+          "pnl": -4000,
+          "returnPct": -0.6,
+          "holdingPeriod": "보유 2일"
+        },
+        {
+          "code": "012330",
+          "name": "현대모비스",
+          "qty": 2,
+          "entryPrice": 447000,
+          "currentPrice": 509000,
+          "currentDelta": 67500,
+          "currentChangePct": 15.29,
+          "evalAmount": 1018000,
+          "pnl": 124000,
+          "returnPct": 13.87,
+          "holdingPeriod": "보유 2일"
+        },
+        {
+          "code": "068270",
+          "name": "셀트리온",
+          "qty": 4,
+          "entryPrice": 204500,
+          "currentPrice": 198400,
+          "currentDelta": -4100,
+          "currentChangePct": -2.02,
+          "evalAmount": 793600,
+          "pnl": -24400,
+          "returnPct": -2.98,
+          "holdingPeriod": "보유 2일"
+        },
+        {
+          "code": "247540",
+          "name": "에코프로비엠",
+          "qty": 4,
+          "entryPrice": 234500,
+          "currentPrice": 237500,
+          "currentDelta": 2000,
+          "currentChangePct": 0.85,
+          "evalAmount": 950000,
+          "pnl": 12000,
+          "returnPct": 1.28,
+          "holdingPeriod": "보유 2일"
+        }
+      ]
+    }
+  ]
+}
