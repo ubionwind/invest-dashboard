@@ -117,12 +117,12 @@ main { padding: 24px clamp(18px, 4vw, 48px) 44px; }
 .diagnostic-rows span { color: var(--muted); font-size: 10px; }
 .diagnostic-rows b { margin-top: 2px; font-size: 13px; }
 .diagnostic-rows div:nth-child(6) { grid-column: 1 / -1; }
-.switch-mini { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; padding: 7px 8px; border-radius: 12px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.06); }
-.switch-mini svg { width: 100%; height: 46px; overflow: visible; }
+.switch-mini { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 8px; align-items: center; padding: 7px 8px; border-radius: 12px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.06); }
+.switch-mini svg { width: 88px; height: 46px; overflow: visible; }
 .switch-line { stroke: rgba(255,209,102,.42); stroke-width: 1.5; stroke-dasharray: 4 3; }
 .switch-curve { fill: none; stroke: var(--accent); stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
 .switch-dot { fill: #fff; stroke: var(--accent); stroke-width: 1.5; }
-.switch-mini span { color: #ffe5a3; font-size: 11px; font-weight: 900; white-space: nowrap; }
+.switch-mini span { min-width: 0; color: #ffe5a3; font-size: 11px; font-weight: 900; line-height: 1.25; white-space: normal; }
 .holding-compare-card p, .replacement-card p { margin: 0; color: #caddff; font-size: 12px; line-height: 1.35; }
 .holding-compare-card > small, .replacement-card > small { line-height: 1.35; }
 .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
@@ -255,7 +255,8 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .comparison-columns { grid-template-columns: 1fr; gap: 10px; }
   .compare-score-row b { font-size: 22px; }
   .diagnostic-rows { gap: 5px; }
-  .switch-mini { grid-template-columns: 1fr; gap: 4px; }
+  .switch-mini { grid-template-columns: 78px minmax(0, 1fr); gap: 7px; }
+  .switch-mini svg { width: 78px; height: 44px; }
   .overview-strategy-card { padding: 12px; gap: 8px; }
   .overview-return-row > strong { font-size: 27px; }
   .today-return { font-size: 11px; }
