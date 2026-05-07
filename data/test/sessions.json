@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-08T00:33+09:00",
+  "generatedAt": "2026-05-08T00:35+09:00",
   "sessions": [
     {
       "name": "일반",
@@ -29,10 +29,15 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": null,
+          "candidateNote": "기술구조 저항거리큼: 20일 전고점까지 11.57% 거리; 회복 확인 필요",
           "reason": "meta=0.45; 등락률=-0.81; theme=바이오",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "저항거리큼",
+            "bias": -3,
+            "reason": "20일 전고점까지 11.57% 거리; 회복 확인 필요"
+          },
           "fundamentals": {
             "per": 92.82,
             "pbr": 8.1,
@@ -71,6 +76,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 11.57% 거리; 회복 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -96,10 +106,15 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": null,
+          "candidateNote": "기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음",
           "reason": "meta=0.45; 등락률=2.23; theme=전력",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": 11.43,
             "pbr": 2.82,
@@ -137,6 +152,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -162,10 +182,15 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": null,
+          "candidateNote": "기술구조 전고점대기: 20일 전고점까지 2.03% 남아 돌파 확인 필요",
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "전고점대기",
+            "bias": -2,
+            "reason": "20일 전고점까지 2.03% 남아 돌파 확인 필요"
+          },
           "fundamentals": {
             "per": 80.86,
             "pbr": 4.95,
@@ -203,6 +228,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 2.03% 남아 돌파 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -228,10 +258,15 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "보유 2일 · 매입 264859원 · 현재 271500원 · 평가 8688000원 · 손익 212500원",
+          "candidateNote": "기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음",
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": 36.84,
             "pbr": 1.51,
@@ -269,6 +304,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -294,10 +334,15 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": null,
+          "candidateNote": "기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음",
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": -11.3,
             "pbr": 1.82,
@@ -335,6 +380,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -360,10 +410,15 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": null,
+          "candidateNote": "기술구조 전고점대기: 20일 전고점까지 0.35% 남아 돌파 확인 필요",
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "전고점대기",
+            "bias": -2,
+            "reason": "20일 전고점까지 0.35% 남아 돌파 확인 필요"
+          },
           "fundamentals": {
             "per": 4.67,
             "pbr": 0.58,
@@ -408,6 +463,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 0.35% 남아 돌파 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -433,10 +493,15 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": null,
+          "candidateNote": "기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "meta=0.45; 등락률=1.94; theme=자동차",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 4.59,
             "pbr": 0.85,
@@ -481,6 +546,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -510,6 +580,11 @@
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "구조중립",
+            "bias": 0,
+            "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
+          },
           "fundamentals": {
             "per": 36.25,
             "pbr": 1.45,
@@ -553,6 +628,11 @@
                 "하단은 195,800~202,670원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -609,6 +689,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -619,7 +704,7 @@
           "code": "005930",
           "name": "삼성전자",
           "status": "보유근거약화",
-          "reason": "현재 판단점수 45.0; 신규 후보 강도 약함",
+          "reason": "현재 판단점수 45.0; 신규 후보 강도 약함; 기술구조 돌파우호",
           "returnPct": 2.51,
           "pnl": 212500,
           "fundamentals": {
@@ -658,6 +743,11 @@
                 "하단은 180,080~190,820원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -724,8 +814,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "돌파우호",
+                "bias": 4,
+                "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
             },
             "currentChangePct": null,
             "entryScoreRaw": null,
@@ -733,16 +833,16 @@
             "replacementWatchLine": 70,
             "liquidityText": "수급 데이터 대기",
             "holdAction": "보유근거약화",
-            "holdReason": "현재 판단점수 45.0; 신규 후보 강도 약함"
+            "holdReason": "현재 판단점수 45.0; 신규 후보 강도 약함; 기술구조 돌파우호"
           }
         ]
       },
       "comparison": {
         "returnPct": 2.13,
-        "benchmarkReturnPct": 1.25,
-        "excessReturnPct": 0.88,
+        "benchmarkReturnPct": 0.96,
+        "excessReturnPct": 1.17,
         "periodStart": "2026-05-06T12:12+09:00",
-        "periodEnd": "2026-05-08T00:33+09:00"
+        "periodEnd": "2026-05-08T00:35+09:00"
       }
     },
     {
@@ -773,10 +873,15 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "보유 2일 · 매입 149860원 · 현재 147400원 · 평가 13118600원 · 손익 -218900원",
+          "candidateNote": "기술구조 저항거리큼: 20일 전고점까지 10.34% 거리; 회복 확인 필요",
           "reason": "meta=0.84; 등락률=-2.77; theme=AI기판",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "저항거리큼",
+            "bias": -3,
+            "reason": "20일 전고점까지 10.34% 거리; 회복 확인 필요"
+          },
           "fundamentals": {
             "per": 39.81,
             "pbr": 7.12,
@@ -820,6 +925,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 10.34% 거리; 회복 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -845,10 +955,15 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "보유 2일 · 매입 383341원 · 현재 393000원 · 평가 8646000원 · 손익 212500원",
+          "candidateNote": "기술구조 전고점대기: 20일 전고점까지 1.13% 남아 돌파 확인 필요",
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "전고점대기",
+            "bias": -2,
+            "reason": "20일 전고점까지 1.13% 남아 돌파 확인 필요"
+          },
           "fundamentals": {
             "per": 22.48,
             "pbr": 10.45,
@@ -886,6 +1001,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 1.13% 남아 돌파 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -915,6 +1035,11 @@
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "구조중립",
+            "bias": 0,
+            "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": -45.94,
             "pbr": 1.89,
@@ -959,6 +1084,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -984,10 +1114,15 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "보유 2일 · 매입 224000원 · 현재 235500원 · 평가 7771500원 · 손익 379500원",
+          "candidateNote": "기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음",
           "reason": "meta=0.76; 등락률=3.06; theme=2차전지소재",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": -3224.66,
             "pbr": 20.51,
@@ -1025,6 +1160,11 @@
                 "하단은 197,050~203,340원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -1087,6 +1227,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 10.34% 거리; 회복 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -1134,6 +1279,11 @@
                 "하단은 190,500~210,900원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 1.13% 남아 돌파 확인 필요"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -1184,6 +1334,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -1194,7 +1349,7 @@
           "code": "042700",
           "name": "한미반도체",
           "status": "단기점수약화",
-          "reason": "현재 판단점수 50.0; 단기 후보 강도 약화",
+          "reason": "현재 판단점수 50.0; 단기 후보 강도 약화; 기술구조 전고점대기 - 20일 전고점까지 1.13% 남아 돌파 확인 필요",
           "returnPct": 2.52,
           "pnl": 212500,
           "fundamentals": {
@@ -1234,6 +1389,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 1.13% 남아 돌파 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -1242,7 +1402,7 @@
           "code": "247540",
           "name": "에코프로비엠",
           "status": "부분익절검토",
-          "reason": "단기 1차 익절권 5.13% >= 5%",
+          "reason": "단기 1차 익절권 5.13% >= 5%; 기술구조 돌파우호",
           "returnPct": 5.13,
           "pnl": 379500,
           "fundamentals": {
@@ -1282,6 +1442,11 @@
                 "하단은 197,050~203,340원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -1354,8 +1519,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "저항거리큼",
+                "bias": -3,
+                "reason": "20일 전고점까지 10.34% 거리; 회복 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 10.34% 거리; 회복 확인 필요"
             },
             "currentChangePct": -2.77,
             "entryScoreRaw": null,
@@ -1363,7 +1538,7 @@
             "replacementWatchLine": 87.0,
             "liquidityText": "수급 데이터 대기",
             "holdAction": "보유유지",
-            "holdReason": "보유 기준상 즉시 매도 신호 없음"
+            "holdReason": "보유 기준상 즉시 매도 신호 없음; 기술구조 저항거리큼 - 20일 전고점까지 10.34% 거리; 회복 확인 필요"
           },
           {
             "code": "042700",
@@ -1416,8 +1591,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "전고점대기",
+                "bias": -2,
+                "reason": "20일 전고점까지 1.13% 남아 돌파 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 1.13% 남아 돌파 확인 필요"
             },
             "currentChangePct": null,
             "entryScoreRaw": null,
@@ -1425,7 +1610,7 @@
             "replacementWatchLine": 70,
             "liquidityText": "수급 데이터 대기",
             "holdAction": "단기점수약화",
-            "holdReason": "현재 판단점수 50.0; 단기 후보 강도 약화"
+            "holdReason": "현재 판단점수 50.0; 단기 후보 강도 약화; 기술구조 전고점대기 - 20일 전고점까지 1.13% 남아 돌파 확인 필요"
           },
           {
             "code": "247540",
@@ -1479,8 +1664,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "돌파우호",
+                "bias": 4,
+                "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
             },
             "currentChangePct": 3.06,
             "entryScoreRaw": null,
@@ -1488,16 +1683,16 @@
             "replacementWatchLine": 87.0,
             "liquidityText": "수급 데이터 대기",
             "holdAction": "부분익절검토",
-            "holdReason": "단기 1차 익절권 5.13% >= 5%"
+            "holdReason": "단기 1차 익절권 5.13% >= 5%; 기술구조 돌파우호"
           }
         ]
       },
       "comparison": {
         "returnPct": 1.24,
-        "benchmarkReturnPct": 1.25,
-        "excessReturnPct": -0.01,
+        "benchmarkReturnPct": 0.96,
+        "excessReturnPct": 0.28,
         "periodStart": "2026-05-06T10:08+09:00",
-        "periodEnd": "2026-05-08T00:33+09:00"
+        "periodEnd": "2026-05-08T00:35+09:00"
       }
     },
     {
@@ -1528,10 +1723,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음 · 기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 4.04%, 매물벽 위험 낮음",
           "reason": "진입만: 136,500원 기준, +7.48% 유지·거래대금 10304억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 10304억",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 4.04%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": 183.04,
             "pbr": 1.43,
@@ -1569,6 +1769,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 4.04%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -1594,10 +1799,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음 · 기술구조 전고점대기: 20일 전고점까지 2.39% 남아 돌파 확인 필요",
           "reason": "진입만: 694,000원 기준, +7.1% 유지·거래대금 5286억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 5286억",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "전고점대기",
+            "bias": -2,
+            "reason": "20일 전고점까지 2.39% 남아 돌파 확인 필요"
+          },
           "fundamentals": {
             "per": 463.89,
             "pbr": 2.2,
@@ -1635,6 +1845,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 2.39% 남아 돌파 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -1660,10 +1875,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음 · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "진입만: 33,700원 기준, +5.81% 유지·거래대금 3163억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 3163억",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": -46.0,
             "pbr": 1.92,
@@ -1707,6 +1927,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -1732,10 +1957,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T10:14 · 진입 판단점수 80 · 진입 원점수 152.8 · 진입 당시 등락률 9.19%",
+          "candidateNote": "진입시각 2026-05-06T10:14 · 진입 판단점수 80 · 진입 원점수 152.8 · 진입 당시 등락률 9.19% · 기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음",
           "reason": "진입만: 1,650,000원 기준, +3.06% 유지·거래대금 84044억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 84044억",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": -11.3,
             "pbr": 1.82,
@@ -1773,6 +2003,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -1798,10 +2033,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음 · 기술구조 전고점대기: 20일 전고점까지 0.35% 남아 돌파 확인 필요",
           "reason": "진입만: 567,000원 기준, +3.09% 유지·거래대금 11210억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 11210억",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "전고점대기",
+            "bias": -2,
+            "reason": "20일 전고점까지 0.35% 남아 돌파 확인 필요"
+          },
           "fundamentals": {
             "per": 4.67,
             "pbr": 0.58,
@@ -1846,6 +2086,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 0.35% 남아 돌파 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -1871,10 +2116,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T10:14 · 진입 판단점수 80 · 진입 원점수 169.8 · 진입 당시 등락률 10.32%",
+          "candidateNote": "진입시각 2026-05-06T10:14 · 진입 판단점수 80 · 진입 원점수 169.8 · 진입 당시 등락률 10.32% · 기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음",
           "reason": "watch only: 정규장 09:45 이후 +2.4% 이상 유지 및 거래대금/뉴스 확인 시 진입 검토",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": 36.84,
             "pbr": 1.51,
@@ -1912,6 +2162,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -1937,10 +2192,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음 · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "진입만: 201,000원 기준, +3.24% 유지·거래대금 1980억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 1980억",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 55.43,
             "pbr": 2.52,
@@ -1985,6 +2245,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -2010,10 +2275,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음 · 기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음",
           "reason": "진입만: 234,500원 기준, +2.63% 유지·거래대금 2576억, 5분 눌림 후 재돌파 여부 사후평가",
           "liquidityText": "거래대금 2576억",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": -3224.66,
             "pbr": 20.51,
@@ -2051,6 +2321,11 @@
                 "하단은 197,050~203,340원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -2107,6 +2382,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "60일 고점권 접근; 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -2154,6 +2434,11 @@
                 "하단은 943,400~999,100원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -2203,6 +2488,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.51%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -2250,6 +2540,11 @@
                 "하단은 886,400~965,800원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -2301,6 +2596,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -2348,6 +2648,11 @@
                 "하단은 205,860~216,190원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.51%, 매물벽 위험 낮음"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -2397,6 +2702,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -2444,6 +2754,11 @@
                 "하단은 138,650~158,300원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "60일 고점권 접근; 매물벽 위험 낮음"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -2519,8 +2834,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "돌파우호",
+                "bias": 4,
+                "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
             },
             "currentChangePct": 1.79,
             "replacementWatchLine": 82.0,
@@ -2586,8 +2911,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "돌파우호",
+                "bias": 4,
+                "reason": "20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음"
             },
             "currentChangePct": 3.06,
             "replacementWatchLine": 82.0,
@@ -2653,8 +2988,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "돌파우호",
+                "bias": 4,
+                "reason": "20일 전고점 돌파; 20일 전고점 대비 0.51%, 매물벽 위험 낮음"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.51%, 매물벽 위험 낮음"
             },
             "currentChangePct": 8.61,
             "replacementWatchLine": 92.0,
@@ -2720,8 +3065,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "돌파우호",
+                "bias": 4,
+                "reason": "20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음"
             },
             "currentChangePct": 6.16,
             "replacementWatchLine": 82.0,
@@ -2787,8 +3142,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "구조중립",
+                "bias": 0,
+                "reason": "60일 고점권 접근; 매물벽 위험 낮음"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "60일 고점권 접근; 매물벽 위험 낮음"
             },
             "currentChangePct": 3.83,
             "replacementWatchLine": 70,
@@ -2798,10 +3163,10 @@
       },
       "comparison": {
         "returnPct": 3.36,
-        "benchmarkReturnPct": 1.25,
-        "excessReturnPct": 2.11,
+        "benchmarkReturnPct": 0.96,
+        "excessReturnPct": 2.4,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-08T00:33+09:00"
+        "periodEnd": "2026-05-08T00:35+09:00"
       }
     },
     {
@@ -2832,10 +3197,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T10:14 · 진입 판단점수 75 · 진입 원점수 70.0 · 진입 당시 등락률 0.0%",
+          "candidateNote": "진입시각 2026-05-06T10:14 · 진입 판단점수 75 · 진입 원점수 70.0 · 진입 당시 등락률 0.0% · 기술구조 저항거리큼: 20일 전고점까지 16.11% 거리; 회복 확인 필요",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "저항거리큼",
+            "bias": -3,
+            "reason": "20일 전고점까지 16.11% 거리; 회복 확인 필요"
+          },
           "fundamentals": {
             "per": 7.98,
             "pbr": 1.85,
@@ -2880,6 +3250,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 16.11% 거리; 회복 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -2905,10 +3280,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T10:14 · 진입 판단점수 75 · 진입 원점수 70.0 · 진입 당시 등락률 0.0%",
+          "candidateNote": "진입시각 2026-05-06T10:14 · 진입 판단점수 75 · 진입 원점수 70.0 · 진입 당시 등락률 0.0% · 기술구조 저항거리큼: 20일 전고점까지 22.54% 거리; 회복 확인 필요",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "저항거리큼",
+            "bias": -3,
+            "reason": "20일 전고점까지 22.54% 거리; 회복 확인 필요"
+          },
           "fundamentals": {
             "per": 16.41,
             "pbr": 2.7,
@@ -2952,6 +3332,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 22.54% 거리; 회복 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -2977,10 +3362,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T10:14 · 진입 판단점수 75 · 진입 원점수 70.0 · 진입 당시 등락률 0.0%",
+          "candidateNote": "진입시각 2026-05-06T10:14 · 진입 판단점수 75 · 진입 원점수 70.0 · 진입 당시 등락률 0.0% · 기술구조 저항거리큼: 20일 전고점까지 16.40% 거리; 회복 확인 필요",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "저항거리큼",
+            "bias": -3,
+            "reason": "20일 전고점까지 16.40% 거리; 회복 확인 필요"
+          },
           "fundamentals": {
             "per": 21.76,
             "pbr": 3.05,
@@ -3025,6 +3415,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 16.40% 거리; 회복 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -3050,10 +3445,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음 · 기술구조 전고점대기: 20일 전고점까지 2.39% 남아 돌파 확인 필요",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "전고점대기",
+            "bias": -2,
+            "reason": "20일 전고점까지 2.39% 남아 돌파 확인 필요"
+          },
           "fundamentals": {
             "per": 463.89,
             "pbr": 2.2,
@@ -3091,6 +3491,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 2.39% 남아 돌파 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -3116,10 +3521,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음 · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 38.59,
             "pbr": 0.86,
@@ -3163,6 +3573,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -3192,6 +3607,11 @@
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "구조중립",
+            "bias": 0,
+            "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": -45.94,
             "pbr": 1.89,
@@ -3236,6 +3656,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -3261,10 +3686,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음 · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 44.33,
             "pbr": 13.09,
@@ -3308,6 +3738,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -3333,10 +3768,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 5종목이 이미 차 있어 신규 매수 없음 · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "장초반 거래대금 증가와 섹터 동행 여부 확인",
           "liquidityText": "거래대금 증가",
           "positionLimit": 5,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 111.45,
             "pbr": 3.47,
@@ -3379,6 +3819,11 @@
                 "하단은 232,630~245,420원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -3442,6 +3887,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 16.40% 거리; 회복 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -3495,6 +3945,11 @@
                 "하단은 723,500~782,800원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 22.54% 거리; 회복 확인 필요"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -3551,6 +4006,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 16.11% 거리; 회복 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -3598,6 +4058,11 @@
                 "하단은 138,650~158,300원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "60일 고점권 접근; 매물벽 위험 낮음"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -3655,6 +4120,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 12.02% 거리; 회복 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -3702,6 +4172,11 @@
                 "하단은 138,650~158,300원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "60일 고점권 접근; 매물벽 위험 낮음"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -3758,6 +4233,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 16.11% 거리; 회복 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -3811,6 +4291,11 @@
                 "하단은 723,500~782,800원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 22.54% 거리; 회복 확인 필요"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -3892,8 +4377,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "저항거리큼",
+                "bias": -3,
+                "reason": "20일 전고점까지 12.02% 거리; 회복 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 12.02% 거리; 회복 확인 필요"
             },
             "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
@@ -3959,8 +4454,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "구조중립",
+                "bias": 0,
+                "reason": "60일 고점권 접근; 매물벽 위험 낮음"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "60일 고점권 접근; 매물벽 위험 낮음"
             },
             "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
@@ -4033,8 +4538,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "저항거리큼",
+                "bias": -3,
+                "reason": "20일 전고점까지 16.11% 거리; 회복 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 16.11% 거리; 회복 확인 필요"
             },
             "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
@@ -4106,8 +4621,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "저항거리큼",
+                "bias": -3,
+                "reason": "20일 전고점까지 22.54% 거리; 회복 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 22.54% 거리; 회복 확인 필요"
             },
             "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
@@ -4180,8 +4705,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "저항거리큼",
+                "bias": -3,
+                "reason": "20일 전고점까지 16.40% 거리; 회복 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 16.40% 거리; 회복 확인 필요"
             },
             "currentChangePct": 0.0,
             "replacementWatchLine": 87.0,
@@ -4191,10 +4726,10 @@
       },
       "comparison": {
         "returnPct": -4.42,
-        "benchmarkReturnPct": 1.25,
-        "excessReturnPct": -5.67,
+        "benchmarkReturnPct": 0.96,
+        "excessReturnPct": -5.38,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-08T00:33+09:00"
+        "periodEnd": "2026-05-08T00:35+09:00"
       }
     },
     {
@@ -4229,6 +4764,11 @@
           "reason": "가치/안정성=28; 과열완화=13.7; 거래대금점수=20; 등락률=1.45",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "구조중립",
+            "bias": 0,
+            "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
+          },
           "fundamentals": {
             "per": 4.77,
             "pbr": 0.36,
@@ -4273,6 +4813,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -4298,10 +4843,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 95 · 진입 원점수 95.9 · 진입 당시 등락률 -0.71%",
+          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 95 · 진입 원점수 95.9 · 진입 당시 등락률 -0.71% · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "가치/안정성=28; 과열완화=13.1; 거래대금점수=20; 등락률=1.64",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 4.78,
             "pbr": 0.38,
@@ -4346,6 +4896,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -4375,6 +4930,11 @@
           "reason": "가치/안정성=23; 과열완화=15.2; 거래대금점수=20; 등락률=0.95",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "구조중립",
+            "bias": 0,
+            "reason": "60일 고점권 접근; 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": 10.66,
             "pbr": 1.25,
@@ -4412,6 +4972,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "60일 고점권 접근; 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -4437,10 +5002,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 95 · 진입 원점수 95.4 · 진입 당시 등락률 -0.87%",
+          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 95 · 진입 원점수 95.4 · 진입 당시 등락률 -0.87% · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "가치/안정성=28; 과열완화=10.1; 거래대금점수=20; 등락률=2.63",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 3.74,
             "pbr": 0.32,
@@ -4485,6 +5055,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -4510,10 +5085,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음 · 기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음",
           "reason": "가치/안정성=23; 과열완화=11.3; 거래대금점수=20; 등락률=2.23",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": 11.43,
             "pbr": 2.82,
@@ -4551,6 +5131,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -4580,6 +5165,11 @@
           "reason": "가치/안정성=16; 과열완화=17.3; 거래대금점수=20; 등락률=-0.24",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "구조중립",
+            "bias": 0,
+            "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
+          },
           "fundamentals": {
             "per": 36.25,
             "pbr": 1.45,
@@ -4624,6 +5214,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -4649,10 +5244,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 88 · 진입 원점수 87.3 · 진입 당시 등락률 -1.89%",
+          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 88 · 진입 원점수 87.3 · 진입 당시 등락률 -1.89% · 기술구조 저항거리큼: 20일 전고점까지 16.40% 거리; 회복 확인 필요",
           "reason": "가치/안정성=23; 과열완화=9.8; 거래대금점수=20; 등락률=-2.72",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "저항거리큼",
+            "bias": -3,
+            "reason": "20일 전고점까지 16.40% 거리; 회복 확인 필요"
+          },
           "fundamentals": {
             "per": 21.76,
             "pbr": 3.05,
@@ -4697,6 +5297,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 16.40% 거리; 회복 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -4722,10 +5327,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 95 · 진입 원점수 90.3 · 진입 당시 등락률 0.23%",
+          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 95 · 진입 원점수 90.3 · 진입 당시 등락률 0.23% · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "가치/안정성=21; 과열완화=11.8; 거래대금점수=20; 등락률=2.08",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 6.52,
             "pbr": 0.53,
@@ -4769,6 +5379,11 @@
                 "하단은 423,300~438,400원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -4825,6 +5440,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "60일 고점권 접근; 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -4872,6 +5492,11 @@
                 "하단은 180,080~190,820원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -4928,6 +5553,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -4981,6 +5611,11 @@
                 "하단은 110,700~113,960원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 12.02% 거리; 회복 확인 필요"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -5064,8 +5699,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "매물대주의",
+                "bias": -6,
+                "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": 1.64,
             "replacementWatchLine": 107.0,
@@ -5138,8 +5783,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "구조중립",
+                "bias": 0,
+                "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
             },
             "currentChangePct": 1.45,
             "replacementWatchLine": 107.0,
@@ -5212,8 +5867,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "매물대주의",
+                "bias": -6,
+                "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": 2.63,
             "replacementWatchLine": 107.0,
@@ -5286,8 +5951,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "매물대주의",
+                "bias": -6,
+                "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": 2.08,
             "replacementWatchLine": 100.0,
@@ -5360,8 +6035,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "저항거리큼",
+                "bias": -3,
+                "reason": "20일 전고점까지 16.40% 거리; 회복 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 16.40% 거리; 회복 확인 필요"
             },
             "currentChangePct": -2.72,
             "replacementWatchLine": 100.0,
@@ -5434,8 +6119,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "구조중립",
+                "bias": 0,
+                "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
             },
             "currentChangePct": -0.24,
             "replacementWatchLine": 100.0,
@@ -5507,8 +6202,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "저항거리큼",
+                "bias": -3,
+                "reason": "20일 전고점까지 12.02% 거리; 회복 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "저항거리큼",
+              "bias": -3,
+              "reason": "20일 전고점까지 12.02% 거리; 회복 확인 필요"
             },
             "currentChangePct": -3.39,
             "replacementWatchLine": 100.0,
@@ -5581,8 +6286,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "매물대주의",
+                "bias": -6,
+                "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": -1.57,
             "replacementWatchLine": 100.0,
@@ -5595,7 +6310,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.14,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-08T00:33+09:00"
+        "periodEnd": "2026-05-08T00:35+09:00"
       }
     },
     {
@@ -5626,10 +6341,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 95 · 진입 원점수 98.0 · 진입 당시 등락률 14.41%",
+          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 95 · 진입 원점수 98.0 · 진입 당시 등락률 14.41% · 기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음",
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=2.07",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": 36.84,
             "pbr": 1.51,
@@ -5667,6 +6387,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -5692,10 +6417,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음 · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=5.81",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": -46.0,
             "pbr": 1.92,
@@ -5739,6 +6469,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -5764,10 +6499,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음 · 기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음",
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=3.31",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": -11.3,
             "pbr": 1.82,
@@ -5805,6 +6545,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -5830,10 +6575,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 88 · 진입 원점수 89.7 · 진입 당시 등락률 2.04%",
+          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 88 · 진입 원점수 89.7 · 진입 당시 등락률 2.04% · 기술구조 전고점대기: 20일 전고점까지 0.35% 남아 돌파 확인 필요",
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=4.0",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "전고점대기",
+            "bias": -2,
+            "reason": "20일 전고점까지 0.35% 남아 돌파 확인 필요"
+          },
           "fundamentals": {
             "per": 4.67,
             "pbr": 0.58,
@@ -5878,6 +6628,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 0.35% 남아 돌파 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -5903,10 +6658,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 88 · 진입 원점수 89.0 · 진입 당시 등락률 6.03%",
+          "candidateNote": "진입시각 2026-05-06T16:15 · 진입 판단점수 88 · 진입 원점수 89.0 · 진입 당시 등락률 6.03% · 기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음",
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=3.06",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": -3224.66,
             "pbr": 20.51,
@@ -5945,6 +6705,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -5970,10 +6735,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음 · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=4.01",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 55.43,
             "pbr": 2.52,
@@ -6018,6 +6788,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -6043,10 +6818,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음 · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=2.63",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 3.74,
             "pbr": 0.32,
@@ -6091,6 +6871,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -6116,10 +6901,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음 · 기술구조 전고점대기: 20일 전고점까지 2.39% 남아 돌파 확인 필요",
           "reason": "모멘텀구간=30; 거래대금점수=20; 등락률=6.94",
           "liquidityText": "거래대금 점수 20",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "전고점대기",
+            "bias": -2,
+            "reason": "20일 전고점까지 2.39% 남아 돌파 확인 필요"
+          },
           "fundamentals": {
             "per": 463.89,
             "pbr": 2.2,
@@ -6156,6 +6946,11 @@
                 "하단은 464,100~489,200원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 2.39% 남아 돌파 확인 필요"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -6219,6 +7014,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -6266,6 +7066,11 @@
                 "하단은 95,180~100,040원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 4.04%, 매물벽 위험 낮음"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -6315,6 +7120,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 2.03% 남아 돌파 확인 필요"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -6363,6 +7173,11 @@
                 "하단은 197,050~203,340원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -6420,6 +7235,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -6474,6 +7294,11 @@
                 "하단은 154,280~159,400원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -6549,8 +7374,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "돌파우호",
+                "bias": 4,
+                "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
             },
             "currentChangePct": 2.07,
             "replacementWatchLine": 107.0,
@@ -6622,8 +7457,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "매물대주의",
+                "bias": -6,
+                "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": 4.04,
             "replacementWatchLine": 107.0,
@@ -6696,8 +7541,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "매물대주의",
+                "bias": -6,
+                "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": 4.49,
             "replacementWatchLine": 100.0,
@@ -6763,8 +7618,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "구조중립",
+                "bias": 0,
+                "reason": "60일 고점권 접근; 매물벽 위험 낮음"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "60일 고점권 접근; 매물벽 위험 낮음"
             },
             "currentChangePct": 7.31,
             "replacementWatchLine": 100.0,
@@ -6837,8 +7702,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "전고점대기",
+                "bias": -2,
+                "reason": "20일 전고점까지 0.35% 남아 돌파 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 0.35% 남아 돌파 확인 필요"
             },
             "currentChangePct": 4.0,
             "replacementWatchLine": 107.0,
@@ -6904,8 +7779,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "전고점대기",
+                "bias": -2,
+                "reason": "20일 전고점까지 1.13% 남아 돌파 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 1.13% 남아 돌파 확인 필요"
             },
             "currentChangePct": 4.37,
             "replacementWatchLine": 100.0,
@@ -6972,8 +7857,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "돌파우호",
+                "bias": 4,
+                "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
             },
             "currentChangePct": 3.06,
             "replacementWatchLine": 100.0,
@@ -7039,8 +7934,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "전고점대기",
+                "bias": -2,
+                "reason": "20일 전고점까지 2.03% 남아 돌파 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 2.03% 남아 돌파 확인 필요"
             },
             "currentChangePct": 2.12,
             "replacementWatchLine": 100.0,
@@ -7053,7 +7958,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": -0.75,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-08T00:33+09:00"
+        "periodEnd": "2026-05-08T00:35+09:00"
       }
     },
     {
@@ -7084,10 +7989,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T16:16 · 진입 판단점수 78 · 진입 원점수 75.9 · 진입 당시 등락률 14.41%",
+          "candidateNote": "진입시각 2026-05-06T16:16 · 진입 판단점수 78 · 진입 원점수 75.9 · 진입 당시 등락률 14.41% · 기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음",
           "reason": "가치=83.8; 모멘텀=98; 등락률=2.07",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": 36.84,
             "pbr": 1.51,
@@ -7125,6 +8035,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -7150,10 +8065,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T16:16 · 진입 판단점수 78 · 진입 원점수 70.4 · 진입 당시 등락률 -0.87%",
+          "candidateNote": "진입시각 2026-05-06T16:16 · 진입 판단점수 78 · 진입 원점수 70.4 · 진입 당시 등락률 -0.87% · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "가치=90.1; 모멘텀=88.9; 등락률=2.63",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 3.74,
             "pbr": 0.32,
@@ -7198,6 +8118,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -7223,10 +8148,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음 · 기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음",
           "reason": "가치=80.1; 모멘텀=93.9; 등락률=3.31",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": -11.3,
             "pbr": 1.82,
@@ -7264,6 +8194,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.48%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -7289,10 +8224,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음 · 기술구조 돌파우호: 20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음",
           "reason": "가치=86.3; 모멘텀=88.2; 등락률=2.23",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "돌파우호",
+            "bias": 4,
+            "reason": "20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음"
+          },
           "fundamentals": {
             "per": 11.43,
             "pbr": 2.82,
@@ -7330,6 +8270,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.00%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -7355,10 +8300,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-07T09:27 · 진입 판단점수 78 · 진입 원점수 70.2 · 진입 당시 등락률 3.35%",
+          "candidateNote": "진입시각 2026-05-07T09:27 · 진입 판단점수 78 · 진입 원점수 70.2 · 진입 당시 등락률 3.35% · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "가치=84.8; 모멘텀=88.4; 등락률=2.08",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 6.52,
             "pbr": 0.53,
@@ -7403,6 +8353,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -7428,10 +8383,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음",
+          "candidateNote": "현재 평가 기준 후보지만 보유 한도 10종목이 이미 차 있어 신규 매수 없음 · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "가치=82.1; 모멘텀=88.3; 등락률=3.31",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 38.59,
             "pbr": 0.86,
@@ -7475,6 +8435,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -7504,6 +8469,11 @@
           "reason": "가치=93.7; 모멘텀=77.3; 등락률=1.45",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "구조중립",
+            "bias": 0,
+            "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
+          },
           "fundamentals": {
             "per": 4.77,
             "pbr": 0.36,
@@ -7548,6 +8518,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           },
@@ -7573,10 +8548,15 @@
           "action": "",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "진입시각 2026-05-06T16:16 · 진입 판단점수 78 · 진입 원점수 70.9 · 진입 당시 등락률 -0.71%",
+          "candidateNote": "진입시각 2026-05-06T16:16 · 진입 판단점수 78 · 진입 원점수 70.9 · 진입 당시 등락률 -0.71% · 기술구조 매물대주의: 상단 매물대가 가까워 돌파 확인 전 추격 주의",
           "reason": "가치=93.1; 모멘텀=77.6; 등락률=1.64",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 10,
+          "technicalDecision": {
+            "state": "매물대주의",
+            "bias": -6,
+            "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          },
           "fundamentals": {
             "per": 4.78,
             "pbr": 0.38,
@@ -7620,6 +8600,11 @@
                 "하단은 89,530~91,360원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -7677,6 +8662,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 2.61%, 매물벽 위험 낮음"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -7731,6 +8721,11 @@
                 "하단은 194,320~200,340원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -7787,6 +8782,11 @@
               ],
               "source": "naver_sise_day"
             },
+            "technicalSignal": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+            },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
           }
@@ -7834,6 +8834,11 @@
                 "하단은 464,100~489,200원 구간을 단기 지지 후보로 볼 수 있습니다."
               ],
               "source": "naver_sise_day"
+            },
+            "technicalSignal": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 2.39% 남아 돌파 확인 필요"
             },
             "updatedAt": "2026-05-08T00:32:11+09:00",
             "source": "naver_finance"
@@ -7917,8 +8922,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "구조중립",
+                "bias": 0,
+                "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "구조중립",
+              "bias": 0,
+              "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
             },
             "currentChangePct": 1.45,
             "replacementWatchLine": 90.0,
@@ -7984,8 +8999,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "돌파우호",
+                "bias": 4,
+                "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "돌파우호",
+              "bias": 4,
+              "reason": "20일 전고점 돌파; 20일 전고점 대비 0.56%, 매물벽 위험 낮음"
             },
             "currentChangePct": 2.07,
             "replacementWatchLine": 100.0,
@@ -8051,8 +9076,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "전고점대기",
+                "bias": -2,
+                "reason": "20일 전고점까지 2.03% 남아 돌파 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 2.03% 남아 돌파 확인 필요"
             },
             "currentChangePct": 2.12,
             "replacementWatchLine": 90.0,
@@ -8125,8 +9160,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "전고점대기",
+                "bias": -2,
+                "reason": "20일 전고점까지 0.35% 남아 돌파 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 0.35% 남아 돌파 확인 필요"
             },
             "currentChangePct": 2.04,
             "replacementWatchLine": 90.0,
@@ -8199,8 +9244,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "매물대주의",
+                "bias": -6,
+                "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": 1.64,
             "replacementWatchLine": 90.0,
@@ -8273,8 +9328,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "매물대주의",
+                "bias": -6,
+                "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": 2.63,
             "replacementWatchLine": 90.0,
@@ -8340,8 +9405,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "전고점대기",
+                "bias": -2,
+                "reason": "20일 전고점까지 2.39% 남아 돌파 확인 필요"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "전고점대기",
+              "bias": -2,
+              "reason": "20일 전고점까지 2.39% 남아 돌파 확인 필요"
             },
             "currentChangePct": 2.16,
             "replacementWatchLine": 90.0,
@@ -8414,8 +9489,18 @@
                 ],
                 "source": "naver_sise_day"
               },
+              "technicalSignal": {
+                "state": "매물대주의",
+                "bias": -6,
+                "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+              },
               "updatedAt": "2026-05-08T00:32:11+09:00",
               "source": "naver_finance"
+            },
+            "technicalDecision": {
+              "state": "매물대주의",
+              "bias": -6,
+              "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
             },
             "currentChangePct": 2.08,
             "replacementWatchLine": 90.0,
@@ -8428,7 +9513,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.0,
         "periodStart": "2026-05-06T16:16+09:00",
-        "periodEnd": "2026-05-08T00:33+09:00"
+        "periodEnd": "2026-05-08T00:35+09:00"
       }
     }
   ]

@@ -229,6 +229,10 @@ function tradingValueText(item = {}) {
 }
 
 function standardReason(item = {}) {
+  const tech = item.technicalDecision;
+  if (tech?.state && !['구조중립', '기술분석대기'].includes(tech.state)) {
+    return `기술구조 ${tech.state}: ${tech.reason || ''}`;
+  }
   const reason = String(item.reason || item.entryReason || '').replace(/^가상\s*/, '').replace(/^진입만:\s*/, '');
   if (!reason) return '판단 근거 보강 대기';
   return reason.length > 64 ? `${reason.slice(0, 64)}…` : reason;
@@ -528,6 +532,7 @@ function candidateTile(c, idx) {
       ${meta ? `<span>meta ${meta}</span>` : ''}
       ${rawScore && rawScore !== score ? `<span>원점수 ${rawScore}</span>` : ''}
       ${c.fundamentals?.badge ? `<span>${c.fundamentals.badge}</span>` : ''}
+      ${c.technicalDecision?.state && !['구조중립', '기술분석대기'].includes(c.technicalDecision.state) ? `<span>기술 ${c.technicalDecision.state}</span>` : ''}
     </div>
     ${fundamentalsButton(c)}
     ${c.candidateNote ? `<details class="candidate-detail"><summary>매수/보유 기준 보기</summary><p>${c.candidateNote}</p></details>` : ''}
