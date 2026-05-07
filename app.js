@@ -455,16 +455,41 @@ function renderItemCharts(data) {
   });
 }
 
-function dashboardDataUrl() {
+function dashboardUrls() {
   const params = new URLSearchParams(window.location.search);
-  return params.get('data') || window.DASHBOARD_DATA_URL || 'data/dashboard-data.json';
+  return {
+    data: params.get('data') || window.DASHBOARD_DATA_URL || 'data/dashboard-data.json',
+    manifest: params.get('manifest') || window.DASHBOARD_MANIFEST_URL || '',
+  };
 }
 
-fetch(dashboardDataUrl(), { cache: 'no-store' })
-  .then(r => {
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+function fetchJson(url) {
+  return fetch(url, { cache: 'no-store' }).then(r => {
+    if (!r.ok) throw new Error(`${url} HTTP ${r.status}`);
     return r.json();
-  })
+  });
+}
+
+async function loadDashboardData() {
+  const urls = dashboardUrls();
+  if (!urls.manifest) return fetchJson(urls.data);
+
+  const manifest = await fetchJson(urls.manifest);
+  const parts = manifest.parts || {};
+  const [summaryPart, sessionsPart, historyPart] = await Promise.all([
+    fetchJson(parts.summary?.url),
+    fetchJson(parts.sessions?.url),
+    fetchJson(parts.history?.url),
+  ]);
+  return {
+    ...summaryPart,
+    generatedAt: manifest.generatedAt || summaryPart.generatedAt || sessionsPart.generatedAt || historyPart.generatedAt,
+    sessions: sessionsPart.sessions || [],
+    history: historyPart.history || [],
+  };
+}
+
+loadDashboardData()
   .then(render)
   .catch(err => {
     document.getElementById('updated').textContent = `데이터 로드 실패: ${err.message}`;
