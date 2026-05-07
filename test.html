@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invest Dashboard Test</title>
+  <link rel="stylesheet" href="style.css?v=20260507-drive-json-test" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Investment Dashboard · Drive JSON Test</p>
+      <h1>투자 대시보드 TEST</h1>
+      <p id="updated" class="muted">loading...</p>
+    </div>
+    <div class="status-pill" id="overallStatus">확인 중</div>
+  </header>
+
+  <main>
+    <section class="summary-grid" id="summaryGrid"></section>
+
+    <div class="dashboard-shell">
+      <nav class="tabs" id="tabs" aria-label="전략별 대시보드 탭"></nav>
+
+      <div class="dashboard-panels">
+        <section class="panel active" id="panel-overview">
+          <div class="grid two">
+            <div class="card wide">
+              <div class="card-head">
+                <h2>평가금액 흐름</h2>
+                <span class="muted">자본금 대비 현재 평가금액</span>
+              </div>
+              <canvas id="amountChart" height="130"></canvas>
+            </div>
+            <div class="card wide">
+              <div class="card-head">
+                <h2>수익률 비교</h2>
+                <span class="muted">실선=전략 · 흰점선=KOSPI · 연두점선=KODEX200</span>
+              </div>
+              <canvas id="returnChart" height="130"></canvas>
+            </div>
+          </div>
+          <div class="overview-guide card">
+            <strong>TEST: Google Drive JSON 기반</strong>
+            <span class="muted">화면 UI는 GitHub Pages, 데이터는 Drive JSON에서 직접 읽습니다.</span>
+          </div>
+          <div class="grid two" id="sessionCards"></div>
+        </section>
+
+        <section id="sessionPanels"></section>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    window.DASHBOARD_DATA_URL = 'https://drive.google.com/uc?export=download&id=1CrZkQQ1Bilvp1YfHCigq7aeVT5dZ9t8G';
+  </script>
+  <script src="app.js?v=20260507-drive-json-test"></script>
+</body>
+</html>

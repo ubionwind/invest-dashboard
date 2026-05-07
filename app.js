@@ -455,8 +455,16 @@ function renderItemCharts(data) {
   });
 }
 
-fetch('data/dashboard-data.json', { cache: 'no-store' })
-  .then(r => r.json())
+function dashboardDataUrl() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('data') || window.DASHBOARD_DATA_URL || 'data/dashboard-data.json';
+}
+
+fetch(dashboardDataUrl(), { cache: 'no-store' })
+  .then(r => {
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    return r.json();
+  })
   .then(render)
   .catch(err => {
     document.getElementById('updated').textContent = `데이터 로드 실패: ${err.message}`;
