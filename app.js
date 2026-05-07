@@ -167,64 +167,6 @@ function candidateSummary(s) {
   </section>`;
 }
 
-function parseEntryScore(note = '', sid = '') {
-  const m = String(note || '').match(/진입 당시 점수\s*([\d.]+)/);
-  return m ? normalizedCandidateScore(Number(m[1]), sid) : null;
-}
-
-function scoreSidForSession(s = {}) {
-  const name = String(s.name || '');
-  if (name === '급등') return 'jaesang.surge.mock';
-  if (name === '단기') return 'jaesang.short.mock';
-  if (name === '일반') return 'jinhye.general.mock';
-  if (name === '매일신규') return 'jaesang.dailynew.mock';
-  if (name === '퀀트가치') return 'jaesang.quant.value.mock';
-  if (name === '퀀트모멘텀') return 'jaesang.quant.momentum.mock';
-  if (name === '퀀트혼합') return 'jaesang.quant.mixed.mock';
-  return String(s.runtimeId || '');
-}
-
-function normalizedCandidateScore(rawScoreNum, sid = '') {
-  const v = Number(rawScoreNum);
-  if (Number.isNaN(v)) return null;
-  if (sid === 'jaesang.surge.mock') {
-    if (v >= 250) return 95;
-    if (v >= 180) return 88;
-    if (v >= 120) return 80;
-    if (v >= 80) return 70;
-    return 55;
-  }
-  if (sid === 'jaesang.short.mock') {
-    if (v >= 65) return 90;
-    if (v >= 62) return 82;
-    if (v >= 60) return 75;
-    if (v >= 55) return 65;
-    return 50;
-  }
-  if (sid === 'jinhye.general.mock') {
-    if (v >= 65) return 90;
-    if (v >= 58) return 80;
-    if (v >= 50) return 70;
-    if (v >= 42) return 55;
-    return 45;
-  }
-  if (sid === 'jaesang.dailynew.mock') {
-    if (v >= 80) return 90;
-    if (v >= 75) return 82;
-    if (v >= 70) return 75;
-    if (v >= 65) return 65;
-    return 50;
-  }
-  if (['jaesang.quant.value.mock', 'jaesang.quant.momentum.mock', 'jaesang.quant.mixed.mock'].includes(sid)) {
-    if (v >= 90) return 95;
-    if (v >= 80) return 88;
-    if (v >= 70) return 78;
-    if (v >= 60) return 65;
-    return 50;
-  }
-  return Math.max(0, Math.min(100, v));
-}
-
 function supplySnapshot(c = {}) {
   const reason = String(c.reason || '');
   const parts = reasonParts(reason);
@@ -323,10 +265,7 @@ function holdingCandidateComparison(s) {
   if (!positions.length && !candidates.length) return '';
   const byCode = Object.fromEntries(candidates.map(c => [String(c.code || ''), c]));
   const heldComparableScores = positions
-    .map(p => {
-      const matched = byCode[String(p.code || '')] || {};
-      return matched.score ?? p.sourceScoreNormalized ?? null;
-    })
+    .map(p => p.currentScoreNormalized ?? p.sourceScoreNormalized ?? null)
     .filter(v => v !== null && v !== undefined && !Number.isNaN(Number(v)))
     .map(Number);
   const lowestHeldScore = heldComparableScores.length ? Math.min(...heldComparableScores) : null;
@@ -345,9 +284,9 @@ function holdingCandidateComparison(s) {
         <h4>보유 종목 진단</h4>
         ${positions.length ? positions.map(pos => {
           const matched = byCode[String(pos.code || '')] || {};
-          const entryScore = parseEntryScore(matched.candidateNote, scoreSidForSession(s)) ?? (pos.sourceScoreNormalized ?? null);
-          const hasCurrentCandidateScore = matched.score !== null && matched.score !== undefined;
-          const currentScore = hasCurrentCandidateScore ? matched.score : (pos.sourceScoreNormalized ?? null);
+          const entryScore = pos.entryScoreNormalized ?? null;
+          const currentScore = pos.currentScoreNormalized ?? pos.sourceScoreNormalized ?? null;
+          const hasCurrentCandidateScore = pos.currentScoreType === 'current' || (matched.score !== null && matched.score !== undefined);
           const currentScoreLabel = hasCurrentCandidateScore ? '현재점수' : '보유점수';
           const graphCurrentLabel = hasCurrentCandidateScore ? '현재' : '보유';
           const scoreGap = currentScore == null || entryScore == null ? null : Number(currentScore) - entryScore;
@@ -358,7 +297,7 @@ function holdingCandidateComparison(s) {
           return `<article class="holding-compare-card">
             <div class="compare-hero">
               <div class="compare-identity"><strong>${pos.name || '-'}</strong><b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b></div>
-              ${switchMiniGraph({ baseScore: entryScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct, currentLabel: graphCurrentLabel })}
+              ${switchMiniGraph({ baseScore: entryScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct, currentLabel: graphCurrentLabel, triggerBaseScore: currentScore })}
               <div class="compare-meta"><span>${pos.code || ''}</span><em>${decision}</em></div>
             </div>
             ${diagnosticRows([
@@ -366,7 +305,7 @@ function holdingCandidateComparison(s) {
               ['진입점수', normalizedScoreText(entryScore)],
               ['점수변화', scoreGap == null ? '-' : `${scoreGap > 0 ? '+' : ''}${scoreGap.toFixed(1)}`, scoreGap == null ? '' : (scoreGap >= 0 ? 'up' : 'down')],
               ['등락/수익', pct(pos.returnPct), ret >= 0 ? 'up' : 'down'],
-              ['거래/수급', tradingValueText(matched.reason ? matched : pos)],
+              ['거래/수급', pos.liquidityText || tradingValueText(matched.reason ? matched : pos)],
               ['유지/교체 이유', holdReason],
             ])}
             <small class="muted">매입 ${money(pos.entryPrice)} · 현재 ${money(pos.currentPrice)} · 손익 ${money(pos.pnl)}</small>
@@ -376,11 +315,11 @@ function holdingCandidateComparison(s) {
       <div class="comparison-block">
         <h4>교체 후보군</h4>
         ${replacementPool.length ? replacementPool.map(c => {
-          const edge = c.score == null || lowestHeldScore == null ? null : Number(c.score) - lowestHeldScore;
+          const edge = c.scoreVsHeldLowest ?? (c.score == null || lowestHeldScore == null ? null : Number(c.score) - lowestHeldScore);
           return `<article class="replacement-card">
             <div class="compare-hero">
               <div class="compare-identity"><strong>${c.name || '-'}</strong><b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b></div>
-              ${switchMiniGraph({ baseScore: lowestHeldScore, currentScore: c.score, candidateScore: c.score, currentLabel: '후보', triggerBaseScore: lowestHeldScore })}
+              ${switchMiniGraph({ baseScore: c.comparisonBaseScore ?? lowestHeldScore, currentScore: c.candidateScoreNormalized ?? c.score, candidateScore: c.candidateScoreNormalized ?? c.score, currentLabel: '후보', triggerBaseScore: c.comparisonBaseScore ?? lowestHeldScore })}
               <div class="compare-meta"><span>${c.code || ''}</span><em class="${edge == null ? '' : (edge >= 0 ? 'up' : 'down')}">${edge == null ? '비교대기' : `보유최저 대비 ${edge > 0 ? '+' : ''}${edge.toFixed(1)}`}</em></div>
             </div>
             ${diagnosticRows([
@@ -388,7 +327,7 @@ function holdingCandidateComparison(s) {
               ['진입상태', '미진입'],
               ['기준대비', edge == null ? '-' : `${edge > 0 ? '+' : ''}${edge.toFixed(1)}`, edge == null ? '' : (edge >= 0 ? 'up' : 'down')],
               ['등락/수익', c.changePct == null ? '-' : pct(c.changePct), c.changePct == null ? '' : (Number(c.changePct) >= 0 ? 'up' : 'down')],
-              ['거래/수급', tradingValueText(c)],
+              ['거래/수급', c.liquidityText || tradingValueText(c)],
               ['유지/교체 이유', standardReason(c)],
             ])}
             <small class="muted">${c.candidateNote || c.status || '현재 후보'}</small>
