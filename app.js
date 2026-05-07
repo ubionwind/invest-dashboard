@@ -294,7 +294,10 @@ function holdingCandidateComparison(s) {
         ${positions.length ? positions.map(pos => {
           const matched = byCode[String(pos.code || '')] || {};
           const entryScore = parseEntryScore(matched.candidateNote, s.runtimeId) ?? (pos.sourceScoreNormalized ?? null);
-          const currentScore = matched.score ?? pos.sourceScoreNormalized ?? null;
+          const hasCurrentCandidateScore = matched.score !== null && matched.score !== undefined;
+          const currentScore = hasCurrentCandidateScore ? matched.score : (pos.sourceScoreNormalized ?? null);
+          const currentScoreLabel = hasCurrentCandidateScore ? '현재점수' : '보유기준';
+          const graphCurrentLabel = hasCurrentCandidateScore ? '현재' : '보유';
           const scoreGap = currentScore == null || entryScore == null ? null : Number(currentScore) - entryScore;
           const decision = decisionForHolding(pos, matched, bestReplacement);
           const ret = Number(pos.returnPct || 0);
@@ -303,11 +306,11 @@ function holdingCandidateComparison(s) {
           return `<article class="holding-compare-card">
             <div class="compare-hero">
               <div class="compare-identity"><strong>${pos.name || '-'}</strong><b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b></div>
-              ${switchMiniGraph({ baseScore: entryScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct })}
+              ${switchMiniGraph({ baseScore: entryScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct, currentLabel: graphCurrentLabel })}
               <div class="compare-meta"><span>${pos.code || ''}</span><em>${decision}</em></div>
             </div>
             ${diagnosticRows([
-              ['현재점수', normalizedScoreText(currentScore)],
+              [currentScoreLabel, normalizedScoreText(currentScore)],
               ['진입점수', normalizedScoreText(entryScore)],
               ['점수변화', scoreGap == null ? '-' : `${scoreGap > 0 ? '+' : ''}${scoreGap.toFixed(1)}`, scoreGap == null ? '' : (scoreGap >= 0 ? 'up' : 'down')],
               ['등락/수익', pct(pos.returnPct), ret >= 0 ? 'up' : 'down'],
