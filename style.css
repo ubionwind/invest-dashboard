@@ -88,7 +88,7 @@ main { padding: 24px clamp(18px, 4vw, 48px) 44px; }
 .overview-compact-metrics b { font-size: 13px; letter-spacing: -.03em; }
 .overview-compact-metrics em { margin-top: 2px; color: var(--muted); font-style: normal; font-size: 10px; }
 .strategy-dashboard { display: grid; gap: 12px; }
-.strategy-return-cards { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+.strategy-return-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .return-card { min-width: 0; padding: 14px; border-radius: 17px; border: 1px solid rgba(255,255,255,.075); background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025)); }
 .return-card span, .return-card strong, .return-card small { display: block; }
 .return-card span { color: var(--muted); font-size: 12px; font-weight: 800; }
