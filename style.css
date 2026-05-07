@@ -106,21 +106,20 @@ main { padding: 24px clamp(18px, 4vw, 48px) 44px; }
 .comparison-block { min-width: 0; display: grid; grid-auto-rows: max-content; align-content: start; align-items: start; gap: 9px; }
 .comparison-block h4 { margin: 0; color: #ffe5a3; font-size: 13px; }
 .holding-compare-card, .replacement-card { min-width: 0; min-height: 0; height: fit-content; display: grid; grid-auto-rows: max-content; align-content: start; gap: 8px; padding: 11px; border-radius: 14px; border: 1px solid rgba(255,255,255,.07); background: rgba(255,255,255,.04); }
-.compare-card-layout { grid-template-columns: 78px minmax(0, 1fr); grid-auto-rows: auto; align-items: start; column-gap: 9px; }
-.compare-card-main { min-width: 0; display: grid; gap: 8px; }
-.compare-title { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-.compare-score-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-.compare-title strong { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; }
-.compare-title span { color: var(--muted); font-size: 12px; flex: 0 0 auto; }
-.compare-score-row b { font-size: 23px; line-height: 1; letter-spacing: -.04em; }
-.compare-score-row em { padding: 4px 8px; border-radius: 999px; background: rgba(255,255,255,.06); color: #fff0bf; font-style: normal; font-size: 11px; font-weight: 900; white-space: nowrap; }
+.compare-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 10px; align-items: center; }
+.compare-identity { min-width: 0; display: grid; gap: 4px; }
+.compare-identity strong { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; }
+.compare-identity b { font-size: 23px; line-height: 1; letter-spacing: -.04em; }
+.compare-meta { display: grid; justify-items: end; gap: 7px; }
+.compare-meta span { color: var(--muted); font-size: 12px; }
+.compare-meta em { padding: 4px 8px; border-radius: 999px; background: rgba(255,255,255,.06); color: #fff0bf; font-style: normal; font-size: 11px; font-weight: 900; white-space: nowrap; }
 .diagnostic-rows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
 .diagnostic-rows div { min-width: 0; padding: 7px 6px; border-radius: 10px; background: rgba(0,0,0,.12); }
 .diagnostic-rows span, .diagnostic-rows b { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .diagnostic-rows span { color: var(--muted); font-size: 10px; }
 .diagnostic-rows b { margin-top: 2px; font-size: 13px; }
 .diagnostic-rows div:nth-child(6) { grid-column: 1 / -1; }
-.switch-mini { display: grid; justify-items: center; gap: 3px; align-self: start; padding: 5px 4px; border-radius: 12px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.06); }
+.switch-mini { display: grid; grid-template-columns: 68px auto; align-items: center; gap: 6px; padding: 5px 6px; border-radius: 12px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.06); }
 .switch-mini svg { width: 68px; height: 38px; overflow: visible; }
 .switch-line { stroke: rgba(255,209,102,.42); stroke-width: 1.5; stroke-dasharray: 4 3; }
 .switch-curve { fill: none; stroke: var(--accent); stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
@@ -259,9 +258,10 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .comparison-columns { grid-template-columns: 1fr; gap: 10px; }
   .compare-score-row b { font-size: 22px; }
   .diagnostic-rows { gap: 5px; }
-  .compare-card-layout { grid-template-columns: 72px minmax(0, 1fr); column-gap: 8px; }
-  .switch-mini { gap: 3px; padding: 4px 3px; }
-  .switch-mini svg { width: 62px; height: 36px; }
+  .compare-hero { grid-template-columns: minmax(0, 1fr) auto auto; gap: 7px; }
+  .compare-identity b { font-size: 22px; }
+  .switch-mini { grid-template-columns: 58px auto; gap: 4px; padding: 4px 5px; }
+  .switch-mini svg { width: 58px; height: 34px; }
   .switch-score-labels { font-size: 8.5px; }
   .overview-strategy-card { padding: 12px; gap: 8px; }
   .overview-return-row > strong { font-size: 27px; }
