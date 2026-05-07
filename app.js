@@ -172,15 +172,55 @@ function parseEntryScore(note = '', sid = '') {
   return m ? normalizedCandidateScore(Number(m[1]), sid) : null;
 }
 
+function scoreSidForSession(s = {}) {
+  const name = String(s.name || '');
+  if (name === '급등') return 'jaesang.surge.mock';
+  if (name === '단기') return 'jaesang.short.mock';
+  if (name === '일반') return 'jinhye.general.mock';
+  if (name === '매일신규') return 'jaesang.dailynew.mock';
+  if (name === '퀀트가치') return 'jaesang.quant.value.mock';
+  if (name === '퀀트모멘텀') return 'jaesang.quant.momentum.mock';
+  if (name === '퀀트혼합') return 'jaesang.quant.mixed.mock';
+  return String(s.runtimeId || '');
+}
+
 function normalizedCandidateScore(rawScoreNum, sid = '') {
   const v = Number(rawScoreNum);
   if (Number.isNaN(v)) return null;
-  if (String(sid).includes('surge')) {
+  if (sid === 'jaesang.surge.mock') {
     if (v >= 250) return 95;
     if (v >= 180) return 88;
     if (v >= 120) return 80;
     if (v >= 80) return 70;
-    return Math.max(0, Math.min(100, v / 80 * 70));
+    return 55;
+  }
+  if (sid === 'jaesang.short.mock') {
+    if (v >= 65) return 90;
+    if (v >= 62) return 82;
+    if (v >= 60) return 75;
+    if (v >= 55) return 65;
+    return 50;
+  }
+  if (sid === 'jinhye.general.mock') {
+    if (v >= 65) return 90;
+    if (v >= 58) return 80;
+    if (v >= 50) return 70;
+    if (v >= 42) return 55;
+    return 45;
+  }
+  if (sid === 'jaesang.dailynew.mock') {
+    if (v >= 80) return 90;
+    if (v >= 75) return 82;
+    if (v >= 70) return 75;
+    if (v >= 65) return 65;
+    return 50;
+  }
+  if (['jaesang.quant.value.mock', 'jaesang.quant.momentum.mock', 'jaesang.quant.mixed.mock'].includes(sid)) {
+    if (v >= 90) return 95;
+    if (v >= 80) return 88;
+    if (v >= 70) return 78;
+    if (v >= 60) return 65;
+    return 50;
   }
   return Math.max(0, Math.min(100, v));
 }
@@ -197,14 +237,18 @@ function supplySnapshot(c = {}) {
   ].filter(Boolean).join(' · ') || '수급/테마 데이터 보강 대기';
 }
 
-function tradingValueText(item = {}) {
+function liquidityEvidenceText(item = {}) {
   const reason = String(item.reason || item.entryReason || '');
-  const m = reason.match(/거래대금\s*([\d,.]+\s*[조억만]?)/);
-  if (m) return m[1];
+  const amount = reason.match(/거래대금\s*([\d,.]+\s*[조억만]?)/);
+  if (amount) return `거래대금 ${amount[1]}`;
   const score = reason.match(/거래대금점수\s*=\s*([\d.]+)/);
-  if (score) return `점수 ${score[1]}`;
-  if (reason.includes('거래대금 증가')) return '증가 신호';
-  return '데이터 대기';
+  if (score) return `거래대금 점수 ${Number(score[1]).toFixed(0)}`;
+  if (reason.includes('거래대금 증가')) return '거래대금 증가';
+  return '수급 데이터 대기';
+}
+
+function tradingValueText(item = {}) {
+  return liquidityEvidenceText(item);
 }
 
 function standardReason(item = {}) {
@@ -234,7 +278,7 @@ function switchMiniGraph({ baseScore = null, currentScore = null, candidateScore
       <polyline points="${points}" class="switch-curve" />
       <circle cx="52" cy="${toY(cur)}" r="2.8" class="switch-dot" />
     </svg>
-    <span class="switch-score-labels"><b>기준 ${Math.round(trigger)}</b><b>${currentLabel} ${Math.round(cur)}</b></span>
+    <span class="switch-score-labels"><b>관찰선 ${Math.round(trigger)}</b><b>${currentLabel} ${Math.round(cur)}</b></span>
   </div>`;
 }
 
@@ -278,13 +322,21 @@ function holdingCandidateComparison(s) {
   const candidates = s.topCandidates || [];
   if (!positions.length && !candidates.length) return '';
   const byCode = Object.fromEntries(candidates.map(c => [String(c.code || ''), c]));
+  const heldComparableScores = positions
+    .map(p => {
+      const matched = byCode[String(p.code || '')] || {};
+      return matched.score ?? p.sourceScoreNormalized ?? null;
+    })
+    .filter(v => v !== null && v !== undefined && !Number.isNaN(Number(v)))
+    .map(Number);
+  const lowestHeldScore = heldComparableScores.length ? Math.min(...heldComparableScores) : null;
   const replacementPool = candidates.filter(c => !positions.some(p => String(p.code || '') === String(c.code || ''))).slice(0, 5);
   const bestReplacement = replacementPool[0] || {};
   return `<section class="comparison-lab">
     <div class="comparison-head">
       <div>
         <h3>보유·후보 비교</h3>
-        <p class="muted">1차: 보유/후보 비교 · 2차: 점수 변화 · 3차: 수급 변화</p>
+        <p class="muted">판단점수는 0~100 통일 · 교체관찰선은 보유점수+12 · 거래/수급은 금액/점수/신호/대기로 표시</p>
       </div>
       <span class="badge compact">초안</span>
     </div>
@@ -293,10 +345,10 @@ function holdingCandidateComparison(s) {
         <h4>보유 종목 진단</h4>
         ${positions.length ? positions.map(pos => {
           const matched = byCode[String(pos.code || '')] || {};
-          const entryScore = parseEntryScore(matched.candidateNote, s.runtimeId) ?? (pos.sourceScoreNormalized ?? null);
+          const entryScore = parseEntryScore(matched.candidateNote, scoreSidForSession(s)) ?? (pos.sourceScoreNormalized ?? null);
           const hasCurrentCandidateScore = matched.score !== null && matched.score !== undefined;
           const currentScore = hasCurrentCandidateScore ? matched.score : (pos.sourceScoreNormalized ?? null);
-          const currentScoreLabel = hasCurrentCandidateScore ? '현재점수' : '보유기준';
+          const currentScoreLabel = hasCurrentCandidateScore ? '현재점수' : '보유점수';
           const graphCurrentLabel = hasCurrentCandidateScore ? '현재' : '보유';
           const scoreGap = currentScore == null || entryScore == null ? null : Number(currentScore) - entryScore;
           const decision = decisionForHolding(pos, matched, bestReplacement);
@@ -314,7 +366,7 @@ function holdingCandidateComparison(s) {
               ['진입점수', normalizedScoreText(entryScore)],
               ['점수변화', scoreGap == null ? '-' : `${scoreGap > 0 ? '+' : ''}${scoreGap.toFixed(1)}`, scoreGap == null ? '' : (scoreGap >= 0 ? 'up' : 'down')],
               ['등락/수익', pct(pos.returnPct), ret >= 0 ? 'up' : 'down'],
-              ['거래대금', tradingValueText(matched.reason ? matched : pos)],
+              ['거래/수급', tradingValueText(matched.reason ? matched : pos)],
               ['유지/교체 이유', holdReason],
             ])}
             <small class="muted">매입 ${money(pos.entryPrice)} · 현재 ${money(pos.currentPrice)} · 손익 ${money(pos.pnl)}</small>
@@ -324,20 +376,19 @@ function holdingCandidateComparison(s) {
       <div class="comparison-block">
         <h4>교체 후보군</h4>
         ${replacementPool.length ? replacementPool.map(c => {
-          const bestHeldScore = Math.max(...positions.map(p => Number((byCode[String(p.code || '')] || {}).score ?? -1)), -1);
-          const edge = c.score == null || bestHeldScore < 0 ? null : Number(c.score) - bestHeldScore;
+          const edge = c.score == null || lowestHeldScore == null ? null : Number(c.score) - lowestHeldScore;
           return `<article class="replacement-card">
             <div class="compare-hero">
               <div class="compare-identity"><strong>${c.name || '-'}</strong><b>${c.score == null ? '-' : Number(c.score).toFixed(1)}</b></div>
-              ${switchMiniGraph({ baseScore: bestHeldScore < 0 ? null : bestHeldScore, currentScore: c.score, candidateScore: c.score, currentLabel: '후보', triggerBaseScore: bestHeldScore < 0 ? null : bestHeldScore })}
-              <div class="compare-meta"><span>${c.code || ''}</span><em class="${edge == null ? '' : (edge >= 0 ? 'up' : 'down')}">${edge == null ? '비교대기' : `보유상위 대비 ${edge > 0 ? '+' : ''}${edge.toFixed(1)}`}</em></div>
+              ${switchMiniGraph({ baseScore: lowestHeldScore, currentScore: c.score, candidateScore: c.score, currentLabel: '후보', triggerBaseScore: lowestHeldScore })}
+              <div class="compare-meta"><span>${c.code || ''}</span><em class="${edge == null ? '' : (edge >= 0 ? 'up' : 'down')}">${edge == null ? '비교대기' : `보유최저 대비 ${edge > 0 ? '+' : ''}${edge.toFixed(1)}`}</em></div>
             </div>
             ${diagnosticRows([
-              ['현재점수', normalizedScoreText(c.score)],
-              ['진입점수', '후보'],
-              ['점수변화', edge == null ? '-' : `${edge > 0 ? '+' : ''}${edge.toFixed(1)}`, edge == null ? '' : (edge >= 0 ? 'up' : 'down')],
+              ['후보점수', normalizedScoreText(c.score)],
+              ['진입상태', '미진입'],
+              ['기준대비', edge == null ? '-' : `${edge > 0 ? '+' : ''}${edge.toFixed(1)}`, edge == null ? '' : (edge >= 0 ? 'up' : 'down')],
               ['등락/수익', c.changePct == null ? '-' : pct(c.changePct), c.changePct == null ? '' : (Number(c.changePct) >= 0 ? 'up' : 'down')],
-              ['거래대금', tradingValueText(c)],
+              ['거래/수급', tradingValueText(c)],
               ['유지/교체 이유', standardReason(c)],
             ])}
             <small class="muted">${c.candidateNote || c.status || '현재 후보'}</small>
