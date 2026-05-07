@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-07T23:27+09:00",
+  "generatedAt": "2026-05-08T00:24+09:00",
   "sessions": [
     {
       "name": "일반",
@@ -37,8 +37,18 @@
             "per": 92.82,
             "pbr": 8.1,
             "roe": 9.12,
+            "peerAverage": {
+              "per": 71.88,
+              "pbr": 9.09,
+              "roe": 14.93
+            },
             "badge": "고PBR · 고PER주의",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 9.12%로 중간 수준의 수익성입니다. 비교군 평균 14.93% 대비 낮습니다.",
+              "PBR 8.10배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 9.09배 대비 낮습니다.",
+              "PER 92.82배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다. 비교군 평균 71.88배 대비 높습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 45,
@@ -71,8 +81,18 @@
             "per": 11.43,
             "pbr": 2.82,
             "roe": 27.71,
+            "peerAverage": {
+              "per": 54.4,
+              "pbr": 11.74,
+              "roe": 40.23
+            },
             "badge": "고ROE",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 27.71%로 자기자본 수익성이 높은 편입니다. 비교군 평균 40.23% 대비 낮습니다.",
+              "PBR 2.82배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 11.74배 대비 낮습니다.",
+              "PER 11.43배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 54.40배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 45,
@@ -105,8 +125,18 @@
             "per": 80.86,
             "pbr": 4.95,
             "roe": 6.35,
+            "peerAverage": {
+              "per": null,
+              "pbr": 4.15,
+              "roe": -4.58
+            },
             "badge": "고PER주의",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 6.35%로 중간 수준의 수익성입니다. 비교군 평균 -4.58% 대비 높습니다.",
+              "PBR 4.95배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 4.15배 대비 높습니다.",
+              "PER 80.86배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 45,
@@ -131,7 +161,7 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "보유 1일 · 매입 264859원 · 현재 271500원 · 평가 8688000원 · 손익 212500원",
+          "candidateNote": "보유 2일 · 매입 264859원 · 현재 271500원 · 평가 8688000원 · 손익 212500원",
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
@@ -139,8 +169,18 @@
             "per": 36.84,
             "pbr": 1.51,
             "roe": 4.15,
+            "peerAverage": {
+              "per": 15.73,
+              "pbr": 1.44,
+              "roe": 14.42
+            },
             "badge": "저ROE",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 4.15%로 수익성은 낮은 편입니다. 비교군 평균 14.42% 대비 낮습니다.",
+              "PBR 1.51배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 1.44배 대비 높습니다.",
+              "PER 36.84배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 15.73배 대비 높습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 45,
@@ -173,8 +213,18 @@
             "per": -11.3,
             "pbr": 1.82,
             "roe": -15.61,
+            "peerAverage": {
+              "per": 9.75,
+              "pbr": 2.56,
+              "roe": 45.45
+            },
             "badge": "저ROE · PER불가",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE -15.61%로 수익성은 낮은 편입니다. 비교군 평균 45.45% 대비 낮습니다.",
+              "PBR 1.82배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 2.56배 대비 낮습니다.",
+              "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 45,
@@ -207,8 +257,18 @@
             "per": 4.67,
             "pbr": 0.58,
             "roe": 13.68,
+            "peerAverage": {
+              "per": 12.48,
+              "pbr": 0.62,
+              "roe": 10.44
+            },
             "badge": "저PBR · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 13.68%로 중간 수준의 수익성입니다. 비교군 평균 10.44% 대비 높습니다.",
+              "PBR 0.58배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.62배 대비 낮습니다.",
+              "PER 4.67배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 12.48배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 45,
@@ -241,8 +301,18 @@
             "per": 4.59,
             "pbr": 0.85,
             "roe": 20.44,
+            "peerAverage": {
+              "per": 8.21,
+              "pbr": 0.73,
+              "roe": 15.66
+            },
             "badge": "고ROE · 저PBR · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 20.44%로 자기자본 수익성이 높은 편입니다. 비교군 평균 15.66% 대비 높습니다.",
+              "PBR 0.85배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.73배 대비 높습니다.",
+              "PER 4.59배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 8.21배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 45,
@@ -275,8 +345,18 @@
             "per": 36.25,
             "pbr": 1.45,
             "roe": 4.41,
+            "peerAverage": {
+              "per": 23.59,
+              "pbr": 1.26,
+              "roe": 7.67
+            },
             "badge": "저ROE",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 4.41%로 수익성은 낮은 편입니다. 비교군 평균 7.67% 대비 낮습니다.",
+              "PBR 1.45배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 1.26배 대비 높습니다.",
+              "PER 36.25배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 23.59배 대비 높습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 45,
@@ -293,7 +373,7 @@
           "status": "보유중",
           "reason": "32주 · 매입 264859원 · 현재 271500원 · 평가 8688000원 · 손익 212500원",
           "returnPct": 2.51,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         }
       ],
       "sellAlerts": [
@@ -322,7 +402,7 @@
             "entryPrice": 264859,
             "currentPrice": 271500,
             "entryAt": "2026-05-06T12:12+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 8688000,
             "pnl": 212500,
             "returnPct": 2.51,
@@ -333,8 +413,18 @@
               "per": 36.84,
               "pbr": 1.51,
               "roe": 4.15,
+              "peerAverage": {
+                "per": 15.73,
+                "pbr": 1.44,
+                "roe": 14.42
+              },
               "badge": "저ROE",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 4.15%로 수익성은 낮은 편입니다. 비교군 평균 14.42% 대비 낮습니다.",
+                "PBR 1.51배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 1.44배 대비 높습니다.",
+                "PER 36.84배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 15.73배 대비 높습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": null,
@@ -349,10 +439,10 @@
       },
       "comparison": {
         "returnPct": 2.13,
-        "benchmarkReturnPct": 1.2,
-        "excessReturnPct": 0.93,
+        "benchmarkReturnPct": 1.44,
+        "excessReturnPct": 0.69,
         "periodStart": "2026-05-06T12:12+09:00",
-        "periodEnd": "2026-05-07T23:27+09:00"
+        "periodEnd": "2026-05-08T00:24+09:00"
       }
     },
     {
@@ -383,7 +473,7 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "보유 1일 · 매입 149860원 · 현재 147400원 · 평가 13118600원 · 손익 -218900원",
+          "candidateNote": "보유 2일 · 매입 149860원 · 현재 147400원 · 평가 13118600원 · 손익 -218900원",
           "reason": "meta=0.84; 등락률=-2.77; theme=AI기판",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
@@ -391,8 +481,18 @@
             "per": 39.81,
             "pbr": 7.12,
             "roe": 19.51,
+            "peerAverage": {
+              "per": 55.35,
+              "pbr": 8.24,
+              "roe": 27.39
+            },
             "badge": "고ROE · 고PBR",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 19.51%로 자기자본 수익성이 높은 편입니다. 비교군 평균 27.39% 대비 낮습니다.",
+              "PBR 7.12배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 8.24배 대비 낮습니다.",
+              "PER 39.81배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 55.35배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 75,
@@ -417,7 +517,7 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "보유 1일 · 매입 383341원 · 현재 393000원 · 평가 8646000원 · 손익 212500원",
+          "candidateNote": "보유 2일 · 매입 383341원 · 현재 393000원 · 평가 8646000원 · 손익 212500원",
           "reason": "",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
@@ -425,8 +525,18 @@
             "per": 22.48,
             "pbr": 10.45,
             "roe": 55.54,
+            "peerAverage": {
+              "per": 50.2,
+              "pbr": 15.25,
+              "roe": 32.21
+            },
             "badge": "고ROE · 고PBR",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 55.54%로 자기자본 수익성이 높은 편입니다. 비교군 평균 32.21% 대비 높습니다.",
+              "PBR 10.45배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 15.25배 대비 낮습니다.",
+              "PER 22.48배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 50.20배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 50,
@@ -459,8 +569,18 @@
             "per": -45.94,
             "pbr": 1.89,
             "roe": -4.15,
+            "peerAverage": {
+              "per": 134.76,
+              "pbr": 7.5,
+              "roe": 1.13
+            },
             "badge": "저ROE · PER불가",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE -4.15%로 수익성은 낮은 편입니다. 비교군 평균 1.13% 대비 낮습니다.",
+              "PBR 1.89배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 7.50배 대비 낮습니다.",
+              "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 50,
@@ -485,7 +605,7 @@
           "action": "관찰",
           "validationStatus": "",
           "suggestedQty": null,
-          "candidateNote": "보유 1일 · 매입 224000원 · 현재 235500원 · 평가 7771500원 · 손익 379500원",
+          "candidateNote": "보유 2일 · 매입 224000원 · 현재 235500원 · 평가 7771500원 · 손익 379500원",
           "reason": "meta=0.76; 등락률=3.06; theme=2차전지소재",
           "liquidityText": "수급 데이터 대기",
           "positionLimit": 5,
@@ -493,8 +613,18 @@
             "per": -3224.66,
             "pbr": 20.51,
             "roe": -0.64,
+            "peerAverage": {
+              "per": 1214.67,
+              "pbr": 7.55,
+              "roe": -2.08
+            },
             "badge": "저ROE · 고PBR · PER불가",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE -0.64%로 수익성은 낮은 편입니다. 비교군 평균 -2.08% 대비 높습니다.",
+              "PBR 20.51배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 7.55배 대비 높습니다.",
+              "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 75,
@@ -511,7 +641,7 @@
           "status": "보유중",
           "reason": "89주 · 매입 149860원 · 현재 147400원 · 평가 13118600원 · 손익 -218900원",
           "returnPct": -1.64,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         },
         {
           "code": "042700",
@@ -519,7 +649,7 @@
           "status": "보유중",
           "reason": "22주 · 매입 383341원 · 현재 393000원 · 평가 8646000원 · 손익 212500원",
           "returnPct": 2.52,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         },
         {
           "code": "247540",
@@ -527,7 +657,7 @@
           "status": "보유중",
           "reason": "33주 · 매입 224000원 · 현재 235500원 · 평가 7771500원 · 손익 379500원",
           "returnPct": 5.13,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         }
       ],
       "sellAlerts": [
@@ -564,7 +694,7 @@
             "entryPrice": 149860,
             "currentPrice": 147400,
             "entryAt": "2026-05-06T10:08+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 13118600,
             "pnl": -218900,
             "returnPct": -1.64,
@@ -575,8 +705,18 @@
               "per": 39.81,
               "pbr": 7.12,
               "roe": 19.51,
+              "peerAverage": {
+                "per": 55.35,
+                "pbr": 8.24,
+                "roe": 27.39
+              },
               "badge": "고ROE · 고PBR",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 19.51%로 자기자본 수익성이 높은 편입니다. 비교군 평균 27.39% 대비 낮습니다.",
+                "PBR 7.12배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 8.24배 대비 낮습니다.",
+                "PER 39.81배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 55.35배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": -2.77,
@@ -594,7 +734,7 @@
             "entryPrice": 383341,
             "currentPrice": 393000,
             "entryAt": "2026-05-06T10:08+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 8646000,
             "pnl": 212500,
             "returnPct": 2.52,
@@ -605,8 +745,18 @@
               "per": 22.48,
               "pbr": 10.45,
               "roe": 55.54,
+              "peerAverage": {
+                "per": 50.2,
+                "pbr": 15.25,
+                "roe": 32.21
+              },
               "badge": "고ROE · 고PBR",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 55.54%로 자기자본 수익성이 높은 편입니다. 비교군 평균 32.21% 대비 높습니다.",
+                "PBR 10.45배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 15.25배 대비 낮습니다.",
+                "PER 22.48배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 50.20배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": null,
@@ -624,7 +774,7 @@
             "entryPrice": 224000,
             "currentPrice": 235500,
             "entryAt": "2026-05-06T14:40+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 7771500,
             "pnl": 379500,
             "returnPct": 5.13,
@@ -635,8 +785,18 @@
               "per": -3224.66,
               "pbr": 20.51,
               "roe": -0.64,
+              "peerAverage": {
+                "per": 1214.67,
+                "pbr": 7.55,
+                "roe": -2.08
+              },
               "badge": "저ROE · 고PBR · PER불가",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE -0.64%로 수익성은 낮은 편입니다. 비교군 평균 -2.08% 대비 높습니다.",
+                "PBR 20.51배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 7.55배 대비 높습니다.",
+                "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 3.06,
@@ -651,10 +811,10 @@
       },
       "comparison": {
         "returnPct": 1.24,
-        "benchmarkReturnPct": 1.2,
-        "excessReturnPct": 0.04,
+        "benchmarkReturnPct": 1.44,
+        "excessReturnPct": -0.2,
         "periodStart": "2026-05-06T10:08+09:00",
-        "periodEnd": "2026-05-07T23:27+09:00"
+        "periodEnd": "2026-05-08T00:24+09:00"
       }
     },
     {
@@ -693,8 +853,18 @@
             "per": 183.04,
             "pbr": 1.43,
             "roe": 0.78,
+            "peerAverage": {
+              "per": 479.27,
+              "pbr": 4.79,
+              "roe": 0.61
+            },
             "badge": "저ROE · 고PER주의",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 0.78%로 수익성은 낮은 편입니다. 비교군 평균 0.61% 대비 높습니다.",
+              "PBR 1.43배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 4.79배 대비 낮습니다.",
+              "PER 183.04배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다. 비교군 평균 479.27배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 80,
@@ -727,8 +897,18 @@
             "per": 463.89,
             "pbr": 2.2,
             "roe": 0.47,
+            "peerAverage": {
+              "per": 42.71,
+              "pbr": 5.46,
+              "roe": 17.46
+            },
             "badge": "저ROE · 고PER주의",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 0.47%로 수익성은 낮은 편입니다. 비교군 평균 17.46% 대비 낮습니다.",
+              "PBR 2.20배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 5.46배 대비 낮습니다.",
+              "PER 463.89배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다. 비교군 평균 42.71배 대비 높습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 80,
@@ -761,8 +941,18 @@
             "per": -46.0,
             "pbr": 1.92,
             "roe": -4.22,
+            "peerAverage": {
+              "per": 79.52,
+              "pbr": 3.98,
+              "roe": 9.29
+            },
             "badge": "저ROE · PER불가",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE -4.22%로 수익성은 낮은 편입니다. 비교군 평균 9.29% 대비 낮습니다.",
+              "PBR 1.92배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 3.98배 대비 낮습니다.",
+              "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 80,
@@ -795,8 +985,18 @@
             "per": -11.3,
             "pbr": 1.82,
             "roe": -15.61,
+            "peerAverage": {
+              "per": 9.75,
+              "pbr": 2.56,
+              "roe": 45.45
+            },
             "badge": "저ROE · PER불가",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE -15.61%로 수익성은 낮은 편입니다. 비교군 평균 45.45% 대비 낮습니다.",
+              "PBR 1.82배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 2.56배 대비 낮습니다.",
+              "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 70,
@@ -829,8 +1029,18 @@
             "per": 4.67,
             "pbr": 0.58,
             "roe": 13.68,
+            "peerAverage": {
+              "per": 12.48,
+              "pbr": 0.62,
+              "roe": 10.44
+            },
             "badge": "저PBR · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 13.68%로 중간 수준의 수익성입니다. 비교군 평균 10.44% 대비 높습니다.",
+              "PBR 0.58배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.62배 대비 낮습니다.",
+              "PER 4.67배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 12.48배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 70,
@@ -863,8 +1073,18 @@
             "per": 36.84,
             "pbr": 1.51,
             "roe": 4.15,
+            "peerAverage": {
+              "per": 15.73,
+              "pbr": 1.44,
+              "roe": 14.42
+            },
             "badge": "저ROE",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 4.15%로 수익성은 낮은 편입니다. 비교군 평균 14.42% 대비 낮습니다.",
+              "PBR 1.51배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 1.44배 대비 높습니다.",
+              "PER 36.84배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 15.73배 대비 높습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 70,
@@ -897,8 +1117,18 @@
             "per": 55.43,
             "pbr": 2.52,
             "roe": 5.07,
+            "peerAverage": {
+              "per": 77.51,
+              "pbr": 2.25,
+              "roe": 4.4
+            },
             "badge": "고PER주의",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 5.07%로 중간 수준의 수익성입니다. 비교군 평균 4.40% 대비 높습니다.",
+              "PBR 2.52배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 2.25배 대비 높습니다.",
+              "PER 55.43배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다. 비교군 평균 77.51배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 55,
@@ -931,8 +1161,18 @@
             "per": -3224.66,
             "pbr": 20.51,
             "roe": -0.64,
+            "peerAverage": {
+              "per": 1214.67,
+              "pbr": 7.55,
+              "roe": -2.08
+            },
             "badge": "저ROE · 고PBR · PER불가",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE -0.64%로 수익성은 낮은 편입니다. 비교군 평균 -2.08% 대비 높습니다.",
+              "PBR 20.51배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 7.55배 대비 높습니다.",
+              "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 55,
@@ -949,7 +1189,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 305250.0원 · 평가 1911000원 · 손익 79500원",
           "returnPct": 4.34,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         },
         {
           "code": "267260",
@@ -957,7 +1197,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 1379000.0원 · 평가 1420000원 · 손익 41000원",
           "returnPct": 2.97,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         },
         {
           "code": "003670",
@@ -965,7 +1205,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 290000.0원 · 평가 1776000원 · 손익 36000원",
           "returnPct": 2.07,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         },
         {
           "code": "000660",
@@ -973,7 +1213,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 1580000.0원 · 평가 1654000원 · 손익 74000원",
           "returnPct": 4.68,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         }
       ],
       "sellAlerts": [
@@ -1026,7 +1266,7 @@
             "entryPrice": 256500,
             "currentPrice": 271500,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 1900500,
             "pnl": 105000,
             "returnPct": 5.85,
@@ -1046,8 +1286,18 @@
               "per": 36.84,
               "pbr": 1.51,
               "roe": 4.15,
+              "peerAverage": {
+                "per": 15.73,
+                "pbr": 1.44,
+                "roe": 14.42
+              },
               "badge": "저ROE",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 4.15%로 수익성은 낮은 편입니다. 비교군 평균 14.42% 대비 낮습니다.",
+                "PBR 1.51배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 1.44배 대비 높습니다.",
+                "PER 36.84배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 15.73배 대비 높습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 1.79,
@@ -1061,7 +1311,7 @@
             "entryPrice": 1580000,
             "currentPrice": 1654000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 1654000,
             "pnl": 74000,
             "returnPct": 4.68,
@@ -1081,8 +1331,18 @@
               "per": -11.3,
               "pbr": 1.82,
               "roe": -15.61,
+              "peerAverage": {
+                "per": 9.75,
+                "pbr": 2.56,
+                "roe": 45.45
+              },
               "badge": "저ROE · PER불가",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE -15.61%로 수익성은 낮은 편입니다. 비교군 평균 45.45% 대비 낮습니다.",
+                "PBR 1.82배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 2.56배 대비 낮습니다.",
+                "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 3.06,
@@ -1096,7 +1356,7 @@
             "entryPrice": 290000,
             "currentPrice": 296000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 1776000,
             "pnl": 36000,
             "returnPct": 2.07,
@@ -1116,8 +1376,18 @@
               "per": 968.71,
               "pbr": 11.83,
               "roe": 1.19,
+              "peerAverage": {
+                "per": 1051.02,
+                "pbr": 3.97,
+                "roe": -4.7
+              },
               "badge": "저ROE · 고PBR · 고PER주의",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 1.19%로 수익성은 낮은 편입니다. 비교군 평균 -4.70% 대비 높습니다.",
+                "PBR 11.83배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 3.97배 대비 높습니다.",
+                "PER 968.71배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다. 비교군 평균 1051.02배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 8.61,
@@ -1131,7 +1401,7 @@
             "entryPrice": 1379000,
             "currentPrice": 1420000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 1420000,
             "pnl": 41000,
             "returnPct": 2.97,
@@ -1151,8 +1421,18 @@
               "per": 11.43,
               "pbr": 2.82,
               "roe": 27.71,
+              "peerAverage": {
+                "per": 54.4,
+                "pbr": 11.74,
+                "roe": 40.23
+              },
               "badge": "고ROE",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 27.71%로 자기자본 수익성이 높은 편입니다. 비교군 평균 40.23% 대비 낮습니다.",
+                "PBR 2.82배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 11.74배 대비 낮습니다.",
+                "PER 11.43배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 54.40배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 6.16,
@@ -1166,7 +1446,7 @@
             "entryPrice": 305250,
             "currentPrice": 318500,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 1911000,
             "pnl": 79500,
             "returnPct": 4.34,
@@ -1186,8 +1466,18 @@
               "per": 10.66,
               "pbr": 1.25,
               "roe": 12.61,
+              "peerAverage": {
+                "per": 67.6,
+                "pbr": 6.16,
+                "roe": 14.73
+              },
               "badge": "지표확인",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 12.61%로 중간 수준의 수익성입니다. 비교군 평균 14.73% 대비 낮습니다.",
+                "PBR 1.25배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 6.16배 대비 낮습니다.",
+                "PER 10.66배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 67.60배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 3.83,
@@ -1198,10 +1488,10 @@
       },
       "comparison": {
         "returnPct": 3.36,
-        "benchmarkReturnPct": 1.2,
-        "excessReturnPct": 2.16,
+        "benchmarkReturnPct": 1.44,
+        "excessReturnPct": 1.92,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T23:27+09:00"
+        "periodEnd": "2026-05-08T00:24+09:00"
       }
     },
     {
@@ -1240,8 +1530,18 @@
             "per": 7.98,
             "pbr": 1.85,
             "roe": 25.6,
+            "peerAverage": {
+              "per": 37.42,
+              "pbr": 5.4,
+              "roe": 40.99
+            },
             "badge": "고ROE · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 25.60%로 자기자본 수익성이 높은 편입니다. 비교군 평균 40.99% 대비 낮습니다.",
+              "PBR 1.85배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 5.40배 대비 낮습니다.",
+              "PER 7.98배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 37.42배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 75,
@@ -1274,8 +1574,18 @@
             "per": 16.41,
             "pbr": 2.7,
             "roe": 17.61,
+            "peerAverage": {
+              "per": 54.62,
+              "pbr": 6.79,
+              "roe": 21.39
+            },
             "badge": "고ROE",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 17.61%로 자기자본 수익성이 높은 편입니다. 비교군 평균 21.39% 대비 낮습니다.",
+              "PBR 2.70배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 6.79배 대비 낮습니다.",
+              "PER 16.41배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 54.62배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 75,
@@ -1308,8 +1618,18 @@
             "per": 21.76,
             "pbr": 3.05,
             "roe": 14.81,
+            "peerAverage": {
+              "per": 78.58,
+              "pbr": 5.21,
+              "roe": 10.98
+            },
             "badge": "지표확인",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 14.81%로 중간 수준의 수익성입니다. 비교군 평균 10.98% 대비 높습니다.",
+              "PBR 3.05배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 5.21배 대비 낮습니다.",
+              "PER 21.76배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 78.58배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 75,
@@ -1342,8 +1662,18 @@
             "per": 463.89,
             "pbr": 2.2,
             "roe": 0.47,
+            "peerAverage": {
+              "per": 42.71,
+              "pbr": 5.46,
+              "roe": 17.46
+            },
             "badge": "저ROE · 고PER주의",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 0.47%로 수익성은 낮은 편입니다. 비교군 평균 17.46% 대비 낮습니다.",
+              "PBR 2.20배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 5.46배 대비 낮습니다.",
+              "PER 463.89배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다. 비교군 평균 42.71배 대비 높습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 75,
@@ -1376,8 +1706,18 @@
             "per": 38.59,
             "pbr": 0.86,
             "roe": 2.26,
+            "peerAverage": {
+              "per": 16.48,
+              "pbr": 1.88,
+              "roe": 15.77
+            },
             "badge": "저ROE · 저PBR",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 2.26%로 수익성은 낮은 편입니다. 비교군 평균 15.77% 대비 낮습니다.",
+              "PBR 0.86배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 1.88배 대비 낮습니다.",
+              "PER 38.59배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 16.48배 대비 높습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 75,
@@ -1410,8 +1750,18 @@
             "per": -45.94,
             "pbr": 1.89,
             "roe": -4.15,
+            "peerAverage": {
+              "per": 134.76,
+              "pbr": 7.5,
+              "roe": 1.13
+            },
             "badge": "저ROE · PER불가",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE -4.15%로 수익성은 낮은 편입니다. 비교군 평균 1.13% 대비 낮습니다.",
+              "PBR 1.89배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 7.50배 대비 낮습니다.",
+              "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 65,
@@ -1444,8 +1794,18 @@
             "per": 44.33,
             "pbr": 13.09,
             "roe": 34.05,
+            "peerAverage": {
+              "per": 70.38,
+              "pbr": 8.87,
+              "roe": 29.34
+            },
             "badge": "고ROE · 고PBR · 고PER주의",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 34.05%로 자기자본 수익성이 높은 편입니다. 비교군 평균 29.34% 대비 높습니다.",
+              "PBR 13.09배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 8.87배 대비 높습니다.",
+              "PER 44.33배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다. 비교군 평균 70.38배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 65,
@@ -1478,8 +1838,18 @@
             "per": 111.45,
             "pbr": 3.47,
             "roe": 3.56,
+            "peerAverage": {
+              "per": 61.7,
+              "pbr": 3.84,
+              "roe": 10.66
+            },
             "badge": "저ROE · 고PER주의",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 3.56%로 수익성은 낮은 편입니다. 비교군 평균 10.66% 대비 낮습니다.",
+              "PBR 3.47배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 3.84배 대비 낮습니다.",
+              "PER 111.45배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다. 비교군 평균 61.70배 대비 높습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 65,
@@ -1496,7 +1866,7 @@
           "status": "보유중",
           "reason": "11주 · 매입 180000.0원 · 평가 1889800원 · 손익 -90200원",
           "returnPct": -4.56,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         },
         {
           "code": "079550",
@@ -1504,7 +1874,7 @@
           "status": "보유중",
           "reason": "2주 · 매입 983000.0원 · 평가 1732000원 · 손익 -234000원",
           "returnPct": -11.9,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         },
         {
           "code": "012450",
@@ -1512,7 +1882,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 1465000.0원 · 평가 1317000원 · 손익 -148000원",
           "returnPct": -10.1,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         },
         {
           "code": "010120",
@@ -1520,7 +1890,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 294000.0원 · 평가 1911000원 · 손익 147000원",
           "returnPct": 8.33,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         }
       ],
       "sellAlerts": [
@@ -1573,7 +1943,7 @@
             "entryPrice": 120800,
             "currentPrice": 113500,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 1816000,
             "pnl": -116800,
             "returnPct": -6.04,
@@ -1593,8 +1963,18 @@
               "per": 27.83,
               "pbr": 5.52,
               "roe": 21.12,
+              "peerAverage": {
+                "per": 51.51,
+                "pbr": 6.07,
+                "roe": 21.71
+              },
               "badge": "고ROE · 고PBR",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 21.12%로 자기자본 수익성이 높은 편입니다. 비교군 평균 21.71% 대비 낮습니다.",
+                "PBR 5.52배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 6.07배 대비 낮습니다.",
+                "PER 27.83배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 51.51배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 0.0,
@@ -1608,7 +1988,7 @@
             "entryPrice": 294000,
             "currentPrice": 318500,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 1911000,
             "pnl": 147000,
             "returnPct": 8.33,
@@ -1628,8 +2008,18 @@
               "per": 10.66,
               "pbr": 1.25,
               "roe": 12.61,
+              "peerAverage": {
+                "per": 67.6,
+                "pbr": 6.16,
+                "roe": 14.73
+              },
               "badge": "지표확인",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 12.61%로 중간 수준의 수익성입니다. 비교군 평균 14.73% 대비 낮습니다.",
+                "PBR 1.25배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 6.16배 대비 낮습니다.",
+                "PER 10.66배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 67.60배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 0.0,
@@ -1643,7 +2033,7 @@
             "entryPrice": 1465000,
             "currentPrice": 1317000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 1317000,
             "pnl": -148000,
             "returnPct": -10.1,
@@ -1663,8 +2053,18 @@
               "per": 7.98,
               "pbr": 1.85,
               "roe": 25.6,
+              "peerAverage": {
+                "per": 37.42,
+                "pbr": 5.4,
+                "roe": 40.99
+              },
               "badge": "고ROE · 저PER",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 25.60%로 자기자본 수익성이 높은 편입니다. 비교군 평균 40.99% 대비 낮습니다.",
+                "PBR 1.85배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 5.40배 대비 낮습니다.",
+                "PER 7.98배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 37.42배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 0.0,
@@ -1678,7 +2078,7 @@
             "entryPrice": 983000,
             "currentPrice": 866000,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 1732000,
             "pnl": -234000,
             "returnPct": -11.9,
@@ -1698,8 +2098,18 @@
               "per": 16.41,
               "pbr": 2.7,
               "roe": 17.61,
+              "peerAverage": {
+                "per": 54.62,
+                "pbr": 6.79,
+                "roe": 21.39
+              },
               "badge": "고ROE",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 17.61%로 자기자본 수익성이 높은 편입니다. 비교군 평균 21.39% 대비 낮습니다.",
+                "PBR 2.70배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 6.79배 대비 낮습니다.",
+                "PER 16.41배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 54.62배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 0.0,
@@ -1713,7 +2123,7 @@
             "entryPrice": 180000,
             "currentPrice": 171800,
             "entryAt": "2026-05-06T10:14:00+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 1889800,
             "pnl": -90200,
             "returnPct": -4.56,
@@ -1733,8 +2143,18 @@
               "per": 21.76,
               "pbr": 3.05,
               "roe": 14.81,
+              "peerAverage": {
+                "per": 78.58,
+                "pbr": 5.21,
+                "roe": 10.98
+              },
               "badge": "지표확인",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 14.81%로 중간 수준의 수익성입니다. 비교군 평균 10.98% 대비 높습니다.",
+                "PBR 3.05배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 5.21배 대비 낮습니다.",
+                "PER 21.76배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 78.58배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 0.0,
@@ -1745,10 +2165,10 @@
       },
       "comparison": {
         "returnPct": -4.42,
-        "benchmarkReturnPct": 1.2,
-        "excessReturnPct": -5.62,
+        "benchmarkReturnPct": 1.44,
+        "excessReturnPct": -5.86,
         "periodStart": "2026-05-06T10:14+09:00",
-        "periodEnd": "2026-05-07T23:27+09:00"
+        "periodEnd": "2026-05-08T00:24+09:00"
       }
     },
     {
@@ -1787,8 +2207,18 @@
             "per": 4.77,
             "pbr": 0.36,
             "roe": 8.39,
+            "peerAverage": {
+              "per": 10.37,
+              "pbr": 0.67,
+              "roe": 9.74
+            },
             "badge": "저PBR · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 8.39%로 중간 수준의 수익성입니다. 비교군 평균 9.74% 대비 낮습니다.",
+              "PBR 0.36배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.67배 대비 낮습니다.",
+              "PER 4.77배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 10.37배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 95,
@@ -1821,8 +2251,18 @@
             "per": 4.78,
             "pbr": 0.38,
             "roe": 8.36,
+            "peerAverage": {
+              "per": 9.37,
+              "pbr": 0.55,
+              "roe": 8.53
+            },
             "badge": "저PBR · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 8.36%로 중간 수준의 수익성입니다. 비교군 평균 8.53% 대비 낮습니다.",
+              "PBR 0.38배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.55배 대비 낮습니다.",
+              "PER 4.78배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 9.37배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 95,
@@ -1855,8 +2295,18 @@
             "per": 10.66,
             "pbr": 1.25,
             "roe": 12.61,
+            "peerAverage": {
+              "per": 67.6,
+              "pbr": 6.16,
+              "roe": 14.73
+            },
             "badge": "지표확인",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 12.61%로 중간 수준의 수익성입니다. 비교군 평균 14.73% 대비 낮습니다.",
+              "PBR 1.25배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 6.16배 대비 낮습니다.",
+              "PER 10.66배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 67.60배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 95,
@@ -1889,8 +2339,18 @@
             "per": 3.74,
             "pbr": 0.32,
             "roe": 9.01,
+            "peerAverage": {
+              "per": 8.61,
+              "pbr": 0.51,
+              "roe": 9.25
+            },
             "badge": "저PBR · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 9.01%로 중간 수준의 수익성입니다. 비교군 평균 9.25% 대비 낮습니다.",
+              "PBR 0.32배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.51배 대비 낮습니다.",
+              "PER 3.74배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 8.61배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 95,
@@ -1923,8 +2383,18 @@
             "per": 11.43,
             "pbr": 2.82,
             "roe": 27.71,
+            "peerAverage": {
+              "per": 54.4,
+              "pbr": 11.74,
+              "roe": 40.23
+            },
             "badge": "고ROE",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 27.71%로 자기자본 수익성이 높은 편입니다. 비교군 평균 40.23% 대비 낮습니다.",
+              "PBR 2.82배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 11.74배 대비 낮습니다.",
+              "PER 11.43배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 54.40배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 88,
@@ -1957,8 +2427,18 @@
             "per": 36.25,
             "pbr": 1.45,
             "roe": 4.41,
+            "peerAverage": {
+              "per": 23.59,
+              "pbr": 1.26,
+              "roe": 7.67
+            },
             "badge": "저ROE",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 4.41%로 수익성은 낮은 편입니다. 비교군 평균 7.67% 대비 낮습니다.",
+              "PBR 1.45배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 1.26배 대비 높습니다.",
+              "PER 36.25배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 23.59배 대비 높습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 88,
@@ -1991,8 +2471,18 @@
             "per": 21.76,
             "pbr": 3.05,
             "roe": 14.81,
+            "peerAverage": {
+              "per": 78.58,
+              "pbr": 5.21,
+              "roe": 10.98
+            },
             "badge": "지표확인",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 14.81%로 중간 수준의 수익성입니다. 비교군 평균 10.98% 대비 높습니다.",
+              "PBR 3.05배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 5.21배 대비 낮습니다.",
+              "PER 21.76배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 78.58배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 88,
@@ -2025,8 +2515,18 @@
             "per": 6.52,
             "pbr": 0.53,
             "roe": 8.73,
+            "peerAverage": {
+              "per": 10.62,
+              "pbr": 0.58,
+              "roe": 8.8
+            },
             "badge": "저PBR · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 8.73%로 중간 수준의 수익성입니다. 비교군 평균 8.80% 대비 낮습니다.",
+              "PBR 0.53배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.58배 대비 낮습니다.",
+              "PER 6.52배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 10.62배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 88,
@@ -2043,7 +2543,7 @@
           "status": "보유중",
           "reason": "3주 · 매입 305500.0원 · 평가 955500원 · 손익 39000원",
           "returnPct": 4.26,
-          "holdingPeriod": "보유 14시간 0분"
+          "holdingPeriod": "보유 1일"
         },
         {
           "code": "005930",
@@ -2051,7 +2551,7 @@
           "status": "보유중",
           "reason": "3주 · 매입 263000.0원 · 평가 814500원 · 손익 25500원",
           "returnPct": 3.23,
-          "holdingPeriod": "보유 14시간 0분"
+          "holdingPeriod": "보유 1일"
         },
         {
           "code": "068270",
@@ -2059,7 +2559,7 @@
           "status": "보유중",
           "reason": "5주 · 매입 194700.0원 · 평가 1012500원 · 손익 39000원",
           "returnPct": 4.01,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         },
         {
           "code": "058470",
@@ -2067,7 +2567,7 @@
           "status": "보유중",
           "reason": "8주 · 매입 116700.0원 · 평가 908000원 · 손익 -25600원",
           "returnPct": -2.74,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         }
       ],
       "sellAlerts": [],
@@ -2087,7 +2587,7 @@
             "entryPrice": 97300,
             "currentPrice": 98900,
             "entryAt": "2026-05-06T16:15:29+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 989000,
             "pnl": 16000,
             "returnPct": 1.64,
@@ -2107,8 +2607,18 @@
               "per": 4.78,
               "pbr": 0.38,
               "roe": 8.36,
+              "peerAverage": {
+                "per": 9.37,
+                "pbr": 0.55,
+                "roe": 8.53
+              },
               "badge": "저PBR · 저PER",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 8.36%로 중간 수준의 수익성입니다. 비교군 평균 8.53% 대비 낮습니다.",
+                "PBR 0.38배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.55배 대비 낮습니다.",
+                "PER 4.78배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 9.37배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 1.64,
@@ -2122,7 +2632,7 @@
             "entryPrice": 158900,
             "currentPrice": 161200,
             "entryAt": "2026-05-06T16:15:29+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 967200,
             "pnl": 13800,
             "returnPct": 1.45,
@@ -2142,8 +2652,18 @@
               "per": 4.77,
               "pbr": 0.36,
               "roe": 8.39,
+              "peerAverage": {
+                "per": 10.37,
+                "pbr": 0.67,
+                "roe": 9.74
+              },
               "badge": "저PBR · 저PER",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 8.39%로 중간 수준의 수익성입니다. 비교군 평균 9.74% 대비 낮습니다.",
+                "PBR 0.36배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.67배 대비 낮습니다.",
+                "PER 4.77배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 10.37배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 1.45,
@@ -2157,7 +2677,7 @@
             "entryPrice": 125500,
             "currentPrice": 128800,
             "entryAt": "2026-05-06T16:15:29+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 901600,
             "pnl": 23100,
             "returnPct": 2.63,
@@ -2177,8 +2697,18 @@
               "per": 3.74,
               "pbr": 0.32,
               "roe": 9.01,
+              "peerAverage": {
+                "per": 8.61,
+                "pbr": 0.51,
+                "roe": 9.25
+              },
               "badge": "저PBR · 저PER",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 9.01%로 중간 수준의 수익성입니다. 비교군 평균 9.25% 대비 낮습니다.",
+                "PBR 0.32배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.51배 대비 낮습니다.",
+                "PER 3.74배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 8.61배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 2.63,
@@ -2192,7 +2722,7 @@
             "entryPrice": 432500,
             "currentPrice": 441500,
             "entryAt": "2026-05-06T16:15:29+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 883000,
             "pnl": 18000,
             "returnPct": 2.08,
@@ -2212,8 +2742,18 @@
               "per": 6.52,
               "pbr": 0.53,
               "roe": 8.73,
+              "peerAverage": {
+                "per": 10.62,
+                "pbr": 0.58,
+                "roe": 8.8
+              },
               "badge": "저PBR · 저PER",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 8.73%로 중간 수준의 수익성입니다. 비교군 평균 8.80% 대비 낮습니다.",
+                "PBR 0.53배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.58배 대비 낮습니다.",
+                "PER 6.52배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 10.62배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 2.08,
@@ -2227,7 +2767,7 @@
             "entryPrice": 176600,
             "currentPrice": 171800,
             "entryAt": "2026-05-06T16:15:29+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 859000,
             "pnl": -24000,
             "returnPct": -2.72,
@@ -2247,8 +2787,18 @@
               "per": 21.76,
               "pbr": 3.05,
               "roe": 14.81,
+              "peerAverage": {
+                "per": 78.58,
+                "pbr": 5.21,
+                "roe": 10.98
+              },
               "badge": "지표확인",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 14.81%로 중간 수준의 수익성입니다. 비교군 평균 10.98% 대비 높습니다.",
+                "PBR 3.05배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 5.21배 대비 낮습니다.",
+                "PER 21.76배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 78.58배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": -2.72,
@@ -2262,7 +2812,7 @@
             "entryPrice": 208000,
             "currentPrice": 207500,
             "entryAt": "2026-05-06T16:15:29+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 830000,
             "pnl": -2000,
             "returnPct": -0.24,
@@ -2282,8 +2832,18 @@
               "per": 36.25,
               "pbr": 1.45,
               "roe": 4.41,
+              "peerAverage": {
+                "per": 23.59,
+                "pbr": 1.26,
+                "roe": 7.67
+              },
               "badge": "저ROE",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 4.41%로 수익성은 낮은 편입니다. 비교군 평균 7.67% 대비 낮습니다.",
+                "PBR 1.45배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 1.26배 대비 높습니다.",
+                "PER 36.25배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 23.59배 대비 높습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": -0.24,
@@ -2297,7 +2857,7 @@
             "entryPrice": 116700,
             "currentPrice": 113500,
             "entryAt": "2026-05-06T16:15:29+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 908000,
             "pnl": -25600,
             "returnPct": -2.74,
@@ -2317,8 +2877,18 @@
               "per": 27.83,
               "pbr": 5.52,
               "roe": 21.12,
+              "peerAverage": {
+                "per": 51.51,
+                "pbr": 6.07,
+                "roe": 21.71
+              },
               "badge": "고ROE · 고PBR",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 21.12%로 자기자본 수익성이 높은 편입니다. 비교군 평균 21.71% 대비 낮습니다.",
+                "PBR 5.52배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 6.07배 대비 낮습니다.",
+                "PER 27.83배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 51.51배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": -3.39,
@@ -2332,7 +2902,7 @@
             "entryPrice": 194700,
             "currentPrice": 202500,
             "entryAt": "2026-05-06T16:15:29+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 1012500,
             "pnl": 39000,
             "returnPct": 4.01,
@@ -2352,8 +2922,18 @@
               "per": 55.43,
               "pbr": 2.52,
               "roe": 5.07,
+              "peerAverage": {
+                "per": 77.51,
+                "pbr": 2.25,
+                "roe": 4.4
+              },
               "badge": "고PER주의",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 5.07%로 중간 수준의 수익성입니다. 비교군 평균 4.40% 대비 높습니다.",
+                "PBR 2.52배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 2.25배 대비 높습니다.",
+                "PER 55.43배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다. 비교군 평균 77.51배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": -1.57,
@@ -2367,7 +2947,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.14,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T23:27+09:00"
+        "periodEnd": "2026-05-08T00:24+09:00"
       }
     },
     {
@@ -2406,8 +2986,18 @@
             "per": 36.84,
             "pbr": 1.51,
             "roe": 4.15,
+            "peerAverage": {
+              "per": 15.73,
+              "pbr": 1.44,
+              "roe": 14.42
+            },
             "badge": "저ROE",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 4.15%로 수익성은 낮은 편입니다. 비교군 평균 14.42% 대비 낮습니다.",
+              "PBR 1.51배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 1.44배 대비 높습니다.",
+              "PER 36.84배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 15.73배 대비 높습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 95,
@@ -2440,8 +3030,18 @@
             "per": -46.0,
             "pbr": 1.92,
             "roe": -4.22,
+            "peerAverage": {
+              "per": 79.52,
+              "pbr": 3.98,
+              "roe": 9.29
+            },
             "badge": "저ROE · PER불가",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE -4.22%로 수익성은 낮은 편입니다. 비교군 평균 9.29% 대비 낮습니다.",
+              "PBR 1.92배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 3.98배 대비 낮습니다.",
+              "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 95,
@@ -2474,8 +3074,18 @@
             "per": -11.3,
             "pbr": 1.82,
             "roe": -15.61,
+            "peerAverage": {
+              "per": 9.75,
+              "pbr": 2.56,
+              "roe": 45.45
+            },
             "badge": "저ROE · PER불가",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE -15.61%로 수익성은 낮은 편입니다. 비교군 평균 45.45% 대비 낮습니다.",
+              "PBR 1.82배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 2.56배 대비 낮습니다.",
+              "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 95,
@@ -2508,8 +3118,18 @@
             "per": 4.67,
             "pbr": 0.58,
             "roe": 13.68,
+            "peerAverage": {
+              "per": 12.48,
+              "pbr": 0.62,
+              "roe": 10.44
+            },
             "badge": "저PBR · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 13.68%로 중간 수준의 수익성입니다. 비교군 평균 10.44% 대비 높습니다.",
+              "PBR 0.58배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.62배 대비 낮습니다.",
+              "PER 4.67배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 12.48배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 95,
@@ -2542,8 +3162,18 @@
             "per": -3224.66,
             "pbr": 20.51,
             "roe": -0.64,
+            "peerAverage": {
+              "per": 1214.67,
+              "pbr": 7.55,
+              "roe": -2.08
+            },
             "badge": "저ROE · 고PBR · PER불가",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE -0.64%로 수익성은 낮은 편입니다. 비교군 평균 -2.08% 대비 높습니다.",
+              "PBR 20.51배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 7.55배 대비 높습니다.",
+              "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 88,
@@ -2576,8 +3206,18 @@
             "per": 55.43,
             "pbr": 2.52,
             "roe": 5.07,
+            "peerAverage": {
+              "per": 77.51,
+              "pbr": 2.25,
+              "roe": 4.4
+            },
             "badge": "고PER주의",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 5.07%로 중간 수준의 수익성입니다. 비교군 평균 4.40% 대비 높습니다.",
+              "PBR 2.52배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 2.25배 대비 높습니다.",
+              "PER 55.43배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다. 비교군 평균 77.51배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 88,
@@ -2610,8 +3250,18 @@
             "per": 3.74,
             "pbr": 0.32,
             "roe": 9.01,
+            "peerAverage": {
+              "per": 8.61,
+              "pbr": 0.51,
+              "roe": 9.25
+            },
             "badge": "저PBR · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 9.01%로 중간 수준의 수익성입니다. 비교군 평균 9.25% 대비 낮습니다.",
+              "PBR 0.32배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.51배 대비 낮습니다.",
+              "PER 3.74배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 8.61배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 88,
@@ -2644,8 +3294,18 @@
             "per": 463.89,
             "pbr": 2.2,
             "roe": 0.47,
+            "peerAverage": {
+              "per": 42.71,
+              "pbr": 5.46,
+              "roe": 17.46
+            },
             "badge": "저ROE · 고PER주의",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 0.47%로 수익성은 낮은 편입니다. 비교군 평균 17.46% 대비 낮습니다.",
+              "PBR 2.20배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 5.46배 대비 낮습니다.",
+              "PER 463.89배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다. 비교군 평균 42.71배 대비 높습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 88,
@@ -2662,7 +3322,7 @@
           "status": "보유중",
           "reason": "6주 · 매입 158700.0원 · 평가 945600원 · 손익 -6600원",
           "returnPct": -0.69,
-          "holdingPeriod": "보유 14시간 0분"
+          "holdingPeriod": "보유 1일"
         },
         {
           "code": "034020",
@@ -2670,7 +3330,7 @@
           "status": "보유중",
           "reason": "7주 · 매입 133900.0원 · 평가 954800원 · 손익 17500원",
           "returnPct": 1.87,
-          "holdingPeriod": "보유 14시간 0분"
+          "holdingPeriod": "보유 1일"
         },
         {
           "code": "373220",
@@ -2678,7 +3338,7 @@
           "status": "보유중",
           "reason": "2주 · 매입 482000.0원 · 평가 966000원 · 손익 2000원",
           "returnPct": 0.21,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         },
         {
           "code": "247540",
@@ -2686,7 +3346,7 @@
           "status": "보유중",
           "reason": "4주 · 매입 228500.0원 · 평가 942000원 · 손익 28000원",
           "returnPct": 3.06,
-          "holdingPeriod": "보유 1일"
+          "holdingPeriod": "보유 2일"
         }
       ],
       "sellAlerts": [
@@ -2723,7 +3383,7 @@
             "entryPrice": 266000,
             "currentPrice": 271500,
             "entryAt": "2026-05-06T16:15:59+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 814500,
             "pnl": 16500,
             "returnPct": 2.07,
@@ -2743,8 +3403,18 @@
               "per": 36.84,
               "pbr": 1.51,
               "roe": 4.15,
+              "peerAverage": {
+                "per": 15.73,
+                "pbr": 1.44,
+                "roe": 14.42
+              },
               "badge": "저ROE",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 4.15%로 수익성은 낮은 편입니다. 비교군 평균 14.42% 대비 낮습니다.",
+                "PBR 1.51배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 1.44배 대비 높습니다.",
+                "PER 36.84배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 15.73배 대비 높습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 2.07,
@@ -2758,7 +3428,7 @@
             "entryPrice": 56600,
             "currentPrice": 54700,
             "entryAt": "2026-05-06T16:15:59+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 929900,
             "pnl": -32300,
             "returnPct": -3.36,
@@ -2778,8 +3448,18 @@
               "per": 44.33,
               "pbr": 13.09,
               "roe": 34.05,
+              "peerAverage": {
+                "per": 70.38,
+                "pbr": 8.87,
+                "roe": 29.34
+              },
               "badge": "고ROE · 고PBR · 고PER주의",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 34.05%로 자기자본 수익성이 높은 편입니다. 비교군 평균 29.34% 대비 높습니다.",
+                "PBR 13.09배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 8.87배 대비 높습니다.",
+                "PER 44.33배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다. 비교군 평균 70.38배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 4.04,
@@ -2793,7 +3473,7 @@
             "entryPrice": 162800,
             "currentPrice": 159700,
             "entryAt": "2026-05-06T16:15:59+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 958200,
             "pnl": -18600,
             "returnPct": -1.9,
@@ -2813,8 +3493,18 @@
               "per": 336.78,
               "pbr": 10.21,
               "roe": 3.43,
+              "peerAverage": {
+                "per": null,
+                "pbr": 4.87,
+                "roe": -9.18
+              },
               "badge": "저ROE · 고PBR · 고PER주의",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 3.43%로 수익성은 낮은 편입니다. 비교군 평균 -9.18% 대비 높습니다.",
+                "PBR 10.21배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 4.87배 대비 높습니다.",
+                "PER 336.78배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 4.49,
@@ -2828,7 +3518,7 @@
             "entryPrice": 315500,
             "currentPrice": 318500,
             "entryAt": "2026-05-06T16:15:59+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 955500,
             "pnl": 9000,
             "returnPct": 0.95,
@@ -2848,8 +3538,18 @@
               "per": 10.66,
               "pbr": 1.25,
               "roe": 12.61,
+              "peerAverage": {
+                "per": 67.6,
+                "pbr": 6.16,
+                "roe": 14.73
+              },
               "badge": "지표확인",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 12.61%로 중간 수준의 수익성입니다. 비교군 평균 14.73% 대비 낮습니다.",
+                "PBR 1.25배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 6.16배 대비 낮습니다.",
+                "PER 10.66배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 67.60배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 7.31,
@@ -2863,7 +3563,7 @@
             "entryPrice": 550000,
             "currentPrice": 572000,
             "entryAt": "2026-05-06T16:15:59+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 572000,
             "pnl": 22000,
             "returnPct": 4.0,
@@ -2883,8 +3583,18 @@
               "per": 4.67,
               "pbr": 0.58,
               "roe": 13.68,
+              "peerAverage": {
+                "per": 12.48,
+                "pbr": 0.62,
+                "roe": 10.44
+              },
               "badge": "저PBR · 저PER",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 13.68%로 중간 수준의 수익성입니다. 비교군 평균 10.44% 대비 높습니다.",
+                "PBR 0.58배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.62배 대비 낮습니다.",
+                "PER 4.67배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 12.48배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 4.0,
@@ -2898,7 +3608,7 @@
             "entryPrice": 394500,
             "currentPrice": 393000,
             "entryAt": "2026-05-06T16:15:59+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 786000,
             "pnl": -3000,
             "returnPct": -0.38,
@@ -2918,8 +3628,18 @@
               "per": 22.48,
               "pbr": 10.45,
               "roe": 55.54,
+              "peerAverage": {
+                "per": 50.2,
+                "pbr": 15.25,
+                "roe": 32.21
+              },
               "badge": "고ROE · 고PBR",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 55.54%로 자기자본 수익성이 높은 편입니다. 비교군 평균 32.21% 대비 높습니다.",
+                "PBR 10.45배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 15.25배 대비 낮습니다.",
+                "PER 22.48배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 50.20배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 4.37,
@@ -2933,7 +3653,7 @@
             "entryPrice": 228500,
             "currentPrice": 235500,
             "entryAt": "2026-05-06T16:15:59+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 942000,
             "pnl": 28000,
             "returnPct": 3.06,
@@ -2953,8 +3673,18 @@
               "per": -3224.66,
               "pbr": 20.51,
               "roe": -0.64,
+              "peerAverage": {
+                "per": 1214.67,
+                "pbr": 7.55,
+                "roe": -2.08
+              },
               "badge": "저ROE · 고PBR · PER불가",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE -0.64%로 수익성은 낮은 편입니다. 비교군 평균 -2.08% 대비 높습니다.",
+                "PBR 20.51배로 자산가치 대비 프리미엄이 큰 편입니다. 비교군 평균 7.55배 대비 높습니다.",
+                "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 3.06,
@@ -2968,7 +3698,7 @@
             "entryPrice": 482000,
             "currentPrice": 483000,
             "entryAt": "2026-05-06T16:15:59+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 966000,
             "pnl": 2000,
             "returnPct": 0.21,
@@ -2988,8 +3718,18 @@
               "per": 80.86,
               "pbr": 4.95,
               "roe": 6.35,
+              "peerAverage": {
+                "per": null,
+                "pbr": 4.15,
+                "roe": -4.58
+              },
               "badge": "고PER주의",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 6.35%로 중간 수준의 수익성입니다. 비교군 평균 -4.58% 대비 높습니다.",
+                "PBR 4.95배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 4.15배 대비 높습니다.",
+                "PER 80.86배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 2.12,
@@ -3003,7 +3743,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": -0.75,
         "periodStart": "2026-05-06T16:15+09:00",
-        "periodEnd": "2026-05-07T23:27+09:00"
+        "periodEnd": "2026-05-08T00:24+09:00"
       }
     },
     {
@@ -3042,8 +3782,18 @@
             "per": 36.84,
             "pbr": 1.51,
             "roe": 4.15,
+            "peerAverage": {
+              "per": 15.73,
+              "pbr": 1.44,
+              "roe": 14.42
+            },
             "badge": "저ROE",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 4.15%로 수익성은 낮은 편입니다. 비교군 평균 14.42% 대비 낮습니다.",
+              "PBR 1.51배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 1.44배 대비 높습니다.",
+              "PER 36.84배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 15.73배 대비 높습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 88,
@@ -3076,8 +3826,18 @@
             "per": 3.74,
             "pbr": 0.32,
             "roe": 9.01,
+            "peerAverage": {
+              "per": 8.61,
+              "pbr": 0.51,
+              "roe": 9.25
+            },
             "badge": "저PBR · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 9.01%로 중간 수준의 수익성입니다. 비교군 평균 9.25% 대비 낮습니다.",
+              "PBR 0.32배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.51배 대비 낮습니다.",
+              "PER 3.74배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 8.61배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 78,
@@ -3110,8 +3870,18 @@
             "per": -11.3,
             "pbr": 1.82,
             "roe": -15.61,
+            "peerAverage": {
+              "per": 9.75,
+              "pbr": 2.56,
+              "roe": 45.45
+            },
             "badge": "저ROE · PER불가",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE -15.61%로 수익성은 낮은 편입니다. 비교군 평균 45.45% 대비 낮습니다.",
+              "PBR 1.82배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 2.56배 대비 낮습니다.",
+              "PER은 적자 또는 일회성 이익 영향으로 해석 신뢰도가 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 78,
@@ -3144,8 +3914,18 @@
             "per": 11.43,
             "pbr": 2.82,
             "roe": 27.71,
+            "peerAverage": {
+              "per": 54.4,
+              "pbr": 11.74,
+              "roe": 40.23
+            },
             "badge": "고ROE",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 27.71%로 자기자본 수익성이 높은 편입니다. 비교군 평균 40.23% 대비 낮습니다.",
+              "PBR 2.82배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 11.74배 대비 낮습니다.",
+              "PER 11.43배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 54.40배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 78,
@@ -3178,8 +3958,18 @@
             "per": 6.52,
             "pbr": 0.53,
             "roe": 8.73,
+            "peerAverage": {
+              "per": 10.62,
+              "pbr": 0.58,
+              "roe": 8.8
+            },
             "badge": "저PBR · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 8.73%로 중간 수준의 수익성입니다. 비교군 평균 8.80% 대비 낮습니다.",
+              "PBR 0.53배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.58배 대비 낮습니다.",
+              "PER 6.52배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 10.62배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 78,
@@ -3212,8 +4002,18 @@
             "per": 38.59,
             "pbr": 0.86,
             "roe": 2.26,
+            "peerAverage": {
+              "per": 16.48,
+              "pbr": 1.88,
+              "roe": 15.77
+            },
             "badge": "저ROE · 저PBR",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 2.26%로 수익성은 낮은 편입니다. 비교군 평균 15.77% 대비 낮습니다.",
+              "PBR 0.86배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 1.88배 대비 낮습니다.",
+              "PER 38.59배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 16.48배 대비 높습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 78,
@@ -3246,8 +4046,18 @@
             "per": 4.77,
             "pbr": 0.36,
             "roe": 8.39,
+            "peerAverage": {
+              "per": 10.37,
+              "pbr": 0.67,
+              "roe": 9.74
+            },
             "badge": "저PBR · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 8.39%로 중간 수준의 수익성입니다. 비교군 평균 9.74% 대비 낮습니다.",
+              "PBR 0.36배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.67배 대비 낮습니다.",
+              "PER 4.77배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 10.37배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 78,
@@ -3280,8 +4090,18 @@
             "per": 4.78,
             "pbr": 0.38,
             "roe": 8.36,
+            "peerAverage": {
+              "per": 9.37,
+              "pbr": 0.55,
+              "roe": 8.53
+            },
             "badge": "저PBR · 저PER",
-            "updatedAt": "2026-05-07T23:25:07+09:00",
+            "report": [
+              "ROE 8.36%로 중간 수준의 수익성입니다. 비교군 평균 8.53% 대비 낮습니다.",
+              "PBR 0.38배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.55배 대비 낮습니다.",
+              "PER 4.78배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 9.37배 대비 낮습니다."
+            ],
+            "updatedAt": "2026-05-08T00:19:31+09:00",
             "source": "naver_finance"
           },
           "candidateScoreNormalized": 78,
@@ -3298,7 +4118,7 @@
           "status": "보유중",
           "reason": "4주 · 매입 234500.0원 · 평가 942000원 · 손익 4000원",
           "returnPct": 0.43,
-          "holdingPeriod": "보유 12시간 58분"
+          "holdingPeriod": "보유 1일"
         },
         {
           "code": "068270",
@@ -3306,7 +4126,7 @@
           "status": "보유중",
           "reason": "4주 · 매입 204500.0원 · 평가 810000원 · 손익 -8000원",
           "returnPct": -0.98,
-          "holdingPeriod": "보유 12시간 58분"
+          "holdingPeriod": "보유 1일"
         },
         {
           "code": "012330",
@@ -3314,7 +4134,7 @@
           "status": "보유중",
           "reason": "2주 · 매입 447000.0원 · 평가 883000원 · 손익 -11000원",
           "returnPct": -1.23,
-          "holdingPeriod": "보유 13시간 59분"
+          "holdingPeriod": "보유 1일"
         },
         {
           "code": "329180",
@@ -3322,7 +4142,7 @@
           "status": "보유중",
           "reason": "1주 · 매입 662000.0원 · 평가 693000원 · 손익 31000원",
           "returnPct": 4.68,
-          "holdingPeriod": "보유 13시간 59분"
+          "holdingPeriod": "보유 1일"
         }
       ],
       "sellAlerts": [],
@@ -3342,7 +4162,7 @@
             "entryPrice": 158900,
             "currentPrice": 161200,
             "entryAt": "2026-05-06T16:16:34+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 967200,
             "pnl": 13800,
             "returnPct": 1.45,
@@ -3362,8 +4182,18 @@
               "per": 4.77,
               "pbr": 0.36,
               "roe": 8.39,
+              "peerAverage": {
+                "per": 10.37,
+                "pbr": 0.67,
+                "roe": 9.74
+              },
               "badge": "저PBR · 저PER",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 8.39%로 중간 수준의 수익성입니다. 비교군 평균 9.74% 대비 낮습니다.",
+                "PBR 0.36배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.67배 대비 낮습니다.",
+                "PER 4.77배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 10.37배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 1.45,
@@ -3377,7 +4207,7 @@
             "entryPrice": 266000,
             "currentPrice": 271500,
             "entryAt": "2026-05-06T16:16:34+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 814500,
             "pnl": 16500,
             "returnPct": 2.07,
@@ -3397,8 +4227,18 @@
               "per": 36.84,
               "pbr": 1.51,
               "roe": 4.15,
+              "peerAverage": {
+                "per": 15.73,
+                "pbr": 1.44,
+                "roe": 14.42
+              },
               "badge": "저ROE",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 4.15%로 수익성은 낮은 편입니다. 비교군 평균 14.42% 대비 낮습니다.",
+                "PBR 1.51배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 1.44배 대비 높습니다.",
+                "PER 36.84배로 이익 대비 가격 부담은 중간 수준입니다. 비교군 평균 15.73배 대비 높습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 2.07,
@@ -3412,7 +4252,7 @@
             "entryPrice": 482000,
             "currentPrice": 483000,
             "entryAt": "2026-05-06T16:16:34+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 966000,
             "pnl": 2000,
             "returnPct": 0.21,
@@ -3432,8 +4272,18 @@
               "per": 80.86,
               "pbr": 4.95,
               "roe": 6.35,
+              "peerAverage": {
+                "per": null,
+                "pbr": 4.15,
+                "roe": -4.58
+              },
               "badge": "고PER주의",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 6.35%로 중간 수준의 수익성입니다. 비교군 평균 -4.58% 대비 높습니다.",
+                "PBR 4.95배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 4.15배 대비 높습니다.",
+                "PER 80.86배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 2.12,
@@ -3447,7 +4297,7 @@
             "entryPrice": 550000,
             "currentPrice": 572000,
             "entryAt": "2026-05-06T16:16:34+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 572000,
             "pnl": 22000,
             "returnPct": 4.0,
@@ -3467,8 +4317,18 @@
               "per": 4.67,
               "pbr": 0.58,
               "roe": 13.68,
+              "peerAverage": {
+                "per": 12.48,
+                "pbr": 0.62,
+                "roe": 10.44
+              },
               "badge": "저PBR · 저PER",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 13.68%로 중간 수준의 수익성입니다. 비교군 평균 10.44% 대비 높습니다.",
+                "PBR 0.58배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.62배 대비 낮습니다.",
+                "PER 4.67배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 12.48배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 2.04,
@@ -3482,7 +4342,7 @@
             "entryPrice": 97300,
             "currentPrice": 98900,
             "entryAt": "2026-05-06T16:16:34+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 989000,
             "pnl": 16000,
             "returnPct": 1.64,
@@ -3502,8 +4362,18 @@
               "per": 4.78,
               "pbr": 0.38,
               "roe": 8.36,
+              "peerAverage": {
+                "per": 9.37,
+                "pbr": 0.55,
+                "roe": 8.53
+              },
               "badge": "저PBR · 저PER",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 8.36%로 중간 수준의 수익성입니다. 비교군 평균 8.53% 대비 낮습니다.",
+                "PBR 0.38배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.55배 대비 낮습니다.",
+                "PER 4.78배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 9.37배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 1.64,
@@ -3517,7 +4387,7 @@
             "entryPrice": 125500,
             "currentPrice": 128800,
             "entryAt": "2026-05-06T16:16:34+09:00",
-            "holdingPeriod": "보유 1일",
+            "holdingPeriod": "보유 2일",
             "evalAmount": 901600,
             "pnl": 23100,
             "returnPct": 2.63,
@@ -3537,8 +4407,18 @@
               "per": 3.74,
               "pbr": 0.32,
               "roe": 9.01,
+              "peerAverage": {
+                "per": 8.61,
+                "pbr": 0.51,
+                "roe": 9.25
+              },
               "badge": "저PBR · 저PER",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 9.01%로 중간 수준의 수익성입니다. 비교군 평균 9.25% 대비 낮습니다.",
+                "PBR 0.32배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.51배 대비 낮습니다.",
+                "PER 3.74배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 8.61배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 2.63,
@@ -3552,7 +4432,7 @@
             "entryPrice": 662000,
             "currentPrice": 693000,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 13시간 59분",
+            "holdingPeriod": "보유 1일",
             "evalAmount": 693000,
             "pnl": 31000,
             "returnPct": 4.68,
@@ -3572,8 +4452,18 @@
               "per": 463.89,
               "pbr": 2.2,
               "roe": 0.47,
+              "peerAverage": {
+                "per": 42.71,
+                "pbr": 5.46,
+                "roe": 17.46
+              },
               "badge": "저ROE · 고PER주의",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 0.47%로 수익성은 낮은 편입니다. 비교군 평균 17.46% 대비 낮습니다.",
+                "PBR 2.20배로 과도한 저평가/고평가 신호는 제한적입니다. 비교군 평균 5.46배 대비 낮습니다.",
+                "PER 463.89배로 성장 기대가 많이 반영된 고평가 구간일 수 있습니다. 비교군 평균 42.71배 대비 높습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 2.16,
@@ -3587,7 +4477,7 @@
             "entryPrice": 447000,
             "currentPrice": 441500,
             "entryAt": "2026-05-07T09:27:26+09:00",
-            "holdingPeriod": "보유 13시간 59분",
+            "holdingPeriod": "보유 1일",
             "evalAmount": 883000,
             "pnl": -11000,
             "returnPct": -1.23,
@@ -3607,8 +4497,18 @@
               "per": 6.52,
               "pbr": 0.53,
               "roe": 8.73,
+              "peerAverage": {
+                "per": 10.62,
+                "pbr": 0.58,
+                "roe": 8.8
+              },
               "badge": "저PBR · 저PER",
-              "updatedAt": "2026-05-07T23:25:07+09:00",
+              "report": [
+                "ROE 8.73%로 중간 수준의 수익성입니다. 비교군 평균 8.80% 대비 낮습니다.",
+                "PBR 0.53배로 장부가 대비 저평가 구간에 가깝습니다. 비교군 평균 0.58배 대비 낮습니다.",
+                "PER 6.52배로 이익 대비 가격 부담은 낮은 편입니다. 비교군 평균 10.62배 대비 낮습니다."
+              ],
+              "updatedAt": "2026-05-08T00:19:31+09:00",
               "source": "naver_finance"
             },
             "currentChangePct": 2.08,
@@ -3622,7 +4522,7 @@
         "benchmarkReturnPct": 1.09,
         "excessReturnPct": 0.0,
         "periodStart": "2026-05-06T16:16+09:00",
-        "periodEnd": "2026-05-07T23:27+09:00"
+        "periodEnd": "2026-05-08T00:24+09:00"
       }
     }
   ]

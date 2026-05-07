@@ -6,6 +6,19 @@ let itemCharts = [];
 const isMobile = () => window.matchMedia('(max-width: 1024px)').matches;
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
+function escapeHtml(value = '') {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function escapeAttr(value = '') {
+  return escapeHtml(value);
+}
+
 function isRegularMarketPoint(x) {
   if (!x?.ts) return false;
   const d = new Date(x.ts);
@@ -463,6 +476,15 @@ function fundamentalsText(f = {}) {
   return `${part('PER', f.per)} · ${part('PBR', f.pbr)} · ${part('ROE', f.roe, '%')}`;
 }
 
+function stockInfoPayload(item = {}) {
+  return escapeAttr(JSON.stringify({ code: item.code, name: item.name, fundamentals: item.fundamentals }));
+}
+
+function fundamentalsButton(item = {}) {
+  if (!item.fundamentals) return '';
+  return `<button class="stock-info-btn" type="button" data-stock-info='${stockInfoPayload(item)}'>종목 정보</button>`;
+}
+
 function candidateTile(c, idx) {
   const parts = reasonParts(c.reason);
   const change = c.changePct === null || c.changePct === undefined || c.changePct === '' ? parts['등락률'] : c.changePct;
@@ -485,7 +507,7 @@ function candidateTile(c, idx) {
       <span class="badge compact ${statusClass(status)}">${status}</span>
     </div>
     <div class="candidate-title">
-      <strong>${c.name || '-'}</strong>
+      ${c.fundamentals ? `<button class="stock-title-btn" type="button" data-stock-info='${stockInfoPayload(c)}'><strong>${c.name || '-'}</strong></button>` : `<strong>${c.name || '-'}</strong>`}
       ${c.code ? `<span class="muted">${c.code}</span>` : ''}
     </div>
     <div class="candidate-main">
@@ -501,7 +523,7 @@ function candidateTile(c, idx) {
       ${rawScore && rawScore !== score ? `<span>원점수 ${rawScore}</span>` : ''}
       ${c.fundamentals?.badge ? `<span>${c.fundamentals.badge}</span>` : ''}
     </div>
-    ${c.fundamentals ? `<details class="candidate-detail"><summary>PER/PBR/ROE 보기</summary><p>${fundamentalsText(c.fundamentals)}</p></details>` : ''}
+    ${fundamentalsButton(c)}
     ${c.candidateNote ? `<details class="candidate-detail"><summary>매수/보유 기준 보기</summary><p>${c.candidateNote}</p></details>` : ''}
     ${c.reason && (!theme && !meta && change === undefined) ? `<p class="candidate-reason">${c.reason}</p>` : ''}
   </article>`;
@@ -573,7 +595,7 @@ function holdingsBlock(pf = {}) {
         const holdingDays = String(p.holdingPeriod || '-').replace(/^보유\s*/, '');
         const f = p.fundamentals || null;
         return `<tr>
-          <td class="stock-name" data-label="종목명"><strong>${p.name || '-'}</strong></td>
+          <td class="stock-name" data-label="종목명">${p.fundamentals ? `<button class="stock-title-btn" type="button" data-stock-info='${stockInfoPayload(p)}'><strong>${p.name || '-'}</strong></button>` : `<strong>${p.name || '-'}</strong>`}</td>
           <td class="stock-code" data-label="종목코드">${p.code || '-'}</td>
           <td class="fundamental-cell" data-label="PER/PBR/ROE"><span>${f ? `${f.per ?? '-'} / ${f.pbr ?? '-'} / ${f.roe ?? '-'}` : '-'}</span>${f?.badge ? `<small>${f.badge}</small>` : ''}</td>
           <td data-label="보유일">${holdingDays}</td>
@@ -688,6 +710,59 @@ function setActive(id, shouldScroll = true) {
 }
 
 
+function renderStockInfoModal() {
+  if (document.getElementById('stockInfoModal')) return;
+  document.body.insertAdjacentHTML('beforeend', `<div class="stock-modal" id="stockInfoModal" aria-hidden="true">
+    <div class="stock-modal-backdrop" data-close-stock-modal></div>
+    <section class="stock-modal-panel" role="dialog" aria-modal="true" aria-label="종목 정보">
+      <button class="stock-modal-close" type="button" data-close-stock-modal>×</button>
+      <div id="stockModalContent"></div>
+    </section>
+  </div>`);
+  document.querySelectorAll('[data-close-stock-modal]').forEach(el => el.addEventListener('click', closeStockInfoModal));
+}
+
+function metricBlock(label, value, avg, suffix = '') {
+  const shown = value === null || value === undefined || value === '' ? '-' : `${Number(value).toFixed(2)}${suffix}`;
+  const avgText = avg === null || avg === undefined || avg === '' ? '비교평균 -' : `비교평균 ${Number(avg).toFixed(2)}${suffix}`;
+  return `<div class="stock-metric"><span>${label}</span><strong>${shown}</strong><small>${avgText}</small></div>`;
+}
+
+function openStockInfoModal(payload) {
+  renderStockInfoModal();
+  const f = payload.fundamentals || {};
+  const avg = f.peerAverage || {};
+  const report = (f.report || []).map(x => `<li>${escapeHtml(x)}</li>`).join('') || '<li>분석 리포트 데이터 대기</li>';
+  document.getElementById('stockModalContent').innerHTML = `<div class="stock-modal-head">
+    <span>${escapeHtml(payload.code || '')}</span>
+    <h3>${escapeHtml(payload.name || '종목 정보')}</h3>
+    ${f.badge ? `<em>${escapeHtml(f.badge)}</em>` : ''}
+  </div>
+  <div class="stock-metrics">
+    ${metricBlock('ROE', f.roe, avg.roe, '%')}
+    ${metricBlock('PBR', f.pbr, avg.pbr, '배')}
+    ${metricBlock('PER', f.per, avg.per, '배')}
+  </div>
+  <div class="stock-report">
+    <h4>간단 분석</h4>
+    <ul>${report}</ul>
+  </div>
+  <p class="stock-modal-note">공개 재무지표 기반 보조 정보입니다. 전략 점수에는 아직 직접 반영하지 않았습니다.</p>`;
+  document.getElementById('stockInfoModal').classList.add('open');
+}
+
+function closeStockInfoModal() {
+  document.getElementById('stockInfoModal')?.classList.remove('open');
+}
+
+function bindStockInfoButtons() {
+  document.querySelectorAll('.stock-info-btn').forEach(btn => btn.addEventListener('click', ev => {
+    ev.preventDefault();
+    ev.stopPropagation();
+    try { openStockInfoModal(JSON.parse(btn.dataset.stockInfo || '{}')); } catch (err) { console.warn(err); }
+  }));
+}
+
 function render(data) {
   data = enrichSessions(data);
   document.getElementById('updated').textContent = `마지막 갱신: ${formatKst(data.generatedAt)}`;
@@ -711,6 +786,7 @@ function render(data) {
       ${renderSessionCard(s, true, false)}
     </section>`).join('');
 
+  bindStockInfoButtons();
   renderMainCharts(data);
   renderItemCharts(data);
   requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'auto' }));

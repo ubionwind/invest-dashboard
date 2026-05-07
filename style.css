@@ -166,6 +166,27 @@ ul.clean li { padding: 11px; border: 1px solid var(--line); border-radius: 13px;
 .candidate-detail { margin-top: 9px; color: var(--muted); font-size: 12px; }
 .candidate-detail summary { cursor: pointer; color: #caddff; font-weight: 800; }
 .candidate-detail p { margin: 6px 0 0; line-height: 1.4; }
+.stock-title-btn { padding: 0; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; text-align: inherit; }
+.stock-title-btn strong { text-decoration: underline; text-decoration-color: rgba(121,167,255,.45); text-underline-offset: 3px; }
+.stock-info-btn { margin-top: 7px; padding: 5px 8px; border: 1px solid rgba(121,167,255,.28); border-radius: 999px; background: rgba(121,167,255,.08); color: #cfe0ff; font-size: 11px; font-weight: 900; cursor: pointer; }
+.holding-table .stock-info-btn { display: block; margin: 5px auto 0; }
+.stock-modal { position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; padding: 18px; }
+.stock-modal.open { display: flex; }
+.stock-modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.62); backdrop-filter: blur(4px); }
+.stock-modal-panel { position: relative; width: min(520px, 100%); max-height: min(82vh, 720px); overflow: auto; padding: 18px; border-radius: 20px; border: 1px solid rgba(255,209,102,.32); background: linear-gradient(180deg, rgba(31,38,64,.98), rgba(15,20,36,.98)); box-shadow: 0 24px 80px rgba(0,0,0,.45); }
+.stock-modal-close { position: absolute; top: 10px; right: 12px; width: 32px; height: 32px; border: 0; border-radius: 50%; background: rgba(255,255,255,.08); color: var(--text); font-size: 22px; cursor: pointer; }
+.stock-modal-head { display: grid; gap: 6px; padding-right: 36px; }
+.stock-modal-head span { color: var(--muted); font-size: 12px; }
+.stock-modal-head h3 { margin: 0; font-size: 24px; }
+.stock-modal-head em { justify-self: start; padding: 5px 9px; border-radius: 999px; background: rgba(255,209,102,.16); color: #ffe5a3; font-style: normal; font-size: 12px; font-weight: 900; }
+.stock-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 14px; }
+.stock-metric { padding: 11px; border-radius: 14px; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.07); text-align: center; }
+.stock-metric span, .stock-metric small { display: block; color: var(--muted); font-size: 11px; }
+.stock-metric strong { display: block; margin: 5px 0; font-size: 22px; }
+.stock-report { margin-top: 14px; padding: 13px; border-radius: 15px; background: rgba(0,0,0,.16); }
+.stock-report h4 { margin: 0 0 8px; color: #ffe5a3; }
+.stock-report ul { margin: 0; padding-left: 18px; display: grid; gap: 7px; color: #dbe7ff; font-size: 13px; line-height: 1.45; }
+.stock-modal-note { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.4; }
 .candidate-reason { margin: 10px 0 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
 .strategy-candidates { margin-top: 4px; padding: 11px 12px; border: 1px solid rgba(121,167,255,.20); border-radius: 16px; background: rgba(121,167,255,.035); }
 .strategy-candidates summary { display: flex; justify-content: space-between; align-items: center; gap: 10px; cursor: pointer; color: #caddff; font-weight: 900; list-style: none; }
