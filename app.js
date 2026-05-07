@@ -317,7 +317,8 @@ function holdingCandidateComparison(s) {
           const holdReason = isTarget
             ? (bestPasses ? `통과 후보 ${bestReplacement.name || ''}와 교체 검토` : '최고 후보가 아직 통과선 미달')
             : `교체 판단 대상 아님 · 기준종목은 ${replacementTarget?.name || '-'}`;
-          return `<article class="holding-compare-card">
+          return `<article class="holding-compare-card ${isTarget ? 'basis-stock-card' : ''}">
+            ${isTarget ? '<div class="basis-ribbon">기준종목 · 후보 통과선 산정 기준</div>' : ''}
             <div class="compare-hero">
               <div class="compare-identity"><strong>${pos.name || '-'}</strong><b class="${ret >= 0 ? 'up' : 'down'}">${pct(pos.returnPct)}</b></div>
               ${switchMiniGraph({ baseScore: lowestHeldScore, currentScore, candidateScore: bestCandidateScore, returnPct: pos.returnPct, currentLabel: graphCurrentLabel, triggerBaseScore: lowestHeldScore, thresholdLabel: '공통기준' })}

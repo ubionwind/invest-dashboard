@@ -106,6 +106,8 @@ main { padding: 24px clamp(18px, 4vw, 48px) 44px; }
 .comparison-block { min-width: 0; display: grid; grid-auto-rows: max-content; align-content: start; align-items: start; gap: 9px; }
 .comparison-block h4 { margin: 0; color: #ffe5a3; font-size: 13px; }
 .holding-compare-card, .replacement-card { min-width: 0; min-height: 0; height: fit-content; display: grid; grid-auto-rows: max-content; align-content: start; gap: 8px; padding: 11px; border-radius: 14px; border: 1px solid rgba(255,255,255,.07); background: rgba(255,255,255,.04); }
+.basis-stock-card { border-color: rgba(255,209,102,.72); background: linear-gradient(180deg, rgba(255,209,102,.13), rgba(255,255,255,.045)); box-shadow: 0 0 0 1px rgba(255,209,102,.16), 0 16px 42px rgba(255,209,102,.08); }
+.basis-ribbon { justify-self: start; padding: 4px 9px; border-radius: 999px; background: rgba(255,209,102,.18); border: 1px solid rgba(255,209,102,.45); color: #ffe5a3; font-size: 11px; font-weight: 900; }
 .compare-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 10px; align-items: center; }
 .compare-identity { min-width: 0; display: grid; gap: 4px; }
 .compare-identity strong { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; }
