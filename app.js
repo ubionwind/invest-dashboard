@@ -726,9 +726,9 @@ function renderActionMatrix(data = {}) {
     </div>
     <div class="matrix-summary">${counts.map(x => `<span class="matrix-count ${x.code.toLowerCase()}"><b>${x.count}</b><em>${x.label}</em></span>`).join('')}</div>
     <div class="action-matrix-grid">${groups.map(([code, label]) => {
-      const items = rows.filter(r => r.signal.code === code).slice(0, 12);
+      const items = rows.filter(r => r.signal.code === code);
       const empty = code === 'BUY' ? '현재 신규 매수 검토 후보 없음' : '현재 없음';
-      return `<article class="matrix-column ${code.toLowerCase()}"><h3>${label}<small>${rows.filter(r => r.signal.code === code).length}</small></h3>${items.length ? items.map(cell).join('') : `<p class="muted matrix-empty">${empty}</p>`}</article>`;
+      return `<article class="matrix-column ${code.toLowerCase()}"><h3>${label}<small>${items.length}</small></h3>${items.length ? items.map(cell).join('') : `<p class="muted matrix-empty">${empty}</p>`}</article>`;
     }).join('')}</div>
   </section>`;
 }
