@@ -898,12 +898,16 @@ function renderDetail(stock, contexts, ohlcv) {
 
 async function main() {
   if (!/^\d{6}$/.test(code)) throw new Error('종목코드가 없습니다.');
-  const [dashboard, ohlcvData] = await Promise.all([
-    firstJson(['data/test/dashboard-data.json', 'data/dashboard-data.json']),
-    firstJson(['data/test/fundamentals/daily_ohlcv_latest.json', 'data/fundamentals/daily_ohlcv_latest.json']),
+  const [dashboard, ohlcvData, stockDetail] = await Promise.all([
+    firstJson(['data/dashboard-data.json', 'data/test/dashboard-data.json']),
+    firstJson(['data/fundamentals/daily_ohlcv_latest.json', 'data/test/fundamentals/daily_ohlcv_latest.json']),
+    firstJson([`data/stocks/${code}.json`, `data/test/stocks/${code}.json`]).catch(() => null),
   ]);
   const matches = walkStocks(dashboard).filter(x => String(x.code).padStart(6,'0') === code);
   if (!matches.length) throw new Error(`${code} 종목 분석 데이터가 없습니다.`);
+  if (stockDetail?.fundamentals) {
+    matches.forEach(x => { x.fundamentals = { ...(x.fundamentals || {}), ...stockDetail.fundamentals }; });
+  }
   matches.forEach(x => { if (x.fundamentals) x.fundamentals.marketRegime = dashboard.marketRegime; });
   renderDetail(matches[0], uniqContexts(matches), ohlcvData.items?.[code]);
 }

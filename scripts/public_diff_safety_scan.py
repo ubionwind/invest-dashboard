@@ -10,7 +10,7 @@ import re
 import subprocess
 import sys
 
-PATHS = ['data/dashboard-data.json', 'data/dashboard-history.json', 'data/test', 'data/layers']
+PATHS = ['data/dashboard-data.json', 'data/dashboard-history.json', 'data/stocks', 'data/test', 'data/layers']
 BLOCK_PATTERNS = [
     r'app[_-]?key\s*[:=]',
     r'app[_-]?secret\s*[:=]',

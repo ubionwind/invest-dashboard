@@ -1925,6 +1925,64 @@ def attach_public_fundamentals(items):
             x['fundamentals'] = x.get('fundamentals') or public_fundamentals(x.get('code'))
 
 
+def slim_public_fundamentals(f):
+    if not isinstance(f, dict):
+        return None
+    expert = f.get('expertAnalysis') if isinstance(f.get('expertAnalysis'), dict) else {}
+    survival = expert.get('survival') if isinstance(expert.get('survival'), dict) else {}
+    return {
+        'per': f.get('per'),
+        'pbr': f.get('pbr'),
+        'roe': f.get('roe'),
+        'badge': f.get('badge'),
+        'updatedAt': f.get('updatedAt'),
+        'universeStatus': f.get('universeStatus'),
+        'technicalSignal': f.get('technicalSignal'),
+        'stockFutureQuote': f.get('stockFutureQuote'),
+        'nxtQuote': f.get('nxtQuote'),
+        'expertAnalysis': {
+            'score': expert.get('score'),
+            'stance': expert.get('stance'),
+            'summary': expert.get('summary'),
+            'survival': {
+                'actionState': survival.get('actionState'),
+                'confidenceScore': survival.get('confidenceScore'),
+                'confidenceLevel': survival.get('confidenceLevel'),
+                'positionGuide': survival.get('positionGuide'),
+            } if survival else None,
+        } if expert else None,
+    }
+
+
+def split_stock_detail_files(data):
+    """Move full fundamentals to data/stocks/{code}.json and keep dashboard rows slim."""
+    stocks_dir = OUT.parent/'stocks'
+    stocks_dir.mkdir(parents=True, exist_ok=True)
+    details = {}
+
+    def walk(x):
+        if isinstance(x, dict):
+            f = x.get('fundamentals') if isinstance(x.get('fundamentals'), dict) else None
+            code = str(x.get('code') or (f or {}).get('code') or '').zfill(6)
+            if f and re.fullmatch(r'\d{6}', code):
+                candidate = {'code': code, 'name': x.get('name') or f.get('name'), 'fundamentals': f, 'generatedAt': data.get('generatedAt')}
+                old = details.get(code)
+                if old is None or len(json.dumps(candidate, ensure_ascii=False)) > len(json.dumps(old, ensure_ascii=False)):
+                    details[code] = candidate
+                x['fundamentals'] = slim_public_fundamentals(f)
+            for v in x.values():
+                walk(v)
+        elif isinstance(x, list):
+            for v in x:
+                walk(v)
+
+    walk(data)
+    for code, payload in details.items():
+        (stocks_dir/f'{code}.json').write_text(json.dumps(payload, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+    data['stockDetailIndex'] = {'basePath': 'data/stocks/', 'count': len(details), 'mode': 'lazy-load-by-code'}
+    return data
+
+
 def enrich_comparison_fields(s, sid):
     pf = s.get('portfolio') or {}
     positions = pf.get('positions') if isinstance(pf.get('positions'), list) else []
@@ -2209,5 +2267,6 @@ summary['survivalReviewReadyCount'] = survival_review.get('reviewReadyCount')
 summary['survivalHighRiskCount'] = survival_review.get('highRiskCount')
 
 data={'generatedAt': point['ts'], 'summary':summary, 'marketRegime': market_regime, 'survivalReview': survival_review, 'benchmark':benchmark, 'kodexBenchmark':kodex_benchmark, 'sessions':sessions, 'history':history, 'notice':'Dashboard reset; previous metrics are not inherited.'}
-OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
+split_stock_detail_files(data)
+OUT.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
 print(OUT)

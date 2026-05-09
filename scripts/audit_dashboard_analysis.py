@@ -130,6 +130,7 @@ def main():
     else:
         errors.append(('history', '-', 'empty history'))
 
+    split_details = isinstance(data.get('stockDetailIndex'), dict)
     for path, item in rows:
         code = str(item.get('code') or '').zfill(6)
         fundamentals = item.get('fundamentals') or {}
@@ -140,6 +141,18 @@ def main():
             errors.append((path, code, 'bad code'))
         if fundamentals:
             stats['fundamental_rows'] += 1
+            if split_details and not fundamentals.get('kisEnrichment') and not fundamentals.get('technicalStructure'):
+                for required in ['score', 'stance', 'summary']:
+                    if required not in analysis or analysis.get(required) in (None, '', []):
+                        errors.append((path, code, f'missing slim expertAnalysis.{required}'))
+                survival = analysis.get('survival') if isinstance(analysis, dict) else None
+                if not isinstance(survival, dict):
+                    errors.append((path, code, 'missing slim expertAnalysis.survival'))
+                else:
+                    for required in ['confidenceScore', 'confidenceLevel', 'actionState', 'positionGuide']:
+                        if survival.get(required) in (None, '', []):
+                            errors.append((path, code, f'missing slim survival.{required}'))
+                continue
             for required in ['score', 'stance', 'summary', 'keyPoints', 'upsideTriggers', 'riskSignals', 'actionPoints']:
                 if required not in analysis or analysis.get(required) in (None, '', []):
                     errors.append((path, code, f'missing expertAnalysis.{required}'))
@@ -166,6 +179,37 @@ def main():
                     errors.append((path, code, 'missing survival.failureRiskPatterns'))
                 if isinstance(survival.get('marketRegime'), dict) and survival['marketRegime'].get('state') != regime.get('state'):
                     errors.append((path, code, 'survival marketRegime mismatch'))
+
+    if split_details:
+        stocks_dir = ROOT / 'data/stocks'
+        files = sorted(stocks_dir.glob('*.json')) if stocks_dir.exists() else []
+        if len(files) < int((data.get('stockDetailIndex') or {}).get('count') or 0):
+            errors.append(('data/stocks', '-', 'stock detail file count below index count'))
+        for fp in files:
+            try:
+                payload = json.loads(fp.read_text(encoding='utf-8'))
+            except Exception as exc:
+                errors.append((str(fp), '-', f'invalid json: {exc}'))
+                continue
+            code = str(payload.get('code') or fp.stem).zfill(6)
+            f = payload.get('fundamentals') if isinstance(payload.get('fundamentals'), dict) else {}
+            analysis = f.get('expertAnalysis') if isinstance(f.get('expertAnalysis'), dict) else {}
+            survival = analysis.get('survival') if isinstance(analysis.get('survival'), dict) else {}
+            if not f:
+                errors.append((str(fp), code, 'missing detail fundamentals'))
+                continue
+            for required in ['score', 'stance', 'summary', 'keyPoints', 'upsideTriggers', 'riskSignals', 'actionPoints']:
+                if analysis.get(required) in (None, '', []):
+                    errors.append((str(fp), code, f'missing detail expertAnalysis.{required}'))
+            if not f.get('technicalStructure'):
+                errors.append((str(fp), code, 'missing detail technicalStructure'))
+            if not f.get('kisEnrichment'):
+                errors.append((str(fp), code, 'missing detail kisEnrichment'))
+            for required in ['confidenceScore', 'confidenceLevel', 'actionState', 'positionGuide', 'marketRegime']:
+                if survival.get(required) in (None, '', []):
+                    errors.append((str(fp), code, f'missing detail survival.{required}'))
+            if 'failureRiskPatterns' not in survival:
+                errors.append((str(fp), code, 'missing detail survival.failureRiskPatterns'))
 
     for index, session in enumerate(data.get('sessions') or []):
         pf = session.get('portfolio') or {}
