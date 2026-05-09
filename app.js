@@ -635,14 +635,18 @@ function stockActionSignal(item = {}, source = '') {
   const score = Number(item.score ?? item.currentScoreNormalized ?? f.expertAnalysis?.score ?? NaN);
   const confidence = Number(survival.confidenceScore ?? NaN);
   const ret = Number(item.returnPct ?? NaN);
-  const text = `${action} ${item.reason || ''} ${item.holdReason || ''}`;
-  if (/손절|매도/.test(text)) return { code: 'SELL', label: '매도/손절', tone: 'sell', priority: 1 };
-  if (/익절|트레일링|리밸런싱/.test(text)) return { code: 'TAKE', label: '익절/축소', tone: 'take', priority: 2 };
+  const text = `${action} ${item.reviewAction || ''} ${item.status || ''} ${item.reason || ''} ${item.holdReason || ''}`;
+  if (/손절|리스크 차단|중대 손실/.test(text)) return { code: 'STOP', label: '손절/리스크 차단', tone: 'sell', priority: 1 };
+  if (/익절|트레일링/.test(text)) return { code: 'TAKE', label: '익절/트레일링', tone: 'take', priority: 2 };
+  if (/모멘텀소멸|모멘텀 소멸|모멘텀이탈|모멘텀 이탈|진입 조건 약화|후보권 이탈/.test(text)) return { code: 'MOMENTUM', label: '모멘텀 점검', tone: 'exit', priority: 3 };
+  if (/보유근거|단기점수약화|점수약화|근거 약화/.test(text)) return { code: 'WEAK', label: '보유근거 약화', tone: 'exit', priority: 4 };
+  if (/리밸런싱/.test(text)) return { code: 'REBALANCE', label: '리밸런싱 검토', tone: 'exit', priority: 5 };
+  if (/매도/.test(text)) return { code: 'EXIT', label: '청산 검토', tone: 'exit', priority: 6 };
   if (/매수 보류|관망/.test(action)) return { code: 'WAIT', label: '관망', tone: 'wait', priority: 5 };
   if (/소액|분할|조건/.test(action)) return { code: 'SMALL', label: '조건부/소액', tone: 'small', priority: 4 };
   if (source === 'buyAlert') return { code: 'WATCH', label: '매수기록', tone: 'watch', priority: 6 };
   if (/적극/.test(action) || (Number.isFinite(score) && score >= 75 && Number.isFinite(confidence) && confidence >= 60)) return { code: 'BUY', label: '매수 검토', tone: 'buy', priority: 3 };
-  if (source === 'holding' && Number.isFinite(ret) && ret <= -4) return { code: 'SELL', label: '손절 검토', tone: 'sell', priority: 1 };
+  if (source === 'holding' && Number.isFinite(ret) && ret <= -4) return { code: 'STOP', label: '손절 검토', tone: 'sell', priority: 1 };
   return { code: 'WATCH', label: '추적 관찰', tone: 'watch', priority: 6 };
 }
 
@@ -674,6 +678,9 @@ function collectActionMatrix(data = {}) {
       holdingQty: isHolding ? (item.qty ?? prev?.holdingQty ?? null) : null,
       returnPct: item.returnPct ?? prev?.returnPct ?? null,
       reason: item.holdReason || item.candidateNote || item.reason || item.fundamentals?.expertAnalysis?.summary || prev?.reason || '',
+      reviewAction: item.reviewAction || item.holdAction || prev?.reviewAction || '',
+      executionStatus: item.executionStatus || prev?.executionStatus || '',
+      executedQty: item.executedQty ?? prev?.executedQty ?? null,
       item: { code, name: item.name || prev?.name, fundamentals: item.fundamentals || prev?.item?.fundamentals },
     };
     if (prev?.holdingState === '보유중' && row.holdingState !== '보유중') {
@@ -698,7 +705,8 @@ function collectActionMatrix(data = {}) {
 function renderActionMatrix(data = {}) {
   const rows = collectActionMatrix(data);
   const groups = [
-    ['BUY', '매수 검토'], ['SMALL', '조건부/소액'], ['WAIT', '관망'], ['WATCH', '추적 관찰'], ['TAKE', '익절/축소'], ['SELL', '매도/손절'],
+    ['BUY', '매수 검토'], ['SMALL', '조건부/소액'], ['WAIT', '관망'], ['WATCH', '추적 관찰'],
+    ['TAKE', '익절/트레일링'], ['STOP', '손절/리스크 차단'], ['MOMENTUM', '모멘텀 점검'], ['WEAK', '보유근거 약화'], ['REBALANCE', '리밸런싱 검토'], ['EXIT', '청산 검토'],
   ];
   const counts = groups.map(([code, label]) => ({ code, label, count: rows.filter(r => r.signal.code === code).length }));
   const holdingCount = rows.filter(r => r.holdingState === '보유중').length;
@@ -707,17 +715,28 @@ function renderActionMatrix(data = {}) {
     if (r.holdingState !== '보유중' && r.signal.code === 'WAIT') return '관찰대기';
     return r.holdingState === '보유중' ? '보유' : '관찰';
   };
+  const executionNote = r => {
+    if (['TAKE','STOP','MOMENTUM','WEAK','REBALANCE','EXIT'].includes(r.signal.code)) {
+      const filled = String(r.executionStatus || '').includes('FILLED') || Number(r.executedQty || 0) > 0;
+      return filled ? '실행상태: 체결 기록' : '실행상태: 검토만 · 미체결 · 자동매도 아님';
+    }
+    return '';
+  };
   const stateNote = r => {
     if (r.holdingState === '보유중' && r.signal.code === 'WAIT') return '추가매수 보류 · 기존 보유 유지';
     if (r.holdingState !== '보유중' && r.signal.code === 'WAIT') return '신규매수 아님 · 조건 개선 대기';
+    if (r.signal.code === 'MOMENTUM') return '종목 분석과 별개로 보유 진입조건 약화 점검';
+    if (['TAKE','STOP','WEAK','REBALANCE','EXIT'].includes(r.signal.code)) return '보유 포지션 관리 레이어 판단';
     if (r.holdingState === '보유중') return '보유 포지션 기준';
     return '미보유 관찰 종목';
   };
   const cell = r => `<a class="matrix-stock ${r.signal.tone} ${r.holdingState === '보유중' ? 'holding' : 'watching'}" href="${stockDetailUrl(r.item)}" title="${escapeHtml(r.reason)}">
     <div class="matrix-stock-head"><strong>${escapeHtml(r.name || r.code)}</strong><small class="hold-badge ${r.holdingState === '보유중' ? 'on' : 'off'}">${stateLabel(r)}</small></div>
     <span>${escapeHtml(r.code)} · ${escapeHtml(r.strategy || '-')}</span>
-    <em>점수 ${r.score ?? '-'} · 확신 ${r.confidence ?? '-'}${r.holdingState === '보유중' && r.returnPct !== null ? ` · 수익 ${pct(r.returnPct)}` : ''}</em>
+    <em>종목분석 점수 ${r.score ?? '-'} · 확신 ${r.confidence ?? '-'}${r.holdingState === '보유중' && r.returnPct !== null ? ` · 포지션 수익 ${pct(r.returnPct)}` : ''}</em>
+    ${r.reviewAction ? `<i>검토사유: ${escapeHtml(r.reviewAction)}</i>` : ''}
     <i>${stateNote(r)}</i>
+    ${executionNote(r) ? `<i>${executionNote(r)}</i>` : ''}
   </a>`;
   return `<section class="card action-matrix-card">
     <div class="card-head">
