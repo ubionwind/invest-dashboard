@@ -635,6 +635,9 @@ function stockActionSignal(item = {}, source = '') {
   const score = Number(item.score ?? item.currentScoreNormalized ?? f.expertAnalysis?.score ?? NaN);
   const confidence = Number(survival.confidenceScore ?? NaN);
   const ret = Number(item.returnPct ?? NaN);
+  const category = item.exitReviewCategory || {};
+  const categoryPriority = { STOP: 1, TAKE: 2, MOMENTUM: 3, WEAK: 4, REBALANCE: 5, EXIT: 6, EXECUTED: 2 };
+  if (category.code && category.code !== 'EXECUTED') return { code: category.code, label: category.label || '보유 포지션 점검', tone: category.code === 'STOP' ? 'sell' : (category.code === 'TAKE' ? 'take' : 'exit'), priority: categoryPriority[category.code] || 6 };
   const text = `${action} ${item.reviewAction || ''} ${item.status || ''} ${item.reason || ''} ${item.holdReason || ''}`;
   if (/손절|리스크 차단|중대 손실/.test(text)) return { code: 'STOP', label: '손절/리스크 차단', tone: 'sell', priority: 1 };
   if (/익절|트레일링/.test(text)) return { code: 'TAKE', label: '익절/트레일링', tone: 'take', priority: 2 };
@@ -679,6 +682,7 @@ function collectActionMatrix(data = {}) {
       returnPct: item.returnPct ?? prev?.returnPct ?? null,
       reason: item.holdReason || item.candidateNote || item.reason || item.fundamentals?.expertAnalysis?.summary || prev?.reason || '',
       reviewAction: item.reviewAction || item.holdAction || prev?.reviewAction || '',
+      exitReviewCategory: item.exitReviewCategory || prev?.exitReviewCategory || null,
       executionStatus: item.executionStatus || prev?.executionStatus || '',
       executedQty: item.executedQty ?? prev?.executedQty ?? null,
       item: { code, name: item.name || prev?.name, fundamentals: item.fundamentals || prev?.item?.fundamentals },
@@ -734,8 +738,9 @@ function renderActionMatrix(data = {}) {
     <div class="matrix-stock-head"><strong>${escapeHtml(r.name || r.code)}</strong><small class="hold-badge ${r.holdingState === '보유중' ? 'on' : 'off'}">${stateLabel(r)}</small></div>
     <span>${escapeHtml(r.code)} · ${escapeHtml(r.strategy || '-')}</span>
     <em>종목분석 점수 ${r.score ?? '-'} · 확신 ${r.confidence ?? '-'}${r.holdingState === '보유중' && r.returnPct !== null ? ` · 포지션 수익 ${pct(r.returnPct)}` : ''}</em>
+    ${r.exitReviewCategory?.label ? `<i>분류: ${escapeHtml(r.exitReviewCategory.label)}</i>` : ''}
     ${r.reviewAction ? `<i>검토사유: ${escapeHtml(r.reviewAction)}</i>` : ''}
-    <i>${stateNote(r)}</i>
+    <i>${escapeHtml(r.exitReviewCategory?.plain || stateNote(r))}</i>
     ${executionNote(r) ? `<i>${executionNote(r)}</i>` : ''}
   </a>`;
   return `<section class="card action-matrix-card">
