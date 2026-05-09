@@ -701,10 +701,22 @@ function renderActionMatrix(data = {}) {
   ];
   const counts = groups.map(([code, label]) => ({ code, label, count: rows.filter(r => r.signal.code === code).length }));
   const holdingCount = rows.filter(r => r.holdingState === '보유중').length;
+  const stateLabel = r => {
+    if (r.holdingState === '보유중' && r.signal.code === 'WAIT') return '보유관망';
+    if (r.holdingState !== '보유중' && r.signal.code === 'WAIT') return '관찰대기';
+    return r.holdingState === '보유중' ? '보유' : '관찰';
+  };
+  const stateNote = r => {
+    if (r.holdingState === '보유중' && r.signal.code === 'WAIT') return '추가매수 보류 · 기존 보유 유지';
+    if (r.holdingState !== '보유중' && r.signal.code === 'WAIT') return '신규매수 아님 · 조건 개선 대기';
+    if (r.holdingState === '보유중') return '보유 포지션 기준';
+    return '미보유 관찰 종목';
+  };
   const cell = r => `<a class="matrix-stock ${r.signal.tone} ${r.holdingState === '보유중' ? 'holding' : 'watching'}" href="${stockDetailUrl(r.item)}" title="${escapeHtml(r.reason)}">
-    <div class="matrix-stock-head"><strong>${escapeHtml(r.name || r.code)}</strong><small class="hold-badge ${r.holdingState === '보유중' ? 'on' : 'off'}">${r.holdingState === '보유중' ? '보유' : '관찰'}</small></div>
+    <div class="matrix-stock-head"><strong>${escapeHtml(r.name || r.code)}</strong><small class="hold-badge ${r.holdingState === '보유중' ? 'on' : 'off'}">${stateLabel(r)}</small></div>
     <span>${escapeHtml(r.code)} · ${escapeHtml(r.strategy || '-')}</span>
     <em>점수 ${r.score ?? '-'} · 확신 ${r.confidence ?? '-'}${r.holdingState === '보유중' && r.returnPct !== null ? ` · 수익 ${pct(r.returnPct)}` : ''}</em>
+    <i>${stateNote(r)}</i>
   </a>`;
   return `<section class="card action-matrix-card">
     <div class="card-head">
