@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-import json, pathlib, datetime, statistics, urllib.request, csv, io, re, collections
+import json, pathlib, datetime, statistics, urllib.request, csv, io, re, collections, socket
 ROOT = pathlib.Path('/home/ubion/.openclaw/workspace')
+socket.setdefaulttimeout(12)
 RUNTIME = ROOT/'shared/invest_api_common/runtime'
 OUT = pathlib.Path(__file__).resolve().parents[1]/'data/dashboard-data.json'
 KST = datetime.timezone(datetime.timedelta(hours=9))
@@ -660,6 +661,8 @@ def apply_sector_weighting_to_survival(f, survival):
     peer = f.get('peerGrowthMargin') if isinstance(f.get('peerGrowthMargin'), dict) else {}
     target = peer.get('target') if isinstance(peer.get('target'), dict) else {}
     avg = peer.get('peerAverage') if isinstance(peer.get('peerAverage'), dict) else {}
+    code = str(f.get('code') or '').zfill(6)
+    name = str(f.get('name') or '')
     rules = []
     delta = 0
     frgn5 = summary.get('foreignNetBuyAmount5d')
@@ -668,16 +671,32 @@ def apply_sector_weighting_to_survival(f, survival):
     loan5 = summary.get('loanBalanceChange5d')
     per, pbr, roe = f.get('per'), f.get('pbr'), f.get('roe')
     if key == 'semiconductor':
-        rules.append('반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다.')
+        rules.append('반도체/전자는 PER 단순 저평가보다 메모리 업황·HBM·외국인 수급·업종 상대강도를 우선합니다.')
+        if code == '005930' or '삼성전자' in name:
+            rules.append('삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.')
         if isinstance(frgn5, (int, float)) and isinstance(orgn5, (int, float)):
             if frgn5 > 0 and orgn5 > 0:
                 delta += 4; rules.append('외국인·기관 동반 순매수로 업황 민감주 신뢰도 보강')
             elif frgn5 < 0 and orgn5 < 0:
                 delta -= 7; rules.append('외국인·기관 동반 순매도로 반도체 추세 신뢰도 하향')
     elif key == 'bio':
-        rules.append('바이오/제약은 PER보다 임상·허가·기술수출·공시 이벤트 확인을 우선합니다.')
-        if not kis.get('parts', {}).get('news', {}).get('ok'):
-            delta -= 5; rules.append('뉴스/공시 이벤트 확인 부족으로 확신도 하향')
+        if code == '207940' or '삼성바이오로직스' in name:
+            out['sectorProfile'] = {
+                **sector,
+                'key': 'cdmo',
+                'label': 'CDMO 대형주',
+                'importantFactors': ['수주잔고', '공장 가동률', 'CAPA', '글로벌 빅파마 계약', '환율', '영업이익률', '품질/규제 리스크'],
+                'downweightedFactors': ['일반 바이오 임상 모멘텀', 'PER 단순 해석'],
+                'plain': '삼성바이오로직스는 일반 바이오보다 CDMO 대형주로 봅니다. 수주·CAPA·가동률·환율·마진·품질 리스크를 우선합니다.',
+            }
+            sector = out['sectorProfile']
+            rules.append('삼성바이오로직스는 일반 바이오가 아니라 CDMO 대형주로 분리해 수주·CAPA·가동률·환율·마진을 우선합니다.')
+            if not kis.get('parts', {}).get('news', {}).get('ok'):
+                delta -= 3; rules.append('CDMO 계약/증설/품질 이슈 확인 부족으로 확신도 일부 하향')
+        else:
+            rules.append('바이오/제약은 PER보다 임상·허가·기술수출·공시 이벤트 확인을 우선합니다.')
+            if not kis.get('parts', {}).get('news', {}).get('ok'):
+                delta -= 5; rules.append('뉴스/공시 이벤트 확인 부족으로 확신도 하향')
         if per is not None:
             rules.append('PER은 참고만 하고 단독 매수 근거로 쓰지 않음')
     elif key == 'financial':
@@ -731,19 +750,21 @@ def classify_failure_risk_patterns(f, survival):
     frgn5 = summary.get('foreignNetBuyAmount5d')
     orgn5 = summary.get('institutionNetBuyAmount5d')
     if regime.get('state') in ('RISK_OFF', 'CAUTION') and survival.get('actionState') not in ('관망 우선', '매수 보류'):
-        patterns.append({'code': 'REGIME_OVERRIDE_RISK', 'label': '시장위험 과소반영', 'explain': '시장 상태가 약한데도 진입 판단이 남아 있어 실패 시 Regime 무시 가능성을 봅니다.'})
+        patterns.append({'code': 'REGIME_OVERRIDE_RISK', 'label': '시장위험 과소반영 후보', 'explain': '시장 상태가 약한데도 진입 판단이 남아 있어 실패 시 Regime 무시 가능성을 봅니다.'})
     if isinstance(short_ratio, (int, float)) and short_ratio >= 8:
-        patterns.append({'code': 'SHORT_PRESSURE_RISK', 'label': '공매도 압력 오판 위험', 'explain': '공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다.'})
+        patterns.append({'code': 'SHORT_PRESSURE_RISK', 'label': '공매도 압력 오판위험 후보', 'explain': '공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다.'})
     if isinstance(loan5, (int, float)) and loan5 > 0:
-        patterns.append({'code': 'LOAN_BALANCE_RISK', 'label': '대차잔고 증가 무시 위험', 'explain': '대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다.'})
+        patterns.append({'code': 'LOAN_BALANCE_RISK', 'label': '대차잔고 증가 무시 후보', 'explain': '대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다.'})
     if isinstance(frgn5, (int, float)) and isinstance(orgn5, (int, float)) and frgn5 < 0 and orgn5 < 0:
-        patterns.append({'code': 'FLOW_DISTRIBUTION_RISK', 'label': '수급 이탈 오판 위험', 'explain': '외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다.'})
-    if sector.get('key') == 'bio' and not kis.get('parts', {}).get('news', {}).get('ok'):
-        patterns.append({'code': 'BIO_EVENT_GAP_RISK', 'label': '바이오 이벤트 누락 위험', 'explain': '바이오는 임상·허가·공시 이벤트 누락 시 설명은 그럴듯해도 실전 판단이 틀릴 수 있습니다.'})
+        patterns.append({'code': 'FLOW_DISTRIBUTION_RISK', 'label': '수급 이탈 오판위험 후보', 'explain': '외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다.'})
+    if sector.get('key') == 'cdmo' and not kis.get('parts', {}).get('news', {}).get('ok'):
+        patterns.append({'code': 'CDMO_CONTRACT_GAP_RISK', 'label': 'CDMO 계약/가동률 누락 후보', 'explain': 'CDMO는 수주·CAPA·가동률·품질/규제 이슈 누락 시 판단이 틀릴 수 있습니다.'})
+    elif sector.get('key') == 'bio' and not kis.get('parts', {}).get('news', {}).get('ok'):
+        patterns.append({'code': 'BIO_EVENT_GAP_RISK', 'label': '바이오 이벤트 누락 후보', 'explain': '바이오는 임상·허가·공시 이벤트 누락 시 설명은 그럴듯해도 실전 판단이 틀릴 수 있습니다.'})
     if len(conflicts) >= 2:
-        patterns.append({'code': 'SIGNAL_CONFLICT_RISK', 'label': '신호충돌 무시 위험', 'explain': '좋은 신호와 나쁜 신호가 섞여 있어 실패 시 신호충돌 과소평가로 기록합니다.'})
+        patterns.append({'code': 'SIGNAL_CONFLICT_RISK', 'label': '신호충돌 무시 후보', 'explain': '좋은 신호와 나쁜 신호가 섞여 있어 실패 시 신호충돌 과소평가로 기록합니다.'})
     if not patterns and survival.get('confidenceLevel') in ('Low', 'Uncertain'):
-        patterns.append({'code': 'LOW_CONFIDENCE_NO_TRADE', 'label': '낮은 확신 관망', 'explain': '실패패턴보다 관망 자체가 정상 판단입니다.'})
+        patterns.append({'code': 'LOW_CONFIDENCE_NO_TRADE', 'label': '낮은 확신 관망', 'explain': '오판위험보다 관망 자체가 정상 판단입니다.'})
     return patterns[:5]
 
 def walk_stock_items(x, out=None):

@@ -243,20 +243,23 @@
             "pbr": 9.13,
             "roe": 19.44,
             "sectorProfile": {
-              "key": "bio",
-              "label": "바이오/제약",
-              "industryName": "제약",
+              "key": "cdmo",
+              "label": "CDMO 대형주",
+              "industryName": "CDMO",
               "importantFactors": [
-                "임상/허가 이벤트",
-                "기술수출",
-                "파이프라인",
-                "현금흐름",
-                "공시"
+                "수주잔고",
+                "공장 가동률",
+                "CAPA",
+                "글로벌 빅파마 계약",
+                "환율",
+                "영업이익률",
+                "품질/규제 리스크"
               ],
               "downweightedFactors": [
+                "일반 바이오 임상 모멘텀",
                 "PER 단순 해석"
               ],
-              "plain": "바이오/제약 종목은 모든 지표를 같은 비중으로 보면 안 됩니다. 이 업종에서 더 중요한 신호를 우선 확인합니다."
+              "plain": "삼성바이오로직스는 일반 바이오보다 CDMO 대형주로 봅니다. 수주·CAPA·가동률·환율·마진·품질 리스크를 우선합니다."
             },
             "peerAverage": {
               "per": 625.78,
@@ -377,20 +380,23 @@
               "survival": {
                 "principle": "안 죽는 AI: 확신 없으면 쉬고, 위험하면 피하고, 조건이 맞을 때만 작게/분할 접근합니다.",
                 "sectorProfile": {
-                  "key": "bio",
-                  "label": "바이오/제약",
-                  "industryName": "제약",
+                  "key": "cdmo",
+                  "label": "CDMO 대형주",
+                  "industryName": "CDMO",
                   "importantFactors": [
-                    "임상/허가 이벤트",
-                    "기술수출",
-                    "파이프라인",
-                    "현금흐름",
-                    "공시"
+                    "수주잔고",
+                    "공장 가동률",
+                    "CAPA",
+                    "글로벌 빅파마 계약",
+                    "환율",
+                    "영업이익률",
+                    "품질/규제 리스크"
                   ],
                   "downweightedFactors": [
+                    "일반 바이오 임상 모멘텀",
                     "PER 단순 해석"
                   ],
-                  "plain": "바이오/제약 종목은 모든 지표를 같은 비중으로 보면 안 됩니다. 이 업종에서 더 중요한 신호를 우선 확인합니다."
+                  "plain": "삼성바이오로직스는 일반 바이오보다 CDMO 대형주로 봅니다. 수주·CAPA·가동률·환율·마진·품질 리스크를 우선합니다."
                 },
                 "confidenceScore": 42,
                 "confidenceLevel": "Uncertain",
@@ -437,6 +443,7 @@
                 },
                 "preSectorConfidenceScore": 44,
                 "sectorRulesApplied": [
+                  "삼성바이오로직스는 일반 바이오가 아니라 CDMO 대형주로 분리해 수주·CAPA·가동률·환율·마진을 우선합니다.",
                   "바이오/제약은 PER보다 임상·허가·기술수출·공시 이벤트 확인을 우선합니다.",
                   "PER은 참고만 하고 단독 매수 근거로 쓰지 않음",
                   "대차잔고 증가는 숏/헤지성 물량 가능성으로 반영"
@@ -444,12 +451,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   },
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -1451,7 +1458,10 @@
             },
             "universeStatus": "existing",
             "updatedAt": "2026-05-08T23:45:14+09:00",
-            "source": "naver_finance"
+            "source": "naver_finance",
+            "sectorRulesApplied": [
+              "삼성바이오로직스는 일반 바이오가 아니라 CDMO 대형주로 분리해 수주·CAPA·가동률·환율·마진을 우선합니다."
+            ]
           },
           "candidateScoreNormalized": 39.0,
           "candidateScoreRaw": 36.8,
@@ -1702,12 +1712,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -3002,7 +3012,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -4045,11 +4055,12 @@
               "label": "반도체/전자",
               "industryName": "전기·전자",
               "importantFactors": [
-                "외국인 수급",
-                "업황 사이클",
+                "메모리 업황",
                 "HBM/AI 서버 수요",
-                "CAPEX",
-                "전고점 회복"
+                "외국인 수급",
+                "SOX/엔비디아 흐름",
+                "환율",
+                "업종 상대강도"
               ],
               "downweightedFactors": [
                 "PER 단순 저평가 해석"
@@ -4176,11 +4187,12 @@
                   "label": "반도체/전자",
                   "industryName": "전기·전자",
                   "importantFactors": [
-                    "외국인 수급",
-                    "업황 사이클",
+                    "메모리 업황",
                     "HBM/AI 서버 수요",
-                    "CAPEX",
-                    "전고점 회복"
+                    "외국인 수급",
+                    "SOX/엔비디아 흐름",
+                    "환율",
+                    "업종 상대강도"
                   ],
                   "downweightedFactors": [
                     "PER 단순 저평가 해석"
@@ -4234,13 +4246,14 @@
                 },
                 "preSectorConfidenceScore": 57,
                 "sectorRulesApplied": [
+                  "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                   "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                 ],
                 "failureRiskPatterns": [
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -5267,7 +5280,10 @@
             },
             "universeStatus": "existing",
             "updatedAt": "2026-05-08T23:45:14+09:00",
-            "source": "naver_finance"
+            "source": "naver_finance",
+            "sectorRulesApplied": [
+              "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+            ]
           },
           "candidateScoreNormalized": 43.2,
           "candidateScoreRaw": 0.0,
@@ -8014,7 +8030,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -9281,12 +9297,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   },
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -10347,11 +10363,12 @@
               "label": "반도체/전자",
               "industryName": "전기·전자",
               "importantFactors": [
-                "외국인 수급",
-                "업황 사이클",
+                "메모리 업황",
                 "HBM/AI 서버 수요",
-                "CAPEX",
-                "전고점 회복"
+                "외국인 수급",
+                "SOX/엔비디아 흐름",
+                "환율",
+                "업종 상대강도"
               ],
               "downweightedFactors": [
                 "PER 단순 저평가 해석"
@@ -10478,11 +10495,12 @@
                   "label": "반도체/전자",
                   "industryName": "전기·전자",
                   "importantFactors": [
-                    "외국인 수급",
-                    "업황 사이클",
+                    "메모리 업황",
                     "HBM/AI 서버 수요",
-                    "CAPEX",
-                    "전고점 회복"
+                    "외국인 수급",
+                    "SOX/엔비디아 흐름",
+                    "환율",
+                    "업종 상대강도"
                   ],
                   "downweightedFactors": [
                     "PER 단순 저평가 해석"
@@ -10536,13 +10554,14 @@
                 },
                 "preSectorConfidenceScore": 57,
                 "sectorRulesApplied": [
+                  "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                   "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                 ],
                 "failureRiskPatterns": [
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -11532,7 +11551,10 @@
             },
             "universeStatus": "existing",
             "updatedAt": "2026-05-08T23:45:14+09:00",
-            "source": "naver_finance"
+            "source": "naver_finance",
+            "sectorRulesApplied": [
+              "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+            ]
           },
           "pnl": 116512
         }
@@ -11562,11 +11584,12 @@
               "label": "반도체/전자",
               "industryName": "전기·전자",
               "importantFactors": [
-                "외국인 수급",
-                "업황 사이클",
+                "메모리 업황",
                 "HBM/AI 서버 수요",
-                "CAPEX",
-                "전고점 회복"
+                "외국인 수급",
+                "SOX/엔비디아 흐름",
+                "환율",
+                "업종 상대강도"
               ],
               "downweightedFactors": [
                 "PER 단순 저평가 해석"
@@ -11693,11 +11716,12 @@
                   "label": "반도체/전자",
                   "industryName": "전기·전자",
                   "importantFactors": [
-                    "외국인 수급",
-                    "업황 사이클",
+                    "메모리 업황",
                     "HBM/AI 서버 수요",
-                    "CAPEX",
-                    "전고점 회복"
+                    "외국인 수급",
+                    "SOX/엔비디아 흐름",
+                    "환율",
+                    "업종 상대강도"
                   ],
                   "downweightedFactors": [
                     "PER 단순 저평가 해석"
@@ -11751,13 +11775,14 @@
                 },
                 "preSectorConfidenceScore": 57,
                 "sectorRulesApplied": [
+                  "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                   "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                 ],
                 "failureRiskPatterns": [
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -12784,7 +12809,10 @@
             },
             "universeStatus": "existing",
             "updatedAt": "2026-05-08T23:45:14+09:00",
-            "source": "naver_finance"
+            "source": "naver_finance",
+            "sectorRulesApplied": [
+              "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+            ]
           }
         }
       ],
@@ -12818,11 +12846,12 @@
                 "label": "반도체/전자",
                 "industryName": "전기·전자",
                 "importantFactors": [
-                  "외국인 수급",
-                  "업황 사이클",
+                  "메모리 업황",
                   "HBM/AI 서버 수요",
-                  "CAPEX",
-                  "전고점 회복"
+                  "외국인 수급",
+                  "SOX/엔비디아 흐름",
+                  "환율",
+                  "업종 상대강도"
                 ],
                 "downweightedFactors": [
                   "PER 단순 저평가 해석"
@@ -12949,11 +12978,12 @@
                     "label": "반도체/전자",
                     "industryName": "전기·전자",
                     "importantFactors": [
-                      "외국인 수급",
-                      "업황 사이클",
+                      "메모리 업황",
                       "HBM/AI 서버 수요",
-                      "CAPEX",
-                      "전고점 회복"
+                      "외국인 수급",
+                      "SOX/엔비디아 흐름",
+                      "환율",
+                      "업종 상대강도"
                     ],
                     "downweightedFactors": [
                       "PER 단순 저평가 해석"
@@ -13007,13 +13037,14 @@
                   },
                   "preSectorConfidenceScore": 57,
                   "sectorRulesApplied": [
+                    "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                     "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                   ],
                   "failureRiskPatterns": [
                     {
                       "code": "LOW_CONFIDENCE_NO_TRADE",
                       "label": "낮은 확신 관망",
-                      "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                      "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                     }
                   ]
                 },
@@ -14040,7 +14071,10 @@
               },
               "universeStatus": "existing",
               "updatedAt": "2026-05-08T23:45:14+09:00",
-              "source": "naver_finance"
+              "source": "naver_finance",
+              "sectorRulesApplied": [
+                "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+              ]
             },
             "baseScoreNormalized": 45,
             "scoreAdjustment": {
@@ -14353,7 +14387,7 @@
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -15566,7 +15600,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -16832,7 +16866,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -18082,7 +18116,7 @@
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -19168,7 +19202,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -20367,7 +20401,7 @@
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -21463,7 +21497,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -22705,7 +22739,7 @@
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -23799,7 +23833,7 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     }
                   ]
@@ -25065,7 +25099,7 @@
                     {
                       "code": "LOW_CONFIDENCE_NO_TRADE",
                       "label": "낮은 확신 관망",
-                      "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                      "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                     }
                   ]
                 },
@@ -27478,7 +27512,7 @@
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -29974,7 +30008,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -31241,12 +31275,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   },
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -32527,12 +32561,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -35036,17 +35070,17 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   },
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -36080,11 +36114,12 @@
               "label": "반도체/전자",
               "industryName": "전기·전자",
               "importantFactors": [
-                "외국인 수급",
-                "업황 사이클",
+                "메모리 업황",
                 "HBM/AI 서버 수요",
-                "CAPEX",
-                "전고점 회복"
+                "외국인 수급",
+                "SOX/엔비디아 흐름",
+                "환율",
+                "업종 상대강도"
               ],
               "downweightedFactors": [
                 "PER 단순 저평가 해석"
@@ -36211,11 +36246,12 @@
                   "label": "반도체/전자",
                   "industryName": "전기·전자",
                   "importantFactors": [
-                    "외국인 수급",
-                    "업황 사이클",
+                    "메모리 업황",
                     "HBM/AI 서버 수요",
-                    "CAPEX",
-                    "전고점 회복"
+                    "외국인 수급",
+                    "SOX/엔비디아 흐름",
+                    "환율",
+                    "업종 상대강도"
                   ],
                   "downweightedFactors": [
                     "PER 단순 저평가 해석"
@@ -36269,13 +36305,14 @@
                 },
                 "preSectorConfidenceScore": 57,
                 "sectorRulesApplied": [
+                  "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                   "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                 ],
                 "failureRiskPatterns": [
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -37265,7 +37302,10 @@
             },
             "universeStatus": "existing",
             "updatedAt": "2026-05-08T23:45:14+09:00",
-            "source": "naver_finance"
+            "source": "naver_finance",
+            "sectorRulesApplied": [
+              "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+            ]
           },
           "pnl": 84000
         },
@@ -38697,7 +38737,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -39910,12 +39950,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -40936,11 +40976,12 @@
               "label": "반도체/전자",
               "industryName": "전기·전자",
               "importantFactors": [
-                "외국인 수급",
-                "업황 사이클",
+                "메모리 업황",
                 "HBM/AI 서버 수요",
-                "CAPEX",
-                "전고점 회복"
+                "외국인 수급",
+                "SOX/엔비디아 흐름",
+                "환율",
+                "업종 상대강도"
               ],
               "downweightedFactors": [
                 "PER 단순 저평가 해석"
@@ -41067,11 +41108,12 @@
                   "label": "반도체/전자",
                   "industryName": "전기·전자",
                   "importantFactors": [
-                    "외국인 수급",
-                    "업황 사이클",
+                    "메모리 업황",
                     "HBM/AI 서버 수요",
-                    "CAPEX",
-                    "전고점 회복"
+                    "외국인 수급",
+                    "SOX/엔비디아 흐름",
+                    "환율",
+                    "업종 상대강도"
                   ],
                   "downweightedFactors": [
                     "PER 단순 저평가 해석"
@@ -41125,13 +41167,14 @@
                 },
                 "preSectorConfidenceScore": 57,
                 "sectorRulesApplied": [
+                  "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                   "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                 ],
                 "failureRiskPatterns": [
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -42158,7 +42201,10 @@
             },
             "universeStatus": "existing",
             "updatedAt": "2026-05-08T23:45:14+09:00",
-            "source": "naver_finance"
+            "source": "naver_finance",
+            "sectorRulesApplied": [
+              "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+            ]
           }
         },
         {
@@ -43612,7 +43658,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -44841,12 +44887,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -45917,11 +45963,12 @@
                 "label": "반도체/전자",
                 "industryName": "전기·전자",
                 "importantFactors": [
-                  "외국인 수급",
-                  "업황 사이클",
+                  "메모리 업황",
                   "HBM/AI 서버 수요",
-                  "CAPEX",
-                  "전고점 회복"
+                  "외국인 수급",
+                  "SOX/엔비디아 흐름",
+                  "환율",
+                  "업종 상대강도"
                 ],
                 "downweightedFactors": [
                   "PER 단순 저평가 해석"
@@ -46048,11 +46095,12 @@
                     "label": "반도체/전자",
                     "industryName": "전기·전자",
                     "importantFactors": [
-                      "외국인 수급",
-                      "업황 사이클",
+                      "메모리 업황",
                       "HBM/AI 서버 수요",
-                      "CAPEX",
-                      "전고점 회복"
+                      "외국인 수급",
+                      "SOX/엔비디아 흐름",
+                      "환율",
+                      "업종 상대강도"
                     ],
                     "downweightedFactors": [
                       "PER 단순 저평가 해석"
@@ -46106,13 +46154,14 @@
                   },
                   "preSectorConfidenceScore": 57,
                   "sectorRulesApplied": [
+                    "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                     "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                   ],
                   "failureRiskPatterns": [
                     {
                       "code": "LOW_CONFIDENCE_NO_TRADE",
                       "label": "낮은 확신 관망",
-                      "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                      "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                     }
                   ]
                 },
@@ -47139,7 +47188,10 @@
               },
               "universeStatus": "existing",
               "updatedAt": "2026-05-08T23:45:14+09:00",
-              "source": "naver_finance"
+              "source": "naver_finance",
+              "sectorRulesApplied": [
+                "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+              ]
             },
             "baseScoreNormalized": 80.0,
             "scoreAdjustment": {
@@ -48650,7 +48702,7 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     }
                   ]
@@ -49909,12 +49961,12 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     },
                     {
                       "code": "LOAN_BALANCE_RISK",
-                      "label": "대차잔고 증가 무시 위험",
+                      "label": "대차잔고 증가 무시 오판위험 후보",
                       "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                     }
                   ]
@@ -51195,12 +51247,12 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     },
                     {
                       "code": "LOAN_BALANCE_RISK",
-                      "label": "대차잔고 증가 무시 위험",
+                      "label": "대차잔고 증가 무시 오판위험 후보",
                       "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                     }
                   ]
@@ -52259,11 +52311,12 @@
               "label": "반도체/전자",
               "industryName": "전기·전자",
               "importantFactors": [
-                "외국인 수급",
-                "업황 사이클",
+                "메모리 업황",
                 "HBM/AI 서버 수요",
-                "CAPEX",
-                "전고점 회복"
+                "외국인 수급",
+                "SOX/엔비디아 흐름",
+                "환율",
+                "업종 상대강도"
               ],
               "downweightedFactors": [
                 "PER 단순 저평가 해석"
@@ -52390,11 +52443,12 @@
                   "label": "반도체/전자",
                   "industryName": "전기·전자",
                   "importantFactors": [
-                    "외국인 수급",
-                    "업황 사이클",
+                    "메모리 업황",
                     "HBM/AI 서버 수요",
-                    "CAPEX",
-                    "전고점 회복"
+                    "외국인 수급",
+                    "SOX/엔비디아 흐름",
+                    "환율",
+                    "업종 상대강도"
                   ],
                   "downweightedFactors": [
                     "PER 단순 저평가 해석"
@@ -52448,13 +52502,14 @@
                 },
                 "preSectorConfidenceScore": 57,
                 "sectorRulesApplied": [
+                  "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                   "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                 ],
                 "failureRiskPatterns": [
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -53481,7 +53536,10 @@
             },
             "universeStatus": "existing",
             "updatedAt": "2026-05-08T23:45:14+09:00",
-            "source": "naver_finance"
+            "source": "naver_finance",
+            "sectorRulesApplied": [
+              "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+            ]
           },
           "candidateScoreNormalized": 74.3,
           "candidateScoreRaw": 70.0,
@@ -54973,12 +55031,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -56256,12 +56314,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -57485,12 +57543,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   },
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -58716,7 +58774,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -60014,17 +60072,17 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   },
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -61296,7 +61354,7 @@
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -62525,12 +62583,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -63475,11 +63533,12 @@
               "label": "반도체/전자",
               "industryName": "전기·전자",
               "importantFactors": [
-                "외국인 수급",
-                "업황 사이클",
+                "메모리 업황",
                 "HBM/AI 서버 수요",
-                "CAPEX",
-                "전고점 회복"
+                "외국인 수급",
+                "SOX/엔비디아 흐름",
+                "환율",
+                "업종 상대강도"
               ],
               "downweightedFactors": [
                 "PER 단순 저평가 해석"
@@ -63606,11 +63665,12 @@
                   "label": "반도체/전자",
                   "industryName": "전기·전자",
                   "importantFactors": [
-                    "외국인 수급",
-                    "업황 사이클",
+                    "메모리 업황",
                     "HBM/AI 서버 수요",
-                    "CAPEX",
-                    "전고점 회복"
+                    "외국인 수급",
+                    "SOX/엔비디아 흐름",
+                    "환율",
+                    "업종 상대강도"
                   ],
                   "downweightedFactors": [
                     "PER 단순 저평가 해석"
@@ -63664,13 +63724,14 @@
                 },
                 "preSectorConfidenceScore": 57,
                 "sectorRulesApplied": [
+                  "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                   "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                 ],
                 "failureRiskPatterns": [
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -64660,7 +64721,10 @@
             },
             "universeStatus": "existing",
             "updatedAt": "2026-05-08T23:45:14+09:00",
-            "source": "naver_finance"
+            "source": "naver_finance",
+            "sectorRulesApplied": [
+              "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+            ]
           },
           "pnl": -21000
         },
@@ -66073,12 +66137,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -67407,12 +67471,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -68609,17 +68673,17 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   },
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -69866,12 +69930,12 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     },
                     {
                       "code": "LOAN_BALANCE_RISK",
-                      "label": "대차잔고 증가 무시 위험",
+                      "label": "대차잔고 증가 무시 오판위험 후보",
                       "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                     }
                   ]
@@ -70887,11 +70951,12 @@
                 "label": "반도체/전자",
                 "industryName": "전기·전자",
                 "importantFactors": [
-                  "외국인 수급",
-                  "업황 사이클",
+                  "메모리 업황",
                   "HBM/AI 서버 수요",
-                  "CAPEX",
-                  "전고점 회복"
+                  "외국인 수급",
+                  "SOX/엔비디아 흐름",
+                  "환율",
+                  "업종 상대강도"
                 ],
                 "downweightedFactors": [
                   "PER 단순 저평가 해석"
@@ -71018,11 +71083,12 @@
                     "label": "반도체/전자",
                     "industryName": "전기·전자",
                     "importantFactors": [
-                      "외국인 수급",
-                      "업황 사이클",
+                      "메모리 업황",
                       "HBM/AI 서버 수요",
-                      "CAPEX",
-                      "전고점 회복"
+                      "외국인 수급",
+                      "SOX/엔비디아 흐름",
+                      "환율",
+                      "업종 상대강도"
                     ],
                     "downweightedFactors": [
                       "PER 단순 저평가 해석"
@@ -71076,13 +71142,14 @@
                   },
                   "preSectorConfidenceScore": 57,
                   "sectorRulesApplied": [
+                    "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                     "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                   ],
                   "failureRiskPatterns": [
                     {
                       "code": "LOW_CONFIDENCE_NO_TRADE",
                       "label": "낮은 확신 관망",
-                      "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                      "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                     }
                   ]
                 },
@@ -72109,7 +72176,10 @@
               },
               "universeStatus": "existing",
               "updatedAt": "2026-05-08T23:45:14+09:00",
-              "source": "naver_finance"
+              "source": "naver_finance",
+              "sectorRulesApplied": [
+                "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+              ]
             },
             "baseScoreNormalized": 75,
             "scoreAdjustment": {
@@ -73601,12 +73671,12 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     },
                     {
                       "code": "LOAN_BALANCE_RISK",
-                      "label": "대차잔고 증가 무시 위험",
+                      "label": "대차잔고 증가 무시 오판위험 후보",
                       "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                     }
                   ]
@@ -74899,17 +74969,17 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     },
                     {
                       "code": "LOAN_BALANCE_RISK",
-                      "label": "대차잔고 증가 무시 위험",
+                      "label": "대차잔고 증가 무시 오판위험 후보",
                       "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                     },
                     {
                       "code": "FLOW_DISTRIBUTION_RISK",
-                      "label": "수급 이탈 오판 위험",
+                      "label": "수급 이탈 오판 오판위험 후보",
                       "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                     }
                   ]
@@ -77486,12 +77556,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   },
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -78718,7 +78788,7 @@
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -80003,12 +80073,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -81289,7 +81359,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -82414,12 +82484,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -83434,11 +83504,12 @@
               "label": "반도체/전자",
               "industryName": "전기·전자",
               "importantFactors": [
-                "외국인 수급",
-                "업황 사이클",
+                "메모리 업황",
                 "HBM/AI 서버 수요",
-                "CAPEX",
-                "전고점 회복"
+                "외국인 수급",
+                "SOX/엔비디아 흐름",
+                "환율",
+                "업종 상대강도"
               ],
               "downweightedFactors": [
                 "PER 단순 저평가 해석"
@@ -83565,11 +83636,12 @@
                   "label": "반도체/전자",
                   "industryName": "전기·전자",
                   "importantFactors": [
-                    "외국인 수급",
-                    "업황 사이클",
+                    "메모리 업황",
                     "HBM/AI 서버 수요",
-                    "CAPEX",
-                    "전고점 회복"
+                    "외국인 수급",
+                    "SOX/엔비디아 흐름",
+                    "환율",
+                    "업종 상대강도"
                   ],
                   "downweightedFactors": [
                     "PER 단순 저평가 해석"
@@ -83623,13 +83695,14 @@
                 },
                 "preSectorConfidenceScore": 57,
                 "sectorRulesApplied": [
+                  "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                   "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                 ],
                 "failureRiskPatterns": [
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -84656,7 +84729,10 @@
             },
             "universeStatus": "existing",
             "updatedAt": "2026-05-08T23:45:14+09:00",
-            "source": "naver_finance"
+            "source": "naver_finance",
+            "sectorRulesApplied": [
+              "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+            ]
           },
           "candidateScoreNormalized": 85.5,
           "candidateScoreRaw": 86.7,
@@ -84918,7 +84994,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -86189,7 +86265,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -88636,7 +88712,7 @@
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -89857,7 +89933,7 @@
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -91050,7 +91126,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -92338,7 +92414,7 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     }
                   ]
@@ -94901,7 +94977,7 @@
                     {
                       "code": "LOW_CONFIDENCE_NO_TRADE",
                       "label": "낮은 확신 관망",
-                      "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                      "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                     }
                   ]
                 },
@@ -96194,7 +96270,7 @@
                     {
                       "code": "LOW_CONFIDENCE_NO_TRADE",
                       "label": "낮은 확신 관망",
-                      "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                      "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                     }
                   ]
                 },
@@ -97446,7 +97522,7 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     }
                   ]
@@ -98743,12 +98819,12 @@
                   "failureRiskPatterns": [
                     {
                       "code": "LOAN_BALANCE_RISK",
-                      "label": "대차잔고 증가 무시 위험",
+                      "label": "대차잔고 증가 무시 오판위험 후보",
                       "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                     },
                     {
                       "code": "FLOW_DISTRIBUTION_RISK",
-                      "label": "수급 이탈 오판 위험",
+                      "label": "수급 이탈 오판 오판위험 후보",
                       "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                     }
                   ]
@@ -100034,7 +100110,7 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     }
                   ]
@@ -101164,12 +101240,12 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     },
                     {
                       "code": "FLOW_DISTRIBUTION_RISK",
-                      "label": "수급 이탈 오판 위험",
+                      "label": "수급 이탈 오판 오판위험 후보",
                       "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                     }
                   ]
@@ -102231,11 +102307,12 @@
                 "label": "반도체/전자",
                 "industryName": "전기·전자",
                 "importantFactors": [
-                  "외국인 수급",
-                  "업황 사이클",
+                  "메모리 업황",
                   "HBM/AI 서버 수요",
-                  "CAPEX",
-                  "전고점 회복"
+                  "외국인 수급",
+                  "SOX/엔비디아 흐름",
+                  "환율",
+                  "업종 상대강도"
                 ],
                 "downweightedFactors": [
                   "PER 단순 저평가 해석"
@@ -102362,11 +102439,12 @@
                     "label": "반도체/전자",
                     "industryName": "전기·전자",
                     "importantFactors": [
-                      "외국인 수급",
-                      "업황 사이클",
+                      "메모리 업황",
                       "HBM/AI 서버 수요",
-                      "CAPEX",
-                      "전고점 회복"
+                      "외국인 수급",
+                      "SOX/엔비디아 흐름",
+                      "환율",
+                      "업종 상대강도"
                     ],
                     "downweightedFactors": [
                       "PER 단순 저평가 해석"
@@ -102420,13 +102498,14 @@
                   },
                   "preSectorConfidenceScore": 57,
                   "sectorRulesApplied": [
+                    "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                     "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                   ],
                   "failureRiskPatterns": [
                     {
                       "code": "LOW_CONFIDENCE_NO_TRADE",
                       "label": "낮은 확신 관망",
-                      "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                      "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                     }
                   ]
                 },
@@ -103453,7 +103532,10 @@
               },
               "universeStatus": "existing",
               "updatedAt": "2026-05-08T23:45:14+09:00",
-              "source": "naver_finance"
+              "source": "naver_finance",
+              "sectorRulesApplied": [
+                "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+              ]
             },
             "baseScoreNormalized": 88,
             "scoreAdjustment": {
@@ -103704,12 +103786,12 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     },
                     {
                       "code": "LOAN_BALANCE_RISK",
-                      "label": "대차잔고 증가 무시 위험",
+                      "label": "대차잔고 증가 무시 오판위험 후보",
                       "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                     }
                   ]
@@ -106221,7 +106303,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -107488,12 +107570,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   },
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -108774,12 +108856,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -110034,7 +110116,7 @@
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -111133,12 +111215,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -113648,17 +113730,17 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   },
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -114692,11 +114774,12 @@
               "label": "반도체/전자",
               "industryName": "전기·전자",
               "importantFactors": [
-                "외국인 수급",
-                "업황 사이클",
+                "메모리 업황",
                 "HBM/AI 서버 수요",
-                "CAPEX",
-                "전고점 회복"
+                "외국인 수급",
+                "SOX/엔비디아 흐름",
+                "환율",
+                "업종 상대강도"
               ],
               "downweightedFactors": [
                 "PER 단순 저평가 해석"
@@ -114823,11 +114906,12 @@
                   "label": "반도체/전자",
                   "industryName": "전기·전자",
                   "importantFactors": [
-                    "외국인 수급",
-                    "업황 사이클",
+                    "메모리 업황",
                     "HBM/AI 서버 수요",
-                    "CAPEX",
-                    "전고점 회복"
+                    "외국인 수급",
+                    "SOX/엔비디아 흐름",
+                    "환율",
+                    "업종 상대강도"
                   ],
                   "downweightedFactors": [
                     "PER 단순 저평가 해석"
@@ -114881,13 +114965,14 @@
                 },
                 "preSectorConfidenceScore": 57,
                 "sectorRulesApplied": [
+                  "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                   "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                 ],
                 "failureRiskPatterns": [
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -115877,7 +115962,10 @@
             },
             "universeStatus": "existing",
             "updatedAt": "2026-05-08T23:45:14+09:00",
-            "source": "naver_finance"
+            "source": "naver_finance",
+            "sectorRulesApplied": [
+              "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+            ]
           },
           "pnl": 7500
         },
@@ -117326,7 +117414,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -118387,12 +118475,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -120782,7 +120870,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -121886,12 +121974,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   }
                 ]
@@ -124137,11 +124225,12 @@
                 "label": "반도체/전자",
                 "industryName": "전기·전자",
                 "importantFactors": [
-                  "외국인 수급",
-                  "업황 사이클",
+                  "메모리 업황",
                   "HBM/AI 서버 수요",
-                  "CAPEX",
-                  "전고점 회복"
+                  "외국인 수급",
+                  "SOX/엔비디아 흐름",
+                  "환율",
+                  "업종 상대강도"
                 ],
                 "downweightedFactors": [
                   "PER 단순 저평가 해석"
@@ -124268,11 +124357,12 @@
                     "label": "반도체/전자",
                     "industryName": "전기·전자",
                     "importantFactors": [
-                      "외국인 수급",
-                      "업황 사이클",
+                      "메모리 업황",
                       "HBM/AI 서버 수요",
-                      "CAPEX",
-                      "전고점 회복"
+                      "외국인 수급",
+                      "SOX/엔비디아 흐름",
+                      "환율",
+                      "업종 상대강도"
                     ],
                     "downweightedFactors": [
                       "PER 단순 저평가 해석"
@@ -124326,13 +124416,14 @@
                   },
                   "preSectorConfidenceScore": 57,
                   "sectorRulesApplied": [
+                    "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                     "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                   ],
                   "failureRiskPatterns": [
                     {
                       "code": "LOW_CONFIDENCE_NO_TRADE",
                       "label": "낮은 확신 관망",
-                      "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                      "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                     }
                   ]
                 },
@@ -125359,7 +125450,10 @@
               },
               "universeStatus": "existing",
               "updatedAt": "2026-05-08T23:45:14+09:00",
-              "source": "naver_finance"
+              "source": "naver_finance",
+              "sectorRulesApplied": [
+                "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+              ]
             },
             "baseScoreNormalized": 95.0,
             "scoreAdjustment": {
@@ -126877,7 +126971,7 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     }
                   ]
@@ -128010,12 +128104,12 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     },
                     {
                       "code": "LOAN_BALANCE_RISK",
-                      "label": "대차잔고 증가 무시 위험",
+                      "label": "대차잔고 증가 무시 오판위험 후보",
                       "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                     }
                   ]
@@ -130513,7 +130607,7 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     }
                   ]
@@ -131784,7 +131878,7 @@
                     {
                       "code": "LOW_CONFIDENCE_NO_TRADE",
                       "label": "낮은 확신 관망",
-                      "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                      "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                     }
                   ]
                 },
@@ -132898,7 +132992,7 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     }
                   ]
@@ -134149,12 +134243,12 @@
                   "failureRiskPatterns": [
                     {
                       "code": "LOAN_BALANCE_RISK",
-                      "label": "대차잔고 증가 무시 위험",
+                      "label": "대차잔고 증가 무시 오판위험 후보",
                       "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                     },
                     {
                       "code": "FLOW_DISTRIBUTION_RISK",
-                      "label": "수급 이탈 오판 위험",
+                      "label": "수급 이탈 오판 오판위험 후보",
                       "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                     }
                   ]
@@ -135204,7 +135298,7 @@
                   "failureRiskPatterns": [
                     {
                       "code": "FLOW_DISTRIBUTION_RISK",
-                      "label": "수급 이탈 오판 위험",
+                      "label": "수급 이탈 오판 오판위험 후보",
                       "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                     }
                   ]
@@ -136515,12 +136609,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   },
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -138849,11 +138943,12 @@
               "label": "반도체/전자",
               "industryName": "전기·전자",
               "importantFactors": [
-                "외국인 수급",
-                "업황 사이클",
+                "메모리 업황",
                 "HBM/AI 서버 수요",
-                "CAPEX",
-                "전고점 회복"
+                "외국인 수급",
+                "SOX/엔비디아 흐름",
+                "환율",
+                "업종 상대강도"
               ],
               "downweightedFactors": [
                 "PER 단순 저평가 해석"
@@ -138980,11 +139075,12 @@
                   "label": "반도체/전자",
                   "industryName": "전기·전자",
                   "importantFactors": [
-                    "외국인 수급",
-                    "업황 사이클",
+                    "메모리 업황",
                     "HBM/AI 서버 수요",
-                    "CAPEX",
-                    "전고점 회복"
+                    "외국인 수급",
+                    "SOX/엔비디아 흐름",
+                    "환율",
+                    "업종 상대강도"
                   ],
                   "downweightedFactors": [
                     "PER 단순 저평가 해석"
@@ -139038,13 +139134,14 @@
                 },
                 "preSectorConfidenceScore": 57,
                 "sectorRulesApplied": [
+                  "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                   "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                 ],
                 "failureRiskPatterns": [
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -140071,7 +140168,10 @@
             },
             "universeStatus": "existing",
             "updatedAt": "2026-05-08T23:45:14+09:00",
-            "source": "naver_finance"
+            "source": "naver_finance",
+            "sectorRulesApplied": [
+              "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+            ]
           },
           "candidateScoreNormalized": 76.4,
           "candidateScoreRaw": 71.7,
@@ -141598,7 +141698,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -142872,7 +142972,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -144142,12 +144242,12 @@
                 "failureRiskPatterns": [
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   },
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -147624,11 +147724,12 @@
               "label": "반도체/전자",
               "industryName": "전기·전자",
               "importantFactors": [
-                "외국인 수급",
-                "업황 사이클",
+                "메모리 업황",
                 "HBM/AI 서버 수요",
-                "CAPEX",
-                "전고점 회복"
+                "외국인 수급",
+                "SOX/엔비디아 흐름",
+                "환율",
+                "업종 상대강도"
               ],
               "downweightedFactors": [
                 "PER 단순 저평가 해석"
@@ -147755,11 +147856,12 @@
                   "label": "반도체/전자",
                   "industryName": "전기·전자",
                   "importantFactors": [
-                    "외국인 수급",
-                    "업황 사이클",
+                    "메모리 업황",
                     "HBM/AI 서버 수요",
-                    "CAPEX",
-                    "전고점 회복"
+                    "외국인 수급",
+                    "SOX/엔비디아 흐름",
+                    "환율",
+                    "업종 상대강도"
                   ],
                   "downweightedFactors": [
                     "PER 단순 저평가 해석"
@@ -147813,13 +147915,14 @@
                 },
                 "preSectorConfidenceScore": 57,
                 "sectorRulesApplied": [
+                  "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                   "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                 ],
                 "failureRiskPatterns": [
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -148809,7 +148912,10 @@
             },
             "universeStatus": "existing",
             "updatedAt": "2026-05-08T23:45:14+09:00",
-            "source": "naver_finance"
+            "source": "naver_finance",
+            "sectorRulesApplied": [
+              "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+            ]
           },
           "pnl": 7500
         },
@@ -149041,7 +149147,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -151434,7 +151540,7 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   }
                 ]
@@ -152659,7 +152765,7 @@
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -153928,17 +154034,17 @@
                 "failureRiskPatterns": [
                   {
                     "code": "SHORT_PRESSURE_RISK",
-                    "label": "공매도 압력 오판 위험",
+                    "label": "공매도 압력 오판 오판위험 후보",
                     "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                   },
                   {
                     "code": "LOAN_BALANCE_RISK",
-                    "label": "대차잔고 증가 무시 위험",
+                    "label": "대차잔고 증가 무시 오판위험 후보",
                     "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                   },
                   {
                     "code": "FLOW_DISTRIBUTION_RISK",
-                    "label": "수급 이탈 오판 위험",
+                    "label": "수급 이탈 오판 오판위험 후보",
                     "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                   }
                 ]
@@ -155175,7 +155281,7 @@
                   {
                     "code": "LOW_CONFIDENCE_NO_TRADE",
                     "label": "낮은 확신 관망",
-                    "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                    "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                   }
                 ]
               },
@@ -157472,11 +157578,12 @@
                 "label": "반도체/전자",
                 "industryName": "전기·전자",
                 "importantFactors": [
-                  "외국인 수급",
-                  "업황 사이클",
+                  "메모리 업황",
                   "HBM/AI 서버 수요",
-                  "CAPEX",
-                  "전고점 회복"
+                  "외국인 수급",
+                  "SOX/엔비디아 흐름",
+                  "환율",
+                  "업종 상대강도"
                 ],
                 "downweightedFactors": [
                   "PER 단순 저평가 해석"
@@ -157603,11 +157710,12 @@
                     "label": "반도체/전자",
                     "industryName": "전기·전자",
                     "importantFactors": [
-                      "외국인 수급",
-                      "업황 사이클",
+                      "메모리 업황",
                       "HBM/AI 서버 수요",
-                      "CAPEX",
-                      "전고점 회복"
+                      "외국인 수급",
+                      "SOX/엔비디아 흐름",
+                      "환율",
+                      "업종 상대강도"
                     ],
                     "downweightedFactors": [
                       "PER 단순 저평가 해석"
@@ -157661,13 +157769,14 @@
                   },
                   "preSectorConfidenceScore": 57,
                   "sectorRulesApplied": [
+                    "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.",
                     "반도체/전자는 PER 단순 저평가보다 외국인 수급·업황·전고점 회복을 우선합니다."
                   ],
                   "failureRiskPatterns": [
                     {
                       "code": "LOW_CONFIDENCE_NO_TRADE",
                       "label": "낮은 확신 관망",
-                      "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                      "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                     }
                   ]
                 },
@@ -158694,7 +158803,10 @@
               },
               "universeStatus": "existing",
               "updatedAt": "2026-05-08T23:45:14+09:00",
-              "source": "naver_finance"
+              "source": "naver_finance",
+              "sectorRulesApplied": [
+                "삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다."
+              ]
             },
             "baseScoreNormalized": 78,
             "scoreAdjustment": {
@@ -158960,7 +159072,7 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     }
                   ]
@@ -161484,7 +161596,7 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     }
                   ]
@@ -162783,7 +162895,7 @@
                     {
                       "code": "LOW_CONFIDENCE_NO_TRADE",
                       "label": "낮은 확신 관망",
-                      "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                      "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                     }
                   ]
                 },
@@ -164081,17 +164193,17 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     },
                     {
                       "code": "LOAN_BALANCE_RISK",
-                      "label": "대차잔고 증가 무시 위험",
+                      "label": "대차잔고 증가 무시 오판위험 후보",
                       "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
                     },
                     {
                       "code": "FLOW_DISTRIBUTION_RISK",
-                      "label": "수급 이탈 오판 위험",
+                      "label": "수급 이탈 오판 오판위험 후보",
                       "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                     }
                   ]
@@ -165357,7 +165469,7 @@
                     {
                       "code": "LOW_CONFIDENCE_NO_TRADE",
                       "label": "낮은 확신 관망",
-                      "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                      "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                     }
                   ]
                 },
@@ -166600,12 +166712,12 @@
                   "failureRiskPatterns": [
                     {
                       "code": "SHORT_PRESSURE_RISK",
-                      "label": "공매도 압력 오판 위험",
+                      "label": "공매도 압력 오판 오판위험 후보",
                       "explain": "공매도 비중이 높아 반등 실패 시 숏 압력 오판으로 분류합니다."
                     },
                     {
                       "code": "FLOW_DISTRIBUTION_RISK",
-                      "label": "수급 이탈 오판 위험",
+                      "label": "수급 이탈 오판 오판위험 후보",
                       "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
                     }
                   ]
@@ -167877,7 +167989,7 @@
                     {
                       "code": "LOW_CONFIDENCE_NO_TRADE",
                       "label": "낮은 확신 관망",
-                      "explain": "실패패턴보다 관망 자체가 정상 판단입니다."
+                      "explain": "오판위험보다 관망 자체가 정상 판단입니다."
                     }
                   ]
                 },

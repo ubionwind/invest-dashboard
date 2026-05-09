@@ -453,6 +453,9 @@ function beginnerGuide(f = {}, rows = []) {
   const peer = f.peerGrowthMargin || null;
   const targetPeer = peer?.target || {};
   const peerAvg = peer?.peerAverage || {};
+  const regime = survival.marketRegime || f.marketRegime || null;
+  const pos = survival.positionGuide || {};
+  const invalid = survival.invalidationRules || [];
 
   let headline = '지금은 기다리면서 확인할 자리입니다.';
   let tone = 'wait';
@@ -628,11 +631,32 @@ function beginnerGuide(f = {}, rows = []) {
   if (!danger.length) danger.push('현재 자동 데이터상 큰 경고는 제한적이지만, 지지선 이탈은 꼭 확인');
 
   const simpleWords = [
+    `점수: ${Number.isFinite(score) ? `${score}점` : '대기'}입니다. 이 점수는 “매수강도”가 아니라 분석 신호의 강도라서, 확신도·시장상태·수급과 따로 봅니다.`,
+    `확신도: ${survival.confidenceLevel || '-'} · ${survival.confidenceScore ?? '-'}점입니다. 확신도가 낮으면 점수가 높아도 관망할 수 있습니다.`,
     future ? `선물: ${future.stance}. 쉽게 말해 큰손들이 단기 방향을 어떻게 보고 있는지 보는 참고 신호입니다.` : '선물: 이 종목은 현재 선물 참고 데이터가 없거나 아직 누적 중입니다.',
     shortRatio === null ? '공매도: 데이터 대기입니다.' : `공매도: 주가가 내려갈 것에 베팅한 거래 비중입니다. 현재 ${shortRatio.toFixed(2)}%입니다.`,
     loan5 === null ? '대차잔고: 데이터 대기입니다.' : `대차잔고: 빌린 주식이 늘면 매도 압력 후보로 봅니다. 최근 5일 ${compactNumber(loan5, '주')} 변화입니다.`,
   ];
-  return { headline, tone, waitChecks, allChecks, danger, simpleWords, volumeLine: volume.line, futureImpact: future?.impact || '' };
+  const beginnerCards = [
+    { label: '지금 행동', value: survival.actionState || '관망', note: headline },
+    { label: '권장 비중', value: pos.suggestedRangePct || '0%', note: pos.plain || '확신 전에는 비중을 키우지 않습니다.' },
+    { label: '한 줄 이유', value: survival.confidenceLevel || '확인 필요', note: `${regime?.label || '시장 판단 대기'} · 점수와 행동은 분리해서 봅니다.` },
+    { label: '하면 안 되는 조건', value: invalid[0] ? '무효조건 있음' : '조건 확인', note: invalid[0] || danger[0] || '지지선 이탈·수급 악화 시 다시 판단합니다.' },
+  ];
+  return { headline, tone, waitChecks, allChecks, danger, simpleWords, volumeLine: volume.line, futureImpact: future?.impact || '', beginnerCards, score: Number.isFinite(score) ? score : null, confidenceScore: survival.confidenceScore ?? null, regime, actionState: survival.actionState || '관망', positionGuide: pos };
+}
+
+function renderDecisionBars(g = {}) {
+  const score = g.score == null ? null : Math.max(0, Math.min(100, Number(g.score)));
+  const confidence = g.confidenceScore == null ? null : Math.max(0, Math.min(100, Number(g.confidenceScore)));
+  const regime = g.regime || {};
+  const regimeTone = ['RISK_ON','NEUTRAL'].includes(regime.state) ? 'ok' : (['RISK_OFF','CAUTION'].includes(regime.state) ? 'no' : 'watch');
+  const bar = (label, val, note) => `<div class="decision-bar"><div><strong>${esc(label)}</strong><span>${esc(note || '')}</span></div><em><i style="width:${val == null ? 0 : val}%"></i></em><b>${val == null ? '-' : `${Math.round(val)}점`}</b></div>`;
+  return `<div class="decision-visuals">
+    ${bar('분석 점수', score, '매수강도 아님')}
+    ${bar('행동 확신도', confidence, '실제 행동 비중에 더 중요')}
+    <div class="regime-signal ${regimeTone}"><strong>시장 Regime</strong><b>${esc(regime.label || regime.state || '판단 대기')}</b><span>${esc(regime.stance || '시장 상태를 먼저 보고 비중을 제한합니다.')}</span></div>
+  </div>`;
 }
 
 function renderSurvivalGuide(f = {}) {
@@ -647,7 +671,19 @@ function renderSurvivalGuide(f = {}) {
   const pos = s.positionGuide || {};
   const patternLines = riskPatterns.map(p => `${p.label || p.code}: ${p.explain || ''}`);
   const policy = s.regimeStrategyPolicy || regime?.strategyPolicy || null;
-  return `<section id="tab-survival" class="card stock-detail-section survival-guide"><h2>실전 생존 가이드</h2>
+  const tenSteps = [
+    ['1. 최종 행동 결론', s.actionState || '관망', s.principle || '확신 없으면 쉬는 것이 전략입니다.'],
+    ['2. 권장 비중', pos.suggestedRangePct || '0%', pos.plain || pos.label || '비중 가이드'],
+    ['3. 행동 이유', s.confidenceLevel || '확인 필요', `점수와 행동을 분리합니다. 확신도 ${s.confidenceScore ?? '-'}점 · 데이터 품질 ${s.dataQualityScore ?? '-'}점`],
+    ['4. 시장 Regime', regime ? `${regime.label || regime.state} · ${regime.riskScore ?? '-'}점` : '판단 대기', regime?.stance || '시장 상태를 먼저 봅니다'],
+    ['5. 업종 Regime', sector?.label || '업종 판단 대기', sector?.plain || '업종 전용 프로필 수집 대기'],
+    ['6. 종목 신호', '핵심 신호', (s.stockSignalSummary || f.expertAnalysis?.summary || '가격·수급·실적 신호를 종합합니다.')],
+    ['7. 신호 충돌', conflicts.length ? `${conflicts.length}건` : '큰 충돌 제한적', conflicts[0] || '가격 조건 확인 전 추격은 금지합니다.'],
+    ['8. 진입 조건', '조건부', (f.expertAnalysis?.upsideTriggers || [])[0] || '돌파·거래량·수급 확인 후 접근합니다.'],
+    ['9. 판단 무효 조건', invalid.length ? '무효조건 있음' : '조건 확인', invalid[0] || '주요 지지선 이탈 또는 수급 악화 시 판단을 다시 봅니다.'],
+    ['10. 사후 검증 계획', '추적', '진입 후 수익률·무효조건 발생·오판위험 후보 적중 여부를 ledger로 검증합니다.'],
+  ];
+  return `<section id="tab-survival" class="card stock-detail-section survival-guide"><h2>전문가용 10단계 판단</h2>
     <div class="stock-detail-metrics">
       ${metric('실전 행동', s.actionState || '관망', pos.plain || '확신 없으면 쉬는 것이 전략입니다.')}
       ${metric('확신도', `${s.confidenceLevel || '-'} · ${s.confidenceScore ?? '-'}점`, `데이터 품질 ${s.dataQualityScore ?? '-'}점`)}
@@ -656,11 +692,12 @@ function renderSurvivalGuide(f = {}) {
       ${metric('권장 비중', pos.suggestedRangePct || '0%', pos.label || '비중 가이드')}
       ${metric('관망 인정', s.waitIsValid ? 'YES' : '조건부', '관망은 실패가 아니라 리스크 관리입니다')}
     </div>
+    <ol class="decision-ladder">${tenSteps.map(([title, value, note]) => `<li><span>${esc(title)}</span><strong>${esc(value)}</strong><p>${esc(note)}</p></li>`).join('')}</ol>
     <div class="scenario-grid">
       <article><h3>업종별 해석</h3>${sector ? list([`${sector.label || '업종'}: ${sector.plain || ''}`, `중요 신호: ${(sector.importantFactors || []).join(', ') || '-'}`, sector.downweightedFactors?.length ? `덜 믿을 지표: ${sector.downweightedFactors.join(', ')}` : '']) : list(['업종 전용 프로필 수집 대기'])}</article>
       <article><h3>업종 가중치 반영</h3>${list(sectorRules.length ? sectorRules : ['일반 생존형 가중치 적용 중입니다.'])}</article>
       <article><h3>신호 충돌</h3>${list(conflicts.length ? conflicts : ['큰 신호 충돌은 제한적입니다. 그래도 가격 조건 확인 전 추격은 금지합니다.'])}</article>
-      <article><h3>실패패턴 후보</h3>${list(patternLines.length ? patternLines : ['아직 뚜렷한 실패패턴 후보는 없습니다.'])}</article>
+      <article><h3>오판위험 후보</h3>${list(patternLines.length ? patternLines : ['아직 뚜렷한 오판위험 후보는 없습니다.'])}</article>
       <article><h3>판단 무효조건</h3>${list(invalid.length ? invalid : ['주요 지지선 이탈 또는 수급 악화 시 판단을 다시 봅니다.'])}</article>
     </div>
     <p class="stock-modal-note">${esc(s.principle || '안 죽는 AI: 확신 없으면 쉬고, 위험하면 피합니다.')}</p>
@@ -679,6 +716,8 @@ function renderBeginnerGuide(f = {}, rows = []) {
   const g = beginnerGuide(f, rows);
   return `<section id="tab-beginner" class="card stock-detail-section beginner-guide ${esc(g.tone)}"><h2>초보자용 한눈 해석</h2>
     <div class="beginner-head"><strong>${esc(g.headline)}</strong><span>전문용어를 빼고 보면 이렇습니다</span></div>
+    <div class="beginner-card-grid">${g.beginnerCards.map(x => `<article><span>${esc(x.label)}</span><strong>${esc(x.value)}</strong><p>${esc(x.note)}</p></article>`).join('')}</div>
+    ${renderDecisionBars(g)}
     <div class="scenario-grid beginner-grid">
       <article><h3>그래서 오를 것 같아?</h3>${list([g.headline, g.futureImpact].filter(Boolean))}</article>
       <article><h3>핵심 체크리스트</h3>${renderBeginnerChecks(g.allChecks)}</article>
