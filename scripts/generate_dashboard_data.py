@@ -1977,9 +1977,31 @@ def split_stock_detail_files(data):
                 walk(v)
 
     walk(data)
+
+    for code, raw in FUNDAMENTALS_BY_CODE.items():
+        code = str(code or '').zfill(6)
+        if not re.fullmatch(r'\d{6}', code) or code in details:
+            continue
+        f = public_fundamentals(code)
+        if not isinstance(f, dict):
+            continue
+        expert = f.get('expertAnalysis') if isinstance(f.get('expertAnalysis'), dict) else None
+        if expert and isinstance(expert.get('survival'), dict):
+            expert['survival'] = apply_sector_weighting_to_survival(f, apply_market_regime_to_survival(expert.get('survival'), data.get('marketRegime') or {}))
+        details[code] = {'code': code, 'name': raw.get('name') or f.get('name') or code, 'fundamentals': f, 'generatedAt': data.get('generatedAt')}
+
     for code, payload in details.items():
         (stocks_dir/f'{code}.json').write_text(json.dumps(payload, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     data['stockDetailIndex'] = {'basePath': 'data/stocks/', 'count': len(details), 'mode': 'lazy-load-by-code'}
+    data['stockUniverse'] = [
+        {
+            'code': code,
+            'name': payload.get('name') or code,
+            'strategy': '전체 분석',
+            'fundamentals': slim_public_fundamentals(payload.get('fundamentals') or {}),
+        }
+        for code, payload in sorted(details.items())
+    ]
     return data
 
 

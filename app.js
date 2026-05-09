@@ -676,6 +676,7 @@ function collectActionMatrix(data = {}) {
     (s.buyAlerts || []).forEach(x => add(x, s.name, 'buyAlert'));
     (s.sellAlerts || []).forEach(x => add(x, s.name, 'sellAlert'));
   });
+  (data.stockUniverse || []).forEach(x => add(x, x.strategy || '전체 분석', 'universe'));
   return Array.from(byCode.values()).sort((a, b) => a.signal.priority - b.signal.priority || Number(b.score || 0) - Number(a.score || 0));
 }
 
