@@ -558,6 +558,7 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
 .matrix-stock span { color: var(--muted); font-size: 11px; }
 .matrix-stock em { color: #caddff; font-size: 11px; font-style: normal; }
 .matrix-stock i { color: #ffe5a3; font-size: 10px; font-style: normal; font-weight: 900; }
+.final-action-line { margin-top: 4px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,.08); color: #f8fbff; font-size: 11px; line-height: 1.45; white-space: normal; overflow: visible; text-overflow: clip; }
 .hold-badge { flex: 0 0 auto; padding: 3px 6px; border-radius: 999px; font-size: 10px; font-weight: 1000; line-height: 1; border: 1px solid rgba(255,255,255,.12); }
 .hold-badge.on { color: #102116; background: #35d399; }
 .hold-badge.off { color: #dbe7ff; background: rgba(255,255,255,.08); }

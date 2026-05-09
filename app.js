@@ -734,6 +734,26 @@ function renderActionMatrix(data = {}) {
     if (r.holdingState === '보유중') return '보유 포지션 기준';
     return '미보유 관찰 종목';
   };
+  const finalIntegratedAction = r => {
+    const strongStock = Number(r.score ?? 0) >= 75 && Number(r.confidence ?? 0) >= 60;
+    if (r.holdingState === '보유중' && r.signal.code === 'MOMENTUM') {
+      return strongStock
+        ? '최종 판단: 종목 자체는 우호적이나, 보유 포지션 기준에서는 진입 조건 약화가 감지되어 모멘텀 점검 단계입니다. 즉시 매도 신호는 아니며, 보유 유지/트레일링 확인이 우선입니다.'
+        : '최종 판단: 기존 보유 포지션의 모멘텀 유지 여부를 확인하는 단계입니다. 자동매도 신호가 아니라 조건부 점검입니다.';
+    }
+    if (r.holdingState === '보유중' && r.signal.code === 'TAKE') return '최종 판단: 수익 포지션의 일부익절 또는 트레일링 검토 단계입니다. 즉시 전량매도보다 수익 보호 조건 확인이 우선입니다.';
+    if (r.holdingState === '보유중' && r.signal.code === 'STOP') return '최종 판단: 손실 확대 방어가 우선인 리스크 차단 단계입니다. 보유 지속보다 청산 조건 확인이 우선입니다.';
+    if (r.holdingState === '보유중' && r.signal.code === 'WEAK') return '최종 판단: 보유 근거가 약해졌는지 확인하는 단계입니다. 신규 매수는 보류하고 보유 지속 조건을 재점검합니다.';
+    if (r.holdingState === '보유중' && r.signal.code === 'REBALANCE') return '최종 판단: 종목 자체 매도 신호라기보다 전략 내 비중 조정 후보입니다. 대체 후보와 상대강도를 비교합니다.';
+    if (r.holdingState === '보유중' && r.signal.code === 'EXIT') return '최종 판단: 보유 포지션 청산 검토 단계입니다. 실행 전 수량·조건·체결 여부를 별도로 확인해야 합니다.';
+    if (r.holdingState === '보유중' && r.signal.code === 'WAIT') return '최종 판단: 추가매수는 보류하되 기존 보유는 유지하면서 무효 조건과 수급 변화를 확인합니다.';
+    if (r.holdingState !== '보유중' && r.signal.code === 'BUY') return '최종 판단: 신규 매수 검토 대상입니다. 그래도 진입 조건과 시장 Regime 확인 후 분할 접근이 원칙입니다.';
+    if (r.holdingState !== '보유중' && r.signal.code === 'SMALL') return '최종 판단: 신규 진입은 가능하더라도 소액·분할 접근만 허용되는 조건부 후보입니다.';
+    if (r.holdingState !== '보유중' && r.signal.code === 'WAIT') return '최종 판단: 지금은 신규매수 대상이 아닙니다. 조건 개선 시 상위 단계로 승격될 수 있는 관찰대기 종목입니다.';
+    return r.holdingState === '보유중'
+      ? '최종 판단: 보유 포지션 기준으로 계속 점검합니다. 종목 분석과 포지션 관리 판단을 분리해서 봅니다.'
+      : '최종 판단: 아직 실행 대상이 아니라 관찰 목록에서 추적합니다.';
+  };
   const cell = r => `<a class="matrix-stock ${r.signal.tone} ${r.holdingState === '보유중' ? 'holding' : 'watching'}" href="${stockDetailUrl(r.item)}" title="${escapeHtml(r.reason)}">
     <div class="matrix-stock-head"><strong>${escapeHtml(r.name || r.code)}</strong><small class="hold-badge ${r.holdingState === '보유중' ? 'on' : 'off'}">${stateLabel(r)}</small></div>
     <span>${escapeHtml(r.code)} · ${escapeHtml(r.strategy || '-')}</span>
@@ -742,6 +762,7 @@ function renderActionMatrix(data = {}) {
     ${r.reviewAction ? `<i>검토사유: ${escapeHtml(r.reviewAction)}</i>` : ''}
     <i>${escapeHtml(r.exitReviewCategory?.plain || stateNote(r))}</i>
     ${executionNote(r) ? `<i>${executionNote(r)}</i>` : ''}
+    <b class="final-action-line">${escapeHtml(finalIntegratedAction(r))}</b>
   </a>`;
   return `<section class="card action-matrix-card">
     <div class="card-head">

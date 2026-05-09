@@ -306,6 +306,11 @@ def main():
         errors.append(('app.js', '-', 'stale modal click handler remains'))
     if 'stockDetailUrl' not in app_js or 'stock.html?code' not in app_js:
         errors.append(('app.js', '-', 'stock detail links missing'))
+    for needle in ['finalIntegratedAction', '최종 판단:', 'final-action-line']:
+        if needle not in app_js and needle != 'final-action-line':
+            errors.append(('app.js', '-', f'missing action matrix integrated judgement marker: {needle}'))
+    if 'final-action-line' not in app_js:
+        errors.append(('app.js', '-', 'missing final integrated action render line'))
     for needle in ['renderKisSummary', 'renderKisTables', 'KIS 실사용 보강 데이터']:
         if needle not in stock_js:
             errors.append(('stock.js', '-', f'missing {needle}'))
