@@ -722,7 +722,9 @@ function renderActionMatrix(data = {}) {
   const executionNote = r => {
     if (['TAKE','STOP','MOMENTUM','WEAK','REBALANCE','EXIT'].includes(r.signal.code)) {
       const filled = String(r.executionStatus || '').includes('FILLED') || Number(r.executedQty || 0) > 0;
-      return filled ? '실행상태: 체결 기록' : '실행상태: 검토만 · 미체결 · 자동매도 아님';
+      const actionType = r.exitReviewCategory?.actionType || '검토만';
+      const structured = r.exitReviewCategory ? ` · ${actionType}` : '';
+      return filled ? `실행상태: 체결 기록${structured}` : `실행상태: 검토만 · 미체결 · 자동매도 아님${structured}`;
     }
     return '';
   };

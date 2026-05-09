@@ -1567,19 +1567,20 @@ def split_sell_items(items):
 
 def exit_review_category(action='', reason='', status='', execution_status=''):
     text = f'{action} {reason} {status} {execution_status}'
-    if 'FILLED' in str(execution_status):
-        return {'code': 'EXECUTED', 'label': '체결 기록', 'plain': '이미 체결된 매도 기록입니다.'}
+    is_executed = 'FILLED' in str(execution_status)
+    if is_executed:
+        return {'code': 'EXECUTED', 'label': '체결 기록', 'plain': '이미 체결된 매도 기록입니다.', 'isExecuted': True, 'actionType': '전량청산'}
     if re.search(r'손절|리스크 차단|중대 손실', text):
-        return {'code': 'STOP', 'label': '손절/리스크 차단', 'plain': '손실 확대를 막기 위한 청산 검토입니다.'}
+        return {'code': 'STOP', 'label': '손절/리스크 차단', 'plain': '손실 확대를 막기 위한 청산 검토입니다.', 'isExecuted': False, 'actionType': '검토만'}
     if re.search(r'익절|트레일링', text):
-        return {'code': 'TAKE', 'label': '익절/트레일링', 'plain': '수익 포지션의 일부익절 또는 트레일링 검토입니다.'}
+        return {'code': 'TAKE', 'label': '익절/트레일링', 'plain': '수익 포지션의 일부익절 또는 트레일링 검토입니다.', 'isExecuted': False, 'actionType': '트레일링관찰'}
     if re.search(r'모멘텀소멸|모멘텀 소멸|모멘텀이탈|모멘텀 이탈|진입 조건 약화|후보권 이탈', text):
-        return {'code': 'MOMENTUM', 'label': '모멘텀 점검', 'plain': '즉시 매도 신호가 아니라 보유 진입조건 약화 여부를 점검하는 Exit Review입니다.'}
+        return {'code': 'MOMENTUM', 'label': '모멘텀 점검', 'plain': '즉시 매도 신호가 아니라 보유 진입조건 약화 여부를 점검하는 Exit Review입니다.', 'isExecuted': False, 'actionType': '트레일링관찰'}
     if re.search(r'보유근거|단기점수약화|점수약화|근거 약화', text):
-        return {'code': 'WEAK', 'label': '보유근거 약화', 'plain': '보유 근거가 약해졌는지 확인하는 점검입니다.'}
+        return {'code': 'WEAK', 'label': '보유근거 약화', 'plain': '보유 근거가 약해졌는지 확인하는 점검입니다.', 'isExecuted': False, 'actionType': '보유유지'}
     if '리밸런싱' in text:
-        return {'code': 'REBALANCE', 'label': '리밸런싱 검토', 'plain': '전략 비중 조정 후보입니다.'}
-    return {'code': 'EXIT', 'label': '청산 검토', 'plain': '매도 실행 전 검토 상태입니다.'}
+        return {'code': 'REBALANCE', 'label': '리밸런싱 검토', 'plain': '전략 비중 조정 후보입니다.', 'isExecuted': False, 'actionType': '검토만'}
+    return {'code': 'EXIT', 'label': '청산 검토', 'plain': '매도 실행 전 검토 상태입니다.', 'isExecuted': False, 'actionType': '검토만'}
 
 def sync_holding_alerts_from_positions(session):
     positions = ((session.get('portfolio') or {}).get('positions') or []) if isinstance(session.get('portfolio'), dict) else []
