@@ -1388,8 +1388,7 @@ def safe_candidates(obj, sid=None, limit=8):
         if tech_signal and tech_signal.get('state') not in ('구조중립', '기술분석대기'):
             tech_note = f"기술구조 {tech_signal.get('state')}: {tech_signal.get('reason')}"
             candidate_note = f"{candidate_note} · {tech_note}" if candidate_note else tech_note
-        category = exit_review_category(c.get('action') or c.get('status') or '', reason, status, execution_status or 'REVIEW_ONLY_NOT_EXECUTED')
-        out.append({
+        row = {
             'code': code,
             'name': str(c.get('name') or c.get('stockName') or c.get('prdt_name') or ''),
             'score': round(normalized_score, 1) if normalized_score is not None else None,
@@ -1414,7 +1413,8 @@ def safe_candidates(obj, sid=None, limit=8):
             'positionLimit': position_limit,
             'technicalDecision': tech_signal,
             'fundamentals': fundamentals,
-        })
+        }
+        out.append(row)
     return out
 
 def safe_alerts(obj, limit=50):
@@ -1457,7 +1457,8 @@ def safe_alerts(obj, limit=50):
         trade_result = None
         if realized_pnl not in (None, ''):
             trade_result = '익절' if n(realized_pnl) > 0 else '손절' if n(realized_pnl) < 0 else '본전'
-        out.append({
+        category = exit_review_category(c.get('action') or c.get('status') or '', reason, status, execution_status or 'REVIEW_ONLY_NOT_EXECUTED')
+        row = {
             'code': str(c.get('code') or c.get('symbol') or c.get('pdno') or ''),
             'name': str(c.get('name') or c.get('stockName') or c.get('prdt_name') or ''),
             'status': status,
@@ -1479,7 +1480,9 @@ def safe_alerts(obj, limit=50):
             'executionSource': execution_source,
             'reviewAction': public_text(c.get('action') or c.get('status') or ''),
             'exitReviewCategory': category,
-        })
+        }
+        row['finalIntegratedDecision'] = final_integrated_decision(row)
+        out.append(row)
     return out
 
 def safe_buy_fills(dry, virtual, limit=50):
@@ -1575,12 +1578,48 @@ def exit_review_category(action='', reason='', status='', execution_status=''):
     if re.search(r'익절|트레일링', text):
         return {'code': 'TAKE', 'label': '익절/트레일링', 'plain': '수익 포지션의 일부익절 또는 트레일링 검토입니다.', 'isExecuted': False, 'actionType': '트레일링관찰'}
     if re.search(r'모멘텀소멸|모멘텀 소멸|모멘텀이탈|모멘텀 이탈|진입 조건 약화|후보권 이탈', text):
-        return {'code': 'MOMENTUM', 'label': '모멘텀 점검', 'plain': '즉시 매도 신호가 아니라 보유 진입조건 약화 여부를 점검하는 Exit Review입니다.', 'isExecuted': False, 'actionType': '트레일링관찰'}
+        return {'code': 'MOMENTUM', 'label': '모멘텀 점검', 'plain': '수익 포지션이지만 진입 당시 모멘텀 약화 여부를 점검하는 단계입니다. 즉시 자동매도 신호는 아닙니다.', 'isExecuted': False, 'actionType': '트레일링관찰'}
     if re.search(r'보유근거|단기점수약화|점수약화|근거 약화', text):
         return {'code': 'WEAK', 'label': '보유근거 약화', 'plain': '보유 근거가 약해졌는지 확인하는 점검입니다.', 'isExecuted': False, 'actionType': '보유유지'}
     if '리밸런싱' in text:
         return {'code': 'REBALANCE', 'label': '리밸런싱 검토', 'plain': '전략 비중 조정 후보입니다.', 'isExecuted': False, 'actionType': '검토만'}
     return {'code': 'EXIT', 'label': '청산 검토', 'plain': '매도 실행 전 검토 상태입니다.', 'isExecuted': False, 'actionType': '검토만'}
+
+def final_integrated_decision(item):
+    if not isinstance(item, dict):
+        return None
+    cat = item.get('exitReviewCategory') if isinstance(item.get('exitReviewCategory'), dict) else {}
+    f = item.get('fundamentals') if isinstance(item.get('fundamentals'), dict) else {}
+    expert = f.get('expertAnalysis') if isinstance(f.get('expertAnalysis'), dict) else {}
+    survival = expert.get('survival') if isinstance(expert.get('survival'), dict) else {}
+    score = expert.get('score')
+    confidence = survival.get('confidenceScore')
+    strong_stock = isinstance(score, (int, float)) and isinstance(confidence, (int, float)) and score >= 75 and confidence >= 60
+    code = cat.get('code') or 'EXIT'
+    stock_layer = f"종목분석: score {score if score is not None else '-'}, confidence {confidence if confidence is not None else '-'}, action {survival.get('actionState') or '-'}"
+    position_layer = f"보유관리: {cat.get('label') or '청산 검토'}, 실행상태 {'체결' if cat.get('isExecuted') else '검토만/미체결'}, actionType {cat.get('actionType') or '-'}"
+    if code == 'MOMENTUM':
+        action = 'HOLD_WITH_TRAILING_CHECK'
+        plain = '종목 자체는 우호적이나, 보유 포지션 기준에서는 진입 조건 약화 여부를 점검하는 단계입니다. 신규 매수보다 기존 보유분의 트레일링/모멘텀 유지 여부 확인이 우선입니다.' if strong_stock else '보유 포지션 기준에서는 진입 당시 모멘텀 약화 여부를 점검하는 단계입니다. 즉시 자동매도 신호는 아니며 보유 조건 확인이 우선입니다.'
+    elif code == 'TAKE':
+        action = 'PROTECT_PROFIT_WITH_TRAILING'
+        plain = '수익 포지션의 일부익절 또는 트레일링 검토 단계입니다. 즉시 전량매도보다 수익 보호 조건 확인이 우선입니다.'
+    elif code == 'STOP':
+        action = 'RISK_CUT_REVIEW'
+        plain = '손실 확대 방어가 우선인 리스크 차단 단계입니다. 보유 지속보다 청산 조건 확인이 우선입니다.'
+    elif code == 'WEAK':
+        action = 'HOLD_BASIS_RECHECK'
+        plain = '보유 근거가 약해졌는지 확인하는 단계입니다. 신규 매수는 보류하고 보유 지속 조건을 재점검합니다.'
+    elif code == 'REBALANCE':
+        action = 'REBALANCE_REVIEW'
+        plain = '종목 자체 매도 신호라기보다 전략 내 비중 조정 후보입니다. 대체 후보와 상대강도를 비교합니다.'
+    elif code == 'EXECUTED':
+        action = 'SELL_EXECUTED_RECORD'
+        plain = '이미 체결된 매도 기록입니다. 현재 행동 지시가 아니라 사후 기록으로 봅니다.'
+    else:
+        action = 'EXIT_REVIEW'
+        plain = '보유 포지션 청산 검토 단계입니다. 실행 전 수량·조건·체결 여부를 별도로 확인해야 합니다.'
+    return {'action': action, 'plain': plain, 'layers': {'stockAnalysis': stock_layer, 'positionManagement': position_layer}, 'source': 'dashboard-generator-v1'}
 
 def sync_holding_alerts_from_positions(session):
     positions = ((session.get('portfolio') or {}).get('positions') or []) if isinstance(session.get('portfolio'), dict) else []
@@ -2210,7 +2249,7 @@ for s in sessions:
             else:
                 status = f"(가상계좌) 매도 검토 · 미체결"
                 reason = f"보유 {p.get('qty') or '-'}주 · 실제 매도 미체결 · 검토수량 미정 · {p.get('holdReason') or ''}"
-            synthetic_sell.append({
+            row = {
                 'code': p.get('code'),
                 'name': p.get('name'),
                 'status': status,
@@ -2226,7 +2265,9 @@ for s in sessions:
                 'reviewAction': p.get('holdAction'),
                 'exitReviewCategory': exit_review_category(p.get('holdAction'), reason, status, 'REVIEW_ONLY_NOT_EXECUTED'),
                 'fundamentals': p.get('fundamentals') or public_fundamentals(p.get('code')),
-            })
+            }
+            row['finalIntegratedDecision'] = final_integrated_decision(row)
+            synthetic_sell.append(row)
         if synthetic_sell:
             existing_records = s.get('sellRecords') if isinstance(s.get('sellRecords'), list) else []
             s['sellRecords'] = existing_records

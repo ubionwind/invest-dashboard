@@ -683,6 +683,7 @@ function collectActionMatrix(data = {}) {
       reason: item.holdReason || item.candidateNote || item.reason || item.fundamentals?.expertAnalysis?.summary || prev?.reason || '',
       reviewAction: item.reviewAction || item.holdAction || prev?.reviewAction || '',
       exitReviewCategory: item.exitReviewCategory || prev?.exitReviewCategory || null,
+      finalIntegratedDecision: item.finalIntegratedDecision || prev?.finalIntegratedDecision || null,
       executionStatus: item.executionStatus || prev?.executionStatus || '',
       executedQty: item.executedQty ?? prev?.executedQty ?? null,
       item: { code, name: item.name || prev?.name, fundamentals: item.fundamentals || prev?.item?.fundamentals },
@@ -737,6 +738,7 @@ function renderActionMatrix(data = {}) {
     return '미보유 관찰 종목';
   };
   const finalIntegratedAction = r => {
+    if (r.finalIntegratedDecision?.plain) return r.finalIntegratedDecision.plain;
     const strongStock = Number(r.score ?? 0) >= 75 && Number(r.confidence ?? 0) >= 60;
     if (r.holdingState === '보유중' && r.signal.code === 'MOMENTUM') {
       return strongStock

@@ -272,6 +272,11 @@ def main():
                 errors.append((f'sessions[{index}].sellAlerts', alert.get('code'), 'sellAlert category must be isExecuted=false'))
             if cat.get('actionType') not in {'검토만', '일부익절', '전량청산', '보유유지', '트레일링관찰'}:
                 errors.append((f'sessions[{index}].sellAlerts', alert.get('code'), 'invalid exitReviewCategory.actionType'))
+            decision = alert.get('finalIntegratedDecision') if isinstance(alert.get('finalIntegratedDecision'), dict) else {}
+            if not decision.get('action') or not decision.get('plain'):
+                errors.append((f'sessions[{index}].sellAlerts', alert.get('code'), 'missing finalIntegratedDecision action/plain'))
+            if cat.get('code') == 'MOMENTUM' and decision.get('action') != 'HOLD_WITH_TRAILING_CHECK':
+                errors.append((f'sessions[{index}].sellAlerts', alert.get('code'), 'momentum review missing HOLD_WITH_TRAILING_CHECK decision'))
             if cat.get('code') == 'STOP' and float(alert.get('returnPct') or 0) > 0 and '손절' not in str(alert.get('reviewAction') or ''):
                 errors.append((f'sessions[{index}].sellAlerts', alert.get('code'), 'positive position incorrectly categorized as STOP'))
             if cat.get('code') == 'MOMENTUM' and ('손절' in cat.get('label', '') or '익절' in cat.get('label', '')):
@@ -293,6 +298,9 @@ def main():
                     errors.append((f'sessions[{index}].sellRecords', alert.get('code'), f'missing exitReviewCategory.{required}'))
             if cat.get('isExecuted') is not True:
                 errors.append((f'sessions[{index}].sellRecords', alert.get('code'), 'sellRecord category must be isExecuted=true'))
+            decision = alert.get('finalIntegratedDecision') if isinstance(alert.get('finalIntegratedDecision'), dict) else {}
+            if not decision.get('action') or not decision.get('plain'):
+                errors.append((f'sessions[{index}].sellRecords', alert.get('code'), 'missing finalIntegratedDecision action/plain'))
             if 'FILLED' not in str(alert.get('executionStatus') or ''):
                 errors.append((f'sessions[{index}].sellRecords', alert.get('code'), 'sell record missing filled executionStatus'))
     events_dir = ROOT.parent / 'invest_api_common/runtime/order_execution_events'
