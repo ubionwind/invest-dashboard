@@ -640,7 +640,8 @@ function stockActionSignal(item = {}, source = '') {
   if (/익절|트레일링|리밸런싱/.test(text)) return { code: 'TAKE', label: '익절/축소', tone: 'take', priority: 2 };
   if (/매수 보류|관망/.test(action)) return { code: 'WAIT', label: '관망', tone: 'wait', priority: 5 };
   if (/소액|분할|조건/.test(action)) return { code: 'SMALL', label: '조건부/소액', tone: 'small', priority: 4 };
-  if (/적극|매수/.test(action) || (Number.isFinite(score) && score >= 75 && Number.isFinite(confidence) && confidence >= 60)) return { code: 'BUY', label: '매수 검토', tone: 'buy', priority: 3 };
+  if (source === 'buyAlert') return { code: 'WATCH', label: '매수기록', tone: 'watch', priority: 6 };
+  if (/적극/.test(action) || (Number.isFinite(score) && score >= 75 && Number.isFinite(confidence) && confidence >= 60)) return { code: 'BUY', label: '매수 검토', tone: 'buy', priority: 3 };
   if (source === 'holding' && Number.isFinite(ret) && ret <= -4) return { code: 'SELL', label: '손절 검토', tone: 'sell', priority: 1 };
   return { code: 'WATCH', label: '추적 관찰', tone: 'watch', priority: 6 };
 }
@@ -726,7 +727,8 @@ function renderActionMatrix(data = {}) {
     <div class="matrix-summary">${counts.map(x => `<span class="matrix-count ${x.code.toLowerCase()}"><b>${x.count}</b><em>${x.label}</em></span>`).join('')}</div>
     <div class="action-matrix-grid">${groups.map(([code, label]) => {
       const items = rows.filter(r => r.signal.code === code).slice(0, 12);
-      return `<article class="matrix-column ${code.toLowerCase()}"><h3>${label}<small>${rows.filter(r => r.signal.code === code).length}</small></h3>${items.length ? items.map(cell).join('') : '<p class="muted matrix-empty">현재 없음</p>'}</article>`;
+      const empty = code === 'BUY' ? '현재 신규 매수 검토 후보 없음' : '현재 없음';
+      return `<article class="matrix-column ${code.toLowerCase()}"><h3>${label}<small>${rows.filter(r => r.signal.code === code).length}</small></h3>${items.length ? items.map(cell).join('') : `<p class="muted matrix-empty">${empty}</p>`}</article>`;
     }).join('')}</div>
   </section>`;
 }
