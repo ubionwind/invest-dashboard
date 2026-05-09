@@ -647,6 +647,12 @@ function stockActionSignal(item = {}, source = '') {
 
 function collectActionMatrix(data = {}) {
   const byCode = new Map();
+  const holdingCodes = new Set();
+  (data.sessions || []).forEach(s => {
+    ((s.portfolio || {}).positions || []).forEach(p => {
+      if (p?.code && Number(p.qty || 0) > 0) holdingCodes.add(String(p.code).padStart(6, '0'));
+    });
+  });
   const add = (item, strategy, source) => {
     if (!item || !item.code) return;
     const code = String(item.code).padStart(6, '0');
@@ -654,19 +660,27 @@ function collectActionMatrix(data = {}) {
     const prev = byCode.get(code);
     const score = item.score ?? item.currentScoreNormalized ?? item.fundamentals?.expertAnalysis?.score ?? null;
     const confidence = item.fundamentals?.expertAnalysis?.survival?.confidenceScore ?? null;
+    const isHolding = holdingCodes.has(code) || (source === 'holding' && Number(item.qty || 0) > 0);
     const row = {
       code,
       name: item.name || prev?.name || code,
-      strategy,
+      strategy: isHolding && source !== 'universe' ? strategy : (prev?.strategy || strategy),
       source,
       signal,
       score,
       confidence,
-      returnPct: item.returnPct ?? null,
-      reason: item.holdReason || item.candidateNote || item.reason || item.fundamentals?.expertAnalysis?.summary || '',
-      item: { code, name: item.name, fundamentals: item.fundamentals },
+      holdingState: isHolding ? '보유중' : '관찰중',
+      holdingQty: isHolding ? (item.qty ?? prev?.holdingQty ?? null) : null,
+      returnPct: item.returnPct ?? prev?.returnPct ?? null,
+      reason: item.holdReason || item.candidateNote || item.reason || item.fundamentals?.expertAnalysis?.summary || prev?.reason || '',
+      item: { code, name: item.name || prev?.name, fundamentals: item.fundamentals || prev?.item?.fundamentals },
     };
-    if (!prev || signal.priority < prev.signal.priority || (signal.priority === prev.signal.priority && Number(score || 0) > Number(prev.score || 0))) {
+    if (prev?.holdingState === '보유중' && row.holdingState !== '보유중') {
+      row.holdingState = '보유중';
+      row.holdingQty = prev.holdingQty;
+      row.returnPct = prev.returnPct;
+    }
+    if (!prev || row.holdingState === '보유중' && prev.holdingState !== '보유중' || signal.priority < prev.signal.priority || (signal.priority === prev.signal.priority && Number(score || 0) > Number(prev.score || 0))) {
       byCode.set(code, row);
     }
   };
@@ -677,7 +691,7 @@ function collectActionMatrix(data = {}) {
     (s.sellAlerts || []).forEach(x => add(x, s.name, 'sellAlert'));
   });
   (data.stockUniverse || []).forEach(x => add(x, x.strategy || '전체 분석', 'universe'));
-  return Array.from(byCode.values()).sort((a, b) => a.signal.priority - b.signal.priority || Number(b.score || 0) - Number(a.score || 0));
+  return Array.from(byCode.values()).sort((a, b) => a.signal.priority - b.signal.priority || (b.holdingState === '보유중') - (a.holdingState === '보유중') || Number(b.score || 0) - Number(a.score || 0));
 }
 
 function renderActionMatrix(data = {}) {
@@ -686,13 +700,16 @@ function renderActionMatrix(data = {}) {
     ['BUY', '매수 검토'], ['SMALL', '조건부/소액'], ['WAIT', '관망'], ['WATCH', '추적 관찰'], ['TAKE', '익절/축소'], ['SELL', '매도/손절'],
   ];
   const counts = groups.map(([code, label]) => ({ code, label, count: rows.filter(r => r.signal.code === code).length }));
-  const cell = r => `<a class="matrix-stock ${r.signal.tone}" href="${stockDetailUrl(r.item)}" title="${escapeHtml(r.reason)}">
-    <strong>${escapeHtml(r.name || r.code)}</strong><span>${escapeHtml(r.code)} · ${escapeHtml(r.strategy || '-')}</span><em>점수 ${r.score ?? '-'} · 확신 ${r.confidence ?? '-'}</em>
+  const holdingCount = rows.filter(r => r.holdingState === '보유중').length;
+  const cell = r => `<a class="matrix-stock ${r.signal.tone} ${r.holdingState === '보유중' ? 'holding' : 'watching'}" href="${stockDetailUrl(r.item)}" title="${escapeHtml(r.reason)}">
+    <div class="matrix-stock-head"><strong>${escapeHtml(r.name || r.code)}</strong><small class="hold-badge ${r.holdingState === '보유중' ? 'on' : 'off'}">${r.holdingState === '보유중' ? '보유' : '관찰'}</small></div>
+    <span>${escapeHtml(r.code)} · ${escapeHtml(r.strategy || '-')}</span>
+    <em>점수 ${r.score ?? '-'} · 확신 ${r.confidence ?? '-'}${r.holdingState === '보유중' && r.returnPct !== null ? ` · 수익 ${pct(r.returnPct)}` : ''}</em>
   </a>`;
   return `<section class="card action-matrix-card">
     <div class="card-head">
       <div><h2>분석 종목 행동 현황판</h2><p class="muted">점수만이 아니라 행동/확신도/보유상태를 합쳐 분류합니다.</p></div>
-      <span class="badge">${rows.length}종목</span>
+      <span class="badge">${rows.length}종목 · 보유 ${holdingCount}</span>
     </div>
     <div class="matrix-summary">${counts.map(x => `<span class="matrix-count ${x.code.toLowerCase()}"><b>${x.count}</b><em>${x.label}</em></span>`).join('')}</div>
     <div class="action-matrix-grid">${groups.map(([code, label]) => {
