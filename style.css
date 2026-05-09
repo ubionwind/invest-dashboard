@@ -533,6 +533,35 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
 .stock-context-list small { margin-top: 4px; color: var(--muted); line-height: 1.35; }
 .stock-title-btn, .stock-info-btn { text-decoration: none; }
 
+.action-matrix-wrap { margin-top: 16px; }
+.action-matrix-card { display: grid; gap: 14px; border-color: rgba(121,167,255,.22); background: linear-gradient(135deg, rgba(121,167,255,.075), rgba(255,209,102,.035)); }
+.matrix-summary { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 9px; }
+.matrix-count { padding: 11px; border-radius: 15px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.075); }
+.matrix-count b, .matrix-count em { display: block; }
+.matrix-count b { font-size: 24px; color: #ffe5a3; }
+.matrix-count em { margin-top: 2px; color: var(--muted); font-size: 12px; font-style: normal; font-weight: 900; }
+.matrix-count.buy b { color: #35d399; }
+.matrix-count.small b { color: #ffd166; }
+.matrix-count.wait b, .matrix-count.watch b { color: #9fc0ff; }
+.matrix-count.take b { color: #ffb86b; }
+.matrix-count.sell b { color: #ff7b7b; }
+.action-matrix-grid { display: grid; grid-template-columns: repeat(6, minmax(150px, 1fr)); gap: 10px; align-items: start; overflow-x: auto; padding-bottom: 3px; }
+.matrix-column { min-width: 150px; display: grid; gap: 8px; padding: 10px; border-radius: 16px; background: rgba(0,0,0,.14); border: 1px solid rgba(255,255,255,.075); }
+.matrix-column h3 { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 14px; color: #f8fbff; }
+.matrix-column h3 small { display: inline-grid; place-items: center; min-width: 24px; height: 24px; border-radius: 999px; color: #111827; background: #ffe5a3; font-size: 12px; }
+.matrix-stock { display: grid; gap: 3px; padding: 10px; border-radius: 13px; text-decoration: none; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); }
+.matrix-stock:hover { transform: translateY(-1px); border-color: rgba(255,229,163,.42); }
+.matrix-stock strong, .matrix-stock span, .matrix-stock em { display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.matrix-stock strong { color: #f8fbff; font-size: 13px; }
+.matrix-stock span { color: var(--muted); font-size: 11px; }
+.matrix-stock em { color: #caddff; font-size: 11px; font-style: normal; }
+.matrix-stock.buy { border-color: rgba(53,211,153,.26); background: rgba(53,211,153,.075); }
+.matrix-stock.small { border-color: rgba(255,209,102,.28); background: rgba(255,209,102,.075); }
+.matrix-stock.wait, .matrix-stock.watch { border-color: rgba(121,167,255,.22); }
+.matrix-stock.take { border-color: rgba(251,146,60,.28); background: rgba(251,146,60,.075); }
+.matrix-stock.sell { border-color: rgba(255,77,79,.28); background: rgba(255,77,79,.075); }
+.matrix-empty { padding: 10px; font-size: 12px; }
+
 @media (max-width: 760px) {
   .stock-detail-hero { grid-template-columns: 1fr; }
   .stock-score-ring { width: 100%; height: auto; min-height: 88px; border-radius: 22px; }
@@ -540,6 +569,8 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .stock-detail-page { padding-bottom: 132px; }
   .stock-detail-tabs { left: 8px; right: 8px; bottom: max(8px, env(safe-area-inset-bottom)); padding: 9px; border-radius: 18px; }
   .stock-detail-tabs a { padding: 8px 10px; font-size: 12px; }
+  .matrix-summary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .action-matrix-grid { grid-template-columns: repeat(6, 72vw); }
   .rise-timing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .valuation-row { grid-template-columns: 1fr; gap: 8px; }
   .valuation-row strong { text-align: left; }

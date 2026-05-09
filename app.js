@@ -628,6 +628,79 @@ function candidateList(items) {
   return `<div class="candidate-grid">${items.map(candidateTile).join('')}</div>`;
 }
 
+function stockActionSignal(item = {}, source = '') {
+  const f = item.fundamentals || {};
+  const survival = f.expertAnalysis?.survival || {};
+  const action = survival.actionState || item.holdAction || item.status || '';
+  const score = Number(item.score ?? item.currentScoreNormalized ?? f.expertAnalysis?.score ?? NaN);
+  const confidence = Number(survival.confidenceScore ?? NaN);
+  const ret = Number(item.returnPct ?? NaN);
+  const text = `${action} ${item.reason || ''} ${item.holdReason || ''}`;
+  if (/손절|매도/.test(text)) return { code: 'SELL', label: '매도/손절', tone: 'sell', priority: 1 };
+  if (/익절|트레일링|리밸런싱/.test(text)) return { code: 'TAKE', label: '익절/축소', tone: 'take', priority: 2 };
+  if (/매수 보류|관망/.test(action)) return { code: 'WAIT', label: '관망', tone: 'wait', priority: 5 };
+  if (/소액|분할|조건/.test(action)) return { code: 'SMALL', label: '조건부/소액', tone: 'small', priority: 4 };
+  if (/적극|매수/.test(action) || (Number.isFinite(score) && score >= 75 && Number.isFinite(confidence) && confidence >= 60)) return { code: 'BUY', label: '매수 검토', tone: 'buy', priority: 3 };
+  if (source === 'holding' && Number.isFinite(ret) && ret <= -4) return { code: 'SELL', label: '손절 검토', tone: 'sell', priority: 1 };
+  return { code: 'WATCH', label: '추적 관찰', tone: 'watch', priority: 6 };
+}
+
+function collectActionMatrix(data = {}) {
+  const byCode = new Map();
+  const add = (item, strategy, source) => {
+    if (!item || !item.code) return;
+    const code = String(item.code).padStart(6, '0');
+    const signal = stockActionSignal(item, source);
+    const prev = byCode.get(code);
+    const score = item.score ?? item.currentScoreNormalized ?? item.fundamentals?.expertAnalysis?.score ?? null;
+    const confidence = item.fundamentals?.expertAnalysis?.survival?.confidenceScore ?? null;
+    const row = {
+      code,
+      name: item.name || prev?.name || code,
+      strategy,
+      source,
+      signal,
+      score,
+      confidence,
+      returnPct: item.returnPct ?? null,
+      reason: item.holdReason || item.candidateNote || item.reason || item.fundamentals?.expertAnalysis?.summary || '',
+      item: { code, name: item.name, fundamentals: item.fundamentals },
+    };
+    if (!prev || signal.priority < prev.signal.priority || (signal.priority === prev.signal.priority && Number(score || 0) > Number(prev.score || 0))) {
+      byCode.set(code, row);
+    }
+  };
+  (data.sessions || []).forEach(s => {
+    (s.topCandidates || []).forEach(x => add(x, s.name, 'candidate'));
+    ((s.portfolio || {}).positions || []).forEach(x => add(x, s.name, 'holding'));
+    (s.buyAlerts || []).forEach(x => add(x, s.name, 'buyAlert'));
+    (s.sellAlerts || []).forEach(x => add(x, s.name, 'sellAlert'));
+  });
+  return Array.from(byCode.values()).sort((a, b) => a.signal.priority - b.signal.priority || Number(b.score || 0) - Number(a.score || 0));
+}
+
+function renderActionMatrix(data = {}) {
+  const rows = collectActionMatrix(data);
+  const groups = [
+    ['BUY', '매수 검토'], ['SMALL', '조건부/소액'], ['WAIT', '관망'], ['WATCH', '추적 관찰'], ['TAKE', '익절/축소'], ['SELL', '매도/손절'],
+  ];
+  const counts = groups.map(([code, label]) => ({ code, label, count: rows.filter(r => r.signal.code === code).length }));
+  const cell = r => `<a class="matrix-stock ${r.signal.tone}" href="${stockDetailUrl(r.item)}" title="${escapeHtml(r.reason)}">
+    <strong>${escapeHtml(r.name || r.code)}</strong><span>${escapeHtml(r.code)} · ${escapeHtml(r.strategy || '-')}</span><em>점수 ${r.score ?? '-'} · 확신 ${r.confidence ?? '-'}</em>
+  </a>`;
+  return `<section class="card action-matrix-card">
+    <div class="card-head">
+      <div><h2>분석 종목 행동 현황판</h2><p class="muted">점수만이 아니라 행동/확신도/보유상태를 합쳐 분류합니다.</p></div>
+      <span class="badge">${rows.length}종목</span>
+    </div>
+    <div class="matrix-summary">${counts.map(x => `<span class="matrix-count ${x.code.toLowerCase()}"><b>${x.count}</b><em>${x.label}</em></span>`).join('')}</div>
+    <div class="action-matrix-grid">${groups.map(([code, label]) => {
+      const items = rows.filter(r => r.signal.code === code).slice(0, 12);
+      return `<article class="matrix-column ${code.toLowerCase()}"><h3>${label}<small>${rows.filter(r => r.signal.code === code).length}</small></h3>${items.length ? items.map(cell).join('') : '<p class="muted matrix-empty">현재 없음</p>'}</article>`;
+    }).join('')}</div>
+  </section>`;
+}
+
 function holdingsBlock(pf = {}) {
   const positions = pf.positions || [];
   if (!positions.length) {
@@ -834,6 +907,7 @@ function render(data) {
     <section class="panel" id="panel-${i}">
       ${renderSessionCard(s, true, false)}
     </section>`).join('');
+  document.getElementById('actionMatrix').innerHTML = renderActionMatrix(data);
 
   renderMainCharts(data);
   renderItemCharts(data);
