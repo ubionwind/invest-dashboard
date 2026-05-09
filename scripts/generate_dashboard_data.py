@@ -1416,7 +1416,7 @@ def safe_candidates(obj, sid=None, limit=8):
         })
     return out
 
-def safe_alerts(obj, limit=8):
+def safe_alerts(obj, limit=50):
     arr=[]
     if isinstance(obj, dict):
         arr = obj.get('candidates') or obj.get('sellCandidates') or obj.get('orders') or obj.get('items') or obj.get('results') or []
@@ -1480,7 +1480,7 @@ def safe_alerts(obj, limit=8):
         })
     return out
 
-def safe_buy_fills(dry, virtual, limit=4):
+def safe_buy_fills(dry, virtual, limit=50):
     # The dashboard "buy alert" area must mean actual filled/recorded entries,
     # not candidates under review. Candidate/review items belong in topCandidates.
     rows=[]
@@ -1510,10 +1510,16 @@ def safe_buy_fills(dry, virtual, limit=4):
                 'reason': public_text(f"{c.get('qty') or ''}주 · 매입 {c.get('price') or ''}원 · 평가 {round(n(pos.get('lastPrice')) * n(pos.get('qty')))}원 · 손익 {round(n(pos.get('unrealizedPnl')))}원")[:120],
                 'returnPct': pos.get('returnPct'),
                 'holdingPeriod': holding_period_text(pos.get('entryAt') or c.get('time')),
+                'buyPrice': c.get('price'),
+                'buyAmount': c.get('amount'),
+                'buyQty': c.get('qty'),
+                'buyTime': c.get('time'),
+                'executionStatus': c.get('status') or 'VIRTUAL_FILLED',
+                'accountType': '가상계좌',
             })
     return rows[:limit]
 
-def execution_event_alerts(sid, limit=4):
+def execution_event_alerts(sid, limit=50):
     d = RUNTIME / 'order_execution_events'
     if not d.exists():
         return []
@@ -2155,7 +2161,9 @@ for s in sessions:
                 c['status'] = '보유중'
                 if not c.get('candidateNote'):
                     c['candidateNote'] = f"{p.get('holdingPeriod') or '보유중'} · 매입 {p.get('entryPrice') or '-'}원 · 현재 {p.get('currentPrice') or '-'}원 · 평가 {p.get('evalAmount') or '-'}원 · 손익 {p.get('pnl') or 0}원"
-        if acct.get('positions'):
+        if private_id in VIRTUAL_LEDGER_IDS:
+            s['buyAlerts'] = safe_buy_fills({}, load_fresh(f'virtual_trades/{private_id}.json', {}))
+        elif acct.get('positions'):
             # Use one live KIS/account snapshot for all holding cards so the
             # left "buy/holding" card and right sell-review card never show
             # different returnPct/current price for the same open position.
@@ -2166,7 +2174,7 @@ for s in sessions:
                 'reason': f"{p.get('qty')}주 · 매입 {p.get('entryPrice') or '-'}원 · 현재 {p.get('currentPrice') or '-'}원 · 평가 {p.get('evalAmount')}원 · 손익 {p.get('pnl')}원",
                 'returnPct': p.get('returnPct'),
                 'holdingPeriod': p.get('holdingPeriod'),
-            } for p in acct.get('positions', [])[:4]]
+            } for p in acct.get('positions', [])]
         enrich_comparison_fields(s, private_id)
         synthetic_sell = []
         for p in (s.get('portfolio') or {}).get('positions') or []:
@@ -2202,7 +2210,7 @@ for s in sessions:
         if synthetic_sell:
             existing_records = s.get('sellRecords') if isinstance(s.get('sellRecords'), list) else []
             s['sellRecords'] = existing_records
-            s['sellAlerts'] = synthetic_sell[:4]
+            s['sellAlerts'] = synthetic_sell
         reconcile_portfolio_from_positions(s)
         sync_holding_alerts_from_positions(s)
     else:
