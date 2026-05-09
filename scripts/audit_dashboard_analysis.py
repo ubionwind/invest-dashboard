@@ -11,7 +11,7 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-DATA = ROOT / 'data/test/dashboard-data.json'
+DATA = pathlib.Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else ROOT / 'data/test/dashboard-data.json'
 LAYERS = ROOT / 'data/layers'
 KST = dt.timezone(dt.timedelta(hours=9))
 
@@ -53,6 +53,25 @@ def main():
     stats = collections.Counter()
     rows = list(walk(data))
     generated_at = parse_kst(data.get('generatedAt'))
+
+    # Decision Contract is the explicit AGENT -> Dashboard translation layer.
+    # Every visible trading row must carry the four separated states so UI code
+    # does not infer buy/hold/exit/execution meaning from free-text reason fields.
+    contract_paths = ('topCandidates', 'buyAlerts', 'sellAlerts', 'sellRecords', 'positions')
+    for path, item in rows:
+        if not path.startswith('.sessions') or not any(token in path for token in contract_paths):
+            continue
+        dc = item.get('decisionContract') if isinstance(item, dict) else None
+        if not isinstance(dc, dict):
+            errors.append((path, item.get('code') if isinstance(item, dict) else '-', 'missing decisionContract'))
+            continue
+        for key in ['newEntry', 'holding', 'exit', 'execution']:
+            if not isinstance(dc.get(key), dict):
+                errors.append((path, item.get('code'), f'missing decisionContract.{key}'))
+        if not dc.get('plainSummary'):
+            errors.append((path, item.get('code'), 'missing decisionContract.plainSummary'))
+        if dc.get('execution', {}).get('executed') and dc.get('execution', {}).get('state') != 'EXECUTED':
+            errors.append((path, item.get('code'), 'executed row has non-EXECUTED execution state'))
 
     regime = data.get('marketRegime') or {}
     if regime.get('state') not in {'RISK_OFF', 'CAUTION', 'UNKNOWN', 'NEUTRAL', 'RISK_ON'}:
@@ -275,6 +294,10 @@ def main():
             decision = alert.get('finalIntegratedDecision') if isinstance(alert.get('finalIntegratedDecision'), dict) else {}
             if not decision.get('action') or not decision.get('plain'):
                 errors.append((f'sessions[{index}].sellAlerts', alert.get('code'), 'missing finalIntegratedDecision action/plain'))
+            conditions = decision.get('conditions') if isinstance(decision.get('conditions'), dict) else {}
+            for required in ['hold', 'partialTakeProfit', 'trailingStop', 'exit', 'newBuy', 'reviewAt']:
+                if not conditions.get(required):
+                    errors.append((f'sessions[{index}].sellAlerts', alert.get('code'), f'missing finalIntegratedDecision.conditions.{required}'))
             if cat.get('code') == 'MOMENTUM' and decision.get('action') != 'HOLD_WITH_TRAILING_CHECK':
                 errors.append((f'sessions[{index}].sellAlerts', alert.get('code'), 'momentum review missing HOLD_WITH_TRAILING_CHECK decision'))
             if cat.get('code') == 'STOP' and float(alert.get('returnPct') or 0) > 0 and '손절' not in str(alert.get('reviewAction') or ''):
@@ -301,6 +324,10 @@ def main():
             decision = alert.get('finalIntegratedDecision') if isinstance(alert.get('finalIntegratedDecision'), dict) else {}
             if not decision.get('action') or not decision.get('plain'):
                 errors.append((f'sessions[{index}].sellRecords', alert.get('code'), 'missing finalIntegratedDecision action/plain'))
+            conditions = decision.get('conditions') if isinstance(decision.get('conditions'), dict) else {}
+            for required in ['hold', 'partialTakeProfit', 'trailingStop', 'exit', 'newBuy', 'reviewAt']:
+                if not conditions.get(required):
+                    errors.append((f'sessions[{index}].sellRecords', alert.get('code'), f'missing finalIntegratedDecision.conditions.{required}'))
             if 'FILLED' not in str(alert.get('executionStatus') or ''):
                 errors.append((f'sessions[{index}].sellRecords', alert.get('code'), 'sell record missing filled executionStatus'))
     events_dir = ROOT.parent / 'invest_api_common/runtime/order_execution_events'
@@ -324,13 +351,11 @@ def main():
     stock_js = (ROOT / 'stock.js').read_text(encoding='utf-8')
     if 'data-stock-info' in app_js or 'openStockInfoModal' in app_js:
         errors.append(('app.js', '-', 'stale modal click handler remains'))
-    if 'stockDetailUrl' not in app_js or 'stock.html?code' not in app_js:
+    if 'stockDetailUrl' not in app_js or ('stock.html?code' not in app_js and 'stock-tabs.html?code' not in app_js):
         errors.append(('app.js', '-', 'stock detail links missing'))
-    for needle in ['finalIntegratedAction', '최종 판단:', 'final-action-line']:
-        if needle not in app_js and needle != 'final-action-line':
+    for needle in ['finalIntegratedAction', '최종 판단:', 'action-brief', 'final-conditions', 'action-detail']:
+        if needle not in app_js:
             errors.append(('app.js', '-', f'missing action matrix integrated judgement marker: {needle}'))
-    if 'final-action-line' not in app_js:
-        errors.append(('app.js', '-', 'missing final integrated action render line'))
     for needle in ['renderKisSummary', 'renderKisTables', 'KIS 실사용 보강 데이터']:
         if needle not in stock_js:
             errors.append(('stock.js', '-', f'missing {needle}'))

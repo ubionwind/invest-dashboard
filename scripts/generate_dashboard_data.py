@@ -1414,6 +1414,7 @@ def safe_candidates(obj, sid=None, limit=8):
             'technicalDecision': tech_signal,
             'fundamentals': fundamentals,
         }
+        row['decisionContract'] = decision_contract_for_item(row, sid, 'holding' if held else 'candidate')
         out.append(row)
     return out
 
@@ -1482,6 +1483,7 @@ def safe_alerts(obj, limit=50):
             'exitReviewCategory': category,
         }
         row['finalIntegratedDecision'] = final_integrated_decision(row)
+        row['decisionContract'] = decision_contract_for_item(row, None, 'sell')
         out.append(row)
     return out
 
@@ -1594,6 +1596,7 @@ def final_integrated_decision(item):
     survival = expert.get('survival') if isinstance(expert.get('survival'), dict) else {}
     score = expert.get('score')
     confidence = survival.get('confidenceScore')
+    return_pct = item.get('returnPct')
     strong_stock = isinstance(score, (int, float)) and isinstance(confidence, (int, float)) and score >= 75 and confidence >= 60
     code = cat.get('code') or 'EXIT'
     stock_layer = f"종목분석: score {score if score is not None else '-'}, confidence {confidence if confidence is not None else '-'}, action {survival.get('actionState') or '-'}"
@@ -1619,7 +1622,202 @@ def final_integrated_decision(item):
     else:
         action = 'EXIT_REVIEW'
         plain = '보유 포지션 청산 검토 단계입니다. 실행 전 수량·조건·체결 여부를 별도로 확인해야 합니다.'
-    return {'action': action, 'plain': plain, 'layers': {'stockAnalysis': stock_layer, 'positionManagement': position_layer}, 'source': 'dashboard-generator-v1'}
+    conditions = final_decision_conditions(code, score, confidence, return_pct)
+    return {'action': action, 'plain': plain, 'conditions': conditions, 'layers': {'stockAnalysis': stock_layer, 'positionManagement': position_layer}, 'source': 'dashboard-generator-v1'}
+
+def final_decision_conditions(code, score=None, confidence=None, return_pct=None):
+    score_text = score if isinstance(score, (int, float)) else '-'
+    confidence_text = confidence if isinstance(confidence, (int, float)) else '-'
+    return_text = f"현재수익률 {round(return_pct, 2)}%" if isinstance(return_pct, (int, float)) else '현재수익률 확인 필요'
+    common = {
+        'hold': f'종목 점수 {score_text} 유지, 확신도 {confidence_text}가 55 이상, 20일 전고점/주요 지지선 위에서 거래대금이 20일 평균 이상이면 보유 유지',
+        'partialTakeProfit': f'{return_text}; 수익률 +10% 이상 도달 후 거래대금이 20일 평균 아래로 둔화되면 20~30% 일부익절 검토',
+        'trailingStop': '최근 고점 대비 -3~5% 하락 또는 5분봉 재돌파 2회 실패 시 트레일링 스탑 검토',
+        'exit': '진입 조건 완전 훼손 + 후보권 이탈이 2회 연속 유지되거나 주요 지지선 이탈 시 전량 청산 검토',
+        'newBuy': '신규 매수는 거래대금 재확인 전 보류; score 75 이상·confidence 60 이상·시장 Regime 중립 이상일 때만 분할 허용',
+        'reviewAt': '다음 정규장 09:45 이후',
+    }
+    if code == 'TAKE':
+        common.update({
+            'hold': '수익 구간 유지 + 고점 대비 -3% 이내 + 거래대금 20일 평균 이상이면 잔여 보유',
+            'partialTakeProfit': '수익률 +10% 이상 또는 단기 급등 후 거래대금 둔화 시 20~30% 일부익절 우선',
+            'trailingStop': '익절 후 잔여분은 고점 대비 -3~5% 또는 5일선 이탈 시 축소',
+            'newBuy': '추가 신규 매수는 금지; 눌림 후 거래대금 재증가 확인 전까지 추격 금지',
+        })
+    elif code == 'STOP':
+        common.update({
+            'hold': '주요 지지선 회복 + 거래대금 동반 반등 + 손실폭 -5% 이내일 때만 임시 보유',
+            'partialTakeProfit': '해당 없음; 손실 방어 우선',
+            'trailingStop': '반등 실패 후 전저점 재이탈 또는 고점 대비 -3% 추가 하락 시 즉시 축소 검토',
+            'exit': '손실률 -5~7% 초과, 전저점 이탈, 또는 리스크 차단 신호 2회 연속이면 전량 청산 검토',
+            'newBuy': '신규 매수 금지; 손절 사유 해소와 2거래일 안정화 전까지 재진입 금지',
+        })
+    elif code == 'MOMENTUM':
+        common.update({
+            'hold': '20일 전고점 또는 진입 당시 핵심 모멘텀 구간 위 유지 + 거래대금 20일 평균 이상이면 보유 유지',
+            'partialTakeProfit': '수익률 +10% 이상 도달 후 거래대금 둔화 또는 장중 고점 돌파 실패 시 20~30% 일부익절 검토',
+            'trailingStop': '최근 고점 대비 -3~5% 하락, 5분봉 재돌파 2회 실패, 또는 후보권 이탈 시 트레일링 스탑 검토',
+            'exit': '진입 조건 완전 훼손 + 후보권 이탈이 다음 재평가까지 지속되면 전량 청산 검토',
+            'newBuy': '신규 매수는 보류; 거래대금 재확인과 모멘텀 회복 전까지 기존 보유분 관리 우선',
+        })
+    elif code == 'WEAK':
+        common.update({
+            'hold': '보유 근거 회복 + confidence 55 이상 + 주요 지지선 유지 시 보유 유지',
+            'partialTakeProfit': '수익 구간이면 반등 실패 시 20% 축소 검토',
+            'trailingStop': '점수 70 미만 하락 또는 고점 대비 -4% 하락 시 축소 검토',
+            'exit': '보유 근거 약화가 2회 연속 유지되고 score 65 미만이면 전량 청산 검토',
+            'newBuy': '신규 매수 금지; 보유 근거 회복과 score 75 회복 전까지 관찰',
+        })
+    elif code == 'REBALANCE':
+        common.update({
+            'hold': '전략 내 상대강도 상위 50% 유지 또는 대체 후보 부재 시 보유 유지',
+            'partialTakeProfit': '비중 초과 또는 대체 후보 score가 5점 이상 우위일 때 20~30% 축소',
+            'trailingStop': '상대강도 하락 + 고점 대비 -4% 하락 시 비중 축소',
+            'exit': '대체 후보가 2회 연속 우위이고 현 종목 score 65 미만이면 전량 교체 검토',
+            'newBuy': '추가 매수 금지; 포트폴리오 비중 한도와 대체 후보 비교 후 허용',
+        })
+    elif code == 'EXECUTED':
+        common.update({
+            'hold': '이미 체결된 기록이므로 보유 조건 없음',
+            'partialTakeProfit': '이미 체결된 기록',
+            'trailingStop': '이미 체결된 기록',
+            'exit': '사후 기록 검증만 수행',
+            'newBuy': '재진입은 별도 신규 판단 필요; 기존 체결 기록만으로 매수 금지',
+        })
+    return common
+
+
+def decision_contract_for_item(item, sid=None, source='candidate'):
+    """Explicit AGENT -> Dashboard state contract.
+
+    Dashboard must translate these states, not infer trading meaning from free text.
+    This is read-only presentation metadata; it does not execute or authorize orders.
+    """
+    if not isinstance(item, dict):
+        item = {}
+    raw_qty = item.get('qty') if item.get('qty') not in (None, '') else item.get('heldQty')
+    qty = 0 if source == 'sellRecord' else n(raw_qty)
+    ret_raw = item.get('returnPct') if item.get('returnPct') not in (None, '') else item.get('realizedReturnPct')
+    ret = n(ret_raw) if ret_raw not in (None, '') else None
+    score = item.get('currentScoreNormalized') if item.get('currentScoreNormalized') is not None else item.get('score')
+    score_num = n(score) if score is not None else None
+    text = f"{item.get('status') or ''} {item.get('action') or ''} {item.get('reviewAction') or ''} {item.get('holdAction') or ''} {item.get('reason') or ''} {item.get('holdReason') or ''}"
+    execution_status = str(item.get('executionStatus') or '')
+    executed_qty = n(item.get('executedQty')) if item.get('executedQty') not in (None, '') else 0
+    executed = 'FILLED' in execution_status or executed_qty > 0
+    is_holding = source == 'holding' or (source in ('sell', 'sellAlert') and not executed and qty > 0) or qty > 0 or '보유중' in text or item.get('holdAction')
+    if source in ('candidate', 'buy') and not is_holding:
+        cat = {}
+    else:
+        cat = item.get('exitReviewCategory') if isinstance(item.get('exitReviewCategory'), dict) else exit_review_category(item.get('reviewAction') or item.get('holdAction') or item.get('action') or '', item.get('reason') or item.get('holdReason') or '', item.get('status') or '', execution_status or 'REVIEW_ONLY_NOT_EXECUTED')
+
+    if executed:
+        position_state = 'EXITED' if source in ('sell', 'sellRecord') else ('HELD_PROFIT' if ret is not None and ret >= 0 else 'HELD_LOSS' if ret is not None else 'UNKNOWN')
+        agent_decision = 'SELL_EXECUTED_RECORD' if source in ('sell', 'sellRecord') else 'ENTRY_EXECUTED_RECORD'
+    elif is_holding:
+        position_state = 'HELD_PROFIT' if ret is not None and ret >= 0 else 'HELD_LOSS' if ret is not None else 'HELD'
+        if cat.get('code') in ('STOP', 'TAKE', 'MOMENTUM', 'WEAK', 'REBALANCE', 'EXIT') and cat.get('code') != 'EXECUTED':
+            agent_decision = 'HOLD_WITH_EXIT_REVIEW'
+        else:
+            agent_decision = 'HOLD'
+    else:
+        position_state = 'NOT_HELD'
+        agent_decision = 'NEW_ENTRY_REVIEW' if (score_num is not None and score_num >= 70) or re.search(r'매수|후보|검토', text) else 'WATCH'
+
+    stop_loss = cat.get('code') == 'STOP' or bool(re.search(r'손절|리스크 차단|중대 손실', text))
+    partial_take = cat.get('code') == 'TAKE' or bool(re.search(r'익절|트레일링', text))
+    momentum_check = cat.get('code') == 'MOMENTUM' or bool(re.search(r'모멘텀|진입 조건 약화|후보권 이탈', text))
+    full_exit = cat.get('code') in ('STOP', 'EXIT')
+
+    if executed:
+        execution_state = 'EXECUTED'
+        execution_label = '체결 기록'
+    elif source in ('sell', 'sellAlert') or cat.get('code') in ('STOP', 'TAKE', 'MOMENTUM', 'WEAK', 'REBALANCE', 'EXIT'):
+        execution_state = 'REVIEW_ONLY_NOT_EXECUTED'
+        execution_label = '검토만 · 미체결 · 자동매매 아님'
+    else:
+        execution_state = 'NOT_EXECUTED'
+        execution_label = '실행 없음'
+
+    if is_holding:
+        new_entry_allowed = False
+        new_entry_state = 'LIMITED_OR_BLOCKED'
+        new_entry_label = '신규 진입 제한 / 기존 보유 우선'
+        hold_allowed = not stop_loss or (ret is not None and ret > -4)
+        hold_state = 'HOLD_ALLOWED' if hold_allowed else 'HOLD_RECHECK_REQUIRED'
+        hold_label = '기존 보유 유지 가능' if hold_allowed else '보유 지속 재점검 필요'
+    else:
+        new_entry_allowed = agent_decision == 'NEW_ENTRY_REVIEW' and execution_state == 'NOT_EXECUTED'
+        new_entry_state = 'ENTRY_REVIEW' if new_entry_allowed else 'WATCH_ONLY'
+        new_entry_label = '신규 진입 검토' if new_entry_allowed else '단순 관찰'
+        hold_allowed = False
+        hold_state = 'NO_POSITION'
+        hold_label = '보유 없음'
+
+    if executed:
+        exit_state, exit_label, exit_type = 'EXECUTED', '체결 기록', 'EXECUTED'
+    elif stop_loss:
+        exit_state, exit_label, exit_type = 'STOP_LOSS_REVIEW', '손절/리스크 차단 검토', 'STOP'
+    elif partial_take:
+        exit_state, exit_label, exit_type = 'TAKE_PROFIT_OR_TRAILING_REVIEW', '일부익절/트레일링 검토', 'TAKE_PROFIT'
+    elif momentum_check:
+        exit_state, exit_label, exit_type = 'MOMENTUM_CHECK', '모멘텀 점검', 'MOMENTUM_CHECK'
+    elif is_holding:
+        exit_state, exit_label, exit_type = 'NO_EXIT_SIGNAL', '즉시 청산 신호 없음', 'NONE'
+    else:
+        exit_state, exit_label, exit_type = 'NO_POSITION_EXIT', '청산 대상 아님', 'NONE'
+
+    if score_num is not None and score_num >= 80:
+        confidence = 'HIGH'
+    elif score_num is not None and score_num >= 65:
+        confidence = 'MEDIUM'
+    else:
+        confidence = 'LOW_OR_UNKNOWN'
+    risk_level = 'HIGH' if stop_loss else 'MEDIUM' if partial_take or momentum_check or (ret is not None and ret < 0) else 'LOW'
+
+    if executed:
+        plain = '이미 체결된 기록입니다. 현재 행동 지시가 아니라 사후 기록으로 봅니다.'
+    elif is_holding and momentum_check:
+        plain = '신규 진입보다는 기존 보유분의 모멘텀 유지 여부를 점검하는 단계입니다. 즉시 자동매도 신호는 아닙니다.'
+    elif is_holding and partial_take:
+        plain = '기존 보유 수익을 보호하기 위한 일부익절 또는 트레일링 검토 단계입니다. 전량 청산과 구분해서 봅니다.'
+    elif is_holding and stop_loss:
+        plain = '손실 확대 방어를 위한 청산 조건 점검 단계입니다. 실제 실행 여부는 별도 실행 상태를 확인해야 합니다.'
+    elif is_holding:
+        plain = '기존 보유는 유지 가능하며, 신규 진입 판단과 분리해서 관찰합니다.'
+    elif new_entry_allowed:
+        plain = '신규 진입 검토 대상입니다. 보유 판단이나 매도 판단과 분리된 진입 레이어입니다.'
+    else:
+        plain = '현재는 단순 관찰 상태입니다. 신규 진입·보유·청산 실행과 구분해서 표시합니다.'
+
+    return {
+        'version': 'decision-contract-v1',
+        'symbol': str(item.get('code') or item.get('symbol') or ''),
+        'positionState': position_state,
+        'agentDecision': agent_decision,
+        'newEntry': {'allowed': bool(new_entry_allowed), 'state': new_entry_state, 'label': new_entry_label},
+        'holding': {'allowed': bool(hold_allowed), 'state': hold_state, 'label': hold_label},
+        'exit': {
+            'state': exit_state,
+            'type': exit_type,
+            'label': exit_label,
+            'partialTakeProfitAllowed': bool(partial_take),
+            'fullExitReview': bool(full_exit),
+            'stopLoss': bool(stop_loss),
+            'momentumCheck': bool(momentum_check),
+        },
+        'execution': {
+            'state': execution_state,
+            'executed': bool(executed),
+            'executedQty': executed_qty,
+            'autoTradeExecuted': bool(executed and item.get('executionSource') in ('KIS_MOCK_API', 'VIRTUAL_LEDGER')),
+            'label': execution_label,
+        },
+        'riskLevel': risk_level,
+        'confidence': confidence,
+        'positionSizePolicy': 'KEEP_OR_TRAIL' if is_holding and (partial_take or momentum_check) else 'KEEP' if is_holding else 'ENTRY_REVIEW' if new_entry_allowed else 'WATCH_ONLY',
+        'plainSummary': public_text(plain, 220),
+    }
 
 def sync_holding_alerts_from_positions(session):
     positions = ((session.get('portfolio') or {}).get('positions') or []) if isinstance(session.get('portfolio'), dict) else []
@@ -1631,7 +1829,7 @@ def sync_holding_alerts_from_positions(session):
         for a in arr:
             if not isinstance(a, dict):
                 continue
-            if a.get('executionStatus') and 'FILLED' in str(a.get('executionStatus')):
+            if arr_name != 'buyAlerts' and a.get('executionStatus') and 'FILLED' in str(a.get('executionStatus')):
                 continue
             p = by_code.get(str(a.get('code') or ''))
             if not p:
@@ -1870,6 +2068,95 @@ def intraday_candle_snapshot(code):
     INTRADAY_CANDLE_CACHE[code] = out
     return out
 
+
+AI_MEMORY_CODES = {'000660', '005930'}
+AI_MEMORY_THEME = {
+    'id': 'ai-memory-premium',
+    'name': 'AI Memory Premium',
+    'state': 'MAINTAINED',
+    'label': '유지',
+    'strengthScore': 78,
+    'riskLevel': 'MEDIUM',
+    'updatedAt': None,
+    'plain': 'AI 서버 투자와 HBM/고성능 DRAM 수요가 반도체 밸류 프리미엄을 지지하는 구간입니다. 단, CAPEX 둔화·HBM 공급과잉·DRAM 가격 피크아웃은 매주 재점검합니다.',
+    'watchSignals': ['Nvidia/글로벌 AI CAPEX', 'HBM 공급계약·점유율', 'DRAM/NAND 가격', 'SOX/Micron/TSMC 상대강도', '외국인·기관 수급', '고PBR 정당화 여부'],
+    'positiveRules': ['HBM 주도권과 AI 메모리 이익 사이클이 확인되면 PBR 경고를 완화합니다.', 'ROE 개선이 동반되면 고PBR을 단순 고평가로 보지 않습니다.'],
+    'riskRules': ['AI CAPEX 둔화, HBM 판가 하락, DRAM 가격 피크아웃, SOX 약세가 겹치면 프리미엄을 약화로 전환합니다.', '삼성전자는 HBM 경쟁력/공급 검증 전까지 하이닉스보다 프리미엄을 할인합니다.'],
+    'codePolicy': {
+        '000660': {'premium': 'FULL', 'label': 'AI/HBM 직접 수혜 프리미엄', 'pbrPenalty': 'soften', 'plain': 'SK하이닉스는 HBM 주도권과 AI 메모리 사이클을 우선 반영해 고PBR 경고를 완화합니다.'},
+        '005930': {'premium': 'PARTIAL', 'label': 'AI 수혜 일부 반영', 'pbrPenalty': 'partial', 'plain': '삼성전자는 AI 수혜 기대는 반영하되 HBM 경쟁력 확인 전까지 하이닉스보다 할인합니다.'},
+    },
+}
+
+def theme_regime_snapshot(generated_at=None):
+    theme = json.loads(json.dumps(AI_MEMORY_THEME, ensure_ascii=False))
+    theme['updatedAt'] = generated_at or datetime.datetime.now(KST).isoformat(timespec='minutes')
+    return {'generatedAt': theme['updatedAt'], 'themes': [theme], 'summary': {'primaryTheme': theme['name'], 'state': theme['state'], 'plain': theme['plain']}}
+
+def ai_memory_theme_for_code(code):
+    code = str(code or '').zfill(6)
+    if code not in AI_MEMORY_CODES:
+        return None
+    theme = json.loads(json.dumps(AI_MEMORY_THEME, ensure_ascii=False))
+    policy = theme.get('codePolicy', {}).get(code, {})
+    return {
+        'id': theme['id'],
+        'name': theme['name'],
+        'state': theme['state'],
+        'label': theme['label'],
+        'strengthScore': theme['strengthScore'],
+        'riskLevel': theme['riskLevel'],
+        'policy': policy,
+        'plain': policy.get('plain') or theme['plain'],
+        'watchSignals': theme['watchSignals'],
+        'riskRules': theme['riskRules'],
+    }
+
+def apply_theme_regime_to_fundamentals(f):
+    if not isinstance(f, dict):
+        return f
+    code = str(f.get('code') or '').zfill(6)
+    theme = ai_memory_theme_for_code(code)
+    if not theme:
+        return f
+    out = json.loads(json.dumps(f, ensure_ascii=False))
+    out['themeRegime'] = theme
+    report = out.get('report') if isinstance(out.get('report'), list) else []
+    policy = theme.get('policy') or {}
+    pbr = out.get('pbr')
+    if pbr is not None:
+        report.insert(0, f"{theme['name']} {theme['label']}: PBR {pbr}은 단독 고평가 경고가 아니라 HBM/AI 메모리 프리미엄 정당화 여부와 함께 봅니다.")
+    badge = str(out.get('badge') or '')
+    if '고PBR' in badge and policy.get('pbrPenalty') == 'soften':
+        out['badge'] = badge.replace('고PBR', 'AI프리미엄PBR')
+    elif '고PBR' in badge and policy.get('pbrPenalty') == 'partial':
+        out['badge'] = f"{badge} · AI프리미엄확인"
+    out['report'] = report[:5]
+    expert = out.get('expertAnalysis') if isinstance(out.get('expertAnalysis'), dict) else None
+    if expert:
+        basis = expert.get('basis') if isinstance(expert.get('basis'), list) else []
+        basis.insert(0, f"ThemeRegime={theme['name']}:{theme['state']}:{policy.get('premium', 'WATCH')}")
+        expert['basis'] = basis[:6]
+        key_points = expert.get('keyPoints') if isinstance(expert.get('keyPoints'), list) else []
+        key_points.insert(0, theme.get('plain'))
+        expert['keyPoints'] = key_points[:6]
+        survival = expert.get('survival') if isinstance(expert.get('survival'), dict) else None
+        if survival:
+            survival['themeRegime'] = theme
+            rules = survival.get('sectorRulesApplied') if isinstance(survival.get('sectorRulesApplied'), list) else []
+            rules.insert(0, policy.get('plain') or theme['plain'])
+            survival['sectorRulesApplied'] = rules[:7]
+            try:
+                base = float(survival.get('confidenceScore'))
+                delta = 4 if policy.get('premium') == 'FULL' else 1
+                survival['preThemeConfidenceScore'] = round(base)
+                score = max(0, min(100, round(base + delta)))
+                survival['confidenceScore'] = score
+                survival['confidenceLevel'] = 'High' if score >= 75 else ('Medium' if score >= 60 else ('Low' if score >= 45 else 'Uncertain'))
+            except Exception:
+                pass
+    return out
+
 def technical_analysis_signal(f):
     t = (f or {}).get('technicalStructure') if isinstance(f, dict) else None
     if not isinstance(t, dict) or t.get('error'):
@@ -1892,6 +2179,7 @@ def public_fundamentals(code):
     f = FUNDAMENTALS_BY_CODE.get(str(code or '').zfill(6)) or FUNDAMENTALS_BY_CODE.get(str(code or ''))
     if not isinstance(f, dict):
         return None
+    f = apply_theme_regime_to_fundamentals(f)
     kis = f.get('kisEnrichment') if isinstance(f.get('kisEnrichment'), dict) else None
     if kis:
         # Public dashboard label only. Keep the data, avoid noisy vendor/API wording
@@ -1920,6 +2208,7 @@ def public_fundamentals(code):
         'pbr': f.get('pbr'),
         'roe': f.get('roe'),
         'sectorProfile': f.get('sectorProfile') if isinstance(f.get('sectorProfile'), dict) else None,
+        'themeRegime': f.get('themeRegime') if isinstance(f.get('themeRegime'), dict) else None,
         'peerAverage': f.get('peerAverage') if isinstance(f.get('peerAverage'), dict) else {},
         'peerGrowthMargin': f.get('peerGrowthMargin') if isinstance(f.get('peerGrowthMargin'), dict) else None,
         'badge': public_text(f.get('badge') or '', 40),
@@ -1999,6 +2288,7 @@ def slim_public_fundamentals(f):
         'pbr': f.get('pbr'),
         'roe': f.get('roe'),
         'badge': f.get('badge'),
+        'themeRegime': f.get('themeRegime') if isinstance(f.get('themeRegime'), dict) else None,
         'updatedAt': f.get('updatedAt'),
         'universeStatus': f.get('universeStatus'),
         'technicalSignal': f.get('technicalSignal'),
@@ -2131,6 +2421,7 @@ def enrich_comparison_fields(s, sid):
             elif tech.get('state') == '돌파우호':
                 reason = f"{reason}; 기술구조 돌파우호"
             p['holdReason'] = reason
+        p['decisionContract'] = decision_contract_for_item(p, sid, 'holding')
     held_scores = [n(p.get('currentScoreNormalized')) for p in positions if isinstance(p, dict) and p.get('currentScoreNormalized') is not None]
     lowest_held = min(held_scores) if held_scores else None
     for c in candidates:
@@ -2149,6 +2440,31 @@ def enrich_comparison_fields(s, sid):
         if tech.get('state') in ('매물대주의', '전고점대기', '저항거리큼', '돌파우호'):
             note = f"기술구조 {tech.get('state')}: {tech.get('reason')}"
             c['candidateNote'] = f"{c.get('candidateNote')} · {note}" if c.get('candidateNote') and note not in c.get('candidateNote') else (c.get('candidateNote') or note)
+
+
+def ensure_session_decision_contracts(session, sid):
+    """Backfill Decision Contract on every dashboard-visible trading row."""
+    if not isinstance(session, dict):
+        return
+    for arr_name, source in (('topCandidates', 'candidate'), ('buyAlerts', 'buy'), ('sellRecords', 'sellRecord'), ('sellAlerts', 'sell')):
+        arr = session.get(arr_name)
+        if not isinstance(arr, list):
+            continue
+        for item in arr:
+            if not isinstance(item, dict):
+                continue
+            if source == 'sellRecord':
+                if not isinstance(item.get('exitReviewCategory'), dict):
+                    item['exitReviewCategory'] = exit_review_category(item.get('reviewAction') or item.get('status') or '', item.get('reason') or '', item.get('status') or '', item.get('executionStatus') or 'FILLED')
+                if not isinstance(item.get('finalIntegratedDecision'), dict):
+                    item['finalIntegratedDecision'] = final_integrated_decision(item)
+            if not item.get('decisionContract'):
+                item['decisionContract'] = decision_contract_for_item(item, sid, source)
+    pf = session.get('portfolio') if isinstance(session.get('portfolio'), dict) else {}
+    positions = pf.get('positions') if isinstance(pf.get('positions'), list) else []
+    for item in positions:
+        if isinstance(item, dict) and not item.get('decisionContract'):
+            item['decisionContract'] = decision_contract_for_item(item, sid, 'holding')
 
 def reconcile_portfolio_from_positions(s):
     """Keep card totals aligned with the currently displayed holding rows."""
@@ -2267,6 +2583,7 @@ for s in sessions:
                 'fundamentals': p.get('fundamentals') or public_fundamentals(p.get('code')),
             }
             row['finalIntegratedDecision'] = final_integrated_decision(row)
+            row['decisionContract'] = decision_contract_for_item(row, private_id, 'sell')
             synthetic_sell.append(row)
         if synthetic_sell:
             existing_records = s.get('sellRecords') if isinstance(s.get('sellRecords'), list) else []
@@ -2274,6 +2591,7 @@ for s in sessions:
             s['sellAlerts'] = synthetic_sell
         reconcile_portfolio_from_positions(s)
         sync_holding_alerts_from_positions(s)
+        ensure_session_decision_contracts(s, private_id)
     else:
         s['portfolio'] = {'capital': None, 'evalAmount': None, 'pnl': None, 'returnPct': None, 'positionCount': (s.get('performance') or {}).get('positionCount')}
     if private_id in VIRTUAL_LEDGER_IDS:
@@ -2281,6 +2599,7 @@ for s in sessions:
         if s['status']=='NO_DATA': s['status']='INITIALIZED'
     if not acct:
         enrich_comparison_fields(s, private_id)
+        ensure_session_decision_contracts(s, private_id)
     s.pop('runtimeId', None)
     s.pop('id', None)
 
@@ -2357,7 +2676,8 @@ summary['survivalScore'] = survival_review.get('survivalScore')
 summary['survivalReviewReadyCount'] = survival_review.get('reviewReadyCount')
 summary['survivalHighRiskCount'] = survival_review.get('highRiskCount')
 
-data={'generatedAt': point['ts'], 'summary':summary, 'marketRegime': market_regime, 'survivalReview': survival_review, 'benchmark':benchmark, 'kodexBenchmark':kodex_benchmark, 'sessions':sessions, 'history':history, 'notice':'Dashboard reset; previous metrics are not inherited.'}
+theme_regime = theme_regime_snapshot(point['ts'])
+data={'generatedAt': point['ts'], 'summary':summary, 'marketRegime': market_regime, 'themeRegime': theme_regime, 'survivalReview': survival_review, 'benchmark':benchmark, 'kodexBenchmark':kodex_benchmark, 'sessions':sessions, 'history':history, 'notice':'Dashboard reset; previous metrics are not inherited.'}
 split_stock_detail_files(data)
 OUT.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
 print(OUT)

@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-05-09T00:12+09:00",
-  "survivalScore": 72,
-  "totalRows": 32,
-  "noTradeRows": 29,
-  "noTradeRatioPct": 90.6,
+  "generatedAt": "2026-05-10T22:48+09:00",
+  "survivalScore": 52,
+  "totalRows": 33,
+  "noTradeRows": 30,
+  "noTradeRatioPct": 90.9,
   "actionCounts": {
-    "매수 보류": 16,
+    "매수 보류": 17,
     "관망 우선": 13,
     "적극 검토": 1,
     "소액/분할 접근": 2
   },
   "confidenceCounts": {
-    "Uncertain": 19,
+    "Uncertain": 20,
     "Low": 8,
     "High": 2,
     "Medium": 3
@@ -27,17 +27,17 @@
     },
     {
       "code": "FLOW_DISTRIBUTION_RISK",
-      "count": 8
+      "count": 9
     },
     {
       "code": "LOW_CONFIDENCE_NO_TRADE",
       "count": 7
     }
   ],
-  "reviewReadyCount": 0,
-  "baselineTrackedCount": 32,
+  "reviewReadyCount": 32,
+  "baselineTrackedCount": 33,
   "negativeSinceFirstCount": 0,
-  "highRiskCount": 20,
+  "highRiskCount": 21,
   "highRiskSamples": [
     {
       "session": "일반",

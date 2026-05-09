@@ -531,7 +531,7 @@ function fundamentalsText(f = {}) {
 }
 
 function stockDetailUrl(item = {}) {
-  return `stock.html?code=${encodeURIComponent(String(item.code || '').padStart(6, '0'))}`;
+  return `stock-tabs.html?code=${encodeURIComponent(String(item.code || '').padStart(6, '0'))}&v=20260510-tabs3`;
 }
 
 function stockNameLink(item = {}, fallback = '-', tag = 'strong', showCode = true) {
@@ -544,6 +544,64 @@ function stockNameLink(item = {}, fallback = '-', tag = 'strong', showCode = tru
 function fundamentalsButton(item = {}) {
   if (!item.fundamentals) return '';
   return `<a class="stock-info-btn" href="${stockDetailUrl(item)}">상세 분석</a>`;
+}
+
+
+function decisionShortLabel(kind, dc = {}) {
+  if (kind === 'new') {
+    if (dc.newEntry?.allowed) return '검토';
+    if (dc.positionState && dc.positionState !== 'NOT_HELD') return '금지';
+    return '관찰';
+  }
+  if (kind === 'hold') {
+    if (dc.holding?.state === 'NO_POSITION') return '없음';
+    return dc.holding?.allowed ? '유지' : '재점검';
+  }
+  if (kind === 'exit') {
+    if (dc.exit?.stopLoss) return '손절';
+    if (dc.exit?.partialTakeProfitAllowed) return '익절';
+    if (dc.exit?.momentumCheck) return '점검';
+    if (dc.exit?.state === 'NO_POSITION_EXIT') return '없음';
+    return '보류';
+  }
+  if (kind === 'exec') {
+    if (dc.execution?.executed) return '체결';
+    if (dc.execution?.state === 'REVIEW_ONLY_NOT_EXECUTED') return '미체결';
+    return '없음';
+  }
+  return '-';
+}
+
+function decisionContractBlock(item = {}, mode = 'default') {
+  const dc = item.decisionContract;
+  if (!dc) return '';
+  const chip = (abbr, title, value, shortValue, tone = '') => `<span class="decision-chip ${tone}" title="${escapeHtml(title)}: ${escapeHtml(value || '-')}"><b>${escapeHtml(abbr)}</b><em>${escapeHtml(mode === 'compact' ? shortValue : (value || '-'))}</em></span>`;
+  const newTone = dc.newEntry?.allowed ? 'buy' : 'wait';
+  const holdTone = dc.holding?.allowed ? 'hold' : 'wait';
+  const exitTone = dc.exit?.stopLoss ? 'sell' : dc.exit?.partialTakeProfitAllowed ? 'take' : dc.exit?.momentumCheck ? 'check' : 'wait';
+  const execTone = dc.execution?.executed ? 'executed' : 'wait';
+  const summary = mode === 'compact' ? '' : `<p>${escapeHtml(dc.plainSummary || '')}</p>`;
+  const score = item.currentScoreNormalized ?? item.score;
+  const scoreLine = mode === 'compact' && (score !== null && score !== undefined && score !== '' || item.returnPct !== null && item.returnPct !== undefined && item.returnPct !== '')
+    ? `<small class="decision-mini-score">${score !== null && score !== undefined && score !== '' ? `점수 ${Number(score).toFixed(1)}` : ''}${score !== null && score !== undefined && score !== '' && item.returnPct !== null && item.returnPct !== undefined && item.returnPct !== '' ? ' · ' : ''}${item.returnPct !== null && item.returnPct !== undefined && item.returnPct !== '' ? `수익 ${pct(Number(item.returnPct))}` : ''}</small>`
+    : '';
+  return `<div class="decision-contract ${mode}" aria-label="Decision Contract: 신 신규진입, 기 기존보유, 청 청산판단, 실 실행상태">
+    <div class="decision-contract-grid">
+      ${chip('신', '신규진입', dc.newEntry?.label, decisionShortLabel('new', dc), newTone)}
+      ${chip('기', '기존보유', dc.holding?.label, decisionShortLabel('hold', dc), holdTone)}
+      ${chip('청', '청산판단', dc.exit?.label, decisionShortLabel('exit', dc), exitTone)}
+      ${chip('실', '실행상태', dc.execution?.label, decisionShortLabel('exec', dc), execTone)}
+    </div>
+    ${scoreLine}
+    ${summary}
+  </div>`;
+}
+
+function decisionLegendBlock(mode = 'default') {
+  return `<div class="decision-legend ${mode}">
+    <div class="legend-row"><b>상태</b><span><strong>신</strong> 신규진입</span><span><strong>기</strong> 기존보유</span><span><strong>청</strong> 청산판단</span><span><strong>실</strong> 실행상태</span></div>
+    <div class="legend-row"><b>색상</b><span class="legend-dot buy">진입/허용</span><span class="legend-dot hold">보유가능</span><span class="legend-dot take">익절/트레일링</span><span class="legend-dot check">점검</span><span class="legend-dot sell">손절/위험</span><span class="legend-dot executed">체결</span><span class="legend-dot wait">대기/해당없음</span></div>
+  </div>`;
 }
 
 function candidateTile(c, idx) {
@@ -586,6 +644,7 @@ function candidateTile(c, idx) {
       ${c.technicalDecision?.state && !['구조중립', '기술분석대기'].includes(c.technicalDecision.state) ? `<span>기술 ${c.technicalDecision.state}</span>` : ''}
       ${c.fundamentals?.stockFutureQuote?.signal ? `<span>${c.fundamentals.stockFutureQuote.signal}</span>` : ''}
     </div>
+    ${decisionContractBlock(c, 'compact')}
     ${fundamentalsButton(c)}
     ${c.candidateNote ? `<details class="candidate-detail"><summary>매수/보유 기준 보기</summary><p>${c.candidateNote}</p></details>` : ''}
     ${c.reason && (!theme && !meta && change === undefined) ? `<p class="candidate-reason">${c.reason}</p>` : ''}
@@ -636,7 +695,11 @@ function stockActionSignal(item = {}, source = '') {
   const confidence = Number(survival.confidenceScore ?? NaN);
   const ret = Number(item.returnPct ?? NaN);
   const category = item.exitReviewCategory || {};
+  const dc = item.decisionContract || {};
   const categoryPriority = { STOP: 1, TAKE: 2, MOMENTUM: 3, WEAK: 4, REBALANCE: 5, EXIT: 6, EXECUTED: 2 };
+  if (dc.exit?.state === 'STOP_LOSS_REVIEW') return { code: 'STOP', label: dc.exit.label || '손절/리스크 차단', tone: 'sell', priority: 1 };
+  if (dc.exit?.state === 'TAKE_PROFIT_OR_TRAILING_REVIEW') return { code: 'TAKE', label: dc.exit.label || '익절/트레일링', tone: 'take', priority: 2 };
+  if (dc.exit?.state === 'MOMENTUM_CHECK') return { code: 'MOMENTUM', label: dc.exit.label || '모멘텀 점검', tone: 'exit', priority: 3 };
   if (category.code && category.code !== 'EXECUTED') return { code: category.code, label: category.label || '보유 포지션 점검', tone: category.code === 'STOP' ? 'sell' : (category.code === 'TAKE' ? 'take' : 'exit'), priority: categoryPriority[category.code] || 6 };
   const text = `${action} ${item.reviewAction || ''} ${item.status || ''} ${item.reason || ''} ${item.holdReason || ''}`;
   if (/손절|리스크 차단|중대 손실/.test(text)) return { code: 'STOP', label: '손절/리스크 차단', tone: 'sell', priority: 1 };
@@ -684,6 +747,7 @@ function collectActionMatrix(data = {}) {
       reviewAction: item.reviewAction || item.holdAction || prev?.reviewAction || '',
       exitReviewCategory: item.exitReviewCategory || prev?.exitReviewCategory || null,
       finalIntegratedDecision: item.finalIntegratedDecision || prev?.finalIntegratedDecision || null,
+      decisionContract: item.decisionContract || prev?.decisionContract || null,
       executionStatus: item.executionStatus || prev?.executionStatus || '',
       executedQty: item.executedQty ?? prev?.executedQty ?? null,
       item: { code, name: item.name || prev?.name, fundamentals: item.fundamentals || prev?.item?.fundamentals },
@@ -758,21 +822,68 @@ function renderActionMatrix(data = {}) {
       ? '최종 판단: 보유 포지션 기준으로 계속 점검합니다. 종목 분석과 포지션 관리 판단을 분리해서 봅니다.'
       : '최종 판단: 아직 실행 대상이 아니라 관찰 목록에서 추적합니다.';
   };
-  const cell = r => `<a class="matrix-stock ${r.signal.tone} ${r.holdingState === '보유중' ? 'holding' : 'watching'}" href="${stockDetailUrl(r.item)}" title="${escapeHtml(r.reason)}">
-    <div class="matrix-stock-head"><strong>${escapeHtml(r.name || r.code)}</strong><small class="hold-badge ${r.holdingState === '보유중' ? 'on' : 'off'}">${stateLabel(r)}</small></div>
+  const decisionConditions = r => {
+    const c = r.finalIntegratedDecision?.conditions;
+    if (!c) return '';
+    const labels = { hold: '보유', partialTakeProfit: '일부익절', trailingStop: '트레일링', exit: '전량청산', newBuy: '신규매수', reviewAt: '재평가' };
+    return `<ul class="final-conditions">${Object.entries(labels).map(([key, label]) => c[key] ? `<li><b>${label}</b>${escapeHtml(c[key])}</li>` : '').join('')}</ul>`;
+  };
+  const finalActionTitle = r => {
+    const dc = r.decisionContract || {};
+    const exit = dc.exit || {};
+    const hold = dc.holding || {};
+    if (exit.stopLoss) return '손절/리스크 차단 검토';
+    if (exit.partialTakeProfitAllowed) return hold.allowed ? '보유 유지 + 익절/트레일링 검토' : '익절/트레일링 검토';
+    if (exit.momentumCheck) return hold.allowed ? '보유 유지 + 모멘텀 점검' : '모멘텀 점검';
+    if (hold.allowed) return '보유 유지';
+    if (dc.newEntry?.allowed) return '신규매수 검토';
+    return r.signal?.label || '추적 관찰';
+  };
+  const shortReason = r => {
+    const plain = r.finalIntegratedDecision?.plain || r.decisionContract?.plainSummary || finalIntegratedAction(r) || stateNote(r);
+    return String(plain || '').replace(/^최종 판단:\s*/, '').slice(0, 96);
+  };
+  const riskLine = r => {
+    const risk = r.decisionContract?.riskLevel || '-';
+    const ret = r.returnPct === null || r.returnPct === undefined || r.returnPct === '' ? '-' : pct(Number(r.returnPct));
+    return `수익률 ${ret} · 리스크 ${risk}`;
+  };
+  const detailJson = r => {
+    const dc = r.decisionContract ? JSON.stringify(r.decisionContract, null, 2) : '';
+    return dc ? `<pre class="decision-json">${escapeHtml(dc)}</pre>` : '';
+  };
+  const cell = r => `<article class="matrix-stock ${r.signal.tone} ${r.holdingState === '보유중' ? 'holding' : 'watching'}" title="${escapeHtml(r.reason)}">
+    <div class="matrix-stock-head"><a href="${stockDetailUrl(r.item)}"><strong>${escapeHtml(r.name || r.code)}</strong></a><small class="hold-badge ${r.holdingState === '보유중' ? 'on' : 'off'}">${stateLabel(r)}</small></div>
     <span>${escapeHtml(r.code)} · ${escapeHtml(r.strategy || '-')}</span>
-    <em>종목분석 점수 ${r.score ?? '-'} · 확신 ${r.confidence ?? '-'}${r.holdingState === '보유중' && r.returnPct !== null ? ` · 포지션 수익 ${pct(r.returnPct)}` : ''}</em>
-    ${r.exitReviewCategory?.label ? `<i>분류: ${escapeHtml(r.exitReviewCategory.label)}</i>` : ''}
-    ${r.reviewAction ? `<i>검토사유: ${escapeHtml(r.reviewAction)}</i>` : ''}
-    <i>${escapeHtml(r.exitReviewCategory?.plain || stateNote(r))}</i>
-    ${executionNote(r) ? `<i>${executionNote(r)}</i>` : ''}
-    <b class="final-action-line">${escapeHtml(finalIntegratedAction(r))}</b>
-  </a>`;
+    <div class="action-brief">
+      <b>최종 판단: ${escapeHtml(finalActionTitle(r))}</b>
+      <dl>
+        <div><dt>신규매수</dt><dd>${escapeHtml(r.decisionContract?.newEntry?.label || '-')}</dd></div>
+        <div><dt>기존보유</dt><dd>${escapeHtml(r.decisionContract?.holding?.label || '-')}</dd></div>
+        <div><dt>실행상태</dt><dd>${escapeHtml(r.decisionContract?.execution?.label || executionNote(r) || '실행 없음')}</dd></div>
+        <div><dt>수익/리스크</dt><dd>${escapeHtml(riskLine(r))}</dd></div>
+      </dl>
+      <p>${escapeHtml(shortReason(r))}</p>
+    </div>
+    <details class="action-detail">
+      <summary>상세 보기</summary>
+      ${decisionContractBlock(r, 'compact')}
+      ${decisionConditions(r)}
+      <ul class="action-detail-meta">
+        <li><b>점수</b>${escapeHtml(r.score ?? '-')}</li>
+        <li><b>판단 신뢰도</b>${escapeHtml(r.confidence ?? '-')}<small>High 75+ · Medium 60~74 · Low 45~59 · Uncertain 45 미만</small></li>
+        <li><b>분류</b>${escapeHtml(r.exitReviewCategory?.label || r.signal.label || '-')}</li>
+        <li><b>검토사유</b>${escapeHtml(r.reviewAction || '-')}</li>
+      </ul>
+      ${detailJson(r)}
+    </details>
+  </article>`;
   return `<section class="card action-matrix-card">
     <div class="card-head">
-      <div><h2>분석 종목 행동 현황판</h2><p class="muted">점수만이 아니라 행동/확신도/보유상태를 합쳐 분류합니다.</p></div>
+      <div><h2>분석 종목 행동 현황판</h2><p class="muted">점수만이 아니라 행동/판단 신뢰도/보유상태를 합쳐 분류합니다.</p></div>
       <span class="badge">${rows.length}종목 · 보유 ${holdingCount}</span>
     </div>
+    ${decisionLegendBlock('matrix')}
     <div class="matrix-summary">${counts.map(x => `<span class="matrix-count ${x.code.toLowerCase()}"><b>${x.count}</b><em>${x.label}</em></span>`).join('')}</div>
     <div class="action-matrix-grid">${groups.map(([code, label]) => {
       const items = rows.filter(r => r.signal.code === code);
@@ -823,7 +934,7 @@ function holdingsBlock(pf = {}) {
           <td class="num-pair" data-label="현재가 / 평균단가"><span class="pair-line"><b>${moneyBare(p.currentPrice)}</b><small>${moneyBare(p.entryPrice)}</small>${nxtReferenceLine(f, p.currentPrice)}${stockFutureReferenceLine(f)}</span></td>
           <td class="num-pair" data-label="전일대비 / 등락률"><span class="pair-line"><b class="${changeClass}">${delta === null ? '-' : `${delta >= 0 ? '▲ ' : '▼ '}${fmt.format(Math.abs(delta))}`}</b><small class="${changeClass}">${changeNum === null || Number.isNaN(changeNum) ? '-' : changeNum.toFixed(2)}</small></span></td>
           <td data-label="보유비중">${weight === null ? '-' : weight.toFixed(2)}</td>
-        </tr>`;
+        </tr>${p.decisionContract ? `<tr class="holding-decision-row"><td colspan="10">${decisionContractBlock(p)}</td></tr>` : ''}`;
       }).join('')}</tbody>
     </table></div>
   </section>`;
@@ -873,6 +984,7 @@ function tradeAlerts(s) {
         ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<b class="return-big ${buyReturnClass}">${pct(buyReturn)}</b>`}
       </div>
       ${isSell ? `<div class="alert-meta"><span>${sourceLabel}</span><span>${execLabel}</span>${x.reviewAction ? `<span>${x.reviewAction}</span>` : ''}</div>` : ''}
+      ${decisionContractBlock(x, 'compact')}
       ${isSell && executed ? sellResultLine(x) : ''}
       ${qtyLine ? `<small>${qtyLine}</small>` : ''}
       ${x.reason ? `<small>${colorizePnlText(x.reason)}</small>` : ''}
@@ -917,7 +1029,7 @@ function renderSessionCard(s, full = false, showSummary = true) {
       <span>보유 ${fmt.format(pf.positionCount || 0)}</span>
     </div>
     ${tradeAlerts(s)}
-    ${s.topCandidates?.length ? `<details class="strategy-candidates"><summary><span>후보 상세 보기</span><b>${fmt.format(s.topCandidates.length)}개</b></summary><p class="candidate-help"><span class="desktop-help">판단점수는 전략별 원점수를 공통 0~100 구간으로 환산한 실행 강도입니다. 90+ 강매수권, 80+ 우선검토, 70+ 관찰강화, 60 미만은 아직 약함으로 봅니다.</span><span class="mobile-help">판단점수: 90+ 강함 · 80+ 우선 · 70+ 관찰 · 60↓ 약함</span></p>${candidateList(s.topCandidates)}</details>` : ''}
+    ${s.topCandidates?.length ? `<details class="strategy-candidates"><summary><span>후보 상세 보기</span><b>${fmt.format(s.topCandidates.length)}개</b></summary><p class="candidate-help"><span class="desktop-help">판단점수는 전략별 원점수를 공통 0~100 구간으로 환산한 실행 강도입니다. 90+ 강매수권, 80+ 우선검토, 70+ 관찰강화, 60 미만은 아직 약함으로 봅니다.</span><span class="mobile-help">판단점수: 90+ 강함 · 80+ 우선 · 70+ 관찰 · 60↓ 약함</span></p>${decisionLegendBlock('candidate')}${candidateList(s.topCandidates)}</details>` : ''}
   </article>`;
 }
 
