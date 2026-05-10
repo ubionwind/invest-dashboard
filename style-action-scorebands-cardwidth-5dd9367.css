@@ -542,6 +542,7 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
 .matrix-count b, .matrix-count em { display: block; }
 .matrix-count b { font-size: 24px; color: #ffe5a3; }
 .matrix-count em { margin-top: 2px; color: var(--muted); font-size: 12px; font-style: normal; font-weight: 900; }
+.matrix-count.all b { color: #f8fbff; }
 .matrix-count.buy b { color: #35d399; }
 .matrix-count.small b { color: #ffd166; }
 .matrix-count.wait b, .matrix-count.watch b { color: #9fc0ff; }
