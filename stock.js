@@ -646,6 +646,10 @@ function beginnerGuide(f = {}, rows = []) {
   return { headline, tone, waitChecks, allChecks, danger, simpleWords, volumeLine: volume.line, futureImpact: future?.impact || '', beginnerCards, score: Number.isFinite(score) ? score : null, confidenceScore: survival.confidenceScore ?? null, regime, actionState: survival.actionState || '관망', positionGuide: pos };
 }
 
+function buildBeginnerGuide(f = {}, rows = []) {
+  return beginnerGuide(f, rows);
+}
+
 function renderDecisionBars(g = {}) {
   const score = g.score == null ? null : Math.max(0, Math.min(100, Number(g.score)));
   const confidence = g.confidenceScore == null ? null : Math.max(0, Math.min(100, Number(g.confidenceScore)));
