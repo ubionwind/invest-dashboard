@@ -535,8 +535,10 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
 
 .action-matrix-wrap { margin-top: 16px; }
 .action-matrix-card { display: grid; gap: 14px; border-color: rgba(121,167,255,.22); background: linear-gradient(135deg, rgba(121,167,255,.075), rgba(255,209,102,.035)); }
-.matrix-summary { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 9px; }
-.matrix-count { padding: 11px; border-radius: 15px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.075); }
+.matrix-summary { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 9px; }
+.matrix-count { padding: 11px; border-radius: 15px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.075); text-align: left; cursor: pointer; color: inherit; font: inherit; }
+.matrix-count.active { background: rgba(121,167,255,.16); border-color: rgba(255,229,163,.52); box-shadow: 0 0 0 1px rgba(255,229,163,.16), 0 12px 28px rgba(0,0,0,.18); }
+.matrix-count:hover { border-color: rgba(255,229,163,.38); transform: translateY(-1px); }
 .matrix-count b, .matrix-count em { display: block; }
 .matrix-count b { font-size: 24px; color: #ffe5a3; }
 .matrix-count em { margin-top: 2px; color: var(--muted); font-size: 12px; font-style: normal; font-weight: 900; }
@@ -546,8 +548,10 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
 .matrix-count.take b { color: #ffb86b; }
 .matrix-count.stop b { color: #ff7b7b; }
 .matrix-count.momentum b, .matrix-count.weak b, .matrix-count.rebalance b, .matrix-count.exit b { color: #c084fc; }
-.action-matrix-grid { display: grid; grid-template-columns: repeat(10, minmax(150px, 1fr)); gap: 10px; align-items: start; overflow-x: auto; padding-bottom: 3px; }
-.matrix-column { min-width: 150px; display: grid; gap: 8px; padding: 10px; border-radius: 16px; background: rgba(0,0,0,.14); border: 1px solid rgba(255,255,255,.075); }
+.action-matrix-grid { display: block; padding-bottom: 3px; }
+.matrix-column { display: none; gap: 8px; padding: 12px; border-radius: 16px; background: rgba(0,0,0,.14); border: 1px solid rgba(255,255,255,.075); }
+.matrix-column.active { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); align-items: start; }
+.matrix-column h3 { grid-column: 1 / -1; }
 .matrix-column h3 { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 14px; color: #f8fbff; }
 .matrix-column h3 small { display: inline-grid; place-items: center; min-width: 24px; height: 24px; border-radius: 999px; color: #111827; background: #ffe5a3; font-size: 12px; }
 .matrix-stock { display: grid; gap: 3px; padding: 10px; border-radius: 13px; text-decoration: none; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); }
@@ -581,8 +585,8 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   .stock-detail-page { padding-bottom: 132px; }
   .stock-detail-tabs { left: 8px; right: 8px; bottom: max(8px, env(safe-area-inset-bottom)); padding: 9px; border-radius: 18px; }
   .stock-detail-tabs a { padding: 8px 10px; font-size: 12px; }
-  .matrix-summary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .action-matrix-grid { grid-template-columns: repeat(10, 72vw); }
+  .matrix-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .matrix-column.active { grid-template-columns: 1fr; }
   .rise-timing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .valuation-row { grid-template-columns: 1fr; gap: 8px; }
   .valuation-row strong { text-align: left; }

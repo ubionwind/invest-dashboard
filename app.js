@@ -878,19 +878,39 @@ function renderActionMatrix(data = {}) {
       ${detailJson(r)}
     </details>
   </article>`;
+  const firstActiveCode = (counts.find(x => x.count > 0) || counts[0] || {}).code;
   return `<section class="card action-matrix-card">
     <div class="card-head">
-      <div><h2>분석 종목 행동 현황판</h2><p class="muted">점수만이 아니라 행동/판단 신뢰도/보유상태를 합쳐 분류합니다.</p></div>
+      <div><h2>분석 종목 행동 현황판</h2><p class="muted">아래 행동 분류 탭을 눌러 종목을 나눠 봅니다. 각 종목의 상세 조건은 카드 안에서 접어둡니다.</p></div>
       <span class="badge">${rows.length}종목 · 보유 ${holdingCount}</span>
     </div>
     ${decisionLegendBlock('matrix')}
-    <div class="matrix-summary">${counts.map(x => `<span class="matrix-count ${x.code.toLowerCase()}"><b>${x.count}</b><em>${x.label}</em></span>`).join('')}</div>
-    <div class="action-matrix-grid">${groups.map(([code, label]) => {
+    <div class="matrix-summary action-tab-list" role="tablist" aria-label="분석 종목 행동 분류">
+      ${counts.map(x => `<button type="button" class="matrix-count action-tab ${x.code.toLowerCase()} ${x.code === firstActiveCode ? 'active' : ''}" data-action-tab="${x.code}" role="tab" aria-selected="${x.code === firstActiveCode ? 'true' : 'false'}"><b>${x.count}</b><em>${x.label}</em></button>`).join('')}
+    </div>
+    <div class="action-matrix-grid action-tab-panels">${groups.map(([code, label]) => {
       const items = rows.filter(r => r.signal.code === code);
       const empty = code === 'BUY' ? '현재 신규 매수 검토 후보 없음' : '현재 없음';
-      return `<article class="matrix-column ${code.toLowerCase()}"><h3>${label}<small>${items.length}</small></h3>${items.length ? items.map(cell).join('') : `<p class="muted matrix-empty">${empty}</p>`}</article>`;
+      return `<article class="matrix-column action-tab-panel ${code.toLowerCase()} ${code === firstActiveCode ? 'active' : ''}" data-action-panel="${code}" role="tabpanel"><h3>${label}<small>${items.length}</small></h3>${items.length ? items.map(cell).join('') : `<p class="muted matrix-empty">${empty}</p>`}</article>`;
     }).join('')}</div>
   </section>`;
+}
+
+function bindActionMatrixTabs() {
+  const wrap = document.getElementById('actionMatrix');
+  if (!wrap) return;
+  const buttons = Array.from(wrap.querySelectorAll('.action-tab'));
+  const panels = Array.from(wrap.querySelectorAll('.action-tab-panel'));
+  if (!buttons.length || !panels.length) return;
+  const activate = code => {
+    buttons.forEach(btn => {
+      const on = btn.dataset.actionTab === code;
+      btn.classList.toggle('active', on);
+      btn.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    panels.forEach(panel => panel.classList.toggle('active', panel.dataset.actionPanel === code));
+  };
+  buttons.forEach(btn => btn.addEventListener('click', () => activate(btn.dataset.actionTab)));
 }
 
 function holdingsBlock(pf = {}) {
@@ -1101,6 +1121,7 @@ function render(data) {
       ${renderSessionCard(s, true, false)}
     </section>`).join('');
   document.getElementById('actionMatrix').innerHTML = renderActionMatrix(data);
+  bindActionMatrixTabs();
 
   renderMainCharts(data);
   renderItemCharts(data);
