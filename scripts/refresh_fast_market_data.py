@@ -24,6 +24,7 @@ import zipfile
 ROOT = pathlib.Path('/home/ubion/.openclaw/workspace')
 DASH = ROOT / 'shared/invest-dashboard'
 DATA = DASH / 'data/dashboard-data.json'
+SURVIVAL_REVIEW = DASH / 'data/survival-review.json'
 FUTURES_HISTORY = DASH / 'data/futures/stock_futures_history.json'
 KIS_ENV_PATH = ROOT / 'shared/invest_api_common/secrets/.env.local'
 TOKEN_CACHE = ROOT / 'shared/invest_api_common/runtime/kis_token_cache'
@@ -31,6 +32,7 @@ RUNTIME = ROOT / 'shared/invest_api_common/runtime'
 KIS_BASE = 'https://openapivts.koreainvestment.com:29443'
 STOCK_FUTURE_MASTER_URL = 'https://new.real.download.dws.co.kr/common/master/fo_stk_code_mts.mst.zip'
 KST = dt.timezone(dt.timedelta(hours=9))
+NXT_QUOTE_CACHE = {}
 
 
 def n(v):
@@ -234,10 +236,16 @@ def stock_future_quote(code, headers, stock_cache, future_cache, master_rows):
             spread = price - underlying_price if underlying_price > 0 else None
             spread_pct = spread / underlying_price * 100 if spread is not None and underlying_price else None
             fut_chg = round(n(o.get('futs_prdy_ctrt')), 2) if o.get('futs_prdy_ctrt') not in (None, '') else None
+            volume = round(n(o.get('acml_vol'))) if o.get('acml_vol') not in (None, '') else None
             under_chg = underlying.get('currentChangePct')
             rel = fut_chg - n(under_chg) if fut_chg is not None and under_chg is not None else None
             signal = '선물중립'
-            if rel is not None and rel >= 1.0:
+            signalReason = '체결가 기준 상대강도'
+            if (volume in (None, 0)) and (fut_chg in (None, 0)):
+                signal = '선물장전대기'
+                signalReason = '체결/거래량 미확인; 장전 호가 신호 아님'
+                rel = None
+            elif rel is not None and rel >= 1.0:
                 signal = '선물강세'
             elif rel is not None and rel <= -1.0:
                 signal = '선물약세'
@@ -252,7 +260,7 @@ def stock_future_quote(code, headers, stock_cache, future_cache, master_rows):
                 'price': round(price),
                 'delta': round(n(o.get('futs_prdy_vrss'))) if o.get('futs_prdy_vrss') not in (None, '') else None,
                 'changePct': fut_chg,
-                'volume': round(n(o.get('acml_vol'))) if o.get('acml_vol') not in (None, '') else None,
+                'volume': volume,
                 'tradingValue': round(n(o.get('acml_tr_pbmn'))) if o.get('acml_tr_pbmn') not in (None, '') else None,
                 'openInterest': round(n(o.get('hts_otst_stpl_qty'))) if o.get('hts_otst_stpl_qty') not in (None, '') else None,
                 'openInterestChange': round(n(o.get('otst_stpl_qty_icdc'))) if o.get('otst_stpl_qty_icdc') not in (None, '') else None,
@@ -265,6 +273,7 @@ def stock_future_quote(code, headers, stock_cache, future_cache, master_rows):
                 'spotSpreadPct': round(spread_pct, 2) if spread_pct is not None else None,
                 'relativeStrengthPct': round(rel, 2) if rel is not None else None,
                 'signal': signal,
+                'signalReason': signalReason,
                 'basisText': 'reference-only; cash KRX close remains official P/L basis',
                 'source': 'kis-domestic-futureoption-readonly-fast',
                 'updatedAt': dt.datetime.now(KST).isoformat(timespec='minutes'),
@@ -415,6 +424,164 @@ def return_since(history, value_key, current_value, start_ts=None):
     base_ts, base_value = first_value_since(history, value_key, start_ts)
     if current_value in (None, '', 0) or not base_value:
         return None
+
+
+def nxt_quote_snapshot(code):
+    """Refresh NXT pre/after-market quote during fast-market runs.
+
+    NXT is reference-only and must not drive KRX P/L, but it is time-sensitive
+    enough that waiting for the slower full analysis layer makes the dashboard
+    look stale during pre/after sessions.
+    """
+    code = str(code or '').zfill(6)
+    if not code or code == '000000':
+        return None
+    if code in NXT_QUOTE_CACHE:
+        return NXT_QUOTE_CACHE[code]
+    out = None
+    try:
+        req = urllib.request.Request(f'https://m.stock.naver.com/domestic/stock/{code}/total', headers={'User-Agent': 'Mozilla/5.0'})
+        html = urllib.request.urlopen(req, timeout=8).read().decode('utf-8', 'replace')
+        m = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', html)
+        if m:
+            data = json.loads(m.group(1))
+            queries = (((data.get('props') or {}).get('pageProps') or {}).get('dehydratedState') or {}).get('queries') or []
+            for q in queries:
+                result = (((q.get('state') or {}).get('data') or {}).get('result') or {}) if isinstance(q, dict) else {}
+                info = result.get('overMarketPriceInfo') if isinstance(result, dict) else None
+                if isinstance(info, dict) and info.get('overPrice') not in (None, ''):
+                    price = n(info.get('overPrice'))
+                    if price > 0:
+                        out = {
+                            'market': 'NXT',
+                            'session': info.get('tradingSessionType'),
+                            'status': info.get('overMarketStatus'),
+                            'price': round(price),
+                            'delta': round(n(info.get('compareToPreviousClosePrice'))) if info.get('compareToPreviousClosePrice') not in (None, '') else None,
+                            'changePct': round(n(info.get('fluctuationsRatio')), 2) if info.get('fluctuationsRatio') not in (None, '') else None,
+                            'localTradedAt': info.get('localTradedAt'),
+                            'basis': 'reference-only; KRX close remains official P/L basis',
+                            'source': 'naver-nxt-overmarket-fast',
+                            'updatedAt': dt.datetime.now(KST).isoformat(timespec='minutes'),
+                        }
+                    break
+    except Exception:
+        out = None
+    NXT_QUOTE_CACHE[code] = out
+    return out
+
+
+def refresh_nxt_references(data):
+    changed = 0
+    for item in walk_stock_items(data):
+        f = item.get('fundamentals')
+        if not isinstance(f, dict):
+            continue
+        q = nxt_quote_snapshot(item.get('code'))
+        if not q:
+            continue
+        if f.get('nxtQuote') != q:
+            f['nxtQuote'] = q
+            changed += 1
+    data['nxtSummary'] = {
+        'updatedAt': dt.datetime.now(KST).isoformat(timespec='minutes'),
+        'trackedCodes': len([q for q in NXT_QUOTE_CACHE.values() if q]),
+        'source': 'naver-nxt-overmarket-fast',
+    }
+    return changed
+
+
+def apply_market_lead_overlay(item, source='candidate'):
+    if not isinstance(item, dict):
+        return 0
+    f = item.get('fundamentals') if isinstance(item.get('fundamentals'), dict) else {}
+    nxt = f.get('nxtQuote') if isinstance(f.get('nxtQuote'), dict) else {}
+    fut = f.get('stockFutureQuote') if isinstance(f.get('stockFutureQuote'), dict) else {}
+    reasons = []
+    delta = 0
+    try:
+        nxt_num = float(nxt.get('changePct')) if nxt.get('changePct') not in (None, '') else None
+    except Exception:
+        nxt_num = None
+    if nxt_num is not None:
+        if nxt_num >= 6:
+            delta += 4; reasons.append(f'NXT 강한 상승 {nxt_num:.2f}%')
+        elif nxt_num >= 3:
+            delta += 2; reasons.append(f'NXT 상승 {nxt_num:.2f}%')
+        elif nxt_num <= -4:
+            delta -= 5; reasons.append(f'NXT 약세 {nxt_num:.2f}%')
+        elif nxt_num <= -2:
+            delta -= 3; reasons.append(f'NXT 하락 {nxt_num:.2f}%')
+    fut_signal = fut.get('signal')
+    fut_vol = fut.get('volume')
+    fut_rel = fut.get('relativeStrengthPct')
+    if fut_signal == '선물강세' and fut_vol not in (None, 0):
+        delta += 4; reasons.append('주식선물 체결 강세')
+    elif fut_signal == '선물약세' and fut_vol not in (None, 0):
+        delta -= 5; reasons.append('주식선물 체결 약세')
+    elif fut_signal == '선물장전대기' or fut_vol in (None, 0):
+        reasons.append('주식선물 체결/거래량 미확인')
+    try:
+        rel_num = float(fut_rel) if fut_rel not in (None, '') else None
+    except Exception:
+        rel_num = None
+    if rel_num is not None:
+        if rel_num >= 1.5:
+            delta += 2; reasons.append(f'선물 상대강도 +{rel_num:.2f}%p')
+        elif rel_num <= -1.5:
+            delta -= 2; reasons.append(f'선물 상대약세 {rel_num:.2f}%p')
+    delta = max(-10, min(10, delta))
+    stance = '우호' if delta >= 5 else ('위험' if delta <= -5 else ('소폭우호' if delta > 0 else ('소폭위험' if delta < 0 else '중립')))
+    overlay = {
+        'stance': stance,
+        'scoreDelta': delta,
+        'reasons': reasons[:5],
+        'nxtChangePct': nxt_num,
+        'futureSignal': fut_signal,
+        'futureVolume': fut_vol,
+        'plain': 'NXT·주식선물은 단독 실행 신호가 아니라 장전/장중 우선순위와 재점검 강도를 조정하는 보조 신호입니다.',
+    }
+    f['marketLeadSignal'] = overlay
+    item['marketLeadSignal'] = overlay
+    if delta:
+        key = 'currentScoreNormalized' if item.get('currentScoreNormalized') is not None else 'score'
+        if item.get(key) not in (None, ''):
+            try:
+                base = float(item.get(key))
+                item[f'preMarketLead{key[0].upper()}{key[1:]}'] = round(base, 1)
+                item[key] = round(max(0, min(100, base + delta)), 1)
+                if key == 'score':
+                    item['currentScoreNormalized'] = item.get('score')
+            except Exception:
+                pass
+    note = ' · '.join(reasons[:3])
+    if note:
+        item['marketLeadNote'] = note
+    if source in ('holding', 'sell'):
+        if delta <= -5:
+            item['reviewAction'] = item.get('reviewAction') or '시장선행 약세 점검'
+            item['holdAction'] = item.get('holdAction') or '모멘텀 점검'
+        elif delta >= 5:
+            item['holdReason'] = f"{item.get('holdReason') or ''}; 시장선행 우호: {note}".strip('; ')
+    else:
+        if delta <= -5:
+            item['action'] = item.get('action') or '시장선행 약세로 진입조건 강화'
+            item['status'] = item.get('status') if item.get('status') == '보유중' else '시장선행 약세 점검'
+        elif delta >= 5:
+            item['action'] = item.get('action') or '시장선행 우호 확인'
+            item['status'] = item.get('status') or '시장선행 우호'
+    return 1
+
+
+def refresh_market_lead_overlays(data):
+    changed = 0
+    for session in data.get('sessions') or []:
+        for item in ((session.get('portfolio') or {}).get('positions') or []):
+            changed += apply_market_lead_overlay(item, 'holding')
+        for name, source in [('topCandidates', 'candidate'), ('buyAlerts', 'buy'), ('sellAlerts', 'sell')]:
+            for item in session.get(name) or []:
+                changed += apply_market_lead_overlay(item, source)
+    return changed
     return round((n(current_value) - base_value) / base_value * 100, 2)
 
 
@@ -572,7 +739,11 @@ def reconcile_session(session, headers, cache):
         for a in arr:
             if not isinstance(a, dict):
                 continue
-            if a.get('executionStatus') and 'FILLED' in str(a.get('executionStatus')):
+            # Buy alerts are also the visible holding layer. Their executionStatus
+            # can be VIRTUAL_FILLED, but while the position is still open they must
+            # follow the refreshed portfolio returnPct/current price. Only skip
+            # filled sell/review records.
+            if arr_name != 'buyAlerts' and a.get('executionStatus') and 'FILLED' in str(a.get('executionStatus')):
                 continue
             p = by_code.get(str(a.get('code') or ''))
             if not p:
@@ -620,6 +791,19 @@ def refresh_summary_and_history(data):
     data['history'] = backfill_market_return_arrays(forward_fill_history(history[-120:]), sessions)
 
 
+def sync_survival_review_snapshot(data):
+    try:
+        review = json.loads(SURVIVAL_REVIEW.read_text(encoding='utf-8'))
+        if isinstance(review, dict) and review.get('generatedAt'):
+            data['survivalReview'] = review
+            summary = data.setdefault('summary', {})
+            summary['survivalScore'] = review.get('survivalScore')
+            summary['survivalReviewReadyCount'] = review.get('reviewReadyCount')
+            summary['survivalHighRiskCount'] = review.get('highRiskCount')
+    except Exception:
+        pass
+
+
 def main():
     data = json.loads(DATA.read_text(encoding='utf-8'))
     headers = access_headers()
@@ -630,9 +814,12 @@ def main():
         if reconcile_session(session, headers, cache):
             changed_sessions += 1
     futures_changed = refresh_stock_futures(data, headers, cache)
+    nxt_changed = refresh_nxt_references(data)
+    market_lead_changed = refresh_market_lead_overlays(data)
+    sync_survival_review_snapshot(data)
     refresh_summary_and_history(data)
     DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(json.dumps({'ok': True, 'mode': 'fast-market', 'generatedAt': data.get('generatedAt'), 'changedSessions': changed_sessions, 'quotes': len([v for v in cache.values() if v]), 'futuresChanged': futures_changed}, ensure_ascii=False))
+    print(json.dumps({'ok': True, 'mode': 'fast-market', 'generatedAt': data.get('generatedAt'), 'changedSessions': changed_sessions, 'quotes': len([v for v in cache.values() if v]), 'futuresChanged': futures_changed, 'nxtChanged': nxt_changed, 'marketLeadChanged': market_lead_changed}, ensure_ascii=False))
 
 
 if __name__ == '__main__':

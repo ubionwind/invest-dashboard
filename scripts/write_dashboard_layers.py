@@ -16,10 +16,16 @@ OUT = ROOT / 'data/layers'
 
 
 def compact_position(p):
-    return {k: p.get(k) for k in [
+    out = {k: p.get(k) for k in [
         'code', 'name', 'qty', 'entryPrice', 'currentPrice', 'currentDelta', 'currentChangePct',
         'evalAmount', 'pnl', 'returnPct', 'holdingPeriod'
     ] if k in p}
+    f = p.get('fundamentals') if isinstance(p, dict) else None
+    if isinstance(f, dict):
+        refs = {k: f.get(k) for k in ['nxtQuote', 'stockFutureQuote'] if f.get(k)}
+        if refs:
+            out['marketReferences'] = refs
+    return out
 
 
 def main():

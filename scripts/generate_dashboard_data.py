@@ -33,6 +33,10 @@ ACCOUNT_REFS = {
     'jinhye.general.mock': ('KIS_JINHYE_MOCK_APP_KEY','KIS_JINHYE_MOCK_APP_SECRET','KIS_JINHYE_MOCK_CANO','KIS_JINHYE_MOCK_ACNT_PRDT_CD'),
 }
 
+STATE_PATH_BY_SESSION = {
+    'jaesang.short.mock': ROOT/'shared/mock_invest_ai_short/state.json',
+}
+
 def load_env_file(path):
     out={}
     try:
@@ -282,9 +286,15 @@ def stock_future_quote_snapshot(code, underlying_quote=None):
                     if under_chg is None:
                         under_chg = (readonly_quote_snapshot(code) or {}).get('currentChangePct')
                     fut_chg = round(n(o.get('futs_prdy_ctrt')), 2) if o.get('futs_prdy_ctrt') not in (None, '') else None
+                    volume = round(n(o.get('acml_vol'))) if o.get('acml_vol') not in (None, '') else None
                     rel = (fut_chg - n(under_chg)) if fut_chg is not None and under_chg is not None else None
                     signal = '선물중립'
-                    if rel is not None and rel >= 1.0: signal = '선물강세'
+                    signalReason = '체결가 기준 상대강도'
+                    if (volume in (None, 0)) and (fut_chg in (None, 0)):
+                        signal = '선물장전대기'
+                        signalReason = '체결/거래량 미확인; 장전 호가 신호 아님'
+                        rel = None
+                    elif rel is not None and rel >= 1.0: signal = '선물강세'
                     elif rel is not None and rel <= -1.0: signal = '선물약세'
                     out = {
                         'market': 'KRX 주식선물',
@@ -297,7 +307,7 @@ def stock_future_quote_snapshot(code, underlying_quote=None):
                         'price': round(price),
                         'delta': round(n(o.get('futs_prdy_vrss'))) if o.get('futs_prdy_vrss') not in (None, '') else None,
                         'changePct': fut_chg,
-                        'volume': round(n(o.get('acml_vol'))) if o.get('acml_vol') not in (None, '') else None,
+                        'volume': volume,
                         'tradingValue': round(n(o.get('acml_tr_pbmn'))) if o.get('acml_tr_pbmn') not in (None, '') else None,
                         'openInterest': round(n(o.get('hts_otst_stpl_qty'))) if o.get('hts_otst_stpl_qty') not in (None, '') else None,
                         'openInterestChange': round(n(o.get('otst_stpl_qty_icdc'))) if o.get('otst_stpl_qty_icdc') not in (None, '') else None,
@@ -310,6 +320,7 @@ def stock_future_quote_snapshot(code, underlying_quote=None):
                         'spotSpreadPct': round(spread_pct, 2) if spread_pct is not None else None,
                         'relativeStrengthPct': round(rel, 2) if rel is not None else None,
                         'signal': signal,
+                        'signalReason': signalReason,
                         'basisText': 'reference-only; cash KRX close remains official P/L basis',
                         'source': 'kis-domestic-futureoption-readonly',
                         'updatedAt': datetime.datetime.now(KST).isoformat(timespec='minutes'),
@@ -515,6 +526,137 @@ def kodex200_snapshot():
         return {'label':'KODEX 200', 'code':'069500', 'value': round(price, 2) if price else None, 'returnPct': None, 'dailyReturnPct': round(n(o.get('prdy_ctrt')), 2) if o.get('prdy_ctrt') not in (None, '') else None, 'date': datetime.datetime.now(KST).date().isoformat(), 'time': datetime.datetime.now(KST).strftime('%H:%M:%S'), 'periodStart': None, 'periodEnd': None}
     except Exception:
         return fallback()
+
+
+ETF_HOLDING_SOURCES = [
+    {
+        'key': 'kodex200',
+        'label': 'KODEX 200',
+        'code': '069500',
+        'url': 'https://kr.investing.com/etfs/samsung-kodex-kospi-200-securities-holdings',
+        'fnguide_url': 'https://wcomp.fnguide.com/Etp/EtfSnapshot?c_id=AA&menu_type=01&cmp_cd=069500',
+    },
+    {
+        'key': 'tiger200',
+        'label': 'TIGER 200',
+        'code': '102110',
+        'url': 'https://kr.investing.com/etfs/miraeasset-tiger-kospi-200-holdings',
+        'fnguide_url': 'https://wcomp.fnguide.com/Etp/EtfSnapshot?c_id=AA&menu_type=01&cmp_cd=102110',
+    },
+]
+
+ETF_NAME_CODE_HINTS = {
+    '삼성전자': '005930', 'SK하이닉스': '000660', 'SK스퀘어': '402340', '현대차': '005380',
+    '두산에너빌리티': '034020', 'KB금융': '105560', '삼성전기': '009150', '한화에어로스페이스': '012450',
+    '삼성SDI': '006400', '신한지주': '055550', '삼성물산': '028260', 'NAVER': '035420', '기아': '000270',
+}
+
+
+def etf_holdings_snapshot(limit=15):
+    """Read-only ETF top holdings for market-bias diagnostics.
+
+    This is display/reference data only. It must never be used as an order
+    target list by itself. The public dashboard uses it to explain whether the
+    KOSPI200 benchmark move is concentrated in semiconductors/large caps.
+    """
+    out = []
+    for meta in ETF_HOLDING_SOURCES:
+        holdings = []
+        by_name = {}
+        try:
+            from bs4 import BeautifulSoup
+            req = urllib.request.Request(meta['url'], headers={'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'ko-KR,ko;q=0.9,en;q=0.8'})
+            html = urllib.request.urlopen(req, timeout=12).read().decode('utf-8', 'replace')
+            soup = BeautifulSoup(html, 'html.parser')
+            for tr in soup.find_all('tr'):
+                cells = [' '.join(td.get_text(' ', strip=True).split()) for td in tr.find_all(['td', 'th'])]
+                cells = [c for c in cells if c]
+                # Investing holdings table shape: name, code, weight, price, change, qty
+                if len(cells) < 6 or not str(cells[1]).isdigit() or '%' not in str(cells[2]):
+                    continue
+                weight = n(str(cells[2]).replace('%', ''))
+                row = {
+                    'name': cells[0],
+                    'code': str(cells[1]).zfill(6),
+                    'weightPct': round(weight, 2),
+                    'price': round(n(cells[3])) if n(cells[3]) else None,
+                    'changePct': round(n(str(cells[4]).replace('%', '')), 2) if '%' in str(cells[4]) else None,
+                    'quantity': cells[5],
+                    'source': 'investing.com',
+                }
+                holdings.append(row)
+                by_name[row['name']] = row
+                if len(holdings) >= limit:
+                    break
+        except Exception:
+            holdings = []
+        try:
+            req = urllib.request.Request(meta['fnguide_url'], headers={'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'ko-KR,ko;q=0.9,en;q=0.8'})
+            html = urllib.request.urlopen(req, timeout=12).read().decode('utf-8', 'replace')
+            m = re.search(r'etfRelTop10\s*:\s*(\[.*?\])', html, re.S)
+            rel_top10 = json.loads(m.group(1)) if m else []
+            if rel_top10:
+                merged = []
+                for item in rel_top10[:limit]:
+                    name = item.get('ITEM_NM') or ''
+                    ref = by_name.get(name) or {}
+                    merged.append({
+                        'name': name,
+                        'code': ref.get('code') or ETF_NAME_CODE_HINTS.get(name),
+                        'weightPct': round(n(item.get('FUND_RT')), 2),
+                        'price': ref.get('price'),
+                        'changePct': ref.get('changePct'),
+                        'quantity': item.get('SHARES') or ref.get('quantity'),
+                        'asOf': item.get('TRD_DT'),
+                        'source': 'fnguide-top10+investing-quote',
+                    })
+                holdings = merged
+        except Exception:
+            pass
+        semiconductor_weight = sum(n(h.get('weightPct')) for h in holdings if h.get('code') in ('005930', '000660'))
+        out.append({
+            'key': meta['key'],
+            'label': meta['label'],
+            'code': meta['code'],
+            'underlying': 'KOSPI 200',
+            'source': 'investing.com-holdings-page',
+            'fetchedAt': datetime.datetime.now(KST).isoformat(timespec='minutes'),
+            'holdings': holdings,
+            'topCount': len(holdings),
+            'semiconductorTopWeightPct': round(semiconductor_weight, 2) if holdings else None,
+            'top10WeightPct': round(sum(n(h.get('weightPct')) for h in holdings[:10]), 2) if holdings else None,
+            'note': '상위 편입종목 참고용; 실제 PDF/운용사 공시와 시점 차이가 있을 수 있음',
+        })
+    return out
+
+
+def etf_theme_follow_snapshot():
+    path = ROOT / 'shared/invest_api_common/runtime/etf_theme_follow/latest.json'
+    try:
+        data = json.loads(path.read_text(encoding='utf-8'))
+        themes = data.get('themes') or []
+        beneficiaries = data.get('beneficiaries') or []
+        return {
+            'schema': data.get('schema') or 'etf-theme-follow-radar.v1',
+            'sessionName': data.get('sessionName') or '재상-ETF추종-테마',
+            'generatedAt': data.get('generatedAt'),
+            'policy': data.get('policy') or 'READ_ONLY_ANALYTICS_NO_ORDER_EXECUTION',
+            'themes': themes[:7],
+            'beneficiaries': beneficiaries[:15],
+            'themeCount': len(themes),
+            'beneficiaryCount': len(beneficiaries),
+        }
+    except Exception:
+        return {
+            'schema': 'etf-theme-follow-radar.v1',
+            'sessionName': '재상-ETF추종-테마',
+            'generatedAt': None,
+            'policy': 'READ_ONLY_ANALYTICS_NO_ORDER_EXECUTION',
+            'themes': [],
+            'beneficiaries': [],
+            'themeCount': 0,
+            'beneficiaryCount': 0,
+        }
 
 def market_regime_snapshot(benchmark, kodex):
     """Classify broad market regime before stock decisions.
@@ -888,6 +1030,8 @@ def survival_review_from_ledger(ledger, generated_at):
     action_counts = collections.Counter(str(r.get('actionState') or 'unknown') for r in latest if isinstance(r, dict))
     confidence_counts = collections.Counter(str(r.get('confidenceLevel') or 'unknown') for r in latest if isinstance(r, dict))
     pattern_counts = collections.Counter()
+    horizon_counts = {key: collections.Counter() for key in ('1d', '5d', '20d')}
+    horizon_ready_returns = {key: [] for key in ('1d', '5d', '20d')}
     review_ready = []
     high_risk = []
     for r in latest:
@@ -897,6 +1041,13 @@ def survival_review_from_ledger(ledger, generated_at):
             if isinstance(p, dict) and p.get('code'):
                 pattern_counts[p.get('code')] += 1
         horizons = r.get('horizonReview') if isinstance(r.get('horizonReview'), dict) else {}
+        for key in ('1d', '5d', '20d'):
+            h = horizons.get(key) if isinstance(horizons.get(key), dict) else {}
+            status = str(h.get('status') or 'missing')
+            horizon_counts[key][status] += 1
+            value = h.get('returnSinceFirstPct')
+            if status.startswith('ready') and isinstance(value, (int, float)):
+                horizon_ready_returns[key].append(float(value))
         if any(str(v.get('status') or '').startswith('ready') for v in horizons.values() if isinstance(v, dict)):
             review_ready.append(r)
         risky_pattern = any((p or {}).get('code') not in ('LOW_CONFIDENCE_NO_TRADE',) for p in (r.get('failurePatterns') or []) if isinstance(p, dict))
@@ -908,6 +1059,18 @@ def survival_review_from_ledger(ledger, generated_at):
     total = len(latest)
     no_trade_ratio = round(no_trade / total * 100, 1) if total else None
     top_patterns = [{'code': code, 'count': count} for code, count in pattern_counts.most_common(8)]
+    horizon_review = {}
+    for key in ('1d', '5d', '20d'):
+        counts = horizon_counts[key]
+        returns = horizon_ready_returns[key]
+        horizon_review[key] = {
+            'total': sum(counts.values()),
+            'statusCounts': dict(counts),
+            'readyCount': sum(count for status, count in counts.items() if str(status).startswith('ready')),
+            'pendingCount': counts.get('pending', 0),
+            'avgReadyReturnSinceFirstPct': round(sum(returns) / len(returns), 2) if returns else None,
+            'negativeReadyCount': sum(1 for value in returns if value < 0),
+        }
     score = 100
     if total:
         score -= min(35, len(high_risk) / total * 45)
@@ -924,6 +1087,7 @@ def survival_review_from_ledger(ledger, generated_at):
         'actionCounts': dict(action_counts),
         'confidenceCounts': dict(confidence_counts),
         'topFailurePatterns': top_patterns,
+        'horizonReview': horizon_review,
         'reviewReadyCount': len(review_ready),
         'baselineTrackedCount': len(baseline_ready),
         'negativeSinceFirstCount': len(negative_since_first),
@@ -1482,6 +1646,7 @@ def safe_alerts(obj, limit=50):
             'reviewAction': public_text(c.get('action') or c.get('status') or ''),
             'exitReviewCategory': category,
         }
+        enrich_sell_record_prices(row)
         row['finalIntegratedDecision'] = final_integrated_decision(row)
         row['decisionContract'] = decision_contract_for_item(row, None, 'sell')
         out.append(row)
@@ -1526,6 +1691,81 @@ def safe_buy_fills(dry, virtual, limit=50):
             })
     return rows[:limit]
 
+
+def parse_loose_dt(value):
+    if value in (None, ''):
+        return None
+    text = str(value).strip().replace('Z', '+00:00')
+    try:
+        dt = datetime.datetime.fromisoformat(text)
+    except Exception:
+        for fmt in ('%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M', '%Y-%m-%d'):
+            try:
+                dt = datetime.datetime.strptime(text, fmt)
+                break
+            except Exception:
+                dt = None
+        if dt is None:
+            return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=KST)
+    return dt.astimezone(KST)
+
+
+def state_trade_price_context(sid, code, sell_at=None):
+    """Infer missing historical buy/sell prices from local strategy ledgers.
+
+    KIS mock order events only prove the order was accepted; they often do not
+    carry fill price/average entry. For the dashboard history, use the strategy's
+    own trade/position snapshots as a read-only reconstruction source and mark
+    the basis so blanks do not hide useful audit context.
+    """
+    path = STATE_PATH_BY_SESSION.get(sid)
+    if not path:
+        return {}
+    try:
+        state = json.loads(path.read_text(encoding='utf-8'))
+    except Exception:
+        return {}
+    code = str(code or '').zfill(6)
+    sell_dt = parse_loose_dt(sell_at) or datetime.datetime.now(KST)
+    out = {}
+    opens = []
+    for t in state.get('trade_history') or []:
+        if not isinstance(t, dict) or str(t.get('code') or '').zfill(6) != code:
+            continue
+        if t.get('phase') != 'open' and t.get('action') not in ('매수', 'BUY'):
+            continue
+        tdt = parse_loose_dt(t.get('timestamp') or f"{t.get('date') or ''} {t.get('time') or ''}".strip())
+        if tdt and tdt <= sell_dt and t.get('price') not in (None, '', 0):
+            opens.append((tdt, t))
+    if opens:
+        opens.sort(key=lambda x: x[0], reverse=True)
+        latest = opens[0][1]
+        out.update({
+            'entryPrice': latest.get('price'),
+            'entryAt': latest.get('timestamp') or f"{latest.get('date') or ''} {latest.get('time') or ''}".strip(),
+            'priceBasis': 'strategy_trade_history',
+        })
+    nearest = None
+    nearest_delta = None
+    for h in state.get('position_history') or []:
+        if not isinstance(h, dict) or str(h.get('code') or '').zfill(6) != code:
+            continue
+        hdt = parse_loose_dt(h.get('key', '').split('|')[0] or f"{h.get('date') or ''} {h.get('time') or ''}".strip())
+        if not hdt or h.get('price') in (None, '', 0):
+            continue
+        delta = abs((hdt - sell_dt).total_seconds())
+        if nearest_delta is None or delta < nearest_delta:
+            nearest_delta = delta
+            nearest = h
+    if nearest:
+        out.setdefault('entryPrice', nearest.get('avg_price'))
+        out['sellPrice'] = nearest.get('price')
+        out['sellPriceBasis'] = 'nearest_position_history'
+        out['sellPriceAt'] = f"{nearest.get('date') or ''} {nearest.get('time') or ''}".strip()
+    return out
+
 def execution_event_alerts(sid, limit=50):
     d = RUNTIME / 'order_execution_events'
     if not d.exists():
@@ -1538,7 +1778,7 @@ def execution_event_alerts(sid, limit=50):
             continue
         if e.get('sessionId') != sid or e.get('action') != 'SELL':
             continue
-        rows.append({
+        row = {
             'code': str(e.get('code') or ''),
             'name': str(e.get('name') or ''),
             'status': '(KIS) 모의매도 체결 성공',
@@ -1546,16 +1786,84 @@ def execution_event_alerts(sid, limit=50):
             'heldQty': e.get('qty'),
             'sellQty': e.get('qty'),
             'executedQty': e.get('qty'),
+            'sellAt': e.get('recordedAt'),
             'executionStatus': e.get('executionStatus') or 'MOCK_SELL_FILLED_CONFIRMED_BY_KIS_RESPONSE',
             'orderNo': e.get('orderNo'),
             'orderTime': e.get('orderTime'),
             'executionSource': 'KIS_MOCK_API',
             'accountType': 'KIS 모의계좌',
             'reviewAction': '매도 체결',
-        })
+        }
+        row.update({k: v for k, v in state_trade_price_context(sid, row.get('code'), row.get('sellAt')).items() if v not in (None, '')})
+        rows.append(enrich_sell_record_prices(row))
         if len(rows) >= limit:
             break
     return rows
+
+
+def enrich_sell_record_prices(row):
+    if not isinstance(row, dict):
+        return row
+    code = str(row.get('code') or '').zfill(6)
+    entry_price = row.get('entryPrice') if row.get('entryPrice') not in (None, '') else None
+    sell_price = row.get('sellPrice') if row.get('sellPrice') not in (None, '') else row.get('exitPrice') if row.get('exitPrice') not in (None, '') else None
+    qty = row.get('executedQty') if row.get('executedQty') not in (None, '', 0) else row.get('sellQty') if row.get('sellQty') not in (None, '', 0) else row.get('heldQty')
+    if entry_price in (None, '') and row.get('entryAmount') not in (None, '') and qty not in (None, '', 0):
+        entry_price = round(n(row.get('entryAmount')) / n(qty), 2)
+    quote = readonly_quote_snapshot(code) if re.fullmatch(r'\d{6}', code) else None
+    current_price = (quote or {}).get('currentPrice') if (quote or {}).get('currentPrice') not in (None, '') else row.get('currentPrice')
+    row['entryPrice'] = entry_price
+    row['sellPrice'] = sell_price
+    row['currentPrice'] = current_price
+    if sell_price not in (None, '', 0) and current_price not in (None, '', 0):
+        row['currentVsSellPct'] = round((n(current_price) - n(sell_price)) / n(sell_price) * 100, 2)
+        diff = n(current_price) - n(sell_price)
+        row['postSellDecision'] = '매도 후 하락 · 판단 유효' if diff < 0 else ('매도 후 상승 · 기회비용' if diff > 0 else '매도 후 보합')
+    if entry_price not in (None, '', 0) and current_price not in (None, '', 0):
+        row['entryToCurrentPct'] = round((n(current_price) - n(entry_price)) / n(entry_price) * 100, 2)
+    return row
+
+
+def virtual_closed_sell_records(sid, virtual, limit=80):
+    if not isinstance(virtual, dict):
+        return []
+    rows = []
+    for p in virtual.get('positions') or []:
+        if not isinstance(p, dict):
+            continue
+        if n(p.get('qty')) > 0 or not p.get('exitAt'):
+            continue
+        qty = p.get('qtyBeforeExit') if p.get('qtyBeforeExit') not in (None, '') else p.get('qty')
+        sell_price = p.get('exitPrice') if p.get('exitPrice') not in (None, '') else p.get('lastPrice')
+        row = {
+            'code': str(p.get('code') or ''),
+            'name': str(p.get('name') or ''),
+            'status': '(가상계좌) 매도 완료',
+            'reason': public_text(p.get('exitReason') or p.get('holdReason') or ''),
+            'returnPct': p.get('returnPct'),
+            'realizedReturnPct': p.get('returnPct'),
+            'pnl': p.get('realizedPnl'),
+            'realizedPnl': p.get('realizedPnl'),
+            'tradeResult': '익절' if n(p.get('realizedPnl')) > 0 else '손절' if n(p.get('realizedPnl')) < 0 else '본전',
+            'entryPrice': p.get('entryPrice'),
+            'sellPrice': sell_price,
+            'currentPrice': p.get('lastPrice'),
+            'entryAt': p.get('entryAt'),
+            'sellAt': p.get('exitAt'),
+            'heldQty': qty,
+            'sellQty': qty,
+            'executedQty': qty,
+            'executionStatus': 'VIRTUAL_AUTO_STOP_FILLED' if str(p.get('status') or '').startswith('CLOSED') else (p.get('status') or 'VIRTUAL_SELL_FILLED'),
+            'accountType': '가상계좌',
+            'executionSource': 'VIRTUAL_LEDGER',
+            'reviewAction': p.get('holdAction') or '매도 완료',
+        }
+        row['exitReviewCategory'] = exit_review_category(row.get('reviewAction'), row.get('reason'), row.get('status'), row.get('executionStatus'))
+        row['finalIntegratedDecision'] = final_integrated_decision(row)
+        row['decisionContract'] = decision_contract_for_item(row, sid, 'sellRecord')
+        rows.append(enrich_sell_record_prices(row))
+    rows.sort(key=lambda x: str(x.get('sellAt') or ''), reverse=True)
+    return rows[:limit]
 
 def split_sell_items(items):
     records = []
@@ -1922,6 +2230,10 @@ def session_status(sid):
     for a in execution_event_alerts(sid):
         sell_items.append(a)
         seen_sell.add(str(a.get('code') or ''))
+    for a in virtual_closed_sell_records(sid, virtual):
+        key = str(a.get('code') or '')
+        sell_items.append(a)
+        seen_sell.add(key)
     if sell_count:
         for a in safe_alerts(sell):
             if str(a.get('code') or '') in seen_sell:
@@ -2247,6 +2559,95 @@ def attach_market_references(item):
     attach_stock_future_reference(item)
 
 
+def apply_market_lead_overlay(item, source='candidate'):
+    """Use NXT / stock-futures as a live market-lead overlay.
+
+    This is not an execution trigger. It nudges ranking and review labels only;
+    orders still require the normal strategy/contract gates.
+    """
+    if not isinstance(item, dict):
+        return item
+    f = item.get('fundamentals') if isinstance(item.get('fundamentals'), dict) else {}
+    nxt = f.get('nxtQuote') if isinstance(f.get('nxtQuote'), dict) else {}
+    fut = f.get('stockFutureQuote') if isinstance(f.get('stockFutureQuote'), dict) else {}
+    reasons = []
+    delta = 0
+    nxt_pct = nxt.get('changePct')
+    fut_signal = fut.get('signal')
+    fut_vol = fut.get('volume')
+    fut_rel = fut.get('relativeStrengthPct')
+    try:
+        nxt_num = float(nxt_pct) if nxt_pct not in (None, '') else None
+    except Exception:
+        nxt_num = None
+    if nxt_num is not None:
+        if nxt_num >= 6:
+            delta += 4; reasons.append(f'NXT 강한 상승 {nxt_num:.2f}%')
+        elif nxt_num >= 3:
+            delta += 2; reasons.append(f'NXT 상승 {nxt_num:.2f}%')
+        elif nxt_num <= -4:
+            delta -= 5; reasons.append(f'NXT 약세 {nxt_num:.2f}%')
+        elif nxt_num <= -2:
+            delta -= 3; reasons.append(f'NXT 하락 {nxt_num:.2f}%')
+    if fut_signal == '선물강세' and fut_vol not in (None, 0):
+        delta += 4; reasons.append('주식선물 체결 강세')
+    elif fut_signal == '선물약세' and fut_vol not in (None, 0):
+        delta -= 5; reasons.append('주식선물 체결 약세')
+    elif fut_signal == '선물장전대기' or fut_vol in (None, 0):
+        reasons.append('주식선물 체결/거래량 미확인')
+    try:
+        rel_num = float(fut_rel) if fut_rel not in (None, '') else None
+    except Exception:
+        rel_num = None
+    if rel_num is not None:
+        if rel_num >= 1.5:
+            delta += 2; reasons.append(f'선물 상대강도 +{rel_num:.2f}%p')
+        elif rel_num <= -1.5:
+            delta -= 2; reasons.append(f'선물 상대약세 {rel_num:.2f}%p')
+    delta = max(-10, min(10, delta))
+    stance = '우호' if delta >= 5 else ('위험' if delta <= -5 else ('소폭우호' if delta > 0 else ('소폭위험' if delta < 0 else '중립')))
+    overlay = {
+        'stance': stance,
+        'scoreDelta': delta,
+        'reasons': reasons[:5],
+        'nxtChangePct': nxt_num,
+        'futureSignal': fut_signal,
+        'futureVolume': fut_vol,
+        'plain': 'NXT·주식선물은 단독 실행 신호가 아니라 장전/장중 우선순위와 재점검 강도를 조정하는 보조 신호입니다.',
+    }
+    f['marketLeadSignal'] = overlay
+    item['marketLeadSignal'] = overlay
+    if delta:
+        key = 'currentScoreNormalized' if item.get('currentScoreNormalized') is not None else 'score'
+        if item.get(key) not in (None, ''):
+            try:
+                base = float(item.get(key))
+                item[f'preMarketLead{key[0].upper()}{key[1:]}'] = round(base, 1)
+                item[key] = round(max(0, min(100, base + delta)), 1)
+                if key == 'score':
+                    item['currentScoreNormalized'] = item.get('score')
+            except Exception:
+                pass
+    note = ' · '.join(reasons[:3])
+    if note:
+        item['marketLeadNote'] = note
+    if source in ('holding', 'sell'):
+        if delta <= -5:
+            item['reviewAction'] = item.get('reviewAction') or '시장선행 약세 점검'
+            item['holdAction'] = item.get('holdAction') or '모멘텀 점검'
+            item['holdReason'] = f"{item.get('holdReason') or ''}; 시장선행 위험: {note}".strip('; ')
+        elif delta >= 5:
+            item['holdReason'] = f"{item.get('holdReason') or ''}; 시장선행 우호: {note}".strip('; ')
+    else:
+        if delta <= -5:
+            item['action'] = item.get('action') or '시장선행 약세로 진입조건 강화'
+            item['status'] = item.get('status') if item.get('status') == '보유중' else '시장선행 약세 점검'
+        elif delta >= 5:
+            item['action'] = item.get('action') or '시장선행 우호 확인'
+            item['status'] = item.get('status') or '시장선행 우호'
+    return item
+
+
 def dashboard_holding_judgement(sid, p):
     ret = n(p.get('returnPct'))
     score = p.get('currentScoreNormalized')
@@ -2376,6 +2777,7 @@ def enrich_comparison_fields(s, sid):
         score_type = 'current' if matched.get('score') is not None else 'holding'
         p['fundamentals'] = p.get('fundamentals') or public_fundamentals(p.get('code'))
         attach_market_references(p)
+        apply_market_lead_overlay(p, 'holding')
         if matched.get('score') is None and current_norm is not None:
             adjusted_norm, strategy_adj = apply_strategy_adjustment(current_norm, sid, p.get('fundamentals'))
             p['baseScoreNormalized'] = round(n(current_norm), 1)
@@ -2435,6 +2837,7 @@ def enrich_comparison_fields(s, sid):
         c['liquidityText'] = c.get('liquidityText') or liquidity_evidence_text(c.get('reason') or '')
         c['fundamentals'] = c.get('fundamentals') or public_fundamentals(c.get('code'))
         attach_market_references(c)
+        apply_market_lead_overlay(c, 'candidate')
         c['technicalDecision'] = c.get('technicalDecision') or (c.get('fundamentals') or {}).get('technicalSignal')
         tech = c.get('technicalDecision') or {}
         if tech.get('state') in ('매물대주의', '전고점대기', '저항거리큼', '돌파우호'):
@@ -2458,12 +2861,15 @@ def ensure_session_decision_contracts(session, sid):
                     item['exitReviewCategory'] = exit_review_category(item.get('reviewAction') or item.get('status') or '', item.get('reason') or '', item.get('status') or '', item.get('executionStatus') or 'FILLED')
                 if not isinstance(item.get('finalIntegratedDecision'), dict):
                     item['finalIntegratedDecision'] = final_integrated_decision(item)
-            if not item.get('decisionContract'):
-                item['decisionContract'] = decision_contract_for_item(item, sid, source)
+            attach_market_references(item)
+            apply_market_lead_overlay(item, source)
+            item['decisionContract'] = decision_contract_for_item(item, sid, source)
     pf = session.get('portfolio') if isinstance(session.get('portfolio'), dict) else {}
     positions = pf.get('positions') if isinstance(pf.get('positions'), list) else []
     for item in positions:
-        if isinstance(item, dict) and not item.get('decisionContract'):
+        if isinstance(item, dict):
+            attach_market_references(item)
+            apply_market_lead_overlay(item, 'holding')
             item['decisionContract'] = decision_contract_for_item(item, sid, 'holding')
 
 def reconcile_portfolio_from_positions(s):
@@ -2605,6 +3011,8 @@ for s in sessions:
 
 benchmark = benchmark_snapshot()
 kodex_benchmark = kodex200_snapshot()
+etf_holdings = etf_holdings_snapshot()
+etf_theme_follow = etf_theme_follow_snapshot()
 market_regime = market_regime_snapshot(benchmark, kodex_benchmark)
 apply_market_regime_to_sessions(sessions, market_regime)
 summary = {
@@ -2677,7 +3085,7 @@ summary['survivalReviewReadyCount'] = survival_review.get('reviewReadyCount')
 summary['survivalHighRiskCount'] = survival_review.get('highRiskCount')
 
 theme_regime = theme_regime_snapshot(point['ts'])
-data={'generatedAt': point['ts'], 'summary':summary, 'marketRegime': market_regime, 'themeRegime': theme_regime, 'survivalReview': survival_review, 'benchmark':benchmark, 'kodexBenchmark':kodex_benchmark, 'sessions':sessions, 'history':history, 'notice':'Dashboard reset; previous metrics are not inherited.'}
+data={'generatedAt': point['ts'], 'summary':summary, 'marketRegime': market_regime, 'themeRegime': theme_regime, 'survivalReview': survival_review, 'benchmark':benchmark, 'kodexBenchmark':kodex_benchmark, 'etfHoldings': etf_holdings, 'etfThemeFollow': etf_theme_follow, 'sessions':sessions, 'history':history, 'notice':'Dashboard reset; previous metrics are not inherited.'}
 split_stock_detail_files(data)
 OUT.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
 print(OUT)

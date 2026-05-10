@@ -87,17 +87,71 @@ def main():
         errors.append(('survivalReview', '-', 'missing totalRows'))
     if review.get('baselineTrackedCount') in (None, ''):
         errors.append(('survivalReview', '-', 'missing baselineTrackedCount'))
+    horizons = review.get('horizonReview') if isinstance(review.get('horizonReview'), dict) else {}
+    for key in ['1d', '5d', '20d']:
+        h = horizons.get(key) if isinstance(horizons.get(key), dict) else {}
+        if h.get('total') in (None, '') or h.get('readyCount') is None or h.get('pendingCount') is None:
+            errors.append(('survivalReview.horizonReview', key, 'missing horizon review counts'))
     ledger_path = ROOT / 'data/survival-ledger.json'
     review_path = ROOT / 'data/survival-review.json'
     if not ledger_path.exists():
         errors.append(('data/survival-ledger.json', '-', 'missing survival ledger'))
+    else:
+        try:
+            ledger_file = json.loads(ledger_path.read_text(encoding='utf-8'))
+            latest = ledger_file.get('latest') if isinstance(ledger_file.get('latest'), list) else []
+            if not latest:
+                errors.append(('data/survival-ledger.json', 'latest', 'empty survival latest rows'))
+            allowed_horizon_statuses = {'pending', 'ready-for-review', 'ready-missing-return'}
+            ledger_horizon_statuses = {key: collections.Counter() for key in ['1d', '5d', '20d']}
+            ledger_pattern_count = 0
+            for idx, row in enumerate(latest):
+                if not isinstance(row, dict):
+                    errors.append(('data/survival-ledger.json', f'latest[{idx}]', 'row is not an object'))
+                    continue
+                row_id = f"{row.get('publicId') or '-'}:{row.get('code') or '-'}"
+                if row.get('baselinePrice') in (None, '', 0) or row.get('lastPrice') in (None, '', 0):
+                    errors.append(('data/survival-ledger.json', row_id, 'missing baseline/last price'))
+                if row.get('actionState') in (None, '', []):
+                    errors.append(('data/survival-ledger.json', row_id, 'missing actionState'))
+                if row.get('confidenceLevel') in (None, '', []):
+                    errors.append(('data/survival-ledger.json', row_id, 'missing confidenceLevel'))
+                patterns = row.get('failurePatterns')
+                if not isinstance(patterns, list):
+                    errors.append(('data/survival-ledger.json', row_id, 'missing failurePatterns list'))
+                else:
+                    ledger_pattern_count += len([p for p in patterns if isinstance(p, dict) and p.get('code')])
+                row_horizons = row.get('horizonReview') if isinstance(row.get('horizonReview'), dict) else {}
+                for key in ['1d', '5d', '20d']:
+                    h = row_horizons.get(key) if isinstance(row_horizons.get(key), dict) else {}
+                    status = h.get('status')
+                    if status not in allowed_horizon_statuses:
+                        errors.append(('data/survival-ledger.json', row_id, f'missing/invalid horizonReview.{key}.status'))
+                    ledger_horizon_statuses[key][status or 'missing'] += 1
+                    if str(status).startswith('ready') and 'returnSinceFirstPct' not in h:
+                        errors.append(('data/survival-ledger.json', row_id, f'missing horizonReview.{key}.returnSinceFirstPct'))
+            if ledger_pattern_count <= 0:
+                errors.append(('data/survival-ledger.json', 'failurePatterns', 'no coded failure patterns found'))
+            for key in ['1d', '5d', '20d']:
+                if sum(ledger_horizon_statuses[key].values()) != len(latest):
+                    errors.append(('data/survival-ledger.json', key, 'horizon count does not cover latest rows'))
+        except Exception as exc:
+            errors.append(('data/survival-ledger.json', '-', f'invalid json: {exc}'))
     if not review_path.exists():
         errors.append(('data/survival-review.json', '-', 'missing survival review'))
     else:
         try:
             review_file = json.loads(review_path.read_text(encoding='utf-8'))
-            if review_file.get('generatedAt') != data.get('generatedAt'):
+            # Fast-market refreshes update the dashboard/layer timestamp without
+            # rebuilding the survival review. The standalone review file should
+            # match the embedded survivalReview snapshot, not necessarily the
+            # outer dashboard generatedAt.
+            if review_file.get('generatedAt') != review.get('generatedAt'):
                 errors.append(('data/survival-review.json', '-', 'generatedAt mismatch'))
+            file_horizons = review_file.get('horizonReview') if isinstance(review_file.get('horizonReview'), dict) else {}
+            for key in ['1d', '5d', '20d']:
+                if key not in file_horizons:
+                    errors.append(('data/survival-review.json', key, 'missing horizon review summary'))
         except Exception as exc:
             errors.append(('data/survival-review.json', '-', f'invalid json: {exc}'))
 

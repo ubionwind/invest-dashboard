@@ -40,7 +40,7 @@ python3 scripts/generate_test_split_data.py
 python3 scripts/write_dashboard_layers.py
 python3 scripts/audit_dashboard_analysis.py
 
-if git diff --quiet -- data/dashboard-data.json data/dashboard-history.json data/survival-ledger.json data/survival-review.json data/fundamentals data/futures data/test data/layers; then
+if git diff --quiet -- data/dashboard-data.json data/dashboard-history.json data/survival-ledger.json data/survival-review.json data/fundamentals data/futures data/test data/layers data/stocks; then
   echo "dashboard data unchanged ($mode layer)"
   exit 0
 fi
@@ -49,7 +49,7 @@ fi
 # account identifiers, or order-execution clues. Public analysis labels such as
 # kisEnrichment / K-O-R / sale_account are allowed.
 python3 scripts/public_diff_safety_scan.py
-git add data/dashboard-data.json data/dashboard-history.json data/survival-ledger.json data/survival-review.json data/fundamentals data/futures data/test data/layers
+git add data/dashboard-data.json data/dashboard-history.json data/survival-ledger.json data/survival-review.json data/fundamentals data/futures data/test data/layers data/stocks
 # Keep public branch as a rolling single-snapshot history, so old data is not easily analyzed via git history.
 git commit --amend --no-edit
 git push --force-with-lease origin main

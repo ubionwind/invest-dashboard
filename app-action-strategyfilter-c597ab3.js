@@ -140,6 +140,117 @@ function summaryTile(label, value, note = '', icon = '•', tone = '') {
   </article>`;
 }
 
+function renderEtfHoldings(data = {}) {
+  const funds = Array.isArray(data.etfHoldings) ? data.etfHoldings : [];
+  if (!funds.length) return '';
+  return `<section class="etf-holdings-card etf-tool-card card wide">
+    <button type="button" class="etf-tool-open" data-etf-tool="holdings"><span>시장 ETF 구성 보기</span><b>KODEX200 · TIGER200</b></button>
+  </section>`;
+}
+
+function renderEtfHoldingsLayer(data = {}) {
+  const funds = Array.isArray(data.etfHoldings) ? data.etfHoldings : [];
+  const row = h => `<tr>
+    <td><a href="${stockDetailUrl(h)}"><b>${escapeHtml(h.name || h.code)}</b></a><small>${escapeHtml(h.code || '')}</small></td>
+    <td><b>${h.weightPct == null ? '-' : pct(Number(h.weightPct))}</b></td>
+    <td>${h.price == null ? '-' : money(h.price)}</td>
+    <td class="${pctClass(h.changePct)}">${h.changePct == null ? '-' : pct(Number(h.changePct))}</td>
+  </tr>`;
+  const fundBlock = f => `<section class="etf-holding-fund">
+    <div class="etf-holding-fund-head">
+      <div><h4>${escapeHtml(f.label || f.code)}</h4><p>${escapeHtml(f.code || '')} · ${escapeHtml(f.underlying || 'KOSPI 200')}</p></div>
+      <div><strong>${f.semiconductorTopWeightPct == null ? '-' : pct(Number(f.semiconductorTopWeightPct))}</strong><span>삼전+하이닉스</span></div>
+      <div><strong>${f.top10WeightPct == null ? '-' : pct(Number(f.top10WeightPct))}</strong><span>상위10</span></div>
+    </div>
+    <div class="etf-holding-table-wrap"><table class="etf-holding-table"><thead><tr><th>종목</th><th>비중</th><th>현재가</th><th>등락</th></tr></thead><tbody>${(f.holdings || []).map(row).join('')}</tbody></table></div>
+  </section>`;
+  return `<p class="muted">KOSPI200 벤치마크가 어떤 대형주에 끌려가는지 확인하는 참고용입니다. 단독 매수/매도 신호로 쓰지 않습니다.</p>
+    <div class="etf-holding-grid">${funds.map(fundBlock).join('')}</div>`;
+}
+
+function renderEtfThemeFollow(data = {}) {
+  const radar = data.etfThemeFollow || {};
+  const themes = Array.isArray(radar.themes) ? radar.themes : [];
+  const candidates = Array.isArray(radar.beneficiaries) ? radar.beneficiaries : [];
+  if (!themes.length && !candidates.length) return '';
+  return `<section class="etf-theme-card etf-tool-card card wide">
+    <button type="button" class="etf-tool-open" data-etf-tool="theme"><span>ETF 추종 테마 레이더</span><b>${escapeHtml(radar.sessionName || '재상-ETF추종-테마')}</b></button>
+  </section>`;
+}
+
+function renderEtfThemeLayer(data = {}) {
+  const radar = data.etfThemeFollow || {};
+  const themes = Array.isArray(radar.themes) ? radar.themes : [];
+  const candidates = Array.isArray(radar.beneficiaries) ? radar.beneficiaries : [];
+  const themeRows = themes.slice(0, 5).map(t => `<tr>
+    <td><b>${escapeHtml(t.theme || '-')}</b><small>${escapeHtml((t.leaders || []).slice(0, 3).map(x => x.name).join(' · '))}</small></td>
+    <td><b>${t.leadScore == null ? '-' : Number(t.leadScore).toFixed(1)}</b></td>
+    <td>${t.maxWeightPct == null ? '-' : pct(Number(t.maxWeightPct))}</td>
+    <td class="${pctClass(t.avgChangePct)}">${t.avgChangePct == null ? '-' : pct(Number(t.avgChangePct))}</td>
+  </tr>`).join('');
+  const candidateRows = candidates.slice(0, 10).map((c, i) => `<tr>
+    <td>${i + 1}</td>
+    <td><a href="${stockDetailUrl(c)}"><b>${escapeHtml(c.name || c.code)}</b></a><small>${escapeHtml(c.code || '')} · ${escapeHtml(c.theme || '')}</small></td>
+    <td><b>${c.beneficiaryScore == null ? '-' : Number(c.beneficiaryScore).toFixed(1)}</b></td>
+    <td class="${pctClass(c.changePct)}">${c.changePct == null ? '-' : pct(Number(c.changePct))}</td>
+    <td>${c.volume == null ? '-' : fmt.format(Number(c.volume) || 0)}</td>
+  </tr>`).join('');
+  return `<p class="muted">KODEX/TIGER Top10에서 주도 테마를 뽑고, 해당 테마의 중소형 수혜 후보를 관찰합니다. 주문 실행·단독 매수/매도 트리거가 아닙니다.</p>
+    <div class="etf-theme-grid">
+      <section><h4>주도 테마</h4><div class="etf-holding-table-wrap"><table class="etf-holding-table"><thead><tr><th>테마</th><th>점수</th><th>최대비중</th><th>평균등락</th></tr></thead><tbody>${themeRows}</tbody></table></div></section>
+      <section><h4>수혜 후보 Top 10</h4><div class="etf-holding-table-wrap"><table class="etf-holding-table"><thead><tr><th>#</th><th>종목</th><th>점수</th><th>등락</th><th>거래량</th></tr></thead><tbody>${candidateRows}</tbody></table></div></section>
+    </div>`;
+}
+
+function ensureEtfLayerRoot() {
+  let root = document.getElementById('etfLayerPopup');
+  if (root) return root;
+  root = document.createElement('div');
+  root.id = 'etfLayerPopup';
+  root.className = 'etf-tool-overlay';
+  root.hidden = true;
+  root.innerHTML = `<div class="etf-tool-backdrop" data-etf-layer-close></div>
+    <div class="etf-tool-modal" role="dialog" aria-modal="true" aria-label="ETF 레이어 팝업">
+      <div class="etf-tool-modal-head"><h3 id="etfLayerTitle">ETF 레이어</h3><button type="button" data-etf-layer-close>닫기</button></div>
+      <div id="etfLayerContent"></div>
+    </div>`;
+  document.body.appendChild(root);
+  root.querySelectorAll('[data-etf-layer-close]').forEach(el => el.addEventListener('click', closeEtfLayer));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !root.hidden) closeEtfLayer(); });
+  return root;
+}
+
+function closeEtfLayer() {
+  const root = document.getElementById('etfLayerPopup');
+  if (!root) return;
+  root.hidden = true;
+  const content = document.getElementById('etfLayerContent');
+  if (content) content.innerHTML = '';
+  document.body.classList.remove('modal-open');
+}
+
+function openEtfLayer(kind, data) {
+  const root = ensureEtfLayerRoot();
+  const title = document.getElementById('etfLayerTitle');
+  const content = document.getElementById('etfLayerContent');
+  const modal = root.querySelector('.etf-tool-modal');
+  if (!content || !title || !modal) return;
+  const isTheme = kind === 'theme';
+  title.textContent = isTheme ? 'ETF 추종 테마 레이더' : '시장 ETF 구성 보기';
+  modal.classList.toggle('etf-tool-modal-wide', isTheme);
+  content.innerHTML = isTheme ? renderEtfThemeLayer(data) : renderEtfHoldingsLayer(data);
+  root.hidden = false;
+  document.body.classList.add('modal-open');
+}
+
+function setupEtfToolModals(data) {
+  document.querySelectorAll('[data-etf-tool]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      openEtfLayer(btn.dataset.etfTool, data);
+    });
+  });
+}
+
 function kpi(label, value) {
   const shown = typeof value === 'number' ? fmt.format(value) : (value ?? '-');
   return `<div class="kpi"><span class="muted">${label}</span><strong>${shown}</strong></div>`;
@@ -497,10 +608,47 @@ function nxtReferenceLine(f = {}, krxPrice = null) {
 function stockFutureReferenceLine(f = {}) {
   const q = f?.stockFutureQuote;
   if (!q || q.price === null || q.price === undefined) return '';
-  const cls = q.changePct === null || q.changePct === undefined ? '' : (Number(q.changePct) >= 0 ? 'up' : 'down');
+  const isPreSignalWait = q.signal === '선물장전대기';
+  const cls = isPreSignalWait ? 'wait' : (q.changePct === null || q.changePct === undefined ? '' : (Number(q.changePct) >= 0 ? 'up' : 'down'));
   const spread = q.spotSpreadPct === null || q.spotSpreadPct === undefined ? '' : ` · 현물대비 ${q.spotSpreadPct >= 0 ? '+' : ''}${Number(q.spotSpreadPct).toFixed(2)}%`;
   const rel = q.relativeStrengthPct === null || q.relativeStrengthPct === undefined ? '' : ` · 상대 ${q.relativeStrengthPct >= 0 ? '+' : ''}${Number(q.relativeStrengthPct).toFixed(2)}%p`;
-  return `<small class="future-reference ${cls}">선물 ${q.signal || '추적'} ${fmt.format(Number(q.price))} (${pct(q.changePct)})${spread}${rel}</small>`;
+  const reason = isPreSignalWait ? ' · 체결 없음' : '';
+  return `<small class="future-reference ${cls}">선물 ${q.signal || '추적'} ${fmt.format(Number(q.price))} (${pct(q.changePct)})${spread}${rel}${reason}</small>`;
+}
+
+function marketStatusBlock(item = {}) {
+  const f = item.fundamentals || {};
+  const nxt = f.nxtQuote || null;
+  const fut = f.stockFutureQuote || null;
+  const derivedSpotFromNxt = nxt && nxt.price !== null && nxt.price !== undefined && nxt.delta !== null && nxt.delta !== undefined ? Number(nxt.price) - Number(nxt.delta) : null;
+  const spotPrice = item.currentPrice ?? item.price ?? f.currentPrice ?? fut?.underlyingPrice ?? derivedSpotFromNxt ?? null;
+  const spotPct = item.currentChangePct ?? item.changePct ?? f.currentChangePct ?? null;
+  const spotClass = spotPct === null || spotPct === undefined || spotPct === '' ? '' : (Number(spotPct) >= 0 ? 'up' : 'down');
+  const row = (label, main, sub, tone = '') => `<div class="market-status-row ${tone}"><b>${label}</b><span>${main}</span>${sub ? `<em>${sub}</em>` : ''}</div>`;
+  const rows = [];
+  const spotBasis = item.currentPrice || item.price || f.currentPrice ? 'KRX 현재/종가 기준' : (fut?.underlyingPrice ? 'KRX 기준가/직전가' : (derivedSpotFromNxt ? 'NXT 전일대비 역산 기준가' : 'KRX 기준가 대기'));
+  rows.push(row('현물', spotPrice == null || spotPrice === '' ? '-' : money(spotPrice), spotPct == null || spotPct === '' ? spotBasis : `KRX ${pct(Number(spotPct))}`, spotClass));
+  if (nxt && nxt.price !== null && nxt.price !== undefined) {
+    const base = spotPrice == null || spotPrice === '' ? null : Number(spotPrice);
+    const diff = base && Number(nxt.price) ? Number(nxt.price) - base : null;
+    const session = nxt.session === 'AFTER_MARKET' ? '장후' : (nxt.session === 'PRE_MARKET' ? '프리장' : '장외');
+    const diffText = diff === null || Number.isNaN(diff) ? '' : ` · 현물대비 ${diff >= 0 ? '+' : '-'}${fmt.format(Math.abs(diff))}`;
+    const tone = nxt.changePct == null ? '' : (Number(nxt.changePct) >= 0 ? 'up' : 'down');
+    rows.push(row('NXT', money(nxt.price), `${session} ${pct(nxt.changePct)}${diffText}`, tone));
+  } else {
+    rows.push(row('NXT', '수집 대기', '프리/장후 참고 시세 없음', 'wait'));
+  }
+  if (fut && fut.price !== null && fut.price !== undefined) {
+    const isPreSignalWait = fut.signal === '선물장전대기';
+    const tone = isPreSignalWait ? 'wait' : (fut.changePct == null ? '' : (Number(fut.changePct) >= 0 ? 'up' : 'down'));
+    const basis = fut.spotSpreadPct == null ? '' : ` · 현물대비 ${fut.spotSpreadPct >= 0 ? '+' : ''}${Number(fut.spotSpreadPct).toFixed(2)}%`;
+    const rel = fut.relativeStrengthPct == null ? '' : ` · 상대 ${fut.relativeStrengthPct >= 0 ? '+' : ''}${Number(fut.relativeStrengthPct).toFixed(2)}%p`;
+    const note = isPreSignalWait ? ' · 체결 없음' : '';
+    rows.push(row('선물', money(fut.price), `${fut.signal || '추적'}${basis}${rel}${note}`, tone));
+  } else {
+    rows.push(row('선물', '수집 대기', '상장/근월물 매칭 없음', 'wait'));
+  }
+  return `<div class="market-status-block" aria-label="현물 NXT 선물 현재 상태">${rows.join('')}</div>`;
 }
 
 function colorizePnlText(text = '') {
@@ -646,6 +794,7 @@ function candidateTile(c, idx) {
       ${c.technicalDecision?.state && !['구조중립', '기술분석대기'].includes(c.technicalDecision.state) ? `<span>기술 ${c.technicalDecision.state}</span>` : ''}
       ${c.fundamentals?.stockFutureQuote?.signal ? `<span>${c.fundamentals.stockFutureQuote.signal}</span>` : ''}
     </div>
+    ${marketStatusBlock(c)}
     ${decisionContractBlock(c, 'compact')}
     ${fundamentalsButton(c)}
     ${c.candidateNote ? `<details class="candidate-detail"><summary>매수/보유 기준 보기</summary><p>${c.candidateNote}</p></details>` : ''}
@@ -976,6 +1125,7 @@ function renderActionMatrix(data = {}, strategyFilter = null) {
     <span>${escapeHtml(r.code)} · ${escapeHtml(r.strategy || '-')}</span>
     <div class="action-brief">
       <b>최종 판단: ${escapeHtml(finalActionTitle(r))}</b>
+      ${marketStatusBlock(r.item)}
       ${actionReadout(r)}
       <p>${escapeHtml(shortReason(r))}</p>
     </div>
@@ -1173,6 +1323,7 @@ function tradeAlerts(s) {
         ${buyReturn === null || Number.isNaN(buyReturn) ? '' : `<b class="return-big ${buyReturnClass}">${pct(buyReturn)}</b>`}
       </div>
       ${isSell ? `<div class="alert-meta"><span>${sourceLabel}</span><span>${execLabel}</span>${x.reviewAction ? `<span>${x.reviewAction}</span>` : ''}</div>` : ''}
+      ${marketStatusBlock(x)}
       ${decisionContractBlock(x, 'compact')}
       ${isSell && executed ? sellResultLine(x) : ''}
       ${qtyLine ? `<small>${qtyLine}</small>` : ''}
@@ -1266,8 +1417,51 @@ function activeStrategyName(id) {
 function refreshActionMatrixForPanel(id) {
   if (!dashboardData) return;
   const strategy = activeStrategyName(id);
-  document.getElementById('actionMatrix').innerHTML = renderActionMatrix(dashboardData, strategy);
+  document.getElementById('actionMatrix').innerHTML = renderActionMatrix(dashboardData, strategy) + renderSellHistory(dashboardData, strategy);
   bindActionMatrixTabs();
+}
+
+function renderSellHistory(data = {}, strategyFilter = null) {
+  const rows = [];
+  (data.sessions || []).forEach(s => {
+    if (strategyFilter && s.name !== strategyFilter) return;
+    (s.sellRecords || []).forEach(r => rows.push({ ...r, strategy: s.name }));
+  });
+  rows.sort((a, b) => String(b.sellAt || b.orderTime || '').localeCompare(String(a.sellAt || a.orderTime || '')));
+  const shortDate = v => {
+    const s = formatKst(v);
+    return s === '-' ? '-' : s.replace(/^\d{4}-/, '');
+  };
+  const priceWithTime = (price, at, basis = '') => `<b>${price == null ? '-' : money(price)}</b>${at ? `<small>${escapeHtml(shortDate(at))}${basis ? ` · ${escapeHtml(basis)}` : ''}</small>` : (basis ? `<small>${escapeHtml(basis)}</small>` : '')}`;
+  const rowHtml = r => {
+    const realized = r.realizedReturnPct ?? r.returnPct;
+    const realizedCls = realized == null ? '' : (Number(realized) >= 0 ? 'up' : 'down');
+    const post = r.currentVsSellPct;
+    const postCls = post == null ? '' : (Number(post) <= 0 ? 'up' : 'down');
+    const decision = r.postSellDecision || (post == null ? '현재가 추적 대기' : '사후검증');
+    const status = String(r.executionStatus || '').includes('FILLED') ? '체결' : (r.reviewAction || '매도');
+    return `<tr>
+      <td><span class="strategy-chip">${escapeHtml(r.strategy || '-')}</span></td>
+      <td class="sell-stock-cell"><a href="${stockDetailUrl(r)}"><b>${escapeHtml(r.name || r.code)}</b></a><small>${escapeHtml(r.code || '')}</small></td>
+      <td>${priceWithTime(r.entryPrice, r.entryAt, r.priceBasis === 'strategy_trade_history' ? '매수기록' : '')}</td>
+      <td>${priceWithTime(r.sellPrice, r.sellAt || r.sellPriceAt, r.sellPriceBasis === 'nearest_position_history' ? '근접스냅샷' : '')}</td>
+      <td><b>${r.currentPrice == null ? '-' : money(r.currentPrice)}</b></td>
+      <td class="${realizedCls}"><b>${realized == null ? '-' : pct(Number(realized))}</b><small>${escapeHtml(r.tradeResult || '')}</small></td>
+      <td class="${postCls}"><b>${post == null ? '-' : pct(Number(post))}</b></td>
+      <td><span class="sell-verdict ${postCls}">${escapeHtml(decision)}</span><small>${escapeHtml(status)}</small></td>
+      <td class="sell-reason-cell">${escapeHtml(r.reason || '')}</td>
+    </tr>`;
+  };
+  return `<section class="sell-history-section card wide">
+    <div class="card-head">
+      <div><h2>매도 기록 사후검증</h2><p class="muted">보유 항목처럼 테이블로 남겨 매수·매도·현재가와 판단 결과를 한 줄에서 비교합니다.</p></div>
+      <span class="badge compact">${fmt.format(rows.length)}건</span>
+    </div>
+    ${rows.length ? `<div class="sell-history-table-wrap"><table class="sell-history-table">
+      <thead><tr><th>전략</th><th>종목</th><th>매수 시점</th><th>매도 시점</th><th>현재가</th><th>실현</th><th>매도 후</th><th>판단</th><th>기록 근거</th></tr></thead>
+      <tbody>${rows.map(rowHtml).join('')}</tbody>
+    </table></div>` : '<p class="muted">아직 체결된 매도 기록이 없습니다.</p>'}
+  </section>`;
 }
 
 function setActive(id, shouldScroll = true) {
@@ -1293,6 +1487,11 @@ function render(data) {
     summaryTile('시장/KODEX 누적', marketCumulativePair(data), basisText(data.benchmark?.periodStart), '📊', (data.benchmark?.returnPct || 0) >= 0 ? 'good' : 'danger'),
     ...data.sessions.map(renderOverviewStrategyCard)
   ].join('');
+  const overviewTools = document.getElementById('overviewTools');
+  if (overviewTools) {
+    overviewTools.innerHTML = [renderEtfHoldings(data), renderEtfThemeFollow(data)].join('');
+    setupEtfToolModals(data);
+  }
 
   const tabs = [{id:'panel-overview', name:'전체 요약', strategy: null}, ...data.sessions.map((s, idx) => ({id:`panel-${idx}`, name:s.name, strategy: s.name}))];
   dashboardStrategyTabs = tabs;

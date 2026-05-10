@@ -74,6 +74,13 @@ Important fields:
 - `failurePatterns`
 - `horizonReview` for 1d/5d/20d
 
+`horizonReview` is deliberately explicit for every tracked row. Each of
+`1d`, `5d`, and `20d` must exist with a status of `pending`,
+`ready-for-review`, or `ready-missing-return`; longer horizons may remain
+pending until the first-seen timestamp is old enough. `failurePatterns` must
+stay populated from realized drawdown/missed-upside evidence when available,
+otherwise from the risk patterns captured at decision time.
+
 ### 5. Survival review
 
 `data/survival-review.json` summarizes:
@@ -84,6 +91,7 @@ Important fields:
 - top failure patterns
 - high-risk samples
 - baseline tracking counts
+- horizon status counts for 1d/5d/20d
 
 ## Non-negotiable rules
 
