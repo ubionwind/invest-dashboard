@@ -951,38 +951,48 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   line-height: 1.55;
 }
 
-/* Stock detail: tabbed layout for information-heavy pages */
+/* Stock detail: classic tab layout */
 .stock-detail-tabs.tabbed {
   position: sticky;
-  top: 10px;
+  top: 8px;
   left: auto;
   right: auto;
   bottom: auto;
   z-index: 30;
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 8px;
-  margin: 12px 0 14px;
-  padding: 10px;
-  border-radius: 22px;
-  background: rgba(11,18,32,.86);
+  display: flex;
+  gap: 0;
+  margin: 12px 0 0;
+  padding: 0 10px;
+  border-radius: 18px 18px 0 0;
+  background: rgba(11,18,32,.72);
   border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 14px 46px rgba(0,0,0,.24);
-  backdrop-filter: blur(16px);
-  overflow: visible;
+  border-bottom: 0;
+  box-shadow: none;
+  backdrop-filter: blur(14px);
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+.stock-detail-tabs.tabbed::-webkit-scrollbar { display: none; }
 .stock-tab-btn {
-  display: grid;
-  gap: 3px;
-  min-width: 0;
-  padding: 10px 9px;
-  border-radius: 15px;
-  border: 1px solid rgba(255,255,255,.09);
-  background: rgba(255,255,255,.045);
-  color: #dbe7ff;
-  text-align: left;
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 118px;
+  max-width: 170px;
+  min-height: 46px;
+  padding: 10px 14px 11px;
+  border: 0;
+  border-right: 1px solid rgba(255,255,255,.08);
+  border-radius: 0;
+  background: transparent;
+  color: #9fb2d8;
+  text-align: center;
   cursor: pointer;
+  font: inherit;
 }
+.stock-tab-btn:first-child { border-left: 1px solid rgba(255,255,255,.04); }
 .stock-tab-btn strong {
   font-size: 13px;
   line-height: 1.2;
@@ -990,44 +1000,46 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.stock-tab-btn span {
-  color: var(--muted, #94a3b8);
-  font-size: 10.5px;
-  line-height: 1.25;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+.stock-tab-btn span { display: none; }
+.stock-tab-btn:hover { color: #f8fbff; background: rgba(255,255,255,.045); }
 .stock-tab-btn.active {
-  background: linear-gradient(135deg, rgba(121,167,255,.28), rgba(255,209,102,.16));
-  border-color: rgba(121,167,255,.58);
   color: #fff;
-  box-shadow: 0 10px 28px rgba(34, 80, 160, .18);
+  background: rgba(15,23,42,.96);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
 }
-.stock-tab-panels { display: grid; gap: 12px; }
+.stock-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 0;
+  height: 3px;
+  border-radius: 999px 999px 0 0;
+  background: #ffe5a3;
+}
+.stock-tab-panels {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 0 0 18px 18px;
+  background: rgba(15,23,42,.58);
+}
 .stock-tab-panel { display: none; }
 .stock-tab-panel.active { display: grid; gap: 12px; }
 .stock-tab-panel-head {
-  padding: 13px 15px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.045);
+  padding: 0 0 10px;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,.09);
+  background: transparent;
 }
 .stock-tab-panel-head h2 { margin: 0 0 4px; font-size: 18px; }
 .stock-tab-panel-head p { margin: 0; color: var(--muted, #94a3b8); font-size: 13px; }
 .top-summary-metrics { margin-bottom: 2px; }
-@media (max-width: 980px) {
-  .stock-detail-tabs.tabbed { grid-template-columns: repeat(3, minmax(0, 1fr)); top: 6px; }
-}
 @media (max-width: 620px) {
-  .stock-detail-tabs.tabbed {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px;
-    padding: 8px;
-    margin-top: 8px;
-  }
-  .stock-tab-btn { padding: 8px; border-radius: 13px; }
+  .stock-detail-tabs.tabbed { top: 6px; padding: 0 6px; border-radius: 15px 15px 0 0; }
+  .stock-tab-btn { min-width: 98px; min-height: 42px; padding: 9px 10px 10px; }
   .stock-tab-btn strong { font-size: 12px; }
-  .stock-tab-btn span { font-size: 10px; -webkit-line-clamp: 1; }
+  .stock-tab-panels { padding: 10px; border-radius: 0 0 15px 15px; }
 }
