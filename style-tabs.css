@@ -951,19 +951,19 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
 .stock-tab-btn {
   position: relative;
   flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 118px;
-  max-width: 170px;
-  min-height: 46px;
-  padding: 10px 14px 11px;
+  display: grid;
+  align-content: center;
+  gap: 3px;
+  min-width: 140px;
+  max-width: 190px;
+  min-height: 54px;
+  padding: 9px 14px 11px;
   border: 0;
   border-right: 1px solid rgba(255,255,255,.08);
   border-radius: 0;
   background: transparent;
   color: #9fb2d8;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
   font: inherit;
 }
@@ -975,8 +975,9 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.stock-tab-btn span { display: none; }
+.stock-tab-btn span { display: block; color: var(--muted, #94a3b8); font-size: 10.5px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .stock-tab-btn:hover { color: #f8fbff; background: rgba(255,255,255,.045); }
+.stock-tab-btn:hover span, .stock-tab-btn.active span { color: #dbe7ff; }
 .stock-tab-btn.active {
   color: #fff;
   background: rgba(15,23,42,.96);
@@ -1014,7 +1015,8 @@ footer { padding: 24px 48px; border-top: 1px solid var(--line); color: var(--mut
 .top-summary-metrics { margin-bottom: 2px; }
 @media (max-width: 620px) {
   .stock-detail-tabs.tabbed { top: 6px; padding: 0 6px; border-radius: 15px 15px 0 0; }
-  .stock-tab-btn { min-width: 98px; min-height: 42px; padding: 9px 10px 10px; }
+  .stock-tab-btn { min-width: 112px; max-width: 155px; min-height: 50px; padding: 8px 10px 10px; }
   .stock-tab-btn strong { font-size: 12px; }
+  .stock-tab-btn span { font-size: 10px; }
   .stock-tab-panels { padding: 10px; border-radius: 0 0 15px 15px; }
 }
