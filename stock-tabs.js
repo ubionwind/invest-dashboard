@@ -955,7 +955,7 @@ function renderDetail(stock, contexts, ohlcv) {
   root.innerHTML = `
     <section class="stock-detail-hero card">
       <div><span class="eyebrow">${esc(code)}</span><h2>${esc(stock.name || '종목')}</h2><p>${esc(a.summary || '상세 분석 데이터 대기')}</p></div>
-      <div class="stock-score-ring"><strong>${a.score ?? '-'}</strong><span>${esc(a.stance || '분석 대기')}</span></div>
+      <div class="stock-score-ring"><small>종목 종합점수</small><strong>${a.score ?? '-'}</strong><span>${esc(a.stance || '분석 대기')}</span><em>전체 종목 분석 기준</em></div>
     </section>
     <section class="stock-detail-metrics top-summary-metrics">
       ${metric('현재가', money(tech.currentPrice), `20일 전고점 대비 ${pct(tech.distanceToHigh20dPct)}`)}
