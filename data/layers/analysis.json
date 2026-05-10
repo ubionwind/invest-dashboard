@@ -1,6 +1,6 @@
 {
   "schema": "invest-dashboard.layer.analysis.v1",
-  "generatedAt": "2026-05-10T22:48+09:00",
+  "generatedAt": "2026-05-10T22:49+09:00",
   "codes": {
     "005930": {
       "per": 40.9,
@@ -98,7 +98,7 @@
         "signal": "선물중립",
         "basisText": "reference-only; cash KRX close remains official P/L basis",
         "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:47+09:00"
+        "updatedAt": "2026-05-10T22:49+09:00"
       },
       "nxtQuote": {
         "market": "NXT",
@@ -140,7 +140,34 @@
         "bias": -2,
         "reason": "20일 전고점까지 1.89% 남아 돌파 확인 필요"
       },
-      "stockFutureQuote": null,
+      "stockFutureQuote": {
+        "market": "KRX 주식선물",
+        "underlyingCode": "267260",
+        "futureCode": "AGH605",
+        "futureName": "HD현대일렉 F 202605 (  10)",
+        "expiryMonth": "202605",
+        "expiryDate": null,
+        "remainingDays": null,
+        "price": 1407000,
+        "delta": -22000,
+        "changePct": -1.54,
+        "volume": 8562,
+        "tradingValue": null,
+        "openInterest": null,
+        "openInterestChange": null,
+        "theoreticalPrice": null,
+        "disparityPct": null,
+        "basis": null,
+        "marketBasis": null,
+        "underlyingPrice": 1403000,
+        "spotSpread": 4000,
+        "spotSpreadPct": 0.29,
+        "relativeStrengthPct": -0.34,
+        "signal": "선물중립",
+        "basisText": "reference-only; cash KRX close remains official P/L basis",
+        "source": "kis-domestic-futureoption-readonly",
+        "updatedAt": "2026-05-10T22:49+09:00"
+      },
       "nxtQuote": {
         "market": "NXT",
         "session": "AFTER_MARKET",
@@ -207,7 +234,7 @@
         "signal": "선물중립",
         "basisText": "reference-only; cash KRX close remains official P/L basis",
         "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:47+09:00"
+        "updatedAt": "2026-05-10T22:49+09:00"
       },
       "nxtQuote": {
         "market": "NXT",
@@ -275,34 +302,7 @@
         "bias": 4,
         "reason": "20일 전고점 돌파; 20일 전고점 대비 1.26%, 매물벽 위험 낮음"
       },
-      "stockFutureQuote": {
-        "market": "KRX 주식선물",
-        "underlyingCode": "000660",
-        "futureCode": "A50605",
-        "futureName": "SK하이닉스 F 202605 (  10)",
-        "expiryMonth": "202605",
-        "expiryDate": "20260514",
-        "remainingDays": 7,
-        "price": 1696000,
-        "delta": 23000,
-        "changePct": 1.37,
-        "volume": 438682,
-        "tradingValue": 7271231509120,
-        "openInterest": 978507,
-        "openInterestChange": -57154,
-        "theoreticalPrice": 1686838,
-        "disparityPct": 0.54,
-        "basis": 838,
-        "marketBasis": 10000,
-        "underlyingPrice": 1686000,
-        "spotSpread": 10000,
-        "spotSpreadPct": 0.59,
-        "relativeStrengthPct": -0.56,
-        "signal": "선물중립",
-        "basisText": "reference-only; cash KRX close remains official P/L basis",
-        "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:47+09:00"
-      },
+      "stockFutureQuote": null,
       "nxtQuote": {
         "market": "NXT",
         "session": "AFTER_MARKET",
@@ -415,34 +415,7 @@
         "bias": -6,
         "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
       },
-      "stockFutureQuote": {
-        "market": "KRX 주식선물",
-        "underlyingCode": "035420",
-        "futureCode": "A56605",
-        "futureName": "NAVER      F 202605 (  10)",
-        "expiryMonth": "202605",
-        "expiryDate": "20260514",
-        "remainingDays": 7,
-        "price": 214000,
-        "delta": 5000,
-        "changePct": 2.39,
-        "volume": 82119,
-        "tradingValue": 177039340000,
-        "openInterest": 58838,
-        "openInterestChange": -11780,
-        "theoreticalPrice": 215107,
-        "disparityPct": -0.51,
-        "basis": 107,
-        "marketBasis": -1000,
-        "underlyingPrice": 215000,
-        "spotSpread": -1000,
-        "spotSpreadPct": -0.47,
-        "relativeStrengthPct": -1.22,
-        "signal": "선물약세",
-        "basisText": "reference-only; cash KRX close remains official P/L basis",
-        "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:47+09:00"
-      },
+      "stockFutureQuote": null,
       "nxtQuote": {
         "market": "NXT",
         "session": "AFTER_MARKET",
@@ -470,6 +443,74 @@
         }
       }
     },
+    "007660": {
+      "per": 62.52,
+      "pbr": 13.71,
+      "roe": 29.64,
+      "badge": "고ROE · 고PBR · 고PER주의",
+      "themeRegime": null,
+      "updatedAt": "2026-05-08T23:45:14+09:00",
+      "universeStatus": "existing",
+      "technicalSignal": {
+        "state": "저항거리큼",
+        "bias": -3,
+        "reason": "20일 전고점까지 14.17% 거리; 회복 확인 필요"
+      },
+      "stockFutureQuote": {
+        "market": "KRX 주식선물",
+        "underlyingCode": "007660",
+        "futureCode": "A2P605",
+        "futureName": "이수페타시 F 202605 (  10)",
+        "expiryMonth": "202605",
+        "expiryDate": "20260514",
+        "remainingDays": 7,
+        "price": 138700,
+        "delta": -13700,
+        "changePct": -8.99,
+        "volume": 1237,
+        "tradingValue": 1753325000,
+        "openInterest": 2970,
+        "openInterestChange": 710,
+        "theoreticalPrice": 141170,
+        "disparityPct": -1.75,
+        "basis": 70,
+        "marketBasis": -2400,
+        "underlyingPrice": 141100,
+        "spotSpread": -2400,
+        "spotSpreadPct": -1.7,
+        "relativeStrengthPct": -4.72,
+        "signal": "선물약세",
+        "basisText": "reference-only; cash KRX close remains official P/L basis",
+        "source": "kis-domestic-futureoption-readonly",
+        "updatedAt": "2026-05-10T22:49+09:00"
+      },
+      "nxtQuote": {
+        "market": "NXT",
+        "session": "AFTER_MARKET",
+        "status": "CLOSE",
+        "price": 142000,
+        "delta": -5400,
+        "changePct": -3.66,
+        "localTradedAt": "2026-05-08T20:00:00+09:00",
+        "basis": "reference-only; KRX close remains official P/L basis",
+        "source": "naver-nxt-overmarket"
+      },
+      "expertAnalysis": {
+        "score": 56,
+        "stance": "중립/확인 대기",
+        "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
+        "survival": {
+          "actionState": "관망 우선",
+          "confidenceScore": 57,
+          "confidenceLevel": "Low",
+          "positionGuide": {
+            "label": "낮은 확신",
+            "suggestedRangePct": "0~2%",
+            "plain": "분석은 가능하지만 실전 비중을 싣기엔 근거가 약합니다. 관찰 또는 아주 소액만 허용합니다."
+          }
+        }
+      }
+    },
     "042700": {
       "per": 174.65,
       "pbr": 53.59,
@@ -487,6 +528,64 @@
       "nxtQuote": null,
       "expertAnalysis": {
         "score": 35,
+        "stance": "리스크 우선",
+        "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
+        "survival": {
+          "actionState": "매수 보류",
+          "confidenceScore": 41,
+          "confidenceLevel": "Uncertain",
+          "positionGuide": {
+            "label": "불확실",
+            "suggestedRangePct": "0%",
+            "plain": "신호가 약하거나 충돌합니다. 쉬는 것이 전략입니다."
+          }
+        }
+      }
+    },
+    "089030": {
+      "per": 235.32,
+      "pbr": 9.85,
+      "roe": 4.63,
+      "badge": "저ROE · 고PBR · 고PER주의",
+      "themeRegime": null,
+      "updatedAt": "2026-05-08T23:45:14+09:00",
+      "universeStatus": "existing",
+      "technicalSignal": {
+        "state": "구조중립",
+        "bias": 0,
+        "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
+      },
+      "stockFutureQuote": {
+        "market": "KRX 주식선물",
+        "underlyingCode": "089030",
+        "futureCode": "A3G605",
+        "futureName": "테크윙     F 202605 (  10)",
+        "expiryMonth": "202605",
+        "expiryDate": null,
+        "remainingDays": null,
+        "price": 59300,
+        "delta": 200,
+        "changePct": 0.34,
+        "volume": 40,
+        "tradingValue": null,
+        "openInterest": null,
+        "openInterestChange": null,
+        "theoreticalPrice": null,
+        "disparityPct": null,
+        "basis": null,
+        "marketBasis": null,
+        "underlyingPrice": 59300,
+        "spotSpread": 0,
+        "spotSpreadPct": 0.0,
+        "relativeStrengthPct": 0.68,
+        "signal": "선물중립",
+        "basisText": "reference-only; cash KRX close remains official P/L basis",
+        "source": "kis-domestic-futureoption-readonly",
+        "updatedAt": "2026-05-10T22:49+09:00"
+      },
+      "nxtQuote": null,
+      "expertAnalysis": {
+        "score": 21,
         "stance": "리스크 우선",
         "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
         "survival": {
@@ -532,105 +631,6 @@
         }
       }
     },
-    "007660": {
-      "per": 62.52,
-      "pbr": 13.71,
-      "roe": 29.64,
-      "badge": "고ROE · 고PBR · 고PER주의",
-      "themeRegime": null,
-      "updatedAt": "2026-05-08T23:45:14+09:00",
-      "universeStatus": "existing",
-      "technicalSignal": {
-        "state": "저항거리큼",
-        "bias": -3,
-        "reason": "20일 전고점까지 14.17% 거리; 회복 확인 필요"
-      },
-      "stockFutureQuote": {
-        "market": "KRX 주식선물",
-        "underlyingCode": "007660",
-        "futureCode": "A2P605",
-        "futureName": "이수페타시 F 202605 (  10)",
-        "expiryMonth": "202605",
-        "expiryDate": "20260514",
-        "remainingDays": 7,
-        "price": 138700,
-        "delta": -13700,
-        "changePct": -8.99,
-        "volume": 1237,
-        "tradingValue": 1753325000,
-        "openInterest": 2970,
-        "openInterestChange": 710,
-        "theoreticalPrice": 141170,
-        "disparityPct": -1.75,
-        "basis": 70,
-        "marketBasis": -2400,
-        "underlyingPrice": 141100,
-        "spotSpread": -2400,
-        "spotSpreadPct": -1.7,
-        "relativeStrengthPct": -4.72,
-        "signal": "선물약세",
-        "basisText": "reference-only; cash KRX close remains official P/L basis",
-        "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:47+09:00"
-      },
-      "nxtQuote": {
-        "market": "NXT",
-        "session": "AFTER_MARKET",
-        "status": "CLOSE",
-        "price": 142000,
-        "delta": -5400,
-        "changePct": -3.66,
-        "localTradedAt": "2026-05-08T20:00:00+09:00",
-        "basis": "reference-only; KRX close remains official P/L basis",
-        "source": "naver-nxt-overmarket"
-      },
-      "expertAnalysis": {
-        "score": 56,
-        "stance": "중립/확인 대기",
-        "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
-        "survival": {
-          "actionState": "관망 우선",
-          "confidenceScore": 57,
-          "confidenceLevel": "Low",
-          "positionGuide": {
-            "label": "낮은 확신",
-            "suggestedRangePct": "0~2%",
-            "plain": "분석은 가능하지만 실전 비중을 싣기엔 근거가 약합니다. 관찰 또는 아주 소액만 허용합니다."
-          }
-        }
-      }
-    },
-    "089030": {
-      "per": 235.32,
-      "pbr": 9.85,
-      "roe": 4.63,
-      "badge": "저ROE · 고PBR · 고PER주의",
-      "themeRegime": null,
-      "updatedAt": "2026-05-08T23:45:14+09:00",
-      "universeStatus": "existing",
-      "technicalSignal": {
-        "state": "구조중립",
-        "bias": 0,
-        "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
-      },
-      "stockFutureQuote": null,
-      "nxtQuote": null,
-      "expertAnalysis": {
-        "score": 21,
-        "stance": "리스크 우선",
-        "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
-        "survival": {
-          "actionState": "매수 보류",
-          "confidenceScore": 41,
-          "confidenceLevel": "Uncertain",
-          "positionGuide": {
-            "label": "불확실",
-            "suggestedRangePct": "0%",
-            "plain": "신호가 약하거나 충돌합니다. 쉬는 것이 전략입니다."
-          }
-        }
-      }
-    },
     "003670": {
       "per": 751.3,
       "pbr": 6.34,
@@ -650,19 +650,19 @@
         "futureCode": "AE8605",
         "futureName": "포스코퓨처 F 202605 (  10)",
         "expiryMonth": "202605",
-        "expiryDate": null,
-        "remainingDays": null,
+        "expiryDate": "20260514",
+        "remainingDays": 7,
         "price": 289500,
         "delta": -6500,
         "changePct": -2.2,
         "volume": 20518,
-        "tradingValue": null,
-        "openInterest": null,
-        "openInterestChange": null,
-        "theoreticalPrice": null,
-        "disparityPct": null,
-        "basis": null,
-        "marketBasis": null,
+        "tradingValue": 58877395000,
+        "openInterest": 106906,
+        "openInterestChange": -9951,
+        "theoreticalPrice": 290144,
+        "disparityPct": -0.22,
+        "basis": 144,
+        "marketBasis": -500,
         "underlyingPrice": 290000,
         "spotSpread": -500,
         "spotSpreadPct": -0.17,
@@ -670,7 +670,7 @@
         "signal": "선물중립",
         "basisText": "reference-only; cash KRX close remains official P/L basis",
         "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:47+09:00"
+        "updatedAt": "2026-05-10T22:49+09:00"
       },
       "nxtQuote": {
         "market": "NXT",
@@ -712,34 +712,7 @@
         "bias": 0,
         "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
       },
-      "stockFutureQuote": {
-        "market": "KRX 주식선물",
-        "underlyingCode": "010120",
-        "futureCode": "AGL605",
-        "futureName": "LS ELECTRI F 202605 (  10)*",
-        "expiryMonth": "202605",
-        "expiryDate": null,
-        "remainingDays": null,
-        "price": 315500,
-        "delta": -2500,
-        "changePct": -0.79,
-        "volume": 41055,
-        "tradingValue": null,
-        "openInterest": null,
-        "openInterestChange": null,
-        "theoreticalPrice": null,
-        "disparityPct": null,
-        "basis": null,
-        "marketBasis": null,
-        "underlyingPrice": 313000,
-        "spotSpread": 2500,
-        "spotSpreadPct": 0.8,
-        "relativeStrengthPct": 0.94,
-        "signal": "선물중립",
-        "basisText": "reference-only; cash KRX close remains official P/L basis",
-        "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:47+09:00"
-      },
+      "stockFutureQuote": null,
       "nxtQuote": {
         "market": "NXT",
         "session": "AFTER_MARKET",
@@ -929,7 +902,7 @@
         "signal": "선물중립",
         "basisText": "reference-only; cash KRX close remains official P/L basis",
         "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:47+09:00"
+        "updatedAt": "2026-05-10T22:49+09:00"
       },
       "nxtQuote": {
         "market": "NXT",
@@ -1038,7 +1011,7 @@
         "signal": "선물중립",
         "basisText": "reference-only; cash KRX close remains official P/L basis",
         "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:47+09:00"
+        "updatedAt": "2026-05-10T22:49+09:00"
       },
       "nxtQuote": {
         "market": "NXT",
@@ -1111,7 +1084,34 @@
         "bias": -6,
         "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
       },
-      "stockFutureQuote": null,
+      "stockFutureQuote": {
+        "market": "KRX 주식선물",
+        "underlyingCode": "009540",
+        "futureCode": "A39605",
+        "futureName": "HD한국조선 F 202605 (  10)",
+        "expiryMonth": "202605",
+        "expiryDate": null,
+        "remainingDays": null,
+        "price": 447000,
+        "delta": -13500,
+        "changePct": -2.93,
+        "volume": 13273,
+        "tradingValue": null,
+        "openInterest": null,
+        "openInterestChange": null,
+        "theoreticalPrice": null,
+        "disparityPct": null,
+        "basis": null,
+        "marketBasis": null,
+        "underlyingPrice": 452000,
+        "spotSpread": -5000,
+        "spotSpreadPct": -1.11,
+        "relativeStrengthPct": 0.39,
+        "signal": "선물중립",
+        "basisText": "reference-only; cash KRX close remains official P/L basis",
+        "source": "kis-domestic-futureoption-readonly",
+        "updatedAt": "2026-05-10T22:49+09:00"
+      },
       "nxtQuote": {
         "market": "NXT",
         "session": "AFTER_MARKET",
@@ -1276,34 +1276,7 @@
         "bias": -6,
         "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
       },
-      "stockFutureQuote": {
-        "market": "KRX 주식선물",
-        "underlyingCode": "086790",
-        "futureCode": "A40605",
-        "futureName": "하나금융지 F 202605 (  10)",
-        "expiryMonth": "202605",
-        "expiryDate": null,
-        "remainingDays": null,
-        "price": 126100,
-        "delta": -1800,
-        "changePct": -1.41,
-        "volume": 30330,
-        "tradingValue": null,
-        "openInterest": null,
-        "openInterestChange": null,
-        "theoreticalPrice": null,
-        "disparityPct": null,
-        "basis": null,
-        "marketBasis": null,
-        "underlyingPrice": 126500,
-        "spotSpread": -400,
-        "spotSpreadPct": -0.32,
-        "relativeStrengthPct": 0.38,
-        "signal": "선물중립",
-        "basisText": "reference-only; cash KRX close remains official P/L basis",
-        "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:47+09:00"
-      },
+      "stockFutureQuote": null,
       "nxtQuote": {
         "market": "NXT",
         "session": "AFTER_MARKET",
@@ -1411,7 +1384,7 @@
         "signal": "선물중립",
         "basisText": "reference-only; cash KRX close remains official P/L basis",
         "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:48+09:00"
+        "updatedAt": "2026-05-10T22:49+09:00"
       },
       "nxtQuote": null,
       "expertAnalysis": {
@@ -1490,19 +1463,19 @@
         "futureCode": "AB9605",
         "futureName": "두산에너빌 F 202605 (  10)",
         "expiryMonth": "202605",
-        "expiryDate": null,
-        "remainingDays": null,
+        "expiryDate": "20260514",
+        "remainingDays": 7,
         "price": 129200,
         "delta": -8000,
         "changePct": -5.83,
         "volume": 180706,
-        "tradingValue": null,
-        "openInterest": null,
-        "openInterestChange": null,
-        "theoreticalPrice": null,
-        "disparityPct": null,
-        "basis": null,
-        "marketBasis": null,
+        "tradingValue": 234675145000,
+        "openInterest": 159832,
+        "openInterestChange": -30792,
+        "theoreticalPrice": 129664,
+        "disparityPct": -0.36,
+        "basis": 64,
+        "marketBasis": -400,
         "underlyingPrice": 129600,
         "spotSpread": -400,
         "spotSpreadPct": -0.31,
@@ -1510,7 +1483,7 @@
         "signal": "선물중립",
         "basisText": "reference-only; cash KRX close remains official P/L basis",
         "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:48+09:00"
+        "updatedAt": "2026-05-10T22:49+09:00"
       },
       "nxtQuote": {
         "market": "NXT",
@@ -1552,34 +1525,7 @@
         "bias": -6,
         "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
       },
-      "stockFutureQuote": {
-        "market": "KRX 주식선물",
-        "underlyingCode": "141080",
-        "futureCode": "AG9605",
-        "futureName": "리가켐바이 F 202605 (  10)",
-        "expiryMonth": "202605",
-        "expiryDate": "20260514",
-        "remainingDays": 7,
-        "price": 185200,
-        "delta": 1900,
-        "changePct": 1.04,
-        "volume": 19002,
-        "tradingValue": 36317040000,
-        "openInterest": 38218,
-        "openInterestChange": -320,
-        "theoreticalPrice": 187193,
-        "disparityPct": -1.06,
-        "basis": 93,
-        "marketBasis": -1900,
-        "underlyingPrice": 187100,
-        "spotSpread": -1900,
-        "spotSpreadPct": -1.02,
-        "relativeStrengthPct": -1.37,
-        "signal": "선물약세",
-        "basisText": "reference-only; cash KRX close remains official P/L basis",
-        "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:48+09:00"
-      },
+      "stockFutureQuote": null,
       "nxtQuote": {
         "market": "NXT",
         "session": "AFTER_MARKET",
@@ -1626,19 +1572,19 @@
         "futureCode": "A2B605",
         "futureName": "ISC        F 202605 (  10)",
         "expiryMonth": "202605",
-        "expiryDate": "20260514",
-        "remainingDays": 7,
+        "expiryDate": null,
+        "remainingDays": null,
         "price": 255000,
         "delta": 6000,
         "changePct": 2.41,
         "volume": 4115,
-        "tradingValue": 10268825000,
-        "openInterest": 32535,
-        "openInterestChange": -53,
-        "theoreticalPrice": 253626,
-        "disparityPct": 0.54,
-        "basis": 126,
-        "marketBasis": 1500,
+        "tradingValue": null,
+        "openInterest": null,
+        "openInterestChange": null,
+        "theoreticalPrice": null,
+        "disparityPct": null,
+        "basis": null,
+        "marketBasis": null,
         "underlyingPrice": 253500,
         "spotSpread": 1500,
         "spotSpreadPct": 0.59,
@@ -1646,7 +1592,7 @@
         "signal": "선물중립",
         "basisText": "reference-only; cash KRX close remains official P/L basis",
         "source": "kis-domestic-futureoption-readonly",
-        "updatedAt": "2026-05-10T22:48+09:00"
+        "updatedAt": "2026-05-10T22:49+09:00"
       },
       "nxtQuote": {
         "market": "NXT",

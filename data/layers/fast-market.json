@@ -1,12 +1,12 @@
 {
   "schema": "invest-dashboard.layer.fast-market.v1",
-  "generatedAt": "2026-05-10T22:48+09:00",
+  "generatedAt": "2026-05-10T22:49+09:00",
   "layerMode": "full",
   "summary": {
-    "totalCapital": 89138282,
-    "totalEvalAmount": 89660082,
-    "totalPnl": 521800,
-    "totalReturnPct": 0.59
+    "totalCapital": 59998800,
+    "totalEvalAmount": 59928600,
+    "totalPnl": -70200,
+    "totalReturnPct": -0.12
   },
   "sessions": [
     {
@@ -43,48 +43,17 @@
     },
     {
       "name": "단기",
-      "daily": {
-        "returnPct": 0.01,
-        "pnl": 0,
-        "basis": "holding-prev-close"
-      },
+      "daily": null,
       "portfolio": {
-        "capital": 29139482,
-        "cash": 13313982,
-        "investmentAmount": 16417500,
-        "evalAmount": 29731482,
-        "pnl": 592000,
-        "returnPct": 2.03,
-        "positionCount": 2
+        "capital": null,
+        "cash": null,
+        "investmentAmount": null,
+        "evalAmount": null,
+        "pnl": null,
+        "returnPct": null,
+        "positionCount": null
       },
-      "positions": [
-        {
-          "code": "042700",
-          "name": "한미반도체",
-          "qty": 22,
-          "entryPrice": 383341,
-          "currentPrice": 390000,
-          "currentDelta": -3000,
-          "currentChangePct": -0.76,
-          "evalAmount": 8580000,
-          "pnl": 146498,
-          "returnPct": 1.74,
-          "holdingPeriod": "보유 4일"
-        },
-        {
-          "code": "247540",
-          "name": "에코프로비엠",
-          "qty": 33,
-          "entryPrice": 224000,
-          "currentPrice": 237500,
-          "currentDelta": 2000,
-          "currentChangePct": 0.85,
-          "evalAmount": 7837500,
-          "pnl": 445500,
-          "returnPct": 6.03,
-          "holdingPeriod": "보유 4일"
-        }
-      ]
+      "positions": []
     },
     {
       "name": "급등",

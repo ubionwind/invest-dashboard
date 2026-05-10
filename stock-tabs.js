@@ -921,7 +921,7 @@ function renderDetail(stock, contexts, ohlcv) {
       id: 'theme',
       label: '테마/시장',
       summary: themeSummary(f),
-      html: `${renderThemeRegime(f)}<section class="card stock-detail-section"><h2>시장·테마 기준</h2>${renderDecisionBars(buildBeginnerGuide(f, ohlcv?.rows || []))}</section>`,
+      html: `${renderThemeRegime(f)}<section class="card stock-detail-section"><h2>시장·테마 기준</h2>${renderDecisionBars(beginnerGuide(f, ohlcv?.rows || []))}</section>`,
     },
     {
       id: 'price',
