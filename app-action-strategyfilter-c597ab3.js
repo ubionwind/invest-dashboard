@@ -312,8 +312,8 @@ function strategyReturnCards(s) {
   const held = currentHoldingMetrics(pf);
   const positionCount = Number(pf.positionCount ?? (pf.positions || []).length ?? 0);
   const noHoldings = positionCount === 0;
-  const todayValue = noHoldings && daily.returnPct == null ? '보유 없음' : pct(daily.returnPct);
-  const todayNote = noHoldings && daily.returnPct == null ? `현금 ${compactMoney(pf.cash ?? pf.capital)} 대기` : `전체 매수 종목 오늘 ${money(daily.pnl)}`;
+  const todayValue = noHoldings ? '보유 없음' : pct(daily.returnPct);
+  const todayNote = noHoldings ? `현금 ${compactMoney(pf.cash ?? pf.capital)} 대기` : `전체 매수 종목 오늘 ${money(daily.pnl)}`;
   return `<div class="strategy-return-cards">
     ${returnMetricCard('누적 수익률', pct(pf.returnPct), '전략 실행 이후', pf.returnPct)}
     ${returnMetricCard('전략 종합 평가손익', money(pf.pnl), `총 평가 ${compactMoney(pf.evalAmount || pf.capital)}`, pf.pnl)}
@@ -575,8 +575,18 @@ function dailyForSession(history = [], idx) {
   };
 }
 
+function sessionHasOpenInvestment(s = {}) {
+  const pf = s.portfolio || {};
+  const positionCount = Number(pf.positionCount ?? (pf.positions || []).length ?? 0);
+  const investment = Number(pf.investmentAmount || 0);
+  return positionCount > 0 || investment > 0;
+}
+
 function enrichSessions(data) {
-  data.sessions = (data.sessions || []).map((s, idx) => ({ ...s, daily: s.daily || dailyForSession(data.history, idx) }));
+  data.sessions = (data.sessions || []).map((s, idx) => {
+    const daily = sessionHasOpenInvestment(s) ? (s.daily || dailyForSession(data.history, idx)) : { returnPct: null, pnl: null, basis: 'no-open-holdings' };
+    return { ...s, daily };
+  });
   return data;
 }
 
@@ -1382,7 +1392,7 @@ function renderOverviewStrategyCard(s) {
   const basis = basisText(cmp.periodStart);
   const positionCount = Number(pf.positionCount ?? (pf.positions || []).length ?? 0);
   const noHoldings = positionCount === 0;
-  const todayText = noHoldings && s.daily?.returnPct == null ? '오늘 보유 없음' : `오늘 ${pct(s.daily?.returnPct)}`;
+  const todayText = noHoldings ? '오늘 보유 없음' : `오늘 ${pct(s.daily?.returnPct)}`;
   return `<article class="card overview-strategy-card">
     <div class="overview-strategy-head">
       <div>

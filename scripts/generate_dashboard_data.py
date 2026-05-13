@@ -32,6 +32,10 @@ ACCOUNT_REFS = {
     'jaesang.short.mock': ('KIS_JAESANG_MOCK_APP_KEY','KIS_JAESANG_MOCK_APP_SECRET','KIS_JAESANG_MOCK_CANO','KIS_JAESANG_MOCK_ACNT_PRDT_CD'),
     'jinhye.general.mock': ('KIS_JINHYE_MOCK_APP_KEY','KIS_JINHYE_MOCK_APP_SECRET','KIS_JINHYE_MOCK_CANO','KIS_JINHYE_MOCK_ACNT_PRDT_CD'),
 }
+LIVE_MOCK_HISTORY_INDEX = {
+    'jinhye.general.mock': 0,
+    'jaesang.short.mock': 1,
+}
 
 STATE_PATH_BY_SESSION = {
     'jaesang.short.mock': ROOT/'shared/mock_invest_ai_short/state.json',
@@ -341,6 +345,42 @@ POSITION_LIMITS = {
 }
 DEFAULT_POSITION_LIMIT = 5
 
+def live_mock_history_rows():
+    try:
+        history_path = OUT.parent/'dashboard-history.json'
+        history = json.loads(history_path.read_text(encoding='utf-8'))
+        reset_id = LIVE_MOCK_RESET_EPOCH.isoformat(timespec='minutes') + ':clean-start-v3'
+        return [row for row in history if isinstance(row, dict) and row.get('dataEpoch') == reset_id]
+    except Exception:
+        return []
+
+def live_mock_baseline_capital(private_id, fallback=None):
+    idx = LIVE_MOCK_HISTORY_INDEX.get(private_id)
+    if idx is None:
+        return fallback
+    for row in live_mock_history_rows():
+        vals = row.get('capital') if isinstance(row.get('capital'), list) else []
+        if len(vals) > idx and vals[idx] not in (None, '', 0):
+            return n(vals[idx])
+    return fallback
+
+def live_mock_portfolio_fallback(private_id):
+    idx = LIVE_MOCK_HISTORY_INDEX.get(private_id)
+    if idx is None:
+        return None
+    rows = live_mock_history_rows()
+    baseline = live_mock_baseline_capital(private_id, None)
+    latest_eval = None
+    for row in reversed(rows):
+        vals = row.get('evalAmounts') if isinstance(row.get('evalAmounts'), list) else []
+        if len(vals) > idx and vals[idx] not in (None, '', 0):
+            latest_eval = n(vals[idx])
+            break
+    if not baseline or not latest_eval:
+        return None
+    pnl = latest_eval - baseline
+    return {'capital': round(baseline), 'cash': round(latest_eval), 'investmentAmount': 0, 'evalAmount': round(latest_eval), 'pnl': round(pnl), 'returnPct': round(pnl / baseline * 100, 2), 'positionCount': 0, 'positionsComplete': True, 'positions': [], 'source': 'history-fallback'}
+
 def account_summary(private_id):
     if private_id in VIRTUAL_LEDGER_IDS:
         vt = load_fresh(f'virtual_trades/{private_id}.json', {})
@@ -391,13 +431,13 @@ def account_summary(private_id):
     env=load_env_file(KIS_ENV_PATH)
     try:
         appkey, appsecret, cano, acnt = [env.get(x) for x in refs]
-        if not all([appkey, appsecret, cano, acnt]): return None
+        if not all([appkey, appsecret, cano, acnt]): return live_mock_portfolio_fallback(private_id)
         access=cached_access_token(private_id)
         if not access:
             tok=post_json(f'{KIS_BASE}/oauth2/tokenP', {'grant_type':'client_credentials','appkey':appkey,'appsecret':appsecret})
             access=tok.get('access_token')
             if access: save_access_token(private_id, tok)
-        if not access: return None
+        if not access: return live_mock_portfolio_fallback(private_id)
         params=urllib.parse.urlencode({
             'CANO': cano, 'ACNT_PRDT_CD': acnt, 'AFHR_FLPR_YN':'N', 'OFL_YN':'', 'INQR_DVSN':'01', 'UNPR_DVSN':'01',
             'FUND_STTL_ICLD_YN':'N', 'FNCG_AMT_AUTO_RDPT_YN':'N', 'PRCS_DVSN':'01', 'CTX_AREA_FK100':'', 'CTX_AREA_NK100':''
@@ -408,8 +448,10 @@ def account_summary(private_id):
         rows=j.get('output1') if isinstance(j.get('output1'), list) else []
         summary=(j.get('output2') or [{}])[0] if isinstance(j.get('output2'), list) else (j.get('output2') or {})
         eval_amt=n(summary.get('tot_evlu_amt'))
-        pnl=n(summary.get('evlu_pfls_smtl_amt'))
-        capital=eval_amt-pnl if eval_amt or pnl else n(summary.get('dnca_tot_amt'))
+        unrealized_pnl=n(summary.get('evlu_pfls_smtl_amt'))
+        raw_capital=eval_amt-unrealized_pnl if eval_amt or unrealized_pnl else n(summary.get('dnca_tot_amt'))
+        capital=live_mock_baseline_capital(private_id, raw_capital)
+        pnl=eval_amt-capital if capital and eval_amt else unrealized_pnl
         ret=round((pnl/capital*100),2) if capital else None
         positions=[]
         for r in rows:
@@ -444,7 +486,7 @@ def account_summary(private_id):
         cash = eval_amt - investment_amount if eval_amt else None
         return {'capital': round(capital), 'cash': round(cash) if cash is not None else None, 'investmentAmount': round(investment_amount), 'evalAmount': round(eval_amt), 'pnl': round(pnl), 'returnPct': ret, 'positionCount': len(positions), 'positionsComplete': len(positions) <= POSITION_DISPLAY_LIMIT, 'positions': positions[:POSITION_DISPLAY_LIMIT]}
     except Exception:
-        return None
+        return live_mock_portfolio_fallback(private_id)
 
 def benchmark_snapshot():
     # Public market benchmark snapshot. If unavailable, keep nulls rather than fabricating.
