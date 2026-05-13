@@ -309,16 +309,19 @@ function currentHoldingMetrics(pf = {}) {
 function strategyReturnCards(s) {
   const pf = s.portfolio || {};
   const daily = s.daily || {};
-  const investPct = investmentReturnPct(pf);
   const held = currentHoldingMetrics(pf);
+  const positionCount = Number(pf.positionCount ?? (pf.positions || []).length ?? 0);
+  const noHoldings = positionCount === 0;
+  const todayValue = noHoldings && daily.returnPct == null ? '보유 없음' : pct(daily.returnPct);
+  const todayNote = noHoldings && daily.returnPct == null ? `현금 ${compactMoney(pf.cash ?? pf.capital)} 대기` : `전체 매수 종목 오늘 ${money(daily.pnl)}`;
   return `<div class="strategy-return-cards">
     ${returnMetricCard('누적 수익률', pct(pf.returnPct), '전략 실행 이후', pf.returnPct)}
     ${returnMetricCard('전략 종합 평가손익', money(pf.pnl), `총 평가 ${compactMoney(pf.evalAmount || pf.capital)}`, pf.pnl)}
-    ${returnMetricCard('오늘 수익률', pct(daily.returnPct), `전체 매수 종목 오늘 ${money(daily.pnl)}`, daily.returnPct)}
-    ${returnMetricCard('현재 보유 매입금액', compactMoney(held.buyAmount), `현재 보유 ${fmt.format((pf.positions || []).length)}종목`, held.pnl)}
-    ${returnMetricCard('현재 보유 평가손익', money(held.pnl), `보유 수익률 ${pct(held.returnPct)}`, held.pnl)}
-    ${returnMetricCard('현재 보유 평가금액', compactMoney(held.evalAmount), `매입 ${compactMoney(held.buyAmount)}`, held.pnl)}
-    ${returnMetricCard('현재 보유 수익률', pct(held.returnPct), `평가손익 ${money(held.pnl)}`, held.returnPct)}
+    ${returnMetricCard('오늘 수익률', todayValue, todayNote, daily.returnPct)}
+    ${returnMetricCard('현재 보유 매입금액', noHoldings ? '보유 없음' : compactMoney(held.buyAmount), `현재 보유 ${fmt.format(positionCount)}종목`, held.pnl)}
+    ${returnMetricCard('현재 보유 평가손익', noHoldings ? '보유 없음' : money(held.pnl), noHoldings ? `현금 ${compactMoney(pf.cash ?? pf.capital)} 대기` : `보유 수익률 ${pct(held.returnPct)}`, held.pnl)}
+    ${returnMetricCard('현재 보유 평가금액', noHoldings ? '보유 없음' : compactMoney(held.evalAmount), noHoldings ? `후보 ${fmt.format(s.candidateCount || 0)}개 관찰` : `매입 ${compactMoney(held.buyAmount)}`, held.pnl)}
+    ${returnMetricCard('현재 보유 수익률', noHoldings ? '보유 없음' : pct(held.returnPct), noHoldings ? '보유 포지션 없음' : `평가손익 ${money(held.pnl)}`, held.returnPct)}
   </div>`;
 }
 
@@ -1377,22 +1380,25 @@ function renderOverviewStrategyCard(s) {
   const cmp = s.comparison || {};
   const pf = s.portfolio || {};
   const basis = basisText(cmp.periodStart);
+  const positionCount = Number(pf.positionCount ?? (pf.positions || []).length ?? 0);
+  const noHoldings = positionCount === 0;
+  const todayText = noHoldings && s.daily?.returnPct == null ? '오늘 보유 없음' : `오늘 ${pct(s.daily?.returnPct)}`;
   return `<article class="card overview-strategy-card">
     <div class="overview-strategy-head">
       <div>
         <h3>${s.name}</h3>
-        <p class="muted">${s.stage} · 보유 ${fmt.format(pf.positionCount || 0)}</p>
+        <p class="muted">${s.stage} · 보유 ${fmt.format(positionCount)}${noHoldings ? ' · 현금 대기' : ''}</p>
       </div>
       <span class="badge ${statusClass(s.status)}">${s.status}</span>
     </div>
     <div class="overview-return-row">
       <strong class="${(pf.returnPct || 0) >= 0 ? 'up' : 'down'}">${pct(pf.returnPct)}</strong>
-      <span class="today-return ${s.daily?.returnPct == null ? '' : ((s.daily.returnPct || 0) >= 0 ? 'up' : 'down')}">오늘 ${pct(s.daily?.returnPct)}</span>
+      <span class="today-return ${s.daily?.returnPct == null ? '' : ((s.daily.returnPct || 0) >= 0 ? 'up' : 'down')}">${todayText}</span>
     </div>
     <div class="basis-line">${basis}</div>
     <div class="overview-compact-metrics">
       <span><b>${compactMoney(pf.capital)}</b><em>원금</em></span>
-      <span><b>${compactMoney(pf.investmentAmount)}</b><em>투자</em></span>
+      <span><b>${compactMoney(pf.investmentAmount)}</b><em>${noHoldings ? '투자대기' : '투자'}</em></span>
       <span><b class="${(pf.pnl || 0) >= 0 ? 'up' : 'down'}">${compactMoney(pf.pnl)}</b><em>수익</em></span>
       <span><b>${fmt.format(s.candidateCount || 0)}</b><em>후보</em></span>
     </div>
