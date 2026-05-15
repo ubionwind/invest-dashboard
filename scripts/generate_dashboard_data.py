@@ -2427,25 +2427,42 @@ AI_MEMORY_CODES = {'000660', '005930'}
 AI_MEMORY_THEME = {
     'id': 'ai-memory-premium',
     'name': 'AI Memory Premium',
-    'state': 'MAINTAINED',
-    'label': '유지',
-    'strengthScore': 78,
-    'riskLevel': 'MEDIUM',
+    'state': 'WEAKENING',
+    'label': '약화 점검',
+    'strengthScore': 68,
+    'riskLevel': 'HIGH',
     'updatedAt': None,
-    'plain': 'AI 서버 투자와 HBM/고성능 DRAM 수요가 반도체 밸류 프리미엄을 지지하는 구간입니다. 단, CAPEX 둔화·HBM 공급과잉·DRAM 가격 피크아웃은 매주 재점검합니다.',
+    'plain': 'AI CAPEX와 HBM/고성능 DRAM 수요의 장기 근거는 유지되지만, SOX 급등 후 조정·Nvidia 등 AI 주식 차익실현·국내 대형 반도체 외국인 매도와 NXT 약세가 겹쳐 단기 프리미엄은 약화 점검 구간입니다.',
     'watchSignals': ['Nvidia/글로벌 AI CAPEX', 'HBM 공급계약·점유율', 'DRAM/NAND 가격', 'SOX/Micron/TSMC 상대강도', '외국인·기관 수급', '고PBR 정당화 여부'],
     'positiveRules': ['HBM 주도권과 AI 메모리 이익 사이클이 확인되면 PBR 경고를 완화합니다.', 'ROE 개선이 동반되면 고PBR을 단순 고평가로 보지 않습니다.'],
-    'riskRules': ['AI CAPEX 둔화, HBM 판가 하락, DRAM 가격 피크아웃, SOX 약세가 겹치면 프리미엄을 약화로 전환합니다.', '삼성전자는 HBM 경쟁력/공급 검증 전까지 하이닉스보다 프리미엄을 할인합니다.'],
+    'riskRules': ['AI CAPEX 둔화, HBM 판가 하락, DRAM 가격 피크아웃, SOX 약세가 겹치면 프리미엄을 종료 검토로 낮춥니다.', 'SOX/엔비디아/마이크론/TSMC 조정과 국내 외국인 매도가 동시에 이어지면 신규 진입 가중치를 낮춥니다.', '삼성전자는 HBM 경쟁력/공급 검증 전까지 하이닉스보다 프리미엄을 할인합니다.'],
+    'reviewNotes': ['2026-05-17 weekly review: SOX는 3월 말 이후 급등해 과열 부담이 커졌고 최근 AI 고성장주 차익실현이 확인됐습니다.', '국내는 2026-05-15 코스피 급등 후 반락 과정에서 삼성전자·SK하이닉스 중심 외국인 매도가 커져 단기 수급 확인이 필요합니다.', '메모리 가격/HBM 수요와 TSMC·ASML의 AI 투자 전망은 구조적 근거를 지지해 ENDED가 아닌 WEAKENING으로 유지합니다.'],
+    'nextLeadershipCandidates': [
+        {'id': 'power-infra-ai-grid', 'name': '전력기기/AI 전력 인프라', 'state': 'CANDIDATE', 'score': 72, 'plain': 'AI 데이터센터 전력 수요와 변압기/전력망 투자 사이클은 반도체 조정 시 대체 주도 업종 후보입니다.', 'watchSignals': ['HD현대일렉트릭/효성중공업 상대강도', '미국 전력망·데이터센터 발주', '수주잔고와 마진']},
+        {'id': 'shipbuilding-defense', 'name': '조선/방산', 'state': 'CANDIDATE', 'score': 66, 'plain': '수주잔고·환율·방산 수출 모멘텀이 있어 시장 확산 국면의 후보입니다.', 'watchSignals': ['HD현대중공업/한화에어로스페이스 상대강도', '신규 수주/인도 마진', '외국인 수급']},
+        {'id': 'materials-metals', 'name': '금속/소재', 'state': 'WATCH', 'score': 58, 'plain': '반도체 차익실현 자금의 순환매 후보이나 경기/원자재 민감도가 높아 확인 후 접근합니다.', 'watchSignals': ['철강·구리 가격', '중국 수요', '환율과 정책 모멘텀']},
+    ],
     'codePolicy': {
-        '000660': {'premium': 'FULL', 'label': 'AI/HBM 직접 수혜 프리미엄', 'pbrPenalty': 'soften', 'plain': 'SK하이닉스는 HBM 주도권과 AI 메모리 사이클을 우선 반영해 고PBR 경고를 완화합니다.'},
-        '005930': {'premium': 'PARTIAL', 'label': 'AI 수혜 일부 반영', 'pbrPenalty': 'partial', 'plain': '삼성전자는 AI 수혜 기대는 반영하되 HBM 경쟁력 확인 전까지 하이닉스보다 할인합니다.'},
+        '000660': {'premium': 'FULL_BUT_TACTICAL_RISK', 'label': 'AI/HBM 직접 수혜·단기 과열 점검', 'pbrPenalty': 'soften', 'plain': 'SK하이닉스는 HBM 주도권과 AI 메모리 사이클을 우선 반영하되, 외국인 매도와 글로벌 AI 주식 조정이 멈출 때까지 신규 가중은 낮춥니다.'},
+        '005930': {'premium': 'PARTIAL', 'label': 'AI 수혜 일부 반영·검증 필요', 'pbrPenalty': 'partial', 'plain': '삼성전자는 AI 수혜 기대는 반영하되 HBM 경쟁력·공급 검증과 노이즈 해소 전까지 하이닉스보다 할인합니다.'},
     },
 }
 
 def theme_regime_snapshot(generated_at=None):
     theme = json.loads(json.dumps(AI_MEMORY_THEME, ensure_ascii=False))
     theme['updatedAt'] = generated_at or datetime.datetime.now(KST).isoformat(timespec='minutes')
-    return {'generatedAt': theme['updatedAt'], 'themes': [theme], 'summary': {'primaryTheme': theme['name'], 'state': theme['state'], 'plain': theme['plain']}}
+    return {
+        'generatedAt': theme['updatedAt'],
+        'themes': [theme],
+        'summary': {
+            'primaryTheme': theme['name'],
+            'state': theme['state'],
+            'strengthScore': theme['strengthScore'],
+            'riskLevel': theme['riskLevel'],
+            'plain': theme['plain'],
+            'nextLeadershipCandidates': theme.get('nextLeadershipCandidates') or [],
+        },
+    }
 
 def ai_memory_theme_for_code(code):
     code = str(code or '').zfill(6)
@@ -2464,6 +2481,7 @@ def ai_memory_theme_for_code(code):
         'plain': policy.get('plain') or theme['plain'],
         'watchSignals': theme['watchSignals'],
         'riskRules': theme['riskRules'],
+        'reviewNotes': theme.get('reviewNotes') or [],
     }
 
 def apply_theme_regime_to_fundamentals(f):

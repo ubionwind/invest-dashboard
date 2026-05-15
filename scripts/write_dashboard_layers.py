@@ -82,6 +82,9 @@ def main():
     analysis = {
         'schema': 'invest-dashboard.layer.analysis.v1',
         'generatedAt': data.get('generatedAt'),
+        'marketRegime': data.get('marketRegime'),
+        'themeRegime': data.get('themeRegime'),
+        'survivalReview': data.get('survivalReview'),
         'codes': by_code,
     }
 
@@ -91,6 +94,8 @@ def main():
         'layerMode': data.get('layerMode') or 'full',
         'sessionCount': len(sessions),
         'historyCount': len(data.get('history') or []),
+        'marketRegimeState': (data.get('marketRegime') or {}).get('state'),
+        'themeRegimeState': ((data.get('themeRegime') or {}).get('summary') or {}).get('state'),
         'parts': {
             'dashboard': 'data/dashboard-data.json',
             'history': 'data/dashboard-history.json',

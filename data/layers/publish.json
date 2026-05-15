@@ -1,9 +1,11 @@
 {
   "schema": "invest-dashboard.layer.publish.v1",
-  "generatedAt": "2026-05-15T08:59+09:00",
-  "layerMode": "fast-market",
+  "generatedAt": "2026-05-18T08:32+09:00",
+  "layerMode": "full",
   "sessionCount": 7,
   "historyCount": 120,
+  "marketRegimeState": "NEUTRAL",
+  "themeRegimeState": "WEAKENING",
   "parts": {
     "dashboard": "data/dashboard-data.json",
     "history": "data/dashboard-history.json",
