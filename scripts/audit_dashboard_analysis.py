@@ -105,6 +105,7 @@ def main():
             allowed_horizon_statuses = {'pending', 'ready-for-review', 'ready-missing-return'}
             ledger_horizon_statuses = {key: collections.Counter() for key in ['1d', '5d', '20d']}
             ledger_pattern_count = 0
+            ledger_updated_at = parse_kst(ledger_file.get('updatedAt'))
             for idx, row in enumerate(latest):
                 if not isinstance(row, dict):
                     errors.append(('data/survival-ledger.json', f'latest[{idx}]', 'row is not an object'))
@@ -122,12 +123,16 @@ def main():
                 else:
                     ledger_pattern_count += len([p for p in patterns if isinstance(p, dict) and p.get('code')])
                 row_horizons = row.get('horizonReview') if isinstance(row.get('horizonReview'), dict) else {}
+                first_seen_at = parse_kst(row.get('firstSeenAt') or row.get('ts'))
                 for key in ['1d', '5d', '20d']:
                     h = row_horizons.get(key) if isinstance(row_horizons.get(key), dict) else {}
                     status = h.get('status')
                     if status not in allowed_horizon_statuses:
                         errors.append(('data/survival-ledger.json', row_id, f'missing/invalid horizonReview.{key}.status'))
                     ledger_horizon_statuses[key][status or 'missing'] += 1
+                    days = int(key[:-1])
+                    if first_seen_at and ledger_updated_at and (ledger_updated_at - first_seen_at).total_seconds() >= days * 86400 and not str(status).startswith('ready'):
+                        errors.append(('data/survival-ledger.json', row_id, f'horizonReview.{key} should be ready based on firstSeenAt'))
                     if str(status).startswith('ready') and 'returnSinceFirstPct' not in h:
                         errors.append(('data/survival-ledger.json', row_id, f'missing horizonReview.{key}.returnSinceFirstPct'))
             if ledger_pattern_count <= 0:

@@ -976,12 +976,21 @@ def update_survival_ledger(sessions, regime, generated_at):
     except Exception:
         ledger = {}
     prev_hist = ledger.get('history') if isinstance(ledger.get('history'), list) else []
+    def parse_ts(value):
+        if not value:
+            return None
+        try:
+            return datetime.datetime.fromisoformat(str(value).replace('Z', '+00:00'))
+        except Exception:
+            return None
     first_seen = {}
     for r in prev_hist:
         if not isinstance(r, dict):
             continue
         key = (r.get('publicId') or '', str(r.get('code') or '').zfill(6))
-        if key not in first_seen:
+        candidate_ts = parse_ts(r.get('firstSeenAt') or r.get('ts'))
+        current_ts = parse_ts((first_seen.get(key) or {}).get('firstSeenAt') or (first_seen.get(key) or {}).get('ts'))
+        if key not in first_seen or (candidate_ts and (not current_ts or candidate_ts < current_ts)):
             first_seen[key] = r
     rows = []
     seen = set()
@@ -1012,8 +1021,8 @@ def update_survival_ledger(sessions, regime, generated_at):
             return_since_first = round((current_price - baseline_price) / baseline_price * 100, 2) if current_price and baseline_price else None
             horizons = {}
             try:
-                first_ts = datetime.datetime.fromisoformat(str(first.get('ts')).replace('Z', '+00:00')) if first.get('ts') else None
-                now_ts = datetime.datetime.fromisoformat(str(generated_at).replace('Z', '+00:00'))
+                first_ts = parse_ts(first.get('firstSeenAt') or first.get('ts'))
+                now_ts = parse_ts(generated_at)
             except Exception:
                 first_ts = None; now_ts = None
             for days in (1, 5, 20):
