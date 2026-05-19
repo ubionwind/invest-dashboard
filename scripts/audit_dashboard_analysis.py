@@ -87,6 +87,9 @@ def main():
         errors.append(('survivalReview', '-', 'missing totalRows'))
     if review.get('baselineTrackedCount') in (None, ''):
         errors.append(('survivalReview', '-', 'missing baselineTrackedCount'))
+    embedded_top_patterns = review.get('topFailurePatterns') if isinstance(review.get('topFailurePatterns'), list) else []
+    if not any(isinstance(p, dict) and p.get('code') and p.get('count') for p in embedded_top_patterns):
+        errors.append(('survivalReview.topFailurePatterns', '-', 'missing coded failure pattern summary'))
     horizons = review.get('horizonReview') if isinstance(review.get('horizonReview'), dict) else {}
     for key in ['1d', '5d', '20d']:
         h = horizons.get(key) if isinstance(horizons.get(key), dict) else {}
@@ -153,6 +156,11 @@ def main():
             # outer dashboard generatedAt.
             if review_file.get('generatedAt') != review.get('generatedAt'):
                 errors.append(('data/survival-review.json', '-', 'generatedAt mismatch'))
+            file_top_patterns = review_file.get('topFailurePatterns') if isinstance(review_file.get('topFailurePatterns'), list) else []
+            if not any(isinstance(p, dict) and p.get('code') and p.get('count') for p in file_top_patterns):
+                errors.append(('data/survival-review.json', 'topFailurePatterns', 'missing coded failure pattern summary'))
+            if file_top_patterns != embedded_top_patterns:
+                errors.append(('data/survival-review.json', 'topFailurePatterns', 'embedded/file pattern summary mismatch'))
             file_horizons = review_file.get('horizonReview') if isinstance(review_file.get('horizonReview'), dict) else {}
             for key in ['1d', '5d', '20d']:
                 if key not in file_horizons:

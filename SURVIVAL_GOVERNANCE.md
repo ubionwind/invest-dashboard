@@ -88,10 +88,14 @@ otherwise from the risk patterns captured at decision time.
 - no-trade ratio
 - action counts
 - confidence counts
-- top failure patterns
+- `topFailurePatterns` (coded summary derived from row-level `failurePatterns`)
 - high-risk samples
 - baseline tracking counts
 - horizon status counts for 1d/5d/20d
+
+The audit gate must fail if either the embedded dashboard `survivalReview` or
+standalone `data/survival-review.json` loses the coded top failure-pattern
+summary, or if their summaries drift apart.
 
 ## Non-negotiable rules
 
