@@ -779,7 +779,7 @@ def refresh_summary_and_history(data):
         'benchmarkValue': (data.get('benchmark') or {}).get('value'),
         'kodex200': (data.get('kodexBenchmark') or {}).get('returnPct'),
         'kodex200Value': (data.get('kodexBenchmark') or {}).get('value'),
-        'dataEpoch': '2026-05-06T00:00+09:00:clean-start-v3',
+        'dataEpoch': '2026-05-06T00:00+09:00:clean-start-v4-strategy-upgrade-v2',
     }
     history = [x for x in (data.get('history') or []) if isinstance(x, dict) and x.get('dataEpoch') == point['dataEpoch']]
     point['marketReturns'] = [return_since(history, 'benchmarkValue', point.get('benchmarkValue'), (s.get('comparison') or {}).get('periodStart')) for s in sessions]

@@ -85,6 +85,50 @@ def n(v):
     try: return float(str(v).replace(',','').strip() or 0)
     except Exception: return 0.0
 
+def parse_market_ts(v):
+    try:
+        if not v:
+            return None
+        return datetime.datetime.fromisoformat(str(v).replace('Z', '+00:00')).astimezone(KST)
+    except Exception:
+        return None
+
+def previous_market_card(key):
+    try:
+        data = json.loads(OUT.read_text(encoding='utf-8'))
+        obj = data.get(key) or {}
+        if obj.get('value') not in (None, '', 0) and obj.get('dailyReturnPct') not in (None, ''):
+            out = dict(obj)
+            out['source'] = f"{out.get('source') or 'previous-dashboard'}-fallback"
+            return out
+    except Exception:
+        pass
+    return None
+
+def naver_basic_market_card(url, label, code=None, source='naver-basic'):
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    r = json.loads(urllib.request.urlopen(req, timeout=8).read().decode('utf-8', 'replace'))
+    price = n(r.get('closePrice') or r.get('now') or r.get('tradePrice'))
+    if price <= 0:
+        return None
+    traded_at = parse_market_ts(r.get('localTradedAt') or r.get('lastUpdatedAt') or r.get('delayTime'))
+    now = traded_at or datetime.datetime.now(KST)
+    out = {
+        'label': label,
+        'value': round(price, 2),
+        'returnPct': None,
+        'dailyReturnPct': round(n(r.get('fluctuationsRatio') or r.get('changeRate')), 2) if (r.get('fluctuationsRatio') or r.get('changeRate')) not in (None, '') else 0.0,
+        'date': now.date().isoformat(),
+        'time': now.strftime('%H:%M:%S'),
+        'periodStart': None,
+        'periodEnd': None,
+        'source': source,
+        'marketStatus': r.get('marketStatus'),
+    }
+    if code:
+        out['code'] = code
+    return out
+
 READONLY_QUOTE_CACHE = {}
 NXT_QUOTE_CACHE = {}
 STOCK_FUTURE_MASTER_CACHE = None
@@ -334,7 +378,13 @@ def stock_future_quote_snapshot(code, underlying_quote=None):
     STOCK_FUTURE_QUOTE_CACHE[code] = out
     return out
 
-VIRTUAL_LEDGER_IDS = {'jaesang.surge.mock', 'jaesang.dailynew.mock', 'jaesang.quant.value.mock', 'jaesang.quant.momentum.mock', 'jaesang.quant.mixed.mock'}
+VIRTUAL_LEDGER_IDS = {
+    'jaesang.surge.mock', 'jaesang.dailynew.mock',
+    'jaesang.quant.value.mock', 'jaesang.quant.momentum.mock', 'jaesang.quant.mixed.mock',
+    'jinhye.general.v2.mock',
+    'jaesang.surge.v2.mock', 'jaesang.dailynew.v2.mock',
+    'jaesang.quant.value.v2.mock', 'jaesang.quant.momentum.v2.mock', 'jaesang.quant.mixed.v2.mock',
+}
 POSITION_DISPLAY_LIMIT = 50
 POSITION_LIMITS = {
     'jaesang.surge.mock': 5,
@@ -342,8 +392,17 @@ POSITION_LIMITS = {
     'jaesang.quant.value.mock': 10,
     'jaesang.quant.momentum.mock': 10,
     'jaesang.quant.mixed.mock': 10,
+    'jinhye.general.v2.mock': 10,
+    'jaesang.surge.v2.mock': 5,
+    'jaesang.dailynew.v2.mock': 5,
+    'jaesang.quant.value.v2.mock': 10,
+    'jaesang.quant.momentum.v2.mock': 10,
+    'jaesang.quant.mixed.v2.mock': 10,
 }
 DEFAULT_POSITION_LIMIT = 5
+
+def base_session_id(sid):
+    return str(sid or '').replace('.v2.mock', '.mock')
 
 def live_mock_history_rows():
     try:
@@ -489,31 +548,19 @@ def account_summary(private_id):
         return live_mock_portfolio_fallback(private_id)
 
 def benchmark_snapshot():
-    # Public market benchmark snapshot. If unavailable, keep nulls rather than fabricating.
+    # Public market benchmark snapshot. Prefer live public quotes, then preserve
+    # the last valid dashboard card so a transient quote outage does not break
+    # the whole audit pipeline.
     # Prefer Naver's realtime-ish index API because Stooq can stay fixed at the prior
     # snapshot during Korean market hours, which makes market-relative returns stale.
     try:
-        req = urllib.request.Request(
+        card = naver_basic_market_card(
             'https://m.stock.naver.com/api/index/KOSPI/basic',
-            headers={'User-Agent': 'Mozilla/5.0'},
+            'KOSPI',
+            source='naver-index-basic',
         )
-        raw = urllib.request.urlopen(req, timeout=8).read().decode('utf-8', 'replace')
-        r = json.loads(raw)
-        price = n(r.get('closePrice'))
-        traded_at = parse_dt(r.get('localTradedAt'))
-        if price > 0:
-            return {
-                'label': 'KOSPI',
-                'value': round(price, 2),
-                'returnPct': None,
-                'dailyReturnPct': round(n(r.get('fluctuationsRatio')), 2) if r.get('fluctuationsRatio') not in (None, '') else None,
-                'date': traded_at.date().isoformat() if traded_at else None,
-                'time': traded_at.strftime('%H:%M:%S') if traded_at else None,
-                'periodStart': None,
-                'periodEnd': None,
-                'source': 'naver-index-basic',
-                'marketStatus': r.get('marketStatus'),
-            }
+        if card:
+            return card
     except Exception:
         pass
     try:
@@ -527,6 +574,9 @@ def benchmark_snapshot():
             return {'label':'KOSPI', 'value': round(close_v, 2), 'returnPct': None, 'dailyReturnPct': round(daily_ret, 2) if daily_ret is not None else None, 'date': r.get('Date'), 'time': r.get('Time'), 'periodStart': None, 'periodEnd': None, 'source': 'stooq-fallback'}
     except Exception:
         pass
+    prev = previous_market_card('benchmark')
+    if prev:
+        return prev
     return {'label':'KOSPI', 'value': None, 'returnPct': None, 'dailyReturnPct': None, 'date': None, 'time': None, 'periodStart': None, 'periodEnd': None}
 
 def kodex200_snapshot():
@@ -535,20 +585,20 @@ def kodex200_snapshot():
     env=load_env_file(KIS_ENV_PATH)
     def fallback():
         try:
-            req=urllib.request.Request('https://m.stock.naver.com/api/stock/069500/basic', headers={'User-Agent':'Mozilla/5.0'}, method='GET')
-            r=json.loads(urllib.request.urlopen(req, timeout=8).read().decode('utf-8','replace'))
-            price=n(r.get('closePrice'))
-            traded_at=None
-            try:
-                traded_at=datetime.datetime.fromisoformat(str(r.get('localTradedAt')).replace('Z','+00:00')).astimezone(KST)
-            except Exception:
-                pass
-            if price > 0:
-                now=traded_at or datetime.datetime.now(KST)
-                return {'label':'KODEX 200', 'code':'069500', 'value':round(price, 2), 'returnPct':None, 'dailyReturnPct':round(n(r.get('fluctuationsRatio')), 2) if r.get('fluctuationsRatio') not in (None, '') else None, 'date':now.date().isoformat(), 'time':now.strftime('%H:%M:%S'), 'periodStart':None, 'periodEnd':None, 'source':'naver-stock-basic', 'marketStatus':r.get('marketStatus')}
+            card = naver_basic_market_card(
+                'https://m.stock.naver.com/api/stock/069500/basic',
+                'KODEX 200',
+                code='069500',
+                source='naver-stock-basic',
+            )
+            if card:
+                return card
         except Exception:
             pass
-        return {'label':'KODEX 200', 'code':'069500', 'value': None, 'returnPct': None}
+        prev = previous_market_card('kodexBenchmark')
+        if prev:
+            return prev
+        return {'label':'KODEX 200', 'code':'069500', 'value': None, 'returnPct': None, 'dailyReturnPct': None, 'date': None, 'time': None, 'periodStart': None, 'periodEnd': None}
     try:
         appkey, appsecret = env.get('KIS_JAESANG_MOCK_APP_KEY'), env.get('KIS_JAESANG_MOCK_APP_SECRET')
         if not appkey or not appsecret: return fallback()
@@ -855,7 +905,24 @@ def apply_sector_weighting_to_survival(f, survival):
     loan5 = summary.get('loanBalanceChange5d')
     per, pbr, roe = f.get('per'), f.get('pbr'), f.get('roe')
     if key == 'semiconductor':
-        rules.append('반도체/전자는 PER 단순 저평가보다 메모리 업황·HBM·외국인 수급·업종 상대강도를 우선합니다.')
+        if code in POWER_INFRA_CODES:
+            out['sectorProfile'] = {
+                **sector,
+                'key': 'power_infra',
+                'label': '전력기기/AI 전력 인프라',
+                'importantFactors': ['데이터센터 전력 수요', '전력망 투자', '변압기/배전기기 수주', '수주잔고', '영업이익률', '고PBR 정당화'],
+                'downweightedFactors': ['반도체 업황 직접 민감도', 'PER 단순 저평가 해석'],
+                'plain': '전력기기 종목은 전기·전자 업종 안에 있어도 반도체가 아니라 AI 데이터센터 전력 인프라 후보로 분리해 봅니다.',
+            }
+            sector = out['sectorProfile']
+            rules.append('전력기기/AI 전력 인프라는 반도체 직접 수혜보다 데이터센터 전력망·변압기 발주와 수주잔고를 우선합니다.')
+            tm, am = target.get('operatingMarginPct'), avg.get('operatingMarginPct')
+            if isinstance(tm, (int, float)) and isinstance(am, (int, float)) and tm > am:
+                delta += 3; rules.append('동종 대비 영업이익률 우위로 고PBR 일부 정당화')
+            if isinstance(frgn5, (int, float)) and frgn5 < 0:
+                delta -= 3; rules.append('최근 외국인 순매도는 대체 주도 후보 확신도 제한')
+        else:
+            rules.append('반도체/전자는 PER 단순 저평가보다 메모리 업황·HBM·외국인 수급·업종 상대강도를 우선합니다.')
         if code == '005930' or '삼성전자' in name:
             rules.append('삼성전자는 SOX/엔비디아 흐름, HBM 경쟁력, 환율, 외국인 수급을 PER보다 먼저 확인합니다.')
         if isinstance(frgn5, (int, float)) and isinstance(orgn5, (int, float)):
@@ -966,7 +1033,8 @@ def apply_market_regime_to_sessions(sessions, regime):
         f = item.get('fundamentals') or {}
         expert = f.get('expertAnalysis') if isinstance(f.get('expertAnalysis'), dict) else None
         if expert and isinstance(expert.get('survival'), dict):
-            expert['survival'] = apply_sector_weighting_to_survival(f, apply_market_regime_to_survival(expert.get('survival'), regime))
+            context_f = {**f, 'code': item.get('code'), 'name': item.get('name') or f.get('name')}
+            expert['survival'] = apply_sector_weighting_to_survival(context_f, apply_market_regime_to_survival(expert.get('survival'), regime))
 
 def update_survival_ledger(sessions, regime, generated_at):
     path = OUT.parent/'survival-ledger.json'
@@ -1272,7 +1340,7 @@ def benchmark_return_since(history, current_benchmark, start_dt, value_key='benc
     end_ts, _, end_v = end
     if not start_v:
         return None, start_ts, end_ts
-    return round((end_v - start_v) / start_v * 100, 2), start_dt.isoformat(timespec='minutes'), end_ts
+    return round((end_v - start_v) / start_v * 100, 2), start_ts, end_ts
 
 def benchmark_series(history, start_dt, value_key='benchmarkValue'):
     if not start_dt:
@@ -1366,6 +1434,34 @@ def backfill_market_return_arrays(history, sessions):
                 row[key] = arr
     return history
 
+def normalize_history_arrays(history, sessions):
+    session_count = len(sessions or [])
+    numeric_defaults = {
+        'returns': 0.0,
+        'marketReturns': 0.0,
+        'kodexReturns': 0.0,
+        'evalAmounts': 0,
+        'capital': 0,
+    }
+    for row in history or []:
+        if not isinstance(row, dict):
+            continue
+        for key, default in numeric_defaults.items():
+            arr = row.get(key)
+            if not isinstance(arr, list):
+                arr = []
+            while len(arr) < session_count:
+                arr.append(default)
+            for idx in range(session_count):
+                if arr[idx] in (None, ''):
+                    arr[idx] = default
+            row[key] = arr[:session_count]
+        if row.get('benchmark') in (None, '') and row.get('benchmarkValue') not in (None, '', 0):
+            row['benchmark'] = 0.0
+        if row.get('kodex200') in (None, '') and row.get('kodex200Value') not in (None, '', 0):
+            row['kodex200'] = 0.0
+    return history
+
 def load(rel, default):
     p = RUNTIME/rel
     try:
@@ -1429,6 +1525,7 @@ def normalized_candidate_score(raw_score_num, sid):
     # This is intentionally threshold-based: each strategy has different raw
     # score scales, so the dashboard score should answer "how actionable is this
     # inside its own strategy right now?" rather than expose raw math directly.
+    sid = base_session_id(sid)
     if sid == 'jaesang.surge.mock':
         if raw_score_num >= 250: return 95
         if raw_score_num >= 180: return 88
@@ -1469,6 +1566,12 @@ STRATEGY_ANALYSIS_WEIGHTS = {
     'jaesang.quant.value.mock': {'technical': 0.35, 'fundamental': 1.25},
     'jaesang.quant.momentum.mock': {'technical': 1.25, 'fundamental': 0.25},
     'jaesang.quant.mixed.mock': {'technical': 0.8, 'fundamental': 0.8},
+    'jinhye.general.v2.mock': {'technical': 0.8, 'fundamental': 0.9},
+    'jaesang.surge.v2.mock': {'technical': 1.35, 'fundamental': 0.1},
+    'jaesang.dailynew.v2.mock': {'technical': 1.0, 'fundamental': 0.35},
+    'jaesang.quant.value.v2.mock': {'technical': 0.35, 'fundamental': 1.25},
+    'jaesang.quant.momentum.v2.mock': {'technical': 1.25, 'fundamental': 0.25},
+    'jaesang.quant.mixed.v2.mock': {'technical': 0.8, 'fundamental': 0.8},
 }
 
 
@@ -2433,27 +2536,28 @@ def intraday_candle_snapshot(code):
 
 
 AI_MEMORY_CODES = {'000660', '005930'}
+POWER_INFRA_CODES = {'010120', '267260', '298040', '001440'}
 AI_MEMORY_THEME = {
     'id': 'ai-memory-premium',
     'name': 'AI Memory Premium',
-    'state': 'WEAKENING',
-    'label': '약화 점검',
-    'strengthScore': 68,
+    'state': 'MAINTAINED',
+    'label': '유지·과열 점검',
+    'strengthScore': 74,
     'riskLevel': 'HIGH',
     'updatedAt': None,
-    'plain': 'AI CAPEX와 HBM/고성능 DRAM 수요의 장기 근거는 유지되지만, SOX 급등 후 조정·Nvidia 등 AI 주식 차익실현·국내 대형 반도체 외국인 매도와 NXT 약세가 겹쳐 단기 프리미엄은 약화 점검 구간입니다.',
+    'plain': 'Nvidia의 FY2027 Q1 데이터센터 매출 급증, TSMC의 AI/HPC 수요, Micron의 DRAM/NAND 타이트 전망이 HBM/AI 메모리 프리미엄을 재확인했습니다. 다만 국내 대형 반도체는 급등 후 외국인·기관 차익실현과 밸류 부담이 커 신규 진입은 유지하되 과열 점검을 병행합니다.',
     'watchSignals': ['Nvidia/글로벌 AI CAPEX', 'HBM 공급계약·점유율', 'DRAM/NAND 가격', 'SOX/Micron/TSMC 상대강도', '외국인·기관 수급', '고PBR 정당화 여부'],
     'positiveRules': ['HBM 주도권과 AI 메모리 이익 사이클이 확인되면 PBR 경고를 완화합니다.', 'ROE 개선이 동반되면 고PBR을 단순 고평가로 보지 않습니다.'],
-    'riskRules': ['AI CAPEX 둔화, HBM 판가 하락, DRAM 가격 피크아웃, SOX 약세가 겹치면 프리미엄을 종료 검토로 낮춥니다.', 'SOX/엔비디아/마이크론/TSMC 조정과 국내 외국인 매도가 동시에 이어지면 신규 진입 가중치를 낮춥니다.', '삼성전자는 HBM 경쟁력/공급 검증 전까지 하이닉스보다 프리미엄을 할인합니다.'],
-    'reviewNotes': ['2026-05-17 weekly review: SOX는 3월 말 이후 급등해 과열 부담이 커졌고 최근 AI 고성장주 차익실현이 확인됐습니다.', '국내는 2026-05-15 코스피 급등 후 반락 과정에서 삼성전자·SK하이닉스 중심 외국인 매도가 커져 단기 수급 확인이 필요합니다.', '메모리 가격/HBM 수요와 TSMC·ASML의 AI 투자 전망은 구조적 근거를 지지해 ENDED가 아닌 WEAKENING으로 유지합니다.'],
+    'riskRules': ['AI CAPEX 둔화, HBM 판가 하락, DRAM 가격 피크아웃, SOX 약세가 겹치면 프리미엄을 약화/종료 검토로 낮춥니다.', 'SOX/엔비디아/마이크론/TSMC 조정과 국내 외국인 매도가 동시에 이어지면 신규 진입 가중치를 낮춥니다.', '삼성전자는 HBM 경쟁력/공급 검증 전까지 하이닉스보다 프리미엄을 할인합니다.'],
+    'reviewNotes': ['2026-05-24 weekly review: Nvidia FY2027 Q1 매출 816억달러와 데이터센터 매출 752억달러가 AI CAPEX/HBM 수요의 구조적 근거를 재강화했습니다.', 'TSMC 2026년 4월 매출은 전년 대비 증가했고, Micron은 DRAM/NAND 공급 타이트와 HBM 중심 CAPEX를 강조해 메모리 가격/수급 근거가 유지됩니다.', '국내 삼성전자·SK하이닉스는 급등 후 차익실현 수급과 단기 과열 부담이 남아 ENDED/WEAKENING이 아니라 MAINTAINED + 과열 점검으로 둡니다.'],
     'nextLeadershipCandidates': [
-        {'id': 'power-infra-ai-grid', 'name': '전력기기/AI 전력 인프라', 'state': 'CANDIDATE', 'score': 72, 'plain': 'AI 데이터센터 전력 수요와 변압기/전력망 투자 사이클은 반도체 조정 시 대체 주도 업종 후보입니다.', 'watchSignals': ['HD현대일렉트릭/효성중공업 상대강도', '미국 전력망·데이터센터 발주', '수주잔고와 마진']},
-        {'id': 'shipbuilding-defense', 'name': '조선/방산', 'state': 'CANDIDATE', 'score': 66, 'plain': '수주잔고·환율·방산 수출 모멘텀이 있어 시장 확산 국면의 후보입니다.', 'watchSignals': ['HD현대중공업/한화에어로스페이스 상대강도', '신규 수주/인도 마진', '외국인 수급']},
-        {'id': 'materials-metals', 'name': '금속/소재', 'state': 'WATCH', 'score': 58, 'plain': '반도체 차익실현 자금의 순환매 후보이나 경기/원자재 민감도가 높아 확인 후 접근합니다.', 'watchSignals': ['철강·구리 가격', '중국 수요', '환율과 정책 모멘텀']},
+        {'id': 'power-infra-ai-grid', 'name': '전력기기/AI 전력 인프라', 'state': 'CANDIDATE', 'score': 78, 'plain': 'AI 데이터센터 증설이 전력망·변압기·전력기기 발주로 이어지는 구간이라 반도체 과열 시 가장 먼저 비교할 대체 주도 업종 후보입니다.', 'watchSignals': ['HD현대일렉트릭/LS ELECTRIC/효성중공업 상대강도', '미국 전력망·데이터센터 발주', '수주잔고와 마진', '고PBR 정당화 여부']},
+        {'id': 'advanced-packaging-hbm-equipment', 'name': 'HBM 패키징/장비·부품', 'state': 'CANDIDATE', 'score': 70, 'plain': 'HBM4와 고성능 패키징 병목이 지속되면 메모리 대형주 외 후공정·테스트·소재 장비로 수혜가 확산될 수 있습니다.', 'watchSignals': ['한미반도체/ISC/HPSP 상대강도', 'HBM4 투자와 패키징 병목', '고객사 CAPEX와 수주']},
+        {'id': 'shipbuilding-defense', 'name': '조선/방산', 'state': 'WATCH', 'score': 66, 'plain': '수주잔고·환율·방산 수출 모멘텀이 있어 시장 확산 국면의 후보지만 AI/HBM 직접성은 전력 인프라보다 낮습니다.', 'watchSignals': ['HD현대중공업/한화에어로스페이스 상대강도', '신규 수주/인도 마진', '외국인 수급']},
     ],
     'codePolicy': {
-        '000660': {'premium': 'FULL_BUT_TACTICAL_RISK', 'label': 'AI/HBM 직접 수혜·단기 과열 점검', 'pbrPenalty': 'soften', 'plain': 'SK하이닉스는 HBM 주도권과 AI 메모리 사이클을 우선 반영하되, 외국인 매도와 글로벌 AI 주식 조정이 멈출 때까지 신규 가중은 낮춥니다.'},
-        '005930': {'premium': 'PARTIAL', 'label': 'AI 수혜 일부 반영·검증 필요', 'pbrPenalty': 'partial', 'plain': '삼성전자는 AI 수혜 기대는 반영하되 HBM 경쟁력·공급 검증과 노이즈 해소 전까지 하이닉스보다 할인합니다.'},
+        '000660': {'premium': 'FULL_BUT_TACTICAL_RISK', 'label': 'AI/HBM 직접 수혜·단기 과열 점검', 'pbrPenalty': 'soften', 'plain': 'SK하이닉스는 HBM 주도권과 AI 메모리 사이클을 우선 반영하되, 단기 급등·수급 변동이 진정될 때까지 신규 가중은 낮춥니다.'},
+        '005930': {'premium': 'PARTIAL', 'label': 'AI 수혜 일부 반영·검증 필요', 'pbrPenalty': 'partial', 'plain': '삼성전자는 AI 수혜 기대와 범용 메모리 회복을 반영하되 HBM 경쟁력·공급 검증 전까지 하이닉스보다 할인합니다.'},
     },
 }
 
@@ -2811,7 +2915,8 @@ def split_stock_detail_files(data):
             continue
         expert = f.get('expertAnalysis') if isinstance(f.get('expertAnalysis'), dict) else None
         if expert and isinstance(expert.get('survival'), dict):
-            expert['survival'] = apply_sector_weighting_to_survival(f, apply_market_regime_to_survival(expert.get('survival'), data.get('marketRegime') or {}))
+            context_f = {**f, 'code': code, 'name': raw.get('name') or f.get('name')}
+            expert['survival'] = apply_sector_weighting_to_survival(context_f, apply_market_regime_to_survival(expert.get('survival'), data.get('marketRegime') or {}))
         details[code] = {'code': code, 'name': raw.get('name') or f.get('name') or code, 'fundamentals': f, 'generatedAt': data.get('generatedAt')}
 
     for code, payload in details.items():
@@ -2992,6 +3097,12 @@ sessions = [
     {'runtimeId':'jaesang.quant.value.mock','name':'퀀트가치','stage':'관찰'},
     {'runtimeId':'jaesang.quant.momentum.mock','name':'퀀트모멘텀','stage':'관찰'},
     {'runtimeId':'jaesang.quant.mixed.mock','name':'퀀트혼합','stage':'관찰'},
+    {'runtimeId':'jinhye.general.v2.mock','name':'일반V2','stage':'검증'},
+    {'runtimeId':'jaesang.surge.v2.mock','name':'급등V2','stage':'검증'},
+    {'runtimeId':'jaesang.dailynew.v2.mock','name':'매일신규V2','stage':'검증'},
+    {'runtimeId':'jaesang.quant.value.v2.mock','name':'퀀트가치V2','stage':'검증'},
+    {'runtimeId':'jaesang.quant.momentum.v2.mock','name':'퀀트모멘텀V2','stage':'검증'},
+    {'runtimeId':'jaesang.quant.mixed.v2.mock','name':'퀀트혼합V2','stage':'검증'},
 ]
 session_runtime_ids = [s['runtimeId'] for s in sessions]
 for s in sessions:
@@ -3031,7 +3142,7 @@ for s in sessions:
                 continue
             ret = n(p.get('returnPct'))
             action = str(p.get('holdAction') or '')
-            if private_id == 'jaesang.dailynew.mock' and ret <= -12:
+            if base_session_id(private_id) == 'jaesang.dailynew.mock' and ret <= -12:
                 status = f"(가상계좌) 손절 우선 · 미체결"
                 reason = f"보유 {p.get('qty') or '-'}주 · 체결 0주 · 매일신규 중대 손실 {ret:.2f}%: 회복 기대가 아니라 청산 우선 구간 · {p.get('holdReason') or ''}"
             elif '손절' in action and ret <= -8:
@@ -3102,7 +3213,7 @@ history_path = OUT.parent/'dashboard-history.json'
 history=[]
 try: history=json.loads(history_path.read_text(encoding='utf-8'))
 except Exception: pass
-reset_id = LIVE_MOCK_RESET_EPOCH.isoformat(timespec='minutes') + ':clean-start-v3'
+reset_id = LIVE_MOCK_RESET_EPOCH.isoformat(timespec='minutes') + ':clean-start-v4-strategy-upgrade-v2'
 history=[x for x in history if isinstance(x, dict) and x.get('dataEpoch') == reset_id]
 active_starts = []
 for sid, s in zip(session_runtime_ids, sessions):
@@ -3133,11 +3244,11 @@ for sid, s in zip(session_runtime_ids, sessions):
     s.pop('strategyReview', None)
     s.pop('performance', None)
 
-point={'ts': datetime.datetime.now(KST).isoformat(timespec='minutes'), 'dataEpoch': reset_id, 'candidates': summary['candidateCount'], 'protected': summary['protectedRows'], 'stale': summary['staleCount'], 'benchmark': benchmark.get('returnPct'), 'benchmarkValue': benchmark.get('value'), 'kodex200': kodex_benchmark.get('returnPct'), 'kodex200Value': kodex_benchmark.get('value'), 'returns':[ (x.get('comparison') or {}).get('returnPct') for x in sessions ], 'marketReturns':[ (x.get('comparison') or {}).get('benchmarkReturnPct') for x in sessions ], 'evalAmounts':[ (x.get('portfolio') or {}).get('evalAmount') for x in sessions ], 'capital':[ (x.get('portfolio') or {}).get('capital') for x in sessions ]}
+point={'ts': datetime.datetime.now(KST).isoformat(timespec='minutes'), 'dataEpoch': reset_id, 'candidates': summary['candidateCount'], 'protected': summary['protectedRows'], 'stale': summary['staleCount'], 'benchmark': benchmark.get('returnPct'), 'benchmarkValue': benchmark.get('value'), 'kodex200': kodex_benchmark.get('returnPct'), 'kodex200Value': kodex_benchmark.get('value'), 'returns':[ ((x.get('comparison') or {}).get('returnPct') if (x.get('comparison') or {}).get('returnPct') is not None else (x.get('portfolio') or {}).get('returnPct')) for x in sessions ], 'marketReturns':[ (x.get('comparison') or {}).get('benchmarkReturnPct') for x in sessions ], 'evalAmounts':[ (x.get('portfolio') or {}).get('evalAmount') for x in sessions ], 'capital':[ (x.get('portfolio') or {}).get('capital') for x in sessions ]}
 history.append(point); history=history[-120:]
 overall_series = benchmark_series(history, market_dashboard_start)
 overall_kodex_series = benchmark_series(history, market_dashboard_start, 'kodex200Value')
-session_starts = [first_investment_time(sid) if has_actual_buy(s) else None for sid, s in zip(session_runtime_ids, sessions)]
+session_starts = [first_investment_time(sid) if has_actual_buy(s) else market_dashboard_start for sid, s in zip(session_runtime_ids, sessions)]
 session_series = [benchmark_series(history, st) for st in session_starts]
 session_kodex_series = [benchmark_series(history, st, 'kodex200Value') for st in session_starts]
 for idx, x in enumerate(history):
@@ -3145,7 +3256,7 @@ for idx, x in enumerate(history):
     x['kodex200'] = overall_kodex_series[idx] if idx < len(overall_kodex_series) else None
     x['marketReturns'] = [series[idx] if idx < len(series) else None for series in session_series]
     x['kodexReturns'] = [series[idx] if idx < len(series) else None for series in session_kodex_series]
-history = backfill_market_return_arrays(forward_fill_history(history), sessions)
+history = normalize_history_arrays(backfill_market_return_arrays(forward_fill_history(history), sessions), sessions)
 history_path.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding='utf-8')
 survival_ledger = update_survival_ledger(sessions, market_regime, point['ts'])
 survival_review = survival_review_from_ledger(survival_ledger, point['ts'])
