@@ -1,75 +1,76 @@
 {
-  "generatedAt": "2026-06-01T08:31+09:00",
-  "survivalScore": 45,
-  "totalRows": 37,
-  "noTradeRows": 33,
-  "noTradeRatioPct": 89.2,
+  "generatedAt": "2026-06-03T08:30+09:00",
+  "survivalScore": 50,
+  "totalRows": 38,
+  "noTradeRows": 30,
+  "noTradeRatioPct": 78.9,
   "actionCounts": {
-    "소액/분할 접근": 4,
-    "관망 우선": 19,
+    "소액/분할 접근": 8,
+    "관망 우선": 16,
     "매수 보류": 14
   },
   "confidenceCounts": {
-    "Medium": 7,
-    "Uncertain": 13,
-    "Low": 17
+    "Medium": 12,
+    "Uncertain": 14,
+    "Low": 12
   },
   "topFailurePatterns": [
     {
       "code": "DRAWDOWN_GT_5",
-      "count": 21
-    },
-    {
-      "code": "DRAWDOWN_GT_2",
-      "count": 6
-    },
-    {
-      "code": "MISSED_UPSIDE_WHILE_WAITING",
-      "count": 6
+      "count": 22
     },
     {
       "code": "LOAN_BALANCE_RISK",
-      "count": 3
+      "count": 5
+    },
+    {
+      "code": "DRAWDOWN_GT_2",
+      "count": 4
+    },
+    {
+      "code": "MISSED_UPSIDE_WHILE_WAITING",
+      "count": 4
     }
   ],
   "horizonReview": {
     "1d": {
-      "total": 37,
+      "total": 38,
       "statusCounts": {
-        "ready-for-review": 37
+        "ready-for-review": 37,
+        "pending": 1
       },
       "readyCount": 37,
-      "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -5.07,
+      "pendingCount": 1,
+      "avgReadyReturnSinceFirstPct": -6.22,
       "negativeReadyCount": 28
     },
     "5d": {
-      "total": 37,
+      "total": 38,
       "statusCounts": {
         "ready-for-review": 36,
-        "pending": 1
+        "pending": 2
       },
       "readyCount": 36,
-      "pendingCount": 1,
-      "avgReadyReturnSinceFirstPct": -5.12,
-      "negativeReadyCount": 27
+      "pendingCount": 2,
+      "avgReadyReturnSinceFirstPct": -6.45,
+      "negativeReadyCount": 28
     },
     "20d": {
-      "total": 37,
+      "total": 38,
       "statusCounts": {
-        "ready-for-review": 30,
+        "ready-for-review": 31,
         "pending": 7
       },
-      "readyCount": 30,
+      "readyCount": 31,
       "pendingCount": 7,
-      "avgReadyReturnSinceFirstPct": -6.78,
-      "negativeReadyCount": 24
+      "avgReadyReturnSinceFirstPct": -7.52,
+      "negativeReadyCount": 25
     }
   },
   "reviewReadyCount": 37,
-  "baselineTrackedCount": 37,
+  "baselineTrackedCount": 38,
   "negativeSinceFirstCount": 28,
-  "highRiskCount": 30,
+  "highRiskCount": 26,
   "highRiskSamples": [
     {
       "session": "일반",
@@ -83,50 +84,20 @@
     },
     {
       "session": "일반",
-      "code": "373220",
-      "name": "LG에너지솔루션",
-      "actionState": "관망 우선",
-      "confidenceScore": 51,
-      "patterns": [
-        "DRAWDOWN_GT_5"
-      ]
-    },
-    {
-      "session": "일반",
-      "code": "005930",
-      "name": "삼성전자",
-      "actionState": "매수 보류",
-      "confidenceScore": 42,
-      "patterns": [
-        "LOAN_BALANCE_RISK"
-      ]
-    },
-    {
-      "session": "일반",
       "code": "005380",
       "name": "현대차",
-      "actionState": "매수 보류",
-      "confidenceScore": 47,
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
       "patterns": [
         "DRAWDOWN_GT_2"
       ]
     },
     {
       "session": "일반",
-      "code": "000270",
-      "name": "기아",
-      "actionState": "관망 우선",
-      "confidenceScore": 47,
-      "patterns": [
-        "DRAWDOWN_GT_5"
-      ]
-    },
-    {
-      "session": "일반",
       "code": "035420",
       "name": "NAVER",
-      "actionState": "매수 보류",
-      "confidenceScore": 42,
+      "actionState": "소액/분할 접근",
+      "confidenceScore": 59,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -138,7 +109,7 @@
       "actionState": "관망 우선",
       "confidenceScore": 51,
       "patterns": [
-        "DRAWDOWN_GT_5"
+        "DRAWDOWN_GT_2"
       ]
     },
     {
@@ -147,6 +118,36 @@
       "name": "한미반도체",
       "actionState": "매수 보류",
       "confidenceScore": 25,
+      "patterns": [
+        "DRAWDOWN_GT_5"
+      ]
+    },
+    {
+      "session": "단기",
+      "code": "089030",
+      "name": "테크윙",
+      "actionState": "매수 보류",
+      "confidenceScore": 41,
+      "patterns": [
+        "DRAWDOWN_GT_5"
+      ]
+    },
+    {
+      "session": "급등",
+      "code": "010950",
+      "name": "S-Oil",
+      "actionState": "매수 보류",
+      "confidenceScore": 35,
+      "patterns": [
+        "LOAN_BALANCE_RISK"
+      ]
+    },
+    {
+      "session": "급등",
+      "code": "141080",
+      "name": "리가켐바이오",
+      "actionState": "관망 우선",
+      "confidenceScore": 58,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
