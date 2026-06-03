@@ -143,6 +143,20 @@ def main():
             for key in ['1d', '5d', '20d']:
                 if sum(ledger_horizon_statuses[key].values()) != len(latest):
                     errors.append(('data/survival-ledger.json', key, 'horizon count does not cover latest rows'))
+            embedded_horizons = review.get('horizonReview') if isinstance(review.get('horizonReview'), dict) else {}
+            for key in ['1d', '5d', '20d']:
+                embedded_h = embedded_horizons.get(key) if isinstance(embedded_horizons.get(key), dict) else {}
+                expected_total = sum(ledger_horizon_statuses[key].values())
+                expected_status_counts = dict(ledger_horizon_statuses[key])
+                if embedded_h.get('total') != expected_total:
+                    errors.append(('survivalReview.horizonReview', key, 'total does not match ledger latest rows'))
+                if embedded_h.get('statusCounts') != expected_status_counts:
+                    errors.append(('survivalReview.horizonReview', key, 'statusCounts do not match ledger latest rows'))
+                expected_ready = sum(count for status, count in ledger_horizon_statuses[key].items() if str(status).startswith('ready'))
+                if embedded_h.get('readyCount') != expected_ready:
+                    errors.append(('survivalReview.horizonReview', key, 'readyCount does not match ledger latest rows'))
+                if embedded_h.get('pendingCount') != ledger_horizon_statuses[key].get('pending', 0):
+                    errors.append(('survivalReview.horizonReview', key, 'pendingCount does not match ledger latest rows'))
         except Exception as exc:
             errors.append(('data/survival-ledger.json', '-', f'invalid json: {exc}'))
     if not review_path.exists():
@@ -165,6 +179,8 @@ def main():
             for key in ['1d', '5d', '20d']:
                 if key not in file_horizons:
                     errors.append(('data/survival-review.json', key, 'missing horizon review summary'))
+            if file_horizons != horizons:
+                errors.append(('data/survival-review.json', 'horizonReview', 'embedded/file horizon summary mismatch'))
         except Exception as exc:
             errors.append(('data/survival-review.json', '-', f'invalid json: {exc}'))
 
