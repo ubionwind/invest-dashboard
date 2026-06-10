@@ -1,32 +1,39 @@
 {
-  "generatedAt": "2026-06-10T07:21+09:00",
-  "survivalScore": 50,
+  "generatedAt": "2026-06-11T08:31+09:00",
+  "survivalScore": 45,
   "totalRows": 39,
   "noTradeRows": 35,
   "noTradeRatioPct": 89.7,
   "actionCounts": {
-    "관망 우선": 23,
-    "매수 보류": 12,
+    "관망 우선": 22,
+    "매수 보류": 13,
     "소액/분할 접근": 4
   },
   "confidenceCounts": {
-    "Low": 14,
+    "Low": 22,
     "Uncertain": 12,
-    "Medium": 12,
-    "High": 1
+    "Medium": 5
   },
   "topFailurePatterns": [
     {
       "code": "DRAWDOWN_GT_5",
-      "count": 28
+      "count": 24
     },
     {
       "code": "MISSED_UPSIDE_WHILE_WAITING",
-      "count": 6
+      "count": 7
     },
     {
       "code": "DRAWDOWN_GT_2",
+      "count": 4
+    },
+    {
+      "code": "LOW_CONFIDENCE_NO_TRADE",
       "count": 3
+    },
+    {
+      "code": "SIGNAL_CONFLICT_RISK",
+      "count": 1
     }
   ],
   "horizonReview": {
@@ -37,8 +44,8 @@
       },
       "readyCount": 39,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -12.24,
-      "negativeReadyCount": 32
+      "avgReadyReturnSinceFirstPct": -9.29,
+      "negativeReadyCount": 29
     },
     "5d": {
       "total": 39,
@@ -47,32 +54,32 @@
       },
       "readyCount": 39,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -12.24,
-      "negativeReadyCount": 32
+      "avgReadyReturnSinceFirstPct": -9.29,
+      "negativeReadyCount": 29
     },
     "20d": {
       "total": 39,
       "statusCounts": {
-        "ready-for-review": 33,
-        "pending": 6
+        "ready-for-review": 35,
+        "pending": 4
       },
-      "readyCount": 33,
-      "pendingCount": 6,
-      "avgReadyReturnSinceFirstPct": -12.66,
-      "negativeReadyCount": 27
+      "readyCount": 35,
+      "pendingCount": 4,
+      "avgReadyReturnSinceFirstPct": -9.39,
+      "negativeReadyCount": 26
     }
   },
   "reviewReadyCount": 39,
   "baselineTrackedCount": 39,
-  "negativeSinceFirstCount": 32,
-  "highRiskCount": 26,
+  "negativeSinceFirstCount": 29,
+  "highRiskCount": 31,
   "highRiskSamples": [
     {
       "session": "일반",
       "code": "207940",
       "name": "삼성바이오로직스",
       "actionState": "관망 우선",
-      "confidenceScore": 54,
+      "confidenceScore": 51,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -82,7 +89,17 @@
       "code": "267260",
       "name": "HD현대일렉트릭",
       "actionState": "관망 우선",
-      "confidenceScore": 44,
+      "confidenceScore": 54,
+      "patterns": [
+        "DRAWDOWN_GT_5"
+      ]
+    },
+    {
+      "session": "일반",
+      "code": "373220",
+      "name": "LG에너지솔루션",
+      "actionState": "관망 우선",
+      "confidenceScore": 51,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -92,7 +109,7 @@
       "code": "005930",
       "name": "삼성전자",
       "actionState": "관망 우선",
-      "confidenceScore": 55,
+      "confidenceScore": 52,
       "patterns": [
         "MISSED_UPSIDE_WHILE_WAITING"
       ]
@@ -101,8 +118,8 @@
       "session": "일반",
       "code": "000660",
       "name": "SK하이닉스",
-      "actionState": "매수 보류",
-      "confidenceScore": 39,
+      "actionState": "관망 우선",
+      "confidenceScore": 58,
       "patterns": [
         "MISSED_UPSIDE_WHILE_WAITING"
       ]
@@ -112,7 +129,7 @@
       "code": "005380",
       "name": "현대차",
       "actionState": "매수 보류",
-      "confidenceScore": 35,
+      "confidenceScore": 32,
       "patterns": [
         "MISSED_UPSIDE_WHILE_WAITING"
       ]
@@ -122,7 +139,7 @@
       "code": "035420",
       "name": "NAVER",
       "actionState": "관망 우선",
-      "confidenceScore": 54,
+      "confidenceScore": 51,
       "patterns": [
         "MISSED_UPSIDE_WHILE_WAITING"
       ]
@@ -132,17 +149,7 @@
       "code": "007660",
       "name": "이수페타시스",
       "actionState": "관망 우선",
-      "confidenceScore": 54,
-      "patterns": [
-        "DRAWDOWN_GT_5"
-      ]
-    },
-    {
-      "session": "단기",
-      "code": "042700",
-      "name": "한미반도체",
-      "actionState": "매수 보류",
-      "confidenceScore": 44,
+      "confidenceScore": 51,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
