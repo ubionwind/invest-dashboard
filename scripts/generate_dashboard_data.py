@@ -937,6 +937,22 @@ def apply_sector_weighting_to_survival(f, survival):
                 delta += 3; rules.append('동종 대비 영업이익률 우위로 장비주 밸류 일부 정당화')
             if isinstance(frgn5, (int, float)) and frgn5 < 0:
                 delta -= 4; rules.append('최근 외국인 순매도는 HBM 장비주 확신도 제한')
+        elif code in AI_NETWORKING_CODES:
+            out['sectorProfile'] = {
+                **sector,
+                'key': 'ai_networking',
+                'label': 'AI 네트워킹/고속기판',
+                'importantFactors': ['AI 클러스터 네트워킹 투자', '고속 PCB/기판 수주', '고객 점유율', '매출 인식', '마진 개선', '상대강도'],
+                'downweightedFactors': ['범용 반도체 PER 단순 저평가', '메모리 대형주 주가 동행만 보는 해석'],
+                'plain': 'AI 네트워킹/고속기판은 GPU·HBM 다음 병목 후보입니다. 메모리 가격보다 고객사 고속기판 수요와 마진 회복을 우선합니다.',
+            }
+            sector = out['sectorProfile']
+            rules.append('AI 네트워킹/고속기판은 AI 클러스터 네트워크 병목, 고객사 수요, 마진 회복과 상대강도를 우선합니다.')
+            tm, am = target.get('operatingMarginPct'), avg.get('operatingMarginPct')
+            if isinstance(tm, (int, float)) and isinstance(am, (int, float)) and tm > am:
+                delta += 3; rules.append('동종 대비 영업이익률 우위로 고속기판 밸류 일부 정당화')
+            if isinstance(frgn5, (int, float)) and isinstance(orgn5, (int, float)) and frgn5 > 0 and orgn5 > 0:
+                delta += 2; rules.append('외국인·기관 동반 순매수로 AI 네트워킹 후보 신뢰도 보강')
         else:
             rules.append('반도체/전자는 PER 단순 저평가보다 메모리 업황·HBM·외국인 수급·업종 상대강도를 우선합니다.')
         if code == '005930' or '삼성전자' in name:
@@ -2554,24 +2570,25 @@ def intraday_candle_snapshot(code):
 AI_MEMORY_CODES = {'000660', '005930'}
 POWER_INFRA_CODES = {'010120', '267260', '298040', '001440'}
 HBM_EQUIPMENT_CODES = {'042700', '089030', '095340', '403870'}
+AI_NETWORKING_CODES = {'007660'}
 AI_MEMORY_THEME = {
     'id': 'ai-memory-premium',
     'name': 'AI Memory Premium',
     'state': 'MAINTAINED',
-    'label': '유지·과열/수급 고경계',
-    'strengthScore': 79,
+    'label': '유지·과열/변동성 고경계',
+    'strengthScore': 82,
     'riskLevel': 'HIGH',
     'updatedAt': None,
-    'plain': 'Nvidia 데이터센터 매출 급증, TSMC 월매출 성장, HBM4 공급 인증, DRAM/NAND 구조적 공급 부족은 AI 메모리 프리미엄을 계속 지지합니다. 다만 SOX/아시아 AI 반도체 랠리가 매우 붐빈 거래가 됐고 국내 삼성전자·SK하이닉스 외국인 매도가 반복돼, 프리미엄은 유지하되 신규 가중은 수급·상대강도 확인 전까지 엄격하게 제한합니다.',
+    'plain': 'Micron 실적과 DRAM/NAND 판가 급등, HBM 공급 병목, Nvidia/TSMC 중심 AI CAPEX는 AI 메모리 프리미엄을 계속 지지합니다. 다만 SOX/아시아 AI 반도체 조정, KOSPI 급락·반등, 삼성전자·SK하이닉스 중심 수급 변동성이 커져 프리미엄은 유지하되 신규 가중은 수급·상대강도 확인 전까지 엄격하게 제한합니다.',
     'watchSignals': ['Nvidia/글로벌 AI CAPEX와 AI 인프라 자금조달', 'HBM4 공급계약·점유율', 'DRAM/NAND 계약가', '기업용 SSD 수급', 'SOX/Nvidia/Micron/TSMC 상대강도', '국내 외국인·기관 수급', '펀드 비중 제한성 매도', '고PBR/고마진 지속 여부'],
     'positiveRules': ['HBM4 공급 인증이 실제 점유율·마진·ROE 개선으로 이어지면 PBR 경고를 완화합니다.', 'ROE 개선이 동반되면 고PBR을 단순 고평가로 보지 않습니다.', 'Micron/TSMC/Nvidia가 동시에 신고가 또는 상대강도 우위를 유지하면 AI/HBM 프리미엄을 한 단계 더 신뢰합니다.'],
     'riskRules': ['AI CAPEX 둔화, HBM 판가 하락, DRAM 가격 피크아웃, SOX 약세가 겹치면 프리미엄을 약화/종료 검토로 낮춥니다.', 'SOX/엔비디아/마이크론/TSMC 조정과 국내 외국인 매도가 동시에 이어지면 신규 진입 가중치를 낮춥니다.', '국내 반도체 비중이 펀드 한도나 지수 집중도 때문에 강제 조절되는 구간은 실적 논리와 별개로 변동성 리스크로 봅니다.', 'AI 인프라 투자가 부채 조달 의존을 키우거나 고객 CAPEX 재검토로 번지면 HBM 수요의 지속성을 재점검합니다.', '삼성전자는 HBM4 인증 이후에도 실제 물량·수율·고객 점유율 확인 전까지 하이닉스보다 프리미엄을 할인합니다.'],
-    'reviewNotes': ['2026-05-31 weekly review: Nvidia FY2027 Q1 매출 816억달러와 데이터센터 매출 752억달러가 AI CAPEX/HBM 수요의 구조적 근거를 재강화했습니다.', 'TSMC 2026년 4월 매출은 전년 대비 17.5% 증가했고, TrendForce는 2Q26 일반 DRAM 계약가 58~63%, NAND 70~75% 상승 전망을 제시해 메모리 가격/수급 근거가 강화됐습니다.', '2026-06-07 weekly review: TSMC는 고객 수요를 맞추기까지 시간이 더 필요하다는 공급 부족 메시지를 유지했고, SK하이닉스는 AI 메모리 부족이 2030년까지 이어질 수 있다는 증설 방향을 제시했습니다.', '2026-06-07 weekly review: 국내에서는 5월 후반 삼성전자·SK하이닉스 외국인 대량 순매도가 확인돼 실적 논리와 별개로 수급 리스크를 반영합니다. ENDED/WEAKENING이 아니라 MAINTAINED + 수급/밸류 경계로 둡니다.', '2026-06-14 weekly review: TrendForce는 1Q26 DRAM 산업 매출이 계약가 급등으로 QoQ 81% 증가했고 일반 DRAM 가격이 QoQ 93~98% 상승했다고 집계했습니다. AI 서버와 HBM 수요가 여전히 프리미엄의 핵심 근거입니다.', '2026-06-14 weekly review: Nvidia-SK하이닉스의 다년 메모리 공동개발/공급 협력, HBM 2027 가격 협상 난항, 기업용 SSD 매출 급증은 HBM에서 NAND/스토리지까지 수혜가 확산될 가능성을 높입니다.', '2026-06-14 weekly review: 국내 반도체는 글로벌 칩 조정과 외국인 순매도가 겹쳐 변동성이 커졌습니다. 프리미엄은 MAINTAINED로 유지하되 섹터 가중 확대는 상대강도 회복과 매도 완화를 확인한 뒤로 제한합니다.', '2026-06-21 weekly review: TSMC 5월 매출은 전년 대비 30.1% 증가했고 1~5월 누적도 30.0% 증가해 AI 파운드리 병목이 여전히 강합니다.', '2026-06-21 weekly review: Nvidia가 삼성전자·SK하이닉스·Micron의 HBM4 공급 자격을 열어둔 것으로 보도되며 삼성전자 할인 요인은 일부 완화됐지만, 실제 물량/수율/점유율 확인 전까지는 PARTIAL 프리미엄을 유지합니다.', '2026-06-21 weekly review: 외국인 매도는 6월에도 삼성전자·SK하이닉스에 집중됐다는 국내 보도가 이어졌습니다. Theme는 MAINTAINED지만 국내 신규 가중 확대는 외국인 매도 완화와 SOX/Micron 상대강도 확인 뒤로 둡니다.', '2026-06-21 weekly review: AI CAPEX는 여전히 강하지만 대형 인프라 투자가 부채·자본시장 조달과 결합되고 있어, 수요 둔화보다 자금조달/과밀 포지션 리스크를 우선 감시합니다.'],
+    'reviewNotes': ['2026-05-31 weekly review: Nvidia FY2027 Q1 매출 816억달러와 데이터센터 매출 752억달러가 AI CAPEX/HBM 수요의 구조적 근거를 재강화했습니다.', 'TSMC 2026년 4월 매출은 전년 대비 17.5% 증가했고, TrendForce는 2Q26 일반 DRAM 계약가 58~63%, NAND 70~75% 상승 전망을 제시해 메모리 가격/수급 근거가 강화됐습니다.', '2026-06-07 weekly review: TSMC는 고객 수요를 맞추기까지 시간이 더 필요하다는 공급 부족 메시지를 유지했고, SK하이닉스는 AI 메모리 부족이 2030년까지 이어질 수 있다는 증설 방향을 제시했습니다.', '2026-06-07 weekly review: 국내에서는 5월 후반 삼성전자·SK하이닉스 외국인 대량 순매도가 확인돼 실적 논리와 별개로 수급 리스크를 반영합니다. ENDED/WEAKENING이 아니라 MAINTAINED + 수급/밸류 경계로 둡니다.', '2026-06-14 weekly review: TrendForce는 1Q26 DRAM 산업 매출이 계약가 급등으로 QoQ 81% 증가했고 일반 DRAM 가격이 QoQ 93~98% 상승했다고 집계했습니다. AI 서버와 HBM 수요가 여전히 프리미엄의 핵심 근거입니다.', '2026-06-14 weekly review: Nvidia-SK하이닉스의 다년 메모리 공동개발/공급 협력, HBM 2027 가격 협상 난항, 기업용 SSD 매출 급증은 HBM에서 NAND/스토리지까지 수혜가 확산될 가능성을 높입니다.', '2026-06-14 weekly review: 국내 반도체는 글로벌 칩 조정과 외국인 순매도가 겹쳐 변동성이 커졌습니다. 프리미엄은 MAINTAINED로 유지하되 섹터 가중 확대는 상대강도 회복과 매도 완화를 확인한 뒤로 제한합니다.', '2026-06-21 weekly review: TSMC 5월 매출은 전년 대비 30.1% 증가했고 1~5월 누적도 30.0% 증가해 AI 파운드리 병목이 여전히 강합니다.', '2026-06-21 weekly review: Nvidia가 삼성전자·SK하이닉스·Micron의 HBM4 공급 자격을 열어둔 것으로 보도되며 삼성전자 할인 요인은 일부 완화됐지만, 실제 물량/수율/점유율 확인 전까지는 PARTIAL 프리미엄을 유지합니다.', '2026-06-21 weekly review: 외국인 매도는 6월에도 삼성전자·SK하이닉스에 집중됐다는 국내 보도가 이어졌습니다. Theme는 MAINTAINED지만 국내 신규 가중 확대는 외국인 매도 완화와 SOX/Micron 상대강도 확인 뒤로 둡니다.', '2026-06-21 weekly review: AI CAPEX는 여전히 강하지만 대형 인프라 투자가 부채·자본시장 조달과 결합되고 있어, 수요 둔화보다 자금조달/과밀 포지션 리스크를 우선 감시합니다.', '2026-06-28 weekly review: Micron의 DRAM/NAND 매출 급증과 가격 상승은 메모리 사이클의 실적 근거를 강화했습니다. 동시에 SK하이닉스·삼성전자 시총 역전/재역전과 아시아 반도체 급락·반등은 과밀 포지션 리스크가 현실화됐다는 신호라, MAINTAINED를 유지하되 WEAKENING보다 OVERHEATED 경계에 가깝게 봅니다.', '2026-06-28 weekly review: 새 주도 후보는 전력기기/AI 전력 인프라가 1순위입니다. HBM 장비는 변동성과 밸류 부담 때문에 실제 수주/마진 확인 전까지 추격 가중을 제한하고, AI 네트워킹·고속기판은 이수페타시스 수급/실적 개선 뉴스가 있어 WATCH에서 CANDIDATE로 올립니다.'],
     'nextLeadershipCandidates': [
         {'id': 'power-infra-ai-grid', 'name': '전력기기/AI 전력 인프라', 'state': 'CANDIDATE', 'score': 86, 'plain': 'AI 데이터센터 증설이 전력망·변압기·전력기기 발주로 이어지는 구간이라 반도체 과열 시 가장 먼저 비교할 대체 주도 업종 후보입니다. 하이퍼스케일러 CAPEX와 전력 병목이 같이 길어질수록 반도체 밖 주도주로 승격될 수 있습니다.', 'watchSignals': ['HD현대일렉트릭/LS ELECTRIC/효성중공업 상대강도', '미국 전력망·데이터센터 발주', '초고압 변압기 가격', '수주잔고와 마진', '고PBR 정당화 여부']},
         {'id': 'advanced-packaging-hbm-equipment', 'name': 'HBM 패키징/장비·부품', 'state': 'CANDIDATE', 'score': 81, 'plain': 'HBM4/5와 고성능 패키징 병목이 지속되면 메모리 대형주 외 후공정·테스트·소재 장비로 수혜가 확산될 수 있습니다. 단, 대형 메모리보다 변동성이 커 고객사 CAPEX와 실제 수주 확인이 필요합니다.', 'watchSignals': ['한미반도체/ISC/HPSP/테크윙 상대강도', 'HBM4/5 투자와 패키징 병목', '고객사 CAPEX와 수주', '장비주 밸류 부담']},
         {'id': 'ai-storage-nand', 'name': 'AI 스토리지/NAND', 'state': 'CANDIDATE', 'score': 78, 'plain': 'AI 서버 증설, 장기 클라우드 계약, 기업용 SSD 공급 부족이 NAND 가격 회복으로 이어지는 후보입니다. 메모리 공급 부족이 소비재 가격까지 밀어 올리는 국면이라 보조 주도 업종에서 실적 확인 후보로 상향합니다.', 'watchSignals': ['기업용 SSD/NAND 계약가', '삼성전자·SK하이닉스 NAND 마진', '데이터센터 스토리지 CAPEX', '범용 메모리 재고']},
-        {'id': 'ai-networking-optics', 'name': 'AI 네트워킹/광부품', 'state': 'WATCH', 'score': 72, 'plain': 'AI 클러스터가 커질수록 GPU·HBM뿐 아니라 스위치, 광모듈, 고속 PCB/기판 병목이 부각됩니다. 국내에서는 직접 수혜 종목 폭이 제한적이므로 상대강도와 실적 연결을 먼저 확인합니다.', 'watchSignals': ['AI 이더넷/인피니밴드 투자', '광모듈·스위치·고속 PCB 수주', '이수페타시스 등 네트워크 부품 상대강도', '매출 인식 시점과 마진']},
+        {'id': 'ai-networking-optics', 'name': 'AI 네트워킹/고속기판', 'state': 'CANDIDATE', 'score': 76, 'plain': 'AI 클러스터가 커질수록 GPU·HBM뿐 아니라 스위치, 광모듈, 고속 PCB/기판 병목이 부각됩니다. 국내에서는 이수페타시스 같은 고속기판 수혜를 별도 후보로 분리하되, 고객 점유율·마진·상대강도 확인 전까지는 반도체 대형주보다 더 전술적으로 봅니다.', 'watchSignals': ['AI 이더넷/인피니밴드 투자', '광모듈·스위치·고속 PCB 수주', '이수페타시스 등 네트워크 부품 상대강도', '매출 인식 시점과 마진']},
         {'id': 'shipbuilding-defense', 'name': '조선/방산', 'state': 'WATCH', 'score': 68, 'plain': '수주잔고·환율·방산 수출 모멘텀이 있어 시장 확산 국면의 후보지만 AI/HBM 직접성은 전력 인프라보다 낮습니다.', 'watchSignals': ['HD현대중공업/한화에어로스페이스 상대강도', '신규 수주/인도 마진', '외국인 수급']},
     ],
     'codePolicy': {
@@ -3286,5 +3303,5 @@ summary['survivalHighRiskCount'] = survival_review.get('highRiskCount')
 theme_regime = theme_regime_snapshot(point['ts'])
 data={'generatedAt': point['ts'], 'summary':summary, 'marketRegime': market_regime, 'themeRegime': theme_regime, 'survivalReview': survival_review, 'benchmark':benchmark, 'kodexBenchmark':kodex_benchmark, 'etfHoldings': etf_holdings, 'etfThemeFollow': etf_theme_follow, 'sessions':sessions, 'history':history, 'notice':'Dashboard reset; previous metrics are not inherited.'}
 split_stock_detail_files(data)
-OUT.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print(OUT)
