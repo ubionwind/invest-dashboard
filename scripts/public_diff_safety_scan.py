@@ -31,7 +31,9 @@ BLOCK_PATTERNS = [
     r'refresh[_-]?token\s*[:=]',
     r'"?CANO"?\s*:',
     r'"?ACNT_PRDT_CD"?\s*:',
-    r'계좌번호',
+    # Public news headlines can mention 계좌번호 as prose. Block labeled values,
+    # not the bare word.
+    r'계좌번호\s*[:=]\s*["\']?\d{4,}',
     r'uapi/domestic-stock/v1/trading/order',
     r'order-cash',
     r'VTTC0012U|VTTC0011U|TTTC0012U|TTTC0011U',
