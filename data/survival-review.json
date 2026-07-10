@@ -1,20 +1,18 @@
 {
-  "generatedAt": "2026-07-10T08:16+09:00",
+  "generatedAt": "2026-08-03T08:31+09:00",
   "survivalScore": 45,
-  "totalRows": 39,
-  "noTradeRows": 34,
-  "noTradeRatioPct": 87.2,
+  "totalRows": 38,
+  "noTradeRows": 32,
+  "noTradeRatioPct": 84.2,
   "actionCounts": {
-    "매수 보류": 18,
     "관망 우선": 16,
-    "적극 검토": 1,
-    "소액/분할 접근": 4
+    "매수 보류": 16,
+    "소액/분할 접근": 6
   },
   "confidenceCounts": {
-    "Uncertain": 11,
-    "Low": 21,
-    "Medium": 6,
-    "High": 1
+    "Low": 19,
+    "Uncertain": 12,
+    "Medium": 7
   },
   "topFailurePatterns": [
     {
@@ -27,52 +25,56 @@
     },
     {
       "code": "DRAWDOWN_GT_2",
-      "count": 3
+      "count": 1
+    },
+    {
+      "code": "LOAN_BALANCE_RISK",
+      "count": 1
     }
   ],
   "horizonReview": {
     "1d": {
-      "total": 39,
+      "total": 38,
       "statusCounts": {
-        "ready-for-review": 39
+        "ready-for-review": 38
       },
-      "readyCount": 39,
+      "readyCount": 38,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -20.87,
-      "negativeReadyCount": 34
+      "avgReadyReturnSinceFirstPct": -19.97,
+      "negativeReadyCount": 33
     },
     "5d": {
-      "total": 39,
+      "total": 38,
       "statusCounts": {
-        "ready-for-review": 39
+        "ready-for-review": 38
       },
-      "readyCount": 39,
+      "readyCount": 38,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -20.87,
-      "negativeReadyCount": 34
+      "avgReadyReturnSinceFirstPct": -19.97,
+      "negativeReadyCount": 33
     },
     "20d": {
-      "total": 39,
+      "total": 38,
       "statusCounts": {
-        "ready-for-review": 39
+        "ready-for-review": 38
       },
-      "readyCount": 39,
+      "readyCount": 38,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -20.87,
-      "negativeReadyCount": 34
+      "avgReadyReturnSinceFirstPct": -19.97,
+      "negativeReadyCount": 33
     }
   },
-  "reviewReadyCount": 39,
-  "baselineTrackedCount": 39,
-  "negativeSinceFirstCount": 34,
-  "highRiskCount": 32,
+  "reviewReadyCount": 38,
+  "baselineTrackedCount": 38,
+  "negativeSinceFirstCount": 33,
+  "highRiskCount": 31,
   "highRiskSamples": [
     {
       "session": "일반",
       "code": "207940",
       "name": "삼성바이오로직스",
-      "actionState": "매수 보류",
-      "confidenceScore": 35,
+      "actionState": "관망 우선",
+      "confidenceScore": 45,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -111,8 +113,8 @@
       "session": "일반",
       "code": "000660",
       "name": "SK하이닉스",
-      "actionState": "관망 우선",
-      "confidenceScore": 58,
+      "actionState": "매수 보류",
+      "confidenceScore": 36,
       "patterns": [
         "MISSED_UPSIDE_WHILE_WAITING"
       ]
@@ -122,7 +124,7 @@
       "code": "035420",
       "name": "NAVER",
       "actionState": "관망 우선",
-      "confidenceScore": 57,
+      "confidenceScore": 51,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -141,8 +143,8 @@
       "session": "단기",
       "code": "042700",
       "name": "한미반도체",
-      "actionState": "매수 보류",
-      "confidenceScore": 47,
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
