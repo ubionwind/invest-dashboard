@@ -60,6 +60,91 @@ function renderSummary() {
   ].join('');
 }
 
+function benchmarkCard(label, start, current, returnPct, note) {
+  const startValue = start?.value == null ? '-' : fmt.format(start.value);
+  const currentValue = current?.value == null ? '-' : fmt.format(current.value);
+  return `<article class="benchmark-card">
+    <span>${escapeHtml(label)}</span>
+    <strong class="${cls(returnPct)}">${pct(returnPct)}</strong>
+    <small>시작 ${escapeHtml(startValue)} / 현재 ${escapeHtml(currentValue)}</small>
+    <small>${escapeHtml(note || '')}</small>
+  </article>`;
+}
+
+function renderBenchmarks() {
+  const start = DATA.benchmarkStart || {};
+  const current = DATA.benchmarkCurrent || {};
+  const latest = (DATA.performanceHistory || []).at(-1) || {};
+  document.getElementById('benchmarkCards').innerHTML = [
+    benchmarkCard('Survival V1', start.survival, { value: latest.survivalEvalAmount }, latest.survivalReturnPct, start.startedAt || ''),
+    benchmarkCard('KOSPI', start.kospi, current.kospi, latest.kospiReturnPct, `${current.kospi?.date || ''} ${current.kospi?.time || ''}`),
+    benchmarkCard('KODEX 200TR', start.kodex200tr, current.kodex200tr, latest.kodex200trReturnPct, `${current.kodex200tr?.date || ''} ${current.kodex200tr?.time || ''}`),
+  ].join('');
+}
+
+function seriesPath(points, key, x, y) {
+  return points.map((p, index) => {
+    const value = Number(p[key] || 0);
+    return `${index ? 'L' : 'M'}${x(index).toFixed(1)},${y(value).toFixed(1)}`;
+  }).join(' ');
+}
+
+function seriesDots(points, key, x, y, klass) {
+  return points.map((p, index) => {
+    const value = Number(p[key] || 0);
+    return `<circle class="chart-dot ${klass}" cx="${x(index).toFixed(1)}" cy="${y(value).toFixed(1)}" r="4"><title>${escapeHtml(p.ts || '')} ${pct(value)}</title></circle>`;
+  }).join('');
+}
+
+function renderChart() {
+  const points = DATA.performanceHistory || [];
+  const box = document.getElementById('returnChart');
+  if (!points.length) {
+    box.innerHTML = '<p class="muted">그래프 데이터 대기</p>';
+    return;
+  }
+  const values = points.flatMap(p => [
+    Number(p.survivalReturnPct || 0),
+    Number(p.kospiReturnPct || 0),
+    Number(p.kodex200trReturnPct || 0),
+  ]);
+  const min = Math.min(-1, ...values);
+  const max = Math.max(1, ...values);
+  const pad = Math.max(1, (max - min) * 0.18);
+  const yMin = min - pad;
+  const yMax = max + pad;
+  const w = 720;
+  const h = 240;
+  const left = 50;
+  const right = 20;
+  const top = 20;
+  const bottom = 36;
+  const innerW = w - left - right;
+  const innerH = h - top - bottom;
+  const x = index => points.length === 1 ? left + innerW / 2 : left + (innerW * index / (points.length - 1));
+  const y = value => top + ((yMax - value) / (yMax - yMin)) * innerH;
+  const ticks = [yMin, 0, yMax];
+  box.innerHTML = `
+    <div class="chart-legend">
+      <span class="survival"><i></i>Survival V1</span>
+      <span class="kospi"><i></i>KOSPI</span>
+      <span class="kodex"><i></i>KODEX 200TR</span>
+    </div>
+    <svg viewBox="0 0 ${w} ${h}" role="img" aria-label="누적 수익률 비교 그래프">
+      ${ticks.map(t => `<line class="chart-grid" x1="${left}" x2="${w - right}" y1="${y(t).toFixed(1)}" y2="${y(t).toFixed(1)}"></line>
+        <text class="chart-label" x="10" y="${(y(t) + 4).toFixed(1)}">${pct(t)}</text>`).join('')}
+      <line class="chart-axis" x1="${left}" x2="${w - right}" y1="${y(0).toFixed(1)}" y2="${y(0).toFixed(1)}"></line>
+      <path class="chart-line survival" d="${seriesPath(points, 'survivalReturnPct', x, y)}"></path>
+      <path class="chart-line kospi" d="${seriesPath(points, 'kospiReturnPct', x, y)}"></path>
+      <path class="chart-line kodex" d="${seriesPath(points, 'kodex200trReturnPct', x, y)}"></path>
+      ${seriesDots(points, 'survivalReturnPct', x, y, 'survival')}
+      ${seriesDots(points, 'kospiReturnPct', x, y, 'kospi')}
+      ${seriesDots(points, 'kodex200trReturnPct', x, y, 'kodex')}
+      <text class="chart-label" x="${left}" y="${h - 10}">시작</text>
+      <text class="chart-label" x="${w - right - 36}" y="${h - 10}">현재</text>
+    </svg>`;
+}
+
 function renderPolicy() {
   document.getElementById('policyList').innerHTML = (DATA.policy || []).map(rule => `
     <div class="rule">
@@ -172,6 +257,8 @@ function render() {
   document.getElementById('updated').textContent = `생성 ${DATA.generatedAt || '-'} · 원본 ${DATA.sourceDashboardGeneratedAt || '-'}`;
   document.getElementById('orderMode').textContent = DATA.status || 'VIRTUAL_ONLY';
   renderSummary();
+  renderBenchmarks();
+  renderChart();
   renderPolicy();
   renderPatterns();
   renderFilterTabs();

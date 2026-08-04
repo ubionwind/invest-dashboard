@@ -2,6 +2,8 @@
 import datetime
 import json
 import pathlib
+import socket
+import urllib.request
 
 
 ROOT = pathlib.Path('/home/ubion/.openclaw/workspace')
@@ -10,6 +12,7 @@ RUNTIME = ROOT / 'shared/invest_api_common/runtime'
 OUT = DASHBOARD / 'data/survival-v1.json'
 SURVIVAL_LEDGER = RUNTIME / 'virtual_trades/jaesang.survival.v1.mock.json'
 KST = datetime.timezone(datetime.timedelta(hours=9))
+socket.setdefaulttimeout(8)
 
 TARGET_SESSIONS = {
     '재상-급등-모의투자',
@@ -48,6 +51,29 @@ def num(value, default=0.0):
 def pct(value):
     value = num(value, None)
     return value if value is not None else None
+
+
+def fetch_naver_stock_basic(code, label):
+    try:
+        req = urllib.request.Request(
+            f'https://m.stock.naver.com/api/stock/{code}/basic',
+            headers={'User-Agent': 'Mozilla/5.0'},
+        )
+        data = json.loads(urllib.request.urlopen(req, timeout=8).read().decode('utf-8', 'replace'))
+        price = num(data.get('closePrice') or data.get('now') or data.get('tradePrice'), None)
+        if not price:
+            return None
+        return {
+            'label': label,
+            'code': code,
+            'value': round(price, 2),
+            'dailyReturnPct': pct(data.get('fluctuationsRatio') or data.get('changeRate')),
+            'date': data.get('localTradedAt', '')[:10] or None,
+            'time': data.get('localTradedAt', '')[11:19] or None,
+            'source': 'naver-stock-basic',
+        }
+    except Exception:
+        return None
 
 
 def action_for_candidate(row):
@@ -245,14 +271,82 @@ def build_new_version():
     }
 
 
+def benchmark_snapshot(dashboard):
+    kospi = dict(dashboard.get('benchmark') or {})
+    kospi = {
+        'label': 'KOSPI',
+        'value': kospi.get('value'),
+        'dailyReturnPct': kospi.get('dailyReturnPct'),
+        'date': kospi.get('date'),
+        'time': kospi.get('time'),
+        'source': kospi.get('source') or 'dashboard-benchmark',
+    }
+    kodex_tr = fetch_naver_stock_basic('278530', 'KODEX 200TR')
+    if not kodex_tr:
+        fallback = dict(dashboard.get('kodexBenchmark') or {})
+        kodex_tr = {
+            'label': fallback.get('label') or 'KODEX 200',
+            'code': fallback.get('code') or '069500',
+            'value': fallback.get('value'),
+            'dailyReturnPct': fallback.get('dailyReturnPct'),
+            'date': fallback.get('date'),
+            'time': fallback.get('time'),
+            'source': f"{fallback.get('source') or 'dashboard-kodex'}-fallback",
+        }
+    return {'kospi': kospi, 'kodex200tr': kodex_tr}
+
+
+def benchmark_return(current, start):
+    cur = num((current or {}).get('value'), None)
+    base = num((start or {}).get('value'), None)
+    if not cur or not base:
+        return None
+    return round((cur - base) / base * 100, 2)
+
+
+def build_benchmark_block(dashboard, new_version, generated_at):
+    current = benchmark_snapshot(dashboard)
+    previous = load_json(OUT, {})
+    start = previous.get('benchmarkStart') or {}
+    if not start.get('startedAt'):
+        start = {
+            'startedAt': (new_version.get('checkedAt') or generated_at),
+            'survival': {'label': 'Survival V1', 'value': new_version.get('capital'), 'returnPct': 0},
+            'kospi': current.get('kospi'),
+            'kodex200tr': current.get('kodex200tr'),
+        }
+
+    point = {
+        'ts': generated_at,
+        'survivalReturnPct': new_version.get('returnPct') or 0,
+        'survivalEvalAmount': (new_version.get('capital') or 0) + (new_version.get('pnl') or 0),
+        'kospiReturnPct': benchmark_return(current.get('kospi'), start.get('kospi')),
+        'kodex200trReturnPct': benchmark_return(current.get('kodex200tr'), start.get('kodex200tr')),
+        'kospiValue': (current.get('kospi') or {}).get('value'),
+        'kodex200trValue': (current.get('kodex200tr') or {}).get('value'),
+    }
+    history = previous.get('performanceHistory') or []
+    history = [p for p in history if p.get('ts') != point['ts']]
+    history.append(point)
+    history = history[-120:]
+    return {
+        'benchmarkStart': start,
+        'benchmarkCurrent': current,
+        'performanceHistory': history,
+    }
+
+
 def main():
     dashboard = load_json(DASHBOARD / 'data/dashboard-data.json', {})
+    generated_at = now_kst()
     sessions, open_positions, worst_sells, chase_stops = analyze_ledgers()
     candidates = load_candidates(dashboard)
     summary = dashboard.get('summary') or {}
+    new_version = build_new_version()
+    benchmark_block = build_benchmark_block(dashboard, new_version, generated_at)
     out = {
         'schema': 'invest-survival-v1.dashboard.v1',
-        'generatedAt': now_kst(),
+        'generatedAt': generated_at,
         'sourceDashboardGeneratedAt': dashboard.get('generatedAt'),
         'status': 'VIRTUAL_ONLY',
         'mission': '실패한 레거시 투자 데이터를 금지 규칙으로 재사용해 손실 반복 루프를 끊는 생존형 신규 버전',
@@ -263,7 +357,8 @@ def main():
             'totalPnl': summary.get('totalPnl'),
             'totalReturnPct': summary.get('totalReturnPct'),
         },
-        'newVersion': build_new_version(),
+        'newVersion': new_version,
+        **benchmark_block,
         'failurePatterns': build_failure_patterns(sessions, worst_sells, chase_stops),
         'policy': build_policy(),
         'legacySessions': sessions,

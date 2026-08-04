@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-08-04T14:18+09:00",
+  "generatedAt": "2026-08-06T09:00+09:00",
   "survivalScore": 45,
   "totalRows": 40,
-  "noTradeRows": 40,
-  "noTradeRatioPct": 100.0,
+  "noTradeRows": 33,
+  "noTradeRatioPct": 82.5,
   "actionCounts": {
-    "관망 우선": 28,
-    "매수 보류": 12
+    "매수 보류": 10,
+    "소액/분할 접근": 5,
+    "관망 우선": 23,
+    "적극 검토": 2
   },
   "confidenceCounts": {
-    "Uncertain": 29,
-    "Low": 11
+    "Uncertain": 9,
+    "Medium": 7,
+    "Low": 22,
+    "High": 2
   },
   "topFailurePatterns": [
     {
       "code": "DRAWDOWN_GT_5",
-      "count": 31
+      "count": 30
     },
     {
       "code": "MISSED_UPSIDE_WHILE_WAITING",
       "count": 5
     },
     {
-      "code": "DRAWDOWN_GT_2",
-      "count": 2
-    },
-    {
-      "code": "SIGNAL_CONFLICT_RISK",
-      "count": 2
-    },
-    {
       "code": "LOAN_BALANCE_RISK",
+      "count": 1
+    },
+    {
+      "code": "DRAWDOWN_GT_2",
       "count": 1
     }
   ],
@@ -42,7 +42,7 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -25.02,
+      "avgReadyReturnSinceFirstPct": -22.08,
       "negativeReadyCount": 33
     },
     "5d": {
@@ -52,7 +52,7 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -25.02,
+      "avgReadyReturnSinceFirstPct": -22.08,
       "negativeReadyCount": 33
     },
     "20d": {
@@ -62,31 +62,21 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -25.02,
+      "avgReadyReturnSinceFirstPct": -22.08,
       "negativeReadyCount": 33
     }
   },
   "reviewReadyCount": 40,
   "baselineTrackedCount": 40,
   "negativeSinceFirstCount": 33,
-  "highRiskCount": 40,
+  "highRiskCount": 31,
   "highRiskSamples": [
     {
       "session": "일반",
       "code": "207940",
       "name": "삼성바이오로직스",
-      "actionState": "관망 우선",
-      "confidenceScore": 31,
-      "patterns": [
-        "DRAWDOWN_GT_5"
-      ]
-    },
-    {
-      "session": "일반",
-      "code": "267260",
-      "name": "HD현대일렉트릭",
-      "actionState": "관망 우선",
-      "confidenceScore": 52,
+      "actionState": "매수 보류",
+      "confidenceScore": 25,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -96,7 +86,7 @@
       "code": "373220",
       "name": "LG에너지솔루션",
       "actionState": "관망 우선",
-      "confidenceScore": 37,
+      "confidenceScore": 57,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -106,19 +96,9 @@
       "code": "005930",
       "name": "삼성전자",
       "actionState": "관망 우선",
-      "confidenceScore": 49,
+      "confidenceScore": 52,
       "patterns": [
         "MISSED_UPSIDE_WHILE_WAITING"
-      ]
-    },
-    {
-      "session": "일반",
-      "code": "000660",
-      "name": "SK하이닉스",
-      "actionState": "관망 우선",
-      "confidenceScore": 55,
-      "patterns": [
-        "DRAWDOWN_GT_5"
       ]
     },
     {
@@ -126,29 +106,49 @@
       "code": "005380",
       "name": "현대차",
       "actionState": "관망 우선",
-      "confidenceScore": 43,
+      "confidenceScore": 57,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
     },
     {
-      "session": "일반",
-      "code": "000270",
-      "name": "기아",
+      "session": "단기",
+      "code": "007660",
+      "name": "이수페타시스",
       "actionState": "관망 우선",
-      "confidenceScore": 55,
+      "confidenceScore": 57,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
     },
     {
-      "session": "일반",
-      "code": "035420",
-      "name": "NAVER",
+      "session": "단기",
+      "code": "089030",
+      "name": "테크윙",
       "actionState": "관망 우선",
-      "confidenceScore": 44,
+      "confidenceScore": 58,
       "patterns": [
-        "DRAWDOWN_GT_2"
+        "DRAWDOWN_GT_5"
+      ]
+    },
+    {
+      "session": "단기",
+      "code": "247540",
+      "name": "에코프로비엠",
+      "actionState": "관망 우선",
+      "confidenceScore": 51,
+      "patterns": [
+        "DRAWDOWN_GT_5"
+      ]
+    },
+    {
+      "session": "급등",
+      "code": "095340",
+      "name": "ISC",
+      "actionState": "매수 보류",
+      "confidenceScore": 41,
+      "patterns": [
+        "DRAWDOWN_GT_5"
       ]
     }
   ],
