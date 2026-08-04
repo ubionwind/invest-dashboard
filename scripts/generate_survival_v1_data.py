@@ -8,6 +8,7 @@ ROOT = pathlib.Path('/home/ubion/.openclaw/workspace')
 DASHBOARD = ROOT / 'shared/invest-dashboard'
 RUNTIME = ROOT / 'shared/invest_api_common/runtime'
 OUT = DASHBOARD / 'data/survival-v1.json'
+SURVIVAL_LEDGER = RUNTIME / 'virtual_trades/jaesang.survival.v1.mock.json'
 KST = datetime.timezone(datetime.timedelta(hours=9))
 
 TARGET_SESSIONS = {
@@ -138,7 +139,7 @@ def analyze_ledgers():
     for path in ledger_files():
         data = load_json(path, {})
         label = data.get('label') or data.get('sessionId') or path.stem
-        if TARGET_SESSIONS and label not in TARGET_SESSIONS and not str(label).startswith('재상-'):
+        if TARGET_SESSIONS and label not in TARGET_SESSIONS:
             continue
         portfolio = data.get('portfolio') or {}
         trades = data.get('trades') or []
@@ -227,6 +228,23 @@ def build_policy():
     ]
 
 
+def build_new_version():
+    ledger = load_json(SURVIVAL_LEDGER, {})
+    portfolio = ledger.get('portfolio') or {}
+    return {
+        'name': ledger.get('label') or 'Survival V1',
+        'sessionId': ledger.get('sessionId') or 'jaesang.survival.v1.mock',
+        'capital': round(num(portfolio.get('capital') or ledger.get('capital') or 10000000)),
+        'cash': round(num(portfolio.get('cash') or ledger.get('cash') or 10000000)),
+        'positionCount': round(num(portfolio.get('positionCount'))),
+        'returnPct': pct(portfolio.get('returnPct')) or 0,
+        'pnl': round(num(portfolio.get('pnl'))),
+        'checkedAt': ledger.get('checkedAt'),
+        'orderMode': 'virtual-only / no KIS order API',
+        'promotionGate': '최소 5~10거래일 검증, 자동손절 감소, 평균손실 축소, 시장대비 초과수익 확인 전 승격 금지',
+    }
+
+
 def main():
     dashboard = load_json(DASHBOARD / 'data/dashboard-data.json', {})
     sessions, open_positions, worst_sells, chase_stops = analyze_ledgers()
@@ -245,15 +263,7 @@ def main():
             'totalPnl': summary.get('totalPnl'),
             'totalReturnPct': summary.get('totalReturnPct'),
         },
-        'newVersion': {
-            'name': 'Survival V1',
-            'capital': 10000000,
-            'cash': 10000000,
-            'positionCount': 0,
-            'returnPct': 0,
-            'orderMode': 'virtual-only / no KIS order API',
-            'promotionGate': '최소 5~10거래일 검증, 자동손절 감소, 평균손실 축소, 시장대비 초과수익 확인 전 승격 금지',
-        },
+        'newVersion': build_new_version(),
         'failurePatterns': build_failure_patterns(sessions, worst_sells, chase_stops),
         'policy': build_policy(),
         'legacySessions': sessions,
