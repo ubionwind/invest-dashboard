@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Survival V1 Dashboard</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="stylesheet" href="survival-v1.css?v=20260804" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Survival V1</p>
+      <h1>생존형 신규 투자 대시보드</h1>
+      <p id="updated" class="muted">loading...</p>
+    </div>
+    <nav class="top-actions" aria-label="대시보드 이동">
+      <a href="index.html">Legacy</a>
+      <span id="orderMode">Virtual only</span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="summary-grid" id="summaryGrid"></section>
+
+    <section class="grid two">
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Approach</p>
+            <h2>신규 버전 원칙</h2>
+          </div>
+          <span class="pill">주문 잠금</span>
+        </div>
+        <div id="policyList" class="rule-list"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Failure Dataset</p>
+            <h2>기존 실패에서 뽑은 금지 신호</h2>
+          </div>
+          <span class="pill warn">레퍼런스</span>
+        </div>
+        <div id="failurePatterns" class="pattern-grid"></div>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Gate</p>
+          <h2>신규 후보 허가 매트릭스</h2>
+        </div>
+        <div class="segmented" id="filterTabs"></div>
+      </div>
+      <div id="watchlist" class="watch-grid"></div>
+    </section>
+
+    <section class="grid two">
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Legacy Sessions</p>
+            <h2>레거시 손익 분해</h2>
+          </div>
+          <span class="pill danger">실패 보존</span>
+        </div>
+        <div id="legacySessions" class="table-wrap"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Reference</p>
+            <h2>보유/손절 참고 데이터</h2>
+          </div>
+          <span class="pill">진입 승계 없음</span>
+        </div>
+        <div class="mini-tabs" id="referenceTabs"></div>
+        <div id="referenceBody"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="survival-v1.js?v=20260804"></script>
+</body>
+</html>
