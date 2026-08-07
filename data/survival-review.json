@@ -1,36 +1,32 @@
 {
-  "generatedAt": "2026-08-06T09:00+09:00",
+  "generatedAt": "2026-08-10T08:31+09:00",
   "survivalScore": 45,
   "totalRows": 40,
   "noTradeRows": 33,
   "noTradeRatioPct": 82.5,
   "actionCounts": {
-    "매수 보류": 10,
-    "소액/분할 접근": 5,
-    "관망 우선": 23,
-    "적극 검토": 2
+    "매수 보류": 11,
+    "소액/분할 접근": 6,
+    "관망 우선": 22,
+    "적극 검토": 1
   },
   "confidenceCounts": {
-    "Uncertain": 9,
-    "Medium": 7,
-    "Low": 22,
-    "High": 2
+    "Uncertain": 13,
+    "High": 3,
+    "Medium": 6,
+    "Low": 18
   },
   "topFailurePatterns": [
     {
       "code": "DRAWDOWN_GT_5",
-      "count": 30
+      "count": 31
     },
     {
       "code": "MISSED_UPSIDE_WHILE_WAITING",
-      "count": 5
+      "count": 6
     },
     {
       "code": "LOAN_BALANCE_RISK",
-      "count": 1
-    },
-    {
-      "code": "DRAWDOWN_GT_2",
       "count": 1
     }
   ],
@@ -42,8 +38,8 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -22.08,
-      "negativeReadyCount": 33
+      "avgReadyReturnSinceFirstPct": -20.18,
+      "negativeReadyCount": 32
     },
     "5d": {
       "total": 40,
@@ -52,8 +48,8 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -22.08,
-      "negativeReadyCount": 33
+      "avgReadyReturnSinceFirstPct": -20.18,
+      "negativeReadyCount": 32
     },
     "20d": {
       "total": 40,
@@ -62,13 +58,13 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -22.08,
-      "negativeReadyCount": 33
+      "avgReadyReturnSinceFirstPct": -20.18,
+      "negativeReadyCount": 32
     }
   },
   "reviewReadyCount": 40,
   "baselineTrackedCount": 40,
-  "negativeSinceFirstCount": 33,
+  "negativeSinceFirstCount": 32,
   "highRiskCount": 31,
   "highRiskSamples": [
     {
@@ -83,22 +79,22 @@
     },
     {
       "session": "일반",
-      "code": "373220",
-      "name": "LG에너지솔루션",
+      "code": "005930",
+      "name": "삼성전자",
       "actionState": "관망 우선",
-      "confidenceScore": 57,
+      "confidenceScore": 42,
       "patterns": [
-        "DRAWDOWN_GT_5"
+        "MISSED_UPSIDE_WHILE_WAITING"
       ]
     },
     {
       "session": "일반",
-      "code": "005930",
-      "name": "삼성전자",
+      "code": "000660",
+      "name": "SK하이닉스",
       "actionState": "관망 우선",
-      "confidenceScore": 52,
+      "confidenceScore": 42,
       "patterns": [
-        "MISSED_UPSIDE_WHILE_WAITING"
+        "DRAWDOWN_GT_5"
       ]
     },
     {
@@ -123,10 +119,20 @@
     },
     {
       "session": "단기",
+      "code": "042700",
+      "name": "한미반도체",
+      "actionState": "매수 보류",
+      "confidenceScore": 37,
+      "patterns": [
+        "DRAWDOWN_GT_5"
+      ]
+    },
+    {
+      "session": "단기",
       "code": "089030",
       "name": "테크윙",
-      "actionState": "관망 우선",
-      "confidenceScore": 58,
+      "actionState": "매수 보류",
+      "confidenceScore": 41,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -135,18 +141,8 @@
       "session": "단기",
       "code": "247540",
       "name": "에코프로비엠",
-      "actionState": "관망 우선",
-      "confidenceScore": 51,
-      "patterns": [
-        "DRAWDOWN_GT_5"
-      ]
-    },
-    {
-      "session": "급등",
-      "code": "095340",
-      "name": "ISC",
       "actionState": "매수 보류",
-      "confidenceScore": 41,
+      "confidenceScore": 35,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
