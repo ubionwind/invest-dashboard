@@ -1,17 +1,6 @@
 {
   "000660": [
     {
-      "ts": "2026-08-03T13:28+09:00",
-      "futureCode": "A50608",
-      "price": 1599000,
-      "changePct": -5.38,
-      "volume": 436804,
-      "openInterest": 1294344,
-      "spotSpreadPct": 0.06,
-      "relativeStrengthPct": 1.6,
-      "signal": "선물강세"
-    },
-    {
       "ts": "2026-08-03T13:33+09:00",
       "futureCode": "A50608",
       "price": 1591000,
@@ -2639,20 +2628,20 @@
       "spotSpreadPct": 0.2,
       "relativeStrengthPct": 0.44,
       "signal": "선물중립"
+    },
+    {
+      "ts": "2026-08-16T20:31+09:00",
+      "futureCode": "A50609",
+      "price": 1651000,
+      "changePct": 2.99,
+      "volume": 605516,
+      "openInterest": null,
+      "spotSpreadPct": 0.36,
+      "relativeStrengthPct": -0.27,
+      "signal": "선물중립"
     }
   ],
   "003670": [
-    {
-      "ts": "2026-08-03T14:40+09:00",
-      "futureCode": "AE8608",
-      "price": 136700,
-      "changePct": -0.65,
-      "volume": 26704,
-      "openInterest": 100290,
-      "spotSpreadPct": 0.07,
-      "relativeStrengthPct": 0.15,
-      "signal": "선물중립"
-    },
     {
       "ts": "2026-08-03T14:51+09:00",
       "futureCode": "AE8608",
@@ -5280,6 +5269,17 @@
       "openInterest": null,
       "spotSpreadPct": -0.06,
       "relativeStrengthPct": -0.46,
+      "signal": "선물중립"
+    },
+    {
+      "ts": "2026-08-16T20:31+09:00",
+      "futureCode": "AE8609",
+      "price": 170800,
+      "changePct": 2.83,
+      "volume": 22228,
+      "openInterest": 100515,
+      "spotSpreadPct": 0.18,
+      "relativeStrengthPct": 0.06,
       "signal": "선물중립"
     }
   ],
@@ -7927,17 +7927,6 @@
   ],
   "012450": [
     {
-      "ts": "2026-08-03T13:10+09:00",
-      "futureCode": "ABH608",
-      "price": 918000,
-      "changePct": 0.22,
-      "volume": 6733,
-      "openInterest": 13872,
-      "spotSpreadPct": -0.22,
-      "relativeStrengthPct": -0.11,
-      "signal": "선물중립"
-    },
-    {
       "ts": "2026-08-03T13:21+09:00",
       "futureCode": "ABH608",
       "price": 920000,
@@ -10564,6 +10553,17 @@
       "openInterest": 6044,
       "spotSpreadPct": 0.09,
       "relativeStrengthPct": -0.48,
+      "signal": "선물중립"
+    },
+    {
+      "ts": "2026-08-16T20:31+09:00",
+      "futureCode": "ABH609",
+      "price": 1166000,
+      "changePct": -1.35,
+      "volume": 7015,
+      "openInterest": 8163,
+      "spotSpreadPct": 0.52,
+      "relativeStrengthPct": 0.76,
       "signal": "선물중립"
     }
   ],
@@ -15853,17 +15853,6 @@
   ],
   "086790": [
     {
-      "ts": "2026-08-03T13:21+09:00",
-      "futureCode": "A40608",
-      "price": 125400,
-      "changePct": 0.48,
-      "volume": 36144,
-      "openInterest": 67932,
-      "spotSpreadPct": -0.87,
-      "relativeStrengthPct": -0.4,
-      "signal": "선물중립"
-    },
-    {
       "ts": "2026-08-03T13:28+09:00",
       "futureCode": "A40608",
       "price": 125300,
@@ -18491,6 +18480,17 @@
       "spotSpreadPct": 0.31,
       "relativeStrengthPct": -2.67,
       "signal": "선물약세"
+    },
+    {
+      "ts": "2026-08-16T20:31+09:00",
+      "futureCode": "A40609",
+      "price": 132600,
+      "changePct": 1.61,
+      "volume": 28161,
+      "openInterest": 34159,
+      "spotSpreadPct": -0.3,
+      "relativeStrengthPct": 0.08,
+      "signal": "선물중립"
     }
   ],
   "089030": [
@@ -31705,17 +31705,6 @@
   ],
   "007660": [
     {
-      "ts": "2026-08-03T13:21+09:00",
-      "futureCode": "A2P608",
-      "price": 74000,
-      "changePct": -1.07,
-      "volume": 10826,
-      "openInterest": 48666,
-      "spotSpreadPct": 0.14,
-      "relativeStrengthPct": -0.26,
-      "signal": "선물중립"
-    },
-    {
       "ts": "2026-08-03T13:33+09:00",
       "futureCode": "A2P608",
       "price": 74200,
@@ -34343,20 +34332,20 @@
       "spotSpreadPct": -1.11,
       "relativeStrengthPct": -2.06,
       "signal": "선물약세"
+    },
+    {
+      "ts": "2026-08-16T20:31+09:00",
+      "futureCode": "A2P609",
+      "price": 94100,
+      "changePct": -2.59,
+      "volume": 11454,
+      "openInterest": 42024,
+      "spotSpreadPct": -1.57,
+      "relativeStrengthPct": -1.35,
+      "signal": "선물약세"
     }
   ],
   "009540": [
-    {
-      "ts": "2026-08-03T12:40+09:00",
-      "futureCode": "A39608",
-      "price": 360000,
-      "changePct": -3.36,
-      "volume": 7365,
-      "openInterest": 27062,
-      "spotSpreadPct": -1.64,
-      "relativeStrengthPct": 1.45,
-      "signal": "선물강세"
-    },
     {
       "ts": "2026-08-03T12:50+09:00",
       "futureCode": "A39608",
@@ -36985,20 +36974,20 @@
       "spotSpreadPct": 0.26,
       "relativeStrengthPct": 0.98,
       "signal": "선물중립"
+    },
+    {
+      "ts": "2026-08-16T20:31+09:00",
+      "futureCode": "A39609",
+      "price": 387000,
+      "changePct": 3.61,
+      "volume": 21905,
+      "openInterest": 16247,
+      "spotSpreadPct": 0.26,
+      "relativeStrengthPct": -0.29,
+      "signal": "선물중립"
     }
   ],
   "034020": [
-    {
-      "ts": "2026-08-03T13:41+09:00",
-      "futureCode": "AB9608",
-      "price": 67300,
-      "changePct": 0.6,
-      "volume": 119006,
-      "openInterest": 210622,
-      "spotSpreadPct": 0.15,
-      "relativeStrengthPct": 0.45,
-      "signal": "선물중립"
-    },
     {
       "ts": "2026-08-03T13:51+09:00",
       "futureCode": "AB9608",
@@ -39626,6 +39615,17 @@
       "openInterest": null,
       "spotSpreadPct": -0.12,
       "relativeStrengthPct": -0.39,
+      "signal": "선물중립"
+    },
+    {
+      "ts": "2026-08-16T20:31+09:00",
+      "futureCode": "AB9609",
+      "price": 82600,
+      "changePct": 1.47,
+      "volume": 106148,
+      "openInterest": 100397,
+      "spotSpreadPct": 0.0,
+      "relativeStrengthPct": -0.63,
       "signal": "선물중립"
     }
   ],
@@ -50199,17 +50199,6 @@
   ],
   "267260": [
     {
-      "ts": "2026-08-03T15:35+09:00",
-      "futureCode": "AGH608",
-      "price": 677000,
-      "changePct": -0.15,
-      "volume": 7875,
-      "openInterest": 12938,
-      "spotSpreadPct": 0.59,
-      "relativeStrengthPct": 1.46,
-      "signal": "선물강세"
-    },
-    {
       "ts": "2026-08-03T15:40+09:00",
       "futureCode": "AGH608",
       "price": 677000,
@@ -52836,6 +52825,17 @@
       "openInterest": null,
       "spotSpreadPct": -0.26,
       "relativeStrengthPct": -0.98,
+      "signal": "선물중립"
+    },
+    {
+      "ts": "2026-08-16T20:31+09:00",
+      "futureCode": "AGH609",
+      "price": 806000,
+      "changePct": 2.15,
+      "volume": 5178,
+      "openInterest": null,
+      "spotSpreadPct": 0.37,
+      "relativeStrengthPct": -0.14,
       "signal": "선물중립"
     }
   ],
@@ -66051,17 +66051,6 @@
   ],
   "373220": [
     {
-      "ts": "2026-08-03T14:35+09:00",
-      "futureCode": "AF5608",
-      "price": 316500,
-      "changePct": 0.8,
-      "volume": 17564,
-      "openInterest": 103520,
-      "spotSpreadPct": 0.32,
-      "relativeStrengthPct": 4.61,
-      "signal": "선물강세"
-    },
-    {
       "ts": "2026-08-03T14:40+09:00",
       "futureCode": "AF5608",
       "price": 316000,
@@ -68689,20 +68678,20 @@
       "spotSpreadPct": -0.28,
       "relativeStrengthPct": 0.0,
       "signal": "선물중립"
+    },
+    {
+      "ts": "2026-08-16T20:31+09:00",
+      "futureCode": "AF5609",
+      "price": 369000,
+      "changePct": 0.82,
+      "volume": 16372,
+      "openInterest": null,
+      "spotSpreadPct": -0.14,
+      "relativeStrengthPct": -0.27,
+      "signal": "선물중립"
     }
   ],
   "079550": [
-    {
-      "ts": "2026-08-03T14:22+09:00",
-      "futureCode": "ADB608",
-      "price": 696000,
-      "changePct": 0.87,
-      "volume": 6230,
-      "openInterest": 58391,
-      "spotSpreadPct": 0.0,
-      "relativeStrengthPct": 1.3,
-      "signal": "선물강세"
-    },
     {
       "ts": "2026-08-03T14:27+09:00",
       "futureCode": "ADB608",
@@ -71331,20 +71320,20 @@
       "spotSpreadPct": 0.38,
       "relativeStrengthPct": -0.28,
       "signal": "선물중립"
+    },
+    {
+      "ts": "2026-08-16T20:31+09:00",
+      "futureCode": "ADB609",
+      "price": 815000,
+      "changePct": -1.69,
+      "volume": 4195,
+      "openInterest": null,
+      "spotSpreadPct": 0.0,
+      "relativeStrengthPct": 0.94,
+      "signal": "선물중립"
     }
   ],
   "141080": [
-    {
-      "ts": "2026-08-04T08:20+09:00",
-      "futureCode": "AG9608",
-      "price": 95800,
-      "changePct": 0.0,
-      "volume": 0,
-      "openInterest": 46222,
-      "spotSpreadPct": 0.42,
-      "relativeStrengthPct": null,
-      "signal": "선물장전대기"
-    },
     {
       "ts": "2026-08-04T08:40+09:00",
       "futureCode": "AG9608",
@@ -73973,6 +73962,17 @@
       "spotSpreadPct": 0.26,
       "relativeStrengthPct": 0.17,
       "signal": "선물중립"
+    },
+    {
+      "ts": "2026-08-16T20:31+09:00",
+      "futureCode": "AG9609",
+      "price": 115300,
+      "changePct": 1.23,
+      "volume": 6539,
+      "openInterest": 33734,
+      "spotSpreadPct": 1.23,
+      "relativeStrengthPct": 1.67,
+      "signal": "선물강세"
     }
   ],
   "259960": [
@@ -92471,17 +92471,6 @@
   ],
   "051910": [
     {
-      "ts": "2026-08-03T14:03+09:00",
-      "futureCode": "A47608",
-      "price": 244500,
-      "changePct": -5.05,
-      "volume": 13054,
-      "openInterest": 50605,
-      "spotSpreadPct": -0.41,
-      "relativeStrengthPct": -0.21,
-      "signal": "선물중립"
-    },
-    {
       "ts": "2026-08-03T14:07+09:00",
       "futureCode": "A47608",
       "price": 243500,
@@ -95108,6 +95097,17 @@
       "openInterest": null,
       "spotSpreadPct": 0.54,
       "relativeStrengthPct": 1.1,
+      "signal": "선물강세"
+    },
+    {
+      "ts": "2026-08-16T20:31+09:00",
+      "futureCode": "A47609",
+      "price": 283500,
+      "changePct": 2.9,
+      "volume": 15755,
+      "openInterest": null,
+      "spotSpreadPct": 1.07,
+      "relativeStrengthPct": 1.09,
       "signal": "선물강세"
     }
   ],
