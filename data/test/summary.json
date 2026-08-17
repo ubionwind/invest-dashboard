@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-08-17T08:31+09:00",
+  "generatedAt": "2026-08-17T09:21+09:00",
   "summary": {
     "totalSessions": 13,
     "staleCount": 0,
     "candidateCount": 193,
     "protectedRows": 0,
-    "totalCapital": 148359933,
-    "totalEvalAmount": 125986633,
-    "totalPnl": -22373300,
-    "totalReturnPct": -15.08,
-    "survivalScore": 51,
+    "totalCapital": 120384280,
+    "totalEvalAmount": 101019280,
+    "totalPnl": -19365000,
+    "totalReturnPct": -16.09,
+    "survivalScore": 45,
     "survivalReviewReadyCount": 40,
-    "survivalHighRiskCount": 26
+    "survivalHighRiskCount": 33
   },
   "marketRegime": {
     "state": "RISK_ON",
@@ -35,7 +35,7 @@
     "source": "KOSPI/KODEX read-only dashboard benchmark"
   },
   "themeRegime": {
-    "generatedAt": "2026-08-17T08:31+09:00",
+    "generatedAt": "2026-08-17T09:21+09:00",
     "themes": [
       {
         "id": "ai-memory-premium",
@@ -44,7 +44,7 @@
         "label": "유지·변동성/과열 재진입 경계",
         "strengthScore": 78,
         "riskLevel": "HIGH",
-        "updatedAt": "2026-08-17T08:31+09:00",
+        "updatedAt": "2026-08-17T09:21+09:00",
         "plain": "HBM 공급 제약, DRAM 강세와 AI CAPEX는 AI 메모리 프리미엄을 계속 지지합니다. 다만 8월 초 국내 대형 반도체의 급락 뒤 반등은 추세 재개 확인이 아니라 고변동성 국면을 뜻합니다. 프리미엄은 유지하되 신규 가중은 SOX·Nvidia·Micron·TSMC 상대강도와 국내 외국인 수급이 함께 안정될 때만 허용합니다.",
         "watchSignals": [
           "Nvidia/글로벌 AI CAPEX와 AI 인프라 자금조달",
@@ -254,22 +254,21 @@
     }
   },
   "survivalReview": {
-    "generatedAt": "2026-08-17T08:31+09:00",
-    "survivalScore": 51,
+    "generatedAt": "2026-08-17T09:21+09:00",
+    "survivalScore": 45,
     "totalRows": 40,
-    "noTradeRows": 34,
-    "noTradeRatioPct": 85.0,
+    "noTradeRows": 35,
+    "noTradeRatioPct": 87.5,
     "actionCounts": {
-      "매수 보류": 16,
-      "관망 우선": 18,
-      "소액/분할 접근": 5,
-      "적극 검토": 1
+      "매수 보류": 22,
+      "관망 우선": 13,
+      "소액/분할 접근": 5
     },
     "confidenceCounts": {
-      "Uncertain": 10,
-      "Low": 16,
-      "High": 2,
-      "Medium": 12
+      "Uncertain": 21,
+      "Low": 12,
+      "High": 3,
+      "Medium": 4
     },
     "topFailurePatterns": [
       {
@@ -278,7 +277,11 @@
       },
       {
         "code": "MISSED_UPSIDE_WHILE_WAITING",
-        "count": 7
+        "count": 6
+      },
+      {
+        "code": "DRAWDOWN_GT_2",
+        "count": 1
       },
       {
         "code": "LOAN_BALANCE_RISK",
@@ -293,7 +296,7 @@
         },
         "readyCount": 40,
         "pendingCount": 0,
-        "avgReadyReturnSinceFirstPct": -18.99,
+        "avgReadyReturnSinceFirstPct": -18.61,
         "negativeReadyCount": 31
       },
       "5d": {
@@ -303,7 +306,7 @@
         },
         "readyCount": 40,
         "pendingCount": 0,
-        "avgReadyReturnSinceFirstPct": -18.99,
+        "avgReadyReturnSinceFirstPct": -18.61,
         "negativeReadyCount": 31
       },
       "20d": {
@@ -313,21 +316,21 @@
         },
         "readyCount": 40,
         "pendingCount": 0,
-        "avgReadyReturnSinceFirstPct": -18.99,
+        "avgReadyReturnSinceFirstPct": -18.61,
         "negativeReadyCount": 31
       }
     },
     "reviewReadyCount": 40,
     "baselineTrackedCount": 40,
     "negativeSinceFirstCount": 31,
-    "highRiskCount": 26,
+    "highRiskCount": 33,
     "highRiskSamples": [
       {
         "session": "일반",
         "code": "207940",
         "name": "삼성바이오로직스",
         "actionState": "매수 보류",
-        "confidenceScore": 28,
+        "confidenceScore": 17,
         "patterns": [
           "MISSED_UPSIDE_WHILE_WAITING"
         ]
@@ -336,8 +339,8 @@
         "session": "일반",
         "code": "267260",
         "name": "HD현대일렉트릭",
-        "actionState": "매수 보류",
-        "confidenceScore": 47,
+        "actionState": "관망 우선",
+        "confidenceScore": 46,
         "patterns": [
           "DRAWDOWN_GT_5"
         ]
@@ -347,7 +350,17 @@
         "code": "373220",
         "name": "LG에너지솔루션",
         "actionState": "관망 우선",
-        "confidenceScore": 54,
+        "confidenceScore": 43,
+        "patterns": [
+          "DRAWDOWN_GT_5"
+        ]
+      },
+      {
+        "session": "일반",
+        "code": "000270",
+        "name": "기아",
+        "actionState": "관망 우선",
+        "confidenceScore": 43,
         "patterns": [
           "DRAWDOWN_GT_5"
         ]
@@ -364,40 +377,30 @@
       },
       {
         "session": "단기",
+        "code": "042700",
+        "name": "한미반도체",
+        "actionState": "매수 보류",
+        "confidenceScore": 50,
+        "patterns": [
+          "DRAWDOWN_GT_5"
+        ]
+      },
+      {
+        "session": "단기",
+        "code": "089030",
+        "name": "테크윙",
+        "actionState": "매수 보류",
+        "confidenceScore": 33,
+        "patterns": [
+          "DRAWDOWN_GT_5"
+        ]
+      },
+      {
+        "session": "단기",
         "code": "247540",
         "name": "에코프로비엠",
         "actionState": "매수 보류",
-        "confidenceScore": 22,
-        "patterns": [
-          "DRAWDOWN_GT_5"
-        ]
-      },
-      {
-        "session": "급등",
-        "code": "034020",
-        "name": "두산에너빌리티",
-        "actionState": "매수 보류",
-        "confidenceScore": 45,
-        "patterns": [
-          "DRAWDOWN_GT_5"
-        ]
-      },
-      {
-        "session": "급등",
-        "code": "047810",
-        "name": "한국항공우주",
-        "actionState": "매수 보류",
-        "confidenceScore": 44,
-        "patterns": [
-          "DRAWDOWN_GT_5"
-        ]
-      },
-      {
-        "session": "급등",
-        "code": "010120",
-        "name": "LS ELECTRIC",
-        "actionState": "관망 우선",
-        "confidenceScore": 59,
+        "confidenceScore": 11,
         "patterns": [
           "DRAWDOWN_GT_5"
         ]
@@ -408,12 +411,12 @@
   "benchmark": {
     "label": "KOSPI",
     "value": 6977.94,
-    "returnPct": -6.31,
+    "returnPct": -3.04,
     "dailyReturnPct": 2.42,
     "date": "2026-08-14",
     "time": "18:59:00",
-    "periodStart": "2026-07-09T10:32+09:00",
-    "periodEnd": "2026-08-17T08:31+09:00",
+    "periodStart": "2026-07-09T14:19+09:00",
+    "periodEnd": "2026-08-17T09:21+09:00",
     "source": "naver-index-basic",
     "marketStatus": "CLOSE",
     "basis": "firstInvestment"
@@ -421,12 +424,12 @@
   "kodexBenchmark": {
     "label": "KODEX 200",
     "value": 110060.0,
-    "returnPct": -8.48,
+    "returnPct": -5.25,
     "dailyReturnPct": 2.6,
     "date": "2026-08-14",
     "time": "16:10:16",
-    "periodStart": "2026-07-09T10:32+09:00",
-    "periodEnd": "2026-08-17T08:31+09:00",
+    "periodStart": "2026-07-09T14:19+09:00",
+    "periodEnd": "2026-08-17T09:21+09:00",
     "source": "naver-stock-basic",
     "marketStatus": "CLOSE",
     "code": "069500",
@@ -439,7 +442,7 @@
       "code": "069500",
       "underlying": "KOSPI 200",
       "source": "investing.com-holdings-page",
-      "fetchedAt": "2026-08-17T08:31+09:00",
+      "fetchedAt": "2026-08-17T09:21+09:00",
       "holdings": [
         {
           "name": "삼성전자",
@@ -553,7 +556,7 @@
       "code": "102110",
       "underlying": "KOSPI 200",
       "source": "investing.com-holdings-page",
-      "fetchedAt": "2026-08-17T08:31+09:00",
+      "fetchedAt": "2026-08-17T09:21+09:00",
       "holdings": [
         {
           "name": "삼성전자",
@@ -1172,12 +1175,12 @@
       "name": "기아",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 7.73,
-        "pbr": 0.87,
+        "per": 7.97,
+        "pbr": 0.89,
         "roe": 11.9,
         "badge": "저PBR · 저PER",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "구조중립",
@@ -1211,7 +1214,7 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": {
           "market": "NXT",
@@ -1225,17 +1228,17 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 74,
-          "stance": "우호적 관찰",
-          "summary": "기술적 구조와 재무 지표가 동시에 크게 훼손되지 않은 구간입니다. 단, 돌파 후 거래대금 유지 여부가 핵심입니다.",
+          "score": 66,
+          "stance": "조건부 접근",
+          "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
           "survival": {
-            "actionState": "소액/분할 접근",
-            "confidenceScore": 68,
-            "confidenceLevel": "Medium",
+            "actionState": "관망 우선",
+            "confidenceScore": 43,
+            "confidenceLevel": "Uncertain",
             "positionGuide": {
-              "label": "중간 확신",
-              "suggestedRangePct": "3~5%",
-              "plain": "방향은 일부 보이지만 충돌 신호가 남아 있어 작게 시작하거나 확인 후 늘립니다."
+              "label": "낮은 확신",
+              "suggestedRangePct": "0~2%",
+              "plain": "분석은 가능하지만 실전 비중을 싣기엔 근거가 약합니다. 관찰 또는 아주 소액만 허용합니다."
             }
           }
         }
@@ -1246,8 +1249,8 @@
       "name": "SK하이닉스",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 15.39,
-        "pbr": 6.87,
+        "per": 15.89,
+        "pbr": 7.09,
         "roe": 61.16,
         "badge": "고ROE · AI프리미엄PBR",
         "themeRegime": {
@@ -1298,12 +1301,12 @@
             "2026-06-28 weekly review: 새 주도 후보는 전력기기/AI 전력 인프라가 1순위입니다. HBM 장비는 변동성과 밸류 부담 때문에 실제 수주/마진 확인 전까지 추격 가중을 제한하고, AI 네트워킹·고속기판은 이수페타시스 수급/실적 개선 뉴스가 있어 WATCH에서 CANDIDATE로 올립니다."
           ]
         },
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "저항거리큼",
           "bias": -3,
-          "reason": "20일 전고점까지 26.62% 거리; 회복 확인 필요"
+          "reason": "20일 전고점까지 18.00% 거리; 회복 확인 필요"
         },
         "stockFutureQuote": {
           "market": "KRX 주식선물",
@@ -1311,19 +1314,19 @@
           "futureCode": "A50609",
           "futureName": "SK하이닉스 F 202609 (  10)",
           "expiryMonth": "202609",
-          "expiryDate": null,
-          "remainingDays": null,
+          "expiryDate": "20260910",
+          "remainingDays": 28,
           "price": 1651000,
           "delta": 48000,
           "changePct": 2.99,
           "volume": 605516,
-          "tradingValue": null,
-          "openInterest": null,
-          "openInterestChange": null,
-          "theoreticalPrice": null,
-          "disparityPct": null,
-          "basis": null,
-          "marketBasis": null,
+          "tradingValue": 10029991325630,
+          "openInterest": 1086551,
+          "openInterestChange": -4316,
+          "theoreticalPrice": 1648221,
+          "disparityPct": 0.17,
+          "basis": 3221,
+          "marketBasis": 6000,
           "underlyingPrice": 1645000,
           "spotSpread": 6000,
           "spotSpreadPct": 0.36,
@@ -1332,7 +1335,7 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": {
           "market": "NXT",
@@ -1346,17 +1349,17 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 73,
-          "stance": "우호적 관찰",
-          "summary": "기술적 구조와 재무 지표가 동시에 크게 훼손되지 않은 구간입니다. 단, 돌파 후 거래대금 유지 여부가 핵심입니다.",
+          "score": 71,
+          "stance": "조건부 접근",
+          "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
           "survival": {
-            "actionState": "적극 검토",
-            "confidenceScore": 86,
+            "actionState": "소액/분할 접근",
+            "confidenceScore": 78,
             "confidenceLevel": "High",
             "positionGuide": {
-              "label": "높은 확신",
-              "suggestedRangePct": "10~20%",
-              "plain": "조건이 유지될 때만 의미 있는 비중을 검토합니다. 그래도 분할 접근이 원칙입니다."
+              "label": "중간 확신",
+              "suggestedRangePct": "3~5%",
+              "plain": "방향은 일부 보이지만 충돌 신호가 남아 있어 작게 시작하거나 확인 후 늘립니다."
             }
           }
         }
@@ -1367,17 +1370,17 @@
       "name": "DB하이텍",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 14.78,
-        "pbr": 1.85,
+        "per": 15.24,
+        "pbr": 1.9,
         "roe": 14.16,
         "badge": "지표확인",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "저항거리큼",
           "bias": -3,
-          "reason": "20일 전고점까지 18.94% 거리; 회복 확인 필요"
+          "reason": "20일 전고점까지 13.54% 거리; 회복 확인 필요"
         },
         "stockFutureQuote": null,
         "nxtQuote": {
@@ -1392,7 +1395,7 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 44,
+          "score": 42,
           "stance": "중립/확인 대기",
           "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
           "survival": {
@@ -1413,47 +1416,19 @@
       "name": "포스코퓨처엠",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": -1005.45,
-        "pbr": 3.56,
+        "per": -1033.33,
+        "pbr": 3.66,
         "roe": -0.4,
         "badge": "저ROE · PER불가",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
-          "state": "전고점대기",
-          "bias": -2,
-          "reason": "20일 전고점까지 1.72% 남아 돌파 확인 필요"
+          "state": "돌파우호",
+          "bias": 4,
+          "reason": "20일 전고점 돌파; 20일 전고점 대비 1.01%, 매물벽 위험 낮음"
         },
-        "stockFutureQuote": {
-          "market": "KRX 주식선물",
-          "underlyingCode": "003670",
-          "futureCode": "AE8609",
-          "futureName": "포스코퓨처 F 202609 (  10)",
-          "expiryMonth": "202609",
-          "expiryDate": null,
-          "remainingDays": null,
-          "price": 170800,
-          "delta": 4700,
-          "changePct": 2.83,
-          "volume": 22228,
-          "tradingValue": null,
-          "openInterest": null,
-          "openInterestChange": null,
-          "theoreticalPrice": null,
-          "disparityPct": null,
-          "basis": null,
-          "marketBasis": null,
-          "underlyingPrice": 170500,
-          "spotSpread": 300,
-          "spotSpreadPct": 0.18,
-          "relativeStrengthPct": 0.06,
-          "signal": "선물중립",
-          "signalReason": "체결가 기준 상대강도",
-          "basisText": "reference-only; cash KRX close remains official P/L basis",
-          "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
-        },
+        "stockFutureQuote": null,
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -1466,13 +1441,13 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 62,
+          "score": 67,
           "stance": "조건부 접근",
           "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
           "survival": {
             "actionState": "관망 우선",
-            "confidenceScore": 60,
-            "confidenceLevel": "Medium",
+            "confidenceScore": 57,
+            "confidenceLevel": "Low",
             "positionGuide": {
               "label": "낮은 확신",
               "suggestedRangePct": "0~2%",
@@ -1487,17 +1462,17 @@
       "name": "현대차",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 12.9,
-        "pbr": 0.92,
+        "per": 13.97,
+        "pbr": 0.99,
         "roe": 7.5,
         "badge": "저PBR",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
-          "state": "구조중립",
-          "bias": 0,
-          "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
+          "state": "돌파우호",
+          "bias": 4,
+          "reason": "20일 전고점 돌파; 20일 전고점 대비 4.62%, 매물벽 위험 낮음"
         },
         "stockFutureQuote": null,
         "nxtQuote": {
@@ -1512,12 +1487,12 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 56,
+          "score": 55,
           "stance": "중립/확인 대기",
           "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
           "survival": {
             "actionState": "관망 우선",
-            "confidenceScore": 60,
+            "confidenceScore": 62,
             "confidenceLevel": "Medium",
             "positionGuide": {
               "label": "낮은 확신",
@@ -1533,8 +1508,8 @@
       "name": "삼성전자",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 21.66,
-        "pbr": 3.73,
+        "per": 22.19,
+        "pbr": 3.82,
         "roe": 19.16,
         "badge": "고ROE",
         "themeRegime": {
@@ -1585,12 +1560,12 @@
             "2026-06-28 weekly review: 새 주도 후보는 전력기기/AI 전력 인프라가 1순위입니다. HBM 장비는 변동성과 밸류 부담 때문에 실제 수주/마진 확인 전까지 추격 가중을 제한하고, AI 네트워킹·고속기판은 이수페타시스 수급/실적 개선 뉴스가 있어 WATCH에서 CANDIDATE로 올립니다."
           ]
         },
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
-          "state": "구조중립",
-          "bias": 0,
-          "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
+          "state": "전고점대기",
+          "bias": -2,
+          "reason": "20일 전고점까지 0.54% 남아 돌파 확인 필요"
         },
         "stockFutureQuote": null,
         "nxtQuote": {
@@ -1605,7 +1580,7 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 86,
+          "score": 85,
           "stance": "우호적 관찰",
           "summary": "기술적 구조와 재무 지표가 동시에 크게 훼손되지 않은 구간입니다. 단, 돌파 후 거래대금 유지 여부가 핵심입니다.",
           "survival": {
@@ -1626,47 +1601,19 @@
       "name": "삼성SDI",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": -85.65,
-        "pbr": 1.7,
+        "per": -90.75,
+        "pbr": 1.8,
         "roe": -2.17,
         "badge": "저ROE · PER불가",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
-          "state": "전고점대기",
-          "bias": -2,
-          "reason": "20일 전고점까지 1.91% 남아 돌파 확인 필요"
+          "state": "돌파우호",
+          "bias": 4,
+          "reason": "20일 전고점 돌파; 20일 전고점 대비 3.93%, 매물벽 위험 낮음"
         },
-        "stockFutureQuote": {
-          "market": "KRX 주식선물",
-          "underlyingCode": "006400",
-          "futureCode": "A22609",
-          "futureName": "삼성SDI    F 202609 (  10)",
-          "expiryMonth": "202609",
-          "expiryDate": "20260910",
-          "remainingDays": 28,
-          "price": 516000,
-          "delta": 28000,
-          "changePct": 5.74,
-          "volume": 23839,
-          "tradingValue": 119609100000,
-          "openInterest": 38063,
-          "openInterestChange": 3095,
-          "theoreticalPrice": 517128,
-          "disparityPct": -0.22,
-          "basis": 1128,
-          "marketBasis": 0,
-          "underlyingPrice": 516000,
-          "spotSpread": 0,
-          "spotSpreadPct": 0.0,
-          "relativeStrengthPct": -0.21,
-          "signal": "선물중립",
-          "signalReason": "체결가 기준 상대강도",
-          "basisText": "reference-only; cash KRX close remains official P/L basis",
-          "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
-        },
+        "stockFutureQuote": null,
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -1679,17 +1626,17 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 61,
+          "score": 70,
           "stance": "조건부 접근",
           "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
           "survival": {
-            "actionState": "관망 우선",
-            "confidenceScore": 60,
+            "actionState": "소액/분할 접근",
+            "confidenceScore": 68,
             "confidenceLevel": "Medium",
             "positionGuide": {
-              "label": "낮은 확신",
-              "suggestedRangePct": "0~2%",
-              "plain": "분석은 가능하지만 실전 비중을 싣기엔 근거가 약합니다. 관찰 또는 아주 소액만 허용합니다."
+              "label": "중간 확신",
+              "suggestedRangePct": "3~5%",
+              "plain": "방향은 일부 보이지만 충돌 신호가 남아 있어 작게 시작하거나 확인 후 늘립니다."
             }
           }
         }
@@ -1700,12 +1647,12 @@
       "name": "이수페타시스",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 40.81,
-        "pbr": 8.92,
+        "per": 40.3,
+        "pbr": 8.81,
         "roe": 29.95,
         "badge": "고ROE · 고PBR · 고PER주의",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "구조중립",
@@ -1739,7 +1686,7 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": {
           "market": "NXT",
@@ -1753,7 +1700,7 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 57,
+          "score": 55,
           "stance": "중립/확인 대기",
           "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
           "survival": {
@@ -1774,47 +1721,19 @@
       "name": "HD한국조선해양",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 10.44,
-        "pbr": 1.94,
+        "per": 10.85,
+        "pbr": 2.01,
         "roe": 20.2,
         "badge": "고ROE",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
-          "state": "매물대주의",
-          "bias": -6,
-          "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          "state": "구조중립",
+          "bias": 0,
+          "reason": "박스권/저항 확인 필요; 매물벽 위험 중간"
         },
-        "stockFutureQuote": {
-          "market": "KRX 주식선물",
-          "underlyingCode": "009540",
-          "futureCode": "A39609",
-          "futureName": "HD한국조선 F 202609 (  10)",
-          "expiryMonth": "202609",
-          "expiryDate": "20260910",
-          "remainingDays": 28,
-          "price": 387000,
-          "delta": 13500,
-          "changePct": 3.61,
-          "volume": 21905,
-          "tradingValue": 84376965000,
-          "openInterest": 16247,
-          "openInterestChange": 6514,
-          "theoreticalPrice": 386844,
-          "disparityPct": 0.04,
-          "basis": 844,
-          "marketBasis": 1000,
-          "underlyingPrice": 386000,
-          "spotSpread": 1000,
-          "spotSpreadPct": 0.26,
-          "relativeStrengthPct": -0.29,
-          "signal": "선물중립",
-          "signalReason": "체결가 기준 상대강도",
-          "basisText": "reference-only; cash KRX close remains official P/L basis",
-          "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
-        },
+        "stockFutureQuote": null,
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -1827,13 +1746,13 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 68,
+          "score": 66,
           "stance": "조건부 접근",
           "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
           "survival": {
             "actionState": "관망 우선",
-            "confidenceScore": 50,
-            "confidenceLevel": "Low",
+            "confidenceScore": 60,
+            "confidenceLevel": "Medium",
             "positionGuide": {
               "label": "낮은 확신",
               "suggestedRangePct": "0~2%",
@@ -1848,47 +1767,19 @@
       "name": "LS ELECTRIC",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 95.2,
-        "pbr": 15.39,
+        "per": 91.86,
+        "pbr": 14.85,
         "roe": 17.29,
         "badge": "고ROE · 고PBR · 고PER주의",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "구조중립",
           "bias": 0,
           "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
         },
-        "stockFutureQuote": {
-          "market": "KRX 주식선물",
-          "underlyingCode": "010120",
-          "futureCode": "AGL609",
-          "futureName": "LS ELECTRI F 202609 (  10)*",
-          "expiryMonth": "202609",
-          "expiryDate": "20260910",
-          "remainingDays": 28,
-          "price": 206500,
-          "delta": -7000,
-          "changePct": -3.28,
-          "volume": 18487,
-          "tradingValue": 38114565000,
-          "openInterest": 19323,
-          "openInterestChange": 865,
-          "theoreticalPrice": 206951,
-          "disparityPct": -0.22,
-          "basis": 451,
-          "marketBasis": 0,
-          "underlyingPrice": 206500,
-          "spotSpread": 0,
-          "spotSpreadPct": 0.0,
-          "relativeStrengthPct": 0.22,
-          "signal": "선물중립",
-          "signalReason": "체결가 기준 상대강도",
-          "basisText": "reference-only; cash KRX close remains official P/L basis",
-          "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
-        },
+        "stockFutureQuote": null,
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -1901,17 +1792,17 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 51,
-          "stance": "중립/확인 대기",
-          "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
+          "score": 35,
+          "stance": "리스크 우선",
+          "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
-            "actionState": "관망 우선",
-            "confidenceScore": 59,
-            "confidenceLevel": "Low",
+            "actionState": "매수 보류",
+            "confidenceScore": 27,
+            "confidenceLevel": "Uncertain",
             "positionGuide": {
-              "label": "낮은 확신",
-              "suggestedRangePct": "0~2%",
-              "plain": "분석은 가능하지만 실전 비중을 싣기엔 근거가 약합니다. 관찰 또는 아주 소액만 허용합니다."
+              "label": "불확실",
+              "suggestedRangePct": "0%",
+              "plain": "신호가 약하거나 충돌합니다. 쉬는 것이 전략입니다."
             }
           }
         }
@@ -1922,47 +1813,19 @@
       "name": "삼성중공업",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 34.87,
-        "pbr": 4.16,
+        "per": 35.34,
+        "pbr": 4.22,
         "roe": 13.26,
         "badge": "지표확인",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "구조중립",
           "bias": 0,
           "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
         },
-        "stockFutureQuote": {
-          "market": "KRX 주식선물",
-          "underlyingCode": "010140",
-          "futureCode": "ABF609",
-          "futureName": "삼성중공업 F 202609 (  10)",
-          "expiryMonth": "202609",
-          "expiryDate": "20260910",
-          "remainingDays": 28,
-          "price": 22250,
-          "delta": 200,
-          "changePct": 0.91,
-          "volume": 106986,
-          "tradingValue": 23927624000,
-          "openInterest": 227896,
-          "openInterestChange": 5343,
-          "theoreticalPrice": 22349,
-          "disparityPct": -0.44,
-          "basis": 49,
-          "marketBasis": -50,
-          "underlyingPrice": 22300,
-          "spotSpread": -50,
-          "spotSpreadPct": -0.22,
-          "relativeStrengthPct": -0.45,
-          "signal": "선물중립",
-          "signalReason": "체결가 기준 상대강도",
-          "basisText": "reference-only; cash KRX close remains official P/L basis",
-          "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
-        },
+        "stockFutureQuote": null,
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -1975,12 +1838,12 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 40,
+          "score": 30,
           "stance": "리스크 우선",
           "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
             "actionState": "매수 보류",
-            "confidenceScore": 44,
+            "confidenceScore": 35,
             "confidenceLevel": "Uncertain",
             "positionGuide": {
               "label": "불확실",
@@ -1996,19 +1859,47 @@
       "name": "S-Oil",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 17.43,
-        "pbr": 1.71,
+        "per": 18.26,
+        "pbr": 1.8,
         "roe": 10.35,
         "badge": "지표확인",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "매물대주의",
           "bias": -6,
           "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
         },
-        "stockFutureQuote": null,
+        "stockFutureQuote": {
+          "market": "KRX 주식선물",
+          "underlyingCode": "010950",
+          "futureCode": "AB2609",
+          "futureName": "S-Oil      F 202609 (  10)",
+          "expiryMonth": "202609",
+          "expiryDate": "20260910",
+          "remainingDays": 28,
+          "price": 147500,
+          "delta": 7100,
+          "changePct": 5.06,
+          "volume": 11144,
+          "tradingValue": 16077375000,
+          "openInterest": 16045,
+          "openInterestChange": 1930,
+          "theoreticalPrice": 147923,
+          "disparityPct": -0.29,
+          "basis": 323,
+          "marketBasis": -100,
+          "underlyingPrice": 147600,
+          "spotSpread": -100,
+          "spotSpreadPct": -0.07,
+          "relativeStrengthPct": 0.3,
+          "signal": "선물중립",
+          "signalReason": "체결가 기준 상대강도",
+          "basisText": "reference-only; cash KRX close remains official P/L basis",
+          "source": "kis-domestic-futureoption-readonly",
+          "updatedAt": "2026-08-17T09:20+09:00"
+        },
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -2021,7 +1912,7 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 27,
+          "score": 25,
           "stance": "리스크 우선",
           "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
@@ -2042,47 +1933,19 @@
       "name": "현대모비스",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 13.34,
-        "pbr": 0.9,
+        "per": 14.28,
+        "pbr": 0.96,
         "roe": 7.21,
         "badge": "저PBR",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
-          "state": "구조중립",
-          "bias": 0,
-          "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
+          "state": "돌파우호",
+          "bias": 4,
+          "reason": "20일 전고점 돌파; 20일 전고점 대비 1.11%, 매물벽 위험 낮음"
         },
-        "stockFutureQuote": {
-          "market": "KRX 주식선물",
-          "underlyingCode": "012330",
-          "futureCode": "A20609",
-          "futureName": "현대모비스 F 202609 (  10)",
-          "expiryMonth": "202609",
-          "expiryDate": null,
-          "remainingDays": null,
-          "price": 549000,
-          "delta": 37000,
-          "changePct": 7.23,
-          "volume": 18526,
-          "tradingValue": null,
-          "openInterest": null,
-          "openInterestChange": null,
-          "theoreticalPrice": null,
-          "disparityPct": null,
-          "basis": null,
-          "marketBasis": null,
-          "underlyingPrice": 547000,
-          "spotSpread": 2000,
-          "spotSpreadPct": 0.37,
-          "relativeStrengthPct": 0.18,
-          "signal": "선물중립",
-          "signalReason": "체결가 기준 상대강도",
-          "basisText": "reference-only; cash KRX close remains official P/L basis",
-          "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
-        },
+        "stockFutureQuote": null,
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -2095,17 +1958,17 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 58,
+          "score": 63,
           "stance": "조건부 접근",
           "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
           "survival": {
-            "actionState": "관망 우선",
-            "confidenceScore": 60,
+            "actionState": "소액/분할 접근",
+            "confidenceScore": 68,
             "confidenceLevel": "Medium",
             "positionGuide": {
-              "label": "낮은 확신",
-              "suggestedRangePct": "0~2%",
-              "plain": "분석은 가능하지만 실전 비중을 싣기엔 근거가 약합니다. 관찰 또는 아주 소액만 허용합니다."
+              "label": "중간 확신",
+              "suggestedRangePct": "3~5%",
+              "plain": "방향은 일부 보이지만 충돌 신호가 남아 있어 작게 시작하거나 확인 후 늘립니다."
             }
           }
         }
@@ -2116,17 +1979,17 @@
       "name": "한화에어로스페이스",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 37.22,
-        "pbr": 6.12,
+        "per": 36.43,
+        "pbr": 5.99,
         "roe": 22.74,
         "badge": "고ROE · 고PBR",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
-          "state": "전고점대기",
-          "bias": -2,
-          "reason": "20일 전고점까지 0.50% 남아 돌파 확인 필요"
+          "state": "매물대주의",
+          "bias": -6,
+          "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
         },
         "stockFutureQuote": null,
         "nxtQuote": {
@@ -2141,17 +2004,17 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 67,
-          "stance": "조건부 접근",
-          "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
+          "score": 50,
+          "stance": "중립/확인 대기",
+          "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
           "survival": {
-            "actionState": "소액/분할 접근",
-            "confidenceScore": 66,
-            "confidenceLevel": "Medium",
+            "actionState": "매수 보류",
+            "confidenceScore": 44,
+            "confidenceLevel": "Uncertain",
             "positionGuide": {
-              "label": "중간 확신",
-              "suggestedRangePct": "3~5%",
-              "plain": "방향은 일부 보이지만 충돌 신호가 남아 있어 작게 시작하거나 확인 후 늘립니다."
+              "label": "불확실",
+              "suggestedRangePct": "0%",
+              "plain": "신호가 약하거나 충돌합니다. 쉬는 것이 전략입니다."
             }
           }
         }
@@ -2162,19 +2025,47 @@
       "name": "두산에너빌리티",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 335.68,
-        "pbr": 6.45,
+        "per": 342.74,
+        "pbr": 6.59,
         "roe": 1.98,
         "badge": "저ROE · 고PBR · 고PER주의",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "전고점대기",
           "bias": -2,
-          "reason": "20일 전고점까지 0.74% 남아 돌파 확인 필요"
+          "reason": "20일 전고점까지 0.84% 남아 돌파 확인 필요"
         },
-        "stockFutureQuote": null,
+        "stockFutureQuote": {
+          "market": "KRX 주식선물",
+          "underlyingCode": "034020",
+          "futureCode": "AB9609",
+          "futureName": "두산에너빌 F 202609 (  10)",
+          "expiryMonth": "202609",
+          "expiryDate": "20260910",
+          "remainingDays": 28,
+          "price": 82600,
+          "delta": 1200,
+          "changePct": 1.47,
+          "volume": 106148,
+          "tradingValue": 87612047000,
+          "openInterest": 100397,
+          "openInterestChange": -3337,
+          "theoreticalPrice": 82781,
+          "disparityPct": -0.22,
+          "basis": 181,
+          "marketBasis": 0,
+          "underlyingPrice": 82600,
+          "spotSpread": 0,
+          "spotSpreadPct": 0.0,
+          "relativeStrengthPct": -0.63,
+          "signal": "선물중립",
+          "signalReason": "체결가 기준 상대강도",
+          "basisText": "reference-only; cash KRX close remains official P/L basis",
+          "source": "kis-domestic-futureoption-readonly",
+          "updatedAt": "2026-08-17T09:20+09:00"
+        },
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -2187,7 +2078,7 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 64,
+          "score": 62,
           "stance": "조건부 접근",
           "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
           "survival": {
@@ -2208,17 +2099,17 @@
       "name": "NAVER",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 19.66,
-        "pbr": 1.15,
+        "per": 19.79,
+        "pbr": 1.16,
         "roe": 6.49,
         "badge": "지표확인",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
-          "state": "구조중립",
-          "bias": 0,
-          "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
+          "state": "전고점대기",
+          "bias": -2,
+          "reason": "20일 전고점까지 2.77% 남아 돌파 확인 필요"
         },
         "stockFutureQuote": null,
         "nxtQuote": {
@@ -2233,13 +2124,13 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 69,
-          "stance": "조건부 접근",
-          "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
+          "score": 72,
+          "stance": "우호적 관찰",
+          "summary": "기술적 구조와 재무 지표가 동시에 크게 훼손되지 않은 구간입니다. 단, 돌파 후 거래대금 유지 여부가 핵심입니다.",
           "survival": {
             "actionState": "소액/분할 접근",
-            "confidenceScore": 67,
-            "confidenceLevel": "Medium",
+            "confidenceScore": 75,
+            "confidenceLevel": "High",
             "positionGuide": {
               "label": "중간 확신",
               "suggestedRangePct": "3~5%",
@@ -2254,12 +2145,12 @@
       "name": "카카오",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 36.09,
-        "pbr": 1.54,
+        "per": 36.0,
+        "pbr": 1.53,
         "roe": 4.49,
         "badge": "저ROE",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "구조중립",
@@ -2293,21 +2184,21 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": null,
         "expertAnalysis": {
-          "score": 45,
-          "stance": "중립/확인 대기",
-          "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
+          "score": 31,
+          "stance": "리스크 우선",
+          "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
-            "actionState": "관망 우선",
-            "confidenceScore": 60,
-            "confidenceLevel": "Medium",
+            "actionState": "매수 보류",
+            "confidenceScore": 33,
+            "confidenceLevel": "Uncertain",
             "positionGuide": {
-              "label": "낮은 확신",
-              "suggestedRangePct": "0~2%",
-              "plain": "분석은 가능하지만 실전 비중을 싣기엔 근거가 약합니다. 관찰 또는 아주 소액만 허용합니다."
+              "label": "불확실",
+              "suggestedRangePct": "0%",
+              "plain": "신호가 약하거나 충돌합니다. 쉬는 것이 전략입니다."
             }
           }
         }
@@ -2318,17 +2209,17 @@
       "name": "한미반도체",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 121.05,
-        "pbr": 33.71,
+        "per": 122.66,
+        "pbr": 34.16,
         "roe": 30.8,
         "badge": "고ROE · 고PBR · 고PER주의",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "저항거리큼",
           "bias": -3,
-          "reason": "20일 전고점까지 17.82% 거리; 회복 확인 필요"
+          "reason": "20일 전고점까지 16.73% 거리; 회복 확인 필요"
         },
         "stockFutureQuote": {
           "market": "KRX 주식선물",
@@ -2357,7 +2248,7 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": {
           "market": "NXT",
@@ -2371,17 +2262,17 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 51,
-          "stance": "중립/확인 대기",
-          "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
+          "score": 38,
+          "stance": "리스크 우선",
+          "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
-            "actionState": "관망 우선",
-            "confidenceScore": 71,
-            "confidenceLevel": "Medium",
+            "actionState": "매수 보류",
+            "confidenceScore": 50,
+            "confidenceLevel": "Low",
             "positionGuide": {
-              "label": "낮은 확신",
-              "suggestedRangePct": "0~2%",
-              "plain": "분석은 가능하지만 실전 비중을 싣기엔 근거가 약합니다. 관찰 또는 아주 소액만 허용합니다."
+              "label": "불확실",
+              "suggestedRangePct": "0%",
+              "plain": "신호가 약하거나 충돌합니다. 쉬는 것이 전략입니다."
             }
           }
         }
@@ -2392,17 +2283,17 @@
       "name": "한국항공우주",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 74.52,
-        "pbr": 7.91,
+        "per": 72.15,
+        "pbr": 7.66,
         "roe": 11.14,
         "badge": "고PBR · 고PER주의",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
-          "state": "구조중립",
-          "bias": 0,
-          "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
+          "state": "저항거리큼",
+          "bias": -3,
+          "reason": "20일 전고점까지 11.22% 거리; 회복 확인 필요"
         },
         "stockFutureQuote": {
           "market": "KRX 주식선물",
@@ -2431,7 +2322,7 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": {
           "market": "NXT",
@@ -2445,12 +2336,12 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 35,
+          "score": 20,
           "stance": "리스크 우선",
           "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
             "actionState": "매수 보류",
-            "confidenceScore": 44,
+            "confidenceScore": 33,
             "confidenceLevel": "Uncertain",
             "positionGuide": {
               "label": "불확실",
@@ -2466,17 +2357,17 @@
       "name": "LG화학",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": -10.47,
-        "pbr": 0.62,
+        "per": -10.66,
+        "pbr": 0.63,
         "roe": -6.05,
         "badge": "저ROE · 저PBR · PER불가",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "전고점대기",
           "bias": -2,
-          "reason": "20일 전고점까지 1.96% 남아 돌파 확인 필요"
+          "reason": "20일 전고점까지 0.18% 남아 돌파 확인 필요"
         },
         "stockFutureQuote": {
           "market": "KRX 주식선물",
@@ -2505,7 +2396,7 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:31+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": {
           "market": "NXT",
@@ -2519,13 +2410,13 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 59,
-          "stance": "조건부 접근",
-          "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
+          "score": 51,
+          "stance": "중립/확인 대기",
+          "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
           "survival": {
             "actionState": "관망 우선",
-            "confidenceScore": 48,
-            "confidenceLevel": "Low",
+            "confidenceScore": 37,
+            "confidenceLevel": "Uncertain",
             "positionGuide": {
               "label": "낮은 확신",
               "suggestedRangePct": "0~2%",
@@ -2540,12 +2431,12 @@
       "name": "신한지주",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 10.17,
-        "pbr": 0.85,
+        "per": 10.24,
+        "pbr": 0.86,
         "roe": 8.81,
         "badge": "저PBR",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "매물대주의",
@@ -2579,7 +2470,7 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": {
           "market": "NXT",
@@ -2593,7 +2484,7 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 70,
+          "score": 68,
           "stance": "조건부 접근",
           "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
           "survival": {
@@ -2614,12 +2505,12 @@
       "name": "리노공업",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 33.33,
-        "pbr": 7.61,
+        "per": 33.1,
+        "pbr": 7.56,
         "roe": 24.75,
         "badge": "고ROE · 고PBR",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "구조중립",
@@ -2653,7 +2544,7 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": {
           "market": "NXT",
@@ -2667,9 +2558,9 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 58,
-          "stance": "조건부 접근",
-          "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
+          "score": 56,
+          "stance": "중립/확인 대기",
+          "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
           "survival": {
             "actionState": "관망 우선",
             "confidenceScore": 54,
@@ -2688,17 +2579,17 @@
       "name": "현대로템",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 19.82,
-        "pbr": 5.0,
+        "per": 19.72,
+        "pbr": 4.98,
         "roe": 30.08,
-        "badge": "고ROE · 고PBR",
+        "badge": "고ROE",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "저항거리큼",
           "bias": -3,
-          "reason": "20일 전고점까지 14.88% 거리; 회복 확인 필요"
+          "reason": "20일 전고점까지 15.09% 거리; 회복 확인 필요"
         },
         "stockFutureQuote": {
           "market": "KRX 주식선물",
@@ -2706,19 +2597,19 @@
           "futureCode": "AG6609",
           "futureName": "현대로템   F 202609 (  10)",
           "expiryMonth": "202609",
-          "expiryDate": "20260910",
-          "remainingDays": 28,
+          "expiryDate": null,
+          "remainingDays": null,
           "price": 145300,
           "delta": -200,
           "changePct": -0.14,
           "volume": 9978,
-          "tradingValue": 14612500000,
-          "openInterest": 35943,
-          "openInterestChange": 386,
-          "theoreticalPrice": 147221,
-          "disparityPct": -1.3,
-          "basis": 321,
-          "marketBasis": -1600,
+          "tradingValue": null,
+          "openInterest": null,
+          "openInterestChange": null,
+          "theoreticalPrice": null,
+          "disparityPct": null,
+          "basis": null,
+          "marketBasis": null,
           "underlyingPrice": 146900,
           "spotSpread": -1600,
           "spotSpreadPct": -1.09,
@@ -2727,7 +2618,7 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:31+09:00"
+          "updatedAt": "2026-08-17T09:21+09:00"
         },
         "nxtQuote": {
           "market": "NXT",
@@ -2741,17 +2632,17 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 65,
-          "stance": "조건부 접근",
-          "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
+          "score": 51,
+          "stance": "중립/확인 대기",
+          "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
           "survival": {
-            "actionState": "소액/분할 접근",
-            "confidenceScore": 66,
-            "confidenceLevel": "Medium",
+            "actionState": "관망 우선",
+            "confidenceScore": 43,
+            "confidenceLevel": "Uncertain",
             "positionGuide": {
-              "label": "중간 확신",
-              "suggestedRangePct": "3~5%",
-              "plain": "방향은 일부 보이지만 충돌 신호가 남아 있어 작게 시작하거나 확인 후 늘립니다."
+              "label": "낮은 확신",
+              "suggestedRangePct": "0~2%",
+              "plain": "분석은 가능하지만 실전 비중을 싣기엔 근거가 약합니다. 관찰 또는 아주 소액만 허용합니다."
             }
           }
         }
@@ -2762,12 +2653,12 @@
       "name": "셀트리온",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 38.65,
-        "pbr": 2.63,
+        "per": 38.46,
+        "pbr": 2.62,
         "roe": 7.28,
         "badge": "지표확인",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "매물대주의",
@@ -2808,17 +2699,17 @@
       "name": "LIG넥스원",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 59.22,
-        "pbr": 12.12,
+        "per": 57.67,
+        "pbr": 11.8,
         "roe": 22.46,
         "badge": "고ROE · 고PBR · 고PER주의",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "전고점대기",
           "bias": -2,
-          "reason": "20일 전고점까지 0.24% 남아 돌파 확인 필요"
+          "reason": "20일 전고점까지 2.86% 남아 돌파 확인 필요"
         },
         "stockFutureQuote": null,
         "nxtQuote": {
@@ -2833,81 +2724,7 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 52,
-          "stance": "중립/확인 대기",
-          "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
-          "survival": {
-            "actionState": "관망 우선",
-            "confidenceScore": 54,
-            "confidenceLevel": "Low",
-            "positionGuide": {
-              "label": "낮은 확신",
-              "suggestedRangePct": "0~2%",
-              "plain": "분석은 가능하지만 실전 비중을 싣기엔 근거가 약합니다. 관찰 또는 아주 소액만 허용합니다."
-            }
-          }
-        }
-      }
-    },
-    {
-      "code": "086520",
-      "name": "에코프로",
-      "strategy": "전체 분석",
-      "fundamentals": {
-        "per": 203.76,
-        "pbr": 5.67,
-        "roe": 3.26,
-        "badge": "저ROE · 고PBR · 고PER주의",
-        "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
-        "universeStatus": "existing",
-        "technicalSignal": {
-          "state": "전고점대기",
-          "bias": -2,
-          "reason": "20일 전고점까지 2.64% 남아 돌파 확인 필요"
-        },
-        "stockFutureQuote": {
-          "market": "KRX 주식선물",
-          "underlyingCode": "086520",
-          "futureCode": "A2F609",
-          "futureName": "에코프로   F 202609 (  10)",
-          "expiryMonth": "202609",
-          "expiryDate": "20260910",
-          "remainingDays": 28,
-          "price": 93800,
-          "delta": 1000,
-          "changePct": 1.08,
-          "volume": 40183,
-          "tradingValue": 37206459000,
-          "openInterest": 93954,
-          "openInterestChange": 2462,
-          "theoreticalPrice": 93805,
-          "disparityPct": -0.0,
-          "basis": 205,
-          "marketBasis": 200,
-          "underlyingPrice": 93600,
-          "spotSpread": 200,
-          "spotSpreadPct": 0.21,
-          "relativeStrengthPct": -0.55,
-          "signal": "선물중립",
-          "signalReason": "체결가 기준 상대강도",
-          "basisText": "reference-only; cash KRX close remains official P/L basis",
-          "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:31+09:00"
-        },
-        "nxtQuote": {
-          "market": "NXT",
-          "session": "AFTER_MARKET",
-          "status": "CLOSE",
-          "price": 93200,
-          "delta": 1100,
-          "changePct": 1.19,
-          "localTradedAt": "2026-08-14T20:00:00+09:00",
-          "basis": "reference-only; KRX close remains official P/L basis",
-          "source": "naver-nxt-overmarket"
-        },
-        "expertAnalysis": {
-          "score": 48,
+          "score": 50,
           "stance": "중립/확인 대기",
           "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
           "survival": {
@@ -2924,23 +2741,97 @@
       }
     },
     {
+      "code": "086520",
+      "name": "에코프로",
+      "strategy": "전체 분석",
+      "fundamentals": {
+        "per": 207.08,
+        "pbr": 5.76,
+        "roe": 3.26,
+        "badge": "저ROE · 고PBR · 고PER주의",
+        "themeRegime": null,
+        "updatedAt": "2026-08-17T08:55:55+09:00",
+        "universeStatus": "existing",
+        "technicalSignal": {
+          "state": "전고점대기",
+          "bias": -2,
+          "reason": "20일 전고점까지 1.06% 남아 돌파 확인 필요"
+        },
+        "stockFutureQuote": null,
+        "nxtQuote": {
+          "market": "NXT",
+          "session": "AFTER_MARKET",
+          "status": "CLOSE",
+          "price": 93200,
+          "delta": 1100,
+          "changePct": 1.19,
+          "localTradedAt": "2026-08-14T20:00:00+09:00",
+          "basis": "reference-only; KRX close remains official P/L basis",
+          "source": "naver-nxt-overmarket"
+        },
+        "expertAnalysis": {
+          "score": 40,
+          "stance": "리스크 우선",
+          "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
+          "survival": {
+            "actionState": "매수 보류",
+            "confidenceScore": 28,
+            "confidenceLevel": "Uncertain",
+            "positionGuide": {
+              "label": "불확실",
+              "suggestedRangePct": "0%",
+              "plain": "신호가 약하거나 충돌합니다. 쉬는 것이 전략입니다."
+            }
+          }
+        }
+      }
+    },
+    {
       "code": "086790",
       "name": "하나금융지주",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 9.03,
-        "pbr": 0.78,
+        "per": 9.16,
+        "pbr": 0.79,
         "roe": 9.2,
         "badge": "저PBR · 저PER",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "매물대주의",
           "bias": -6,
           "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
         },
-        "stockFutureQuote": null,
+        "stockFutureQuote": {
+          "market": "KRX 주식선물",
+          "underlyingCode": "086790",
+          "futureCode": "A40609",
+          "futureName": "하나금융지 F 202609 (  10)",
+          "expiryMonth": "202609",
+          "expiryDate": "20260910",
+          "remainingDays": 28,
+          "price": 132600,
+          "delta": 2100,
+          "changePct": 1.61,
+          "volume": 28161,
+          "tradingValue": 37468029000,
+          "openInterest": 34159,
+          "openInterestChange": 467,
+          "theoreticalPrice": 133291,
+          "disparityPct": -0.52,
+          "basis": 291,
+          "marketBasis": -400,
+          "underlyingPrice": 133000,
+          "spotSpread": -400,
+          "spotSpreadPct": -0.3,
+          "relativeStrengthPct": 0.08,
+          "signal": "선물중립",
+          "signalReason": "체결가 기준 상대강도",
+          "basisText": "reference-only; cash KRX close remains official P/L basis",
+          "source": "kis-domestic-futureoption-readonly",
+          "updatedAt": "2026-08-17T09:20+09:00"
+        },
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -2953,7 +2844,7 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 63,
+          "score": 66,
           "stance": "조건부 접근",
           "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
           "survival": {
@@ -2974,12 +2865,12 @@
       "name": "테크윙",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 401.22,
-        "pbr": 8.64,
+        "per": 400.41,
+        "pbr": 8.62,
         "roe": 2.36,
         "badge": "저ROE · 고PBR · 고PER주의",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "구조중립",
@@ -2992,19 +2883,19 @@
           "futureCode": "A3G609",
           "futureName": "테크윙     F 202609 (  10)",
           "expiryMonth": "202609",
-          "expiryDate": "20260910",
-          "remainingDays": 28,
+          "expiryDate": null,
+          "remainingDays": null,
           "price": 48950,
           "delta": -200,
           "changePct": -0.41,
           "volume": 5391,
-          "tradingValue": 2617372000,
-          "openInterest": 3094,
-          "openInterestChange": 1820,
-          "theoreticalPrice": 49358,
-          "disparityPct": -0.83,
-          "basis": 108,
-          "marketBasis": -300,
+          "tradingValue": null,
+          "openInterest": null,
+          "openInterestChange": null,
+          "theoreticalPrice": null,
+          "disparityPct": null,
+          "basis": null,
+          "marketBasis": null,
           "underlyingPrice": 49250,
           "spotSpread": -300,
           "spotSpreadPct": -0.61,
@@ -3013,21 +2904,21 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": null,
         "expertAnalysis": {
-          "score": 62,
-          "stance": "조건부 접근",
-          "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
+          "score": 40,
+          "stance": "리스크 우선",
+          "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
-            "actionState": "관망 우선",
-            "confidenceScore": 61,
-            "confidenceLevel": "Medium",
+            "actionState": "매수 보류",
+            "confidenceScore": 33,
+            "confidenceLevel": "Uncertain",
             "positionGuide": {
-              "label": "낮은 확신",
-              "suggestedRangePct": "0~2%",
-              "plain": "분석은 가능하지만 실전 비중을 싣기엔 근거가 약합니다. 관찰 또는 아주 소액만 허용합니다."
+              "label": "불확실",
+              "suggestedRangePct": "0%",
+              "plain": "신호가 약하거나 충돌합니다. 쉬는 것이 전략입니다."
             }
           }
         }
@@ -3038,19 +2929,47 @@
       "name": "ISC",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 48.56,
-        "pbr": 6.03,
+        "per": 49.01,
+        "pbr": 6.09,
         "roe": 13.23,
         "badge": "고PBR · 고PER주의",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "전고점대기",
           "bias": -2,
-          "reason": "20일 전고점까지 0.12% 남아 돌파 확인 필요"
+          "reason": "20일 전고점까지 1.16% 남아 돌파 확인 필요"
         },
-        "stockFutureQuote": null,
+        "stockFutureQuote": {
+          "market": "KRX 주식선물",
+          "underlyingCode": "095340",
+          "futureCode": "A2B609",
+          "futureName": "ISC        F 202609 (  10)",
+          "expiryMonth": "202609",
+          "expiryDate": null,
+          "remainingDays": null,
+          "price": 163400,
+          "delta": 2700,
+          "changePct": 1.68,
+          "volume": 4438,
+          "tradingValue": null,
+          "openInterest": null,
+          "openInterestChange": null,
+          "theoreticalPrice": null,
+          "disparityPct": null,
+          "basis": null,
+          "marketBasis": null,
+          "underlyingPrice": 161300,
+          "spotSpread": 2100,
+          "spotSpreadPct": 1.3,
+          "relativeStrengthPct": 0.74,
+          "signal": "선물중립",
+          "signalReason": "체결가 기준 상대강도",
+          "basisText": "reference-only; cash KRX close remains official P/L basis",
+          "source": "kis-domestic-futureoption-readonly",
+          "updatedAt": "2026-08-17T09:21+09:00"
+        },
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -3063,17 +2982,17 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 45,
-          "stance": "중립/확인 대기",
-          "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
+          "score": 32,
+          "stance": "리스크 우선",
+          "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
-            "actionState": "관망 우선",
-            "confidenceScore": 54,
-            "confidenceLevel": "Low",
+            "actionState": "매수 보류",
+            "confidenceScore": 33,
+            "confidenceLevel": "Uncertain",
             "positionGuide": {
-              "label": "낮은 확신",
-              "suggestedRangePct": "0~2%",
-              "plain": "분석은 가능하지만 실전 비중을 싣기엔 근거가 약합니다. 관찰 또는 아주 소액만 허용합니다."
+              "label": "불확실",
+              "suggestedRangePct": "0%",
+              "plain": "신호가 약하거나 충돌합니다. 쉬는 것이 전략입니다."
             }
           }
         }
@@ -3084,12 +3003,12 @@
       "name": "KB금융",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 10.63,
+        "per": 10.65,
         "pbr": 1.01,
         "roe": 10.25,
         "badge": "지표확인",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "매물대주의",
@@ -3123,7 +3042,7 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": {
           "market": "NXT",
@@ -3137,7 +3056,7 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 49,
+          "score": 47,
           "stance": "중립/확인 대기",
           "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
           "survival": {
@@ -3158,12 +3077,12 @@
       "name": "리가켐바이오",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": -30.33,
-        "pbr": 9.0,
+        "per": -30.2,
+        "pbr": 8.96,
         "roe": -26.39,
         "badge": "저ROE · 고PBR · PER불가",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "구조중립",
@@ -3197,7 +3116,7 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": {
           "market": "NXT",
@@ -3211,12 +3130,12 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 37,
+          "score": 35,
           "stance": "리스크 우선",
           "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
             "actionState": "매수 보류",
-            "confidenceScore": 38,
+            "confidenceScore": 33,
             "confidenceLevel": "Uncertain",
             "positionGuide": {
               "label": "불확실",
@@ -3232,17 +3151,17 @@
       "name": "알테오젠",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 170.88,
-        "pbr": 44.17,
+        "per": 169.0,
+        "pbr": 43.69,
         "roe": 29.86,
         "badge": "고ROE · 고PBR · 고PER주의",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "저항거리큼",
           "bias": -3,
-          "reason": "20일 전고점까지 10.81% 거리; 회복 확인 필요"
+          "reason": "20일 전고점까지 11.80% 거리; 회복 확인 필요"
         },
         "stockFutureQuote": {
           "market": "KRX 주식선물",
@@ -3271,7 +3190,7 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": {
           "market": "NXT",
@@ -3290,7 +3209,7 @@
           "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
             "actionState": "매수 보류",
-            "confidenceScore": 29,
+            "confidenceScore": 27,
             "confidenceLevel": "Uncertain",
             "positionGuide": {
               "label": "불확실",
@@ -3306,19 +3225,47 @@
       "name": "삼성바이오로직스",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 50.81,
-        "pbr": 9.13,
+        "per": 50.29,
+        "pbr": 9.03,
         "roe": 19.56,
         "badge": "고ROE · 고PBR · 고PER주의",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "매물대주의",
           "bias": -6,
           "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
         },
-        "stockFutureQuote": null,
+        "stockFutureQuote": {
+          "market": "KRX 주식선물",
+          "underlyingCode": "207940",
+          "futureCode": "AES609",
+          "futureName": "삼성바이오 F 202609 (  10)",
+          "expiryMonth": "202609",
+          "expiryDate": "20260910",
+          "remainingDays": 28,
+          "price": 1550000,
+          "delta": 5000,
+          "changePct": 0.32,
+          "volume": 732,
+          "tradingValue": 11375530000,
+          "openInterest": 1437,
+          "openInterestChange": -52,
+          "theoreticalPrice": 1551384,
+          "disparityPct": -0.09,
+          "basis": 3384,
+          "marketBasis": 2000,
+          "underlyingPrice": 1548000,
+          "spotSpread": 2000,
+          "spotSpreadPct": 0.13,
+          "relativeStrengthPct": 1.34,
+          "signal": "선물강세",
+          "signalReason": "체결가 기준 상대강도",
+          "basisText": "reference-only; cash KRX close remains official P/L basis",
+          "source": "kis-domestic-futureoption-readonly",
+          "updatedAt": "2026-08-17T09:20+09:00"
+        },
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -3331,12 +3278,12 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 41,
+          "score": 33,
           "stance": "리스크 우선",
           "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
             "actionState": "매수 보류",
-            "confidenceScore": 28,
+            "confidenceScore": 17,
             "confidenceLevel": "Uncertain",
             "positionGuide": {
               "label": "불확실",
@@ -3352,12 +3299,12 @@
       "name": "에코프로비엠",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 195.73,
-        "pbr": 6.27,
+        "per": 199.49,
+        "pbr": 6.39,
         "roe": 3.29,
         "badge": "저ROE · 고PBR · 고PER주의",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "구조중립",
@@ -3377,12 +3324,12 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 26,
+          "score": 18,
           "stance": "리스크 우선",
           "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
             "actionState": "매수 보류",
-            "confidenceScore": 22,
+            "confidenceScore": 11,
             "confidenceLevel": "Uncertain",
             "positionGuide": {
               "label": "불확실",
@@ -3398,47 +3345,19 @@
       "name": "크래프톤",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 12.69,
-        "pbr": 1.4,
+        "per": 12.88,
+        "pbr": 1.43,
         "roe": 12.1,
         "badge": "지표확인",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "매물대주의",
           "bias": -6,
           "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
         },
-        "stockFutureQuote": {
-          "market": "KRX 주식선물",
-          "underlyingCode": "259960",
-          "futureCode": "AF8609",
-          "futureName": "크래프톤   F 202609 (  10)",
-          "expiryMonth": "202609",
-          "expiryDate": "20260910",
-          "remainingDays": 28,
-          "price": 238000,
-          "delta": 6000,
-          "changePct": 2.59,
-          "volume": 2071,
-          "tradingValue": 4914220000,
-          "openInterest": 5314,
-          "openInterestChange": -66,
-          "theoreticalPrice": 238520,
-          "disparityPct": -0.22,
-          "basis": 520,
-          "marketBasis": 0,
-          "underlyingPrice": 238000,
-          "spotSpread": 0,
-          "spotSpreadPct": 0.0,
-          "relativeStrengthPct": 1.1,
-          "signal": "선물강세",
-          "signalReason": "체결가 기준 상대강도",
-          "basisText": "reference-only; cash KRX close remains official P/L basis",
-          "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
-        },
+        "stockFutureQuote": null,
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -3451,12 +3370,12 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 50,
+          "score": 42,
           "stance": "중립/확인 대기",
           "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
           "survival": {
             "actionState": "매수 보류",
-            "confidenceScore": 44,
+            "confidenceScore": 33,
             "confidenceLevel": "Uncertain",
             "positionGuide": {
               "label": "불확실",
@@ -3472,19 +3391,47 @@
       "name": "HD현대일렉트릭",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 35.97,
-        "pbr": 13.59,
+        "per": 36.8,
+        "pbr": 13.9,
         "roe": 43.9,
         "badge": "고ROE · 고PBR",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
-          "state": "매물대주의",
-          "bias": -6,
-          "reason": "상단 매물대가 가까워 돌파 확인 전 추격 주의"
+          "state": "구조중립",
+          "bias": 0,
+          "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
         },
-        "stockFutureQuote": null,
+        "stockFutureQuote": {
+          "market": "KRX 주식선물",
+          "underlyingCode": "267260",
+          "futureCode": "AGH609",
+          "futureName": "HD현대일렉 F 202609 (  10)",
+          "expiryMonth": "202609",
+          "expiryDate": "20260910",
+          "remainingDays": 28,
+          "price": 806000,
+          "delta": 17000,
+          "changePct": 2.15,
+          "volume": 5178,
+          "tradingValue": 40773070000,
+          "openInterest": 6996,
+          "openInterestChange": 207,
+          "theoreticalPrice": 804756,
+          "disparityPct": 0.15,
+          "basis": 1756,
+          "marketBasis": 3000,
+          "underlyingPrice": 803000,
+          "spotSpread": 3000,
+          "spotSpreadPct": 0.37,
+          "relativeStrengthPct": -0.14,
+          "signal": "선물중립",
+          "signalReason": "체결가 기준 상대강도",
+          "basisText": "reference-only; cash KRX close remains official P/L basis",
+          "source": "kis-domestic-futureoption-readonly",
+          "updatedAt": "2026-08-17T09:20+09:00"
+        },
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -3497,17 +3444,17 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 50,
+          "score": 57,
           "stance": "중립/확인 대기",
           "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
           "survival": {
-            "actionState": "매수 보류",
-            "confidenceScore": 47,
+            "actionState": "관망 우선",
+            "confidenceScore": 46,
             "confidenceLevel": "Low",
             "positionGuide": {
-              "label": "불확실",
-              "suggestedRangePct": "0%",
-              "plain": "신호가 약하거나 충돌합니다. 쉬는 것이 전략입니다."
+              "label": "낮은 확신",
+              "suggestedRangePct": "0~2%",
+              "plain": "분석은 가능하지만 실전 비중을 싣기엔 근거가 약합니다. 관찰 또는 아주 소액만 허용합니다."
             }
           }
         }
@@ -3518,19 +3465,47 @@
       "name": "HD현대중공업",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 24.51,
-        "pbr": 5.36,
+        "per": 25.2,
+        "pbr": 5.51,
         "roe": 24.55,
         "badge": "고ROE · 고PBR",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "구조중립",
           "bias": 0,
           "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
         },
-        "stockFutureQuote": null,
+        "stockFutureQuote": {
+          "market": "KRX 주식선물",
+          "underlyingCode": "329180",
+          "futureCode": "AFD609",
+          "futureName": "HD현대중공 F 202609 (  10)",
+          "expiryMonth": "202609",
+          "expiryDate": null,
+          "remainingDays": null,
+          "price": 510000,
+          "delta": 11000,
+          "changePct": 2.2,
+          "volume": 15680,
+          "tradingValue": null,
+          "openInterest": null,
+          "openInterestChange": null,
+          "theoreticalPrice": null,
+          "disparityPct": null,
+          "basis": null,
+          "marketBasis": null,
+          "underlyingPrice": 510000,
+          "spotSpread": 0,
+          "spotSpreadPct": 0.0,
+          "relativeStrengthPct": -0.62,
+          "signal": "선물중립",
+          "signalReason": "체결가 기준 상대강도",
+          "basisText": "reference-only; cash KRX close remains official P/L basis",
+          "source": "kis-domestic-futureoption-readonly",
+          "updatedAt": "2026-08-17T09:20+09:00"
+        },
         "nxtQuote": {
           "market": "NXT",
           "session": "AFTER_MARKET",
@@ -3543,13 +3518,13 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 68,
-          "stance": "조건부 접근",
-          "summary": "일부 우호 신호는 있으나 전고점·매물대·밸류 부담 중 최소 한 가지 확인이 필요합니다.",
+          "score": 49,
+          "stance": "중립/확인 대기",
+          "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
           "survival": {
             "actionState": "관망 우선",
-            "confidenceScore": 60,
-            "confidenceLevel": "Medium",
+            "confidenceScore": 49,
+            "confidenceLevel": "Low",
             "positionGuide": {
               "label": "낮은 확신",
               "suggestedRangePct": "0~2%",
@@ -3564,17 +3539,17 @@
       "name": "두산퓨얼셀",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": -22.95,
-        "pbr": 8.76,
+        "per": -22.8,
+        "pbr": 8.71,
         "roe": -32.18,
         "badge": "저ROE · 고PBR · PER불가",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "저항거리큼",
           "bias": -3,
-          "reason": "20일 전고점까지 19.62% 거리; 회복 확인 필요"
+          "reason": "20일 전고점까지 20.15% 거리; 회복 확인 필요"
         },
         "stockFutureQuote": null,
         "nxtQuote": {
@@ -3589,12 +3564,12 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 29,
+          "score": 17,
           "stance": "리스크 우선",
           "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
             "actionState": "매수 보류",
-            "confidenceScore": 38,
+            "confidenceScore": 27,
             "confidenceLevel": "Uncertain",
             "positionGuide": {
               "label": "불확실",
@@ -3610,17 +3585,17 @@
       "name": "LG에너지솔루션",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": -53.35,
-        "pbr": 3.86,
+        "per": -53.93,
+        "pbr": 3.9,
         "roe": -7.4,
         "badge": "저ROE · PER불가",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
           "state": "전고점대기",
           "bias": -2,
-          "reason": "20일 전고점까지 1.62% 남아 돌파 확인 필요"
+          "reason": "20일 전고점까지 0.54% 남아 돌파 확인 필요"
         },
         "stockFutureQuote": null,
         "nxtQuote": {
@@ -3635,13 +3610,13 @@
           "source": "naver-nxt-overmarket"
         },
         "expertAnalysis": {
-          "score": 51,
+          "score": 43,
           "stance": "중립/확인 대기",
           "summary": "현재 자료만으로는 강한 추격 근거보다 확인해야 할 조건이 더 많습니다.",
           "survival": {
             "actionState": "관망 우선",
-            "confidenceScore": 54,
-            "confidenceLevel": "Low",
+            "confidenceScore": 43,
+            "confidenceLevel": "Uncertain",
             "positionGuide": {
               "label": "낮은 확신",
               "suggestedRangePct": "0~2%",
@@ -3656,17 +3631,17 @@
       "name": "HPSP",
       "strategy": "전체 분석",
       "fundamentals": {
-        "per": 41.78,
-        "pbr": 11.43,
+        "per": 40.97,
+        "pbr": 11.21,
         "roe": 30.51,
         "badge": "고ROE · 고PBR · 고PER주의",
         "themeRegime": null,
-        "updatedAt": "2026-08-14T08:55:46+09:00",
+        "updatedAt": "2026-08-17T08:55:55+09:00",
         "universeStatus": "existing",
         "technicalSignal": {
-          "state": "저항거리큼",
-          "bias": -3,
-          "reason": "20일 전고점까지 12.90% 거리; 회복 확인 필요"
+          "state": "구조중립",
+          "bias": 0,
+          "reason": "박스권/저항 확인 필요; 매물벽 위험 낮음"
         },
         "stockFutureQuote": {
           "market": "KRX 주식선물",
@@ -3674,19 +3649,19 @@
           "futureCode": "A1B609",
           "futureName": "HPSP       F 202609 (  10)",
           "expiryMonth": "202609",
-          "expiryDate": "20260910",
-          "remainingDays": 28,
+          "expiryDate": null,
+          "remainingDays": null,
           "price": 40300,
           "delta": -1200,
           "changePct": -2.89,
           "volume": 44550,
-          "tradingValue": 17804437500,
-          "openInterest": 72656,
-          "openInterestChange": 10994,
-          "theoreticalPrice": 40488,
-          "disparityPct": -0.47,
-          "basis": 88,
-          "marketBasis": -100,
+          "tradingValue": null,
+          "openInterest": null,
+          "openInterestChange": null,
+          "theoreticalPrice": null,
+          "disparityPct": null,
+          "basis": null,
+          "marketBasis": null,
           "underlyingPrice": 40400,
           "spotSpread": -100,
           "spotSpreadPct": -0.25,
@@ -3695,17 +3670,17 @@
           "signalReason": "체결가 기준 상대강도",
           "basisText": "reference-only; cash KRX close remains official P/L basis",
           "source": "kis-domestic-futureoption-readonly",
-          "updatedAt": "2026-08-17T08:30+09:00"
+          "updatedAt": "2026-08-17T09:20+09:00"
         },
         "nxtQuote": null,
         "expertAnalysis": {
-          "score": 29,
+          "score": 21,
           "stance": "리스크 우선",
           "summary": "가격 구조 또는 밸류 지표상 부담이 커서 리스크 관리가 우선인 구간입니다.",
           "survival": {
             "actionState": "매수 보류",
-            "confidenceScore": 51,
-            "confidenceLevel": "Low",
+            "confidenceScore": 33,
+            "confidenceLevel": "Uncertain",
             "positionGuide": {
               "label": "불확실",
               "suggestedRangePct": "0%",
