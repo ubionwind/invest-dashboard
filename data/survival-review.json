@@ -1,36 +1,35 @@
 {
-  "generatedAt": "2026-08-18T08:59+09:00",
-  "survivalScore": 46,
+  "generatedAt": "2026-08-20T09:24+09:00",
+  "survivalScore": 51,
   "totalRows": 40,
-  "noTradeRows": 32,
-  "noTradeRatioPct": 80.0,
+  "noTradeRows": 33,
+  "noTradeRatioPct": 82.5,
   "actionCounts": {
-    "매수 보류": 18,
-    "관망 우선": 14,
-    "소액/분할 접근": 6,
-    "적극 검토": 2
+    "매수 보류": 17,
+    "관망 우선": 16,
+    "소액/분할 접근": 7
   },
   "confidenceCounts": {
-    "Uncertain": 15,
-    "Medium": 7,
-    "Low": 15,
-    "High": 3
+    "Uncertain": 13,
+    "Low": 13,
+    "High": 1,
+    "Medium": 13
   },
   "topFailurePatterns": [
     {
       "code": "DRAWDOWN_GT_5",
-      "count": 30
+      "count": 31
     },
     {
       "code": "MISSED_UPSIDE_WHILE_WAITING",
-      "count": 6
-    },
-    {
-      "code": "DRAWDOWN_GT_2",
-      "count": 1
+      "count": 3
     },
     {
       "code": "LOAN_BALANCE_RISK",
+      "count": 3
+    },
+    {
+      "code": "DRAWDOWN_GT_2",
       "count": 1
     }
   ],
@@ -42,8 +41,8 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -18.39,
-      "negativeReadyCount": 31
+      "avgReadyReturnSinceFirstPct": -20.2,
+      "negativeReadyCount": 33
     },
     "5d": {
       "total": 40,
@@ -52,8 +51,8 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -18.39,
-      "negativeReadyCount": 31
+      "avgReadyReturnSinceFirstPct": -20.2,
+      "negativeReadyCount": 33
     },
     "20d": {
       "total": 40,
@@ -62,23 +61,33 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -18.39,
-      "negativeReadyCount": 31
+      "avgReadyReturnSinceFirstPct": -20.2,
+      "negativeReadyCount": 33
     }
   },
   "reviewReadyCount": 40,
   "baselineTrackedCount": 40,
-  "negativeSinceFirstCount": 31,
-  "highRiskCount": 30,
+  "negativeSinceFirstCount": 33,
+  "highRiskCount": 26,
   "highRiskSamples": [
     {
       "session": "일반",
       "code": "207940",
       "name": "삼성바이오로직스",
       "actionState": "매수 보류",
-      "confidenceScore": 25,
+      "confidenceScore": 28,
       "patterns": [
         "MISSED_UPSIDE_WHILE_WAITING"
+      ]
+    },
+    {
+      "session": "일반",
+      "code": "267260",
+      "name": "HD현대일렉트릭",
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
+      "patterns": [
+        "DRAWDOWN_GT_5"
       ]
     },
     {
@@ -86,7 +95,7 @@
       "code": "373220",
       "name": "LG에너지솔루션",
       "actionState": "관망 우선",
-      "confidenceScore": 51,
+      "confidenceScore": 48,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -95,8 +104,8 @@
       "session": "일반",
       "code": "005380",
       "name": "현대차",
-      "actionState": "관망 우선",
-      "confidenceScore": 59,
+      "actionState": "매수 보류",
+      "confidenceScore": 45,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -106,7 +115,7 @@
       "code": "007660",
       "name": "이수페타시스",
       "actionState": "관망 우선",
-      "confidenceScore": 51,
+      "confidenceScore": 54,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -116,7 +125,7 @@
       "code": "089030",
       "name": "테크윙",
       "actionState": "관망 우선",
-      "confidenceScore": 51,
+      "confidenceScore": 54,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -126,27 +135,17 @@
       "code": "247540",
       "name": "에코프로비엠",
       "actionState": "매수 보류",
-      "confidenceScore": 19,
+      "confidenceScore": 28,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
     },
     {
       "session": "급등",
-      "code": "012450",
-      "name": "한화에어로스페이스",
+      "code": "034020",
+      "name": "두산에너빌리티",
       "actionState": "매수 보류",
-      "confidenceScore": 41,
-      "patterns": [
-        "DRAWDOWN_GT_5"
-      ]
-    },
-    {
-      "session": "급등",
-      "code": "047810",
-      "name": "한국항공우주",
-      "actionState": "매수 보류",
-      "confidenceScore": 41,
+      "confidenceScore": 45,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
