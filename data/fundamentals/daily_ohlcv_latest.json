@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-21T08:55:49+09:00",
+  "checkedAt": "2026-08-24T08:56:22+09:00",
   "source": "naver_siseJson_day",
   "days": 90,
   "count": 40,
@@ -7,19 +7,11 @@
     "005930": {
       "code": "005930",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=005930&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=005930&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 207000.0,
-          "high": 207500.0,
-          "low": 202000.0,
-          "close": 204000.0,
-          "volume": 42320839.0
-        },
         {
           "date": "20260410",
           "open": 208500.0,
@@ -731,25 +723,25 @@
           "low": 252500.0,
           "close": 271000.0,
           "volume": 26095919.0
+        },
+        {
+          "date": "20260821",
+          "open": 267000.0,
+          "high": 285000.0,
+          "low": 266000.0,
+          "close": 281500.0,
+          "volume": 27746471.0
         }
       ]
     },
     "000660": {
       "code": "000660",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=000660&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=000660&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 1015000.0,
-          "high": 1025000.0,
-          "low": 990000.0,
-          "close": 998000.0,
-          "volume": 5026817.0
-        },
         {
           "date": "20260410",
           "open": 1030000.0,
@@ -1461,25 +1453,25 @@
           "low": 1576000.0,
           "close": 1691000.0,
           "volume": 5452970.0
+        },
+        {
+          "date": "20260821",
+          "open": 1675000.0,
+          "high": 1773000.0,
+          "low": 1669000.0,
+          "close": 1730000.0,
+          "volume": 4274294.0
         }
       ]
     },
     "042700": {
       "code": "042700",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=042700&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=042700&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 278000.0,
-          "high": 286000.0,
-          "low": 271500.0,
-          "close": 286000.0,
-          "volume": 646513.0
-        },
         {
           "date": "20260410",
           "open": 290000.0,
@@ -2191,25 +2183,25 @@
           "low": 217000.0,
           "close": 225500.0,
           "volume": 645969.0
+        },
+        {
+          "date": "20260821",
+          "open": 219500.0,
+          "high": 220500.0,
+          "low": 212000.0,
+          "close": 213500.0,
+          "volume": 515436.0
         }
       ]
     },
     "007660": {
       "code": "007660",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=007660&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=007660&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 117800.0,
-          "high": 121900.0,
-          "low": 116100.0,
-          "close": 117900.0,
-          "volume": 829345.0
-        },
         {
           "date": "20260410",
           "open": 120200.0,
@@ -2921,25 +2913,25 @@
           "low": 101300.0,
           "close": 105000.0,
           "volume": 635229.0
+        },
+        {
+          "date": "20260821",
+          "open": 102100.0,
+          "high": 104000.0,
+          "low": 97300.0,
+          "close": 99300.0,
+          "volume": 525807.0
         }
       ]
     },
     "089030": {
       "code": "089030",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=089030&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=089030&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 50400.0,
-          "high": 54200.0,
-          "low": 49600.0,
-          "close": 52400.0,
-          "volume": 1787259.0
-        },
         {
           "date": "20260410",
           "open": 53200.0,
@@ -3651,25 +3643,25 @@
           "low": 48700.0,
           "close": 51100.0,
           "volume": 550473.0
+        },
+        {
+          "date": "20260821",
+          "open": 50200.0,
+          "high": 50800.0,
+          "low": 48050.0,
+          "close": 48400.0,
+          "volume": 355311.0
         }
       ]
     },
     "403870": {
       "code": "403870",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=403870&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=403870&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 45150.0,
-          "high": 45450.0,
-          "low": 43650.0,
-          "close": 44700.0,
-          "volume": 1285903.0
-        },
         {
           "date": "20260410",
           "open": 45500.0,
@@ -4381,25 +4373,25 @@
           "low": 45250.0,
           "close": 48000.0,
           "volume": 5280243.0
+        },
+        {
+          "date": "20260821",
+          "open": 47550.0,
+          "high": 48450.0,
+          "low": 43900.0,
+          "close": 44900.0,
+          "volume": 2509334.0
         }
       ]
     },
     "058470": {
       "code": "058470",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=058470&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=058470&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 113200.0,
-          "high": 113900.0,
-          "low": 109200.0,
-          "close": 113100.0,
-          "volume": 868388.0
-        },
         {
           "date": "20260410",
           "open": 114300.0,
@@ -5111,25 +5103,25 @@
           "low": 67700.0,
           "close": 69500.0,
           "volume": 343292.0
+        },
+        {
+          "date": "20260821",
+          "open": 67500.0,
+          "high": 67500.0,
+          "low": 65000.0,
+          "close": 65700.0,
+          "volume": 341168.0
         }
       ]
     },
     "095340": {
       "code": "095340",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=095340&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=095340&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 254500.0,
-          "high": 277500.0,
-          "low": 254000.0,
-          "close": 271000.0,
-          "volume": 595818.0
-        },
         {
           "date": "20260410",
           "open": 276000.0,
@@ -5841,25 +5833,25 @@
           "low": 167600.0,
           "close": 168700.0,
           "volume": 263649.0
+        },
+        {
+          "date": "20260821",
+          "open": 166900.0,
+          "high": 170900.0,
+          "low": 150300.0,
+          "close": 154300.0,
+          "volume": 183462.0
         }
       ]
     },
     "000990": {
       "code": "000990",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=000990&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=000990&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 92700.0,
-          "high": 95000.0,
-          "low": 91200.0,
-          "close": 92600.0,
-          "volume": 292732.0
-        },
         {
           "date": "20260410",
           "open": 95100.0,
@@ -6571,25 +6563,25 @@
           "low": 93100.0,
           "close": 96900.0,
           "volume": 235828.0
+        },
+        {
+          "date": "20260821",
+          "open": 93900.0,
+          "high": 94800.0,
+          "low": 88500.0,
+          "close": 89700.0,
+          "volume": 613862.0
         }
       ]
     },
     "267260": {
       "code": "267260",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=267260&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=267260&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 991000.0,
-          "high": 1000000.0,
-          "low": 973000.0,
-          "close": 980000.0,
-          "volume": 181604.0
-        },
         {
           "date": "20260410",
           "open": 997000.0,
@@ -7301,25 +7293,25 @@
           "low": 733000.0,
           "close": 746000.0,
           "volume": 100541.0
+        },
+        {
+          "date": "20260821",
+          "open": 746000.0,
+          "high": 746000.0,
+          "low": 708000.0,
+          "close": 718000.0,
+          "volume": 137350.0
         }
       ]
     },
     "010120": {
       "code": "010120",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=010120&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=010120&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260406",
-      "to": "20260820",
+      "from": "20260407",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260406",
-          "open": 159800.0,
-          "high": 165800.0,
-          "low": 158000.0,
-          "close": 159800.0,
-          "volume": 589705.0
-        },
         {
           "date": "20260407",
           "open": 164000.0,
@@ -8031,25 +8023,25 @@
           "low": 196600.0,
           "close": 199200.0,
           "volume": 558235.0
+        },
+        {
+          "date": "20260821",
+          "open": 196000.0,
+          "high": 197300.0,
+          "low": 186500.0,
+          "close": 187000.0,
+          "volume": 916678.0
         }
       ]
     },
     "034020": {
       "code": "034020",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=034020&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=034020&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 100100.0,
-          "high": 101700.0,
-          "low": 99500.0,
-          "close": 100000.0,
-          "volume": 2195437.0
-        },
         {
           "date": "20260410",
           "open": 101200.0,
@@ -8761,25 +8753,25 @@
           "low": 75700.0,
           "close": 75900.0,
           "volume": 1377164.0
+        },
+        {
+          "date": "20260821",
+          "open": 77900.0,
+          "high": 77900.0,
+          "low": 72500.0,
+          "close": 73300.0,
+          "volume": 2467372.0
         }
       ]
     },
     "336260": {
       "code": "336260",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=336260&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=336260&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 36350.0,
-          "high": 36750.0,
-          "low": 35300.0,
-          "close": 36000.0,
-          "volume": 330490.0
-        },
         {
           "date": "20260410",
           "open": 36600.0,
@@ -9491,25 +9483,25 @@
           "low": 39050.0,
           "close": 40650.0,
           "volume": 969198.0
+        },
+        {
+          "date": "20260821",
+          "open": 39350.0,
+          "high": 39350.0,
+          "low": 34000.0,
+          "close": 37000.0,
+          "volume": 1323000.0
         }
       ]
     },
     "012450": {
       "code": "012450",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=012450&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=012450&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 1485000.0,
-          "high": 1495000.0,
-          "low": 1423000.0,
-          "close": 1451000.0,
-          "volume": 224072.0
-        },
         {
           "date": "20260410",
           "open": 1465000.0,
@@ -10221,25 +10213,25 @@
           "low": 1136000.0,
           "close": 1167000.0,
           "volume": 251401.0
+        },
+        {
+          "date": "20260821",
+          "open": 1145000.0,
+          "high": 1145000.0,
+          "low": 1077000.0,
+          "close": 1085000.0,
+          "volume": 193892.0
         }
       ]
     },
     "079550": {
       "code": "079550",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=079550&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=079550&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 864000.0,
-          "high": 926000.0,
-          "low": 818000.0,
-          "close": 887000.0,
-          "volume": 753754.0
-        },
         {
           "date": "20260410",
           "open": 890000.0,
@@ -10951,25 +10943,25 @@
           "low": 771000.0,
           "close": 787000.0,
           "volume": 90069.0
+        },
+        {
+          "date": "20260821",
+          "open": 770000.0,
+          "high": 778000.0,
+          "low": 679000.0,
+          "close": 695000.0,
+          "volume": 279762.0
         }
       ]
     },
     "064350": {
       "code": "064350",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=064350&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=064350&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 209500.0,
-          "high": 211000.0,
-          "low": 203000.0,
-          "close": 203000.0,
-          "volume": 727272.0
-        },
         {
           "date": "20260410",
           "open": 203000.0,
@@ -11681,25 +11673,25 @@
           "low": 135100.0,
           "close": 137200.0,
           "volume": 330476.0
+        },
+        {
+          "date": "20260821",
+          "open": 133700.0,
+          "high": 133900.0,
+          "low": 129000.0,
+          "close": 130100.0,
+          "volume": 530846.0
         }
       ]
     },
     "047810": {
       "code": "047810",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=047810&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=047810&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 193400.0,
-          "high": 204500.0,
-          "low": 187300.0,
-          "close": 199900.0,
-          "volume": 1089555.0
-        },
         {
           "date": "20260410",
           "open": 201500.0,
@@ -12411,25 +12403,25 @@
           "low": 133400.0,
           "close": 134700.0,
           "volume": 219161.0
+        },
+        {
+          "date": "20260821",
+          "open": 132600.0,
+          "high": 132800.0,
+          "low": 129400.0,
+          "close": 130000.0,
+          "volume": 252741.0
         }
       ]
     },
     "329180": {
       "code": "329180",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=329180&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=329180&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 489000.0,
-          "high": 490000.0,
-          "low": 470500.0,
-          "close": 470500.0,
-          "volume": 500179.0
-        },
         {
           "date": "20260410",
           "open": 475500.0,
@@ -13141,25 +13133,25 @@
           "low": 473000.0,
           "close": 475500.0,
           "volume": 166219.0
+        },
+        {
+          "date": "20260821",
+          "open": 466000.0,
+          "high": 466000.0,
+          "low": 451500.0,
+          "close": 453000.0,
+          "volume": 252822.0
         }
       ]
     },
     "010140": {
       "code": "010140",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=010140&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=010140&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 28950.0,
-          "high": 29000.0,
-          "low": 28000.0,
-          "close": 28150.0,
-          "volume": 4456036.0
-        },
         {
           "date": "20260410",
           "open": 28650.0,
@@ -13871,25 +13863,25 @@
           "low": 20650.0,
           "close": 20800.0,
           "volume": 1862749.0
+        },
+        {
+          "date": "20260821",
+          "open": 20550.0,
+          "high": 20550.0,
+          "low": 20000.0,
+          "close": 20200.0,
+          "volume": 1990817.0
         }
       ]
     },
     "009540": {
       "code": "009540",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=009540&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=009540&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 392500.0,
-          "high": 396000.0,
-          "low": 389500.0,
-          "close": 391000.0,
-          "volume": 193950.0
-        },
         {
           "date": "20260410",
           "open": 392000.0,
@@ -14601,25 +14593,25 @@
           "low": 359000.0,
           "close": 360500.0,
           "volume": 133003.0
+        },
+        {
+          "date": "20260821",
+          "open": 355000.0,
+          "high": 355000.0,
+          "low": 345000.0,
+          "close": 348500.0,
+          "volume": 152716.0
         }
       ]
     },
     "247540": {
       "code": "247540",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=247540&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=247540&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 207500.0,
-          "high": 209750.0,
-          "low": 200000.0,
-          "close": 206000.0,
-          "volume": 574238.0
-        },
         {
           "date": "20260410",
           "open": 207000.0,
@@ -15331,25 +15323,25 @@
           "low": 111500.0,
           "close": 114100.0,
           "volume": 286385.0
+        },
+        {
+          "date": "20260821",
+          "open": 110600.0,
+          "high": 111000.0,
+          "low": 105000.0,
+          "close": 105600.0,
+          "volume": 317914.0
         }
       ]
     },
     "373220": {
       "code": "373220",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=373220&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=373220&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 408000.0,
-          "high": 422000.0,
-          "low": 403000.0,
-          "close": 421000.0,
-          "volume": 719468.0
-        },
         {
           "date": "20260410",
           "open": 421000.0,
@@ -16061,25 +16053,25 @@
           "low": 357000.0,
           "close": 358000.0,
           "volume": 267995.0
+        },
+        {
+          "date": "20260821",
+          "open": 355500.0,
+          "high": 356000.0,
+          "low": 341500.0,
+          "close": 343500.0,
+          "volume": 248966.0
         }
       ]
     },
     "006400": {
       "code": "006400",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=006400&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=006400&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 475000.0,
-          "high": 493500.0,
-          "low": 469000.0,
-          "close": 480000.0,
-          "volume": 1003279.0
-        },
         {
           "date": "20260410",
           "open": 483000.0,
@@ -16791,25 +16783,25 @@
           "low": 490000.0,
           "close": 499500.0,
           "volume": 390207.0
+        },
+        {
+          "date": "20260821",
+          "open": 487500.0,
+          "high": 492000.0,
+          "low": 476000.0,
+          "close": 478000.0,
+          "volume": 286477.0
         }
       ]
     },
     "003670": {
       "code": "003670",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=003670&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=003670&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 219000.0,
-          "high": 225000.0,
-          "low": 215500.0,
-          "close": 218000.0,
-          "volume": 399050.0
-        },
         {
           "date": "20260410",
           "open": 219500.0,
@@ -17521,25 +17513,25 @@
           "low": 161800.0,
           "close": 163300.0,
           "volume": 242384.0
+        },
+        {
+          "date": "20260821",
+          "open": 159000.0,
+          "high": 159100.0,
+          "low": 154000.0,
+          "close": 154900.0,
+          "volume": 230420.0
         }
       ]
     },
     "086520": {
       "code": "086520",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=086520&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=086520&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 153200.0,
-          "high": 153800.0,
-          "low": 148500.0,
-          "close": 148900.0,
-          "volume": 1109507.0
-        },
         {
           "date": "20260410",
           "open": 150600.0,
@@ -18251,25 +18243,25 @@
           "low": 87300.0,
           "close": 88100.0,
           "volume": 536670.0
+        },
+        {
+          "date": "20260821",
+          "open": 85700.0,
+          "high": 85700.0,
+          "low": 81500.0,
+          "close": 81700.0,
+          "volume": 685196.0
         }
       ]
     },
     "207940": {
       "code": "207940",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=207940&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=207940&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 1598000.0,
-          "high": 1619000.0,
-          "low": 1578000.0,
-          "close": 1580000.0,
-          "volume": 37749.0
-        },
         {
           "date": "20260410",
           "open": 1586000.0,
@@ -18981,25 +18973,25 @@
           "low": 1546000.0,
           "close": 1574000.0,
           "volume": 62565.0
+        },
+        {
+          "date": "20260821",
+          "open": 1539000.0,
+          "high": 1564000.0,
+          "low": 1530000.0,
+          "close": 1551000.0,
+          "volume": 44704.0
         }
       ]
     },
     "068270": {
       "code": "068270",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=068270&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=068270&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 193016.0,
-          "high": 193492.0,
-          "low": 189584.0,
-          "close": 192063.0,
-          "volume": 582803.0
-        },
         {
           "date": "20260410",
           "open": 193492.0,
@@ -19711,25 +19703,25 @@
           "low": 194000.0,
           "close": 194100.0,
           "volume": 484272.0
+        },
+        {
+          "date": "20260821",
+          "open": 192100.0,
+          "high": 193100.0,
+          "low": 187600.0,
+          "close": 192300.0,
+          "volume": 354956.0
         }
       ]
     },
     "196170": {
       "code": "196170",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=196170&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=196170&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 287005.0,
-          "high": 288544.0,
-          "low": 279311.0,
-          "close": 284697.0,
-          "volume": 414193.0
-        },
         {
           "date": "20260410",
           "open": 285466.0,
@@ -20441,25 +20433,25 @@
           "low": 322000.0,
           "close": 339500.0,
           "volume": 1019594.0
+        },
+        {
+          "date": "20260821",
+          "open": 325000.0,
+          "high": 328000.0,
+          "low": 310000.0,
+          "close": 320000.0,
+          "volume": 491494.0
         }
       ]
     },
     "141080": {
       "code": "141080",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=141080&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=141080&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 177200.0,
-          "high": 186700.0,
-          "low": 176500.0,
-          "close": 180300.0,
-          "volume": 518099.0
-        },
         {
           "date": "20260410",
           "open": 183700.0,
@@ -21171,25 +21163,25 @@
           "low": 104000.0,
           "close": 108300.0,
           "volume": 219126.0
+        },
+        {
+          "date": "20260821",
+          "open": 104200.0,
+          "high": 104900.0,
+          "low": 98800.0,
+          "close": 100000.0,
+          "volume": 263630.0
         }
       ]
     },
     "005380": {
       "code": "005380",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=005380&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=005380&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 510000.0,
-          "high": 514000.0,
-          "low": 487000.0,
-          "close": 489500.0,
-          "volume": 990889.0
-        },
         {
           "date": "20260410",
           "open": 498000.0,
@@ -21901,25 +21893,25 @@
           "low": 408000.0,
           "close": 417500.0,
           "volume": 421243.0
+        },
+        {
+          "date": "20260821",
+          "open": 406500.0,
+          "high": 420500.0,
+          "low": 405000.0,
+          "close": 415000.0,
+          "volume": 373056.0
         }
       ]
     },
     "000270": {
       "code": "000270",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=000270&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=000270&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 159300.0,
-          "high": 163200.0,
-          "low": 149100.0,
-          "close": 150500.0,
-          "volume": 1896387.0
-        },
         {
           "date": "20260410",
           "open": 154000.0,
@@ -22631,25 +22623,25 @@
           "low": 130800.0,
           "close": 131100.0,
           "volume": 869614.0
+        },
+        {
+          "date": "20260821",
+          "open": 129900.0,
+          "high": 131800.0,
+          "low": 129400.0,
+          "close": 130900.0,
+          "volume": 667262.0
         }
       ]
     },
     "012330": {
       "code": "012330",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=012330&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=012330&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 408000.0,
-          "high": 414500.0,
-          "low": 398500.0,
-          "close": 401500.0,
-          "volume": 270996.0
-        },
         {
           "date": "20260410",
           "open": 406500.0,
@@ -23361,25 +23353,25 @@
           "low": 497000.0,
           "close": 507000.0,
           "volume": 224249.0
+        },
+        {
+          "date": "20260821",
+          "open": 494500.0,
+          "high": 506000.0,
+          "low": 491500.0,
+          "close": 496000.0,
+          "volume": 219886.0
         }
       ]
     },
     "035420": {
       "code": "035420",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=035420&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=035420&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 200000.0,
-          "high": 206500.0,
-          "low": 198600.0,
-          "close": 201500.0,
-          "volume": 1258361.0
-        },
         {
           "date": "20260410",
           "open": 202500.0,
@@ -24091,25 +24083,25 @@
           "low": 209500.0,
           "close": 219500.0,
           "volume": 961900.0
+        },
+        {
+          "date": "20260821",
+          "open": 219000.0,
+          "high": 225000.0,
+          "low": 214000.0,
+          "close": 222000.0,
+          "volume": 987136.0
         }
       ]
     },
     "035720": {
       "code": "035720",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=035720&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=035720&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 47900.0,
-          "high": 47950.0,
-          "low": 47000.0,
-          "close": 47300.0,
-          "volume": 1128075.0
-        },
         {
           "date": "20260410",
           "open": 47550.0,
@@ -24821,25 +24813,25 @@
           "low": 37450.0,
           "close": 38700.0,
           "volume": 2130101.0
+        },
+        {
+          "date": "20260821",
+          "open": 38150.0,
+          "high": 38750.0,
+          "low": 33600.0,
+          "close": 35800.0,
+          "volume": 10109356.0
         }
       ]
     },
     "259960": {
       "code": "259960",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=259960&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=259960&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 234500.0,
-          "high": 236000.0,
-          "low": 230000.0,
-          "close": 234000.0,
-          "volume": 112686.0
-        },
         {
           "date": "20260410",
           "open": 233500.0,
@@ -25551,25 +25543,25 @@
           "low": 220500.0,
           "close": 222500.0,
           "volume": 108239.0
+        },
+        {
+          "date": "20260821",
+          "open": 220500.0,
+          "high": 223000.0,
+          "low": 217000.0,
+          "close": 222000.0,
+          "volume": 88499.0
         }
       ]
     },
     "055550": {
       "code": "055550",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=055550&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=055550&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 97200.0,
-          "high": 98900.0,
-          "low": 96400.0,
-          "close": 96600.0,
-          "volume": 1334538.0
-        },
         {
           "date": "20260410",
           "open": 97000.0,
@@ -26281,25 +26273,25 @@
           "low": 101100.0,
           "close": 101100.0,
           "volume": 1252468.0
+        },
+        {
+          "date": "20260821",
+          "open": 102000.0,
+          "high": 104700.0,
+          "low": 101000.0,
+          "close": 104100.0,
+          "volume": 1345887.0
         }
       ]
     },
     "105560": {
       "code": "105560",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=105560&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=105560&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 162700.0,
-          "high": 162700.0,
-          "low": 154100.0,
-          "close": 154200.0,
-          "volume": 1002806.0
-        },
         {
           "date": "20260410",
           "open": 156000.0,
@@ -27011,25 +27003,25 @@
           "low": 159800.0,
           "close": 160000.0,
           "volume": 1332300.0
+        },
+        {
+          "date": "20260821",
+          "open": 161000.0,
+          "high": 164600.0,
+          "low": 159500.0,
+          "close": 164300.0,
+          "volume": 1165965.0
         }
       ]
     },
     "086790": {
       "code": "086790",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=086790&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=086790&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 119800.0,
-          "high": 120700.0,
-          "low": 116700.0,
-          "close": 117100.0,
-          "volume": 1142649.0
-        },
         {
           "date": "20260410",
           "open": 117600.0,
@@ -27741,25 +27733,25 @@
           "low": 123400.0,
           "close": 123400.0,
           "volume": 931998.0
+        },
+        {
+          "date": "20260821",
+          "open": 124500.0,
+          "high": 129800.0,
+          "low": 123000.0,
+          "close": 128800.0,
+          "volume": 758877.0
         }
       ]
     },
     "051910": {
       "code": "051910",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=051910&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=051910&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 353500.0,
-          "high": 367000.0,
-          "low": 348500.0,
-          "close": 355000.0,
-          "volume": 717366.0
-        },
         {
           "date": "20260410",
           "open": 359500.0,
@@ -28471,25 +28463,25 @@
           "low": 263500.0,
           "close": 264000.0,
           "volume": 158402.0
+        },
+        {
+          "date": "20260821",
+          "open": 261000.0,
+          "high": 262000.0,
+          "low": 251500.0,
+          "close": 252500.0,
+          "volume": 141218.0
         }
       ]
     },
     "010950": {
       "code": "010950",
       "source": "naver_siseJson_day",
-      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=010950&requestType=1&startTime=20260222&endTime=20260821&timeframe=day",
+      "sourceUrl": "https://api.finance.naver.com/siseJson.naver?symbol=010950&requestType=1&startTime=20260225&endTime=20260824&timeframe=day",
       "rowCount": 90,
-      "from": "20260409",
-      "to": "20260820",
+      "from": "20260410",
+      "to": "20260821",
       "rows": [
-        {
-          "date": "20260409",
-          "open": 113000.0,
-          "high": 119900.0,
-          "low": 111200.0,
-          "close": 119600.0,
-          "volume": 844806.0
-        },
         {
           "date": "20260410",
           "open": 117600.0,
@@ -29201,6 +29193,14 @@
           "low": 142100.0,
           "close": 142600.0,
           "volume": 274875.0
+        },
+        {
+          "date": "20260821",
+          "open": 143900.0,
+          "high": 148600.0,
+          "low": 139400.0,
+          "close": 141100.0,
+          "volume": 210251.0
         }
       ]
     }
