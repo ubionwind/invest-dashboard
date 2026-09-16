@@ -1,30 +1,38 @@
 {
-  "generatedAt": "2026-09-16T08:56+09:00",
+  "generatedAt": "2026-09-21T08:30+09:00",
   "survivalScore": 45,
   "totalRows": 40,
-  "noTradeRows": 34,
-  "noTradeRatioPct": 85.0,
+  "noTradeRows": 36,
+  "noTradeRatioPct": 90.0,
   "actionCounts": {
-    "소액/분할 접근": 6,
-    "관망 우선": 23,
-    "매수 보류": 11
+    "관망 우선": 21,
+    "소액/분할 접근": 4,
+    "매수 보류": 15
   },
   "confidenceCounts": {
-    "Medium": 6,
-    "Low": 23,
-    "Uncertain": 11
+    "Low": 21,
+    "Medium": 4,
+    "Uncertain": 15
   },
   "topFailurePatterns": [
     {
       "code": "DRAWDOWN_GT_5",
-      "count": 33
+      "count": 32
     },
     {
       "code": "MISSED_UPSIDE_WHILE_WAITING",
-      "count": 3
+      "count": 5
+    },
+    {
+      "code": "LOAN_BALANCE_RISK",
+      "count": 2
     },
     {
       "code": "FLOW_DISTRIBUTION_RISK",
+      "count": 2
+    },
+    {
+      "code": "LOW_CONFIDENCE_NO_TRADE",
       "count": 1
     }
   ],
@@ -36,8 +44,8 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -20.41,
-      "negativeReadyCount": 33
+      "avgReadyReturnSinceFirstPct": -19.86,
+      "negativeReadyCount": 32
     },
     "5d": {
       "total": 40,
@@ -46,8 +54,8 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -20.41,
-      "negativeReadyCount": 33
+      "avgReadyReturnSinceFirstPct": -19.86,
+      "negativeReadyCount": 32
     },
     "20d": {
       "total": 40,
@@ -56,21 +64,31 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -20.41,
-      "negativeReadyCount": 33
+      "avgReadyReturnSinceFirstPct": -19.86,
+      "negativeReadyCount": 32
     }
   },
   "reviewReadyCount": 40,
   "baselineTrackedCount": 40,
-  "negativeSinceFirstCount": 33,
-  "highRiskCount": 34,
+  "negativeSinceFirstCount": 32,
+  "highRiskCount": 35,
   "highRiskSamples": [
+    {
+      "session": "일반",
+      "code": "207940",
+      "name": "삼성바이오로직스",
+      "actionState": "관망 우선",
+      "confidenceScore": 48,
+      "patterns": [
+        "MISSED_UPSIDE_WHILE_WAITING"
+      ]
+    },
     {
       "session": "일반",
       "code": "373220",
       "name": "LG에너지솔루션",
-      "actionState": "관망 우선",
-      "confidenceScore": 48,
+      "actionState": "매수 보류",
+      "confidenceScore": 41,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -79,8 +97,8 @@
       "session": "일반",
       "code": "005930",
       "name": "삼성전자",
-      "actionState": "관망 우선",
-      "confidenceScore": 58,
+      "actionState": "매수 보류",
+      "confidenceScore": 23,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -89,8 +107,8 @@
       "session": "일반",
       "code": "000660",
       "name": "SK하이닉스",
-      "actionState": "매수 보류",
-      "confidenceScore": 29,
+      "actionState": "관망 우선",
+      "confidenceScore": 49,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -109,8 +127,8 @@
       "session": "일반",
       "code": "000270",
       "name": "기아",
-      "actionState": "관망 우선",
-      "confidenceScore": 57,
+      "actionState": "매수 보류",
+      "confidenceScore": 32,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -119,9 +137,10 @@
       "session": "일반",
       "code": "035420",
       "name": "NAVER",
-      "actionState": "관망 우선",
-      "confidenceScore": 48,
+      "actionState": "매수 보류",
+      "confidenceScore": 32,
       "patterns": [
+        "LOAN_BALANCE_RISK",
         "FLOW_DISTRIBUTION_RISK"
       ]
     },
@@ -131,16 +150,6 @@
       "name": "이수페타시스",
       "actionState": "관망 우선",
       "confidenceScore": 47,
-      "patterns": [
-        "DRAWDOWN_GT_5"
-      ]
-    },
-    {
-      "session": "단기",
-      "code": "042700",
-      "name": "한미반도체",
-      "actionState": "매수 보류",
-      "confidenceScore": 41,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
