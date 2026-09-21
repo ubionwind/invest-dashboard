@@ -1,23 +1,25 @@
 {
-  "generatedAt": "2026-09-21T08:30+09:00",
-  "survivalScore": 45,
+  "generatedAt": "2026-09-23T09:23+09:00",
+  "survivalScore": 46,
   "totalRows": 40,
-  "noTradeRows": 36,
-  "noTradeRatioPct": 90.0,
+  "noTradeRows": 32,
+  "noTradeRatioPct": 80.0,
   "actionCounts": {
-    "관망 우선": 21,
-    "소액/분할 접근": 4,
-    "매수 보류": 15
+    "매수 보류": 22,
+    "소액/분할 접근": 7,
+    "관망 우선": 10,
+    "적극 검토": 1
   },
   "confidenceCounts": {
-    "Low": 21,
-    "Medium": 4,
-    "Uncertain": 15
+    "Uncertain": 22,
+    "Medium": 9,
+    "Low": 8,
+    "High": 1
   },
   "topFailurePatterns": [
     {
       "code": "DRAWDOWN_GT_5",
-      "count": 32
+      "count": 31
     },
     {
       "code": "MISSED_UPSIDE_WHILE_WAITING",
@@ -25,14 +27,10 @@
     },
     {
       "code": "LOAN_BALANCE_RISK",
-      "count": 2
+      "count": 3
     },
     {
       "code": "FLOW_DISTRIBUTION_RISK",
-      "count": 2
-    },
-    {
-      "code": "LOW_CONFIDENCE_NO_TRADE",
       "count": 1
     }
   ],
@@ -44,8 +42,8 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -19.86,
-      "negativeReadyCount": 32
+      "avgReadyReturnSinceFirstPct": -19.98,
+      "negativeReadyCount": 31
     },
     "5d": {
       "total": 40,
@@ -54,8 +52,8 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -19.86,
-      "negativeReadyCount": 32
+      "avgReadyReturnSinceFirstPct": -19.98,
+      "negativeReadyCount": 31
     },
     "20d": {
       "total": 40,
@@ -64,21 +62,21 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -19.86,
-      "negativeReadyCount": 32
+      "avgReadyReturnSinceFirstPct": -19.98,
+      "negativeReadyCount": 31
     }
   },
   "reviewReadyCount": 40,
   "baselineTrackedCount": 40,
-  "negativeSinceFirstCount": 32,
-  "highRiskCount": 35,
+  "negativeSinceFirstCount": 31,
+  "highRiskCount": 30,
   "highRiskSamples": [
     {
       "session": "일반",
       "code": "207940",
       "name": "삼성바이오로직스",
-      "actionState": "관망 우선",
-      "confidenceScore": 48,
+      "actionState": "매수 보류",
+      "confidenceScore": 44,
       "patterns": [
         "MISSED_UPSIDE_WHILE_WAITING"
       ]
@@ -87,8 +85,8 @@
       "session": "일반",
       "code": "373220",
       "name": "LG에너지솔루션",
-      "actionState": "매수 보류",
-      "confidenceScore": 41,
+      "actionState": "관망 우선",
+      "confidenceScore": 51,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -97,18 +95,8 @@
       "session": "일반",
       "code": "005930",
       "name": "삼성전자",
-      "actionState": "매수 보류",
-      "confidenceScore": 23,
-      "patterns": [
-        "DRAWDOWN_GT_5"
-      ]
-    },
-    {
-      "session": "일반",
-      "code": "000660",
-      "name": "SK하이닉스",
       "actionState": "관망 우선",
-      "confidenceScore": 49,
+      "confidenceScore": 58,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -117,8 +105,8 @@
       "session": "일반",
       "code": "005380",
       "name": "현대차",
-      "actionState": "관망 우선",
-      "confidenceScore": 57,
+      "actionState": "매수 보류",
+      "confidenceScore": 35,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -128,7 +116,7 @@
       "code": "000270",
       "name": "기아",
       "actionState": "매수 보류",
-      "confidenceScore": 32,
+      "confidenceScore": 35,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -138,7 +126,7 @@
       "code": "035420",
       "name": "NAVER",
       "actionState": "매수 보류",
-      "confidenceScore": 32,
+      "confidenceScore": 35,
       "patterns": [
         "LOAN_BALANCE_RISK",
         "FLOW_DISTRIBUTION_RISK"
@@ -148,8 +136,18 @@
       "session": "단기",
       "code": "007660",
       "name": "이수페타시스",
-      "actionState": "관망 우선",
-      "confidenceScore": 47,
+      "actionState": "매수 보류",
+      "confidenceScore": 25,
+      "patterns": [
+        "DRAWDOWN_GT_5"
+      ]
+    },
+    {
+      "session": "단기",
+      "code": "089030",
+      "name": "테크윙",
+      "actionState": "매수 보류",
+      "confidenceScore": 44,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
