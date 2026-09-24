@@ -1,7 +1,7 @@
 {
   "schema": "invest-survival-v1.dashboard.v1",
-  "generatedAt": "2026-09-24T09:22:20+09:00",
-  "sourceDashboardGeneratedAt": "2026-09-24T09:22+09:00",
+  "generatedAt": "2026-09-25T09:21:35+09:00",
+  "sourceDashboardGeneratedAt": "2026-09-25T09:21+09:00",
   "status": "VIRTUAL_ONLY",
   "mission": "실패한 레거시 투자 데이터를 금지 규칙으로 재사용해 손실 반복 루프를 끊는 생존형 신규 버전",
   "legacySummary": {
@@ -68,15 +68,6 @@
     }
   },
   "performanceHistory": [
-    {
-      "ts": "2026-08-11T11:54:37+09:00",
-      "survivalReturnPct": 0,
-      "survivalEvalAmount": 10000000,
-      "kospiReturnPct": 0.08,
-      "kodex200trReturnPct": -1.17,
-      "kospiValue": 6352.0,
-      "kodex200trValue": 35940.0
-    },
     {
       "ts": "2026-08-11T12:11:11+09:00",
       "survivalReturnPct": 0,
@@ -1141,6 +1132,15 @@
     },
     {
       "ts": "2026-09-24T09:22:20+09:00",
+      "survivalReturnPct": 0,
+      "survivalEvalAmount": 10000000,
+      "kospiReturnPct": 11.56,
+      "kodex200trReturnPct": 12.61,
+      "kospiValue": 7080.92,
+      "kodex200trValue": 40950.0
+    },
+    {
+      "ts": "2026-09-25T09:21:35+09:00",
       "survivalReturnPct": 0,
       "survivalEvalAmount": 10000000,
       "kospiReturnPct": 11.56,
