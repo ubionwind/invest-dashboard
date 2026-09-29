@@ -1,15 +1,15 @@
 {
   "schema": "invest-survival-v1.dashboard.v1",
-  "generatedAt": "2026-09-29T08:59:07+09:00",
-  "sourceDashboardGeneratedAt": "2026-09-29T08:59+09:00",
+  "generatedAt": "2026-09-30T09:26:17+09:00",
+  "sourceDashboardGeneratedAt": "2026-09-30T09:26+09:00",
   "status": "VIRTUAL_ONLY",
   "mission": "실패한 레거시 투자 데이터를 금지 규칙으로 재사용해 손실 반복 루프를 끊는 생존형 신규 버전",
   "legacySummary": {
     "totalSessions": 13,
-    "totalCapital": 110000000,
-    "totalEvalAmount": 86980550,
-    "totalPnl": -23019450,
-    "totalReturnPct": -20.93
+    "totalCapital": 148359933,
+    "totalEvalAmount": 123516403,
+    "totalPnl": -24843530,
+    "totalReturnPct": -16.75
   },
   "newVersion": {
     "name": "재상-Survival V1-모의투자",
@@ -51,32 +51,23 @@
   "benchmarkCurrent": {
     "kospi": {
       "label": "KOSPI",
-      "value": 6889.74,
-      "dailyReturnPct": 0.0,
-      "date": "2026-09-29",
-      "time": "08:58:40",
+      "value": 6926.67,
+      "dailyReturnPct": 0.81,
+      "date": "2026-09-30",
+      "time": "09:25:00",
       "source": "naver-index-basic"
     },
     "kodex200tr": {
       "label": "KODEX 200TR",
       "code": "278530",
-      "value": 39655.0,
-      "dailyReturnPct": 0.0,
-      "date": "2026-09-29",
-      "time": "08:59:07",
+      "value": 40150.0,
+      "dailyReturnPct": 0.71,
+      "date": "2026-09-30",
+      "time": "09:25:20",
       "source": "naver-stock-basic"
     }
   },
   "performanceHistory": [
-    {
-      "ts": "2026-08-11T13:31:07+09:00",
-      "survivalReturnPct": 0,
-      "survivalEvalAmount": 10000000,
-      "kospiReturnPct": 0.46,
-      "kodex200trReturnPct": -0.25,
-      "kospiValue": 6376.49,
-      "kodex200trValue": 36275.0
-    },
     {
       "ts": "2026-08-11T13:43:59+09:00",
       "survivalReturnPct": 0,
@@ -1147,6 +1138,15 @@
       "kodex200trReturnPct": 9.05,
       "kospiValue": 6889.74,
       "kodex200trValue": 39655.0
+    },
+    {
+      "ts": "2026-09-30T09:26:17+09:00",
+      "survivalReturnPct": 0,
+      "survivalEvalAmount": 10000000,
+      "kospiReturnPct": 9.13,
+      "kodex200trReturnPct": 10.41,
+      "kospiValue": 6926.67,
+      "kodex200trValue": 40150.0
     }
   ],
   "failurePatterns": [
@@ -1367,34 +1367,12 @@
   ],
   "watchlist": [
     {
-      "code": "010140",
-      "name": "삼성중공업",
-      "source": "퀀트모멘텀V2",
-      "score": 88.0,
-      "changePct": 2.27,
-      "price": 22550,
-      "action": "ENTRY_REVIEW",
-      "reason": "가격 위치 허용, 추가 게이트 검토",
-      "rawReason": "모멘텀구간=30; 거래대금점수=14; 등락률=2.27"
-    },
-    {
-      "code": "403870",
-      "name": "HPSP",
-      "source": "퀀트모멘텀V2",
-      "score": 88.0,
-      "changePct": 0.0,
-      "price": 56000,
-      "action": "ENTRY_REVIEW",
-      "reason": "가격 위치 허용, 추가 게이트 검토",
-      "rawReason": "모멘텀구간=30; 거래대금점수=14; 등락률=7.41"
-    },
-    {
       "code": "007660",
       "name": "이수페타시스",
       "source": "단기",
       "score": 87.8,
-      "changePct": 1.37,
-      "price": 89000,
+      "changePct": 0.0,
+      "price": 118000,
       "action": "ENTRY_REVIEW",
       "reason": "가격 위치 허용, 추가 게이트 검토",
       "rawReason": "meta=0.84; 등락률=1.37; theme=AI기판; V3_ENTRY_GATE=blocked_or_review_only"
@@ -1404,33 +1382,33 @@
       "name": "현대차",
       "source": "퀀트모멘텀V2",
       "score": 84.2,
-      "changePct": 0.0,
-      "price": 354500,
+      "changePct": -1.21,
+      "price": 345750,
       "action": "ENTRY_REVIEW",
       "reason": "가격 위치 허용, 추가 게이트 검토",
       "rawReason": "모멘텀구간=30; 거래대금점수=20; 등락률=3.16"
+    },
+    {
+      "code": "010140",
+      "name": "삼성중공업",
+      "source": "퀀트모멘텀V2",
+      "score": 84.2,
+      "changePct": 2.27,
+      "price": 22550,
+      "action": "ENTRY_REVIEW",
+      "reason": "가격 위치 허용, 추가 게이트 검토",
+      "rawReason": "모멘텀구간=30; 거래대금점수=14; 등락률=2.27"
     },
     {
       "code": "034020",
       "name": "두산에너빌리티",
       "source": "퀀트모멘텀V2",
       "score": 84.2,
-      "changePct": 0.0,
-      "price": 82000,
+      "changePct": 1.38,
+      "price": 80800,
       "action": "ENTRY_REVIEW",
       "reason": "가격 위치 허용, 추가 게이트 검토",
       "rawReason": "모멘텀구간=30; 거래대금점수=20; 등락률=3.63"
-    },
-    {
-      "code": "089030",
-      "name": "테크윙",
-      "source": "단기",
-      "score": 65.0,
-      "changePct": -0.52,
-      "price": 47550,
-      "action": "ENTRY_REVIEW",
-      "reason": "가격 위치 허용, 추가 게이트 검토",
-      "rawReason": "meta=0.79; 등락률=-0.52; theme=반도체후공정; V3_ENTRY_GATE=blocked_or_review_only"
     },
     {
       "code": "010120",
@@ -1488,12 +1466,34 @@
       "rawReason": "watch only: 정규장 09:45 이후 +2.4% 이상 유지 및 거래대금/뉴스 확인 시 가상 진입 검토"
     },
     {
+      "code": "403870",
+      "name": "HPSP",
+      "source": "퀀트모멘텀V2",
+      "score": 93.0,
+      "changePct": 3.11,
+      "price": 62900,
+      "action": "WATCH_ONLY",
+      "reason": "관찰 유지",
+      "rawReason": "모멘텀구간=30; 거래대금점수=14; 등락률=7.41"
+    },
+    {
+      "code": "000990",
+      "name": "DB하이텍",
+      "source": "일반V2",
+      "score": 93.2,
+      "changePct": 2.68,
+      "price": 95700,
+      "action": "BLOCK_OVERHEAT",
+      "reason": "과열/추격 위험 태그",
+      "rawReason": "신규/상위검토; 신규 후보 보너스; 비추격 상승 확인; 섹터 breadth 확인"
+    },
+    {
       "code": "055550",
       "name": "신한지주",
       "source": "퀀트가치",
       "score": 92.9,
-      "changePct": 0.0,
-      "price": 111300,
+      "changePct": -1.09,
+      "price": 109300,
       "action": "BLOCK_OVERHEAT",
       "reason": "과열/추격 위험 태그",
       "rawReason": "가치/안정성=28; 과열완화=16.0; 거래대금점수=20; 등락률=-0.67"
@@ -1503,8 +1503,8 @@
       "name": "하나금융지주",
       "source": "퀀트가치",
       "score": 92.9,
-      "changePct": 0.0,
-      "price": 135300,
+      "changePct": -1.92,
+      "price": 132700,
       "action": "BLOCK_OVERHEAT",
       "reason": "과열/추격 위험 태그",
       "rawReason": "가치/안정성=28; 과열완화=17.5; 거래대금점수=14; 등락률=0.16"
@@ -1514,19 +1514,30 @@
       "name": "KB금융",
       "source": "퀀트가치",
       "score": 92.9,
-      "changePct": 0.0,
-      "price": 174200,
+      "changePct": -0.58,
+      "price": 172500,
       "action": "BLOCK_OVERHEAT",
       "reason": "과열/추격 위험 태그",
       "rawReason": "가치/안정성=28; 과열완화=16.9; 거래대금점수=20; 등락률=-0.36"
+    },
+    {
+      "code": "010950",
+      "name": "S-Oil",
+      "source": "일반V2",
+      "score": 90.0,
+      "changePct": 1.27,
+      "price": 159800,
+      "action": "BLOCK_OVERHEAT",
+      "reason": "과열/추격 위험 태그",
+      "rawReason": "신규/상위검토; 신규 후보 보너스; 비추격 상승 확인; 섹터 breadth 확인"
     },
     {
       "code": "012330",
       "name": "현대모비스",
       "source": "일반V2",
       "score": 87.6,
-      "changePct": 0.0,
-      "price": 373000,
+      "changePct": 0.27,
+      "price": 368000,
       "action": "BLOCK_OVERHEAT",
       "reason": "과열/추격 위험 태그",
       "rawReason": "신규/상위검토; 신규 후보 보너스; 비추격 상승 확인; 섹터 breadth 확인"
@@ -1536,11 +1547,22 @@
       "name": "HD현대일렉트릭",
       "source": "퀀트가치V2",
       "score": 87.0,
-      "changePct": 0.0,
-      "price": 693000,
+      "changePct": 0.29,
+      "price": 683000,
       "action": "BLOCK_OVERHEAT",
       "reason": "과열/추격 위험 태그",
       "rawReason": "가치/안정성=23; 과열완화=17.2; 거래대금점수=14; 등락률=0.26"
+    },
+    {
+      "code": "329180",
+      "name": "HD현대중공업",
+      "source": "퀀트가치",
+      "score": 87.0,
+      "changePct": -1.39,
+      "price": 496000,
+      "action": "BLOCK_OVERHEAT",
+      "reason": "과열/추격 위험 태그",
+      "rawReason": "가치/안정성=22; 과열완화=13.8; 거래대금점수=20; 등락률=-1.39"
     },
     {
       "code": "047810",
@@ -1548,7 +1570,7 @@
       "source": "퀀트가치V2",
       "score": 85.9,
       "changePct": 0.0,
-      "price": 129600,
+      "price": 127400,
       "action": "BLOCK_OVERHEAT",
       "reason": "과열/추격 위험 태그",
       "rawReason": "가치/안정성=23; 과열완화=17.8; 거래대금점수=14; 등락률=-0.06"
@@ -1558,44 +1580,11 @@
       "name": "셀트리온",
       "source": "퀀트가치V2",
       "score": 85.9,
-      "changePct": 0.0,
-      "price": 178300,
+      "changePct": -0.45,
+      "price": 178100,
       "action": "BLOCK_OVERHEAT",
       "reason": "과열/추격 위험 태그",
       "rawReason": "가치/안정성=18; 과열완화=15.4; 거래대금점수=20; 등락률=0.85"
-    },
-    {
-      "code": "329180",
-      "name": "HD현대중공업",
-      "source": "퀀트가치",
-      "score": 85.9,
-      "changePct": -1.39,
-      "price": 496000,
-      "action": "BLOCK_OVERHEAT",
-      "reason": "과열/추격 위험 태그",
-      "rawReason": "가치/안정성=22; 과열완화=13.8; 거래대금점수=20; 등락률=-1.39"
-    },
-    {
-      "code": "000990",
-      "name": "DB하이텍",
-      "source": "일반V2",
-      "score": 85.2,
-      "changePct": 2.68,
-      "price": 95700,
-      "action": "BLOCK_OVERHEAT",
-      "reason": "과열/추격 위험 태그",
-      "rawReason": "신규/상위검토; 신규 후보 보너스; 비추격 상승 확인; 섹터 breadth 확인"
-    },
-    {
-      "code": "010950",
-      "name": "S-Oil",
-      "source": "일반V2",
-      "score": 85.2,
-      "changePct": 0.0,
-      "price": 162200,
-      "action": "BLOCK_OVERHEAT",
-      "reason": "과열/추격 위험 태그",
-      "rawReason": "신규/상위검토; 신규 후보 보너스; 비추격 상승 확인; 섹터 breadth 확인"
     },
     {
       "code": "058470",
@@ -1612,9 +1601,9 @@
       "code": "079550",
       "name": "LIG넥스원",
       "source": "퀀트가치",
-      "score": 77.0,
-      "changePct": 0.0,
-      "price": 693000,
+      "score": 75.9,
+      "changePct": 0.88,
+      "price": 684000,
       "action": "BLOCK_OVERHEAT",
       "reason": "과열/추격 위험 태그",
       "rawReason": "가치/안정성=23; 과열완화=7.0; 거래대금점수=14; 등락률=3.68"
@@ -1631,6 +1620,17 @@
       "rawReason": "meta=0.76; 등락률=1.82; theme=2차전지소재; V3_ENTRY_GATE=blocked_or_review_only"
     },
     {
+      "code": "089030",
+      "name": "테크윙",
+      "source": "단기",
+      "score": 58.4,
+      "changePct": -0.52,
+      "price": 47550,
+      "action": "BLOCK_OVERHEAT",
+      "reason": "과열/추격 위험 태그",
+      "rawReason": "meta=0.79; 등락률=-0.52; theme=반도체후공정; V3_ENTRY_GATE=blocked_or_review_only"
+    },
+    {
       "code": "207940",
       "name": "삼성바이오로직스",
       "source": "일반",
@@ -1642,17 +1642,6 @@
       "rawReason": "meta=0.45; 등락률=-0.44; theme=바이오; V3_ENTRY_GATE=blocked_or_review_only"
     },
     {
-      "code": "005930",
-      "name": "삼성전자",
-      "source": "퀀트모멘텀",
-      "score": 100.0,
-      "changePct": 6.68,
-      "price": 255500,
-      "action": "BLOCK_CHASE",
-      "reason": "당일 +3.2% 이상 추격 금지",
-      "rawReason": "모멘텀구간=30; 거래대금점수=20; 등락률=6.68"
-    },
-    {
       "code": "000660",
       "name": "SK하이닉스",
       "source": "퀀트모멘텀",
@@ -1662,6 +1651,17 @@
       "action": "BLOCK_CHASE",
       "reason": "당일 +3.2% 이상 추격 금지",
       "rawReason": "모멘텀구간=30; 거래대금점수=20; 등락률=5.54"
+    },
+    {
+      "code": "005930",
+      "name": "삼성전자",
+      "source": "퀀트모멘텀",
+      "score": 87.5,
+      "changePct": 6.68,
+      "price": 255500,
+      "action": "BLOCK_CHASE",
+      "reason": "당일 +3.2% 이상 추격 금지",
+      "rawReason": "모멘텀구간=30; 거래대금점수=20; 등락률=6.68"
     },
     {
       "code": "006400",
