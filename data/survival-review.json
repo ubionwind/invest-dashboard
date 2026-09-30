@@ -1,20 +1,18 @@
 {
-  "generatedAt": "2026-09-30T09:26+09:00",
+  "generatedAt": "2026-10-01T09:25+09:00",
   "survivalScore": 45,
   "totalRows": 40,
-  "noTradeRows": 36,
-  "noTradeRatioPct": 90.0,
+  "noTradeRows": 37,
+  "noTradeRatioPct": 92.5,
   "actionCounts": {
-    "매수 보류": 22,
-    "관망 우선": 14,
-    "소액/분할 접근": 2,
-    "적극 검토": 2
+    "매수 보류": 18,
+    "관망 우선": 19,
+    "소액/분할 접근": 3
   },
   "confidenceCounts": {
-    "Uncertain": 21,
-    "Low": 12,
-    "Medium": 5,
-    "High": 2
+    "Uncertain": 32,
+    "Low": 6,
+    "Medium": 2
   },
   "topFailurePatterns": [
     {
@@ -27,10 +25,14 @@
     },
     {
       "code": "LOAN_BALANCE_RISK",
-      "count": 4
+      "count": 3
     },
     {
       "code": "FLOW_DISTRIBUTION_RISK",
+      "count": 3
+    },
+    {
+      "code": "REGIME_OVERRIDE_RISK",
       "count": 1
     }
   ],
@@ -42,7 +44,7 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -20.13,
+      "avgReadyReturnSinceFirstPct": -20.86,
       "negativeReadyCount": 31
     },
     "5d": {
@@ -52,7 +54,7 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -20.13,
+      "avgReadyReturnSinceFirstPct": -20.86,
       "negativeReadyCount": 31
     },
     "20d": {
@@ -62,14 +64,14 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -20.13,
+      "avgReadyReturnSinceFirstPct": -20.86,
       "negativeReadyCount": 31
     }
   },
   "reviewReadyCount": 40,
   "baselineTrackedCount": 40,
   "negativeSinceFirstCount": 31,
-  "highRiskCount": 33,
+  "highRiskCount": 38,
   "highRiskSamples": [
     {
       "session": "일반",
@@ -86,7 +88,7 @@
       "code": "267260",
       "name": "HD현대일렉트릭",
       "actionState": "관망 우선",
-      "confidenceScore": 51,
+      "confidenceScore": 41,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -95,8 +97,8 @@
       "session": "일반",
       "code": "373220",
       "name": "LG에너지솔루션",
-      "actionState": "관망 우선",
-      "confidenceScore": 54,
+      "actionState": "소액/분할 접근",
+      "confidenceScore": 57,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -105,7 +107,7 @@
       "session": "일반",
       "code": "005930",
       "name": "삼성전자",
-      "actionState": "매수 보류",
+      "actionState": "관망 우선",
       "confidenceScore": 42,
       "patterns": [
         "DRAWDOWN_GT_5"
@@ -116,7 +118,7 @@
       "code": "000660",
       "name": "SK하이닉스",
       "actionState": "매수 보류",
-      "confidenceScore": 46,
+      "confidenceScore": 26,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -126,7 +128,7 @@
       "code": "005380",
       "name": "현대차",
       "actionState": "매수 보류",
-      "confidenceScore": 35,
+      "confidenceScore": 25,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -136,7 +138,7 @@
       "code": "000270",
       "name": "기아",
       "actionState": "매수 보류",
-      "confidenceScore": 35,
+      "confidenceScore": 25,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
