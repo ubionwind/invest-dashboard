@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T08:31+09:00",
+  "generatedAt": "2026-10-12T08:56+09:00",
   "survivalScore": 45,
   "totalRows": 40,
   "noTradeRows": 34,
@@ -26,15 +26,15 @@
       "count": 4
     },
     {
+      "code": "LOAN_BALANCE_RISK",
+      "count": 2
+    },
+    {
       "code": "FLOW_DISTRIBUTION_RISK",
       "count": 2
     },
     {
       "code": "DRAWDOWN_GT_2",
-      "count": 2
-    },
-    {
-      "code": "LOAN_BALANCE_RISK",
       "count": 1
     }
   ],
@@ -46,7 +46,7 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -19.73,
+      "avgReadyReturnSinceFirstPct": -20.73,
       "negativeReadyCount": 34
     },
     "5d": {
@@ -56,7 +56,7 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -19.73,
+      "avgReadyReturnSinceFirstPct": -20.73,
       "negativeReadyCount": 34
     },
     "20d": {
@@ -66,7 +66,7 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -19.73,
+      "avgReadyReturnSinceFirstPct": -20.73,
       "negativeReadyCount": 34
     }
   },
