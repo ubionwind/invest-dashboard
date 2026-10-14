@@ -1,35 +1,35 @@
 {
-  "snapshotAt": "2026-10-12T08:30:00+09:00",
-  "dashboardGeneratedAt": "2026-10-12T08:31+09:00",
+  "snapshotAt": "2026-10-19T08:30:00+09:00",
+  "dashboardGeneratedAt": "2026-10-19T08:30+09:00",
   "etfs": {
     "kodex200": {
-      "key": "kodex200", "label": "KODEX 200", "code": "069500", "source": "investing.com-holdings-page", "fetchedAt": "2026-10-12T08:31+09:00", "count": 10, "top10WeightPct": 73.35, "samsungSkHynixWeightPct": 61.59,
+      "key": "kodex200", "label": "KODEX 200", "code": "069500", "source": "investing.com-holdings-page", "fetchedAt": "2026-10-19T08:30+09:00", "count": 10, "top10WeightPct": 70.37, "samsungSkHynixWeightPct": 58.25,
       "topHoldings": [
-        {"rank": 1, "name": "삼성전자", "code": "005930", "weightPct": 34.57, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 2, "name": "SK하이닉스", "code": "000660", "weightPct": 27.02, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 3, "name": "SK스퀘어", "code": "402340", "weightPct": 2.72, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 4, "name": "삼성전기", "code": "009150", "weightPct": 2.43, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 5, "name": "KB금융", "code": "105560", "weightPct": 1.40, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 6, "name": "현대차", "code": "005380", "weightPct": 1.25, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 7, "name": "신한지주", "code": "055550", "weightPct": 1.15, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 8, "name": "삼성SDI", "code": "006400", "weightPct": 0.98, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 9, "name": "두산에너빌리티", "code": "034020", "weightPct": 0.96, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 10, "name": "삼성물산", "code": "028260", "weightPct": 0.87, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"}
+        {"rank": 1, "name": "삼성전자", "code": "005930", "weightPct": 33.63, "asOf": "2026/10/15", "source": "fnguide-top10+investing-quote"},
+        {"rank": 2, "name": "SK하이닉스", "code": "000660", "weightPct": 24.62, "asOf": "2026/10/15", "source": "fnguide-top10+investing-quote"},
+        {"rank": 3, "name": "SK스퀘어", "code": "402340", "weightPct": 2.41, "asOf": "2026/10/15", "source": "fnguide-top10+investing-quote"},
+        {"rank": 4, "name": "삼성전기", "code": "009150", "weightPct": 2.22, "asOf": "2026/10/15", "source": "fnguide-top10+investing-quote"},
+        {"rank": 5, "name": "KB금융", "code": "105560", "weightPct": 1.64, "asOf": "2026/10/15", "source": "fnguide-top10+investing-quote"},
+        {"rank": 6, "name": "현대차", "code": "005380", "weightPct": 1.38, "asOf": "2026/10/15", "source": "fnguide-top10+investing-quote"},
+        {"rank": 7, "name": "신한지주", "code": "055550", "weightPct": 1.32, "asOf": "2026/10/15", "source": "fnguide-top10+investing-quote"},
+        {"rank": 8, "name": "삼성SDI", "code": "006400", "weightPct": 1.13, "asOf": "2026/10/15", "source": "fnguide-top10+investing-quote"},
+        {"rank": 9, "name": "하나금융지주", "code": null, "weightPct": 1.04, "asOf": "2026/10/15", "source": "fnguide-top10+investing-quote"},
+        {"rank": 10, "name": "셀트리온", "code": null, "weightPct": 0.98, "asOf": "2026/10/15", "source": "fnguide-top10+investing-quote"}
       ]
     },
     "tiger200": {
-      "key": "tiger200", "label": "TIGER 200", "code": "102110", "source": "investing.com-holdings-page", "fetchedAt": "2026-10-12T08:31+09:00", "count": 10, "top10WeightPct": 72.98, "samsungSkHynixWeightPct": 61.27,
+      "key": "tiger200", "label": "TIGER 200", "code": "102110", "source": "investing.com-holdings-page", "fetchedAt": "2026-10-19T08:30+09:00", "count": 10, "top10WeightPct": 69.81, "samsungSkHynixWeightPct": 57.77,
       "topHoldings": [
-        {"rank": 1, "name": "삼성전자", "code": "005930", "weightPct": 34.38, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 2, "name": "SK하이닉스", "code": "000660", "weightPct": 26.89, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 3, "name": "SK스퀘어", "code": "402340", "weightPct": 2.72, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 4, "name": "삼성전기", "code": "009150", "weightPct": 2.42, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 5, "name": "KB금융", "code": "105560", "weightPct": 1.40, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 6, "name": "현대차", "code": "005380", "weightPct": 1.24, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 7, "name": "신한지주", "code": "055550", "weightPct": 1.14, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 8, "name": "삼성SDI", "code": "006400", "weightPct": 0.98, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 9, "name": "두산에너빌리티", "code": "034020", "weightPct": 0.95, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"},
-        {"rank": 10, "name": "삼성물산", "code": "028260", "weightPct": 0.86, "asOf": "2026/10/08", "source": "fnguide-top10+investing-quote"}
+        {"rank": 1, "name": "삼성전자", "code": "005930", "weightPct": 33.6, "asOf": "2026/10/16", "source": "fnguide-top10+investing-quote"},
+        {"rank": 2, "name": "SK하이닉스", "code": "000660", "weightPct": 24.17, "asOf": "2026/10/16", "source": "fnguide-top10+investing-quote"},
+        {"rank": 3, "name": "SK스퀘어", "code": "402340", "weightPct": 2.41, "asOf": "2026/10/16", "source": "fnguide-top10+investing-quote"},
+        {"rank": 4, "name": "삼성전기", "code": "009150", "weightPct": 2.21, "asOf": "2026/10/16", "source": "fnguide-top10+investing-quote"},
+        {"rank": 5, "name": "KB금융", "code": "105560", "weightPct": 1.63, "asOf": "2026/10/16", "source": "fnguide-top10+investing-quote"},
+        {"rank": 6, "name": "현대차", "code": "005380", "weightPct": 1.41, "asOf": "2026/10/16", "source": "fnguide-top10+investing-quote"},
+        {"rank": 7, "name": "신한지주", "code": "055550", "weightPct": 1.27, "asOf": "2026/10/16", "source": "fnguide-top10+investing-quote"},
+        {"rank": 8, "name": "삼성SDI", "code": "006400", "weightPct": 1.08, "asOf": "2026/10/16", "source": "fnguide-top10+investing-quote"},
+        {"rank": 9, "name": "셀트리온", "code": null, "weightPct": 1.02, "asOf": "2026/10/16", "source": "fnguide-top10+investing-quote"},
+        {"rank": 10, "name": "하나금융지주", "code": null, "weightPct": 1.01, "asOf": "2026/10/16", "source": "fnguide-top10+investing-quote"}
       ]
     }
   }
