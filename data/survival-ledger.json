@@ -1,30 +1,30 @@
 {
-  "updatedAt": "2026-10-28T09:22+09:00",
+  "updatedAt": "2026-10-29T08:56+09:00",
   "purpose": "Survival-first decision ledger. Tracks decision state separately from explanation quality and future return review.",
   "marketRegime": {
-    "state": "RISK_ON",
-    "label": "위험 선호장",
-    "riskScore": 58,
-    "stance": "시장 분위기는 우호적이나 종목별 무효조건은 유지합니다.",
+    "state": "NEUTRAL",
+    "label": "중립장",
+    "riskScore": 50,
+    "stance": "시장만으로 강한 방향을 말하기 어려워 종목 조건을 확인합니다.",
     "strategyPolicy": {
-      "maxPositionPct": "3~20%",
-      "entryRule": "우호 시장이지만 무효조건과 신호충돌이 없을 때만 비중 확대.",
-      "confidenceCap": 100,
-      "plain": "시장은 우호적이나 추격보다 조건 확인이 우선입니다."
+      "maxPositionPct": "0~5%",
+      "entryRule": "종목별 조건 충족 시에만 소액·분할 접근.",
+      "confidenceCap": 78,
+      "plain": "시장 방향성이 강하지 않아 종목의 조건 충족 여부를 봅니다."
     },
-    "dailyReturnPct": 3.81,
-    "kospiDailyReturnPct": 3.59,
-    "kodexDailyReturnPct": 4.03,
+    "dailyReturnPct": 0.0,
+    "kospiDailyReturnPct": 0.0,
+    "kodexDailyReturnPct": 0.0,
     "reasons": [
-      "시장 평균 당일 등락률 +3.81%",
-      "시장 상태 OPEN"
+      "시장 평균 당일 등락률 +0.00%",
+      "시장 상태 PREOPEN"
     ],
-    "positionBias": "allow",
+    "positionBias": "neutral",
     "source": "KOSPI/KODEX read-only dashboard benchmark"
   },
   "latest": [
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "일반",
       "publicId": "",
@@ -35,10 +35,10 @@
       "returnSinceFirstPct": 8.83,
       "score": 68,
       "actionState": "소액/분할 접근",
-      "confidenceScore": 67,
+      "confidenceScore": 64,
       "confidenceLevel": "Medium",
       "positionRangePct": "3~5%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
       "riskPatterns": [
@@ -72,7 +72,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "일반",
       "publicId": "",
@@ -83,13 +83,19 @@
       "returnSinceFirstPct": -45.05,
       "score": 53,
       "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
-      "riskPatterns": [],
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
       "failurePatterns": [
         {
           "code": "DRAWDOWN_GT_5",
@@ -114,7 +120,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "일반",
       "publicId": "",
@@ -125,10 +131,10 @@
       "returnSinceFirstPct": -23.08,
       "score": 37,
       "actionState": "매수 보류",
-      "confidenceScore": 44,
+      "confidenceScore": 41,
       "confidenceLevel": "Uncertain",
       "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
       "riskPatterns": [
@@ -162,7 +168,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "일반",
       "publicId": "",
@@ -173,13 +179,19 @@
       "returnSinceFirstPct": -7.17,
       "score": 53,
       "actionState": "관망 우선",
-      "confidenceScore": 61,
-      "confidenceLevel": "Medium",
+      "confidenceScore": 58,
+      "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
-      "riskPatterns": [],
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
       "failurePatterns": [
         {
           "code": "DRAWDOWN_GT_5",
@@ -204,7 +216,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "일반",
       "publicId": "",
@@ -215,13 +227,19 @@
       "returnSinceFirstPct": -13.58,
       "score": 53,
       "actionState": "관망 우선",
-      "confidenceScore": 61,
-      "confidenceLevel": "Medium",
+      "confidenceScore": 58,
+      "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
-      "riskPatterns": [],
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
       "failurePatterns": [
         {
           "code": "DRAWDOWN_GT_5",
@@ -246,7 +264,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "일반",
       "publicId": "",
@@ -257,13 +275,19 @@
       "returnSinceFirstPct": -33.61,
       "score": 47,
       "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
-      "riskPatterns": [],
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
       "failurePatterns": [
         {
           "code": "DRAWDOWN_GT_5",
@@ -288,7 +312,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "일반",
       "publicId": "",
@@ -299,10 +323,10 @@
       "returnSinceFirstPct": -17.08,
       "score": 55,
       "actionState": "관망 우선",
-      "confidenceScore": 67,
+      "confidenceScore": 64,
       "confidenceLevel": "Medium",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
       "riskPatterns": [],
@@ -330,7 +354,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "일반",
       "publicId": "",
@@ -341,10 +365,10 @@
       "returnSinceFirstPct": 1.16,
       "score": 60,
       "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
       "riskPatterns": [
@@ -378,7 +402,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "단기",
       "publicId": "",
@@ -389,10 +413,10 @@
       "returnSinceFirstPct": -36.92,
       "score": 47,
       "actionState": "관망 우선",
-      "confidenceScore": 54,
+      "confidenceScore": 51,
       "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
       "riskPatterns": [
@@ -426,7 +450,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "단기",
       "publicId": "",
@@ -437,10 +461,10 @@
       "returnSinceFirstPct": -45.26,
       "score": 40,
       "actionState": "매수 보류",
-      "confidenceScore": 44,
+      "confidenceScore": 41,
       "confidenceLevel": "Uncertain",
       "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
       "riskPatterns": [
@@ -474,7 +498,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "단기",
       "publicId": "",
@@ -485,10 +509,10 @@
       "returnSinceFirstPct": -19.81,
       "score": 47,
       "actionState": "관망 우선",
-      "confidenceScore": 54,
+      "confidenceScore": 51,
       "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
       "riskPatterns": [
@@ -522,7 +546,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "단기",
       "publicId": "",
@@ -533,10 +557,10 @@
       "returnSinceFirstPct": -52.93,
       "score": 32,
       "actionState": "매수 보류",
-      "confidenceScore": 35,
+      "confidenceScore": 32,
       "confidenceLevel": "Uncertain",
       "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
       "riskPatterns": [
@@ -575,21 +599,21 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-21T10:46+09:00",
       "session": "급등",
       "publicId": "",
       "code": "006400",
       "name": "삼성SDI",
       "baselinePrice": 606000.0,
-      "lastPrice": 522000.0,
-      "returnSinceFirstPct": -13.86,
+      "lastPrice": 534000.0,
+      "returnSinceFirstPct": -11.88,
       "score": 38,
       "actionState": "매수 보류",
-      "confidenceScore": 35,
+      "confidenceScore": 32,
       "confidenceLevel": "Uncertain",
       "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
       "riskPatterns": [
@@ -614,21 +638,21 @@
       "horizonReview": {
         "1d": {
           "status": "ready-for-review",
-          "returnSinceFirstPct": -13.86
+          "returnSinceFirstPct": -11.88
         },
         "5d": {
           "status": "ready-for-review",
-          "returnSinceFirstPct": -13.86
+          "returnSinceFirstPct": -11.88
         },
         "20d": {
           "status": "ready-for-review",
-          "returnSinceFirstPct": -13.86
+          "returnSinceFirstPct": -11.88
         }
       },
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "급등",
       "publicId": "",
@@ -639,10 +663,10 @@
       "returnSinceFirstPct": -37.89,
       "score": 58,
       "actionState": "소액/분할 접근",
-      "confidenceScore": 66,
+      "confidenceScore": 63,
       "confidenceLevel": "Medium",
       "positionRangePct": "3~5%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
       "riskPatterns": [],
@@ -670,21 +694,21 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "급등",
       "publicId": "",
       "code": "012450",
       "name": "한화에어로스페이스",
-      "baselinePrice": 1307000.0,
+      "baselinePrice": 1317000.0,
       "lastPrice": 1150000.0,
-      "returnSinceFirstPct": -12.01,
+      "returnSinceFirstPct": -12.68,
       "score": 47,
       "actionState": "관망 우선",
-      "confidenceScore": 54,
+      "confidenceScore": 51,
       "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
       "riskPatterns": [
@@ -704,38 +728,44 @@
       "horizonReview": {
         "1d": {
           "status": "ready-for-review",
-          "returnSinceFirstPct": -12.01
+          "returnSinceFirstPct": -12.68
         },
         "5d": {
           "status": "ready-for-review",
-          "returnSinceFirstPct": -12.01
+          "returnSinceFirstPct": -12.68
         },
         "20d": {
           "status": "ready-for-review",
-          "returnSinceFirstPct": -12.01
+          "returnSinceFirstPct": -12.68
         }
       },
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "급등",
       "publicId": "",
       "code": "047810",
       "name": "한국항공우주",
-      "baselinePrice": 166800.0,
+      "baselinePrice": 171800.0,
       "lastPrice": 140200.0,
-      "returnSinceFirstPct": -15.95,
+      "returnSinceFirstPct": -18.39,
       "score": 47,
       "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
-      "riskPatterns": [],
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
       "failurePatterns": [
         {
           "code": "DRAWDOWN_GT_5",
@@ -746,21 +776,21 @@
       "horizonReview": {
         "1d": {
           "status": "ready-for-review",
-          "returnSinceFirstPct": -15.95
+          "returnSinceFirstPct": -18.39
         },
         "5d": {
           "status": "ready-for-review",
-          "returnSinceFirstPct": -15.95
+          "returnSinceFirstPct": -18.39
         },
         "20d": {
           "status": "ready-for-review",
-          "returnSinceFirstPct": -15.95
+          "returnSinceFirstPct": -18.39
         }
       },
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "급등",
       "publicId": "",
@@ -771,10 +801,10 @@
       "returnSinceFirstPct": -33.39,
       "score": 60,
       "actionState": "소액/분할 접근",
-      "confidenceScore": 67,
+      "confidenceScore": 64,
       "confidenceLevel": "Medium",
       "positionRangePct": "3~5%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
       "riskPatterns": [
@@ -808,7 +838,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-06-29T09:22+09:00",
       "session": "급등",
       "publicId": "",
@@ -819,12 +849,12 @@
       "returnSinceFirstPct": -11.21,
       "score": 61,
       "actionState": "소액/분할 접근",
-      "confidenceScore": 73,
+      "confidenceScore": 70,
       "confidenceLevel": "Medium",
       "positionRangePct": "3~5%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
-      "returnPct": -23.3,
+      "returnPct": -24.75,
       "riskPatterns": [],
       "failurePatterns": [
         {
@@ -850,7 +880,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-06-02T11:46+09:00",
       "session": "급등",
       "publicId": "",
@@ -861,12 +891,12 @@
       "returnSinceFirstPct": 16.99,
       "score": 46,
       "actionState": "관망 우선",
-      "confidenceScore": 54,
+      "confidenceScore": 51,
       "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
-      "returnPct": -3.57,
+      "returnPct": -0.32,
       "riskPatterns": [
         {
           "code": "LOAN_BALANCE_RISK",
@@ -898,7 +928,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "급등",
       "publicId": "",
@@ -909,10 +939,10 @@
       "returnSinceFirstPct": -65.74,
       "score": 41,
       "actionState": "매수 보류",
-      "confidenceScore": 44,
+      "confidenceScore": 41,
       "confidenceLevel": "Uncertain",
       "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -7.35,
       "riskPatterns": [
@@ -946,7 +976,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "급등",
       "publicId": "",
@@ -957,10 +987,10 @@
       "returnSinceFirstPct": -14.01,
       "score": 41,
       "actionState": "매수 보류",
-      "confidenceScore": 44,
+      "confidenceScore": 41,
       "confidenceLevel": "Uncertain",
       "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -7.03,
       "riskPatterns": [
@@ -994,7 +1024,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "급등",
       "publicId": "",
@@ -1005,13 +1035,19 @@
       "returnSinceFirstPct": -8.53,
       "score": 53,
       "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
-      "returnPct": -11.37,
-      "riskPatterns": [],
+      "returnPct": -9.31,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
       "failurePatterns": [
         {
           "code": "DRAWDOWN_GT_5",
@@ -1036,21 +1072,21 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "급등",
       "publicId": "",
       "code": "055550",
       "name": "신한지주",
-      "baselinePrice": 98200.0,
+      "baselinePrice": 98000.0,
       "lastPrice": 86100.0,
-      "returnSinceFirstPct": -12.32,
+      "returnSinceFirstPct": -12.14,
       "score": 47,
       "actionState": "관망 우선",
-      "confidenceScore": 54,
+      "confidenceScore": 51,
       "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -9.53,
       "riskPatterns": [
@@ -1070,21 +1106,21 @@
       "horizonReview": {
         "1d": {
           "status": "ready-for-review",
-          "returnSinceFirstPct": -12.32
+          "returnSinceFirstPct": -12.14
         },
         "5d": {
           "status": "ready-for-review",
-          "returnSinceFirstPct": -12.32
+          "returnSinceFirstPct": -12.14
         },
         "20d": {
           "status": "ready-for-review",
-          "returnSinceFirstPct": -12.32
+          "returnSinceFirstPct": -12.14
         }
       },
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "급등",
       "publicId": "",
@@ -1095,13 +1131,19 @@
       "returnSinceFirstPct": -34.35,
       "score": 53,
       "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -11.93,
-      "riskPatterns": [],
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
       "failurePatterns": [
         {
           "code": "DRAWDOWN_GT_5",
@@ -1126,7 +1168,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-10T16:06+09:00",
       "session": "급등",
       "publicId": "",
@@ -1137,13 +1179,19 @@
       "returnSinceFirstPct": -47.26,
       "score": 53,
       "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -7.02,
-      "riskPatterns": [],
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
       "failurePatterns": [
         {
           "code": "DRAWDOWN_GT_5",
@@ -1168,7 +1216,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "급등",
       "publicId": "",
@@ -1179,13 +1227,19 @@
       "returnSinceFirstPct": -43.08,
       "score": 53,
       "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -7.06,
-      "riskPatterns": [],
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
       "failurePatterns": [
         {
           "code": "DRAWDOWN_GT_5",
@@ -1210,7 +1264,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-12T09:41+09:00",
       "session": "급등",
       "publicId": "",
@@ -1221,10 +1275,10 @@
       "returnSinceFirstPct": -34.82,
       "score": 58,
       "actionState": "소액/분할 접근",
-      "confidenceScore": 66,
+      "confidenceScore": 63,
       "confidenceLevel": "Medium",
       "positionRangePct": "3~5%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -9.47,
       "riskPatterns": [],
@@ -1252,7 +1306,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "급등",
       "publicId": "",
@@ -1263,10 +1317,10 @@
       "returnSinceFirstPct": -55.4,
       "score": 45,
       "actionState": "관망 우선",
-      "confidenceScore": 51,
+      "confidenceScore": 48,
       "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -8.33,
       "riskPatterns": [
@@ -1300,7 +1354,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "급등",
       "publicId": "",
@@ -1311,10 +1365,10 @@
       "returnSinceFirstPct": -44.28,
       "score": 38,
       "actionState": "매수 보류",
-      "confidenceScore": 35,
+      "confidenceScore": 32,
       "confidenceLevel": "Uncertain",
       "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -11.03,
       "riskPatterns": [
@@ -1353,7 +1407,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "매일신규",
       "publicId": "",
@@ -1364,13 +1418,19 @@
       "returnSinceFirstPct": -36.5,
       "score": 48,
       "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
-      "riskPatterns": [],
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
       "failurePatterns": [
         {
           "code": "DRAWDOWN_GT_5",
@@ -1395,7 +1455,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-15T13:17+09:00",
       "session": "매일신규",
       "publicId": "",
@@ -1406,12 +1466,12 @@
       "returnSinceFirstPct": -44.61,
       "score": 47,
       "actionState": "관망 우선",
-      "confidenceScore": 54,
+      "confidenceScore": 51,
       "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
-      "returnPct": -22.72,
+      "returnPct": -22.67,
       "riskPatterns": [
         {
           "code": "LOAN_BALANCE_RISK",
@@ -1443,7 +1503,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "매일신규",
       "publicId": "",
@@ -1454,13 +1514,19 @@
       "returnSinceFirstPct": -47.17,
       "score": 53,
       "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -8.37,
-      "riskPatterns": [],
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
       "failurePatterns": [
         {
           "code": "DRAWDOWN_GT_5",
@@ -1485,7 +1551,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "매일신규",
       "publicId": "",
@@ -1496,12 +1562,12 @@
       "returnSinceFirstPct": -4.79,
       "score": 51,
       "actionState": "관망 우선",
-      "confidenceScore": 54,
+      "confidenceScore": 51,
       "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
-      "returnPct": 20.12,
+      "returnPct": 18.26,
       "riskPatterns": [
         {
           "code": "LOAN_BALANCE_RISK",
@@ -1533,7 +1599,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "퀀트가치",
       "publicId": "",
@@ -1544,10 +1610,10 @@
       "returnSinceFirstPct": -8.85,
       "score": 47,
       "actionState": "관망 우선",
-      "confidenceScore": 54,
+      "confidenceScore": 51,
       "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": null,
       "riskPatterns": [
@@ -1581,7 +1647,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-23T09:32+09:00",
       "session": "퀀트가치",
       "publicId": "",
@@ -1592,13 +1658,19 @@
       "returnSinceFirstPct": -32.69,
       "score": 53,
       "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
-      "returnPct": -25.07,
-      "riskPatterns": [],
+      "returnPct": -25.68,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
       "failurePatterns": [
         {
           "code": "DRAWDOWN_GT_5",
@@ -1623,7 +1695,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-06-04T09:26+09:00",
       "session": "퀀트모멘텀",
       "publicId": "",
@@ -1634,10 +1706,10 @@
       "returnSinceFirstPct": -63.1,
       "score": 41,
       "actionState": "매수 보류",
-      "confidenceScore": 44,
+      "confidenceScore": 41,
       "confidenceLevel": "Uncertain",
       "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -7.99,
       "riskPatterns": [
@@ -1671,7 +1743,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
       "session": "퀀트모멘텀",
       "publicId": "",
@@ -1682,10 +1754,10 @@
       "returnSinceFirstPct": -51.48,
       "score": 38,
       "actionState": "매수 보류",
-      "confidenceScore": 35,
+      "confidenceScore": 32,
       "confidenceLevel": "Uncertain",
       "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -9.48,
       "riskPatterns": [
@@ -1724,7 +1796,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-21T17:23+09:00",
       "session": "일반V2",
       "publicId": "",
@@ -1735,10 +1807,10 @@
       "returnSinceFirstPct": -32.01,
       "score": 38,
       "actionState": "매수 보류",
-      "confidenceScore": 35,
+      "confidenceScore": 32,
       "confidenceLevel": "Uncertain",
       "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -8.19,
       "riskPatterns": [
@@ -1777,7 +1849,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-06-01T14:47+09:00",
       "session": "급등V2",
       "publicId": "",
@@ -1788,10 +1860,10 @@
       "returnSinceFirstPct": -26.71,
       "score": 48,
       "actionState": "관망 우선",
-      "confidenceScore": 54,
+      "confidenceScore": 51,
       "confidenceLevel": "Low",
       "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -7.12,
       "riskPatterns": [
@@ -1825,7 +1897,7 @@
       "failureReviewStatus": "review-ready"
     },
     {
-      "ts": "2026-10-28T09:22+09:00",
+      "ts": "2026-10-29T08:56+09:00",
       "firstSeenAt": "2026-05-19T09:42+09:00",
       "session": "매일신규V2",
       "publicId": "",
@@ -1836,10 +1908,10 @@
       "returnSinceFirstPct": -60.74,
       "score": 41,
       "actionState": "매수 보류",
-      "confidenceScore": 44,
+      "confidenceScore": 41,
       "confidenceLevel": "Uncertain",
       "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -8.01,
       "riskPatterns": [
@@ -1874,1828 +1946,6 @@
     }
   ],
   "history": [
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "일반",
-      "publicId": "",
-      "code": "207940",
-      "name": "삼성바이오로직스",
-      "baselinePrice": 1472000.0,
-      "lastPrice": 1602000.0,
-      "returnSinceFirstPct": 8.83,
-      "score": 52,
-      "actionState": "관망 우선",
-      "confidenceScore": 54,
-      "confidenceLevel": "Low",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "MISSED_UPSIDE_WHILE_WAITING",
-          "label": "관망 중 상승 놓침",
-          "explain": "관망 판단 후 상승했으나 생존 우선 전략상 허용 가능한 기회비용인지 검토"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": 8.83
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": 8.83
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": 8.83
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "일반",
-      "publicId": "",
-      "code": "267260",
-      "name": "HD현대일렉트릭",
-      "baselinePrice": 1403000.0,
-      "lastPrice": 771000.0,
-      "returnSinceFirstPct": -45.05,
-      "score": 45,
-      "actionState": "관망 우선",
-      "confidenceScore": 51,
-      "confidenceLevel": "Low",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [
-        {
-          "code": "FLOW_DISTRIBUTION_RISK",
-          "label": "수급 이탈 오판위험 후보",
-          "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -45.05
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -45.05
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -45.05
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "일반",
-      "publicId": "",
-      "code": "373220",
-      "name": "LG에너지솔루션",
-      "baselinePrice": 476500.0,
-      "lastPrice": 366500.0,
-      "returnSinceFirstPct": -23.08,
-      "score": 39,
-      "actionState": "매수 보류",
-      "confidenceScore": 34,
-      "confidenceLevel": "Uncertain",
-      "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -23.08
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -23.08
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -23.08
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "일반",
-      "publicId": "",
-      "code": "005930",
-      "name": "삼성전자",
-      "baselinePrice": 268500.0,
-      "lastPrice": 249250.0,
-      "returnSinceFirstPct": -7.17,
-      "score": 47,
-      "actionState": "관망 우선",
-      "confidenceScore": 55,
-      "confidenceLevel": "Low",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -7.17
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -7.17
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -7.17
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "일반",
-      "publicId": "",
-      "code": "000660",
-      "name": "SK하이닉스",
-      "baselinePrice": 1686000.0,
-      "lastPrice": 1457000.0,
-      "returnSinceFirstPct": -13.58,
-      "score": 53,
-      "actionState": "관망 우선",
-      "confidenceScore": 61,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -13.58
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -13.58
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -13.58
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "일반",
-      "publicId": "",
-      "code": "005380",
-      "name": "현대차",
-      "baselinePrice": 613000.0,
-      "lastPrice": 407000.0,
-      "returnSinceFirstPct": -33.61,
-      "score": 47,
-      "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -33.61
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -33.61
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -33.61
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "일반",
-      "publicId": "",
-      "code": "000270",
-      "name": "기아",
-      "baselinePrice": 164500.0,
-      "lastPrice": 136400.0,
-      "returnSinceFirstPct": -17.08,
-      "score": 47,
-      "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -17.08
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -17.08
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -17.08
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "일반",
-      "publicId": "",
-      "code": "035420",
-      "name": "NAVER",
-      "baselinePrice": 215000.0,
-      "lastPrice": 217500.0,
-      "returnSinceFirstPct": 1.16,
-      "score": 47,
-      "actionState": "관망 우선",
-      "confidenceScore": 54,
-      "confidenceLevel": "Low",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": 1.16
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": 1.16
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": 1.16
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "단기",
-      "publicId": "",
-      "code": "007660",
-      "name": "이수페타시스",
-      "baselinePrice": 141100.0,
-      "lastPrice": 89000.0,
-      "returnSinceFirstPct": -36.92,
-      "score": 58,
-      "actionState": "소액/분할 접근",
-      "confidenceScore": 66,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "3~5%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -36.92
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -36.92
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -36.92
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "단기",
-      "publicId": "",
-      "code": "042700",
-      "name": "한미반도체",
-      "baselinePrice": 390000.0,
-      "lastPrice": 213500.0,
-      "returnSinceFirstPct": -45.26,
-      "score": 33,
-      "actionState": "매수 보류",
-      "confidenceScore": 41,
-      "confidenceLevel": "Uncertain",
-      "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [
-        {
-          "code": "FLOW_DISTRIBUTION_RISK",
-          "label": "수급 이탈 오판위험 후보",
-          "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -45.26
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -45.26
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -45.26
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "단기",
-      "publicId": "",
-      "code": "089030",
-      "name": "테크윙",
-      "baselinePrice": 59300.0,
-      "lastPrice": 47550.0,
-      "returnSinceFirstPct": -19.81,
-      "score": 47,
-      "actionState": "관망 우선",
-      "confidenceScore": 54,
-      "confidenceLevel": "Low",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -19.81
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -19.81
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -19.81
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "단기",
-      "publicId": "",
-      "code": "247540",
-      "name": "에코프로비엠",
-      "baselinePrice": 237500.0,
-      "lastPrice": 111800.0,
-      "returnSinceFirstPct": -52.93,
-      "score": 28,
-      "actionState": "매수 보류",
-      "confidenceScore": 31,
-      "confidenceLevel": "Uncertain",
-      "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [
-        {
-          "code": "FLOW_DISTRIBUTION_RISK",
-          "label": "수급 이탈 오판위험 후보",
-          "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -52.93
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -52.93
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -52.93
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-21T10:46+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "006400",
-      "name": "삼성SDI",
-      "baselinePrice": 606000.0,
-      "lastPrice": 537000.0,
-      "returnSinceFirstPct": -11.39,
-      "score": 42,
-      "actionState": "관망 우선",
-      "confidenceScore": 54,
-      "confidenceLevel": "Low",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -11.39
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -11.39
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -11.39
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "034020",
-      "name": "두산에너빌리티",
-      "baselinePrice": 129600.0,
-      "lastPrice": 80500.0,
-      "returnSinceFirstPct": -37.89,
-      "score": 53,
-      "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -37.89
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -37.89
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -37.89
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "012450",
-      "name": "한화에어로스페이스",
-      "baselinePrice": 1317000.0,
-      "lastPrice": 1150000.0,
-      "returnSinceFirstPct": -12.68,
-      "score": 53,
-      "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -12.68
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -12.68
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -12.68
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "047810",
-      "name": "한국항공우주",
-      "baselinePrice": 171800.0,
-      "lastPrice": 140200.0,
-      "returnSinceFirstPct": -18.39,
-      "score": 55,
-      "actionState": "관망 우선",
-      "confidenceScore": 67,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -18.39
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -18.39
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -18.39
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "010120",
-      "name": "LS ELECTRIC",
-      "baselinePrice": 313000.0,
-      "lastPrice": 208500.0,
-      "returnSinceFirstPct": -33.39,
-      "score": 39,
-      "actionState": "매수 보류",
-      "confidenceScore": 35,
-      "confidenceLevel": "Uncertain",
-      "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        },
-        {
-          "code": "FLOW_DISTRIBUTION_RISK",
-          "label": "수급 이탈 오판위험 후보",
-          "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -33.39
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -33.39
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -33.39
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-06-29T09:22+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "035720",
-      "name": "카카오",
-      "baselinePrice": 33450.0,
-      "lastPrice": 30850.0,
-      "returnSinceFirstPct": -7.77,
-      "score": 55,
-      "actionState": "관망 우선",
-      "confidenceScore": 61,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -19.95,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -7.77
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -7.77
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -7.77
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-06-02T11:46+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "010950",
-      "name": "S-Oil",
-      "baselinePrice": 108300.0,
-      "lastPrice": 159700.0,
-      "returnSinceFirstPct": 47.46,
-      "score": 45,
-      "actionState": "관망 우선",
-      "confidenceScore": 50,
-      "confidenceLevel": "Low",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": 26.11,
-      "riskPatterns": [
-        {
-          "code": "LOW_CONFIDENCE_NO_TRADE",
-          "label": "낮은 확신 관망",
-          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "MISSED_UPSIDE_WHILE_WAITING",
-          "label": "관망 중 상승 놓침",
-          "explain": "관망 판단 후 상승했으나 생존 우선 전략상 허용 가능한 기회비용인지 검토"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": 47.46
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": 47.46
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": 47.46
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "141080",
-      "name": "리가켐바이오",
-      "baselinePrice": 187100.0,
-      "lastPrice": 61300.0,
-      "returnSinceFirstPct": -67.24,
-      "score": 47,
-      "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -7.35,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -67.24
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -67.24
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -67.24
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "403870",
-      "name": "HPSP",
-      "baselinePrice": 53900.0,
-      "lastPrice": 47700.0,
-      "returnSinceFirstPct": -11.5,
-      "score": 52,
-      "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -7.03,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -11.5
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -11.5
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -11.5
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "105560",
-      "name": "KB금융",
-      "baselinePrice": 161700.0,
-      "lastPrice": 159900.0,
-      "returnSinceFirstPct": -1.11,
-      "score": 43,
-      "actionState": "관망 우선",
-      "confidenceScore": 54,
-      "confidenceLevel": "Low",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -3.95,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -1.11
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -1.11
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -1.11
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "055550",
-      "name": "신한지주",
-      "baselinePrice": 98000.0,
-      "lastPrice": 96100.0,
-      "returnSinceFirstPct": -1.94,
-      "score": 47,
-      "actionState": "관망 우선",
-      "confidenceScore": 54,
-      "confidenceLevel": "Low",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -9.53,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -1.94
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -1.94
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -1.94
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "012330",
-      "name": "현대모비스",
-      "baselinePrice": 508000.0,
-      "lastPrice": 331000.0,
-      "returnSinceFirstPct": -34.84,
-      "score": 53,
-      "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -11.93,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -34.84
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -34.84
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -34.84
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-10T16:06+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "079550",
-      "name": "LIG넥스원",
-      "baselinePrice": 840000.0,
-      "lastPrice": 541000.0,
-      "returnSinceFirstPct": -35.6,
-      "score": 47,
-      "actionState": "관망 우선",
-      "confidenceScore": 54,
-      "confidenceLevel": "Low",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -7.02,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -35.6
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -35.6
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -35.6
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "000990",
-      "name": "DB하이텍",
-      "baselinePrice": 167600.0,
-      "lastPrice": 100000.0,
-      "returnSinceFirstPct": -40.33,
-      "score": 49,
-      "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -7.06,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -40.33
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -40.33
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -40.33
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-12T09:41+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "196170",
-      "name": "알테오젠",
-      "baselinePrice": 336000.0,
-      "lastPrice": 208000.0,
-      "returnSinceFirstPct": -38.1,
-      "score": 53,
-      "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -9.47,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -38.1
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -38.1
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -38.1
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "329180",
-      "name": "HD현대중공업",
-      "baselinePrice": 658000.0,
-      "lastPrice": 348000.0,
-      "returnSinceFirstPct": -47.11,
-      "score": 61,
-      "actionState": "소액/분할 접근",
-      "confidenceScore": 73,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "3~5%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -8.33,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -47.11
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -47.11
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -47.11
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "급등",
-      "publicId": "",
-      "code": "003670",
-      "name": "포스코퓨처엠",
-      "baselinePrice": 290000.0,
-      "lastPrice": 169600.0,
-      "returnSinceFirstPct": -41.52,
-      "score": 38,
-      "actionState": "매수 보류",
-      "confidenceScore": 35,
-      "confidenceLevel": "Uncertain",
-      "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -11.03,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        },
-        {
-          "code": "FLOW_DISTRIBUTION_RISK",
-          "label": "수급 이탈 오판위험 후보",
-          "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -41.52
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -41.52
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -41.52
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "매일신규",
-      "publicId": "",
-      "code": "058470",
-      "name": "리노공업",
-      "baselinePrice": 112600.0,
-      "lastPrice": 71500.0,
-      "returnSinceFirstPct": -36.5,
-      "score": 42,
-      "actionState": "관망 우선",
-      "confidenceScore": 54,
-      "confidenceLevel": "Low",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -36.5
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -36.5
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -36.5
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-15T13:17+09:00",
-      "session": "매일신규",
-      "publicId": "",
-      "code": "010140",
-      "name": "삼성중공업",
-      "baselinePrice": 29750.0,
-      "lastPrice": 17940.0,
-      "returnSinceFirstPct": -39.7,
-      "score": 61,
-      "actionState": "소액/분할 접근",
-      "confidenceScore": 73,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "3~5%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -13.26,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -39.7
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -39.7
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -39.7
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "매일신규",
-      "publicId": "",
-      "code": "009540",
-      "name": "HD한국조선해양",
-      "baselinePrice": 467500.0,
-      "lastPrice": 260000.0,
-      "returnSinceFirstPct": -44.39,
-      "score": 61,
-      "actionState": "소액/분할 접근",
-      "confidenceScore": 73,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "3~5%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -8.37,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -44.39
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -44.39
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -44.39
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "매일신규",
-      "publicId": "",
-      "code": "068270",
-      "name": "셀트리온",
-      "baselinePrice": 198400.0,
-      "lastPrice": 181600.0,
-      "returnSinceFirstPct": -8.47,
-      "score": 61,
-      "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": 19.19,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -8.47
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -8.47
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -8.47
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "퀀트가치",
-      "publicId": "",
-      "code": "086790",
-      "name": "하나금융지주",
-      "baselinePrice": 126500.0,
-      "lastPrice": 124200.0,
-      "returnSinceFirstPct": -1.82,
-      "score": 52,
-      "actionState": "관망 우선",
-      "confidenceScore": 54,
-      "confidenceLevel": "Low",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": null,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -1.82
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -1.82
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -1.82
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-23T09:32+09:00",
-      "session": "퀀트가치",
-      "publicId": "",
-      "code": "259960",
-      "name": "크래프톤",
-      "baselinePrice": 271000.0,
-      "lastPrice": 192800.0,
-      "returnSinceFirstPct": -28.86,
-      "score": 60,
-      "actionState": "소액/분할 접근",
-      "confidenceScore": 67,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "3~5%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -19.55,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -28.86
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -28.86
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -28.86
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-06-04T09:26+09:00",
-      "session": "퀀트모멘텀",
-      "publicId": "",
-      "code": "336260",
-      "name": "두산퓨얼셀",
-      "baselinePrice": 84000.0,
-      "lastPrice": 32750.0,
-      "returnSinceFirstPct": -61.01,
-      "score": 41,
-      "actionState": "매수 보류",
-      "confidenceScore": 44,
-      "confidenceLevel": "Uncertain",
-      "positionRangePct": "0%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -7.99,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -61.01
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -61.01
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -61.01
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-08T23:55+09:00",
-      "session": "퀀트모멘텀",
-      "publicId": "",
-      "code": "086520",
-      "name": "에코프로",
-      "baselinePrice": 155000.0,
-      "lastPrice": 78900.0,
-      "returnSinceFirstPct": -49.1,
-      "score": 52,
-      "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -9.48,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -49.1
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -49.1
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -49.1
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-21T17:23+09:00",
-      "session": "일반V2",
-      "publicId": "",
-      "code": "051910",
-      "name": "LG화학",
-      "baselinePrice": 339000.0,
-      "lastPrice": 249500.0,
-      "returnSinceFirstPct": -26.4,
-      "score": 46,
-      "actionState": "관망 우선",
-      "confidenceScore": 54,
-      "confidenceLevel": "Low",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -8.19,
-      "riskPatterns": [
-        {
-          "code": "LOAN_BALANCE_RISK",
-          "label": "대차잔고 증가 무시 후보",
-          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
-        }
-      ],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -26.4
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -26.4
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -26.4
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-06-01T14:47+09:00",
-      "session": "급등V2",
-      "publicId": "",
-      "code": "095340",
-      "name": "ISC",
-      "baselinePrice": 207000.0,
-      "lastPrice": 141800.0,
-      "returnSinceFirstPct": -31.5,
-      "score": 58,
-      "actionState": "소액/분할 접근",
-      "confidenceScore": 66,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "3~5%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -7.12,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -31.5
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -31.5
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -31.5
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
-    {
-      "ts": "2026-10-16T09:21+09:00",
-      "firstSeenAt": "2026-05-19T09:42+09:00",
-      "session": "매일신규V2",
-      "publicId": "",
-      "code": "064350",
-      "name": "현대로템",
-      "baselinePrice": 203500.0,
-      "lastPrice": 90300.0,
-      "returnSinceFirstPct": -55.63,
-      "score": 47,
-      "actionState": "관망 우선",
-      "confidenceScore": 60,
-      "confidenceLevel": "Medium",
-      "positionRangePct": "0~2%",
-      "marketRegime": "RISK_ON",
-      "sector": "일반 업종",
-      "returnPct": -8.01,
-      "riskPatterns": [],
-      "failurePatterns": [
-        {
-          "code": "DRAWDOWN_GT_5",
-          "label": "5% 이상 손실",
-          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
-        }
-      ],
-      "horizonReview": {
-        "1d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -55.63
-        },
-        "5d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -55.63
-        },
-        "20d": {
-          "status": "ready-for-review",
-          "returnSinceFirstPct": -55.63
-        }
-      },
-      "failureReviewStatus": "review-ready"
-    },
     {
       "ts": "2026-10-18T20:34+09:00",
       "firstSeenAt": "2026-05-08T23:55+09:00",
@@ -39906,6 +38156,1927 @@
       "confidenceLevel": "Uncertain",
       "positionRangePct": "0%",
       "marketRegime": "RISK_ON",
+      "sector": "일반 업종",
+      "returnPct": -8.01,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -60.74
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -60.74
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -60.74
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "일반",
+      "publicId": "",
+      "code": "207940",
+      "name": "삼성바이오로직스",
+      "baselinePrice": 1472000.0,
+      "lastPrice": 1602000.0,
+      "returnSinceFirstPct": 8.83,
+      "score": 68,
+      "actionState": "소액/분할 접근",
+      "confidenceScore": 64,
+      "confidenceLevel": "Medium",
+      "positionRangePct": "3~5%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": 8.83
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": 8.83
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": 8.83
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "일반",
+      "publicId": "",
+      "code": "267260",
+      "name": "HD현대일렉트릭",
+      "baselinePrice": 1403000.0,
+      "lastPrice": 771000.0,
+      "returnSinceFirstPct": -45.05,
+      "score": 53,
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -45.05
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -45.05
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -45.05
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "일반",
+      "publicId": "",
+      "code": "373220",
+      "name": "LG에너지솔루션",
+      "baselinePrice": 476500.0,
+      "lastPrice": 366500.0,
+      "returnSinceFirstPct": -23.08,
+      "score": 37,
+      "actionState": "매수 보류",
+      "confidenceScore": 41,
+      "confidenceLevel": "Uncertain",
+      "positionRangePct": "0%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -23.08
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -23.08
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -23.08
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "일반",
+      "publicId": "",
+      "code": "005930",
+      "name": "삼성전자",
+      "baselinePrice": 268500.0,
+      "lastPrice": 249250.0,
+      "returnSinceFirstPct": -7.17,
+      "score": 53,
+      "actionState": "관망 우선",
+      "confidenceScore": 58,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -7.17
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -7.17
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -7.17
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "일반",
+      "publicId": "",
+      "code": "000660",
+      "name": "SK하이닉스",
+      "baselinePrice": 1686000.0,
+      "lastPrice": 1457000.0,
+      "returnSinceFirstPct": -13.58,
+      "score": 53,
+      "actionState": "관망 우선",
+      "confidenceScore": 58,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -13.58
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -13.58
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -13.58
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "일반",
+      "publicId": "",
+      "code": "005380",
+      "name": "현대차",
+      "baselinePrice": 613000.0,
+      "lastPrice": 407000.0,
+      "returnSinceFirstPct": -33.61,
+      "score": 47,
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -33.61
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -33.61
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -33.61
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "일반",
+      "publicId": "",
+      "code": "000270",
+      "name": "기아",
+      "baselinePrice": 164500.0,
+      "lastPrice": 136400.0,
+      "returnSinceFirstPct": -17.08,
+      "score": 55,
+      "actionState": "관망 우선",
+      "confidenceScore": 64,
+      "confidenceLevel": "Medium",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -17.08
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -17.08
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -17.08
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "일반",
+      "publicId": "",
+      "code": "035420",
+      "name": "NAVER",
+      "baselinePrice": 215000.0,
+      "lastPrice": 217500.0,
+      "returnSinceFirstPct": 1.16,
+      "score": 60,
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": 1.16
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": 1.16
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": 1.16
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "단기",
+      "publicId": "",
+      "code": "007660",
+      "name": "이수페타시스",
+      "baselinePrice": 141100.0,
+      "lastPrice": 89000.0,
+      "returnSinceFirstPct": -36.92,
+      "score": 47,
+      "actionState": "관망 우선",
+      "confidenceScore": 51,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -36.92
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -36.92
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -36.92
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "단기",
+      "publicId": "",
+      "code": "042700",
+      "name": "한미반도체",
+      "baselinePrice": 390000.0,
+      "lastPrice": 213500.0,
+      "returnSinceFirstPct": -45.26,
+      "score": 40,
+      "actionState": "매수 보류",
+      "confidenceScore": 41,
+      "confidenceLevel": "Uncertain",
+      "positionRangePct": "0%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -45.26
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -45.26
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -45.26
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "단기",
+      "publicId": "",
+      "code": "089030",
+      "name": "테크윙",
+      "baselinePrice": 59300.0,
+      "lastPrice": 47550.0,
+      "returnSinceFirstPct": -19.81,
+      "score": 47,
+      "actionState": "관망 우선",
+      "confidenceScore": 51,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -19.81
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -19.81
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -19.81
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "단기",
+      "publicId": "",
+      "code": "247540",
+      "name": "에코프로비엠",
+      "baselinePrice": 237500.0,
+      "lastPrice": 111800.0,
+      "returnSinceFirstPct": -52.93,
+      "score": 32,
+      "actionState": "매수 보류",
+      "confidenceScore": 32,
+      "confidenceLevel": "Uncertain",
+      "positionRangePct": "0%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        },
+        {
+          "code": "FLOW_DISTRIBUTION_RISK",
+          "label": "수급 이탈 오판위험 후보",
+          "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -52.93
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -52.93
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -52.93
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-21T10:46+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "006400",
+      "name": "삼성SDI",
+      "baselinePrice": 606000.0,
+      "lastPrice": 534000.0,
+      "returnSinceFirstPct": -11.88,
+      "score": 38,
+      "actionState": "매수 보류",
+      "confidenceScore": 32,
+      "confidenceLevel": "Uncertain",
+      "positionRangePct": "0%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        },
+        {
+          "code": "FLOW_DISTRIBUTION_RISK",
+          "label": "수급 이탈 오판위험 후보",
+          "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -11.88
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -11.88
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -11.88
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "034020",
+      "name": "두산에너빌리티",
+      "baselinePrice": 129600.0,
+      "lastPrice": 80500.0,
+      "returnSinceFirstPct": -37.89,
+      "score": 58,
+      "actionState": "소액/분할 접근",
+      "confidenceScore": 63,
+      "confidenceLevel": "Medium",
+      "positionRangePct": "3~5%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -37.89
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -37.89
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -37.89
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "012450",
+      "name": "한화에어로스페이스",
+      "baselinePrice": 1317000.0,
+      "lastPrice": 1150000.0,
+      "returnSinceFirstPct": -12.68,
+      "score": 47,
+      "actionState": "관망 우선",
+      "confidenceScore": 51,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -12.68
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -12.68
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -12.68
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "047810",
+      "name": "한국항공우주",
+      "baselinePrice": 171800.0,
+      "lastPrice": 140200.0,
+      "returnSinceFirstPct": -18.39,
+      "score": 47,
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -18.39
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -18.39
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -18.39
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "010120",
+      "name": "LS ELECTRIC",
+      "baselinePrice": 313000.0,
+      "lastPrice": 208500.0,
+      "returnSinceFirstPct": -33.39,
+      "score": 60,
+      "actionState": "소액/분할 접근",
+      "confidenceScore": 64,
+      "confidenceLevel": "Medium",
+      "positionRangePct": "3~5%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -33.39
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -33.39
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -33.39
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-06-29T09:22+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "035720",
+      "name": "카카오",
+      "baselinePrice": 33450.0,
+      "lastPrice": 29700.0,
+      "returnSinceFirstPct": -11.21,
+      "score": 61,
+      "actionState": "소액/분할 접근",
+      "confidenceScore": 70,
+      "confidenceLevel": "Medium",
+      "positionRangePct": "3~5%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -24.75,
+      "riskPatterns": [],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -11.21
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -11.21
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -11.21
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-06-02T11:46+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "010950",
+      "name": "S-Oil",
+      "baselinePrice": 108300.0,
+      "lastPrice": 126700.0,
+      "returnSinceFirstPct": 16.99,
+      "score": 46,
+      "actionState": "관망 우선",
+      "confidenceScore": 51,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -0.32,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "MISSED_UPSIDE_WHILE_WAITING",
+          "label": "관망 중 상승 놓침",
+          "explain": "관망 판단 후 상승했으나 생존 우선 전략상 허용 가능한 기회비용인지 검토"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": 16.99
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": 16.99
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": 16.99
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "141080",
+      "name": "리가켐바이오",
+      "baselinePrice": 187100.0,
+      "lastPrice": 64100.0,
+      "returnSinceFirstPct": -65.74,
+      "score": 41,
+      "actionState": "매수 보류",
+      "confidenceScore": 41,
+      "confidenceLevel": "Uncertain",
+      "positionRangePct": "0%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -7.35,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -65.74
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -65.74
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -65.74
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "403870",
+      "name": "HPSP",
+      "baselinePrice": 53900.0,
+      "lastPrice": 46350.0,
+      "returnSinceFirstPct": -14.01,
+      "score": 41,
+      "actionState": "매수 보류",
+      "confidenceScore": 41,
+      "confidenceLevel": "Uncertain",
+      "positionRangePct": "0%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -7.03,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -14.01
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -14.01
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -14.01
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "105560",
+      "name": "KB금융",
+      "baselinePrice": 161700.0,
+      "lastPrice": 147900.0,
+      "returnSinceFirstPct": -8.53,
+      "score": 53,
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -9.31,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -8.53
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -8.53
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -8.53
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "055550",
+      "name": "신한지주",
+      "baselinePrice": 98000.0,
+      "lastPrice": 86100.0,
+      "returnSinceFirstPct": -12.14,
+      "score": 47,
+      "actionState": "관망 우선",
+      "confidenceScore": 51,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -9.53,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -12.14
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -12.14
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -12.14
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "012330",
+      "name": "현대모비스",
+      "baselinePrice": 508000.0,
+      "lastPrice": 333500.0,
+      "returnSinceFirstPct": -34.35,
+      "score": 53,
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -11.93,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -34.35
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -34.35
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -34.35
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-10T16:06+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "079550",
+      "name": "LIG넥스원",
+      "baselinePrice": 840000.0,
+      "lastPrice": 443000.0,
+      "returnSinceFirstPct": -47.26,
+      "score": 53,
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -7.02,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -47.26
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -47.26
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -47.26
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "000990",
+      "name": "DB하이텍",
+      "baselinePrice": 167600.0,
+      "lastPrice": 95400.0,
+      "returnSinceFirstPct": -43.08,
+      "score": 53,
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -7.06,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -43.08
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -43.08
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -43.08
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-12T09:41+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "196170",
+      "name": "알테오젠",
+      "baselinePrice": 336000.0,
+      "lastPrice": 219000.0,
+      "returnSinceFirstPct": -34.82,
+      "score": 58,
+      "actionState": "소액/분할 접근",
+      "confidenceScore": 63,
+      "confidenceLevel": "Medium",
+      "positionRangePct": "3~5%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -9.47,
+      "riskPatterns": [],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -34.82
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -34.82
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -34.82
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "329180",
+      "name": "HD현대중공업",
+      "baselinePrice": 658000.0,
+      "lastPrice": 293500.0,
+      "returnSinceFirstPct": -55.4,
+      "score": 45,
+      "actionState": "관망 우선",
+      "confidenceScore": 48,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -8.33,
+      "riskPatterns": [
+        {
+          "code": "FLOW_DISTRIBUTION_RISK",
+          "label": "수급 이탈 오판위험 후보",
+          "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -55.4
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -55.4
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -55.4
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "급등",
+      "publicId": "",
+      "code": "003670",
+      "name": "포스코퓨처엠",
+      "baselinePrice": 290000.0,
+      "lastPrice": 161600.0,
+      "returnSinceFirstPct": -44.28,
+      "score": 38,
+      "actionState": "매수 보류",
+      "confidenceScore": 32,
+      "confidenceLevel": "Uncertain",
+      "positionRangePct": "0%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -11.03,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        },
+        {
+          "code": "FLOW_DISTRIBUTION_RISK",
+          "label": "수급 이탈 오판위험 후보",
+          "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -44.28
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -44.28
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -44.28
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "매일신규",
+      "publicId": "",
+      "code": "058470",
+      "name": "리노공업",
+      "baselinePrice": 112600.0,
+      "lastPrice": 71500.0,
+      "returnSinceFirstPct": -36.5,
+      "score": 48,
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -36.5
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -36.5
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -36.5
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-15T13:17+09:00",
+      "session": "매일신규",
+      "publicId": "",
+      "code": "010140",
+      "name": "삼성중공업",
+      "baselinePrice": 29750.0,
+      "lastPrice": 16480.0,
+      "returnSinceFirstPct": -44.61,
+      "score": 47,
+      "actionState": "관망 우선",
+      "confidenceScore": 51,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -22.67,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -44.61
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -44.61
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -44.61
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "매일신규",
+      "publicId": "",
+      "code": "009540",
+      "name": "HD한국조선해양",
+      "baselinePrice": 467500.0,
+      "lastPrice": 247000.0,
+      "returnSinceFirstPct": -47.17,
+      "score": 53,
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -8.37,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -47.17
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -47.17
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -47.17
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "매일신규",
+      "publicId": "",
+      "code": "068270",
+      "name": "셀트리온",
+      "baselinePrice": 198400.0,
+      "lastPrice": 188900.0,
+      "returnSinceFirstPct": -4.79,
+      "score": 51,
+      "actionState": "관망 우선",
+      "confidenceScore": 51,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": 18.26,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_2",
+          "label": "2% 이상 손실",
+          "explain": "초기 손실이 발생해 진입 타이밍/시장상태를 재검토"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -4.79
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -4.79
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -4.79
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "퀀트가치",
+      "publicId": "",
+      "code": "086790",
+      "name": "하나금융지주",
+      "baselinePrice": 126500.0,
+      "lastPrice": 115300.0,
+      "returnSinceFirstPct": -8.85,
+      "score": 47,
+      "actionState": "관망 우선",
+      "confidenceScore": 51,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": null,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -8.85
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -8.85
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -8.85
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-23T09:32+09:00",
+      "session": "퀀트가치",
+      "publicId": "",
+      "code": "259960",
+      "name": "크래프톤",
+      "baselinePrice": 271000.0,
+      "lastPrice": 182400.0,
+      "returnSinceFirstPct": -32.69,
+      "score": 53,
+      "actionState": "관망 우선",
+      "confidenceScore": 57,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -25.68,
+      "riskPatterns": [
+        {
+          "code": "LOW_CONFIDENCE_NO_TRADE",
+          "label": "낮은 확신 관망",
+          "explain": "오판위험보다 관망 자체가 정상 판단입니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -32.69
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -32.69
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -32.69
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-06-04T09:26+09:00",
+      "session": "퀀트모멘텀",
+      "publicId": "",
+      "code": "336260",
+      "name": "두산퓨얼셀",
+      "baselinePrice": 84000.0,
+      "lastPrice": 31000.0,
+      "returnSinceFirstPct": -63.1,
+      "score": 41,
+      "actionState": "매수 보류",
+      "confidenceScore": 41,
+      "confidenceLevel": "Uncertain",
+      "positionRangePct": "0%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -7.99,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -63.1
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -63.1
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -63.1
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-08T23:55+09:00",
+      "session": "퀀트모멘텀",
+      "publicId": "",
+      "code": "086520",
+      "name": "에코프로",
+      "baselinePrice": 155000.0,
+      "lastPrice": 75200.0,
+      "returnSinceFirstPct": -51.48,
+      "score": 38,
+      "actionState": "매수 보류",
+      "confidenceScore": 32,
+      "confidenceLevel": "Uncertain",
+      "positionRangePct": "0%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -9.48,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        },
+        {
+          "code": "FLOW_DISTRIBUTION_RISK",
+          "label": "수급 이탈 오판위험 후보",
+          "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -51.48
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -51.48
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -51.48
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-21T17:23+09:00",
+      "session": "일반V2",
+      "publicId": "",
+      "code": "051910",
+      "name": "LG화학",
+      "baselinePrice": 339000.0,
+      "lastPrice": 230500.0,
+      "returnSinceFirstPct": -32.01,
+      "score": 38,
+      "actionState": "매수 보류",
+      "confidenceScore": 32,
+      "confidenceLevel": "Uncertain",
+      "positionRangePct": "0%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -8.19,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        },
+        {
+          "code": "FLOW_DISTRIBUTION_RISK",
+          "label": "수급 이탈 오판위험 후보",
+          "explain": "외국인·기관 동반 순매도 상태에서 반등 기대가 실패할 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -32.01
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -32.01
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -32.01
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-06-01T14:47+09:00",
+      "session": "급등V2",
+      "publicId": "",
+      "code": "095340",
+      "name": "ISC",
+      "baselinePrice": 207000.0,
+      "lastPrice": 151700.0,
+      "returnSinceFirstPct": -26.71,
+      "score": 48,
+      "actionState": "관망 우선",
+      "confidenceScore": 51,
+      "confidenceLevel": "Low",
+      "positionRangePct": "0~2%",
+      "marketRegime": "NEUTRAL",
+      "sector": "일반 업종",
+      "returnPct": -7.12,
+      "riskPatterns": [
+        {
+          "code": "LOAN_BALANCE_RISK",
+          "label": "대차잔고 증가 무시 후보",
+          "explain": "대차잔고 증가가 매도/헤지 압력으로 이어질 수 있습니다."
+        }
+      ],
+      "failurePatterns": [
+        {
+          "code": "DRAWDOWN_GT_5",
+          "label": "5% 이상 손실",
+          "explain": "진입/보유 판단 후 손실 폭이 커져 리스크 관리 실패 여부 검토 필요"
+        }
+      ],
+      "horizonReview": {
+        "1d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -26.71
+        },
+        "5d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -26.71
+        },
+        "20d": {
+          "status": "ready-for-review",
+          "returnSinceFirstPct": -26.71
+        }
+      },
+      "failureReviewStatus": "review-ready"
+    },
+    {
+      "ts": "2026-10-29T08:56+09:00",
+      "firstSeenAt": "2026-05-19T09:42+09:00",
+      "session": "매일신규V2",
+      "publicId": "",
+      "code": "064350",
+      "name": "현대로템",
+      "baselinePrice": 203500.0,
+      "lastPrice": 79900.0,
+      "returnSinceFirstPct": -60.74,
+      "score": 41,
+      "actionState": "매수 보류",
+      "confidenceScore": 41,
+      "confidenceLevel": "Uncertain",
+      "positionRangePct": "0%",
+      "marketRegime": "NEUTRAL",
       "sector": "일반 업종",
       "returnPct": -8.01,
       "riskPatterns": [
