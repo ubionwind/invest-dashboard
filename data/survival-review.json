@@ -1,18 +1,16 @@
 {
-  "generatedAt": "2026-10-29T09:22+09:00",
-  "survivalScore": 48,
+  "generatedAt": "2026-10-30T09:21+09:00",
+  "survivalScore": 45,
   "totalRows": 40,
-  "noTradeRows": 33,
-  "noTradeRatioPct": 82.5,
+  "noTradeRows": 40,
+  "noTradeRatioPct": 100.0,
   "actionCounts": {
-    "관망 우선": 22,
-    "매수 보류": 11,
-    "소액/분할 접근": 7
+    "관망 우선": 29,
+    "매수 보류": 11
   },
   "confidenceCounts": {
-    "Low": 19,
-    "Medium": 12,
-    "Uncertain": 9
+    "Uncertain": 33,
+    "Low": 7
   },
   "topFailurePatterns": [
     {
@@ -24,8 +22,16 @@
       "count": 2
     },
     {
+      "code": "LOW_CONFIDENCE_NO_TRADE",
+      "count": 1
+    },
+    {
+      "code": "LOAN_BALANCE_RISK",
+      "count": 1
+    },
+    {
       "code": "DRAWDOWN_GT_2",
-      "count": 2
+      "count": 1
     }
   ],
   "horizonReview": {
@@ -36,7 +42,7 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -28.22,
+      "avgReadyReturnSinceFirstPct": -28.88,
       "negativeReadyCount": 37
     },
     "5d": {
@@ -46,7 +52,7 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -28.22,
+      "avgReadyReturnSinceFirstPct": -28.88,
       "negativeReadyCount": 37
     },
     "20d": {
@@ -56,21 +62,21 @@
       },
       "readyCount": 40,
       "pendingCount": 0,
-      "avgReadyReturnSinceFirstPct": -28.22,
+      "avgReadyReturnSinceFirstPct": -28.88,
       "negativeReadyCount": 37
     }
   },
   "reviewReadyCount": 40,
   "baselineTrackedCount": 40,
   "negativeSinceFirstCount": 37,
-  "highRiskCount": 28,
+  "highRiskCount": 39,
   "highRiskSamples": [
     {
       "session": "일반",
       "code": "207940",
       "name": "삼성바이오로직스",
       "actionState": "관망 우선",
-      "confidenceScore": 51,
+      "confidenceScore": 33,
       "patterns": [
         "MISSED_UPSIDE_WHILE_WAITING"
       ]
@@ -79,8 +85,8 @@
       "session": "일반",
       "code": "267260",
       "name": "HD현대일렉트릭",
-      "actionState": "매수 보류",
-      "confidenceScore": 45,
+      "actionState": "관망 우선",
+      "confidenceScore": 37,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -89,18 +95,8 @@
       "session": "일반",
       "code": "373220",
       "name": "LG에너지솔루션",
-      "actionState": "관망 우선",
-      "confidenceScore": 54,
-      "patterns": [
-        "DRAWDOWN_GT_5"
-      ]
-    },
-    {
-      "session": "일반",
-      "code": "005380",
-      "name": "현대차",
       "actionState": "매수 보류",
-      "confidenceScore": 41,
+      "confidenceScore": 18,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -110,7 +106,7 @@
       "code": "005930",
       "name": "삼성전자",
       "actionState": "관망 우선",
-      "confidenceScore": 58,
+      "confidenceScore": 55,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -120,7 +116,7 @@
       "code": "000660",
       "name": "SK하이닉스",
       "actionState": "관망 우선",
-      "confidenceScore": 58,
+      "confidenceScore": 55,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
@@ -129,20 +125,20 @@
       "session": "일반",
       "code": "005380",
       "name": "현대차",
-      "actionState": "관망 우선",
-      "confidenceScore": 57,
+      "actionState": "매수 보류",
+      "confidenceScore": 27,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
     },
     {
       "session": "일반",
-      "code": "035420",
-      "name": "NAVER",
+      "code": "000270",
+      "name": "기아",
       "actionState": "관망 우선",
-      "confidenceScore": 57,
+      "confidenceScore": 37,
       "patterns": [
-        "LOAN_BALANCE_RISK"
+        "DRAWDOWN_GT_5"
       ]
     },
     {
@@ -150,37 +146,7 @@
       "code": "007660",
       "name": "이수페타시스",
       "actionState": "관망 우선",
-      "confidenceScore": 51,
-      "patterns": [
-        "DRAWDOWN_GT_5"
-      ]
-    },
-    {
-      "session": "단기",
-      "code": "042700",
-      "name": "한미반도체",
-      "actionState": "매수 보류",
-      "confidenceScore": 41,
-      "patterns": [
-        "DRAWDOWN_GT_5"
-      ]
-    },
-    {
-      "session": "단기",
-      "code": "089030",
-      "name": "테크윙",
-      "actionState": "관망 우선",
-      "confidenceScore": 54,
-      "patterns": [
-        "DRAWDOWN_GT_5"
-      ]
-    },
-    {
-      "session": "단기",
-      "code": "247540",
-      "name": "에코프로비엠",
-      "actionState": "매수 보류",
-      "confidenceScore": 35,
+      "confidenceScore": 37,
       "patterns": [
         "DRAWDOWN_GT_5"
       ]
